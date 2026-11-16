@@ -34,7 +34,9 @@ try {
   const interactiveRoot=createRoot(interactive.window.document.getElementById('root'));
   try {
    await act(()=>interactiveRoot.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{basename:base||'/',initialEntries:[base||'/']},React.createElement(Header)))));
-   assert.equal(interactive.window.document.querySelector('.desktop-nav'),null,'compact header has one drawer at every width');
+   const desktop=interactive.window.document.querySelector('.desktop-nav');
+   assert.equal(desktop.querySelectorAll('.desktop-nav-group').length,7);
+   assert.deepEqual([...desktop.querySelectorAll('.desktop-subnav a')].map(a=>a.getAttribute('href')),leaves.map(a=>a.getAttribute('href')),'desktop and no-JS fallback have identical destinations');
    await act(()=>interactive.window.document.querySelector('.menu-button').click());
    const drawer=interactive.window.document.querySelector('.drawer-nav');assert.ok(drawer);
    assert.equal(drawer.querySelectorAll('.drawer-group').length,7);

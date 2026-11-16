@@ -14,10 +14,10 @@ import {MemoryRouter, Routes, Route} from 'react-router-dom';
 const temp = '.reference-structure-test';
 await mkdir(temp, {recursive: true});
 try {
-  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,NewsPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
+  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,NewsPage,ArticlePage,EventPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
   const components = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
   const {LocaleProvider, localeBase, loadLocale, jobs} = components;
-  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ['/news', '/news', 'NewsPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage']];
+  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ['/news', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage']];
   for (const locale of ['vi', 'en', 'zh', 'ko', 'ja']) {
     await loadLocale(locale);
     const base = localeBase(locale);
@@ -52,7 +52,9 @@ try {
       if (name === 'AboutPage') {
         assert.equal(doc.querySelectorAll('.info-about-values article').length, 3);
         assert.equal(doc.querySelectorAll('.info-stat-grid article').length, 4);
-        assert.equal(doc.querySelector('[role="tablist"]'), null, 'source simultaneous cards replace custom tabs');
+        assert.equal(doc.querySelector('.info-about-values [role="tablist"],.info-value-tabs'), null, 'source simultaneous values replace custom value tabs');
+        assert.equal(doc.querySelectorAll('#history [role="tab"]').length, 3, 'history phases retain a distinct synchronized selector');
+        assert.equal(doc.querySelectorAll('#history [role="tabpanel"]').length, 1);
         for (const id of ['history', 'achievements']) assert.ok(doc.getElementById(id), `${label}: preserved navigation anchor ${id}`);
         assert.ok(doc.querySelector('form'), 'reference About ends with usable consultation form');
       }
@@ -71,6 +73,18 @@ try {
         assert.ok(doc.querySelector('.job-detail-intro h1'));
         assert.ok(doc.querySelector('.job-detail-layout > aside'));
         assert.ok(doc.querySelector('.job-apply-button,.job-closed'));
+      }
+      if (name === 'ArticlePage') {
+        assert.ok(!doc.querySelector('.page-banner-main,.page-hero'), 'article detail starts with its heading, without an extra image banner');
+        assert.ok(doc.querySelector('.info-article h1'));
+        assert.ok(doc.querySelector('.info-related-news article'), 'related articles occupy their separate region');
+      }
+      if (name === 'EventPage') {
+        assert.ok(doc.querySelector('.page-banner-main h1'), 'event retains its image banner');
+        const links = [...doc.querySelectorAll('.info-event-nav a')];
+        assert.deepEqual(links.map(link=>link.getAttribute('href')), ['#overview','#schedule','#location','#gallery','#other-events']);
+        assert.equal(links[0].textContent, {vi:'Tổng quan',en:'Overview',zh:'概览',ko:'개요',ja:'概要'}[locale]);
+        assert.ok(links.every(link=>doc.getElementById(link.getAttribute('href').slice(1))), 'all event section links resolve');
       }
       if (name === 'ContactPage') {
         assert.equal(doc.querySelectorAll('.contact-office').length, 3);
@@ -101,7 +115,7 @@ try {
     await React.act(()=>document.querySelectorAll('.info-featured-news button')[0].click());
     assert.equal(document.querySelector('.info-featured-news h2').textContent, first, 'previous feature returns to prior content');
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
-  console.log('PASS reference structures: eight page types × five locales, source section compositions, CTA/form/anchor retention, no HR2B endpoints');
+  console.log('PASS reference structures: ten page types × five locales, article/event/history composition, CTA/form/anchor retention, no HR2B endpoints');
 } finally {
   await rm(temp, {recursive: true, force: true});
 }

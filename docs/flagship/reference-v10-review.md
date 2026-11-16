@@ -51,3 +51,19 @@ The supported browser/preview infrastructure has failed. No alternate browser/se
 ## Final integration evidence
 
 Final build passed. Navigation/header, motion, media/hero, reference structures, job/application/admin/education/contact flows, sitemap and generated catalog checks passed. SEO verified 200 locale pages; hydration passed 15 route/locale cases. The asset audit checked 87 local paths across 203 HTML files with no missing deployed media/font/script/stylesheet. Main JS is 377.62 kB (118.01 kB gzip), CSS 105.35 kB (20.82 kB gzip); hero video remains 2.39 MB. These are build sizes, not measured transfer speeds or CWV.
+
+## Live-source follow-up after network recovery
+
+The preceding build evidence describes v10, before this follow-up. Current live HTML and theme assets are captured under `/workspace/reference/hr2b-live-current-20261116/`. Core CSS matches the old mirror byte-for-byte. Of 6,491 parsed main-CSS declarations, only three differ from that mirror: two encoded SVG fragment URLs and one rewritten search-icon path. No new global layout-token change was found.
+
+The embedded source map in live `scripts/main.min.js` exposes `src/js/swiper.js` and `src/js/main.js`. General rails use 3,500ms autoplay and 500ms transitions; the hero uses 3,000ms/300ms. The real AOS initializer sets `offset:100`; the mirror adapter's `once:true` was not the live configuration. Live mobile hero styles set the title to 40px and subtitle to 20px. General three-column rails show 1.3/2.3/3 cards at mobile/tablet/desktop; the achievement rail uses 1.2/2.2/3/4 at its four breakpoints.
+
+The latest user instruction restores the visible seven-group desktop menu without arrows, with a drawer below the selected breakpoint. That menu is an intentional Minh Đức customization, not a reference-fidelity defect.
+
+Follow-up review found two implementation blockers and sent them to owners: restored Header had lost drawer/search exclusion when other overlays opened, and the new rail hook needed failure/stale-callback guards, touch-interaction protection, and safe suspension/restoration of mandatory scroll snapping during its animation. Both fixes are now observed in source and focused tests pass. Independent header integration also checks search→drawer→search never stacks dialogs. A further control race was fixed: hover/focus/pointer interaction with Previous/Next pauses the rail, while the explicit Play control remains exempt and can resume it. The final compiled-header assertion still requires the follow-up build.
+
+The remaining testimonial swap was subsequently replaced with a real rail containing all three stories. The final follow-up review is recorded in [reference-v11-review.md](reference-v11-review.md).
+
+The expanded independent reference-structure suite currently passes ten page types across five locales. It verifies article heading/no extra banner, separate related content, synchronized history controls, five localized event anchors, retained forms and local images. A follow-up replaced the single history pane with three desktop image cards centered on the active phase, retaining the active-only mobile presentation and keyboard controls. Source and interaction coverage still do not establish pixel equivalence.
+
+Public HTTP access has recovered, but the supported browser still reports `could not read requirements` and the managed preview relay times out. No alternate browser path was used. Visual comparison remains unverified.

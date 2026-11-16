@@ -832,5 +832,11 @@
     "zh": "面包屑导航",
     "ko": "탐색 경로",
     "ja": "パンくずナビゲーション"
+  },
+  "Prototype · Nội dung minh họa": {
+    "en": "Prototype · Illustrative content",
+    "zh": "原型 · 示例内容",
+    "ko": "프로토타입 · 예시 콘텐츠",
+    "ja": "プロトタイプ · サンプルコンテンツ"
   }
 }

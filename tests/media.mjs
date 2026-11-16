@@ -9,7 +9,7 @@ if(!process.argv.includes('--case')) {
  await mkdir(temp,{recursive:true});
  try {
   await build({entryPoints:['src/HomeHero.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/hero.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
-  const heroCss=await readFile('src/home-enhancements.css','utf8');
+  const heroCss=await readFile('src/hero-media.css','utf8');
   assert.match(heroCss,/\.home-hero \.video-control\s*\{[^}]*clip-path:inset\(50%\)/,'video control is visually hidden by default');
   assert.match(heroCss,/\.home-hero \.video-control:focus\s*\{[^}]*clip-path:none/,'keyboard focus reveals the control');
   const mediaCss=await readFile('src/hero-media.css','utf8');

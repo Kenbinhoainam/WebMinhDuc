@@ -65,3 +65,34 @@ body:not(:has(.page-banner-main, .section-home-banner)) .site-header :is(a,butto
 @supports not selector(:has(*)) {
   .site-header.site-header { background:#29343a; }
 }
+/* Wide screens expose the seven primary destinations directly. */
+.header-shell { width:min(1800px,calc(100% - 40px)); margin-inline:auto; }
+.desktop-nav { display:none; }
+@media (min-width:1280px) {
+  .site-header .header-inner { gap:12px; }
+  .desktop-nav { display:block; flex:1; min-width:0; }
+  .desktop-nav > ul { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); align-items:center; gap:4px; margin:0; padding:0; list-style:none; }
+  .desktop-nav-group { position:relative; min-width:0; }
+  .desktop-nav-heading > a { display:flex; justify-content:center; align-items:center; min-height:44px; padding:4px 3px; font-size:clamp(12px,.9vw,13px); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+  .desktop-nav-heading > a:hover, .desktop-nav-heading > a.active { text-decoration:underline; text-decoration-color:#e42824; text-decoration-thickness:2px; text-underline-offset:6px; }
+  .desktop-subnav { position:absolute; top:100%; left:0; width:max-content; min-width:230px; max-width:min(340px,calc(100vw - 48px)); padding:8px; background:#fff; color:#292929; border:1px solid #dedede; border-radius:8px; box-shadow:0 12px 35px #0002; }
+  .desktop-subnav[hidden] { display:none; }
+  .desktop-subnav a { display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:44px; padding:10px 12px; border-radius:6px; font-size:13px; line-height:1.4; }
+  .desktop-subnav a:hover, .desktop-subnav a:focus-visible { background:#f6f6f6; color:#b20400; }
+  .site-header .desktop-subnav :is(a,button):focus-visible { outline-color:#a32130; }
+  .desktop-nav-group:nth-last-child(-n+2) .desktop-subnav { left:auto; right:0; }
+  .site-header .header-actions { gap:6px; }
+  .site-header .header-search { width:44px; padding:0; justify-content:center; }
+  .site-header .header-search span { display:none; }
+  .site-header .header-contact { padding-inline:12px; }
+  .site-header .menu-button { display:none; }
+}
+
+/* Light glass keeps dark navigation readable over both photos and white sections. */
+.site-header.site-header.is-scrolled { background:rgba(250,252,252,.97); color:#20343e; box-shadow:0 3px 18px rgba(0,0,0,.08); backdrop-filter:blur(10px); }
+.site-header.is-scrolled::before { background:none; backdrop-filter:none; }
+.site-header.is-scrolled :is(.header-search, .header-saved, .menu-button, .language-trigger) { background:rgba(0,0,0,.07); color:#20343e; border-color:transparent; }
+.site-header.is-scrolled :is(a,button):focus-visible { outline-color:#a32130; }
+@supports not (backdrop-filter:blur(10px)) {
+  .site-header.site-header.is-scrolled { background:#fafcfc; }
+}

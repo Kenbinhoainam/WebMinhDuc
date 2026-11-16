@@ -1,6 +1,8 @@
 import {
   useEffect,
   useState,
+  useRef,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import {
@@ -8,7 +10,7 @@ import {
   Menu,
   X,
   ArrowUpRight,
-  CircleUserRound,
+  Bookmark,
   Plus,
   Minus,
 } from "lucide-react";
@@ -190,67 +192,371 @@ function NavigationDrawer({ onClose }: { onClose: () => void }) {
 }
 export function Header() {
   const t = useTranslation();
-  const [menu, setMenu] = useState(false);
-  const [search, setSearch] = useState(false);
-  const location = useLocation();
-  const saved = useSavedJobs();
-
+  const [menu, setMenu] = useState(false),
+    [search, setSearch] = useState(false),
+    [scrolled, setScrolled] = useState(false),
+    [openGroup, setOpenGroup] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null),
+    location = useLocation(),
+    saved = useSavedJobs();
+  const openRef = useRef<string | null>(null),
+    hovered = useRef<string | null>(null),
+    blocked = useRef<string | null>(null),
+    focusBlocked = useRef<string | null>(null),
+    pointerKind = useRef<string | null>(null);
+  const focusFrame = useRef<number | null>(null);
+  const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null),
+    closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  openRef.current = openGroup;
+  const clearTimers = () => {
+    if (focusFrame.current !== null) cancelAnimationFrame(focusFrame.current);
+    focusFrame.current = null;
+    if (openTimer.current !== null) clearTimeout(openTimer.current);
+    if (closeTimer.current !== null) clearTimeout(closeTimer.current);
+    openTimer.current = null;
+    closeTimer.current = null;
+  };
+  const focusedGroup = (url: string) => {
+    const trigger = navRef.current?.querySelector<HTMLAnchorElement>(
+      `a[data-group="${url}"]`,
+    );
+    return !!trigger
+      ?.closest(".desktop-nav-group")
+      ?.contains(document.activeElement);
+  };
+  const focusedPanel = (url: string) => {
+    const trigger = navRef.current?.querySelector<HTMLAnchorElement>(
+      `a[data-group="${url}"]`,
+    );
+    return !!trigger
+      ?.closest(".desktop-nav-group")
+      ?.querySelector(".desktop-subnav")
+      ?.contains(document.activeElement);
+  };
+  const allowHover = (event: ReactPointerEvent) =>
+    event.pointerType === "mouse" &&
+    !!window.matchMedia?.("(hover: hover) and (pointer: fine)").matches;
+  const enterGroup = (event: ReactPointerEvent, url: string) => {
+    if (!allowHover(event) || !subnavigation[url]) return;
+    hovered.current = url;
+    clearTimers();
+    if (blocked.current === url) return;
+    openTimer.current = setTimeout(() => {
+      if (
+        openRef.current &&
+        openRef.current !== url &&
+        focusedPanel(openRef.current)
+      )
+        return;
+      document.dispatchEvent(
+        new window.CustomEvent("header-overlay-open", {
+          detail: { owner: "navigation" },
+        }),
+      );
+      setOpenGroup(url);
+    }, 100);
+  };
+  const leaveGroup = (event: ReactPointerEvent, url: string) => {
+    if (!allowHover(event)) return;
+    if (hovered.current === url) hovered.current = null;
+    if (blocked.current === url) blocked.current = null;
+    clearTimers();
+    closeTimer.current = setTimeout(() => {
+      if (openRef.current === url && !focusedGroup(url)) setOpenGroup(null);
+    }, 180);
+  };
+  useEffect(() => () => clearTimers(), []);
   useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 30);
+    update();
+    window.addEventListener('scroll', update, {passive: true});
+    return () => window.removeEventListener('scroll', update);
+  }, []);
+  useEffect(() => {
+    clearTimers();
+    hovered.current = null;
+    blocked.current = null;
+    focusBlocked.current = null;
     setMenu(false);
     setSearch(false);
+    setOpenGroup(null);
   }, [location.pathname, location.search, location.hash]);
-
   useEffect(() => {
-    const closeOther = (event: Event) => {
-      const owner = (event as CustomEvent<{owner?: string}>).detail?.owner;
-      if (owner !== 'drawer') setMenu(false);
-      if (owner !== 'search') setSearch(false);
+    if (!window.matchMedia) return;
+    const query = window.matchMedia("(min-width: 1280px)");
+    const resize = (event: MediaQueryListEvent) => {
+      clearTimers();
+      hovered.current = null;
+      blocked.current = null;
+      focusBlocked.current = null;
+      document.dispatchEvent(
+        new window.CustomEvent("header-overlay-open", {
+          detail: { owner: "resize" },
+        }),
+      );
+      if (event.matches && menu) {
+        const hadFocus = !!document
+          .querySelector(".navigation-panel")
+          ?.contains(document.activeElement);
+        setMenu(false);
+        if (hadFocus)
+          requestAnimationFrame(() =>
+            navRef.current?.querySelector<HTMLAnchorElement>("a")?.focus(),
+          );
+      } else if (!event.matches) {
+        const hadFocus = !!navRef.current?.contains(document.activeElement);
+        setOpenGroup(null);
+        if (hadFocus)
+          requestAnimationFrame(() =>
+            document.querySelector<HTMLButtonElement>(".menu-button")?.focus(),
+          );
+      }
     };
-    document.addEventListener('header-overlay-open', closeOther);
-    return () => document.removeEventListener('header-overlay-open', closeOther);
+    query.addEventListener("change", resize);
+    return () => query.removeEventListener("change", resize);
+  }, [menu, openGroup]);
+  useEffect(() => {
+    const pointer = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        pointerKind.current = null;
+        clearTimers();
+        setOpenGroup(null);
+      }
+    };
+    const keyboard = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      const current = openRef.current,
+        pending = openTimer.current !== null || focusFrame.current !== null;
+      if (!current && !pending) return;
+      event.preventDefault();
+      clearTimers();
+      blocked.current = hovered.current;
+      setOpenGroup(null);
+      if (current) {
+        focusBlocked.current = current;
+        navRef.current
+          ?.querySelector<HTMLAnchorElement>(`a[data-group="${current}"]`)
+          ?.focus();
+      }
+    };
+    const close = (event: Event) => {
+      const owner = (event as CustomEvent<{ owner?: string }>).detail?.owner;
+      if (owner !== "navigation") {
+        clearTimers();
+        setOpenGroup(null);
+      }
+      if (owner !== "drawer") setMenu(false);
+      if (owner !== "search") setSearch(false);
+    };
+    document.addEventListener("pointerdown", pointer);
+    document.addEventListener("keydown", keyboard);
+    document.addEventListener("header-overlay-open", close);
+    return () => {
+      document.removeEventListener("pointerdown", pointer);
+      document.removeEventListener("keydown", keyboard);
+      document.removeEventListener("header-overlay-open", close);
+    };
   }, []);
-
-  const open = (owner: 'drawer' | 'search') => {
-    document.dispatchEvent(new window.CustomEvent('header-overlay-open', {detail: {owner}}));
-    if (owner === 'drawer') setMenu(true);
-    else setSearch(true);
+  const openMenu = (url: string) => {
+    clearTimers();
+    document.dispatchEvent(new window.CustomEvent("header-overlay-open", {detail: {owner: "navigation"}}));
+    setOpenGroup(url);
   };
-
-  return <>
-    <header className="site-header">
-      <div className="container header-shell">
-        <div className="header-inner">
-          <Link to="/" className="brand header-logo" aria-label="Minh Đức — Trang chủ">
-            <img src="/assets/minh-duc-logo.jpg" alt="Minh Đức — Nhân lực là tài sản" width="90" height="90"/>
-          </Link>
-          <div className="header-actions header-right">
-            <button type="button" aria-label="Mở tìm kiếm" className="header-search" onClick={() => open('search')}>
-              <span>Tìm kiếm</span><Search size={16}/>
-            </button>
-            <Link to="/contact" className="header-contact">Liên hệ</Link>
-            <Link className="header-saved" to="/saved-jobs" aria-label={t({
-              vi: `Việc đã lưu: ${saved.count}`, en: `Saved jobs: ${saved.count}`,
-              zh: `已收藏职位：${saved.count}`, ko: `저장한 채용 정보: ${saved.count}개`, ja: `保存した求人：${saved.count}件`,
-            })}>
-              <CircleUserRound size={22}/>{saved.count > 0 && <span>{saved.count}</span>}
-            </Link>
-            <LanguageSelector/>
-            <button type="button" className="menu-button" aria-label="Mở menu" aria-expanded={menu} onClick={() => open('drawer')}>
-              <Menu size={24}/>
-            </button>
+  return (
+    <>
+      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+        <div className="header-shell">
+          <div className="header-inner">
+            <Link to="/" className="brand" aria-label="Minh Đức — Trang chủ">
+              <img
+                src="/assets/minh-duc-logo.jpg"
+                alt="Minh Đức — Nhân lực là tài sản"
+                width="90"
+                height="90"
+              />
+            </Link>{" "}
+            <nav
+              ref={navRef}
+              className="desktop-nav"
+              onBlur={(event) => {
+                if (
+                  !event.currentTarget.contains(
+                    event.relatedTarget as Node | null,
+                  )
+                ) {
+                  clearTimers();
+                  setOpenGroup(null);
+                }
+              }}
+              aria-label={t({
+                vi: "Điều hướng chính",
+                en: "Main navigation",
+                zh: "主导航",
+                ko: "주 메뉴",
+                ja: "メインナビゲーション",
+              })}
+            >
+              <ul>
+                {navigation.map(([url, title], i) => (
+                  <li
+                    className="desktop-nav-group"
+                    key={url}
+                    onPointerEnter={(event) => enterGroup(event, url)}
+                    onPointerLeave={(event) => leaveGroup(event, url)}
+                  >
+                    <div className="desktop-nav-heading">
+                      <NavLink
+                        to={url}
+                        end={url === "/"}
+                        data-group={subnavigation[url] ? url : undefined}
+                        aria-expanded={subnavigation[url] ? openGroup === url : undefined}
+                        aria-controls={subnavigation[url] ? `desktop-subnav-${i}` : undefined}
+                        className={({ isActive }) =>
+                          isActive || sectionHasChild(url, location.pathname) ? "active" : undefined
+                        }
+                        onPointerDown={(event) => { pointerKind.current = event.pointerType; }}
+                        onFocus={() => {
+                          if (focusBlocked.current === url || pointerKind.current === "touch") return;
+                          if (subnavigation[url]) openMenu(url);
+                          else { clearTimers(); setOpenGroup(null); }
+                        }}
+                        onBlur={(event) => {
+                          if (!event.currentTarget.closest(".desktop-nav-group")?.contains(event.relatedTarget as Node | null)) focusBlocked.current = null;
+                        }}
+                        onKeyDown={(event) => {
+                          pointerKind.current = null;
+                          if (subnavigation[url] && (event.key === "ArrowDown" || event.key === " ")) {
+                            event.preventDefault();
+                            focusBlocked.current = null;
+                            openMenu(url);
+                            focusFrame.current = requestAnimationFrame(() => {
+                              focusFrame.current = null;
+                              const panel = navRef.current?.querySelector<HTMLElement>(`#desktop-subnav-${i}`);
+                              if (openRef.current === url && panel && !panel.hidden) panel.querySelector<HTMLAnchorElement>("a")?.focus();
+                            });
+                          }
+                        }}
+                        onClick={(event) => {
+                          if (pointerKind.current === "touch" && subnavigation[url] && openRef.current !== url) {
+                            event.preventDefault();
+                            pointerKind.current = null;
+                            openMenu(url);
+                          } else {
+                            pointerKind.current = null;
+                            clearTimers();
+                            setOpenGroup(null);
+                          }
+                        }}
+                      >
+                        {title}
+                      </NavLink>
+                    </div>
+                    {subnavigation[url] && (
+                      <div
+                        className="desktop-subnav"
+                        id={`desktop-subnav-${i}`}
+                        hidden={openGroup !== url}
+                      >
+                        {subnavigation[url].map(([to, label]) => (
+                          <Link
+                            key={to}
+                            to={to}
+                            onClick={() => {
+                              clearTimers();
+                              setOpenGroup(null);
+                            }}
+                          >
+                            {label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="header-actions">
+              <button
+                aria-label="Mở tìm kiếm"
+                className="header-search"
+                onClick={() => {
+                  document.dispatchEvent(
+                    new window.CustomEvent("header-overlay-open", {
+                      detail: { owner: "search" },
+                    }),
+                  );
+                  setOpenGroup(null);
+                  setSearch(true);
+                }}
+              >
+                <span>Tìm kiếm</span>
+                <Search size={16} />
+              </button>
+              <Link
+                className="header-saved"
+                to="/saved-jobs"
+                aria-label={t({
+                  vi: `Việc đã lưu: ${saved.count}`,
+                  en: `Saved jobs: ${saved.count}`,
+                  zh: `已收藏职位：${saved.count}`,
+                  ko: `저장한 채용 정보: ${saved.count}개`,
+                  ja: `保存した求人：${saved.count}件`,
+                })}
+              >
+                <Bookmark size={20} />
+                {saved.count > 0 && <span>{saved.count}</span>}
+              </Link>
+              <LanguageSelector />
+              <Link to="/contact" className="header-contact">
+                Liên hệ <ArrowUpRight size={15} />
+              </Link>
+              <button
+                className="menu-button"
+                aria-label="Mở menu"
+                aria-expanded={menu}
+                onClick={() => {
+                  document.dispatchEvent(
+                    new window.CustomEvent("header-overlay-open", {
+                      detail: { owner: "drawer" },
+                    }),
+                  );
+                  setOpenGroup(null);
+                  setMenu(true);
+                }}
+              >
+                <Menu size={25} />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-    <noscript>
-      <style>{`.site-header{position:relative!important;background:#29343a!important}.header-search,.menu-button,.language-selector{display:none!important}`}</style>
-      <nav className="no-script-nav" aria-label="Điều hướng chính"><ul>
-        {navigation.map(([url, title]) => <li key={url}><Link to={url}>{title}</Link>
-          {subnavigation[url] && <ul>{subnavigation[url].map(([to, label]) => <li key={to}><Link to={to}>{label}</Link></li>)}</ul>}
-        </li>)}
-      </ul></nav>
-    </noscript>
-    {menu && <div className="drawer-root"><NavigationDrawer onClose={() => setMenu(false)}/></div>}
-    {search && <SearchPanel onClose={() => setSearch(false)}/>}
-  </>;
+      </header>
+      <noscript>
+        <style>{`.site-header{position:relative!important;background:#f8fafb!important;color:#20343e!important}.desktop-nav,.header-search,.menu-button,.language-selector{display:none!important}`}</style>
+        <nav className="no-script-nav" aria-label="Điều hướng chính">
+          <ul>
+            {navigation.map(([url, title]) => (
+              <li key={url}>
+                <Link to={url}>{title}</Link>
+                {subnavigation[url] && (
+                  <ul>
+                    {subnavigation[url].map(([to, label]) => (
+                      <li key={to}>
+                        <Link to={to}>{label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </noscript>
+      {menu && (
+        <div className="drawer-root">
+          <NavigationDrawer onClose={() => setMenu(false)} />
+        </div>
+      )}
+      {search && <SearchPanel onClose={() => setSearch(false)} />}
+    </>
+  );
 }

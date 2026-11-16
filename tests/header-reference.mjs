@@ -16,10 +16,10 @@ try {
  for(const locale of ['vi','en','zh','ko','ja']){
   await loadLocale(locale);const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,null,React.createElement(Header))));
   const dom=new JSDOM(html),doc=dom.window.document,row=doc.querySelector('.header-inner');
-  assert.deepEqual([...row.children].map(el=>el.className),['brand header-logo','header-actions header-right']);
-  assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-contact','header-saved','language-selector','menu-button']);
+  assert.deepEqual([...row.children].map(el=>el.className),['brand','desktop-nav','header-actions']);
+  assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-saved','language-selector','header-contact','menu-button']);
   assert.match(doc.querySelector('.brand img').getAttribute('src'),/minh-duc-logo/);
-  assert.equal(doc.querySelector('.desktop-nav'),null);assert.ok(doc.querySelector('.menu-button'));
+  assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,19);assert.equal(doc.querySelectorAll('.desktop-nav svg').length,0,'navigation has no arrow icons');assert.ok(doc.querySelector('.menu-button'));
   assert.match(doc.querySelector('.language-trigger').getAttribute('aria-label'),new RegExp(localeNames[locale]));
   assert.equal(doc.querySelectorAll('.no-script-nav > ul > li').length,7);assert.equal(doc.querySelectorAll('.no-script-nav ul ul a').length,19);
   dom.window.close();
@@ -27,9 +27,14 @@ try {
  const css=await readFile('src/sprint-navigation.css','utf8'), sheet=postcss.parse(css);
  const declarations=selector=>{const values=[];sheet.walkRules(rule=>{if(rule.selectors.includes(selector))rule.walkDecls(decl=>values.push([decl.prop,decl.value]));});return values;};
  assert.ok(declarations('.site-header.site-header').some(([p,v])=>p==='background'&&v==='transparent'));
+ assert.ok(declarations('.site-header.site-header.is-scrolled').some(([p,v])=>p==='background'&&v==='rgba(250,252,252,.97)'),'scrolled header uses high-opacity light glass');
+ assert.ok(declarations('.site-header.site-header.is-scrolled').some(([p,v])=>p==='color'&&v==='#20343e'),'scrolled header uses dark foreground');
  assert.ok(declarations('.site-header::before').some(([p,v])=>p==='background'&&v.includes('linear-gradient')));
  assert.ok(declarations('.site-header .header-inner').some(([p,v])=>p==='height'&&v==='5rem'));
  assert.ok(declarations('body:not(:has(.page-banner-main, .section-home-banner)) .site-header').some(([p,v])=>p==='position'&&v==='sticky'),'bannerless pages use an in-flow contrast header');
- assert.doesNotMatch(css,/\.desktop-nav|\.hero-shade|\.page-hero/,'obsolete desktop menu and hero scrims removed');
- console.log('PASS compact reference header: five locales, original logo, control order, fallback sitemap and source geometry');
+ assert.match(css,/@media \(min-width:1280px\)/,'desktop navigation has a wide responsive breakpoint');
+ assert.match(css,/grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/,'seven groups can shrink without overflowing');
+ assert.match(css,/\.header-shell\s*\{\s*width:min\(1800px,calc\(100% - 40px\)\)/,'header width is independent of body container');
+ assert.doesNotMatch(css,/\.hero-shade|\.page-hero/,'obsolete hero scrims removed');
+ console.log('PASS wide and compact header: five locales, original logo, control order, fallback sitemap and source geometry');
 }finally{await rm(temp,{recursive:true,force:true})}

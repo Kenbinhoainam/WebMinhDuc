@@ -30,5 +30,6 @@ for(const [path,pages] of [...assets].sort(([a],[b])=>a.localeCompare(b))){
  if(!/\.(css|js|woff2?|ttf)$/.test(path))rows.push([path,'https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site'+path,info.size,[...pages].join('; ')].map(quote).join(','));
 }
 if(missing.size)throw new Error('Missing local assets:\n'+[...missing].join('\n'));
-await writeFile('docs/flagship/media-v10.csv',rows.join('\n')+'\n');
-console.log(`PASS local assets: ${assets.size} paths across ${files.filter(file=>file.endsWith('.html')).length} HTML files; no missing media/font/script/stylesheet. Inventory: docs/flagship/media-v10.csv`);
+const inventory=process.argv[2] || 'docs/flagship/media-current.csv';
+await writeFile(inventory,rows.join('\n')+'\n');
+console.log(`PASS local assets: ${assets.size} paths across ${files.filter(file=>file.endsWith('.html')).length} HTML files; no missing media/font/script/stylesheet. Inventory: ${inventory}`);

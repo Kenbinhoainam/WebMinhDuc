@@ -25,10 +25,20 @@ try {
   await loadLocale(locale);
   const base=localeBase(locale);
   await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale,basename:base||'/',initialEntries:[`${base}/jobs?q=kho#details`]},React.createElement(Header)))));
-  assert.equal(document.querySelector('.desktop-nav'),null,'reference header uses one drawer at every width');
+  assert.equal(document.querySelectorAll('.desktop-nav-group').length,7,'requested desktop navigation remains visible in wide-screen CSS');
+  assert.equal(document.querySelectorAll('.desktop-subnav a').length,19);
+  assert.equal(document.querySelectorAll('.desktop-nav-heading button,.desktop-nav-heading svg').length,0,'desktop parent labels have no arrow controls');
+  const desktopServices=document.querySelector('.desktop-nav-heading > a[data-group="/services"]');
+  assert.equal(desktopServices.getAttribute('href'),`${base}/services`);
+  const openDesktop=async()=>act(()=>desktopServices.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true})));
+  await openDesktop();assert.equal(desktopServices.getAttribute('aria-expanded'),'true');
+  await act(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
+  assert.equal(desktopServices.getAttribute('aria-expanded'),'false');assert.ok(document.activeElement===desktopServices,'Escape restores desktop parent focus');
+  await openDesktop();
   const menu=document.querySelector('.menu-button');
   const openMenu=async()=>{await act(()=>menu.focus());await click(menu)};
   await openMenu();
+  assert.equal(desktopServices.getAttribute('aria-expanded'),'false','drawer opening closes desktop disclosure');
   const groups=[...document.querySelectorAll('.drawer-group')];
   assert.equal(groups.length,7);
   assert.equal(groups[0].querySelector('a').textContent,{vi:'Trang chủ',en:'Home',zh:'首页',ko:'홈',ja:'ホーム'}[locale]);
@@ -38,7 +48,7 @@ try {
   await click(services);assert.equal(services.getAttribute('aria-expanded'),'true');
   const trigger=document.querySelector('.language-trigger');
   await click(trigger);
-  assert.equal(document.querySelector('.navigation-panel'),null,'language opening closes navigation');
+  assert.ok(!document.querySelector('.navigation-panel'),'language opening closes navigation');
   assert.equal(trigger.getAttribute('aria-expanded'),'true');
   const languages=[...document.querySelectorAll('.language-panel a')];
   assert.equal(languages.length,5);
@@ -48,14 +58,24 @@ try {
   assert.equal(trigger.getAttribute('aria-expanded'),'false','navigation opening closes language');
   assert.equal(menu.getAttribute('aria-expanded'),'true');
   await act(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
-  assert.equal(menu.getAttribute('aria-expanded'),'false');assert.equal(document.activeElement,menu);
+  assert.equal(menu.getAttribute('aria-expanded'),'false');assert.ok(document.activeElement===menu,'Escape restores drawer trigger focus');
   await openMenu();await click(document.querySelectorAll('.drawer-group')[2].querySelector('a'));
   assert.equal(menu.getAttribute('aria-expanded'),'false','destination navigation closes drawer');
-  await click(trigger);await click(document.querySelector('.header-search'));
+  await openDesktop();await click(desktopServices);
+  assert.equal(desktopServices.getAttribute('aria-expanded'),'false','same-page parent destination closes desktop disclosure');
+  await openDesktop();await click(trigger);
+  assert.equal(desktopServices.getAttribute('aria-expanded'),'false','language opening also closes desktop disclosure');
+  await click(document.querySelector('.header-search'));
   assert.equal(trigger.getAttribute('aria-expanded'),'false','search opening closes language');
   assert.ok(document.querySelector('[role="dialog"]'));
+  await click(menu);
+  assert.equal(document.querySelectorAll('[role="dialog"]').length,1,'drawer opening replaces search instead of stacking dialogs');
+  assert.ok(document.querySelector('.navigation-panel'));
+  await click(document.querySelector('.header-search'));
+  assert.equal(document.querySelectorAll('[role="dialog"]').length,1,'search opening replaces drawer instead of stacking dialogs');
+  assert.ok(!document.querySelector('.navigation-panel'));
   await act(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
-  assert.equal(document.querySelector('[role="dialog"]'),null);
+  assert.ok(!document.querySelector('[role="dialog"]'));
  }
  let paused=true,plays=0;
  Object.defineProperty(window.HTMLMediaElement.prototype,'paused',{configurable:true,get(){return paused}});
@@ -79,14 +99,17 @@ try {
  const cssPath=builtDocument.querySelector('link[rel="stylesheet"]')?.getAttribute('href');
  assert.ok(cssPath?.startsWith('/assets/'),'compiled entry stylesheet exists');
  const css=await readFile(`dist${cssPath}`,'utf8');
- const rules=postcss.parse(css);let visibleMenu=false,compactHeight=false;
+ const rules=postcss.parse(css);let mobileMenu=false,desktopNavigation=false,desktopMenuHidden=false,compactHeight=false;
  rules.walkDecls('scroll-padding-top',decl=>assert.notEqual(decl.value,'145px','obsolete two-row offset must not survive'));
  rules.walkRules(rule=>{
-  assert.ok(!rule.selector.includes('.desktop-nav'),'obsolete desktop navigation CSS must not survive');
   if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='5rem')compactHeight=true});
-  if(rule.selectors.includes('.site-header .menu-button'))rule.walkDecls('display',decl=>{visibleMenu=decl.value!=='none'});
+  if(rule.selectors.includes('.site-header .menu-button')&&rule.parent.type!=='atrule')rule.walkDecls('display',decl=>{if(decl.value==='flex')mobileMenu=true});
  });
- assert.ok(compactHeight&&visibleMenu,'compact reference header keeps its menu available');
+ rules.walkAtRules('media',media=>{if(/min-width:\s*1280px/.test(media.params))media.walkRules(rule=>{
+  if(rule.selectors.includes('.desktop-nav'))rule.walkDecls('display',decl=>{if(decl.value==='block')desktopNavigation=true});
+  if(rule.selectors.includes('.site-header .menu-button'))rule.walkDecls('display',decl=>{if(decl.value==='none')desktopMenuHidden=true});
+ })});
+ assert.ok(compactHeight&&mobileMenu&&desktopNavigation&&desktopMenuHidden,'compiled header exposes the requested desktop links and smaller-screen drawer');
  assert.equal(errors.length,0,errors.join('\n'));
  console.log('PASS independent flagship: five locale routes, mutually exclusive disclosures/search, Escape focus, destination links, poster-first media, quick manual pause, compiled CSS order');
 } finally {

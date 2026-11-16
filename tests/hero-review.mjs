@@ -65,6 +65,8 @@ try {
   };
   for (const selector of ['.hero-title-grid', '.hero-description-grid']) assert.equal(declarations(selector).get('display'), 'grid', 'copy layers share a height-reserving grid');
   assert.equal(declarations('.hero-slide').get('grid-area'), '1 / 1');
+  assert.equal(declarations('.hero-description-grid .hero-slide').get('margin'), '0', 'stacked copy does not inherit the global paragraph bottom margin');
+  assert.equal(declarations('.home-hero.section-home-banner').get('color'), '#fff', 'hero copy keeps a readable foreground over the dark video shade');
   for (const selector of ['.hero-slide', '.hero-slide[data-active="true"]']) {
     assert.notEqual(declarations(selector).get('display'), 'none', 'inactive translated copy must still reserve its intrinsic height');
     assert.notEqual(declarations(selector).get('position'), 'absolute');

@@ -1,4 +1,4 @@
-# Minh Đức Vina — Prototype 9 / Reference layout, motion & balanced navigation
+# Minh Đức Vina — Prototype 11 / Live reference & Minh Đức navigation
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
@@ -31,9 +31,9 @@ npm run audit:i18n
 
 ## Nâng cấp flagship
 
-Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
-[Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-current.csv).
+[Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v11.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
 
 Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `prebuild` kiểm tra file sinh có khớp nguồn. Các ảnh tối ưu đã được lưu trong repository; chỉ cần ffmpeg/ffprobe khi muốn tái sinh bằng `node scripts/optimize-media.mjs`.
 
@@ -69,7 +69,7 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 
 ## Kiểm thử
 
-Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/reversible-reveal-v9.md`.
+Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/reference-v11-review.md`.
 
 Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Công cụ browser hiện trả `Browser Use could not read requirements`; preview trước đó cũng lỗi relay. Chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser và chưa có điểm Lighthouse/CWV.
 

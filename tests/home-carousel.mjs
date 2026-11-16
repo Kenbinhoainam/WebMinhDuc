@@ -1,0 +1,54 @@
+import {build} from 'esbuild';
+import {JSDOM} from 'jsdom';
+import {mkdir,rm} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+
+const folder='.home-carousel-test';
+await mkdir(folder,{recursive:true});
+await build({stdin:{contents:`import React,{useRef,useState} from 'react'; import {useHomeCarousel} from './src/useHomeCarousel'; export {advanceHomeRail} from './src/useHomeCarousel'; export function Harness(){const area=useRef(null);const [count,setCount]=useState(0);const auto=useHomeCarousel(area,()=>{setCount(v=>v+1);return ()=>window.__cancelled++});return <section ref={area}><div className="ref-news-grid"><button className="slide">slide</button><span>{count}</span></div><div className="ref-rail-controls"><button className="next">next</button></div><button className="pause" onClick={auto.toggle} aria-pressed={auto.paused}>pause</button></section>}`,resolveDir:process.cwd(),sourcefile:'home-carousel-test.tsx',loader:'tsx'},bundle:true,format:'esm',platform:'node',packages:'external',outfile:`${folder}/bundle.mjs`,logLevel:'silent'});
+const dom=new JSDOM('<div id="root"></div>',{pretendToBeVisual:true});
+for(const k of ['window','document','navigator','HTMLElement','Element','Node','Event','FocusEvent'])Object.defineProperty(globalThis,k,{configurable:true,writable:true,value:dom.window[k]});
+let callback, timer, schedules=0, reduced=false, hidden=false, motionChange, observerFailure='';
+window.__cancelled=0;
+window.setInterval=(fn,ms)=>{assert.equal(ms,3500);timer=fn;schedules++;return schedules};
+window.clearInterval=()=>{timer=undefined};
+window.matchMedia=()=>({get matches(){return reduced},addEventListener(_,fn){motionChange=fn},removeEventListener(){}});
+Object.defineProperty(document,'hidden',{configurable:true,get:()=>hidden});
+globalThis.IntersectionObserver=class{constructor(fn){if(observerFailure==='constructor')throw Error('observer');callback=fn}observe(){if(observerFailure==='observe')throw Error('observe')}disconnect(){}};
+globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+const React=await import('react');const {createRoot}=await import('react-dom/client');const {Harness,advanceHomeRail}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);const root=createRoot(document.getElementById('root'));
+try {
+ await React.act(async()=>root.render(React.createElement(Harness)));
+ const area=document.querySelector('section'), content=area.querySelector('.ref-news-grid'), button=area.querySelector('.pause'), slide=area.querySelector('.slide'), next=area.querySelector('.next'), count=area.querySelector('span');
+ assert.equal(timer,undefined,'offscreen remains still');
+ await React.act(async()=>callback([{isIntersecting:true}]));assert.equal(typeof timer,'function');
+ await React.act(async()=>timer());assert.equal(count.textContent,'1','visible carousel advances');
+ await React.act(async()=>next.focus());assert.equal(timer,undefined,'next focus pauses');assert.ok(window.__cancelled>0,'next focus cancels in-flight animation');
+ const beforeBlur=schedules;await React.act(async()=>next.blur());assert.equal(typeof timer,'function');assert.equal(schedules,beforeBlur+1,'blur starts a fresh full interval');
+ content.dispatchEvent(new window.Event('mouseenter'));assert.equal(timer,undefined,'hover pauses');
+ content.dispatchEvent(new window.Event('mouseleave'));assert.equal(typeof timer,'function');
+ content.dispatchEvent(new window.Event('pointerdown'));assert.equal(timer,undefined,'pointer drag pauses');
+ window.dispatchEvent(new window.Event('pointercancel'));assert.equal(typeof timer,'function','cancel ends drag');
+ content.dispatchEvent(new window.Event('pointerdown'));window.dispatchEvent(new window.Event('pointerup'));assert.equal(typeof timer,'function','pointerup ends drag');
+ await React.act(async()=>slide.focus());assert.equal(timer,undefined,'slide focus pauses');
+ await React.act(async()=>button.focus());assert.equal(typeof timer,'function','pause control focus does not block motion');
+ await React.act(async()=>button.click());assert.equal(button.getAttribute('aria-pressed'),'true');assert.equal(timer,undefined);
+ const oldObserver=callback; await React.act(async()=>button.click());assert.equal(button.getAttribute('aria-pressed'),'false');
+ await React.act(async()=>callback([{isIntersecting:true}]));assert.equal(typeof timer,'function','play resumes while control remains focused');
+ hidden=true;document.dispatchEvent(new window.Event('visibilitychange'));assert.equal(timer,undefined);
+ hidden=false;document.dispatchEvent(new window.Event('visibilitychange'));assert.equal(typeof timer,'function');
+ reduced=true;motionChange();assert.equal(timer,undefined,'reduced motion pauses');
+ reduced=false;motionChange();assert.equal(typeof timer,'function');
+ const staleTimer=timer, staleObserver=callback;
+ await React.act(async()=>root.render(null));assert.equal(timer,undefined,'cleanup clears timer');
+ oldObserver([{isIntersecting:true}]);staleObserver([{isIntersecting:true}]);staleTimer();assert.equal(timer,undefined,'stale callbacks cannot restart');
+ for(const mode of ['constructor','observe']){observerFailure=mode;await React.act(async()=>root.render(React.createElement(Harness,{key:mode})));assert.equal(timer,undefined,`${mode} failure remains static`);if(mode==='observe'){callback([{isIntersecting:true}]);assert.equal(timer,undefined,'failed observer callback ignored');}await React.act(async()=>root.render(null));}
+ // Exercise real 500ms scroll and cancellation with snap restoration.
+ const rail=document.createElement('div');rail.innerHTML='<i></i><i></i>';document.body.append(rail);
+ Object.defineProperties(rail,{scrollWidth:{value:600},clientWidth:{value:200}});Object.defineProperty(rail.children[1],'offsetLeft',{value:200});rail.style.scrollSnapType='x mandatory';
+ let frame, cancelled=false;globalThis.requestAnimationFrame=fn=>{frame=fn;return 7};globalThis.cancelAnimationFrame=()=>{cancelled=true};
+ const cancel=advanceHomeRail(rail);assert.equal(rail.style.scrollSnapType,'none');const staleFrame=frame;cancel();assert.equal(rail.style.scrollSnapType,'x mandatory');assert.ok(cancelled);staleFrame(performance.now()+600);assert.equal(rail.scrollLeft,0,'cancelled frame cannot move rail');
+ cancelled=false;advanceHomeRail(rail);frame(performance.now()+600);assert.equal(rail.scrollLeft,200);assert.equal(rail.style.scrollSnapType,'x mandatory','completion restores snap');
+ console.log('PASS home carousel: autoplay, focus/play, touch, observer failures, cleanup and snap restoration');
+} finally {await React.act(async()=>root.unmount());dom.window.close();await rm(folder,{recursive:true,force:true});}

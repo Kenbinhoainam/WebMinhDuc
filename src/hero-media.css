@@ -17,11 +17,16 @@
 .hero-media video { opacity: 0; }
 .hero-media video.is-ready { opacity: 1; }
 
+/* Keep the pause action available to keyboards without restoring a visible pill. */
+.home-hero .video-control { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.home-hero .video-control:focus { z-index:3; right:24px; bottom:24px; width:auto; height:auto; min-height:44px; padding:10px 16px; display:inline-flex; align-items:center; gap:8px; overflow:visible; clip-path:none; border:1px solid #fff; border-radius:24px; background:#15232b; color:#fff; }
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-media video { transition: opacity 600ms cubic-bezier(.22, 1, .36, 1); }
 }
 
 .hero-title-grid, .hero-description-grid { display: grid; }
+.hero-description-grid .hero-slide { margin: 0; }
 .hero-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; pointer-events: none; }
 .hero-slide[data-active="true"] { opacity: 1; visibility: visible; }
 @media (prefers-reduced-motion: no-preference) {
@@ -31,7 +36,7 @@
 }
 
 /* The reference banner uses a 2:1 desktop frame and a full-height mobile frame. */
-.home-hero.section-home-banner { display: block; position: relative; min-height: 0; height: auto; overflow: hidden; }
+.home-hero.section-home-banner { display: block; position: relative; min-height: 0; height: auto; overflow: hidden; background: #24333c; color: #fff; }
 .section-home-banner .item-banner { position: relative; display: grid; align-items: center; min-height: 50vw; height: auto; }
 .section-home-banner .hero-media { position: absolute; inset: 0; }
 .section-home-banner .hero-shade { z-index: 1; background: linear-gradient(270deg, transparent, rgba(0,0,0,.4)); }
@@ -48,11 +53,15 @@
 @media (min-width: 1280px) {
   .section-home-banner .hero-title-grid { font-size: 3.75rem; }
 }
+@media (min-width: 1200px) {
+  .section-home-banner .wrap-slide-banner { max-width: 60%; }
+  .section-home-banner .item-content { max-width: none; }
+}
 @media (max-width: 767px) {
   .home-hero.section-home-banner { min-height: 0; }
   .section-home-banner .item-banner { min-height: max(560px, 100dvh); align-items: end; }
   .section-home-banner .hero-shade { background: rgba(0,0,0,.4); }
   .section-home-banner .hero-content { align-items: flex-end; padding-block: 100px 80px; }
-  .section-home-banner .hero-title-grid { font-size: 32px; }
-  .section-home-banner .hero-description-grid { font-size: 28px; }
+  .section-home-banner .hero-title-grid { font-size: 40px; }
+  .section-home-banner .hero-description-grid { font-size: 20px; }
 }

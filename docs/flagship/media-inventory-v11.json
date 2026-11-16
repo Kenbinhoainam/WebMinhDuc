@@ -1,0 +1,3379 @@
+{
+  "mo_ta": "Kiểm kê ảnh và video trong source + HTML dựng sẵn v11; đường dẫn tiếng Việt, các ngôn ngữ khác dùng cùng tài nguyên. Bao gồm srcset thực tế và nguồn video nạp động; không liệt kê biến thể chỉ có trong manifest mà không được tham chiếu.",
+  "dia_chi_website": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site",
+  "tai_nguyen": [
+    {
+      "ten_hien_thi": "Ảnh tĩnh mở đầu video",
+      "ten_tep": "hero-poster.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/assets/hero-poster.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/assets/hero-poster-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/hero-poster-1600.webp",
+          "kich_thuoc_byte": 83996
+        },
+        {
+          "duong_dan": "/optimized/assets/hero-poster-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/hero-poster-960.webp",
+          "kich_thuoc_byte": 44426
+        }
+      ],
+      "url_nguon_goc": null,
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Khu vực video minh họa",
+          "cong_dung": "Ảnh tĩnh hiển thị trước khi video phát hoặc trong hộp thoại video.",
+          "cach_tai": [
+            "poster"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền và video hero đầu trang",
+          "cong_dung": "Ảnh tĩnh hiển thị trước khi video phát hoặc trong hộp thoại video.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh tĩnh mở đầu và poster hộp thoại; nguồn gốc cụ thể chưa được xác minh trong manifest."
+    },
+    {
+      "ten_hien_thi": "Minh họa giới thiệu Minh Đức",
+      "ten_tep": "minh-duc-about.webp",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/assets/minh-duc-about.webp",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/assets/minh-duc-about-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/minh-duc-about-480.webp",
+          "kich_thuoc_byte": 45380
+        },
+        {
+          "duong_dan": "/optimized/assets/minh-duc-about-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/minh-duc-about-960.webp",
+          "kich_thuoc_byte": 139544
+        }
+      ],
+      "url_nguon_goc": null,
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Giới thiệu Minh Đức",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa tạo cho prototype; không có URL nguồn gốc bên ngoài được xác minh."
+    },
+    {
+      "ten_hien_thi": "Logo Minh Đức",
+      "ten_tep": "minh-duc-logo.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/assets/minh-duc-logo.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/assets/minh-duc-apple-touch.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/assets/minh-duc-apple-touch.png",
+          "kich_thuoc_byte": 20291
+        },
+        {
+          "duong_dan": "/assets/minh-duc-favicon-96.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/assets/minh-duc-favicon-96.png",
+          "kich_thuoc_byte": 7825
+        },
+        {
+          "duong_dan": "/assets/minh-duc-logo.jpg",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/assets/minh-duc-logo.jpg",
+          "kich_thuoc_byte": 50387
+        },
+        {
+          "duong_dan": "/optimized/assets/minh-duc-logo-192.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/minh-duc-logo-192.webp",
+          "kich_thuoc_byte": 5338
+        },
+        {
+          "duong_dan": "/optimized/assets/minh-duc-logo-288.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/minh-duc-logo-288.webp",
+          "kich_thuoc_byte": 7638
+        },
+        {
+          "duong_dan": "/optimized/assets/minh-duc-logo-96.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/assets/minh-duc-logo-96.webp",
+          "kich_thuoc_byte": 2370
+        }
+      ],
+      "url_nguon_goc": null,
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Biểu tượng Apple touch",
+          "cong_dung": "Nhận diện trang trong thẻ trình duyệt hoặc khi thêm vào màn hình chính.",
+          "cach_tai": [
+            "icon"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/admin-demo",
+            "/careers",
+            "/contact",
+            "/e-brochure",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/en",
+            "/en/about-us",
+            "/en/admin-demo",
+            "/en/careers",
+            "/en/contact",
+            "/en/e-brochure",
+            "/en/education",
+            "/en/education/chinh-quy-cong-nghe",
+            "/en/education/tu-xa-ke-toan",
+            "/en/education/tu-xa-quan-tri",
+            "/en/events",
+            "/en/events/hanh-trang-tim-viec",
+            "/en/events/ngay-hoi-ket-noi-viec-lam",
+            "/en/events/toa-dam-ke-hoach-nhan-luc",
+            "/en/jobs",
+            "/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/en/jobs/nhan-vien-kho-thai-nguyen",
+            "/en/jobs/van-hanh-may-quang-ninh",
+            "/en/news",
+            "/en/news/an-toan-thong-tin-khi-tim-viec",
+            "/en/news/chon-cong-viec-phu-hop",
+            "/en/news/don-tiep-lao-dong-moi",
+            "/en/news/ho-so-xin-viec",
+            "/en/news/nhu-cau-tuyen-dung",
+            "/en/news/thong-tin-tuyen-dung-minh-bach",
+            "/en/partners",
+            "/en/privacy-policy",
+            "/en/saved-jobs",
+            "/en/services",
+            "/en/services/college-admissions",
+            "/en/services/hr-consulting",
+            "/en/services/labor-leasing",
+            "/en/services/labor-supply",
+            "/en/services/recruitment",
+            "/en/terms-of-use",
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja",
+            "/ja/about-us",
+            "/ja/admin-demo",
+            "/ja/careers",
+            "/ja/contact",
+            "/ja/e-brochure",
+            "/ja/education",
+            "/ja/education/chinh-quy-cong-nghe",
+            "/ja/education/tu-xa-ke-toan",
+            "/ja/education/tu-xa-quan-tri",
+            "/ja/events",
+            "/ja/events/hanh-trang-tim-viec",
+            "/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja/jobs",
+            "/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "/ja/jobs/van-hanh-may-quang-ninh",
+            "/ja/news",
+            "/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "/ja/news/chon-cong-viec-phu-hop",
+            "/ja/news/don-tiep-lao-dong-moi",
+            "/ja/news/ho-so-xin-viec",
+            "/ja/news/nhu-cau-tuyen-dung",
+            "/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "/ja/partners",
+            "/ja/privacy-policy",
+            "/ja/saved-jobs",
+            "/ja/services",
+            "/ja/services/college-admissions",
+            "/ja/services/hr-consulting",
+            "/ja/services/labor-leasing",
+            "/ja/services/labor-supply",
+            "/ja/services/recruitment",
+            "/ja/terms-of-use",
+            "/job-seekers",
+            "/jobs",
+            "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/jobs/dong-goi-thoi-vu-bac-giang",
+            "/jobs/kiem-tra-chat-luong-bac-giang",
+            "/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/jobs/nhan-vien-kho-thai-nguyen",
+            "/jobs/van-hanh-may-quang-ninh",
+            "/ko",
+            "/ko/about-us",
+            "/ko/admin-demo",
+            "/ko/careers",
+            "/ko/contact",
+            "/ko/e-brochure",
+            "/ko/education",
+            "/ko/education/chinh-quy-cong-nghe",
+            "/ko/education/tu-xa-ke-toan",
+            "/ko/education/tu-xa-quan-tri",
+            "/ko/events",
+            "/ko/events/hanh-trang-tim-viec",
+            "/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "/ko/jobs",
+            "/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "/ko/jobs/van-hanh-may-quang-ninh",
+            "/ko/news",
+            "/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "/ko/news/chon-cong-viec-phu-hop",
+            "/ko/news/don-tiep-lao-dong-moi",
+            "/ko/news/ho-so-xin-viec",
+            "/ko/news/nhu-cau-tuyen-dung",
+            "/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "/ko/partners",
+            "/ko/privacy-policy",
+            "/ko/saved-jobs",
+            "/ko/services",
+            "/ko/services/college-admissions",
+            "/ko/services/hr-consulting",
+            "/ko/services/labor-leasing",
+            "/ko/services/labor-supply",
+            "/ko/services/recruitment",
+            "/ko/terms-of-use",
+            "/news",
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach",
+            "/partners",
+            "/privacy-policy",
+            "/saved-jobs",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment",
+            "/terms-of-use",
+            "/testimonials",
+            "/vi",
+            "/zh",
+            "/zh/about-us",
+            "/zh/admin-demo",
+            "/zh/careers",
+            "/zh/contact",
+            "/zh/e-brochure",
+            "/zh/education",
+            "/zh/education/chinh-quy-cong-nghe",
+            "/zh/education/tu-xa-ke-toan",
+            "/zh/education/tu-xa-quan-tri",
+            "/zh/events",
+            "/zh/events/hanh-trang-tim-viec",
+            "/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "/zh/jobs",
+            "/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "/zh/jobs/van-hanh-may-quang-ninh",
+            "/zh/news",
+            "/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "/zh/news/chon-cong-viec-phu-hop",
+            "/zh/news/don-tiep-lao-dong-moi",
+            "/zh/news/ho-so-xin-viec",
+            "/zh/news/nhu-cau-tuyen-dung",
+            "/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "/zh/partners",
+            "/zh/privacy-policy",
+            "/zh/saved-jobs",
+            "/zh/services",
+            "/zh/services/college-admissions",
+            "/zh/services/hr-consulting",
+            "/zh/services/labor-leasing",
+            "/zh/services/labor-supply",
+            "/zh/services/recruitment",
+            "/zh/terms-of-use"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/vi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/terms-of-use"
+          ]
+        },
+        {
+          "vi_tri": "Biểu tượng trình duyệt",
+          "cong_dung": "Nhận diện trang trong thẻ trình duyệt hoặc khi thêm vào màn hình chính.",
+          "cach_tai": [
+            "icon"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/admin-demo",
+            "/careers",
+            "/contact",
+            "/e-brochure",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/en",
+            "/en/about-us",
+            "/en/admin-demo",
+            "/en/careers",
+            "/en/contact",
+            "/en/e-brochure",
+            "/en/education",
+            "/en/education/chinh-quy-cong-nghe",
+            "/en/education/tu-xa-ke-toan",
+            "/en/education/tu-xa-quan-tri",
+            "/en/events",
+            "/en/events/hanh-trang-tim-viec",
+            "/en/events/ngay-hoi-ket-noi-viec-lam",
+            "/en/events/toa-dam-ke-hoach-nhan-luc",
+            "/en/jobs",
+            "/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/en/jobs/nhan-vien-kho-thai-nguyen",
+            "/en/jobs/van-hanh-may-quang-ninh",
+            "/en/news",
+            "/en/news/an-toan-thong-tin-khi-tim-viec",
+            "/en/news/chon-cong-viec-phu-hop",
+            "/en/news/don-tiep-lao-dong-moi",
+            "/en/news/ho-so-xin-viec",
+            "/en/news/nhu-cau-tuyen-dung",
+            "/en/news/thong-tin-tuyen-dung-minh-bach",
+            "/en/partners",
+            "/en/privacy-policy",
+            "/en/saved-jobs",
+            "/en/services",
+            "/en/services/college-admissions",
+            "/en/services/hr-consulting",
+            "/en/services/labor-leasing",
+            "/en/services/labor-supply",
+            "/en/services/recruitment",
+            "/en/terms-of-use",
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja",
+            "/ja/about-us",
+            "/ja/admin-demo",
+            "/ja/careers",
+            "/ja/contact",
+            "/ja/e-brochure",
+            "/ja/education",
+            "/ja/education/chinh-quy-cong-nghe",
+            "/ja/education/tu-xa-ke-toan",
+            "/ja/education/tu-xa-quan-tri",
+            "/ja/events",
+            "/ja/events/hanh-trang-tim-viec",
+            "/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja/jobs",
+            "/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "/ja/jobs/van-hanh-may-quang-ninh",
+            "/ja/news",
+            "/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "/ja/news/chon-cong-viec-phu-hop",
+            "/ja/news/don-tiep-lao-dong-moi",
+            "/ja/news/ho-so-xin-viec",
+            "/ja/news/nhu-cau-tuyen-dung",
+            "/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "/ja/partners",
+            "/ja/privacy-policy",
+            "/ja/saved-jobs",
+            "/ja/services",
+            "/ja/services/college-admissions",
+            "/ja/services/hr-consulting",
+            "/ja/services/labor-leasing",
+            "/ja/services/labor-supply",
+            "/ja/services/recruitment",
+            "/ja/terms-of-use",
+            "/job-seekers",
+            "/jobs",
+            "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/jobs/dong-goi-thoi-vu-bac-giang",
+            "/jobs/kiem-tra-chat-luong-bac-giang",
+            "/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/jobs/nhan-vien-kho-thai-nguyen",
+            "/jobs/van-hanh-may-quang-ninh",
+            "/ko",
+            "/ko/about-us",
+            "/ko/admin-demo",
+            "/ko/careers",
+            "/ko/contact",
+            "/ko/e-brochure",
+            "/ko/education",
+            "/ko/education/chinh-quy-cong-nghe",
+            "/ko/education/tu-xa-ke-toan",
+            "/ko/education/tu-xa-quan-tri",
+            "/ko/events",
+            "/ko/events/hanh-trang-tim-viec",
+            "/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "/ko/jobs",
+            "/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "/ko/jobs/van-hanh-may-quang-ninh",
+            "/ko/news",
+            "/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "/ko/news/chon-cong-viec-phu-hop",
+            "/ko/news/don-tiep-lao-dong-moi",
+            "/ko/news/ho-so-xin-viec",
+            "/ko/news/nhu-cau-tuyen-dung",
+            "/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "/ko/partners",
+            "/ko/privacy-policy",
+            "/ko/saved-jobs",
+            "/ko/services",
+            "/ko/services/college-admissions",
+            "/ko/services/hr-consulting",
+            "/ko/services/labor-leasing",
+            "/ko/services/labor-supply",
+            "/ko/services/recruitment",
+            "/ko/terms-of-use",
+            "/news",
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach",
+            "/partners",
+            "/privacy-policy",
+            "/saved-jobs",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment",
+            "/terms-of-use",
+            "/testimonials",
+            "/vi",
+            "/zh",
+            "/zh/about-us",
+            "/zh/admin-demo",
+            "/zh/careers",
+            "/zh/contact",
+            "/zh/e-brochure",
+            "/zh/education",
+            "/zh/education/chinh-quy-cong-nghe",
+            "/zh/education/tu-xa-ke-toan",
+            "/zh/education/tu-xa-quan-tri",
+            "/zh/events",
+            "/zh/events/hanh-trang-tim-viec",
+            "/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "/zh/jobs",
+            "/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "/zh/jobs/van-hanh-may-quang-ninh",
+            "/zh/news",
+            "/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "/zh/news/chon-cong-viec-phu-hop",
+            "/zh/news/don-tiep-lao-dong-moi",
+            "/zh/news/ho-so-xin-viec",
+            "/zh/news/nhu-cau-tuyen-dung",
+            "/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "/zh/partners",
+            "/zh/privacy-policy",
+            "/zh/saved-jobs",
+            "/zh/services",
+            "/zh/services/college-admissions",
+            "/zh/services/hr-consulting",
+            "/zh/services/labor-leasing",
+            "/zh/services/labor-supply",
+            "/zh/services/recruitment",
+            "/zh/terms-of-use"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/vi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/terms-of-use"
+          ]
+        },
+        {
+          "vi_tri": "Logo Minh Đức ở chân trang",
+          "cong_dung": "Nhận diện thương hiệu và liên kết về trang chủ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/admin-demo",
+            "/careers",
+            "/contact",
+            "/e-brochure",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc",
+            "/job-seekers",
+            "/jobs",
+            "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/jobs/dong-goi-thoi-vu-bac-giang",
+            "/jobs/kiem-tra-chat-luong-bac-giang",
+            "/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/jobs/nhan-vien-kho-thai-nguyen",
+            "/jobs/van-hanh-may-quang-ninh",
+            "/news",
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach",
+            "/partners",
+            "/privacy-policy",
+            "/saved-jobs",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment",
+            "/terms-of-use",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        },
+        {
+          "vi_tri": "Logo Minh Đức ở đầu trang",
+          "cong_dung": "Nhận diện thương hiệu và liên kết về trang chủ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/admin-demo",
+            "/careers",
+            "/contact",
+            "/e-brochure",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc",
+            "/job-seekers",
+            "/jobs",
+            "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/jobs/dong-goi-thoi-vu-bac-giang",
+            "/jobs/kiem-tra-chat-luong-bac-giang",
+            "/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/jobs/nhan-vien-kho-thai-nguyen",
+            "/jobs/van-hanh-may-quang-ninh",
+            "/news",
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach",
+            "/partners",
+            "/privacy-policy",
+            "/saved-jobs",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment",
+            "/terms-of-use",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh chia sẻ liên kết (Open Graph/Twitter)",
+          "cong_dung": "Hình ảnh hiển thị khi chia sẻ đường dẫn lên nền tảng hỗ trợ Open Graph hoặc Twitter.",
+          "cach_tai": [
+            "metadata"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/admin-demo",
+            "/careers",
+            "/contact",
+            "/e-brochure",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/en",
+            "/en/about-us",
+            "/en/admin-demo",
+            "/en/careers",
+            "/en/contact",
+            "/en/e-brochure",
+            "/en/education",
+            "/en/education/chinh-quy-cong-nghe",
+            "/en/education/tu-xa-ke-toan",
+            "/en/education/tu-xa-quan-tri",
+            "/en/events",
+            "/en/events/hanh-trang-tim-viec",
+            "/en/events/ngay-hoi-ket-noi-viec-lam",
+            "/en/events/toa-dam-ke-hoach-nhan-luc",
+            "/en/jobs",
+            "/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/en/jobs/nhan-vien-kho-thai-nguyen",
+            "/en/jobs/van-hanh-may-quang-ninh",
+            "/en/news",
+            "/en/news/an-toan-thong-tin-khi-tim-viec",
+            "/en/news/chon-cong-viec-phu-hop",
+            "/en/news/don-tiep-lao-dong-moi",
+            "/en/news/ho-so-xin-viec",
+            "/en/news/nhu-cau-tuyen-dung",
+            "/en/news/thong-tin-tuyen-dung-minh-bach",
+            "/en/partners",
+            "/en/privacy-policy",
+            "/en/saved-jobs",
+            "/en/services",
+            "/en/services/college-admissions",
+            "/en/services/hr-consulting",
+            "/en/services/labor-leasing",
+            "/en/services/labor-supply",
+            "/en/services/recruitment",
+            "/en/terms-of-use",
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja",
+            "/ja/about-us",
+            "/ja/admin-demo",
+            "/ja/careers",
+            "/ja/contact",
+            "/ja/e-brochure",
+            "/ja/education",
+            "/ja/education/chinh-quy-cong-nghe",
+            "/ja/education/tu-xa-ke-toan",
+            "/ja/education/tu-xa-quan-tri",
+            "/ja/events",
+            "/ja/events/hanh-trang-tim-viec",
+            "/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "/ja/jobs",
+            "/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "/ja/jobs/van-hanh-may-quang-ninh",
+            "/ja/news",
+            "/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "/ja/news/chon-cong-viec-phu-hop",
+            "/ja/news/don-tiep-lao-dong-moi",
+            "/ja/news/ho-so-xin-viec",
+            "/ja/news/nhu-cau-tuyen-dung",
+            "/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "/ja/partners",
+            "/ja/privacy-policy",
+            "/ja/saved-jobs",
+            "/ja/services",
+            "/ja/services/college-admissions",
+            "/ja/services/hr-consulting",
+            "/ja/services/labor-leasing",
+            "/ja/services/labor-supply",
+            "/ja/services/recruitment",
+            "/ja/terms-of-use",
+            "/job-seekers",
+            "/jobs",
+            "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/jobs/dong-goi-thoi-vu-bac-giang",
+            "/jobs/kiem-tra-chat-luong-bac-giang",
+            "/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/jobs/nhan-vien-kho-thai-nguyen",
+            "/jobs/van-hanh-may-quang-ninh",
+            "/ko",
+            "/ko/about-us",
+            "/ko/admin-demo",
+            "/ko/careers",
+            "/ko/contact",
+            "/ko/e-brochure",
+            "/ko/education",
+            "/ko/education/chinh-quy-cong-nghe",
+            "/ko/education/tu-xa-ke-toan",
+            "/ko/education/tu-xa-quan-tri",
+            "/ko/events",
+            "/ko/events/hanh-trang-tim-viec",
+            "/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "/ko/jobs",
+            "/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "/ko/jobs/van-hanh-may-quang-ninh",
+            "/ko/news",
+            "/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "/ko/news/chon-cong-viec-phu-hop",
+            "/ko/news/don-tiep-lao-dong-moi",
+            "/ko/news/ho-so-xin-viec",
+            "/ko/news/nhu-cau-tuyen-dung",
+            "/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "/ko/partners",
+            "/ko/privacy-policy",
+            "/ko/saved-jobs",
+            "/ko/services",
+            "/ko/services/college-admissions",
+            "/ko/services/hr-consulting",
+            "/ko/services/labor-leasing",
+            "/ko/services/labor-supply",
+            "/ko/services/recruitment",
+            "/ko/terms-of-use",
+            "/news",
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach",
+            "/partners",
+            "/privacy-policy",
+            "/saved-jobs",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment",
+            "/terms-of-use",
+            "/testimonials",
+            "/vi",
+            "/zh",
+            "/zh/about-us",
+            "/zh/admin-demo",
+            "/zh/careers",
+            "/zh/contact",
+            "/zh/e-brochure",
+            "/zh/education",
+            "/zh/education/chinh-quy-cong-nghe",
+            "/zh/education/tu-xa-ke-toan",
+            "/zh/education/tu-xa-quan-tri",
+            "/zh/events",
+            "/zh/events/hanh-trang-tim-viec",
+            "/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "/zh/jobs",
+            "/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "/zh/jobs/van-hanh-may-quang-ninh",
+            "/zh/news",
+            "/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "/zh/news/chon-cong-viec-phu-hop",
+            "/zh/news/don-tiep-lao-dong-moi",
+            "/zh/news/ho-so-xin-viec",
+            "/zh/news/nhu-cau-tuyen-dung",
+            "/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "/zh/partners",
+            "/zh/privacy-policy",
+            "/zh/saved-jobs",
+            "/zh/services",
+            "/zh/services/college-admissions",
+            "/zh/services/hr-consulting",
+            "/zh/services/labor-leasing",
+            "/zh/services/labor-supply",
+            "/zh/services/recruitment",
+            "/zh/terms-of-use"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/en/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ja/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/ko/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/terms-of-use",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/vi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/admin-demo",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/contact",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/events/toa-dam-ke-hoach-nhan-luc",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/dong-goi-thoi-vu-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/kiem-tra-chat-luong-bac-giang",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/nhan-vien-kho-thai-nguyen",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/jobs/van-hanh-may-quang-ninh",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/news/thong-tin-tuyen-dung-minh-bach",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/privacy-policy",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/saved-jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/services/recruitment",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/zh/terms-of-use"
+          ]
+        }
+      ],
+      "ghi_chu": "Logo Minh Đức được cung cấp trong tài liệu dự án; URL tệp nguồn cụ thể chưa được xác minh."
+    },
+    {
+      "ten_hien_thi": "Họa tiết góc khu giới thiệu",
+      "ten_tep": "edge-1-no-noise.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png",
+          "kich_thuoc_byte": 428728
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Giới thiệu Minh Đức",
+          "cong_dung": "Trang trí nền, không truyền đạt nội dung.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": ""
+    },
+    {
+      "ten_hien_thi": "Họa tiết góc khu chỉ số",
+      "ten_tep": "edge-2.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png",
+          "kich_thuoc_byte": 35147
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ chỉ số minh họa",
+          "cong_dung": "Trang trí nền, không truyền đạt nội dung.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": ""
+    },
+    {
+      "ten_hien_thi": "Họa tiết trái khu cảm nhận",
+      "ten_tep": "edge-3.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-3.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-3.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-3.png",
+          "kich_thuoc_byte": 83579
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-3.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Dải đối tác và thẻ cảm nhận minh họa",
+          "cong_dung": "Trang trí nền, không truyền đạt nội dung.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": ""
+    },
+    {
+      "ten_hien_thi": "Họa tiết phải khu cảm nhận",
+      "ten_tep": "edge-4.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-4.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-4.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-4.png",
+          "kich_thuoc_byte": 83711
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-4.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Dải đối tác và thẻ cảm nhận minh họa",
+          "cong_dung": "Trang trí nền, không truyền đạt nội dung.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": ""
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa thông tin tuyển dụng",
+      "ten_tep": "khung-luong-canh-tranh.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-1200.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-1200.webp",
+          "kich_thuoc_byte": 26750
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-480.webp",
+          "kich_thuoc_byte": 8668
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-960.webp",
+          "kich_thuoc_byte": 20132
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các bài viết liên quan",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/chon-cong-viec-phu-hop",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/thong-tin-tuyen-dung-minh-bach"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa nhân lực và sản xuất",
+      "ten_tep": "staffing-logictis-1.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-1200.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-1200.webp",
+          "kich_thuoc_byte": 42930
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-480.webp",
+          "kich_thuoc_byte": 12702
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-960.webp",
+          "kich_thuoc_byte": 29680
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các bài viết liên quan",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/thong-tin-tuyen-dung-minh-bach"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset",
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Dòng lịch sử hình thành",
+          "cong_dung": "Minh họa các giai đoạn phát triển trên thanh lịch sử.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu nội dung",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/services"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services"
+          ]
+        },
+        {
+          "vi_tri": "Thư viện ảnh sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Tổng quan sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/nhu-cau-tuyen-dung"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng Tầm nhìn",
+      "ten_tep": "Advantages-1.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-1.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-1.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-1.png",
+          "kich_thuoc_byte": 8886
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Advantages-1.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Giới thiệu và giá trị Minh Đức",
+          "cong_dung": "Biểu tượng minh họa cho thẻ Tầm nhìn.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng Sứ mệnh",
+      "ten_tep": "Advantages-2.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-2.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-2.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-2.png",
+          "kich_thuoc_byte": 4887
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Advantages-2.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Giới thiệu và giá trị Minh Đức",
+          "cong_dung": "Biểu tượng minh họa cho thẻ Sứ mệnh.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng Giá trị cốt lõi",
+      "ten_tep": "Advantages-3.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-3.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-3.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Advantages-3.png",
+          "kich_thuoc_byte": 8234
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Advantages-3.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Giới thiệu và giá trị Minh Đức",
+          "cong_dung": "Biểu tượng minh họa cho thẻ Giá trị cốt lõi.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa cơ hội việc làm",
+      "ten_tep": "Co-hoi-viec-lam-scaled.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-1600.webp",
+          "kich_thuoc_byte": 147770
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-480.webp",
+          "kich_thuoc_byte": 25570
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-960.webp",
+          "kich_thuoc_byte": 73498
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các bài viết liên quan",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/chon-cong-viec-phu-hop",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events",
+            "/events/hanh-trang-tim-viec",
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset",
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Dòng lịch sử hình thành",
+          "cong_dung": "Minh họa các giai đoạn phát triển trên thanh lịch sử.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        },
+        {
+          "vi_tri": "Dải dịch vụ liên quan",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us",
+            "/services",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu nội dung",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/services/college-admissions"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions"
+          ]
+        },
+        {
+          "vi_tri": "Thư viện ảnh sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Thẻ sự kiện trang chủ",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Tổng quan sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/ngay-hoi-ket-noi-viec-lam"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/careers",
+            "/education",
+            "/education/chinh-quy-cong-nghe",
+            "/education/tu-xa-ke-toan",
+            "/education/tu-xa-quan-tri",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/job-seekers",
+            "/jobs",
+            "/saved-jobs"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/job-seekers",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/jobs",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/saved-jobs"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/ho-so-xin-viec"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh giải pháp nhân sự 1",
+      "ten_tep": "GPNS-1.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-1114.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-1114.webp",
+          "kich_thuoc_byte": 33184
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-480.webp",
+          "kich_thuoc_byte": 11870
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-960.webp",
+          "kich_thuoc_byte": 26794
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/GPNS-1.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ chỉ số minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Các thẻ tin tức trang chủ",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Dải dịch vụ liên quan",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply"
+          ]
+        },
+        {
+          "vi_tri": "Khu vực video minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu nội dung",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/services/recruitment"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment"
+          ]
+        },
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh giải pháp nhân sự 2",
+      "ten_tep": "GPNS-2.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-1114.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-1114.webp",
+          "kich_thuoc_byte": 80424
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-480.webp",
+          "kich_thuoc_byte": 30292
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-960.webp",
+          "kich_thuoc_byte": 67344
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/GPNS-2.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ chỉ số minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Các thẻ tin tức trang chủ",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Dải dịch vụ liên quan",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/recruitment"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment"
+          ]
+        },
+        {
+          "vi_tri": "Khu vực video minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu nội dung",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/services/labor-supply"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply"
+          ]
+        },
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh giải pháp nhân sự 3",
+      "ten_tep": "GPNS-3.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-1114.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-1114.webp",
+          "kich_thuoc_byte": 36480
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-480.webp",
+          "kich_thuoc_byte": 13444
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-960.webp",
+          "kich_thuoc_byte": 29808
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/GPNS-3.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ chỉ số minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Các thẻ tin tức trang chủ",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Dòng lịch sử hình thành",
+          "cong_dung": "Minh họa các giai đoạn phát triển trên thanh lịch sử.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us"
+          ]
+        },
+        {
+          "vi_tri": "Dải dịch vụ liên quan",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us",
+            "/services",
+            "/services/college-admissions",
+            "/services/hr-consulting",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/services/recruitment"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment"
+          ]
+        },
+        {
+          "vi_tri": "Khu vực video minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu nội dung",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/services/hr-consulting",
+            "/services/labor-leasing"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing"
+          ]
+        },
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Minh họa nội dung giới thiệu dịch vụ.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa liên hệ",
+      "ten_tep": "Lien-he.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-1600.webp",
+          "kich_thuoc_byte": 151694
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-480.webp",
+          "kich_thuoc_byte": 18240
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-960.webp",
+          "kich_thuoc_byte": 62714
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Lien-he.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Thông tin địa điểm sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/contact"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/contact"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng giải pháp nhân sự 1",
+      "ten_tep": "Solution-Icon-1.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-1.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-1.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-1.png",
+          "kich_thuoc_byte": 7029
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-1.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Biểu tượng minh họa cho nội dung thẻ dịch vụ.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng giải pháp nhân sự 2",
+      "ten_tep": "Solution-Icon-2.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-2.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-2.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-2.png",
+          "kich_thuoc_byte": 5239
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-2.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Biểu tượng minh họa cho nội dung thẻ dịch vụ.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Biểu tượng giải pháp nhân sự 3",
+      "ten_tep": "Solution-Icon-3.png",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-3.png",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-3.png",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/mirror/www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-3.png",
+          "kich_thuoc_byte": 6827
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Solution-Icon-3.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Thẻ dịch vụ và giải pháp",
+          "cong_dung": "Biểu tượng minh họa cho nội dung thẻ dịch vụ.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa cung ứng nhân lực",
+      "ten_tep": "Staff-oursourcing.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-1600.webp",
+          "kich_thuoc_byte": 133010
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-480.webp",
+          "kich_thuoc_byte": 17558
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-960.webp",
+          "kich_thuoc_byte": 56360
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ chỉ số minh họa",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "background"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Khối giới thiệu tuyển dụng nội bộ",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/careers"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/partners",
+            "/services",
+            "/services/labor-leasing",
+            "/services/labor-supply",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-leasing",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/labor-supply",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/don-tiep-lao-dong-moi"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa tin tức",
+      "ten_tep": "Tin-tuc.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-1600.webp",
+          "kich_thuoc_byte": 183662
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-480.webp",
+          "kich_thuoc_byte": 23744
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-960.webp",
+          "kich_thuoc_byte": 82880
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các thẻ tin tức trang chủ",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa tuyển chọn nhân sự",
+      "ten_tep": "Executive-Search-banner.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp",
+          "kich_thuoc_byte": 171742
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-480.webp",
+          "kich_thuoc_byte": 27864
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-960.webp",
+          "kich_thuoc_byte": 80016
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Các bài viết liên quan",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/an-toan-thong-tin-khi-tim-viec",
+            "/news/don-tiep-lao-dong-moi",
+            "/news/ho-so-xin-viec",
+            "/news/nhu-cau-tuyen-dung",
+            "/news/thong-tin-tuyen-dung-minh-bach"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/don-tiep-lao-dong-moi",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/ho-so-xin-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/nhu-cau-tuyen-dung",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/thong-tin-tuyen-dung-minh-bach"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events",
+            "/events/ngay-hoi-ket-noi-viec-lam",
+            "/events/toa-dam-ke-hoach-nhan-luc"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/ngay-hoi-ket-noi-viec-lam",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/toa-dam-ke-hoach-nhan-luc"
+          ]
+        },
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src",
+            "srcset",
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Thư viện ảnh sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec"
+          ]
+        },
+        {
+          "vi_tri": "Tổng quan sự kiện",
+          "cong_dung": "Ảnh minh họa thông tin hoặc thẻ sự kiện.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/events/hanh-trang-tim-viec",
+            "/services/recruitment"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events/hanh-trang-tim-viec",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/recruitment"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/chon-cong-viec-phu-hop"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/chon-cong-viec-phu-hop"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh nền giới thiệu và sự kiện",
+      "ten_tep": "about-banner.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-1600.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-1600.webp",
+          "kich_thuoc_byte": 240312
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-480.webp",
+          "kich_thuoc_byte": 37316
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-960.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-960.webp",
+          "kich_thuoc_byte": 114370
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/10/about-banner.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Khối giới thiệu tuyển dụng nội bộ",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/careers"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/careers"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền phần đầu trang",
+          "cong_dung": "Ảnh nền minh họa cho tiêu đề và chủ đề trang.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/about-us",
+            "/e-brochure",
+            "/events",
+            "/services/college-admissions",
+            "/services/hr-consulting"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/e-brochure",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/events",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/college-admissions",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/services/hr-consulting"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Ảnh minh họa an toàn thông tin",
+      "ten_tep": "bao-mat-thong-tin-tien-luong.jpg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong.jpg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-480.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-480.webp",
+          "kich_thuoc_byte": 18836
+        },
+        {
+          "duong_dan": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-840.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-840.webp",
+          "kich_thuoc_byte": 37620
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong.jpg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Danh sách và tin nổi bật",
+          "cong_dung": "Ảnh minh họa cho nội dung tại vị trí này.",
+          "cach_tai": [
+            "srcset trang tin phân trang"
+          ],
+          "duong_dan_trang": [
+            "/news"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nội dung bài viết",
+          "cong_dung": "Ảnh minh họa nội dung bài viết hoặc thẻ tin.",
+          "cach_tai": [
+            "src",
+            "srcset"
+          ],
+          "duong_dan_trang": [
+            "/news/an-toan-thong-tin-khi-tim-viec"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/news/an-toan-thong-tin-khi-tim-viec"
+          ]
+        }
+      ],
+      "ghi_chu": "Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức."
+    },
+    {
+      "ten_hien_thi": "Video minh họa dùng chung",
+      "ten_tep": "hero-1600-e945407f.mp4",
+      "loai": "Video",
+      "duong_dan_logic": "/optimized/hero-1600-e945407f.mp4",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/optimized/hero-1600-e945407f.mp4",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/optimized/hero-1600-e945407f.mp4",
+          "kich_thuoc_byte": 2391743
+        }
+      ],
+      "url_nguon_goc": "https://www.hr2b.com/wp-content/uploads/2025/10/hr2b-intro.mp4",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Khu vực video minh họa",
+          "cong_dung": "Video minh họa phát trong hero hoặc khi mở hộp thoại từ các thẻ xem trước.",
+          "cach_tai": [
+            "video hộp thoại"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Ảnh nền và video hero đầu trang",
+          "cong_dung": "Video minh họa phát trong hero hoặc khi mở hộp thoại từ các thẻ xem trước.",
+          "cach_tai": [
+            "video động"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        }
+      ],
+      "ghi_chu": "Một video duy nhất dùng cho hero và cả bốn nút xem trước trong hộp thoại; bản dùng trên trang đã cắt, mã hóa lại và nối chuyển cảnh, không đồng nhất từng byte với video gốc; nội dung chỉ mang tính minh họa."
+    },
+    {
+      "ten_hien_thi": "Logo FOXCONN",
+      "ten_tep": "foxconn.svg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/partners/foxconn.svg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/partners/foxconn.svg",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners/foxconn.svg",
+          "kich_thuoc_byte": 8041
+        }
+      ],
+      "url_nguon_goc": "https://github.com/mcorrig4/cascade-money/blob/5de49fa24665a0d162ed0b66913a594181d3979f/app/public/logos/foxconn.svg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Dải đối tác và thẻ cảm nhận minh họa",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Lưới đối tác tiêu biểu",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/partners",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        }
+      ],
+      "ghi_chu": "URL nguồn là kho bên thứ ba dùng để lấy hình, không phải xác nhận trực tiếp từ chủ sở hữu thương hiệu."
+    },
+    {
+      "ten_hien_thi": "Logo Luxshare ICT",
+      "ten_tep": "luxshare.webp",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/partners/luxshare.webp",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/partners/luxshare.webp",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners/luxshare.webp",
+          "kich_thuoc_byte": 8252
+        }
+      ],
+      "url_nguon_goc": "https://github.com/htferretti/liberaopreto/blob/80b7f8d0c897190711099dc9822d306386a13a12/src/assets/manufactors/luxshare.png",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Dải đối tác và thẻ cảm nhận minh họa",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Lưới đối tác tiêu biểu",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/partners",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        }
+      ],
+      "ghi_chu": "URL nguồn là kho bên thứ ba dùng để lấy hình, không phải xác nhận trực tiếp từ chủ sở hữu thương hiệu."
+    },
+    {
+      "ten_hien_thi": "Logo SAMSUNG",
+      "ten_tep": "samsung.svg",
+      "loai": "Ảnh",
+      "duong_dan_logic": "/partners/samsung.svg",
+      "tep_dang_su_dung": [
+        {
+          "duong_dan": "/partners/samsung.svg",
+          "url_trang": "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners/samsung.svg",
+          "kich_thuoc_byte": 2270
+        }
+      ],
+      "url_nguon_goc": "https://github.com/simple-icons/simple-icons/blob/develop/icons/samsung.svg",
+      "vi_tri_su_dung": [
+        {
+          "vi_tri": "Dải đối tác và thẻ cảm nhận minh họa",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+          ]
+        },
+        {
+          "vi_tri": "Lưới đối tác tiêu biểu",
+          "cong_dung": "Nhận diện đối tác trong danh sách tên do Minh Đức cung cấp.",
+          "cach_tai": [
+            "src"
+          ],
+          "duong_dan_trang": [
+            "/",
+            "/about-us",
+            "/partners",
+            "/testimonials"
+          ],
+          "url_trang": [
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/about-us",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/partners",
+            "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/testimonials"
+          ]
+        }
+      ],
+      "ghi_chu": "URL nguồn là kho bên thứ ba dùng để lấy hình, không phải xác nhận trực tiếp từ chủ sở hữu thương hiệu."
+    }
+  ],
+  "ghi_chu_truy_cap": "Quyền xem Site giữ nguyên; các liên kết tài nguyên có thể yêu cầu quyền truy cập.",
+  "ghi_chu_khong_co_url": [
+    "Cờ chọn ngôn ngữ là hình SVG nội tuyến, không có URL ảnh riêng.",
+    "JEILTECH VINA và TACU hiển thị tên dạng chữ thay vì logo ảnh."
+  ],
+  "tong_so": 29
+}

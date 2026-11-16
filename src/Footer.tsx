@@ -22,7 +22,7 @@ export default function Footer(){
         <div className="footer-form-wrap"><h2 className="footer-title">Đón nhận cơ hội mới</h2><p>Đăng ký trải nghiệm nhận thông tin việc làm và hoạt động.</p><button className="btn footer-subscribe" type="button" aria-haspopup="dialog" onClick={()=>setSubscribe(true)}>Đăng ký nhận bản tin</button></div>
       </div>
 
-      <div className="footer-copyright"><div><p>© {new Date().getFullYear()} Minh Đức Vina.</p><small>Prototype · Hình ảnh tham chiếu từ HR2B</small></div><nav className="copyright-link"><Link to="/privacy-policy">Chính sách bảo mật</Link><Link to="/terms-of-use">Điều khoản sử dụng</Link><Link to="/contact">Liên hệ & chi nhánh</Link></nav></div>
+      <div className="footer-copyright"><div><p>© {new Date().getFullYear()} Minh Đức Vina.</p><small>Prototype · Nội dung minh họa</small></div><nav className="copyright-link"><Link to="/privacy-policy">Chính sách bảo mật</Link><Link to="/terms-of-use">Điều khoản sử dụng</Link><Link to="/contact">Liên hệ & chi nhánh</Link></nav></div>
     </div>
     {subscribe&&<Modal title="Đón nhận cơ hội mới" onClose={()=>setSubscribe(false)}><form className="newsletter-dialog" onSubmit={event=>{event.preventDefault();setFeedback('Đã đăng ký thử. Email chưa được gửi hoặc lưu.');setEmail('')}}><label>Email<input required type="email" aria-label="Email nhận bản tin" placeholder="Email của bạn" value={email} onChange={event=>setEmail(event.target.value)}/></label><button className="btn" type="submit">Đăng ký nhận bản tin <ArrowRight size={20}/></button><p role="status">{feedback||'Biểu mẫu minh họa trong prototype.'}</p></form></Modal>}
   </footer>
