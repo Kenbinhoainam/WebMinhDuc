@@ -1,14 +1,14 @@
 import {build} from 'esbuild';
-import {mkdir,rm} from 'node:fs/promises';
+import {mkdtemp,rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {JSDOM} from 'jsdom';
 import assert from 'node:assert/strict';
-const dir='.navigation-test';
-await mkdir(dir,{recursive:true});
+const dir=await mkdtemp('.navigation-test-');
 try {
  await build({stdin:{contents:"export {Header,PageTransition} from './src/App'; export {loadLocale} from './src/i18n-runtime/catalog'; export {LocaleProvider} from './src/i18n';",resolveDir:process.cwd(),sourcefile:'navigation-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:`${dir}/bundle.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
  const dom=new JSDOM('<div id="root"></div><button id="outside">Outside</button>',{url:'https://example.test/',pretendToBeVisual:true});
  for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,key,{value:dom.window[key],configurable:true});
+ const breakpointListeners=new Set();window.matchMedia=()=>({matches:true,addEventListener:(_,listener)=>breakpointListeners.add(listener),removeEventListener:(_,listener)=>breakpointListeners.delete(listener)});
  globalThis.IS_REACT_ACT_ENVIRONMENT=true;
  const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');
  const {Header,PageTransition,LocaleProvider,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
@@ -17,6 +17,8 @@ try {
  const expectedHome={vi:'Trang chủ',en:'Home',zh:'首页',ko:'홈',ja:'ホーム'};
  for(const locale of ['vi','en','zh','ko','ja']){
   await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale},React.createElement(Header)))));
+  const row=document.querySelector('.header-inner');assert.deepEqual([...row.children].map(el=>el.className),['brand','desktop-nav','header-actions']);
+  assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-saved','language-selector','header-contact','menu-button']);
   const groups=[...document.querySelectorAll('.desktop-nav-group')];assert.equal(groups.length,7);
   assert.deepEqual(groups.map(g=>g.querySelector('a').getAttribute('href')),['/','/about-us','/services','/jobs','/careers','/news','/contact']);
   assert.equal(groups[0].querySelector('a').textContent,expectedHome[locale]);
@@ -25,8 +27,11 @@ try {
   assert.match(groups[3].querySelector('.desktop-subnav a').getAttribute('href'),/skillLevel=.*#job-listings/);
   const buttons=[...document.querySelectorAll('.desktop-nav-heading button')];assert.equal(buttons.length,6);
   const button=buttons[0],panel=document.getElementById(button.getAttribute('aria-controls'));
+  groups[0].querySelector('a').focus();await act(()=>{for(const listener of [...breakpointListeners])listener({matches:false})});await act(async()=>new Promise(resolve=>setTimeout(resolve,25)));assert.equal(document.activeElement,document.querySelector('.menu-button'),'focused top-level link moves to visible menu on resize');
   assert.ok(button.getAttribute('aria-label'));assert.equal(button.getAttribute('aria-expanded'),'false');assert.equal(panel.hidden,true);
   await act(()=>button.click());assert.equal(button.getAttribute('aria-expanded'),'true');assert.equal(panel.hidden,false);
+  await act(()=>{for(const listener of [...breakpointListeners])listener({matches:false})});assert.equal(panel.hidden,true);
+  await act(()=>button.click());
   await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
   assert.equal(panel.hidden,true);assert.equal(document.activeElement,button);
   await act(()=>button.click());await act(()=>document.getElementById('outside').dispatchEvent(new dom.window.Event('pointerdown',{bubbles:true})));
@@ -35,11 +40,12 @@ try {
   await act(()=>document.dispatchEvent(new dom.window.CustomEvent('header-overlay-open',{detail:{owner:'language'}})));assert.equal(buttons[1].getAttribute('aria-expanded'),'false');
   await act(()=>button.click());await act(()=>button.dispatchEvent(new dom.window.FocusEvent('focusout',{bubbles:true,relatedTarget:document.getElementById('outside')})));assert.equal(panel.hidden,true);
   await act(()=>document.querySelector('.menu-button').click());
+  assert.equal(document.querySelector('.drawer-saved').getAttribute('href'),'/saved-jobs');
   const mobileGroups=[...document.querySelectorAll('.drawer-group')];assert.equal(mobileGroups.length,7);assert.deepEqual(mobileGroups.map(g=>g.querySelectorAll('.drawer-subnav a').length),[0,4,5,3,4,2,1]);
   const mobileButtons=[...document.querySelectorAll('.drawer-group-heading button')];assert.equal(mobileButtons.length,6);
   await act(()=>mobileButtons[0].click());assert.equal(mobileButtons[0].getAttribute('aria-expanded'),'true');assert.equal(document.getElementById(mobileButtons[0].getAttribute('aria-controls')).hidden,false);
   await act(()=>mobileButtons[1].click());assert.equal(mobileButtons[0].getAttribute('aria-expanded'),'false');assert.equal(mobileButtons[1].getAttribute('aria-expanded'),'true');
-  await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));assert.equal(document.querySelector('.navigation-panel'),null);
+  await act(()=>{for(const listener of [...breakpointListeners])listener({matches:true})});assert.equal(document.querySelector('.navigation-panel'),null);
  }
  for(const [path,parent] of [['/partners','/about-us'],['/e-brochure','/about-us'],['/events','/news'],['/education','/jobs']]){
   await act(()=>root.render(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{initialEntries:[path],key:path},React.createElement(Header)))));

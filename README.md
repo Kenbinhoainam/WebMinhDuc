@@ -1,6 +1,8 @@
-# Minh Đức Vina — Prototype 5 / Glass navigation & motion
+# Minh Đức Vina — Prototype 6 / Transparent single-row header
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
+
+Quy trình và tiêu chí chất lượng cho các nhiệm vụ tiếp theo được lưu tại [AGENTS.md](AGENTS.md).
 
 ## Chạy dự án
 
@@ -19,6 +21,7 @@ npm run test:review
 npm run test:catalog
 npm run test:flagship
 npm run test:sitemap
+npm run test:header
 npm run audit:i18n
 ```
 
@@ -26,7 +29,7 @@ npm run audit:i18n
 
 ## Nâng cấp flagship
 
-Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header, menu con và chọn ngôn ngữ dùng kính xanh xuyên thấu; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
 [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-current.csv).
 

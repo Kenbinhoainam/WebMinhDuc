@@ -18,7 +18,7 @@ try {
  const root=createRoot(document.getElementById('root'));
  await act(async()=>root.render(React.createElement(LocaleProvider,{value:'ko'},React.createElement(MemoryRouter,{initialEntries:['/jobs?q=kho#details']},React.createElement(LanguageSelector)))));
  const trigger=document.querySelector('.language-trigger');
- assert.equal(trigger.dataset.locale,'ko'); assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ assert.equal(trigger.dataset.locale,'ko'); assert.match(trigger.textContent,/KO/); assert.match(trigger.getAttribute('aria-label'),/한국어/); assert.equal(trigger.getAttribute('aria-expanded'),'false');
  let openedBy; document.addEventListener('header-overlay-open', event => { openedBy=event.detail?.owner; });
  await act(async()=>trigger.click());
  assert.equal(openedBy,'language');
@@ -37,6 +37,12 @@ try {
  await act(async()=>trigger.click());
  await act(async()=>document.dispatchEvent(new CustomEvent('header-overlay-open',{detail:{owner:'navigation'}})));
  assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ await act(async()=>trigger.click());
+ await act(async()=>{links[0].focus(); document.dispatchEvent(new CustomEvent('header-overlay-open',{detail:{owner:'resize'}}));});
+ assert.equal(trigger.getAttribute('aria-expanded'),'false'); assert.equal(document.activeElement,trigger);
+ await act(async()=>trigger.click());
+ await act(async()=>{document.getElementById('outside').focus(); document.dispatchEvent(new CustomEvent('header-overlay-open',{detail:{owner:'resize'}}));});
+ assert.equal(document.activeElement,document.getElementById('outside'));
  await act(async()=>root.unmount()); dom.window.close();
  console.log('PASS locale selector');
 } finally {await rm(temp,{recursive:true,force:true});}

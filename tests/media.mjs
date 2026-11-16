@@ -23,14 +23,44 @@ if(!process.argv.includes('--case')) {
  let paused=true,plays=0;Object.defineProperty(window.HTMLMediaElement.prototype,'paused',{get(){return paused}});
  window.HTMLMediaElement.prototype.play=function(){paused=false;plays++;this.dispatchEvent(new window.Event('play'));return Promise.resolve()};
  window.HTMLMediaElement.prototype.pause=function(){paused=true;this.dispatchEvent(new window.Event('pause'))};
- const React=await import('react');const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');const {default:Hero}=await import(pathToFileURL(`${process.cwd()}/${temp}/hero.mjs`).href);
- const root=createRoot(window.document.getElementById('root'));root.render(React.createElement(MemoryRouter,null,React.createElement(Hero)));
- await new Promise(r=>setTimeout(r,100));const video=window.document.querySelector('video'),button=window.document.querySelector('.video-control');assert.ok(video&&button);assert.equal(video.getAttribute('src'),null);
- if(mode==='race'){button.click();button.click();assert.equal(paused,true);await new Promise(r=>setTimeout(r,1600));assert.equal(plays,1,'pending autoplay must not restart a manual pause');}
- else if(mode==='preference'){button.click();assert.equal(paused,false);motion.matches=true;listeners.motion();assert.equal(paused,true,'new reduced-motion preference pauses manual playback');motion.matches=false;listeners.motion();await new Promise(r=>setTimeout(r,1600));assert.equal(plays,1,'preference change must not resume playback');button.click();connection.saveData=true;listeners.connection();assert.equal(paused,true,'new data-saving preference pauses manual playback');}
- else if(mode==='observer'){await new Promise(r=>setTimeout(r,1600));assert.equal(video.getAttribute('src'),null,'observer failure keeps poster');button.click();assert.equal(plays,1,'manual playback still works');}
- else {await new Promise(r=>setTimeout(r,1600));
- if(mode==='desktop') {assert.match(video.getAttribute('src'),/hero-1280/);assert.equal(plays,1);observerCallback([{isIntersecting:false}]);assert.equal(paused,true);observerCallback([{isIntersecting:true}]);await new Promise(r=>setTimeout(r,1600));assert.equal(plays,2);button.click();assert.equal(paused,true);observerCallback([{isIntersecting:false}]);observerCallback([{isIntersecting:true}]);await new Promise(r=>setTimeout(r,1600));assert.equal(plays,2,'user pause must persist');}
- else {assert.equal(video.getAttribute('src'),null,'no automatic video download');button.click();assert.match(video.getAttribute('src'),/hero-1280/);assert.equal(plays,1,'manual play');}}
- root.unmount();dom.window.close();console.log(`PASS media ${mode}`);
+ globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+ const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');const {default:Hero}=await import(pathToFileURL(`${process.cwd()}/${temp}/hero.mjs`).href);
+ const root=createRoot(window.document.getElementById('root'));
+ // Flush the initial commit and passive effects explicitly. A fixed render sleep
+ // can expire after DOM creation but before preference listeners are installed.
+ const waitForAutoplay=()=>act(async()=>{await new Promise(resolve=>setTimeout(resolve,1600))});
+ const observe=visible=>act(async()=>observerCallback([{isIntersecting:visible}]));
+ try {
+  await act(async()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
+  const video=window.document.querySelector('video'),button=window.document.querySelector('.video-control');
+  assert.ok(video&&button);assert.equal(video.getAttribute('src'),null);
+  for(const preference of ['motion','narrow','connection'])assert.equal(typeof listeners[preference],'function',`${preference} listener is installed after effect flush`);
+  const click=()=>act(async()=>button.click());
+  if(mode==='race') {
+   await click();await click();assert.equal(paused,true);await waitForAutoplay();
+   assert.equal(plays,1,'pending autoplay must not restart a manual pause');
+  } else if(mode==='preference') {
+   await click();assert.equal(paused,false);
+   await act(async()=>{motion.matches=true;listeners.motion()});assert.equal(paused,true,'new reduced-motion preference pauses manual playback');
+   await act(async()=>{motion.matches=false;listeners.motion()});await waitForAutoplay();
+   assert.equal(plays,1,'preference change must not resume playback');
+   await click();await act(async()=>{connection.saveData=true;listeners.connection()});
+   assert.equal(paused,true,'new data-saving preference pauses manual playback');
+  } else if(mode==='observer') {
+   await waitForAutoplay();assert.equal(video.getAttribute('src'),null,'observer failure keeps poster');
+   await click();assert.equal(plays,1,'manual playback still works');
+  } else {
+   await waitForAutoplay();
+   if(mode==='desktop') {
+    assert.match(video.getAttribute('src'),/hero-1280/);assert.equal(plays,1);
+    await observe(false);assert.equal(paused,true);await observe(true);await waitForAutoplay();assert.equal(plays,2);
+    await click();assert.equal(paused,true);await observe(false);await observe(true);await waitForAutoplay();
+    assert.equal(plays,2,'user pause must persist');
+   } else {
+    assert.equal(video.getAttribute('src'),null,'no automatic video download');await click();
+    assert.match(video.getAttribute('src'),/hero-1280/);assert.equal(plays,1,'manual play');
+   }
+  }
+  console.log(`PASS media ${mode}`);
+ } finally {await act(async()=>root.unmount());dom.window.close()}
 }

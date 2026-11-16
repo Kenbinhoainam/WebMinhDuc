@@ -3,6 +3,7 @@ import {mkdir, rm, readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
+import postcss from 'postcss';
 
 // Independent interaction checks. This deliberately makes no layout or CWV claim.
 const temp='.flagship-review';
@@ -61,7 +62,8 @@ try {
  await act(()=>new Promise(resolve=>setTimeout(resolve,1700)));
  assert.equal(paused,true,'quick manual play then pause must cancel pending autoplay');assert.equal(plays,1);
  // Regression for the observed production cascade: importing base CSS after App
- // reinstated the desktop hamburger and the shorter anchor offset. This checks
+ // reinstated the desktop hamburger. The compact header now uses a 100px
+ // anchor offset instead of the former two-row 145px offset. This checks
  // compiled rule order only; it is not a browser layout assertion.
  const builtHtml=await readFile('dist/index.html','utf8');
  const builtDocument=new window.DOMParser().parseFromString(builtHtml,'text/html');
@@ -71,9 +73,11 @@ try {
  const baseDisplay=css.indexOf('.header-saved,.menu-button{display:flex');
  const desktopHide=css.indexOf('.menu-button{display:none');
  assert.ok(baseDisplay>=0&&desktopHide>baseDisplay,'desktop hamburger hide must follow base utility display');
- const baseOffset=css.indexOf('scroll-padding-top:100px');
- const desktopOffset=css.indexOf('scroll-padding-top:145px');
- assert.ok(baseOffset>=0&&desktopOffset>baseOffset,'desktop anchor offset must follow base offset');
+ const rules=postcss.parse(css);let compactDesktopOffset=false,compactHeight=false;
+ rules.walkDecls('scroll-padding-top',decl=>assert.notEqual(decl.value,'145px','obsolete two-row offset must not survive'));
+ rules.walkRules('.header-inner',rule=>rule.walkDecls('height',decl=>{if(decl.value==='86px')compactHeight=true}));
+ rules.walkAtRules('media',media=>{if(/min-width:\s*1280px/.test(media.params))media.walkRules('html',rule=>rule.walkDecls('scroll-padding-top',decl=>{if(decl.value==='100px')compactDesktopOffset=true}))});
+ assert.ok(compactHeight&&compactDesktopOffset,'single-row header height and desktop anchor offset are present');
  assert.equal(errors.length,0,errors.join('\n'));
  console.log('PASS independent flagship: five locale routes, mutually exclusive disclosures/search, Escape focus, destination links, poster-first media, quick manual pause, compiled CSS order');
 } finally {
