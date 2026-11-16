@@ -1,0 +1,51 @@
+import {useRef} from 'react';
+import {Link, useParams} from 'react-router-dom';
+import {ArrowRight, ChevronLeft, ChevronRight, Users, ClipboardCheck, Handshake} from 'lucide-react';
+import {PageHero, SectionHeading, ButtonLink, useContact} from '../../shared';
+import {RevealFrame} from '../../motion';
+import {useTranslation} from '../../i18n';
+import {useHomeCarousel, advanceHomeRail} from '../../useHomeCarousel';
+import PartnersStrip from '../../PartnersStrip';
+import {assets, services} from './data';
+import {ServiceCards, InfoContact, InfoNotFound, FAQ, InfoCarouselPause} from './components';
+import './services-reference.css';
+export function ServicesPage() {
+  const openContact = useContact();
+  return <>
+    <PageHero title="Giải pháp nhân lực" description="Kết nối đúng nhu cầu. Đồng hành từng bước." image={assets.services} />
+    <section className="section md-ref-service-intro"><div className="container"><RevealFrame effect="up" delay={0}><h2>Cùng bạn xây dựng<br/>đội ngũ phù hợp</h2></RevealFrame><div className="md-ref-service-intro-row"><RevealFrame effect="left" delay={0}><img src={assets.logistics} alt="Nhân lực cho sản xuất và vận hành" loading="lazy"/></RevealFrame><RevealFrame effect="right" delay={0}><div><span className="eyebrow">GIẢI PHÁP TỪ MINH ĐỨC</span><p className="info-lead">Từ tìm nguồn lao động đến giới thiệu việc làm, chúng tôi bắt đầu với những điều bạn thực sự cần.</p><p>Chia sẻ kế hoạch tuyển dụng hoặc mong muốn tìm việc của bạn. Minh Đức sẽ cùng làm rõ yêu cầu và trao đổi hướng kết nối phù hợp.</p><button className="btn" type="button" onClick={() => openContact()}>Trao đổi nhu cầu <ArrowRight size={18}/></button></div></RevealFrame></div></div>
+    <div className="md-ref-service-metrics"><img className="md-ref-service-edge" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/15.png" alt="" aria-hidden="true"/><div className="container"><p>Số liệu mô phỏng cho giao diện</p><div><RevealFrame effect="up" delay={0}><article><strong>1.200+</strong><span>Kết nối việc làm</span></article></RevealFrame><RevealFrame effect="up" delay={400}><article><strong>80+</strong><span>Nhu cầu doanh nghiệp</span></article></RevealFrame><RevealFrame effect="up" delay={1}><article><strong>15+</strong><span>Khu vực kết nối</span></article></RevealFrame></div></div></div></section>
+    <section className="section wide"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Một kết nối. Nhiều cơ hội."/></RevealFrame><RevealFrame effect="up" delay={0}><ServiceCards/></RevealFrame></section>
+  </>;
+}
+
+export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
+ const area=useRef<HTMLElement>(null), track=useRef<HTMLDivElement>(null), t=useTranslation();
+ const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.info-testimonial-rail,.info-rail-controls');
+ const stories=[{quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.',name:'Chị Lan Anh',role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},{quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.',name:'Anh Minh',role:'Người lao động giả định'},{quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.',name:'Chị Thu Hà',role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'}];
+ const scroll=(direction:number)=>track.current?.scrollBy({left:direction*(track.current?.clientWidth||350)*.6,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+ return <section className="section info-service-customers" ref={area}><div className="container">{!logosAfter&&<><RevealFrame effect="zoom" delay={0}><SectionHeading title="Đối tác tiêu biểu"/></RevealFrame><RevealFrame effect="up" delay={0}><PartnersStrip/></RevealFrame></>}<RevealFrame effect="zoom" delay={0}><SectionHeading title={t({vi:"Chia sẻ minh họa",en:"Illustrative stories",zh:"示例分享",ko:"예시 이야기",ja:"参考事例"})}/></RevealFrame><p className="info-content-note">Tình huống minh họa · Nhân vật giả định</p><RevealFrame effect="up" delay={0}><div className="info-testimonial-rail" ref={track} tabIndex={0} role="region" aria-label="Tình huống minh họa · Nhân vật giả định">{stories.map(story=><blockquote key={story.quote}><p>{story.quote}</p><footer><span className="info-testimonial-avatar" aria-hidden="true"><Users size={24}/></span><span><strong>{story.name}</strong><small>{story.role}</small></span></footer></blockquote>)}</div></RevealFrame><InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/><div className="info-rail-controls"><button type="button" className="circle-button" aria-label="Câu chuyện trước" onClick={()=>scroll(-1)}><ChevronLeft/></button><button type="button" className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={()=>scroll(1)}><ChevronRight/></button></div>{logosAfter&&<><RevealFrame effect="zoom" delay={0}><SectionHeading title="Đối tác tiêu biểu"/></RevealFrame><RevealFrame effect="up" delay={0}><PartnersStrip/></RevealFrame></>}</div></section>;
+}
+function ServiceHighlights({service}:{service:typeof services[number]}){return <section className="section container md-ref-service-highlights"><RevealFrame effect="up" delay={0}><div>{service.benefits.map((item,index)=><article key={item.title}><h2>{item.title}</h2><p>{item.text}</p><span aria-hidden="true">{index===0?<Users/>:index===1?<ClipboardCheck/>:<Handshake/>}</span></article>)}</div></RevealFrame></section>}
+export function ServicePage() {
+  const { slug } = useParams();
+  const service = services.find(s => s.slug === slug);
+  const openContact = useContact();
+  if (!service) return <InfoNotFound kind="Dịch vụ" />;
+  const contactServiceTitle = service.title;
+  return <>
+    <PageHero title={service.title} description={service.short} image={service.banner} />
+
+    <section className="section container md-ref-detail-section"><RevealFrame effect="left" delay={0}><h2>{service.title}</h2></RevealFrame><div className="md-ref-detail-intro"><RevealFrame effect="left" delay={0}><img src={service.image} alt="Hình ảnh minh họa dịch vụ" loading="lazy"/></RevealFrame><RevealFrame effect="right" delay={0}><div><p>{service.intro}</p><p>{service.audience}</p>{service.slug === 'college-admissions' && <p><Link to="/education" className="info-text-link">Khám phá chương trình tuyển sinh <ArrowRight size={18}/></Link></p>}<button className="btn" onClick={()=>openContact(contactServiceTitle)} type="button">Nhận tư vấn <ArrowRight size={18}/></button></div></RevealFrame></div></section>
+    <section className="section container md-ref-detail-section"><RevealFrame effect="up" delay={0}><h2>Giá trị trong từng kết nối</h2></RevealFrame><RevealFrame effect="up" delay={0}><div className="md-ref-detail-copy">{service.benefits.map(item=><article key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}{service.slug!=='hr-consulting' && service.slug!=='college-admissions' && <img className="md-ref-inline-illustration" src={service.image} alt="" loading="lazy"/>}</div></RevealFrame></section>
+    <section className="section container md-ref-detail-section"><RevealFrame effect="up" delay={0}><h2>Quy trình phối hợp</h2></RevealFrame><p>Các bước tham khảo; phạm vi cụ thể được thống nhất theo nhu cầu thực tế.</p><RevealFrame effect="up" delay={0}><><ol className="md-ref-detail-process">{service.steps.map(step=><li key={step}>{step}</li>)}</ol>{service.slug!=='hr-consulting' && service.slug!=='college-admissions' && <img className="md-ref-inline-illustration" src={service.banner} alt="" loading="lazy"/>}</></RevealFrame></section>
+    <section className="section container md-ref-detail-section"><RevealFrame effect="up" delay={0}><h2>Trao đổi rõ nhu cầu, thống nhất rõ phạm vi.</h2></RevealFrame><RevealFrame effect="up" delay={0}><div className="md-ref-detail-copy"><p>{service.audience}</p><p>{service.intro}</p></div></RevealFrame></section>
+    {service.slug !== 'hr-consulting' && <ServiceHighlights service={service}/>}
+    <section className="section container md-ref-detail-section md-ref-fee-section"><RevealFrame effect="up" delay={0}><h2>Cơ cấu chi phí tham khảo</h2></RevealFrame><RevealFrame effect="up" delay={0}><p>Bảng minh họa; chi phí thực tế được thống nhất theo từng nhu cầu.</p>{service.slug==='recruitment'?<div className="md-ref-fee-highlight"><p>Trao đổi theo nhu cầu</p></div>:<div className="info-fee-table-wrap" role="region" aria-label="Cơ cấu chi phí tham khảo" tabIndex={0}><table className="info-fee-table"><caption>Cơ cấu chi phí tham khảo</caption><thead><tr><th scope="col">Hạng mục</th><th scope="col">Phạm vi</th><th scope="col">Chi phí</th></tr></thead><tbody>{service.benefits.map(benefit=><tr key={benefit.title}><th scope="row">{benefit.title}</th><td>{benefit.text}</td><td>Trao đổi theo nhu cầu</td></tr>)}</tbody></table></div>}<button className="btn" onClick={()=>openContact(contactServiceTitle)} type="button">Yêu cầu tư vấn <ArrowRight size={18}/></button></RevealFrame></section>
+    {service.slug === 'hr-consulting' && <ServiceHighlights service={service}/>}
+    <section className="section container info-faq-section"><RevealFrame effect="up" delay={0}><SectionHeading title="Câu hỏi thường gặp" description="Những thông tin thường gặp về dịch vụ."/></RevealFrame><RevealFrame effect="up" delay={0}><FAQ questions={service.questions}/></RevealFrame></section>
+    {service.slug !== 'recruitment' && <ServiceCustomers />}
+    <section className="section wide"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Khám phá dịch vụ khác"/></RevealFrame><RevealFrame effect="up" delay={1}><ServiceCards exclude={service.slug}/></RevealFrame></section><InfoContact />
+  </>;
+}
+

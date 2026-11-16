@@ -1,4 +1,6 @@
 import CareersSections from './CareersSections';
+import careersMedia from './careers-media.json';
+import {RevealFrame} from './motion';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Bookmark, BriefcaseBusiness, CheckCircle2, ChevronLeft, ChevronRight, Clock3, FileUp, MapPin, Phone, Search, SlidersHorizontal, Wallet } from 'lucide-react';
@@ -73,10 +75,9 @@ function SaveButton({ job, showLabel = false }: { job: Job; showLabel?: boolean 
 function JobCard({ job }: { job: Job }) {
   return <article className="job-card">
     <div className="job-card-heading"><h3><Link to={`/jobs/${job.slug}`}>{job.title}</Link></h3><SaveButton job={job} /></div>
-    <div className="job-card-top"><span className="job-category"><span>{job.category}</span> · <span>{job.status === 'closed' ? 'Đã đóng' : 'Đang tuyển'}</span></span></div>
+    {job.status==='closed'&&<span className="job-category">Đã đóng</span>}
     <div className="job-card-specs"><p><Wallet size={17} aria-hidden="true" /><strong>{job.salary}</strong></p><p><MapPin size={17} aria-hidden="true" />{job.location}<span className="job-spec-divider" aria-hidden="true">·</span>{job.type}</p></div>
-    <div className="job-tags">{job.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-    <div className="job-card-footer"><small>Vị trí minh họa</small><Link to={`/jobs/${job.slug}`}>Xem chi tiết <ArrowRight size={17} aria-hidden="true" /></Link></div>
+    <div className="job-card-footer"><Link to={`/jobs/${job.slug}`}>Xem chi tiết <ArrowRight size={17} aria-hidden="true" /></Link></div>
   </article>;
 }
 
@@ -107,24 +108,24 @@ function JobBrowser({ internal = false, savedOnly = false }: { internal?: boolea
   const reset = () => { setParams({}, { replace: true }); setPage(1); };
   const scrollToResults = () => listRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   const changePage = (next: number) => { setPage(next); scrollToResults(); };
-  return <div className="jobs-browser">
-    <div className="jobs-heading-row"><h2>{savedOnly ? 'Danh sách đã lưu' : internal ? 'Cơ hội trong đội ngũ Minh Đức' : 'Cơ hội việc làm dành cho bạn'}</h2>{!savedOnly && <Link className="jobs-saved-link" to="/saved-jobs"><Bookmark size={18} aria-hidden="true" />Việc đã lưu <span>{count}</span></Link>}</div>
-    <form className="jobs-filters" role="search" aria-label="Tìm việc làm" onSubmit={event => { event.preventDefault(); setPage(1); scrollToResults(); }}>
+  return <div className={`jobs-browser ${internal ? "is-internal" : ""}`}>
+    <RevealFrame effect="zoom"><div className="jobs-heading-row"><h2>{savedOnly ? 'Danh sách đã lưu' : internal ? 'Cơ hội trong đội ngũ Minh Đức' : 'Cơ hội việc làm dành cho bạn'}</h2>{!savedOnly && <Link className="jobs-saved-link" to="/saved-jobs"><Bookmark size={18} aria-hidden="true" />Việc đã lưu <span>{count}</span></Link>}</div></RevealFrame>
+    <RevealFrame><form className="jobs-filters" role="search" aria-label="Tìm việc làm" onSubmit={event => { event.preventDefault(); setPage(1); scrollToResults(); }}>
       <div className="jobs-filter-field jobs-keyword"><label htmlFor="jobs-query">Từ khóa</label><div className="jobs-input-icon"><Search size={18} aria-hidden="true" /><input id="jobs-query" type="search" value={query} placeholder="Tên công việc, kỹ năng…" onChange={event => updateFilter('q', event.target.value)} /></div></div>
       <div className="jobs-filter-field"><label htmlFor="jobs-location">Địa điểm</label><select id="jobs-location" value={location} onChange={event => updateFilter('location', event.target.value)}><option value="">Tất cả địa điểm</option>{LOCATIONS.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
       <div className="jobs-filter-field"><label htmlFor="jobs-type">Loại công việc</label><select id="jobs-type" value={type} onChange={event => updateFilter('type', event.target.value)}><option value="">Tất cả loại việc</option>{TYPES.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
       {Object.entries(filterOptions).map(([key, field]) => <div className="jobs-filter-field" key={key}><label htmlFor={`jobs-${key}`}>{field.label}</label><select id={`jobs-${key}`} value={field.options.some(option => option[0] === params.get(key)) ? params.get(key) ?? '' : ''} onChange={event => updateFilter(key, event.target.value)}><option value="">Tất cả</option>{field.options.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>)}
       <button className="btn jobs-search-button" type="submit"><Search size={18} aria-hidden="true" />Tìm việc</button>
-    </form>
+    </form></RevealFrame>
     <div className="jobs-result-bar" ref={listRef}><p role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {t('cho')} “{query}”</>}</p>{(query || location || type || Object.keys(filterOptions).some(key => params.get(key))) && <button type="button" onClick={reset}><SlidersHorizontal size={15} aria-hidden="true" />Xóa bộ lọc</button>}</div>
-    {filtered.length > 0 ? <div className="jobs-grid">{filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(job => <JobCard key={job.id} job={job} />)}</div> : <EmptyJobs saved={savedOnly && allJobs.length === 0} onReset={reset} />}
+    {filtered.length > 0 ? <RevealFrame delayMs={400}><div className="jobs-grid">{filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(job => <JobCard key={job.id} job={job} />)}</div></RevealFrame> : <EmptyJobs saved={savedOnly && allJobs.length === 0} onReset={reset} />}
     {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={currentPage === 1} aria-label="Trang trước" onClick={() => changePage(currentPage - 1)}><ChevronLeft size={18} /></button>{Array.from({ length: totalPages }, (_, index) => index + 1).map(number => <button type="button" key={number} aria-label={`${t('Trang')} ${number}`} aria-current={currentPage === number ? 'page' : undefined} onClick={() => changePage(number)}>{number}</button>)}<button type="button" disabled={currentPage === totalPages} aria-label="Trang sau" onClick={() => changePage(currentPage + 1)}><ChevronRight size={18} /></button></nav>}
     <p className="jobs-data-note">Các vị trí và mức thu nhập trên đây là dữ liệu minh họa cho prototype, chưa phải thông báo tuyển dụng. Thu nhập thực tế cần được xác nhận khi tư vấn.</p>
   </div>;
 }
 
 export function JobsPage() {
-  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>Một công việc phù hợp.<br />Một khởi đầu vững vàng.</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div></div><div id="job-listings"><JobBrowser /></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section><CTASection /></>;
+  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><RevealFrame><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>Một công việc phù hợp. Một khởi đầu vững vàng.</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div></div></RevealFrame><div id="job-listings"><JobBrowser /></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section></>;
 }
 
 export function SavedJobsPage() {
@@ -132,7 +133,7 @@ export function SavedJobsPage() {
 }
 
 export function CareersPage() {
-  return <><PageHero title="Gia nhập Minh Đức" eyebrow="TUYỂN DỤNG NỘI BỘ" description="Kết nối con người, cùng nhau tạo dựng giá trị." image={HERO_IMAGE}/><CareersSections openings={<JobBrowser internal/>}/></>;
+  return <><PageHero title="Gia nhập Minh Đức" eyebrow="TUYỂN DỤNG NỘI BỘ" description="Kết nối con người, cùng nhau tạo dựng giá trị." image={careersMedia.banner}/><CareersSections openings={<JobBrowser internal/>}/></>;
 }
 
 type ApplicationErrors = Partial<Record<'name' | 'phone' | 'location' | 'cv' | 'consent', string>>;

@@ -22,3 +22,7 @@
  .contact-reference-form { order: -1; padding: 24px 18px; }
 }
 .contact-office{border-bottom:1px solid #e0e0e0}.contact-office summary{position:relative;list-style:none;cursor:pointer;font-weight:700;font-size:18px;padding:16px 30px 16px 0}.contact-office summary::-webkit-details-marker{display:none}.contact-office summary::after{content:'+';position:absolute;right:0;font-size:23px;line-height:1;color:#e42826}.contact-office[open] summary::after{content:'−'}.contact-office>div{padding:0 0 20px}.contact-office p{color:#666;line-height:1.7;margin:0 0 12px}
+/* Reference contact grid: information occupies one third, form two thirds. */
+.contact-reference-layout{grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:start}
+.contact-reference-info>h2{text-transform:uppercase}
+@media(max-width:767px){.contact-reference-layout{grid-template-columns:1fr}}

@@ -70,28 +70,50 @@ try {
       }
       if (name === 'ServicesPage') {
         assert.equal(doc.querySelector('[role="tablist"]'), null);
-        assert.equal(doc.querySelectorAll('.info-service-card').length, 5);
+        assert.equal(doc.querySelectorAll('.info-service-cards .ref-solution').length, 5);
         assert.ok(doc.querySelector('.info-service-cards[tabindex="0"]'), 'service rail is keyboard reachable');
       }
       if (name === 'ServicePage') {
-        const selectors = ['.info-service-why','.info-fee-section','.info-faq-section','.info-service-customers','.info-service-rail','.info-contact-section'];
+        const recruitment = path.endsWith('/recruitment');
+        const consulting = path.endsWith('/hr-consulting');
+        const selectors = ['.md-ref-fee-section','.info-faq-section',...(!recruitment?['.info-service-customers']:[]),'.info-service-rail','.info-contact-section'];
         const nodes = selectors.map(selector=>doc.querySelector(selector));
-        assert.ok(nodes.every(Boolean), `${label}: complete service modules`);
+        assert.ok(nodes.every(Boolean), `${label}: complete mapped service modules`);
         for(let i=1;i<nodes.length;i++) assert.ok(nodes[i-1].compareDocumentPosition(nodes[i]) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, `${label}: source service sequence ${selectors[i]}`);
+        assert.equal(doc.querySelectorAll('.md-ref-detail-intro').length,1,'only the source intro uses the paired media layout');
+        const intro = doc.querySelector('.md-ref-detail-intro');
+        assert.ok(intro.firstElementChild.querySelector('img'),'source intro media precedes copy');
+        const highlights = doc.querySelector('.md-ref-service-highlights');
+        assert.ok(highlights);
+        assert.equal(highlights.querySelectorAll('article').length,3);
+        const fee = doc.querySelector('.md-ref-fee-section');
+        assert.ok((consulting?fee:highlights).compareDocumentPosition(consulting?highlights:fee) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, 'consulting expertise follows fees; other mapped variants precede fees');
         const table = doc.querySelector('table.info-fee-table');
-        assert.ok(table.querySelector('caption')?.textContent.trim(), 'pricing example has a caption');
-        assert.equal(table.querySelectorAll('thead th[scope="col"]').length, 3);
-        assert.equal(table.querySelectorAll('tbody th[scope="row"]').length, table.querySelectorAll('tbody tr').length);
-        assert.ok(table.closest('[tabindex="0"][role="region"]'), 'wide table remains keyboard reachable');
-        assert.ok(doc.querySelector('.info-service-customers .partners-track'));
-        assert.ok(doc.querySelector('.info-testimonial-rail[tabindex="0"][role="region"]'));
-        assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
-        assert.equal(doc.querySelectorAll('.info-service-card').length, 4, 'related services exclude the current one');
+        if(recruitment){
+          assert.equal(table,null,'executive reference uses a highlighted fee statement');
+          assert.ok(fee.querySelector('.md-ref-fee-highlight'));
+          assert.equal(doc.querySelector('.info-service-customers'),null,'executive template does not invent a customer band');
+        } else {
+          assert.ok(table.querySelector('caption')?.textContent.trim(), 'pricing example has a caption');
+          assert.equal(table.querySelectorAll('thead th[scope="col"]').length, 3);
+          assert.equal(table.querySelectorAll('tbody th[scope="row"]').length, table.querySelectorAll('tbody tr').length);
+          assert.ok(table.closest('[tabindex="0"][role="region"]'), 'wide table remains keyboard reachable');
+          assert.ok(doc.querySelector('.info-service-customers .partners-track'));
+          assert.ok(doc.querySelector('.info-testimonial-rail[tabindex="0"][role="region"]'));
+          assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
+        }
+        assert.equal(doc.querySelectorAll('.info-service-cards .ref-solution').length, 4, 'related services exclude the current one');
         assert.ok(doc.querySelector('.info-contact-section form'));
       }
       if (name === 'NewsPage' && !path.includes('?')) {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');
-        assert.equal(doc.querySelectorAll('.info-featured-news button').length, 2, 'feature presentation exposes previous/next controls');
+        const featureSlides=doc.querySelectorAll('.editorial-feature-slide');
+        assert.ok(featureSlides.length>1,'feature is a real rail of unique articles');
+        assert.equal(doc.querySelectorAll('.editorial-feature-dots button').length,featureSlides.length);
+        assert.equal(new Set([...featureSlides].map(node=>node.querySelector('h2 a').getAttribute('href'))).size,featureSlides.length);
+        assert.ok(doc.querySelector('.editorial-feature-track[tabindex="0"][role="region"]'));
+        assert.equal(doc.querySelector('.editorial-feature-pause').closest('.editorial-feature-surface'),null,'Play remains outside the hover/focus pause surface');
+        assert.equal(doc.querySelectorAll('.editorial-feature-slide img[loading="eager"]').length,1,'offscreen feature images do not all fetch eagerly');
         assert.ok(doc.querySelectorAll('.info-news-grid article').length > 1, 'regular article listing remains separate');
         const featureBand=doc.querySelector('.info-featured-news').closest('section');
         const listingBand=doc.querySelector('.info-news-grid').closest('section');
@@ -106,11 +128,13 @@ try {
         for (const id of ['open-positions','position-benefits','cv-requirements','career-contact']) assert.ok(doc.getElementById(id), `${label}: stable career anchor ${id}`);
         assert.equal(doc.querySelectorAll('.career-feature-grid article').length, 2);
         assert.equal(doc.querySelectorAll('.career-rail-section').length, 2);
-        assert.ok(doc.querySelector('.career-buddy-grid > img'));
+        assert.ok(doc.querySelector('.career-buddy .career-feature-image img'));
+        assert.equal(doc.querySelectorAll('.career-process-grid .career-step').length,4,'source recruitment process has four steps');
+        for(const button of doc.querySelectorAll('.career-more')) assert.ok(doc.getElementById(button.getAttribute('aria-controls')),'expand action names its actual content region');
         assert.ok(doc.querySelector('.career-story-grid[tabindex="0"][role="region"]'));
         assert.equal(doc.querySelectorAll('.career-story-grid blockquote').length, 3);
         assert.equal(doc.querySelectorAll('.career-story-controls button').length, 2);
-        assert.ok(doc.querySelectorAll('.career-gallery-grid button[aria-label] > img').length >= 3, 'gallery images have actual enlargement controls');
+        assert.ok(doc.querySelectorAll('.career-gallery-grid button[aria-label] > img').length === 11, 'gallery images have actual enlargement controls');
       }
       if (name === 'ConsultationPage') {
         assert.ok(!doc.querySelector('.page-hero,.page-banner-main'), 'reference scheduling surface has no invented image banner');
@@ -129,6 +153,8 @@ try {
         assert.ok(!doc.querySelector('.page-banner-main,.page-hero'), 'article detail starts with its heading, without an extra image banner');
         assert.ok(doc.querySelector('.info-article h1'));
         assert.ok(doc.querySelector('.info-related-news article'), 'related articles occupy their separate region');
+        assert.ok(doc.querySelector('.editorial-related-aside .editorial-related-item img'),'source sidebar includes actual related thumbnails');
+        assert.equal(doc.querySelector('.editorial-related-aside a[href$="/contact"]'),null,'article sidebar does not restore the old unsourced contact card');
       }
       if (name === 'EventPage') {
         assert.ok(doc.querySelector('.page-banner-main h1'), 'event retains its image banner');
@@ -157,20 +183,36 @@ try {
     if(rule.parent.type==='root') rule.walkDecls('grid-column', decl=>{if(decl.value.replaceAll(' ','')==='1/-1') spansValues=true;});
   });
   assert.ok(spansValues, 'About values explicitly span both desktop statement columns; this checks the known source regression, not rendered width');
+  const serviceCss=postcss.parse(await readFile('src/pages/info/services-reference.css','utf8'));
+  serviceCss.walkRules(rule=>{
+    for(const selector of rule.selectors){
+      assert.notEqual(selector,'.md-ref-service-highlights>div','the observed outer frame must not form a three-column grid around its sole child');
+      assert.ok(!['.md-ref-detail-intro>div','.md-ref-service-intro-row>div'].includes(selector),'intro frame wrappers must not inherit the old image/copy padding');
+    }
+  });
+  const aboutCss=postcss.parse(await readFile('src/pages/info/about-reference.css','utf8'));
+  let reducedYear=false;
+  aboutCss.walkAtRules('media',rule=>{if(rule.params.includes('prefers-reduced-motion:reduce'))rule.walkRules('.md-history-years .info-history-track',r=>r.walkDecls('transition',d=>{if(d.value==='none')reducedYear=true;}));});
+  assert.ok(reducedYear,'history reduced-motion override matches the normal transition selector specificity');
   const dom = new JSDOM('<div id="root"></div>', {url:'https://example.test/news', pretendToBeVisual:true});
   for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver']) Object.defineProperty(globalThis,key,{configurable:true,value:dom.window[key]});
+  dom.window.matchMedia=()=>({matches:true,addEventListener(){},removeEventListener(){}});
   globalThis.IS_REACT_ACT_ENVIRONMENT = true;
   const {createRoot} = await import('react-dom/client');
   const root = createRoot(document.getElementById('root'));
   try {
     await React.act(()=>root.render(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{initialEntries:['/news']},React.createElement(components.NewsPage)))));
-    const first = document.querySelector('.info-featured-news h2').textContent;
+    const track = document.querySelector('.editorial-feature-track');
+    Object.defineProperty(track,'offsetLeft',{value:0});
+    [...track.children].forEach((child,i)=>Object.defineProperty(child,'offsetLeft',{value:i*400}));
+    track.scrollTo=({left})=>{track.scrollLeft=left;track.dispatchEvent(new Event('scroll'));};
     const listing = [...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent);
-    await React.act(()=>document.querySelectorAll('.info-featured-news button')[1].click());
-    assert.notEqual(document.querySelector('.info-featured-news h2').textContent, first, 'next feature advances actual content');
+    await React.act(()=>document.querySelectorAll('.editorial-feature-dots button')[1].click());
+    assert.equal(track.scrollLeft,400,'second feature control scrolls to its unique article');
+    assert.equal(document.querySelectorAll('.editorial-feature-dots button')[1].getAttribute('aria-pressed'),'true');
     assert.deepEqual([...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent), listing, 'feature navigation does not replace the regular listing');
-    await React.act(()=>document.querySelectorAll('.info-featured-news button')[0].click());
-    assert.equal(document.querySelector('.info-featured-news h2').textContent, first, 'previous feature returns to prior content');
+    await React.act(()=>document.querySelectorAll('.editorial-feature-dots button')[0].click());
+    assert.equal(track.scrollLeft,0,'first feature control returns to the first article');
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
   console.log('PASS independent reference structures: 12 page types × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
 } finally {

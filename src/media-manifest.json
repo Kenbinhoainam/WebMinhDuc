@@ -278,5 +278,241 @@
         "src": "/optimized/assets/minh-duc-about-960.webp"
       }
     ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-2.jpg": {
+    "width": 1432,
+    "height": 728,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-2-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-2-960.webp"
+      },
+      {
+        "width": 1432,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-2-1432.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-7.jpg": {
+    "width": 708,
+    "height": 548,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-7-480.webp"
+      },
+      {
+        "width": 708,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-7-708.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-Careers-banner.jpg": {
+    "width": 2121,
+    "height": 1414,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-Careers-banner-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-Careers-banner-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-Careers-banner-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/3b0086c1a42d03735a3c40.webp": {
+    "width": 2560,
+    "height": 1555,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/3b0086c1a42d03735a3c40-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/3b0086c1a42d03735a3c40-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/3b0086c1a42d03735a3c40-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/527e361144089156c819-Copy-scaled-1.webp": {
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/527e361144089156c819-Copy-scaled-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/527e361144089156c819-Copy-scaled-1-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/527e361144089156c819-Copy-scaled-1-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/8a378a5d89b102ef5ba0-1.webp": {
+    "width": 2224,
+    "height": 1668,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/8a378a5d89b102ef5ba0-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/8a378a5d89b102ef5ba0-1-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/8a378a5d89b102ef5ba0-1-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/9da65dca662ec170983f4-1.webp": {
+    "width": 2556,
+    "height": 1916,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/9da65dca662ec170983f4-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/9da65dca662ec170983f4-1-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/9da65dca662ec170983f4-1-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-5.webp": {
+    "width": 708,
+    "height": 548,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-5-480.webp"
+      },
+      {
+        "width": 708,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-5-708.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-6.webp": {
+    "width": 708,
+    "height": 548,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-6-480.webp"
+      },
+      {
+        "width": 708,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-6-708.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-9.webp": {
+    "width": 708,
+    "height": 548,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-9-480.webp"
+      },
+      {
+        "width": 708,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-9-708.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/03/office3@2x-1.webp": {
+    "width": 1600,
+    "height": 1000,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/office3@2x-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/office3@2x-1-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/03/office3@2x-1-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/04/buddy-2.png": {
+    "width": 1213,
+    "height": 628,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/04/buddy-2-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/04/buddy-2-960.webp"
+      },
+      {
+        "width": 1213,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/04/buddy-2-1213.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788597214879_7428492010007057447_g8267310010752724363_f3c3800b0d2cbaaa1e0696a2df8d0d13.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788597214879_7428492010007057447_g8267310010752724363_f3c3800b0d2cbaaa1e0696a2df8d0d13-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788597214879_7428492010007057447_g8267310010752724363_f3c3800b0d2cbaaa1e0696a2df8d0d13-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788597214879_7428492010007057447_g8267310010752724363_f3c3800b0d2cbaaa1e0696a2df8d0d13-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a-1600.webp"
+      }
+    ]
   }
 }

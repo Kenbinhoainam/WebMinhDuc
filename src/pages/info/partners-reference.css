@@ -1,0 +1,2 @@
+.md-partners-grid .info-partner-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}.md-partners-grid .info-partner{min-height:6.45833rem;border:1px solid #eee}
+@media(max-width:767px){.md-partners-grid .info-partner-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.md-partners-grid .info-partner{min-height:64px}}

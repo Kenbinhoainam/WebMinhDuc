@@ -5,6 +5,11 @@ await Promise.all(locales.map(loadLocale));
 const template=await readFile('dist/index.html','utf8');
 const manifest=JSON.parse(await readFile('dist/.vite/manifest.json','utf8'));
 const styledRoutes=[
+ [/^\/about-us$/,'src/pages/info/AboutPage.tsx'],
+ [/^\/services(?:\/|$)/,'src/pages/info/ServicesPages.tsx'],
+ [/^\/partners$/,'src/pages/info/PartnersPage.tsx'],
+ [/^\/e-brochure$/,'src/pages/info/BrochurePage.tsx'],
+ [/^\/(?:news(?:\/|$)|events(?:\/|$)|privacy-policy$|terms-of-use$)/,'src/EditorialPages.tsx'],
  [/^\/(?:jobs(?:\/|$)|saved-jobs$|careers$)/,'src/JobsPages.tsx'],
  [/^\/education(?:\/|$)/,'src/Education.tsx'],
  [/^\/consultation$/,'src/Consultation.tsx'],

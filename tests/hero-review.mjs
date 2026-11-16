@@ -15,11 +15,11 @@ try {
   await build({stdin: {contents: "export {default as Hero} from './src/HomeHero'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'hero-review.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
   const {Hero, LocaleProvider, localeBase, loadLocale} = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
   const expected = {
-    vi: ['Kết nối nhân lực.', 'Phát chuyển động', 'Tìm hiểu Minh Đức'],
-    en: ['Connecting people.', 'Play motion', 'About Minh Đức'],
-    zh: ['连接人才。', '播放动态效果', '了解 Minh Đức'],
-    ko: ['인력을 연결합니다.', '움직임 재생', 'Minh Đức 알아보기'],
-    ja: ['人材をつなぐ。', '動きを再生', 'Minh Đứcを知る'],
+    vi: ['Giới thiệu & cung ứng nhân lực', 'Phát chuyển động', 'Khám phá giải pháp'],
+    en: ['Recruitment & workforce supply', 'Play motion', 'Explore solutions'],
+    zh: ['招聘与人力供应', '播放动态效果', '探索解决方案'],
+    ko: ['채용 및 인력 공급', '움직임 재생', '솔루션 살펴보기'],
+    ja: ['採用・人材供給', '動きを再生', 'ソリューションを見る'],
   };
   let vietnameseCopy;
   for (const [locale, [brand, play, about]] of Object.entries(expected)) {
@@ -34,7 +34,7 @@ try {
     assert.equal(h1.hasAttribute('aria-live'), false, 'rotation must not announce every cycle');
     for (const group of [h1, doc.querySelector('.hero-description-grid')]) {
       const layers = [...group.children];
-      assert.equal(layers.length, 4, `${locale}: all copy layers are present on first render`);
+      assert.equal(layers.length, 3, `${locale}: all copy layers are present on first render`);
       assert.equal(layers.filter(layer => layer.dataset.active === 'true').length, 1);
       assert.equal(layers[0].dataset.active, 'true');
       assert.notEqual(layers[0].getAttribute('aria-hidden'), 'true');
@@ -44,9 +44,9 @@ try {
     const copy = [...doc.querySelectorAll('.hero-copy .hero-slide')].map(layer => layer.textContent.trim());
     if (locale === 'vi') vietnameseCopy = copy;
     else assert.ok(copy.every((text, index) => text !== vietnameseCopy[index]), `${locale}: every rotating title and description is translated`);
-    assert.ok(h1.firstElementChild.textContent.startsWith(brand), `${locale}: initial accessible title is the localized brand`);
+    assert.ok(h1.firstElementChild.textContent.startsWith(brand), `${locale}: initial accessible title is the localized first service`);
     const links = [...doc.querySelectorAll('.hero-actions a')];
-    assert.deepEqual(links.map(link => link.getAttribute('href')), [`${base}/about-us`]);
+    assert.deepEqual(links.map(link => link.getAttribute('href')), [`${base}/services/labor-supply`]);
     assert.deepEqual(links.map(link => link.textContent.trim()), [about]);
     assert.equal(doc.querySelector('.video-control').getAttribute('aria-label'), play);
     assert.ok(!doc.querySelector('.hero-bottom,.hero-caption,.scroll-hint,.hero-semantic-title'));

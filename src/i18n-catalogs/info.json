@@ -40,5 +40,35 @@
     "zh": "根据需求协商",
     "ko": "요구에 따라 협의",
     "ja": "ご要望に応じて相談"
+  },
+  "Điều hướng hồ sơ": {
+    "en": "Brochure navigation",
+    "zh": "画册导航",
+    "ko": "소개서 탐색",
+    "ja": "パンフレットのページ操作"
+  },
+  "Tài liệu minh họa": {
+    "en": "Illustrative documents",
+    "zh": "示例文件",
+    "ko": "예시 자료",
+    "ja": "資料の例"
+  },
+  "Tài liệu trước": {
+    "en": "Previous document",
+    "zh": "上一份文件",
+    "ko": "이전 자료",
+    "ja": "前の資料"
+  },
+  "Tài liệu tiếp theo": {
+    "en": "Next document",
+    "zh": "下一份文件",
+    "ko": "다음 자료",
+    "ja": "次の資料"
+  },
+  "Chia sẻ minh họa": {
+    "en": "Illustrative stories",
+    "zh": "示例分享",
+    "ko": "예시 이야기",
+    "ja": "参考事例"
   }
 }

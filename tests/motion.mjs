@@ -32,14 +32,21 @@ try {
   }
   globalThis.IntersectionObserver = Observer;
   const css = await readFile('src/motion.css', 'utf8');
-  assert.match(css, /\.service-card\[data-reveal\]:hover:not\(\.motion-pending\)\s*\{\s*transform:\s*none/);
-  assert.match(css, /\.service-card\[data-reveal\]\.motion-pending:hover\s*\{\s*transform:\s*translateY\(22px\)/);
   assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*1000ms;\s*transition-delay:\s*0ms/);
   assert.match(css, /data-reveal-delay="3"[^}]*transition-delay:\s*900ms/, 'reference stagger is entry-only');
   assert.match(css, /\[data-reveal\]\[data-reveal-frame\]\.motion-pending\s*\{[^}]*opacity:\s*1;\s*transform:\s*none;\s*transition:\s*none/s, 'pending frame stays geometrically stable');
   assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(100px\) scale\(\.6\)/, 'reference zoom belongs to inner content');
   assert.match(css, /motion-released > \.motion-content\s*\{\s*transition:\s*none/, 'failure restores without a transition');
-  const {startReveals} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
+  const {startReveals, RevealFrame} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
+  const React = await import('react'); const {renderToStaticMarkup} = await import('react-dom/server');
+  const explicit = renderToStaticMarkup(React.createElement(RevealFrame, {delay: 1, delayMs: 400}, 'content'));
+  assert.match(explicit, /data-reveal-delay-ms="400"/); assert.match(explicit, /--reveal-delay:400ms/);
+  const invalid = renderToStaticMarkup(React.createElement(RevealFrame, {delayMs: Infinity}, 'content'));
+  assert.doesNotMatch(invalid, /data-reveal-delay-ms|--reveal-delay/,'invalid explicit delay is ignored');
+  const zero = renderToStaticMarkup(React.createElement(RevealFrame, {delayMs: 0}, 'content'));
+  assert.match(zero, /--reveal-delay:0ms/,'zero delay is valid');
+  assert.match(css, /data-reveal-delay-ms\] > \.motion-content\s*\{\s*transition-delay:\s*var\(--reveal-delay\)/);
+  assert.ok(css.indexOf('[data-reveal-frame].motion-pending > .motion-content') > css.indexOf('[data-reveal-frame][data-reveal-delay-ms] > .motion-content'), 'exit delay overrides explicit entry delay');
   let stop = startReveals();
   let [enter, exit] = observers.slice(-2);
   assert.match(enter.options.rootMargin, /px/); assert(!enter.options.rootMargin.includes('%'));

@@ -18,7 +18,7 @@ if(!process.argv.includes('--case')) {
   assert.equal(localeFromPath('/zh/jobs'),'zh');
   assert.equal(languageSwitchUrl('/ko/jobs','?q=kho','#details','ja'),'/ja/jobs?q=kho#details');
   await build({entryPoints:['src/main.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/client.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
-  for(const url of ['/','/about-us','/services','/careers','/consultation','/jobs','/saved-jobs','/jobs?q=kho','/testimonials','/en','/zh','/ko','/ja','/en/jobs','/zh/jobs','/ko/jobs','/ja/jobs','/en/consultation','/zh/consultation','/ko/consultation','/ja/consultation']) {
+  for(const url of ['/','/about-us','/services','/careers','/consultation','/jobs','/saved-jobs','/jobs?q=kho','/testimonials','/partners','/e-brochure','/news','/en/news/chon-cong-viec-phu-hop','/en','/zh','/ko','/ja','/en/jobs','/zh/jobs','/ko/jobs','/ja/jobs','/en/consultation','/zh/consultation','/ko/consultation','/ja/consultation']) {
    const result=spawnSync(process.execPath,[process.argv[1],'--case',url],{encoding:'utf8',timeout:15000});
    assert.equal(result.status,0,`${url}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }

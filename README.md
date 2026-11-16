@@ -1,4 +1,4 @@
-# Minh Đức Vina — Prototype 12 / Reference corrections & shared interactions
+# Minh Đức Vina — Prototype 13 / Đối chiếu và tái dựng từng trang HR2B
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
@@ -24,6 +24,7 @@ npm run test:motion
 npm run test:hero
 npm run test:sitemap
 npm run test:header
+npm run test:reference
 npm run audit:i18n
 ```
 
@@ -33,7 +34,7 @@ npm run audit:i18n
 
 Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Bản v11: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
-[Khắc phục đối chiếu và tối ưu v12](docs/flagship/reference-v12-review.md) · [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v12.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
+[Báo cáo đối chiếu chi tiết 41 trang](docs/flagship/comparison-v12-v13/Doi-chieu-chi-tiet-41-trang-HR2B-MinhDuc.pdf) · [Tái dựng từng trang và kiểm thử v13](docs/flagship/reference-v13-review.md) · [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v13.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
 
 Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `prebuild` kiểm tra file sinh có khớp nguồn. Các ảnh tối ưu đã được lưu trong repository; chỉ cần ffmpeg/ffprobe khi muốn tái sinh bằng `node scripts/optimize-media.mjs`.
 
@@ -42,7 +43,7 @@ Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `p
 - Năm ngôn ngữ hoạt động: Việt, Anh, Trung giản thể, Hàn, Nhật. Chuyển ngôn ngữ giữ trang, bộ lọc và anchor; các bản dịch là bản nháp prototype.
 - Bảy nhóm menu chính: Trang chủ, Giới thiệu, Dịch vụ, Việc làm, Tuyển dụng nội bộ, Tin tức, Liên hệ; trang phụ có lối truy cập theo nhóm.
 - Năm dịch vụ: giới thiệu/cung ứng nhân lực, cho thuê lao động, headhunt/tay nghề, tuyển sinh cao đẳng/đại học, setup tổ chức/phần mềm doanh nghiệp.
-- Trang chủ có video hero, hai hành trình B2B/B2C, chỉ số mô phỏng, quy trình, đối tác, câu chuyện giả định, cẩm nang, hoạt động và FAQ. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
+- Trang chủ theo thứ tự khối HR2B: video hero, chỉ số, giới thiệu, giải pháp, cảm nhận, đối tác, tin tức, sự kiện và video minh họa. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
 - Tám vị trí mẫu, bộ lọc KCN/loại việc/tay nghề/ca ngày–đêm/chuyên–xoay/trạng thái; lưu việc trên thiết bị. Tuyển nội bộ tách khỏi danh sách lao động. Tin đóng vẫn đọc được nhưng không nhận ứng tuyển thử.
 - Ba chương trình tuyển sinh giả định theo hình thức từ xa/chính quy; không gắn với trường chưa xác minh.
 - Sáu biểu mẫu F01–F06: nhu cầu doanh nghiệp, liên hệ chung, ứng tuyển lao động, ứng tuyển nội bộ, tư vấn tuyển sinh, hồ sơ tuyển sinh. CV nội bộ/hồ sơ tuyển sinh bắt buộc; PDF/DOC/DOCX tối đa 5 MB theo giả định demo.
@@ -63,16 +64,16 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 - `App.tsx`, `Header.tsx`, `navigation.ts`, `Home.tsx`, `shared.tsx`: khung, header và sitemap dùng chung, trang chủ và thành phần chung.
 - `JobsPages.tsx`, `jobs-data.ts`, `saved-jobs.ts`, `CareersSections.tsx`, `Education.tsx`, `Contact.tsx`, `Consultation.tsx`: dữ liệu dùng chung, bộ lưu việc và các luồng demo.
 - `AdminDemo.tsx`, `admin-demo-data.ts`: quản trị minh họa, dữ liệu giả độc lập.
-- `InfoPages.tsx`: giới thiệu, dịch vụ, tin tức, sự kiện, chính sách và hồ sơ năng lực.
+- `pages/info/`: các module giới thiệu, dịch vụ, đối tác và hồ sơ năng lực; `EditorialPages.tsx`: tin tức, sự kiện và chính sách. `InfoPages.tsx` chỉ xuất lại các thành phần để giữ tương thích.
 - `i18n.tsx`, `i18n-runtime/`, `i18n-catalogs/`: locale theo URL và bản dịch. JSX runtime dịch nội dung/nhãn hiển thị, giữ nguyên IDs, URL, form values và dữ liệu người dùng nhập. Chuỗi động dùng `useTranslation`.
 - `src/seo/`, `entry-server.tsx`, `scripts/prerender.mjs`: metadata và xuất HTML tĩnh; không dùng dịch DOM sau hydration.
 - `motion.tsx`/`motion.css` và CSS theo trang: animation, responsive, reduced-motion.
 
 ## Kiểm thử
 
-Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/reference-v11-review.md`.
+Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 205 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/reference-v13-review.md`.
 
-Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Công cụ browser hiện trả `Browser Use could not read requirements`; preview trước đó cũng lỗi relay. Chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser và chưa có điểm Lighthouse/CWV.
+Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Managed preview gặp lỗi relay readiness timeout; chưa có phiên kiểm tra trực quan thành công cho bản này. Chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser và chưa có điểm Lighthouse/CWV.
 
 ## Nguồn và bàn giao
 

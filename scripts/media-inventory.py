@@ -2,7 +2,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin,urlparse
 import json,re,os,sys
-P=Path(__file__).resolve().parents[1]; public=P/'public'; dist=P/'dist'; domain='https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site'; hero=json.loads((P/'src/hero-assets.json').read_text()); manifest=json.loads((P/'src/media-manifest.json').read_text()); reverse={v['src']:k for k,x in manifest.items() for v in x['variants']};reverse.update({'/assets/minh-duc-favicon-96.png':'/assets/minh-duc-logo.jpg','/assets/minh-duc-apple-touch.png':'/assets/minh-duc-logo.jpg'});
+P=Path(__file__).resolve().parents[1]; public=P/'public'; dist=P/'dist'; domain='https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site'; hero=json.loads((P/'src/hero-assets.json').read_text()); career=json.loads((P/'src/careers-media.json').read_text()); manifest=json.loads((P/'src/media-manifest.json').read_text()); reverse={v['src']:k for k,x in manifest.items() for v in x['variants']};reverse.update({'/assets/minh-duc-favicon-96.png':'/assets/minh-duc-logo.jpg','/assets/minh-duc-apple-touch.png':'/assets/minh-duc-logo.jpg'});
 records={}; voids={'img','source','br','hr','input','link','meta','embed','wbr','area','base','col','param','track'}
 class Parser(HTMLParser):
  def __init__(self,route,metadata_only=False):super().__init__(convert_charrefs=True);self.stack=[];self.route=route;self.metadata_only=metadata_only
@@ -40,6 +40,17 @@ add(hero['poster'],'/','section-home-video','poster hộp thoại video','poster
 # News pagination can reveal all six article cards even though SSR renders only page one.
 for logical in ['/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing.jpg','/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong.jpg']:
  for variant in manifest.get(logical,{}).get('variants',[]):add(variant['src'],'/news','section info-news-section','info-news-card','srcset trang tin phân trang')
+# The gallery dialog is mounted only after user interaction and is absent from prerendered HTML.
+for logical in career['gallery']:
+ variants=manifest.get(logical,{}).get('variants',[])
+ for actual in ([v['src'] for v in variants] if variants else [logical]):
+  add(actual,'/careers','career-gallery-dialog','ảnh phóng lớn trong hộp thoại','srcset hộp thoại')
+# Local image URLs in these scoped stylesheets are recorded as CSS references;
+# CSS references alone do not prove that a selector was visible or requested.
+for css,route in [('src/Careers.css','/careers'),('src/footer-reference.css','/'),('src/info.css','/services')]:
+ text=(P/css).read_text() if (P/css).exists() else ''
+ for url in re.findall(r'url\([\"\']?([^\"\')]+)',text):
+  if re.search(r'\.(?:avif|webp|png|jpe?g|svg|gif)$',url,re.I):add(url,route,'stylesheet-reference',css,'tham chiếu CSS')
 # Map video and both poster derivatives to one logical source each.
 video_key=hero['video']
 for key in ['/optimized/assets/hero-poster-1600.webp','/optimized/assets/hero-poster-960.webp']:
@@ -49,7 +60,12 @@ for key in ['/optimized/assets/hero-poster-1600.webp','/optimized/assets/hero-po
 provpath=Path('/workspace/reference/hr2b-live-20261116/drive-source/assets-provenance.jsonl');proven={}
 if provpath.exists():
  for line in provpath.read_text().splitlines():
-  x=json.loads(line);proven['/mirror/www.hr2b.com/wp-content/'+x['original_url'].split('/wp-content/',1)[1]]=x['original_url']
+  x=json.loads(line);url=x.get('original_url',''); original=Path(x.get('local_path',''))
+  if '/wp-content/' in url:
+   logical='/mirror/www.hr2b.com/wp-content/'+url.split('/wp-content/',1)[1];local=public/logical.lstrip('/')
+   if original.is_file() and local.is_file():
+    import hashlib
+    if hashlib.sha256(original.read_bytes()).digest()==hashlib.sha256(local.read_bytes()).digest():proven[logical]=url
 live_manifest=Path('/workspace/reference/hr2b-live-current-20261116/assets/manifest.json')
 if live_manifest.exists():
  for entry in json.loads(live_manifest.read_text()):
@@ -64,6 +80,22 @@ labels={'section-home-banner':'Ảnh nền và video hero đầu trang','section
 def label(pos,classes):
  if pos=='metadata-share':return 'Ảnh chia sẻ liên kết (Open Graph/Twitter)'
  if pos=='metadata-icon':return 'Biểu tượng Apple touch' if 'Apple' in classes else 'Biểu tượng trình duyệt'
+ if 'footer-social' in classes:return 'Liên kết mạng xã hội ở chân trang'
+ if 'career-gallery-dialog' in pos:return 'Hộp thoại phóng lớn ảnh tuyển dụng nội bộ'
+ if 'career-introduction' in pos:return 'Giới thiệu công việc và đồng đội'
+ if 'career-rail-section' in pos:return 'Quyền lợi và phát triển' if 'is-benefits' in pos else 'Không gian làm việc'
+ if 'career-process' in pos:return 'Các bước chuẩn bị CV'
+ if 'career-buddy' in pos:return 'Đồng hành khi bắt đầu công việc'
+ if 'career-gallery' in pos:return 'Thư viện hình ảnh tuyển dụng nội bộ'
+ if 'md-about-partners' in pos:return 'Đối tác tại trang giới thiệu'
+ if 'md-ref-service-intro' in pos:return 'Giới thiệu giải pháp dịch vụ'
+ if 'md-ref-detail-section' in pos and not any(k in classes for k in ('md-ref-detail-intro','md-ref-detail-copy','md-ref-detail-process')):return 'Khối nội dung chi tiết dịch vụ'
+ if 'md-ref-service-metrics' in classes:return 'Họa tiết khối số liệu dịch vụ'
+ if 'md-ref-detail-intro' in classes:return 'Ảnh giới thiệu chi tiết dịch vụ'
+ if 'md-ref-detail-copy' in classes:return 'Minh họa nội dung chi tiết dịch vụ'
+ if 'md-ref-detail-process' in classes:return 'Minh họa quy trình dịch vụ'
+ if 'editorial-related-aside' in classes:return 'Bài viết liên quan trong thanh bên'
+ if 'stylesheet-reference' in pos:return 'Tài nguyên tham chiếu trong CSS (chưa xác nhận hiển thị)'
  if 'brand' in classes:return 'Logo Minh Đức ở đầu trang'
  if 'reference-footer' in pos:return 'Logo Minh Đức ở chân trang'
  if ('/partners' in pos):return 'Đối tác tiêu biểu'
@@ -80,8 +112,17 @@ names={
  'Lien-he.jpg':'Ảnh minh họa liên hệ','Solution-Icon-1.png':'Biểu tượng giải pháp nhân sự 1','Solution-Icon-2.png':'Biểu tượng giải pháp nhân sự 2','Solution-Icon-3.png':'Biểu tượng giải pháp nhân sự 3',
  'Staff-oursourcing.jpg':'Ảnh minh họa cung ứng nhân lực','Tin-tuc.jpg':'Ảnh minh họa tin tức','Executive-Search-banner.jpg':'Ảnh minh họa tuyển chọn nhân sự','about-banner.jpg':'Ảnh nền giới thiệu và sự kiện','bao-mat-thong-tin-tien-luong.jpg':'Ảnh minh họa an toàn thông tin',
  Path(hero['video']).name:'Video minh họa dùng chung','foxconn.svg':'Logo FOXCONN','luxshare.webp':'Logo Luxshare ICT','samsung.svg':'Logo SAMSUNG'}
+# Display names describe placement rather than asserting that stock photos depict Minh Đức.
+names.update({'15.png':'Họa tiết khối số liệu dịch vụ','fb.svg':'Biểu tượng Facebook','zalo.svg':'Biểu tượng Zalo'})
+names[Path(career['banner']).name]='Ảnh nền trang tuyển dụng nội bộ'
+for category,asset_label in [('features','Ảnh giới thiệu tuyển dụng nội bộ'),('workspace','Biểu tượng không gian làm việc'),('benefits','Biểu tượng quyền lợi'),('steps','Biểu tượng chuẩn bị CV'),('gallery','Ảnh thư viện tuyển dụng nội bộ')]:
+ for i,path in enumerate(career[category],1):names.setdefault(Path(path).name,f'{asset_label} {i}')
+names.setdefault(Path(career['buddy']).name,'Ảnh minh họa đồng hành khi bắt đầu')
 def purpose(desc,logical):
  n=Path(logical).name
+ if n=='15.png':return 'Họa tiết trang trí khối số liệu minh họa.'
+ if n in ('fb.svg','zalo.svg'):return 'Biểu tượng liên kết đến kênh liên hệ tương ứng.'
+ if 'tuyển dụng nội bộ' in desc or 'công việc' in desc:return 'Minh họa nội dung tuyển dụng nội bộ; không khẳng định là hoạt động thực tế của Minh Đức.'
  if n.startswith('edge-'):return 'Trang trí nền, không truyền đạt nội dung.'
  if n.startswith('Advantages-'):return 'Biểu tượng minh họa cho thẻ '+{'Advantages-1.png':'Tầm nhìn','Advantages-2.png':'Sứ mệnh','Advantages-3.png':'Giá trị cốt lõi'}.get(n,'giá trị')+'.'
  if n.startswith('Solution-Icon-'):return 'Biểu tượng minh họa cho nội dung thẻ dịch vụ.'
@@ -112,5 +153,5 @@ for logical,r in sorted(records.items()):
  if logical.startswith('/partners/'):note='URL nguồn là kho bên thứ ba dùng để lấy hình, không phải xác nhận trực tiếp từ chủ sở hữu thương hiệu.'
  if logical=='/assets/minh-duc-logo.jpg':note='Logo Minh Đức được cung cấp trong tài liệu dự án; URL tệp nguồn cụ thể chưa được xác minh.'
  out.append({'ten_hien_thi':names.get(Path(logical).name,Path(logical).name),'ten_tep':Path(logical).name,'loai':'Video' if logical.endswith('.mp4') else 'Ảnh','duong_dan_logic':logical,'tep_dang_su_dung':files,'url_nguon_goc':source,'vi_tri_su_dung':rows,'ghi_chu':note})
-result={'mo_ta':'Kiểm kê ảnh và video trong source + HTML dựng sẵn v12; đường dẫn tiếng Việt, các ngôn ngữ khác dùng cùng tài nguyên. Bao gồm srcset thực tế và nguồn video nạp động; không liệt kê biến thể chỉ có trong manifest mà không được tham chiếu.','dia_chi_website':domain,'tai_nguyen':out,'ghi_chu_truy_cap':'Quyền xem Site giữ nguyên; các liên kết tài nguyên có thể yêu cầu quyền truy cập.', 'ghi_chu_khong_co_url':['Cờ chọn ngôn ngữ là hình SVG nội tuyến, không có URL ảnh riêng.','JEILTECH VINA và TACU hiển thị tên dạng chữ thay vì logo ảnh.'],'tong_so':len(out)}
-Path(sys.argv[1] if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v12.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('logical_assets',len(out),'uses',sum(len(x['vi_tri_su_dung']) for x in out));print('\n'.join(f"{x['ten_hien_thi']} {len(x['tep_dang_su_dung'])} {len(x['vi_tri_su_dung'])}" for x in out))
+result={'mo_ta':'Kiểm kê ảnh và video trong source + HTML dựng sẵn v13; đường dẫn tiếng Việt, các ngôn ngữ khác dùng cùng tài nguyên. Bao gồm srcset thực tế và nguồn video nạp động; không liệt kê biến thể chỉ có trong manifest mà không được tham chiếu.','dia_chi_website':domain,'tai_nguyen':out,'ghi_chu_truy_cap':'Quyền xem Site giữ nguyên; các liên kết tài nguyên có thể yêu cầu quyền truy cập.', 'ghi_chu_khong_co_url':['Cờ chọn ngôn ngữ là hình SVG nội tuyến, không có URL ảnh riêng.','JEILTECH VINA và TACU hiển thị tên dạng chữ thay vì logo ảnh.'],'tong_so':len(out)}
+Path(sys.argv[1] if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v13.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('logical_assets',len(out),'uses',sum(len(x['vi_tri_su_dung']) for x in out));print('\n'.join(f"{x['ten_hien_thi']} {len(x['tep_dang_su_dung'])} {len(x['vi_tri_su_dung'])}" for x in out))
