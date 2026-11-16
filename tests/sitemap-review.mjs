@@ -13,6 +13,7 @@ try {
  const React=await import('react');const {act}=React;
  const {renderToStaticMarkup}=await import('react-dom/server');
  const {MemoryRouter,useNavigate}=await import('react-router-dom');
+ const {createRoot}=await import('react-dom/client');
  const {Header,PageTransition,LocaleProvider,localeBase,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);
  let vietnameseLeaves;
  for(const locale of ['vi','en','zh','ko','ja']) {
@@ -27,7 +28,20 @@ try {
   assert.equal(fallback.querySelector('ul ul ul'),null,'exactly two menu levels');
   assert.equal(fallback.querySelectorAll('button,[hidden]').length,0,'fallback leaves have no JS disclosure dependency');
   const leaves=[...fallback.querySelectorAll(':scope > ul > li > ul > li > a')];assert.equal(leaves.length,19);
-  assert.deepEqual(leaves.map(a=>a.getAttribute('href')),[...doc.querySelectorAll('.desktop-subnav a')].map(a=>a.getAttribute('href')));
+  const interactive=new JSDOM('<div id="root"></div>',{url:`https://example.test${base||'/'}`,pretendToBeVisual:true});
+  for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','CustomEvent','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:interactive.window[key]});
+  globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+  const interactiveRoot=createRoot(interactive.window.document.getElementById('root'));
+  try {
+   await act(()=>interactiveRoot.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{basename:base||'/',initialEntries:[base||'/']},React.createElement(Header)))));
+   assert.equal(interactive.window.document.querySelector('.desktop-nav'),null,'compact header has one drawer at every width');
+   await act(()=>interactive.window.document.querySelector('.menu-button').click());
+   const drawer=interactive.window.document.querySelector('.drawer-nav');assert.ok(drawer);
+   assert.equal(drawer.querySelectorAll('.drawer-group').length,7);
+   const drawerLeaves=[...drawer.querySelectorAll('.drawer-subnav a')];assert.equal(drawerLeaves.length,19);
+   assert.deepEqual(drawerLeaves.map(a=>a.getAttribute('href')),leaves.map(a=>a.getAttribute('href')),'drawer and no-JS fallback have identical destinations');
+   assert.deepEqual(drawerLeaves.map(a=>a.textContent.trim()),leaves.map(a=>a.textContent.trim()),'drawer and fallback labels agree');
+  } finally {await act(()=>interactiveRoot.unmount());interactive.window.close();}
   assert.ok(leaves.every(a=>a.getAttribute('href').startsWith(`${base}/`)),'locale prefixes are preserved');
   const labels=leaves.map(a=>a.textContent.trim());
   if(locale==='vi')vietnameseLeaves=labels;
@@ -42,7 +56,7 @@ try {
  window.scrollTo=options=>{y=options.top};
  window.HTMLElement.prototype.scrollIntoView=function(){if(this.id==='job-listings')y=640};
  function Harness(){navigate=useNavigate();return React.createElement(React.Fragment,null,React.createElement(PageTransition),React.createElement('div',{id:'job-listings'}))}
- const {createRoot}=await import('react-dom/client');const root=createRoot(document.getElementById('root'));
+ const root=createRoot(document.getElementById('root'));
  const tick=()=>act(()=>new Promise(resolve=>setTimeout(resolve,45)));
  try {
   await act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:['/jobs']},React.createElement(Harness))));await tick();

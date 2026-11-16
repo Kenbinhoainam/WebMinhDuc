@@ -1,0 +1,29 @@
+/* Original footer's dark-grey, logo/menu row and two-column address/signup. */
+.reference-footer{background:#464646;color:#fff;padding-block:60px}
+.reference-footer .footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #818181}
+.reference-footer .footer-logo{flex-shrink:0}
+.reference-footer .footer-logo img{width:auto;height:80px;object-fit:contain}
+.reference-footer ul{list-style:none;padding:0;margin:0}
+.reference-footer .footer-menu{flex:1;margin-inline:20px}
+.reference-footer .footer-menu ul{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.reference-footer .footer-menu a{font-weight:600;font-size:15px;line-height:1.5;display:block;padding-block:8px}
+.reference-footer a:hover{color:#fff;text-decoration:underline;text-decoration-color:#e42824;text-underline-offset:5px}
+.reference-footer .footer-social{display:flex;align-items:center;gap:16px}
+.reference-footer .footer-social a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;font-weight:700;font-size:14px}
+.reference-footer .footer-bottom{display:grid;grid-template-columns:4fr 5fr;gap:15%;margin-bottom:32px}
+.reference-footer .footer-title{font-family:'Open Sans',Arial,sans-serif;font-size:20px;font-weight:600;line-height:1.375;margin:0 0 24px;color:#fff}
+.reference-footer .footer-content,.reference-footer .footer-form-wrap>p{font-size:14px;line-height:1.6}
+.reference-footer .footer-content p{margin-bottom:12px}
+.reference-footer .footer-content ul{display:flex;flex-direction:column;gap:8px}
+.reference-footer .footer-content a{display:inline-flex;align-items:center;gap:12px;overflow-wrap:anywhere;max-width:100%}
+.reference-footer .footer-form-wrap{padding-left:20px;min-width:0}
+.reference-footer small{font-size:12px;line-height:1.6;color:#ddd}
+.reference-footer .footer-copyright{display:flex;justify-content:space-between;align-items:end;gap:24px;font-size:14px}
+.reference-footer .footer-copyright p{margin:0 0 6px}
+.reference-footer .copyright-link{display:flex;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px}
+@media(min-width:1200px){.reference-footer{padding-block:3.125rem}.reference-footer .footer-logo img{height:4.16667rem}.reference-footer .footer-menu{margin-inline:3.28125rem}.reference-footer .footer-menu ul{gap:2.08333rem}.reference-footer .footer-menu a{font-size:.9375rem}.reference-footer .footer-title{font-size:1.04167rem}.reference-footer .footer-content,.reference-footer .footer-form-wrap>p{font-size:.83333rem}.reference-footer .footer-form-wrap{padding-left:2.5rem}}
+@media(max-width:1023px){.reference-footer .footer-top{flex-wrap:wrap}.reference-footer .footer-menu{order:3;flex-basis:100%;margin:0}.reference-footer .footer-menu ul{flex-wrap:wrap;justify-content:flex-start;gap:4px 24px}.reference-footer .footer-bottom{grid-template-columns:1fr;gap:28px}.reference-footer .footer-address{padding-bottom:28px;border-bottom:1px solid #818181}.reference-footer .footer-form-wrap{padding-left:0}.reference-footer .footer-copyright{align-items:start;flex-direction:column}}
+@media(max-width:767px){.reference-footer{padding-block:40px}.reference-footer .footer-menu ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}.reference-footer .footer-menu a{font-size:15px}.reference-footer .footer-title{font-size:18px}.reference-footer .copyright-link{gap:16px}.reference-footer .footer-support{gap:12px 20px}}
+@media print{.reference-footer{display:none}}
+
+.reference-footer .footer-subscribe{width:100%}.newsletter-dialog{display:grid;gap:20px}.newsletter-dialog label{display:grid;gap:8px}.newsletter-dialog input{width:100%;min-height:48px;border:1px solid #bbb;border-radius:8px;padding:12px 16px}.newsletter-dialog p{font-size:14px;margin:0}

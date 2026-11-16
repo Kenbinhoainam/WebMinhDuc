@@ -1,4 +1,3 @@
-import {HOME_FAQS} from '../home-demo-data';
 
 export const ORIGIN = 'https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site';
 type Page = {path:string; title:string; description:string};
@@ -44,6 +43,5 @@ export function seo(path:string) {
   {'@type':'WebPage','@id':url+'#webpage',url,name:title,description:p.description,isPartOf:{'@id':ORIGIN+'/#website'},inLanguage:'vi'}
  ];
  if(p.path!=='/') { const parent=p.path.split('/').filter(Boolean); const items=[{'@type':'ListItem',position:1,name:'Trang chủ',item:ORIGIN+'/'}]; if(parent.length>1){const root=getPage('/'+parent[0]);items.push({'@type':'ListItem',position:2,name:root.title,item:ORIGIN+root.path});}items.push({'@type':'ListItem',position:items.length+1,name:p.title,item:url});graph.push({'@type':'BreadcrumbList',itemListElement:items}); }
- if(p.path==='/') graph.push({'@type':'FAQPage',mainEntity:HOME_FAQS.map(({question,answer})=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))});
  return {title,description:p.description,url,image,json:{'@context':'https://schema.org','@graph':graph}};
 }

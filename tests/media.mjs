@@ -74,9 +74,13 @@ if(!process.argv.includes('--case')) {
    await act(async()=>{await new Promise(resolve=>setTimeout(resolve,20)); video.dispatchEvent(new window.Event('playing'));});
    const active=()=>window.document.querySelector('.hero-title-grid .hero-slide[data-active="true"]');
    assert.match(active().textContent,/Kết nối nhân lực/,'brand appears first');
+   const cta=()=>window.document.querySelector('.hero-actions a');
+   assert.equal(window.document.querySelectorAll('.hero-actions a').length,1,'one primary CTA');
+   assert.equal(cta().getAttribute('href'),'/about-us','initial CTA follows the brand slide');
    assert.equal(timers.size,1,'rotation starts only once video is playing');
    await act(async()=>[...timers.values()][0]());
    assert.match(active().textContent,/Giới thiệu & cung ứng nhân lực/,'existing service title follows');
+   assert.equal(cta().getAttribute('href'),'/services/labor-supply','CTA follows the active service');
    await act(async()=>button.focus()); assert.equal(timers.size,0,'focus pauses headline rotation');
    await act(async()=>button.blur()); assert.equal(timers.size,1,'rotation resumes after focus leaves');
    const hero=window.document.querySelector('.home-hero');

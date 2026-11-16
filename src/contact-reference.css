@@ -1,0 +1,24 @@
+/* Contact page: reference proportions, scoped away from embedded consultation forms. */
+.contact-reference { padding-block: clamp(40px, 5vw, 80px); }
+.contact-reference-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.contact-reference-info { min-width: 0; }
+.contact-reference-info > h2 { font-size: clamp(21px, 1.6vw, 26px); line-height: 1.3; margin: 0 0 18px; }
+.contact-reference-info > p { color: #666; line-height: 1.75; margin-bottom: 22px; }
+.contact-reference-method { display: flex; align-items: center; gap: 12px; margin: 12px 0; color: #454545; overflow-wrap: anywhere; }
+.contact-reference-method svg { color: #e42826; flex: none; }
+.contact-reference-method:hover { color: #e42826; }
+.contact-reference-offices { border-top: 1px solid #e0e0e0; margin-top: 28px; padding-top: 25px; }
+.contact-reference-offices > h3 { font-size: 22px; margin: 0 0 18px; }
+.contact-reference .office-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; }
+.contact-reference .office-tabs button { border: 1px solid #ddd; background: #fff; border-radius: 999px; padding: 9px 15px; font: inherit; font-size: 14px; }
+.contact-reference .office-tabs button.active { color: #fff; border-color: #e42826; background: #e42826; }
+.contact-reference-office h3 { font-size: 18px; margin: 0 0 10px; }
+.contact-reference-office p { color: #666; line-height: 1.75; margin: 0 0 16px; }
+.contact-reference-form { min-width: 0; padding: clamp(24px, 3vw, 42px); background: #f7f7f7; border-radius: 24px; }
+.contact-reference-form > h2 { font-size: clamp(26px, 2vw, 32px); margin: 0 0 24px; }
+.contact-reference-form .contact-form { padding: 0; background: transparent; border: 0; box-shadow: none; }
+@media (max-width: 767px) {
+ .contact-reference-layout { grid-template-columns: 1fr; gap: 40px; }
+ .contact-reference-form { order: -1; padding: 24px 18px; }
+}
+.contact-office{border-bottom:1px solid #e0e0e0}.contact-office summary{position:relative;list-style:none;cursor:pointer;font-weight:700;font-size:18px;padding:16px 30px 16px 0}.contact-office summary::-webkit-details-marker{display:none}.contact-office summary::after{content:'+';position:absolute;right:0;font-size:23px;line-height:1;color:#e42826}.contact-office[open] summary::after{content:'−'}.contact-office>div{padding:0 0 20px}.contact-office p{color:#666;line-height:1.7;margin:0 0 12px}

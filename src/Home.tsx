@@ -1,54 +1,109 @@
-import {useRef,useState} from 'react';
+import {useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
-import {ArrowUpRight,ArrowRight,ChevronLeft,ChevronRight,Users,Building2,BriefcaseBusiness,MapPin,Handshake} from 'lucide-react';
-import {MEDIA,ButtonLink,SectionHeading,CTASection,useContact} from './shared';
-import {HOME_FAQS} from './home-demo-data';
-import './home-enhancements.css';
+import {ArrowUpRight, ChevronLeft, ChevronRight, Users, Play} from 'lucide-react';
+import {MEDIA, ButtonLink, Modal} from './shared';
 import {AnimatedNumber} from './motion';
 import PartnersStrip from './PartnersStrip';
+import PartnerLogo from './PartnerLogo';
+import {partners} from './partners';
+import {useLocale, useTranslation} from './i18n';
+import {translate} from './i18n-runtime/jsx-runtime';
 import HomeHero from './HomeHero';
 import {backgroundImage} from './media';
-const services=[{title:'Giới thiệu & cung ứng nhân lực',desc:'Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.',image:'GPNS-3.jpg',path:'labor-supply',icon:Users},{title:'Cho thuê lao động',desc:'Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.',image:'GPNS-2.jpg',path:'labor-leasing',icon:Building2},{title:'Headhunt & lao động tay nghề',desc:'Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.',image:'GPNS-1.jpg',path:'recruitment',icon:BriefcaseBusiness},{title:'Tuyển sinh cao đẳng & đại học',desc:'Tìm hiểu cơ hội học tập từ xa và chính quy.',image:'GPNS-3.jpg',path:'college-admissions',icon:Users},{title:'Setup tổ chức & phần mềm doanh nghiệp',desc:'Cùng làm rõ cấu trúc, quy trình và nhu cầu phần mềm quản lý.',image:'GPNS-2.jpg',path:'hr-consulting',icon:Building2}];
-export default function Home(){const contact=useContact(),serviceRow=useRef<HTMLDivElement>(null);return <><HomeHero/>
-<section id="about" className="section home-about">
-  <div className="container about-layout">
-    <div data-reveal="left">
-      <span className="eyebrow">VỀ MINH ĐỨC</span>
-      <h2>Nhân lực là tài sản.<br/>Con người là trọng tâm.</h2>
-      <p className="lead">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
-      <p>Minh Đức kết nối nhu cầu của doanh nghiệp với nguồn lao động phù hợp, tập trung vào cung ứng nhân lực, tư vấn và giới thiệu việc làm, đặc biệt là lao động phổ thông tại nhà máy.</p>
-      <p>Chúng tôi đồng hành từ bước tìm hiểu nhu cầu, kết nối tuyển dụng đến hỗ trợ người lao động tiếp cận công việc.</p>
-      <ButtonLink to="/about-us">Tìm hiểu Minh Đức</ButtonLink>
-    </div>
-    <div className="about-image" data-reveal="media">
-      <div className="about-portrait">
-        <img src={MEDIA+'2025/09/GPNS-1.jpg'} alt="Hình ảnh minh họa kết nối con người và doanh nghiệp" width="1114" height="1280" sizes="(max-width: 575px) 90vw, (max-width: 900px) 42vw, 520px" loading="lazy"/>
+import './home-reference.css';
+
+const services = [
+  {title:'Giới thiệu & cung ứng nhân lực', desc:'Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.', image:'GPNS-3.jpg', path:'labor-supply', icon:'Solution-Icon-3.png'},
+  {title:'Cho thuê lao động', desc:'Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.', image:'GPNS-2.jpg', path:'labor-leasing', icon:'Solution-Icon-2.png'},
+  {title:'Headhunt & lao động tay nghề', desc:'Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.', image:'GPNS-1.jpg', path:'recruitment', icon:'Solution-Icon-1.png'},
+  {title:'Tuyển sinh cao đẳng & đại học', desc:'Tìm hiểu cơ hội học tập từ xa và chính quy.', image:'GPNS-3.jpg', path:'college-admissions', icon:'Solution-Icon-3.png'},
+  {title:'Setup tổ chức & phần mềm doanh nghiệp', desc:'Cùng làm rõ cấu trúc, quy trình và nhu cầu phần mềm quản lý.', image:'GPNS-2.jpg', path:'hr-consulting', icon:'Solution-Icon-2.png'},
+];
+const metrics = [
+  {number:1200, suffix:'+', label:'Kết nối việc làm', image:'GPNS-1.jpg'},
+  {number:80, suffix:'+', label:'Nhu cầu doanh nghiệp', image:'GPNS-2.jpg'},
+  {number:15, suffix:'+', label:'Khu vực kết nối', image:'GPNS-3.jpg'},
+  {number:95, suffix:'%', label:'Mức độ hài lòng', image:'Staff-oursourcing.jpg'},
+];
+const stories = [
+  {quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.', name:'Chị Lan Anh', role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},
+  {quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.', name:'Anh Minh', role:'Người lao động giả định'},
+  {quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.', name:'Chị Thu Hà', role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'},
+];
+
+function About() {
+  return <section id="about" className="section-home-about ref-home-section">
+    <img className="ref-edge ref-about-edge" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png" alt="" aria-hidden="true"/>
+    <div className="container ref-about-row">
+      <div className="ref-about-copy" data-reveal="left">
+        <h2 className="ref-heading">Nhân lực là tài sản.<br/>Con người là trọng tâm.</h2>
+        <p className="ref-company">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
+        <p>Minh Đức kết nối nhu cầu của doanh nghiệp với nguồn lao động phù hợp, tập trung vào cung ứng nhân lực, tư vấn và giới thiệu việc làm, đặc biệt là lao động phổ thông tại nhà máy.</p>
+        <p>Chúng tôi đồng hành từ bước tìm hiểu nhu cầu, kết nối tuyển dụng đến hỗ trợ người lao động tiếp cận công việc.</p>
+        <ButtonLink to="/about-us">Tìm hiểu Minh Đức</ButtonLink>
       </div>
-      <span className="photo-note">Hình ảnh minh họa theo mẫu thiết kế</span>
+      <div className="ref-about-image" data-reveal="media">
+        <img className="ref-about-art" src="/assets/minh-duc-about.webp" alt="Hình ảnh minh họa kết nối con người và doanh nghiệp" width="960" height="960" loading="lazy"/>
+        <span className="ref-image-note">Hình ảnh minh họa theo mẫu thiết kế</span>
+      </div>
     </div>
-  </div>
-</section>
-<section className="wide strengths"><Link data-reveal="up" to="/services/labor-supply"><Users/><span>Cung ứng nhân lực</span><strong>Đúng nhu cầu</strong><ArrowUpRight/></Link><Link data-reveal="up" data-reveal-delay="1" to="/jobs"><BriefcaseBusiness/><span>Kết nối việc làm</span><strong>Đúng cơ hội</strong><ArrowUpRight/></Link><Link data-reveal="up" data-reveal-delay="2" to="/contact"><Handshake/><span>Đồng hành tận tâm</span><strong>Cùng phát triển</strong><ArrowUpRight/></Link></section>
-<section className="section home-services"><div className="container" data-reveal="up"><SectionHeading eyebrow="GIẢI PHÁP CHO BẠN" title="Giải pháp nhân lực toàn diện" description="Từ nhu cầu của doanh nghiệp đến hành trình nghề nghiệp của mỗi người."/></div><div className="wide service-carousel" ref={serviceRow} tabIndex={0} role="region" aria-label="Danh sách giải pháp">{services.map((s,i)=><article data-reveal="up" data-reveal-delay={String(i%3+1)} className="service-card" key={s.path} style={{backgroundImage:`linear-gradient(180deg,rgba(15,24,35,.17),rgba(15,24,35,.85)),url(${backgroundImage(MEDIA+'2025/09/'+s.image,960)})`}}><s.icon size={45} strokeWidth={1.2}/><h3><Link to={'/services/'+s.path}>{s.title}</Link></h3><p>{s.desc}</p><Link className="btn" to={'/services/'+s.path}>Khám phá giải pháp <ArrowUpRight size={18}/></Link></article>)}</div><div className="carousel-controls"><button className="circle-button" aria-label="Dịch vụ trước" onClick={()=>serviceRow.current?.scrollBy({left:-350,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}><ChevronLeft/></button><button className="circle-button" aria-label="Dịch vụ tiếp theo" onClick={()=>serviceRow.current?.scrollBy({left:350,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}><ChevronRight/></button></div></section>
-<section className="section light-section"><div className="container connection-inner" data-reveal="up"><div><span className="eyebrow">TUYỂN SINH CAO ĐẲNG &amp; ĐẠI HỌC</span><h2>Mở thêm cơ hội học tập.</h2><p>Khám phá các chương trình minh họa theo hình thức từ xa và chính quy.</p></div><ButtonLink to="/education" secondary>Tìm hiểu tuyển sinh</ButtonLink></div></section><Achievements/>
-<section className="section light-section partner-section"><div className="container"><SectionHeading eyebrow="KẾT NỐI ĐỂ PHÁT TRIỂN" title="Đối tác tiêu biểu"/><PartnersStrip/><div className="partner-footer" data-reveal="up"><p>Kết nối trong các lĩnh vực điện tử, công nghệ và sản xuất.</p><Link to="/partners" className="text-link">Khám phá mạng lưới <ArrowUpRight size={18}/></Link></div></div></section>
-<section className="section pathways"><div className="container"><SectionHeading eyebrow="MỖI NHU CẦU, MỘT HÀNH TRÌNH" title="Bạn đang tìm kiếm điều gì?"/><div className="pathway-grid"><article data-reveal="left"><div className="pathway-number">01 / DOANH NGHIỆP</div><Building2 size={38} strokeWidth={1.2}/><h3>Đội ngũ phù hợp.<br/>Vận hành hiệu quả.</h3><p>Chia sẻ vị trí, số lượng và khu vực tuyển dụng. Cùng Minh Đức xây dựng phương án cung ứng phù hợp.</p><button className="text-link" onClick={()=>contact('Cung ứng nhân lực')}>Yêu cầu tư vấn nhân lực <ArrowUpRight size={19}/></button></article><article data-reveal="right" data-reveal-delay="1"><div className="pathway-number">02 / NGƯỜI LAO ĐỘNG</div><Users size={38} strokeWidth={1.2}/><h3>Công việc phù hợp.<br/>Khởi đầu vững chắc.</h3><p>Tìm hiểu vị trí, địa điểm và yêu cầu công việc. Đăng ký tư vấn để bắt đầu hành trình mới.</p><Link to="/jobs" className="text-link">Khám phá việc làm <ArrowUpRight size={19}/></Link></article></div></div></section>
-<Process/>
-<Testimonials/>
-<section className="section home-insights"><div className="container"><div className="section-heading-row"><SectionHeading eyebrow="GÓC THÔNG TIN" title="Đồng hành cùng bạn"/><ButtonLink to="/news" secondary>Xem tất cả tin tức</ButtonLink></div><div className="editorial-grid"><Link data-reveal="left" to="/news/ho-so-xin-viec" className="editorial-main"><img src={MEDIA+'2025/09/Tin-tuc.jpg'} alt="Chuẩn bị cho hành trình tìm việc" loading="lazy"/><div><span className="eyebrow">CẨM NANG VIỆC LÀM · NỘI DUNG MẪU</span><h3>Chuẩn bị hồ sơ xin việc: bắt đầu từ những điều cần thiết</h3><span className="text-link">Đọc bài viết <ArrowUpRight size={18}/></span></div></Link><div className="editorial-side" data-reveal="right"><Link to="/news/chon-cong-viec-phu-hop"><span className="eyebrow">ĐỊNH HƯỚNG NGHỀ NGHIỆP</span><h3>Lựa chọn công việc phù hợp với bạn</h3><span className="muted">Gợi ý cho hành trình tìm việc</span><ArrowUpRight/></Link><Link to="/news/nhu-cau-tuyen-dung"><span className="eyebrow">GÓC DOANH NGHIỆP</span><h3>Chuẩn bị nhu cầu tuyển dụng cho doanh nghiệp</h3><span className="muted">Lập kế hoạch nguồn nhân lực</span><ArrowUpRight/></Link><Link to="/events" className="event-teaser"><span className="eyebrow">KẾT NỐI & CHIA SẺ</span><h3>Gặp gỡ. Trao đổi. Mở cơ hội.</h3><span>Lịch sự kiện minh họa <ArrowRight size={16}/></span></Link></div></div></div></section>
-<EventsAndGallery/>
-<HomeFAQ/>
-<section className="section connection-strip"><div className="container connection-inner" data-reveal="up"><MapPin size={38} strokeWidth={1.5}/><div><span className="eyebrow">GẦN BẠN HƠN</span><h2>Kết nối từ Vôi, Bắc Ninh đến Quảng Ninh.</h2></div><ButtonLink to="/contact" secondary>Tìm điểm hỗ trợ</ButtonLink></div></section><CTASection/></>}
-
-
-const metrics=[{value:'1.200',number:1200,suffix:'+',label:'Kết nối việc làm',image:'GPNS-1.jpg'},{value:'80',number:80,suffix:'+',label:'Nhu cầu doanh nghiệp',image:'GPNS-2.jpg'},{value:'15',number:15,suffix:'+',label:'Khu vực kết nối',image:'GPNS-3.jpg'},{value:'95',number:95,suffix:'%',label:'Mức độ hài lòng',image:'Staff-oursourcing.jpg'}];
-function Achievements(){return <section className="home-achievements section"><div className="container"><div className="achievement-heading" data-reveal><div><span className="eyebrow">CÙNG NHAU TIẾN XA</span><h2>Mỗi kết nối là một<br/>bước tiến mới.</h2></div><p>Những con số kể câu chuyện về hành trình đồng hành cùng doanh nghiệp và người lao động.<small>Số liệu mô phỏng cho giao diện</small></p></div><div className="achievement-grid">{metrics.map((m,i)=><article className="achievement" key={m.label} style={{backgroundImage:`linear-gradient(180deg,rgba(23,30,36,.15),rgba(23,30,36,.84)),url(${backgroundImage(MEDIA+'2025/09/'+m.image,960)})`}} data-reveal data-reveal-delay={String(i)}><span className="achievement-value"><AnimatedNumber value={m.number} suffix={m.suffix}/></span><span>{m.label}</span></article>)}</div></div></section>}
-
-const journeys={business:[['01','Lắng nghe nhu cầu','Chia sẻ vị trí, số lượng, địa điểm và thời gian tuyển dụng.'],['02','Đề xuất phương án','Cùng trao đổi về nguồn nhân lực và cách triển khai phù hợp.'],['03','Kết nối ứng viên','Phối hợp tìm kiếm, lựa chọn và giới thiệu nhân sự.'],['04','Đồng hành triển khai','Theo dõi quá trình tiếp nhận và hỗ trợ khi cần.']],worker:[['01','Tìm cơ hội','Khám phá vị trí, địa điểm và yêu cầu công việc.'],['02','Chia sẻ nguyện vọng','Đăng ký tư vấn và cho biết kinh nghiệm, mong muốn của bạn.'],['03','Trao đổi công việc','Tìm hiểu thông tin và chuẩn bị cho buổi gặp nhà tuyển dụng.'],['04','Bắt đầu hành trình','Hoàn thiện bước tiếp nhận và bắt đầu công việc mới.']]};
-function Process(){const [audience,setAudience]=useState<'business'|'worker'>('business');return <section className="home-process section"><div className="container"><div className="process-top" data-reveal><div><span className="eyebrow">ĐỒNG HÀNH TỪ BƯỚC ĐẦU</span><h2>Hành trình kết nối<br/>bắt đầu từ bạn.</h2></div><div><p>Mỗi nhu cầu đều khác nhau. Chúng tôi bắt đầu bằng việc lắng nghe và cùng bạn đi từng bước.</p><div className="journey-switch" aria-label="Chọn hành trình"><button type="button" aria-pressed={audience==='business'} onClick={()=>setAudience('business')}>Doanh nghiệp</button><button type="button" aria-pressed={audience==='worker'} onClick={()=>setAudience('worker')}>Người lao động</button></div></div></div><div className="journey-steps">{journeys[audience].map(([n,title,desc],i)=><article key={n} data-reveal data-reveal-delay={String(i)}><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div><div className="journey-action">{audience==='business'?<Link to="/contact" className="text-link">Bắt đầu trao đổi <ArrowUpRight size={18}/></Link>:<Link to="/jobs" className="text-link">Xem cơ hội việc làm <ArrowUpRight size={18}/></Link>}</div></div></section>}
-
-const stories=[{quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.',name:'Chị Lan Anh',role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},{quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.',name:'Anh Minh',role:'Người lao động giả định'},{quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.',name:'Chị Thu Hà',role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'}];
-function Testimonials(){const [index,setIndex]=useState(0);const story=stories[index];return <section className="home-stories section"><div className="container story-layout"><div data-reveal><span className="eyebrow">NHỮNG CÂU CHUYỆN KẾT NỐI</span><h2>Đồng hành bằng<br/>sự thấu hiểu.</h2><p>Mỗi cuộc gặp gỡ mở ra một góc nhìn và một cơ hội mới.</p><span className="story-disclaimer">Tình huống minh họa · Nhân vật giả định</span></div><div className="story-quote" data-reveal="right" aria-live="polite"><span className="quote-mark" aria-hidden="true">“</span><blockquote>{story.quote}</blockquote><div className="story-bottom"><div><strong>{story.name}</strong><small>{story.role}</small></div><div className="story-controls"><span>{String(index+1).padStart(2,'0')} / {String(stories.length).padStart(2,'0')}</span><button className="circle-button" aria-label="Câu chuyện trước" onClick={()=>setIndex((index+stories.length-1)%stories.length)}><ChevronLeft size={19}/></button><button className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={()=>setIndex((index+1)%stories.length)}><ChevronRight size={19}/></button></div></div></div></div></section>}
-
-function EventsAndGallery(){return <section className="home-moments section"><div className="container"><div className="moments-intro" data-reveal><div><span className="eyebrow">KẾT NỐI NGOÀI CÔNG VIỆC</span><h2>Gặp gỡ để mở<br/>thêm cơ hội.</h2></div><p>Từ những buổi trao đổi đến hành trình tìm việc, mỗi cuộc gặp là dịp để lắng nghe và cùng tiến về phía trước.</p></div><div className="moments-grid"><article className="moment-feature" data-reveal><img src={MEDIA+'2025/09/Co-hoi-viec-lam-scaled.jpg'} alt="Hình ảnh minh họa hoạt động kết nối việc làm" loading="lazy"/><div><span className="eyebrow">SỰ KIỆN MINH HỌA</span><h3>Ngày hội kết nối việc làm</h3><p>Gặp gỡ, tìm hiểu cơ hội và trao đổi trực tiếp về hành trình nghề nghiệp.</p><Link to="/events" className="text-link">Khám phá sự kiện <ArrowUpRight size={18}/></Link></div></article><div className="moment-side" data-reveal="media" data-reveal-delay="1"><img src={MEDIA+'2025/10/about-banner.jpg'} alt="Hình ảnh minh họa con người cùng làm việc" loading="lazy"/><div><span className="eyebrow">GÓC NHÌN MINH ĐỨC</span><h3>Con người tạo nên những kết nối bền vững.</h3><Link to="/about-us" className="text-link">Tìm hiểu câu chuyện <ArrowUpRight size={18}/></Link></div></div></div><p className="moment-note">Hình ảnh và hoạt động mang tính minh họa cho giao diện.</p></div></section>}
-function HomeFAQ(){return <section className="home-faq section"><div className="container faq-layout"><div data-reveal><span className="eyebrow">THÔNG TIN HỮU ÍCH</span><h2>Bạn cần biết<br/>điều gì?</h2><p>Những câu trả lời để bắt đầu kết nối cùng Minh Đức.</p><Link to="/contact" className="text-link">Liên hệ với chúng tôi <ArrowUpRight size={18}/></Link></div><div className="faq-list" data-reveal="up" data-reveal-delay="1">{HOME_FAQS.map(({question,answer})=><details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>}
+  </section>;
+}
+function Achievements() {
+  return <section className="section-home-about-achievement ref-achievements">
+    <img className="ref-edge ref-achievement-edge" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png" alt="" aria-hidden="true"/>
+    <div className="ref-wide"><p className="ref-demo-note">Số liệu mô phỏng cho giao diện</p><div className="ref-achievement-track" tabIndex={0} role="region" aria-label="Số liệu mô phỏng cho giao diện">
+      {metrics.map((m,i)=><article className="ref-achievement" key={m.label} data-reveal="up" data-reveal-delay={String(i)} style={{backgroundImage:`linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,.25)),url(${backgroundImage(MEDIA+'2025/09/'+m.image,960)})`}}><span className="ref-achievement-label">{m.label}</span><div><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><ArrowUpRight aria-hidden="true"/></div></article>)}
+    </div></div>
+  </section>;
+}
+function Solutions() {
+  const row=useRef<HTMLDivElement>(null);
+  const scroll=(direction:number)=>row.current?.scrollBy({left:direction*(row.current?.clientWidth || 350)*.8, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  return <section className="section-home-solution ref-home-section"><div className="container"><h2 className="ref-heading ref-center" data-reveal="up">Giải pháp nhân lực toàn diện</h2></div>
+    <div className="ref-wide ref-rail-wrap"><div ref={row} className="ref-solution-track" tabIndex={0} role="region" aria-label="Danh sách giải pháp">{services.map((s,i)=><article className="ref-solution" key={s.path} data-reveal="up" data-reveal-delay={String(i%3+1)} style={{backgroundImage:`linear-gradient(180deg,rgba(15,24,35,.25),rgba(15,24,35,.82)),url(${backgroundImage(MEDIA+'2025/09/'+s.image,960)})`}}><img className="ref-solution-icon" src={MEDIA+'2025/09/'+s.icon} alt="" width="188" height="188" loading="lazy"/><h3><Link to={'/services/'+s.path}>{s.title}</Link></h3><p>{s.desc}</p><Link className="btn" to={'/services/'+s.path}>Khám phá giải pháp <ArrowUpRight size={18}/></Link></article>)}</div>
+    <div className="ref-rail-controls"><button className="circle-button" aria-label="Dịch vụ trước" onClick={()=>scroll(-1)}><ChevronLeft/></button><button className="circle-button" aria-label="Dịch vụ tiếp theo" onClick={()=>scroll(1)}><ChevronRight/></button></div></div>
+  </section>;
+}
+function CustomersAndStories() {
+  const [index,setIndex]=useState(0);
+  const visible=[stories[index],stories[(index+1)%stories.length]];
+  return <section className="section-home-customer ref-home-section">
+    <div className="ref-customer-logos"><h2 className="ref-heading ref-center">Đối tác tiêu biểu</h2><PartnersStrip/></div>
+    <div className="container ref-customer-review"><h2 className="ref-heading ref-center">Đồng hành bằng<br/>sự thấu hiểu.</h2><p className="ref-center ref-story-note">Tình huống minh họa · Nhân vật giả định</p>
+      <div className="ref-testimonial-wrap">
+        <img className="ref-testimonial-edge ref-testimonial-edge-left" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-3.png" alt="" aria-hidden="true"/>
+        <img className="ref-testimonial-edge ref-testimonial-edge-right" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-4.png" alt="" aria-hidden="true"/>
+        <div className="ref-testimonial-track" aria-live="polite">{visible.map((story,i)=><article className="ref-testimonial-card" key={story.name}><div className="ref-testimonial-content">{story.quote}</div><div className="ref-testimonial-person"><span className="ref-testimonial-avatar" aria-hidden="true"><Users size={25}/></span><div><strong>{story.name}</strong><small>{story.role}</small></div></div></article>)}</div>
+        <div className="ref-story-controls"><span>{String(index+1).padStart(2,'0')} / {String(stories.length).padStart(2,'0')}</span><button className="circle-button" aria-label="Câu chuyện trước" onClick={()=>setIndex((index+stories.length-1)%stories.length)}><ChevronLeft size={19}/></button><button className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={()=>setIndex((index+1)%stories.length)}><ChevronRight size={19}/></button></div>
+      </div>
+    </div>
+  </section>;
+}
+function Partners() {
+  return <section className="section-home-coop ref-home-section"><div className="container"><h2 className="ref-heading ref-center">Đối tác tiêu biểu</h2><div className="ref-partner-grid">{partners.map(name=><div className="ref-partner-item" key={name}><PartnerLogo name={name}/></div>)}</div><div className="ref-centered-action"><Link to="/partners" className="text-link">Khám phá mạng lưới <ArrowUpRight size={18}/></Link></div></div></section>;
+}
+function News() {
+  const row=useRef<HTMLDivElement>(null), t=useTranslation();
+  const scroll=(direction:number)=>row.current?.scrollBy({left:direction*(row.current?.clientWidth || 350)*.8,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  const articles=[
+    {to:'/news/ho-so-xin-viec',title:'Chuẩn bị hồ sơ xin việc: bắt đầu từ những điều cần thiết',tag:'CẨM NANG VIỆC LÀM · NỘI DUNG MẪU',image:'Tin-tuc.jpg'},
+    {to:'/news/chon-cong-viec-phu-hop',title:'Lựa chọn công việc phù hợp với bạn',tag:'ĐỊNH HƯỚNG NGHỀ NGHIỆP',image:'GPNS-1.jpg'},
+    {to:'/news/nhu-cau-tuyen-dung',title:'Chuẩn bị nhu cầu tuyển dụng cho doanh nghiệp',tag:'GÓC DOANH NGHIỆP',image:'GPNS-2.jpg'},
+    {to:'/news/thong-tin-tuyen-dung-minh-bach',title:'Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn',tag:'GÓC DOANH NGHIỆP',image:'GPNS-3.jpg'},
+  ];
+  return <section className="section-home-news ref-home-section"><div className="container"><h2 className="ref-heading ref-center">Đồng hành cùng bạn</h2><div className="ref-news-grid" ref={row} tabIndex={0} role="region" aria-label={t({vi:"Tin tức",en:"News",zh:"新闻",ko:"뉴스",ja:"ニュース"})}>{articles.map(a=><article className="ref-news-card" key={a.to}><Link to={a.to} className="ref-news-image"><img src={MEDIA+'2025/09/'+a.image} alt="" loading="lazy"/></Link><span>{a.tag}</span><h3><Link to={a.to}>{a.title}</Link></h3><Link to={a.to} className="text-link">Đọc bài viết <ArrowUpRight size={18}/></Link></article>)}</div><div className="ref-rail-controls"><button className="circle-button" aria-label={t({vi:'Tin tức trước',en:'Previous news',zh:'上一条新闻',ko:'이전 뉴스',ja:'前のニュース'})} onClick={()=>scroll(-1)}><ChevronLeft/></button><button className="circle-button" aria-label={t({vi:'Tin tức tiếp theo',en:'Next news',zh:'下一条新闻',ko:'다음 뉴스',ja:'次のニュース'})} onClick={()=>scroll(1)}><ChevronRight/></button></div><div className="ref-centered-action"><ButtonLink to="/news" secondary>Xem tất cả tin tức</ButtonLink></div></div></section>;
+}
+function Events() {
+  return <section className="section-home-event ref-home-section"><div className="container"><h2 className="ref-heading ref-center">Gặp gỡ để mở<br/>thêm cơ hội.</h2><article className="ref-event"><img src={MEDIA+'2025/09/Co-hoi-viec-lam-scaled.jpg'} alt="Hình ảnh minh họa hoạt động kết nối việc làm" loading="lazy"/><div><span className="eyebrow">SỰ KIỆN MINH HỌA</span><h3>Ngày hội kết nối việc làm</h3><p>Gặp gỡ, tìm hiểu cơ hội và trao đổi trực tiếp về hành trình nghề nghiệp.</p></div></article><div className="ref-centered-action"><ButtonLink to="/events">Khám phá sự kiện</ButtonLink></div><p className="ref-demo-note">Hình ảnh và hoạt động mang tính minh họa cho giao diện.</p></div></section>;
+}
+function IntroVideos() {
+  const [open,setOpen]=useState(false), t=useTranslation(), locale=useLocale();
+  const heading=t({vi:'Video minh họa',en:'Illustrative video',zh:'示意视频',ko:'예시 영상',ja:'イメージ動画'});
+  const note=t({vi:'Bốn hình xem trước cùng mở một video minh họa; hình ảnh không thể hiện hoạt động thực tế của Minh Đức.',en:'All four previews open the same illustrative video; the images do not depict actual Minh Đức activities.',zh:'四个预览均打开同一示意视频；画面并非 Minh Đức 的实际活动。',ko:'네 개의 미리보기는 모두 같은 예시 영상을 엽니다. 영상은 Minh Đức의 실제 활동이 아닙니다.',ja:'4つのプレビューは同じイメージ動画を開きます。映像はMinh Đứcの実際の活動ではありません。'});
+  const play=t({vi:'Phát video minh họa',en:'Play illustrative video',zh:'播放示意视频',ko:'예시 영상 재생',ja:'イメージ動画を再生'});
+  return <section className="section-home-video ref-home-section"><span className="ref-video-big-text" aria-hidden="true">MINH ĐỨC</span><div className="container"><h2 className="ref-heading ref-center">{heading}</h2><p className="ref-video-note">{note}</p><div className="ref-video-grid">{services.slice(0,4).map(s=><button className="ref-video-card" type="button" key={s.path} onClick={()=>setOpen(true)} aria-label={`${play}: ${String(translate(s.title,locale))}`}><span className="ref-video-image"><img src={MEDIA+'2025/09/'+s.image} alt="" loading="lazy"/><span className="ref-video-play" aria-hidden="true"><Play size={22}/></span></span><span className="ref-video-title">{s.title}</span><span className="ref-video-description">{s.desc}</span></button>)}</div></div>{open&&<Modal title={heading} onClose={()=>setOpen(false)}><p className="ref-video-dialog-note">{note}</p><video className="ref-video-player" controls autoPlay playsInline preload="metadata" tabIndex={0} poster="/optimized/assets/hero-poster-960.webp"><source src="/optimized/hero-1600-e945407f.mp4" type="video/mp4"/></video></Modal>}</section>;
+}
+export default function Home() {
+  return <><HomeHero/><About/><Achievements/><Solutions/><CustomersAndStories/><Partners/><News/><Events/><IntroVideos/></>;
+}

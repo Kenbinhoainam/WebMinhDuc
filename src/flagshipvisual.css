@@ -1,62 +1,4 @@
-/* A shared editorial rhythm for the public site. */
-:root { --flagship-ink: #102d43; --flagship-red: #bb2635; --flagship-line: #dfe6e9; }
-.section { padding-block: clamp(56px, 7vw, 100px); }
-.section h2 { color: var(--flagship-ink); letter-spacing: -.035em; line-height: 1.17; }
-.section .eyebrow { letter-spacing: .14em; }
-/* Hero geometry stays stable as its media changes behind the copy. */
-.home-hero { position: relative; display: flex; align-items: center; min-height: clamp(500px, 50vw, 850px); height: auto; background: #24333c; color: #fff; }
-.hero-content { position: relative; padding-block: 125px 90px; }
-.hero-title-grid { max-width: 780px; margin: 0 0 24px; font-size: clamp(40px, 3.6vw, 64px); line-height: 1.12; font-weight: 700; letter-spacing: -.035em; }
-.hero-description-grid { max-width: 600px; margin: 0 0 32px; color: #fff; font-size: clamp(16px, 1.25vw, 19px); line-height: 1.7; }
-.hero-description-grid .hero-slide { margin: 0; }
-.hero-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; font-size: 12px; letter-spacing: .18em; font-weight: 700; }
-.hero-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; }
-.hero-actions .btn { max-width: 100%; white-space: normal; text-align: center; }
-/* An editorial introduction with a single circular image and a light arc. */
-.home-about { position: relative; overflow: hidden; background: #fff; padding-block: clamp(80px, 9vw, 135px); }
-.home-about::before { content: ""; position: absolute; width: min(72vw, 1000px); aspect-ratio: 1; right: 25%; top: -38%; border-radius: 50%; background: #f7f9f9; pointer-events: none; }
-.home-about .about-layout { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(48px, 7vw, 110px); align-items: center; }
-.home-about .about-layout h2 { max-width: 620px; }
-.home-about .about-layout p:not(.lead) { max-width: 540px; line-height: 1.85; }
-.home-about .about-image { position: relative; width: min(100%, 520px); margin-inline: auto; }
-.about-portrait { position: relative; width: 100%; aspect-ratio: 1; padding: clamp(12px, 2vw, 24px); }
-.about-portrait::before { content: ''; position: absolute; inset: 0; border: 2px solid #bd2937; border-left-color: transparent; border-bottom-color: transparent; border-radius: 50%; transform: rotate(-25deg); }
-.about-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; border-radius: 50%; }
-.home-about .photo-note { margin-top: 12px; }
-@media (max-width: 800px) { .home-hero { min-height: max(600px, 78svh); } .home-about .about-layout { gap: 35px; } .home-about::before { width: 110vw; right: -30%; top: 2%; } }
-@media (max-width: 575px) {
- .home-hero { min-height: max(640px, 100svh); height: auto; }
- .hero-content { padding-block: 115px 80px; }
- .hero-title-grid { font-size: clamp(36px, 10vw, 44px); line-height: 1.15; }
- .hero-description-grid { font-size: 15px; line-height: 1.75; }
- .hero-kicker { font-size: 10px; margin-bottom: 18px; }
- .home-about { padding-block: 72px; }
- .home-about .about-layout { grid-template-columns: 1fr; gap: 38px; }
- .home-about .about-image { width: min(90%, 400px); }
-}
-.home-services { background: #f5f8f9; }
-.home-services .section-heading { margin-bottom: 36px; }
-/* A continuous rail avoids the orphaned pair caused by a three-column grid. */
-.home-services .service-carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; padding: 4px 0 18px; scrollbar-width: thin; scrollbar-color: #a9bac3 transparent; }
-.home-services .service-carousel:focus-visible { outline: 2px solid var(--flagship-red); outline-offset: 4px; }
-.home-services .service-card { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; min-height: 460px; scroll-snap-align: start; padding: 34px; border-radius: 18px; }
-.home-services .service-card h3 { overflow-wrap: anywhere; }
-.home-services .service-card p { line-height: 1.65; }
-.home-services .service-card .btn { max-width: 100%; white-space: normal; }
-.home-services .carousel-controls { display: flex; margin-top: 18px; }
-.pathway-grid article { border: 1px solid var(--flagship-line); }
-.home-process, .home-faq { background: #f3f7f8; }
-.journey-steps article { border-color: #c3d2d8; }
-.journey-steps h3, .pathway-grid h3, .editorial-grid h3, .moments-grid h3 { color: var(--flagship-ink); }
-.story-quote { background: #f2f6f7; }
-.editorial-side > a { border-color: var(--flagship-line); }
-.info-service-card, .info-news-image, .job-card, .education-cards article { border-radius: 16px; }
-.info-service-card h3 { color: inherit; }
-.info-intro-grid, .education-detail, .education-form-layout { gap: clamp(30px, 5vw, 70px); }
-.info-partner { border-color: var(--flagship-line); border-radius: 12px; }
-
-/* Equal trailing spacing keeps the two sets aligned at the loop seam. */
-.partner-section { background: #fff; }
+/* Shared, verified partner assets and continuous logo rail. */
 .partners-strip { position: relative; border-block: 1px solid var(--flagship-line); margin-top: 35px; }
 .partners-viewport { overflow: hidden; }
 .partners-track { display: flex; width: max-content; animation: partners-loop 32s linear infinite; }
@@ -72,14 +14,10 @@
 .partners-toggle:focus-visible { z-index: 2; left: 8px; bottom: 8px; display: inline-flex; align-items: center; gap: 8px; width: auto; height: auto; min-height: 44px; padding: 8px 13px; overflow: visible; clip-path: none; border: 1px solid #d6e0e4; border-radius: 999px; background: white; color: #284b60; font: inherit; font-size: 13px; font-weight: 700; outline: 2px solid var(--flagship-red); outline-offset: 3px; }
 @keyframes partners-loop { to { transform: translateX(-50%); } }
 @media (max-width: 900px) {
- .home-services .service-card { flex-basis: calc((100% - 20px) / 2); }
  .info-partner-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 575px) {
- .home-services .service-carousel { width: calc(100% - 36px); margin-inline: 18px; }
- .home-services .service-card { flex-basis: 86%; min-height: 410px; padding: 28px; }
  .partners-set li { width: 185px; min-height: 88px; }
- .partner-footer { display: flex; flex-wrap: wrap; }
  .info-partner-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
  .info-partner { min-width: 0; overflow-wrap: anywhere; font-size: 16px; }
 }

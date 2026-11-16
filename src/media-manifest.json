@@ -264,5 +264,19 @@
         "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-840.webp"
       }
     ]
+  },
+  "/assets/minh-duc-about.webp": {
+    "width": 960,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/assets/minh-duc-about-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/assets/minh-duc-about-960.webp"
+      }
+    ]
   }
 }

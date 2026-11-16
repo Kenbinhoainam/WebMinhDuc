@@ -25,28 +25,32 @@ try {
   await loadLocale(locale);
   const base=localeBase(locale);
   await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale,basename:base||'/',initialEntries:[`${base}/jobs?q=kho#details`]},React.createElement(Header)))));
-  assert.equal(document.querySelectorAll('.desktop-nav-group').length,7);
-  assert.equal(document.querySelector('.desktop-nav-heading>a').textContent,{vi:'Trang chủ',en:'Home',zh:'首页',ko:'홈',ja:'ホーム'}[locale]);
-  const services=document.querySelector('.desktop-nav-heading > a[data-group="/services"]');
-  const destination=services;
-  const openServices=async()=>act(()=>services.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true})));
-  assert.equal(document.querySelectorAll('.desktop-nav-heading button').length,0,'desktop navigation has no leftover arrow buttons');
-  assert.equal(destination.getAttribute('href'),`${base}/services`);
+  assert.equal(document.querySelector('.desktop-nav'),null,'reference header uses one drawer at every width');
+  const menu=document.querySelector('.menu-button');
+  const openMenu=async()=>{await act(()=>menu.focus());await click(menu)};
+  await openMenu();
+  const groups=[...document.querySelectorAll('.drawer-group')];
+  assert.equal(groups.length,7);
+  assert.equal(groups[0].querySelector('a').textContent,{vi:'Trang chủ',en:'Home',zh:'首页',ko:'홈',ja:'ホーム'}[locale]);
+  assert.equal(document.querySelectorAll('.drawer-subnav a').length,19);
+  const services=groups[2].querySelector('button');
+  assert.equal(groups[2].querySelector('a').getAttribute('href'),`${base}/services`);
+  await click(services);assert.equal(services.getAttribute('aria-expanded'),'true');
   const trigger=document.querySelector('.language-trigger');
-  await openServices();await click(trigger);
-  assert.equal(services.getAttribute('aria-expanded'),'false','language opening closes navigation');
+  await click(trigger);
+  assert.equal(document.querySelector('.navigation-panel'),null,'language opening closes navigation');
   assert.equal(trigger.getAttribute('aria-expanded'),'true');
   const languages=[...document.querySelectorAll('.language-panel a')];
   assert.equal(languages.length,5);
   assert.deepEqual(languages.map(a=>a.getAttribute('href')),['/jobs?q=kho#details','/en/jobs?q=kho#details','/zh/jobs?q=kho#details','/ko/jobs?q=kho#details','/ja/jobs?q=kho#details']);
   assert.equal(languages.filter(a=>a.hasAttribute('aria-current')).length,1);
-  await openServices();
+  await openMenu();
   assert.equal(trigger.getAttribute('aria-expanded'),'false','navigation opening closes language');
-  assert.equal(services.getAttribute('aria-expanded'),'true');
+  assert.equal(menu.getAttribute('aria-expanded'),'true');
   await act(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
-  assert.equal(services.getAttribute('aria-expanded'),'false');assert.equal(document.activeElement,services);
-  await openServices();await click(destination);
-  assert.equal(services.getAttribute('aria-expanded'),'false','destination navigation closes disclosure');
+  assert.equal(menu.getAttribute('aria-expanded'),'false');assert.equal(document.activeElement,menu);
+  await openMenu();await click(document.querySelectorAll('.drawer-group')[2].querySelector('a'));
+  assert.equal(menu.getAttribute('aria-expanded'),'false','destination navigation closes drawer');
   await click(trigger);await click(document.querySelector('.header-search'));
   assert.equal(trigger.getAttribute('aria-expanded'),'false','search opening closes language');
   assert.ok(document.querySelector('[role="dialog"]'));
@@ -68,24 +72,21 @@ try {
  assert.equal(paused,true);
  await act(()=>new Promise(resolve=>setTimeout(resolve,1700)));
  assert.equal(paused,true,'quick manual play then pause must cancel pending autoplay');assert.equal(plays,1);
- // Regression for the observed production cascade: importing base CSS after App
- // reinstated the desktop hamburger. The compact header now uses a 100px
- // anchor offset instead of the former two-row 145px offset. This checks
- // compiled rule order only; it is not a browser layout assertion.
+ // Compiled source guards for the reference header, not computed layout assertions.
  const builtHtml=await readFile('dist/index.html','utf8');
  const builtDocument=new window.DOMParser().parseFromString(builtHtml,'text/html');
  assert.ok([...builtDocument.querySelectorAll('link[rel="preload"][as="image"]')].some(link=>link.getAttribute('href')===poster.getAttribute('src')),'poster markup uses the same URL as the homepage preload');
  const cssPath=builtDocument.querySelector('link[rel="stylesheet"]')?.getAttribute('href');
  assert.ok(cssPath?.startsWith('/assets/'),'compiled entry stylesheet exists');
  const css=await readFile(`dist${cssPath}`,'utf8');
- const baseDisplay=css.indexOf('.header-saved,.menu-button{display:flex');
- const desktopHide=css.indexOf('.menu-button{display:none');
- assert.ok(baseDisplay>=0&&desktopHide>baseDisplay,'desktop hamburger hide must follow base utility display');
- const rules=postcss.parse(css);let compactDesktopOffset=false,compactHeight=false;
+ const rules=postcss.parse(css);let visibleMenu=false,compactHeight=false;
  rules.walkDecls('scroll-padding-top',decl=>assert.notEqual(decl.value,'145px','obsolete two-row offset must not survive'));
- rules.walkRules('.header-inner',rule=>rule.walkDecls('height',decl=>{if(decl.value==='86px')compactHeight=true}));
- rules.walkAtRules('media',media=>{if(/min-width:\s*1280px/.test(media.params))media.walkRules('html',rule=>rule.walkDecls('scroll-padding-top',decl=>{if(decl.value==='100px')compactDesktopOffset=true}))});
- assert.ok(compactHeight&&compactDesktopOffset,'single-row header height and desktop anchor offset are present');
+ rules.walkRules(rule=>{
+  assert.ok(!rule.selector.includes('.desktop-nav'),'obsolete desktop navigation CSS must not survive');
+  if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='5rem')compactHeight=true});
+  if(rule.selectors.includes('.site-header .menu-button'))rule.walkDecls('display',decl=>{visibleMenu=decl.value!=='none'});
+ });
+ assert.ok(compactHeight&&visibleMenu,'compact reference header keeps its menu available');
  assert.equal(errors.length,0,errors.join('\n'));
  console.log('PASS independent flagship: five locale routes, mutually exclusive disclosures/search, Escape focus, destination links, poster-first media, quick manual pause, compiled CSS order');
 } finally {

@@ -1,7 +1,8 @@
 import {lazy,Suspense,useEffect,useState,useRef} from 'react';
 import {Routes,Route,Link,useLocation,useNavigationType,Navigate} from 'react-router-dom';
-import {X,Phone,ArrowUpRight,ArrowUp,ArrowRight,MessageCircle} from 'lucide-react';
+import {X,Phone,ArrowUpRight,ArrowUp,MessageCircle} from 'lucide-react';
 import Home from './Home';
+import Footer from './Footer';
 import {ContactForm,ContactPage} from './Contact';
 import {ContactContext,Modal,NotFound} from './shared';
 import {JobsPage,JobDetailPage,CareersPage,SavedJobsPage} from './JobsPages';
@@ -20,12 +21,10 @@ import './jobs.css';
 import './info.css';
 import {Header} from './Header';
 export {Header} from './Header';
-import {navigation} from './navigation';
 const EducationPage=lazy(()=>import('./Education').then(m=>({default:m.EducationPage})));
 const EducationDetailPage=lazy(()=>import('./Education').then(m=>({default:m.EducationDetailPage})));
 const AdminDemo=lazy(()=>import('./AdminDemo').then(m=>({default:m.AdminDemo})));
 import './sprint-navigation.css';
-function Footer(){const [email,setEmail]=useState(''),[feedback,setFeedback]=useState('');return <footer className="site-footer"><div className="container"><div className="footer-top"><div><span className="footer-brand-name">MINH ĐỨC<span>VINA</span></span><p>Nhân lực là tài sản.</p></div><a className="footer-hotline" href="tel:0364562868"><span>CÙNG BẠN TÌM GIẢI PHÁP</span><strong>0364 562 868 <ArrowUpRight/></strong></a></div><div className="footer-grid"><div><h3>Kết nối cùng Minh Đức</h3><p>CÔNG TY TNHH NHÂN LỰC<br/>MINH ĐỨC VINA</p><p>Cung ứng nhân lực · Tư vấn và giới thiệu việc làm</p><div className="footer-social"><a href="https://www.facebook.com/md668.com.vn" target="_blank" rel="noreferrer">Facebook <ArrowUpRight size={14}/></a><a href="https://zalo.me/0329138082" target="_blank" rel="noreferrer">Zalo <ArrowUpRight size={14}/></a></div></div><div><h3>Khám phá</h3>{navigation.filter((_,i)=>[1,2,3,4,5].includes(i)).map(([to,title])=><Link key={to} to={to}>{title}</Link>)}</div><div><h3>Hỗ trợ</h3><Link to="/contact">Liên hệ & chi nhánh</Link><Link to="/saved-jobs">Việc làm đã lưu</Link><Link to="/e-brochure">Hồ sơ năng lực</Link><Link to="/education">Tuyển sinh</Link><Link to="/admin-demo">Trải nghiệm quản trị mẫu</Link><Link to="/privacy-policy">Chính sách bảo mật</Link><Link to="/terms-of-use">Điều khoản sử dụng</Link></div><div><h3>Đón nhận cơ hội mới</h3><p>Đăng ký trải nghiệm nhận thông tin việc làm và hoạt động.</p><form className="newsletter" onSubmit={e=>{e.preventDefault();setFeedback('Đã đăng ký thử. Email chưa được gửi hoặc lưu.');setEmail('')}}><input required type="email" aria-label="Email nhận bản tin" placeholder="Email của bạn" value={email} onChange={e=>setEmail(e.target.value)}/><button type="submit" aria-label="Đăng ký nhận bản tin"><ArrowRight size={20}/></button></form><small role="status">{feedback||'Biểu mẫu minh họa trong prototype.'}</small></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Minh Đức Vina.</span><span>Prototype · Hình ảnh tham chiếu từ HR2B</span><Link to="/contact">Vôi · Bắc Ninh · Quảng Ninh</Link></div></div></footer>}
 function CookieNotice(){const [show,setShow]=useState(true);useEffect(()=>{try{setShow(!localStorage.getItem('minhduc.preferences'))}catch{}},[]);function dismiss(){try{localStorage.setItem('minhduc.preferences','essential-only')}catch{}setShow(false)}return show?<aside className="cookie-notice" aria-label="Thông tin lưu trữ"><div><strong>Một trải nghiệm thuận tiện hơn</strong><p>Website lưu lựa chọn và việc làm bạn đánh dấu ngay trên thiết bị. Không dùng cookie quảng cáo.</p><Link to="/privacy-policy">Tìm hiểu thêm</Link></div><button className="btn" onClick={dismiss}>Đã hiểu</button><button className="icon-button" aria-label="Đóng thông báo lưu trữ" onClick={dismiss}><X size={18}/></button></aside>:null}
 const scrollPositions=new Map<string,number>();
 export function PageTransition(){

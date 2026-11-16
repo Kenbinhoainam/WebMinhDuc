@@ -98,7 +98,7 @@ export default function HomeHero() {
   // Rotate only while footage is actually playing, with no motion in constrained modes.
   useEffect(() => {
     if (!eligible || !playing || !frameReady || !inView || !pageVisible || hovered || focused) return;
-    const timer = window.setInterval(() => setSlide(current => (current + 1) % 4), 6000);
+    const timer = window.setInterval(() => setSlide(current => (current + 1) % 4), 3000);
     return () => window.clearInterval(timer);
   }, [eligible, playing, frameReady, inView, pageVisible, hovered, focused]);
 
@@ -120,11 +120,12 @@ export default function HomeHero() {
     }
   };
 
-  return <section className="home-hero" ref={section}
+  return <section className="home-hero section-home-banner" ref={section}
     onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
     onFocusCapture={() => setFocused(true)}
     onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false); }}>
-    <div className="hero-media" aria-hidden="true">
+    <div className="item-banner">
+    <div className="hero-media img" aria-hidden="true">
       <img className="hero-poster" src={POSTER} alt="" fetchPriority="high" decoding="async"/>
       <video
         ref={video} className={frameReady ? 'is-ready' : undefined} muted loop playsInline preload="none"
@@ -136,26 +137,28 @@ export default function HomeHero() {
       />
     </div>
     <div className="hero-shade"/>
-    <div className="container hero-content">
-      <span className="hero-kicker"><span/> MINH ĐỨC VINA</span>
+    <div className="container hero-content wrap-content">
+      <div className="wrap-slide-banner"><div className="item-content">
       <div className="hero-copy">
         <h1 className="hero-title-grid">
-          <span className="hero-slide" data-active={slide === 0} aria-hidden={slide !== 0}>Kết nối nhân lực.<br/>Kiến tạo tương lai.</span>
-          <span className="hero-slide" data-active={slide === 1} aria-hidden={slide !== 1}>Giới thiệu &amp; cung ứng nhân lực</span>
-          <span className="hero-slide" data-active={slide === 2} aria-hidden={slide !== 2}>Cho thuê lao động</span>
-          <span className="hero-slide" data-active={slide === 3} aria-hidden={slide !== 3}>Headhunt &amp; lao động tay nghề</span>
+          <span className="hero-slide" data-position={slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Kết nối nhân lực.<br/>Kiến tạo tương lai.</span>
+          <span className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Giới thiệu &amp; cung ứng nhân lực</span>
+          <span className="hero-slide" data-position={slide > 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Cho thuê lao động</span>
+          <span className="hero-slide" data-position={slide > 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Headhunt &amp; lao động tay nghề</span>
         </h1>
         <div className="hero-description-grid">
-          <p className="hero-slide" data-active={slide === 0} aria-hidden={slide !== 0}>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p>
-          <p className="hero-slide" data-active={slide === 1} aria-hidden={slide !== 1}>Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.</p>
-          <p className="hero-slide" data-active={slide === 2} aria-hidden={slide !== 2}>Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.</p>
-          <p className="hero-slide" data-active={slide === 3} aria-hidden={slide !== 3}>Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.</p>
+          <p className="hero-slide" data-position={slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p>
+          <p className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.</p>
+          <p className="hero-slide" data-position={slide > 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.</p>
+          <p className="hero-slide" data-position={slide > 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.</p>
         </div>
       </div>
-      <div className="hero-actions"><ButtonLink to="/services">Tôi cần tuyển nhân lực</ButtonLink><ButtonLink to="/jobs" secondary>Tôi đang tìm việc</ButtonLink></div>
+      <div className="hero-actions"><ButtonLink to={['/about-us', '/services/labor-supply', '/services/labor-leasing', '/services/recruitment'][slide]}>{slide === 0 ? 'Tìm hiểu Minh Đức' : 'Khám phá giải pháp'}</ButtonLink></div>
+      </div></div>
     </div>
     <button type="button" className="video-control" aria-label={playing ? 'Tạm dừng chuyển động' : 'Phát chuyển động'} onClick={toggle}>
       {playing ? <Pause size={15}/> : <Play size={15}/>}<span>{playing ? 'Tạm dừng chuyển động' : 'Phát chuyển động'}</span>
     </button>
+    </div>
   </section>;
 }
