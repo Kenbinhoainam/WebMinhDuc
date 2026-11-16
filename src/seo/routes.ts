@@ -11,7 +11,7 @@ export const pages:Page[] = [
  page('/services/recruitment','Headhunt & lao động tay nghề','Kết nối doanh nghiệp với nhân sự có kinh nghiệm và kỹ năng phù hợp từng vị trí.'),
  page('/services/hr-consulting','Setup tổ chức & phần mềm doanh nghiệp','Tìm hiểu giải pháp tổ chức, quy trình và phần mềm hỗ trợ vận hành doanh nghiệp.'),
  page('/services/labor-leasing','Cho thuê lao động','Trao đổi phương án nhân lực linh hoạt theo thời gian và phạm vi công việc.'),
- page('/services/college-admissions','Tuyển sinh cao đẳng','Khám phá hình thức học từ xa, chính quy và các bước tư vấn tuyển sinh minh họa.'),
+ page('/services/college-admissions','Tuyển sinh cao đẳng & đại học','Khám phá hình thức học từ xa, chính quy và các bước tư vấn tuyển sinh minh họa.'),
  page('/jobs','Cơ hội việc làm','Khám phá các vị trí việc làm minh họa theo địa điểm, ngành nghề và hình thức làm việc.'),
  ...[
  ['cong-nhan-lap-rap-bac-ninh','Công nhân lắp ráp linh kiện'],['kiem-tra-chat-luong-bac-giang','Nhân viên kiểm tra chất lượng'],['nhan-vien-kho-thai-nguyen','Nhân viên kho và đóng gói'],['van-hanh-may-quang-ninh','Công nhân vận hành máy'],['ky-thuat-bao-tri-bac-ninh','Kỹ thuật viên bảo trì'],['dong-goi-thoi-vu-bac-giang','Nhân viên đóng gói thời vụ'],['chuyen-vien-tuyen-dung-bac-ninh','Chuyên viên tuyển dụng'],['cong-tac-vien-tuyen-dung-quang-ninh','Cộng tác viên tuyển dụng']

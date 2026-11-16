@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {build} from 'esbuild';
-import {mkdir, rm} from 'node:fs/promises';
+import {mkdir, readFile, rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {JSDOM} from 'jsdom';
 
@@ -27,10 +27,20 @@ try {
     reveal(target) { this.callback([{target, isIntersecting: true}]); }
   }
   globalThis.IntersectionObserver = Observer;
+  const css = await readFile('src/motion.css', 'utf8');
+  assert.match(css, /\.service-card\[data-reveal\]:hover:not\(\.motion-pending\)\s*\{\s*transform:\s*none/, 'reveal cards neutralize the legacy hover transform in all motion preferences');
+  assert.match(css, /\.service-card\[data-reveal\]\.motion-pending:hover\s*\{\s*transform:\s*translateY\(22px\)/, 'hover retains the pending entrance position');
   const {startReveals} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
   let stop = startReveals();
   assert(shown.classList.contains('motion-visible'), 'already visible content is never hidden');
   assert(below.classList.contains('motion-pending'), 'below-fold content is observed');
+  document.querySelector('button').focus();
+  assert(below.classList.contains('motion-visible') && !below.classList.contains('motion-pending'), 'focus resolves a pending reveal');
+  assert(!current.targets.has(below), 'focused reveal is unobserved');
+  document.querySelector('button').blur();
+  assert(below.classList.contains('motion-visible') && !below.classList.contains('motion-pending'), 'blur does not hide focused content again');
+  below.classList.remove('motion-visible');
+  stop(); stop = startReveals();
   current.reveal(below);
   assert(below.classList.contains('motion-visible') && !below.classList.contains('motion-pending'), 'intersection reveals once');
   assert(!current.targets.has(below), 'revealed elements are unobserved');

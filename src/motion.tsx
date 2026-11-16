@@ -4,7 +4,7 @@ import './motion.css';
 
 /** Enhance only marked, below-the-fold content; the unenhanced state stays visible. */
 export function startReveals(): () => void {
-  if (typeof IntersectionObserver === 'undefined' || !window.matchMedia) return () => {};
+  if (typeof window === 'undefined' || typeof document === 'undefined' || typeof IntersectionObserver === 'undefined' || !window.matchMedia) return () => {};
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let observer: IntersectionObserver | undefined;
   let mutations: MutationObserver | undefined;
@@ -18,6 +18,21 @@ export function startReveals(): () => void {
     observed.forEach(element => element.classList.remove('motion-pending'));
     observed.clear();
   };
+  const reveal = (element: HTMLElement) => {
+    element.classList.remove('motion-pending');
+    element.classList.add('motion-visible');
+    observer?.unobserve(element);
+    observed.delete(element);
+  };
+  // Focus permanently resolves every pending ancestor, including nested reveals.
+  const focus = (event: FocusEvent) => {
+    let element = event.target instanceof HTMLElement ? event.target.closest<HTMLElement>('[data-reveal].motion-pending') : null;
+    while (element) {
+      reveal(element);
+      element = element.parentElement?.closest<HTMLElement>('[data-reveal].motion-pending') ?? null;
+    }
+  };
+  document.addEventListener('focusin', focus);
   const setup = () => {
     clear();
     if (preference.matches) return;
@@ -26,10 +41,7 @@ export function startReveals(): () => void {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           const element = entry.target as HTMLElement;
-          element.classList.remove('motion-pending');
-          element.classList.add('motion-visible');
-          observer?.unobserve(element);
-          observed.delete(element);
+          reveal(element);
         });
       }, {threshold: 0, rootMargin: '0px 0px -8% 0px'});
       const register = (root: ParentNode) => {
@@ -76,7 +88,7 @@ export function startReveals(): () => void {
   };
   setup();
   preference.addEventListener('change', setup);
-  return () => { preference.removeEventListener('change', setup); clear(); };
+  return () => { document.removeEventListener('focusin', focus); preference.removeEventListener('change', setup); clear(); };
 }
 
 export function MotionController() {

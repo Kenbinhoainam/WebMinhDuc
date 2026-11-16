@@ -47,3 +47,79 @@ html[lang=ko],html[lang=ja],html[lang=zh-Hans]{word-break:normal;overflow-wrap:a
 @media(min-width:1024px){.desktop-nav-group:nth-last-child(-n+2) .desktop-subnav{left:auto;right:0}}
 
 @media(max-width:480px){.site-header .header-contact{display:none}}
+
+/* The navigation remains legible over both photography and light content. */
+.site-header:not(.is-scrolled):not(.inner-header),
+.site-header.inner-header, .site-header.is-scrolled {
+ background: rgba(13, 37, 54, .75);
+ color: #fff;
+ border-bottom: 1px solid rgba(255,255,255,.22);
+ box-shadow: 0 8px 28px rgba(8,25,36,.12);
+}
+.site-header .header-search, .site-header .header-saved, .site-header .menu-button {
+ background: rgba(255,255,255,.13);
+ color: #fff;
+ border: 1px solid rgba(255,255,255,.22);
+}
+.site-header .header-search svg { color: inherit; }
+.site-header .header-contact { color: #fff; }
+.site-header .header-search:hover, .site-header .header-saved:hover, .site-header .menu-button:hover { background: rgba(255,255,255,.14); }
+.site-header :is(a,button):focus-visible, .navigation-panel :is(a,button):focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@supports (backdrop-filter: blur(12px)) {
+ .site-header:not(.is-scrolled):not(.inner-header), .site-header.inner-header, .site-header.is-scrolled { backdrop-filter: blur(12px); }
+ .desktop-subnav, .navigation-panel { backdrop-filter: blur(16px); }
+}
+@media(min-width:1024px) {
+ .site-header .desktop-nav { border-color: rgba(255,255,255,.22); }
+ .desktop-nav-heading>a { min-width: 0; overflow-wrap: anywhere; }
+ .site-header .desktop-nav-heading>a:hover, .site-header .desktop-nav-heading>a.active { color: #fff; text-decoration-color: #ff8b8b; }
+ .desktop-subnav { background: rgba(13,37,54,.75); color: #fff; border: 1px solid rgba(255,255,255,.24); box-shadow: 0 16px 36px rgba(3,18,29,.26); }
+ .desktop-subnav a:hover, .desktop-subnav a:focus-visible { background: rgba(255,255,255,.14); color: #fff; }
+}
+/* Only the navigation drawer gets the glass surface; form dialogs keep their own styling. */
+.modal-backdrop:has(.navigation-panel) { backdrop-filter: none; }
+.navigation-panel { background: rgba(13,37,54,.75); color: #fff; border-left: 1px solid rgba(255,255,255,.24); }
+.navigation-panel .modal-heading h2 { color: #fff; }
+.navigation-panel .drawer-audiences a { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.07); }
+.navigation-panel .drawer-audiences a:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.5); }
+.navigation-panel .drawer-audiences a>svg:first-child, .navigation-panel .drawer-contact>a { color: #ffb5b1; }
+.navigation-panel .drawer-contact, .navigation-panel .nav-number { color: #fff; }
+.drawer-group-heading { display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.24); }
+.drawer-nav .drawer-group-heading > a { flex: 1; min-width: 0; border: 0; padding: 14px 0; font-size: 23px; line-height: 1.3; overflow-wrap: anywhere; }
+.drawer-group-heading > button { display: grid; place-items: center; flex: none; width: 44px; min-height: 44px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: rgba(255,255,255,.08); color: #fff; }
+.drawer-group-heading > button[aria-expanded="true"] svg { transform: rotate(180deg); }
+.navigation-panel .drawer-nav a.active, .navigation-panel .drawer-nav a:hover { color: #ffb5b1; }
+.navigation-panel .drawer-subnav a { color: #fff; }
+.navigation-panel .drawer-subnav a:hover { color: #fff; text-decoration: underline; }
+.drawer-subnav[hidden] { display: none; }
+.no-script-nav { background: #102d43; color: #fff; padding: 16px 24px; }
+.no-script-nav a { color: #fff; }
+@media(max-width:500px) { .drawer-nav .drawer-group-heading > a { font-size: 20px; } }
+@media (prefers-reduced-transparency: reduce) {
+ .site-header:not(.is-scrolled):not(.inner-header), .site-header.inner-header, .site-header.is-scrolled, .desktop-subnav, .navigation-panel { background: #102d43; backdrop-filter: none; }
+}
+@supports not (backdrop-filter: blur(12px)) {
+ .site-header:not(.is-scrolled):not(.inner-header), .site-header.inner-header, .site-header.is-scrolled, .desktop-subnav, .navigation-panel { background: #102d43; }
+}
+@media (forced-colors: active) {
+ .site-header:not(.is-scrolled):not(.inner-header), .site-header.inner-header, .site-header.is-scrolled, .desktop-subnav, .navigation-panel { background: Canvas; color: CanvasText; border: 1px solid CanvasText; backdrop-filter: none; box-shadow: none; }
+ .site-header :is(a,button), .site-header .header-search, .site-header .header-saved, .site-header .menu-button, .site-header .header-contact, .site-header .desktop-nav-heading>a:hover, .site-header .desktop-nav-heading>a.active, .desktop-subnav a:hover, .desktop-subnav a:focus-visible, .navigation-panel :is(a,button,h2), .navigation-panel .drawer-nav a.active, .navigation-panel .drawer-nav a:hover, .navigation-panel .drawer-subnav a { color: CanvasText; background: Canvas; border-color: CanvasText; }
+ .site-header :is(a,button):focus-visible, .navigation-panel :is(a,button):focus-visible { outline-color: Highlight; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+ .desktop-subnav:not([hidden]) { animation: navigation-panel-open 200ms ease-out both; }
+ .desktop-nav-heading > button svg, .drawer-group-heading > button svg { transition: transform 200ms ease; }
+}
+@keyframes navigation-panel-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+/* The no-script sitemap lives in normal flow and remains fully navigable. */
+.no-script-nav > ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 22px 30px; max-width: 1400px; margin: 0 auto; padding: 0; list-style: none; }
+.no-script-nav > ul > li > a { display: inline-block; font-weight: 700; margin-bottom: 6px; }
+.no-script-nav ul ul { margin: 0; padding-left: 20px; }
+.no-script-nav li { line-height: 1.6; }
+.no-script-nav a { text-decoration: underline; text-underline-offset: 3px; }
+.no-script-nav a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (forced-colors: active) { .no-script-nav { background: Canvas; color: CanvasText; } .no-script-nav a { color: LinkText; } .no-script-nav a:focus-visible { outline-color: Highlight; } }
+/* Each child destination remains comfortable to tap in the mobile drawer. */
+.drawer-nav .drawer-subnav a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; }
+.drawer-subnav[hidden] { display: none; }

@@ -4,7 +4,7 @@
 .is-scrolled .language-trigger,.inner-header .language-trigger,.site-header.is-solid .language-trigger{background:#f4f5f5;color:#26343a;border-color:#d9dfe0}
 .is-scrolled .language-trigger:hover,.inner-header .language-trigger:hover,.site-header.is-solid .language-trigger:hover,.is-scrolled .language-trigger[aria-expanded="true"],.inner-header .language-trigger[aria-expanded="true"],.site-header.is-solid .language-trigger[aria-expanded="true"]{background:#e6ecec}
 .locale-flag{display:block;width:25px;height:16px;border-radius:2px;box-shadow:0 0 0 1px #0002;overflow:hidden}
-.language-chevron{width:14px;height:14px;transition:transform .2s}
+.language-chevron{width:14px;height:14px}
 .language-trigger[aria-expanded="true"] .language-chevron{transform:rotate(180deg)}
 .language-panel{position:absolute;right:0;top:calc(100% + 10px);width:230px;max-width:calc(100vw - 24px);padding:10px;background:#fff;color:#233138;border:1px solid #e0e6e6;border-radius:16px;box-shadow:0 16px 45px #0b27302b;z-index:50}
 .language-panel[hidden]{display:none}
@@ -14,3 +14,28 @@
 .language-panel a:hover,.language-panel a[aria-current]{background:#f0f6f5;color:#123b3c}
 .language-panel a span{flex:1}.language-check{width:16px;height:16px;color:#16816e}
 @media(max-width:390px){.language-trigger{gap:5px;padding-inline:8px;font-size:11px}.locale-flag{width:22px;height:14px}.language-chevron{width:12px;height:12px}}
+
+/* Match the navigation glass in every header state. */
+.site-header .language-trigger, .site-header.is-scrolled .language-trigger, .site-header.inner-header .language-trigger {
+ background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.38);
+}
+.site-header .language-trigger:hover, .site-header .language-trigger[aria-expanded="true"], .site-header.is-scrolled .language-trigger:hover, .site-header.inner-header .language-trigger:hover { background: rgba(255,255,255,.14); }
+.language-panel { background: rgba(13,37,54,.75); color: #fff; border-color: rgba(255,255,255,.24); }
+.language-panel-title { color: #fff; }
+.language-panel a:hover, .language-panel a[aria-current] { background: rgba(255,255,255,.14); color: #fff; }
+.language-check { color: #a8e1d5; }
+@supports (backdrop-filter: blur(12px)) { .language-panel { backdrop-filter: blur(16px); } }
+@media (prefers-reduced-transparency: reduce) { .language-panel { background: #102d43; backdrop-filter: none; } }
+@supports not (backdrop-filter: blur(12px)) { .language-panel { background: #102d43; } }
+@media (forced-colors: active) {
+ .site-header .language-trigger, .site-header.is-scrolled .language-trigger, .site-header.inner-header .language-trigger, .language-panel, .language-panel a:hover, .language-panel a[aria-current] { background: Canvas; color: CanvasText; border: 1px solid CanvasText; backdrop-filter: none; }
+ .language-panel-title, .language-check { color: CanvasText; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+ .language-panel:not([hidden]) { animation: language-panel-open 200ms ease-out both; }
+ .language-chevron { transition: transform 200ms ease; }
+}
+@keyframes language-panel-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+/* The accessible label retains the language name when the narrow header uses its flag. */
+@media(max-width:360px) { .language-trigger > span { display: none; } }

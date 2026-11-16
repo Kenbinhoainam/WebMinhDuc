@@ -17,7 +17,8 @@
     "prebuild": "node scripts/generate-locales.mjs --check",
     "generate:locales": "node scripts/generate-locales.mjs",
     "test:catalog": "node tests/catalog-parity.mjs",
-    "test:flagship": "node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && node tests/motion.mjs && node tests/media.mjs && node tests/flagship-review.mjs"
+    "test:flagship": "node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && node tests/motion.mjs && node tests/media.mjs && node tests/flagship-review.mjs",
+    "test:sitemap": "node tests/sitemap-destinations.mjs && node tests/sitemap-review.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

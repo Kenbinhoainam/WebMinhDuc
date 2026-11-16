@@ -1,0 +1,29 @@
+import { build } from 'esbuild';
+import { JSDOM } from 'jsdom';
+import { pathToFileURL } from 'node:url';
+import { rm } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const bundle = `${process.cwd()}/.sitemap-test.mjs`;
+await build({stdin:{contents:`export {loadLocale} from './src/i18n-runtime/catalog'; export {LocaleProvider} from './src/i18n'; export {AboutPage,NewsPage} from './src/InfoPages'; export {JobsPage,CareersPage} from './src/JobsPages'; export {ContactPage,ContactForm} from './src/Contact';`,resolveDir:process.cwd(),sourcefile:'sitemap-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:bundle,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+try {
+ const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost/',pretendToBeVisual:true});
+ for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','localStorage','location','requestAnimationFrame','cancelAnimationFrame']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
+ window.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});window.scrollTo=()=>{};window.HTMLElement.prototype.scrollIntoView=()=>{};globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+ const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter,useLocation,useNavigate}=await import('react-router-dom');
+ const {AboutPage,NewsPage,JobsPage,CareersPage,ContactPage,ContactForm,LocaleProvider,loadLocale}=await import(pathToFileURL(bundle).href);const root=createRoot(document.getElementById('root'));let navigate,location;
+ function Harness({component:Component}){navigate=useNavigate();location=useLocation();return React.createElement(Component)}
+ const render=async(path,component)=>act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:[path],key:path},React.createElement(Harness,{component}))));
+ const click=async(el)=>act(()=>el.dispatchEvent(new window.MouseEvent('click',{bubbles:true})));
+ await render('/about-us#history',AboutPage);for(const id of ['history','achievements'])assert.ok(document.getElementById(id)?.querySelector('h2'));assert.match(document.getElementById('history').textContent,/minh họa/);
+ await render('/careers#open-positions',CareersPage);for(const id of ['open-positions','position-benefits','cv-requirements','career-contact'])assert.ok(document.getElementById(id));assert.match(document.getElementById('cv-requirements').textContent,/PDF, DOC hoặc DOCX tối đa 5 MB/);assert.ok(document.querySelector('#open-positions .job-card'));
+ for(const level of ['Phổ thông','Tay nghề']){await render(`/jobs?skillLevel=${encodeURIComponent(level)}#job-listings`,JobsPage);assert.ok(document.querySelector('#job-listings .jobs-browser'));assert.equal(document.querySelector('#jobs-skillLevel').value,level);}
+ await render('/contact#consultation',ContactPage);assert.ok(document.querySelector('#consultation form'));
+ for (const title of ['Tuyển sinh cao đẳng & đại học','Tuyển sinh cao đẳng và đại học','Tuyển sinh cao đẳng']) { const Form=()=>React.createElement(ContactForm,{initialService:title});await render('/contact?service='+encodeURIComponent(title),Form);const select=document.querySelector('[name=service]');assert.equal(select.value,'Tuyển sinh cao đẳng');assert.match(select.selectedOptions[0].textContent,/đại học/); }
+ await Promise.all(['vi','en','zh','ko','ja'].map(loadLocale));
+ for (const locale of ['vi','en','zh','ko','ja']) { await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale},React.createElement(ContactForm,{initialService:'Tuyển sinh cao đẳng & đại học'})))));const select=document.querySelector('[name=service]');assert.equal(select.value,'Tuyển sinh cao đẳng');assert.ok(select.selectedOptions[0].textContent.trim());if(locale!=='vi')assert.notEqual(select.selectedOptions[0].textContent,'Tuyển sinh cao đẳng & đại học'); }
+ await render('/news?category=workers#news-listings',NewsPage);const tabs=()=>[...document.querySelectorAll('.info-tabs button')];assert.equal(tabs()[1].getAttribute('aria-pressed'),'true');assert.equal(document.querySelectorAll('.info-news-card').length,2);assert.ok([...document.querySelectorAll('.info-news-meta')].every(el=>el.textContent.includes('Dành cho người lao động')));
+ await click(tabs()[2]);assert.equal(location.search,'?category=employers');assert.equal(location.hash,'#news-listings');assert.equal(tabs()[2].getAttribute('aria-pressed'),'true');
+ await click(tabs()[3]);assert.equal(location.search,'?category=hr');await act(()=>navigate(-1));assert.equal(tabs()[2].getAttribute('aria-pressed'),'true');await act(()=>navigate(-1));assert.equal(tabs()[1].getAttribute('aria-pressed'),'true');await act(()=>navigate(1));assert.equal(tabs()[2].getAttribute('aria-pressed'),'true');
+ await click(tabs()[0]);await click(document.querySelector('.info-pagination button[aria-label="Trang sau"]'));assert.equal(location.search,'?page=2');assert.match(document.querySelector('.info-result-count').textContent,/Trang 2\/2/);await act(()=>navigate(-1));assert.match(document.querySelector('.info-result-count').textContent,/Trang 1\/2/);
+ await act(()=>root.unmount());dom.window.close();console.log('PASS sitemap destination anchors, filters and history');
+} finally {await rm(bundle,{force:true});}

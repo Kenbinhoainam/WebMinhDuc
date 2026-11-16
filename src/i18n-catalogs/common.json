@@ -544,5 +544,275 @@
     "zh": "招生",
     "ko": "입학 안내",
     "ja": "入学案内"
+  },
+  "Quá trình hình thành và phát triển": {
+    "en": "Our history and development",
+    "zh": "发展历程",
+    "ko": "설립 및 발전 과정",
+    "ja": "沿革と発展"
+  },
+  "Quá trình hình thành và phát triển của Minh Đức": {
+    "en": "Minh Đức’s history and development",
+    "zh": "明德的发展历程",
+    "ko": "민득의 설립 및 발전 과정",
+    "ja": "ミン・ドゥックの沿革と発展"
+  },
+  "Thành tựu và dấu ấn": {
+    "en": "Achievements and milestones",
+    "zh": "成就与里程碑",
+    "ko": "성과와 발자취",
+    "ja": "実績と歩み"
+  },
+  "Giới thiệu và cung ứng nhân lực": {
+    "en": "Recruitment and workforce supply",
+    "zh": "人力资源介绍与供应",
+    "ko": "인력 소개 및 공급",
+    "ja": "人材紹介・供給"
+  },
+  "Headhunt - lao động có tay nghề": {
+    "en": "Headhunting and skilled workers",
+    "zh": "猎头与技能人才",
+    "ko": "헤드헌팅 및 숙련 인력",
+    "ja": "ヘッドハンティング・技能人材"
+  },
+  "Chương trình tuyển sinh cho các trường cao đẳng đại học": {
+    "en": "College and university admissions programs",
+    "zh": "大专及大学招生项目",
+    "ko": "전문대학 및 대학교 입학 프로그램",
+    "ja": "短期大学・大学の入学支援プログラム"
+  },
+  "Setup cơ cấu tổ chức và phần mềm cho doanh nghiệp": {
+    "en": "Organizational structure and business software setup",
+    "zh": "企业组织架构与软件配置",
+    "ko": "기업 조직 구조 및 소프트웨어 구축",
+    "ja": "企業の組織体制・ソフトウェア構築"
+  },
+  "Lao động phổ thông": {
+    "en": "General workers",
+    "zh": "普通劳动者",
+    "ko": "일반 인력",
+    "ja": "一般人材"
+  },
+  "Lao động có tay nghề": {
+    "en": "Skilled workers",
+    "zh": "技能劳动者",
+    "ko": "숙련 인력",
+    "ja": "技能人材"
+  },
+  "Các vị trí đang tuyển": {
+    "en": "Open positions",
+    "zh": "在招职位",
+    "ko": "현재 채용 중인 직무",
+    "ja": "募集中の職種"
+  },
+  "Thông tin vị trí & quyền lợi": {
+    "en": "Position details and benefits",
+    "zh": "职位信息与福利",
+    "ko": "직무 정보 및 복리후생",
+    "ja": "職種情報と福利厚生"
+  },
+  "Yêu cầu CV": {
+    "en": "CV requirements",
+    "zh": "简历要求",
+    "ko": "이력서 요건",
+    "ja": "履歴書の要件"
+  },
+  "Thông tin liên hệ": {
+    "en": "Contact information",
+    "zh": "联系信息",
+    "ko": "연락처",
+    "ja": "お問い合わせ先"
+  },
+  "Thông tin về lao động": {
+    "en": "Workforce information",
+    "zh": "劳动资讯",
+    "ko": "노동 정보",
+    "ja": "労働に関する情報"
+  },
+  "Hoạt động của Minh Đức Vina": {
+    "en": "Minh Đức Vina activities",
+    "zh": "明德Vina活动",
+    "ko": "민득 비나 활동",
+    "ja": "ミン・ドゥック・ビナの活動"
+  },
+  "Tư vấn": {
+    "en": "Consultation",
+    "zh": "咨询",
+    "ko": "상담",
+    "ja": "ご相談"
+  },
+  "Tuyển sinh cao đẳng & đại học": {
+    "en": "College and university admissions",
+    "zh": "大专及大学招生",
+    "ko": "전문대학 및 대학교 입학",
+    "ja": "短期大学・大学の入学支援"
+  },
+  "Dành cho người quan tâm đến các chương trình cao đẳng, đại học từ xa hoặc chính quy.": {
+    "en": "For people interested in distance or on-campus college and university programs.",
+    "zh": "面向有意参加远程或全日制大专及大学课程的人士。",
+    "ko": "원격 또는 정규 전문대학 및 대학교 과정에 관심 있는 분을 위한 서비스입니다.",
+    "ja": "通信制または通学制の短期大学・大学プログラムに関心のある方へ。"
+  },
+  "HÀNH TRÌNH MINH ĐỨC": {
+    "en": "THE MINH ĐỨC JOURNEY",
+    "zh": "明德历程",
+    "ko": "민득의 발자취",
+    "ja": "ミン・ドゥックの歩み"
+  },
+  "Từ việc lắng nghe nhu cầu đến đồng hành cùng người lao động và doanh nghiệp.": {
+    "en": "From listening to needs to supporting workers and businesses.",
+    "zh": "从倾听需求到陪伴劳动者与企业共同前行。",
+    "ko": "필요를 경청하는 것부터 근로자와 기업에 함께하는 것까지.",
+    "ja": "ニーズに耳を傾け、働く人と企業に寄り添うまで。"
+  },
+  "Các giai đoạn dưới đây mô tả định hướng hoạt động để minh họa hành trình, không phải mốc thời gian đã được xác nhận.": {
+    "en": "The stages below illustrate our approach and are not confirmed historical milestones.",
+    "zh": "以下阶段用于说明运营方向，并非已确认的历史时间节点。",
+    "ko": "아래 단계는 활동 방향을 설명하기 위한 예시이며 확인된 연혁이 아닙니다.",
+    "ja": "以下の段階は活動方針を示す例であり、確認済みの沿革ではありません。"
+  },
+  "Khởi đầu từ kết nối": {
+    "en": "Starting with connection",
+    "zh": "从连接开始",
+    "ko": "연결에서 시작",
+    "ja": "つながりから始まる"
+  },
+  "Tiếp nhận nhu cầu tìm việc và tuyển dụng, làm rõ thông tin để hai bên có cơ sở trao đổi.": {
+    "en": "We listen to job seekers and employers and clarify information so both sides can start a conversation.",
+    "zh": "了解求职和招聘需求，澄清信息，为双方沟通奠定基础。",
+    "ko": "구직 및 채용 수요를 듣고 정보를 명확히 하여 양측의 대화를 돕습니다.",
+    "ja": "求職と採用のニーズを受け止め、双方が話し合えるよう情報を明確にします。"
+  },
+  "Đồng hành từng bước": {
+    "en": "Support at every step",
+    "zh": "逐步陪伴",
+    "ko": "단계마다 함께",
+    "ja": "一歩ずつ寄り添う"
+  },
+  "Hướng dẫn người lao động tìm hiểu công việc, hồ sơ và các bước tiếp theo.": {
+    "en": "We help workers understand roles, applications and the next steps.",
+    "zh": "指导劳动者了解工作、申请材料及后续步骤。",
+    "ko": "근로자가 업무와 지원 서류, 다음 단계를 이해하도록 안내합니다.",
+    "ja": "働く人が仕事や応募書類、その後の手続きを理解できるよう案内します。"
+  },
+  "Mở rộng giải pháp": {
+    "en": "Expanding solutions",
+    "zh": "拓展解决方案",
+    "ko": "솔루션 확대",
+    "ja": "ソリューションの拡充"
+  },
+  "Trao đổi thêm về nhân lực, tổ chức và học tập theo nhu cầu thực tế.": {
+    "en": "We discuss workforce, organization and learning solutions based on actual needs.",
+    "zh": "根据实际需求，进一步探讨人力、组织和学习方案。",
+    "ko": "실제 필요에 따라 인력, 조직 및 교육 방안을 함께 논의합니다.",
+    "ja": "実際のニーズに応じて、人材・組織・学びについて話し合います。"
+  },
+  "DẤU ẤN KẾT NỐI": {
+    "en": "THE IMPACT OF CONNECTION",
+    "zh": "连接的印记",
+    "ko": "연결의 발자취",
+    "ja": "つながりの足跡"
+  },
+  "Những giá trị Minh Đức hướng tới trong mỗi hành trình đồng hành.": {
+    "en": "The values Minh Đức seeks to bring to every partnership.",
+    "zh": "明德在每次携手同行中追求的价值。",
+    "ko": "민득이 함께하는 모든 과정에서 추구하는 가치입니다.",
+    "ja": "ミン・ドゥックが一つひとつの歩みで目指す価値。"
+  },
+  "Nội dung minh họa định hướng, không phải số liệu hoặc giải thưởng đã được xác nhận.": {
+    "en": "This content illustrates our approach; it does not represent verified figures or awards.",
+    "zh": "内容仅用于说明方向，并非已确认的数据或奖项。",
+    "ko": "이 내용은 방향을 설명하기 위한 예시이며 확인된 수치나 수상이 아닙니다.",
+    "ja": "この内容は方針を示す例であり、確認済みの数値や受賞歴ではありません。"
+  },
+  "Thông tin rõ ràng": {
+    "en": "Clear information",
+    "zh": "清晰的信息",
+    "ko": "명확한 정보",
+    "ja": "明確な情報"
+  },
+  "Làm rõ vị trí, điều kiện và nhu cầu trước khi kết nối.": {
+    "en": "Clarifying roles, conditions and needs before making a connection.",
+    "zh": "在对接前明确职位、条件及需求。",
+    "ko": "연결하기 전에 직무, 조건 및 필요를 명확히 합니다.",
+    "ja": "つなぐ前に職種、条件、ニーズを明確にします。"
+  },
+  "Hỗ trợ gần gũi": {
+    "en": "Personal support",
+    "zh": "贴心支持",
+    "ko": "가까운 지원",
+    "ja": "身近なサポート"
+  },
+  "Đồng hành cùng người lao động trong quá trình tìm hiểu cơ hội.": {
+    "en": "Supporting workers as they explore opportunities.",
+    "zh": "陪伴劳动者了解就业机会。",
+    "ko": "근로자가 기회를 알아보는 과정에 함께합니다.",
+    "ja": "働く人が機会を探す過程に寄り添います。"
+  },
+  "Phối hợp cùng doanh nghiệp": {
+    "en": "Working with businesses",
+    "zh": "与企业协作",
+    "ko": "기업과의 협력",
+    "ja": "企業との連携"
+  },
+  "Trao đổi phương án nhân lực theo yêu cầu cụ thể.": {
+    "en": "Discussing workforce solutions tailored to specific needs.",
+    "zh": "根据具体需求探讨人力方案。",
+    "ko": "구체적인 요구에 맞는 인력 방안을 논의합니다.",
+    "ja": "具体的な要望に応じた人材の方策を話し合います。"
+  },
+  "Chuẩn bị CV ứng tuyển": {
+    "en": "Prepare your CV",
+    "zh": "准备求职简历",
+    "ko": "지원 이력서 준비",
+    "ja": "応募用履歴書の準備"
+  },
+  "Xem mô tả công việc của từng vị trí để hiểu nhiệm vụ và yêu cầu. CV nội bộ là bắt buộc; hãy trình bày kinh nghiệm, kỹ năng và thông tin liên hệ phù hợp.": {
+    "en": "Review each job description to understand its duties and requirements. A CV is required for internal applications; include relevant experience, skills and contact details.",
+    "zh": "请查看各职位描述，了解职责和要求。内部职位申请必须提交简历，请列明相关经验、技能和联系方式。",
+    "ko": "각 직무 설명에서 업무와 요건을 확인하세요. 내부 채용 지원에는 이력서가 필수이며 관련 경력, 기술 및 연락처를 기재해 주세요.",
+    "ja": "各職種の仕事内容と要件を確認してください。社内採用への応募には履歴書が必要です。関連する経験、スキル、連絡先を記載してください。"
+  },
+  "Biểu mẫu nhận tệp PDF, DOC hoặc DOCX tối đa 5 MB. Đây là bản trải nghiệm: tệp không được tải lên hay gửi đến Minh Đức.": {
+    "en": "The form accepts PDF, DOC or DOCX files up to 5 MB. This is a demonstration: files are not uploaded or sent to Minh Đức.",
+    "zh": "表单接受不超过5 MB的PDF、DOC或DOCX文件。这是体验版本：文件不会上传或发送给明德。",
+    "ko": "양식은 최대 5 MB의 PDF, DOC 또는 DOCX 파일을 받습니다. 체험용이므로 파일은 업로드되거나 민득에 전송되지 않습니다.",
+    "ja": "フォームでは5 MB以下のPDF、DOC、DOCXファイルを受け付けます。これはデモ版のため、ファイルはアップロードまたはミン・ドゥックへ送信されません。"
+  },
+  "Trao đổi về tuyển dụng nội bộ": {
+    "en": "Discuss internal recruitment",
+    "zh": "咨询内部招聘",
+    "ko": "내부 채용 문의",
+    "ja": "社内採用について相談"
+  },
+  "Bạn có câu hỏi về vị trí hoặc hồ sơ? Liên hệ đội ngũ Minh Đức để được hướng dẫn.": {
+    "en": "Have questions about a role or application? Contact the Minh Đức team for guidance.",
+    "zh": "对职位或申请材料有疑问？请联系明德团队获取指导。",
+    "ko": "직무나 지원 서류에 관한 질문이 있나요? 민득 팀에 문의해 안내받으세요.",
+    "ja": "職種や応募書類についてご質問がありますか？ミン・ドゥックのチームにお問い合わせください。"
+  },
+  "Gọi 0364 562 868": {
+    "en": "Call 0364 562 868",
+    "zh": "致电 0364 562 868",
+    "ko": "0364 562 868로 전화",
+    "ja": "0364 562 868に電話"
+  },
+  "Để lại nhu cầu tư vấn": {
+    "en": "Request a consultation",
+    "zh": "提交咨询需求",
+    "ko": "상담 요청하기",
+    "ja": "相談を申し込む"
+  },
+  "TUYỂN SINH CAO ĐẲNG & ĐẠI HỌC": {
+    "en": "COLLEGE & UNIVERSITY ADMISSIONS",
+    "zh": "大专及大学招生",
+    "ko": "전문대학 및 대학교 입학",
+    "ja": "短期大学・大学の入学支援"
+  },
+  "Minh Đức có 5 nhóm dịch vụ: giới thiệu và cung ứng nhân lực, cho thuê lao động, headhunt và lao động tay nghề, tuyển sinh cao đẳng và đại học, setup tổ chức và phần mềm doanh nghiệp. Bạn có thể xem phạm vi và gửi yêu cầu tư vấn tại trang Dịch vụ.": {
+    "en": "Minh Đức offers five service groups: recruitment and workforce supply, labor leasing, headhunting and skilled workers, college and university admissions, and organizational and business software setup. You can explore each service and request a consultation on the Services page.",
+    "zh": "明德提供五类服务：人力资源介绍与供应、劳务租赁、猎头与技能人才、大专及大学招生，以及企业组织架构与软件配置。您可以在服务页面了解服务范围并提交咨询需求。",
+    "ko": "민득은 인력 소개 및 공급, 인력 파견, 헤드헌팅 및 숙련 인력, 전문대학 및 대학교 입학, 기업 조직 및 소프트웨어 구축의 다섯 가지 서비스를 제공합니다. 서비스 페이지에서 범위를 확인하고 상담을 요청할 수 있습니다.",
+    "ja": "ミン・ドゥックは、人材紹介・供給、人材派遣、ヘッドハンティング・技能人材、短期大学・大学の入学支援、企業の組織体制・ソフトウェア構築の5つのサービスを提供しています。サービスページで内容を確認し、相談をお申し込みいただけます。"
   }
 }

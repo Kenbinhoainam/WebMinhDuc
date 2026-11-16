@@ -1,4 +1,4 @@
-# Minh Đức Vina — Prototype 4 / Flagship
+# Minh Đức Vina — Prototype 5 / Glass navigation & motion
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
@@ -18,6 +18,7 @@ npm run test:hydration
 npm run test:review
 npm run test:catalog
 npm run test:flagship
+npm run test:sitemap
 npm run audit:i18n
 ```
 
@@ -25,7 +26,7 @@ npm run audit:i18n
 
 ## Nâng cấp flagship
 
-Menu 7 nhóm hiển thị trực tiếp trên desktop; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết kế hoạch, nghiên cứu và kết quả đo: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header, menu con và chọn ngôn ngữ dùng kính xanh xuyên thấu; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
 [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-current.csv).
 
@@ -35,7 +36,7 @@ Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `p
 
 - Năm ngôn ngữ hoạt động: Việt, Anh, Trung giản thể, Hàn, Nhật. Chuyển ngôn ngữ giữ trang, bộ lọc và anchor; các bản dịch là bản nháp prototype.
 - Bảy nhóm menu chính: Trang chủ, Giới thiệu, Dịch vụ, Việc làm, Tuyển dụng nội bộ, Tin tức, Liên hệ; trang phụ có lối truy cập theo nhóm.
-- Năm dịch vụ: giới thiệu/cung ứng nhân lực, cho thuê lao động, headhunt/tay nghề, tuyển sinh cao đẳng, setup tổ chức/phần mềm doanh nghiệp.
+- Năm dịch vụ: giới thiệu/cung ứng nhân lực, cho thuê lao động, headhunt/tay nghề, tuyển sinh cao đẳng/đại học, setup tổ chức/phần mềm doanh nghiệp.
 - Trang chủ có video hero, hai hành trình B2B/B2C, chỉ số mô phỏng, quy trình, đối tác, câu chuyện giả định, cẩm nang, hoạt động và FAQ. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
 - Tám vị trí mẫu, bộ lọc KCN/loại việc/tay nghề/ca ngày–đêm/chuyên–xoay/trạng thái; lưu việc trên thiết bị. Tuyển nội bộ tách khỏi danh sách lao động. Tin đóng vẫn đọc được nhưng không nhận ứng tuyển thử.
 - Ba chương trình tuyển sinh giả định theo hình thức từ xa/chính quy; không gắn với trường chưa xác minh.
@@ -49,7 +50,7 @@ Thông tin nhập và tệp **không gửi, không tải lên, không lưu**. Qu
 
 Chưa có backend, CMS vận hành, tiếp nhận hồ sơ thật, tệp riêng tư, email/Google Sheets, chống spam, analytics thật, AI hoặc CRM. Cần chốt quy tắc nghiệp vụ, nội dung, bảo mật và hạ tầng trước phát triển bản sản xuất. Xem [đối chiếu yêu cầu và quyết định](docs/sprint-1/requirements-and-decisions.md).
 
-Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ảnh/video HR2B chỉ là tham chiếu giao diện; không phải ảnh tập thể Minh Đức. Số liệu, lương, nhân vật, bài viết và sự kiện đều minh họa. Chi nhánh Quảng Ninh chưa có bản đồ chính xác nên dẫn về hotline. Tài khoản WeChat chưa được cung cấp. “Ảnh 1” được nhắc trong chat nhưng chưa có file để đối chiếu.
+Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ảnh/video HR2B chỉ là tham chiếu giao diện; không phải ảnh tập thể Minh Đức. Số liệu, lương, nhân vật, bài viết và sự kiện đều minh họa. Chi nhánh Quảng Ninh chưa có bản đồ chính xác nên dẫn về hotline. Tài khoản WeChat chưa được cung cấp. Sitemap trong ảnh mới đã được đối chiếu và áp dụng; người dùng xác nhận phần làm trong suốt là toàn bộ header/menu.
 
 ## Kiến trúc
 

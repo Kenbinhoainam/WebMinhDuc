@@ -10,3 +10,4 @@
 /* The service collection contains five distinct families. */
 .info-service-cards.info-two-cards{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none}
 @media(max-width:767px){.info-service-cards.info-two-cards{grid-template-columns:1fr}}
+.info-story,.info-story-grid article{scroll-margin-top:120px}.info-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px}.info-story-grid article{padding:28px;border:1px solid #eee;border-radius:18px;background:#fff}.info-story-grid span{color:#d52520;font-weight:700}.info-story-grid h3{font-size:21px;margin:14px 0}.info-story-grid p{color:#666;line-height:1.75;margin:0}#news-listings{scroll-margin-top:120px}@media(max-width:767px){.info-story-grid{grid-template-columns:1fr}}
