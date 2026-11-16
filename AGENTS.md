@@ -18,7 +18,9 @@ Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho nh�
 - Khi tối ưu, giữ nguyên hành vi cần thiết, bản dịch và khả năng truy cập; tránh dependency thừa, giảm tài nguyên tải và đo dung lượng khi có thay đổi liên quan. Kiểm tra hồi quy tương ứng trước khi bàn giao.
 - Giữ tiếng Việt, Anh, Trung giản thể, Hàn và Nhật. Nhãn mới phải có bản dịch; sinh lại locale sau khi đổi catalog.
 - Giữ sitemap Minh Đức đúng hai cấp, 7 nhóm chính và 19 mục con, trừ khi người dùng yêu cầu thay đổi. Menu phải dẫn tới nội dung hoặc bộ lọc hoạt động.
+- Menu desktop không hiển thị mũi tên cạnh nhãn; phân bố khoảng cách hài hòa, giữ submenu truy cập được bằng hover, bàn phím và chạm.
 - Animation cần giữ nội dung đọc được, không chặn LCP, không chiếm điều khiển cuộn, tôn trọng reduced-motion và bàn phím. Tránh thêm dependency nặng cho hiệu ứng nhỏ.
+- Reveal nội dung cần lặp hai chiều theo vị trí viewport như video tham chiếu: hiện khi đi vào vùng đọc, ẩn khi cuộn ngược về mép dưới. Bảo vệ nội dung đang tương tác/focus và chế độ giảm chuyển động; không để nhấp nháy ở ngưỡng.
 - Không tuyên bố đã đạt mọi thiết bị, Lighthouse/CWV hay độ mượt thực tế khi chưa đo. Kiểm tra DOM/CSS không thay cho kiểm tra trực quan.
 - Prototype có dữ liệu minh họa, giữ noindex và quyền xem hiện tại. Không biến dữ liệu mẫu thành tuyên bố thật về đối tác, giải thưởng hoặc hồ sơ đã được gửi.
 

@@ -9,7 +9,7 @@ Các agent phân tích riêng bố cục, chuyển động, ngôn ngữ/tải tr
 ## Điều quan sát được và quyết định thiết kế
 
 - Video cho thấy nền hero chuyển cảnh, ba tiêu đề dịch vụ luân phiên, header trong suốt và phần giới thiệu trắng, thoáng. Chuyển động mở rộng vùng hero ở đoạn sau phù hợp với thao tác cuộn lên đầu trang; không dùng nó làm bằng chứng cho hiệu ứng parallax.
-- Mẫu HTML HR2B lưu trong workspace có video nền và Swiper riêng cho tiêu đề. Những cảnh dựng, thu/phóng montage và logo nằm trong video; không quy tất cả thành animation CSS. Đoạn ghi hình chưa thể hiện chuỗi reveal ở các phần dưới trang.
+- Mẫu HTML HR2B lưu trong workspace có video nền và Swiper riêng cho tiêu đề. Những cảnh dựng, thu/phóng montage và logo nằm trong video; không quy tất cả thành animation CSS. Khi rà lại theo chỉ dẫn của người dùng sau bản v8, phát hiện phần About mờ đi khi kéo lên; xem bản sửa [reveal hai chiều v9](reversible-reveal-v9.md). Nhận định ban đầu đã bỏ sót chi tiết này.
 - Hero Minh Đức giữ H1 và hai CTA ổn định, dùng bố cục rộng với khoảng thở và chiều cao có thể tăng theo nội dung. Không cần thêm carousel chữ hoặc thư viện animation.
 - Ảnh chờ được hiển thị ngay; video chỉ phủ lên bằng chuyển tiếp opacity khi nhận sự kiện `playing`. Khi chờ dữ liệu, lỗi hoặc tạm dừng, ảnh chờ lại hiện. URL ảnh trùng với preload có sẵn, tránh thêm yêu cầu ảnh khác.
 - Phần giới thiệu dùng bố cục biên tập hai cột, ảnh tròn và cung đỏ nhẹ. Dùng ảnh bắt tay `GPNS-1.jpg` hiện có thay cho ảnh laptop mang logo HR2B; nội dung và ghi chú minh họa giữ nguyên.

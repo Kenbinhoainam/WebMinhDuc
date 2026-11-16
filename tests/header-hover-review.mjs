@@ -31,7 +31,7 @@ try {
   groups=await render();await pointer(groups[1],'pointerover');await click(groups[1].querySelector('.desktop-nav-heading>a'));await wait();
   assert.equal(panel(groups[1]).hidden,true,'same-route destination click must cancel pending hover');
 
-  groups=await render();const trigger=groups[1].querySelector('button');await act(()=>trigger.focus());await click(trigger);
+  groups=await render();const trigger=groups[1].querySelector('.desktop-nav-heading a');await act(()=>trigger.focus());
   await pointer(groups[2],'pointerover');await wait();
   assert.equal(panel(groups[2]).hidden,false,'focus on an already-visible parent trigger must not prevent switching hover groups');
   assert.equal(panel(groups[1]).hidden,true);assert.ok(document.activeElement===trigger,'hover must not steal focus');

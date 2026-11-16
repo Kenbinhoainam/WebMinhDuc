@@ -13,7 +13,8 @@ import {
   ArrowUpRight,
   Bookmark,
   BriefcaseBusiness,
-  ChevronDown,
+  Plus,
+  Minus,
   Users,
 } from "lucide-react";
 import { Modal } from "./shared";
@@ -186,7 +187,7 @@ function NavigationDrawer({ onClose }: { onClose: () => void }) {
                   aria-controls={`drawer-subnav-${i}`}
                   onClick={() => setOpenGroup(openGroup === url ? null : url)}
                 >
-                  <ChevronDown size={20} />
+                  {openGroup === url ? <Minus size={20} /> : <Plus size={20} />}
                 </button>
               )}
             </div>
@@ -217,8 +218,7 @@ function NavigationDrawer({ onClose }: { onClose: () => void }) {
   );
 }
 export function Header() {
-  const t = useTranslation(),
-    locale = useLocale();
+  const t = useTranslation();
   const [menu, setMenu] = useState(false),
     [search, setSearch] = useState(false),
     [scrolled, setScrolled] = useState(false),
@@ -228,27 +228,32 @@ export function Header() {
     saved = useSavedJobs();
   const openRef = useRef<string | null>(null),
     hovered = useRef<string | null>(null),
-    blocked = useRef<string | null>(null);
+    blocked = useRef<string | null>(null),
+    focusBlocked = useRef<string | null>(null),
+    pointerKind = useRef<string | null>(null);
+  const focusFrame = useRef<number | null>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null),
     closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   openRef.current = openGroup;
   const clearTimers = () => {
+    if (focusFrame.current !== null) cancelAnimationFrame(focusFrame.current);
+    focusFrame.current = null;
     if (openTimer.current !== null) clearTimeout(openTimer.current);
     if (closeTimer.current !== null) clearTimeout(closeTimer.current);
     openTimer.current = null;
     closeTimer.current = null;
   };
   const focusedGroup = (url: string) => {
-    const trigger = navRef.current?.querySelector<HTMLButtonElement>(
-      `button[data-group="${url}"]`,
+    const trigger = navRef.current?.querySelector<HTMLAnchorElement>(
+      `a[data-group="${url}"]`,
     );
     return !!trigger
       ?.closest(".desktop-nav-group")
       ?.contains(document.activeElement);
   };
   const focusedPanel = (url: string) => {
-    const trigger = navRef.current?.querySelector<HTMLButtonElement>(
-      `button[data-group="${url}"]`,
+    const trigger = navRef.current?.querySelector<HTMLAnchorElement>(
+      `a[data-group="${url}"]`,
     );
     return !!trigger
       ?.closest(".desktop-nav-group")
@@ -298,6 +303,7 @@ export function Header() {
     clearTimers();
     hovered.current = null;
     blocked.current = null;
+    focusBlocked.current = null;
     setMenu(false);
     setSearch(false);
     setOpenGroup(null);
@@ -309,6 +315,7 @@ export function Header() {
       clearTimers();
       hovered.current = null;
       blocked.current = null;
+      focusBlocked.current = null;
       document.dispatchEvent(
         new window.CustomEvent("header-overlay-open", {
           detail: { owner: "resize" },
@@ -338,6 +345,7 @@ export function Header() {
   useEffect(() => {
     const pointer = (event: PointerEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
+        pointerKind.current = null;
         clearTimers();
         setOpenGroup(null);
       }
@@ -345,16 +353,18 @@ export function Header() {
     const keyboard = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       const current = openRef.current,
-        pending = openTimer.current !== null;
+        pending = openTimer.current !== null || focusFrame.current !== null;
       if (!current && !pending) return;
       event.preventDefault();
       clearTimers();
       blocked.current = hovered.current;
       setOpenGroup(null);
-      if (current)
+      if (current) {
+        focusBlocked.current = current;
         navRef.current
-          ?.querySelector<HTMLButtonElement>(`button[data-group="${current}"]`)
+          ?.querySelector<HTMLAnchorElement>(`a[data-group="${current}"]`)
           ?.focus();
+      }
     };
     const close = (event: Event) => {
       if (
@@ -374,8 +384,11 @@ export function Header() {
       document.removeEventListener("header-overlay-open", close);
     };
   }, []);
-  const disclosureLabel = (title: string) =>
-    `${t({ vi: "Mở menu", en: "Open menu", zh: "打开菜单", ko: "메뉴 열기", ja: "メニューを開く" })}: ${String(translate(title, locale))}`;
+  const openMenu = (url: string) => {
+    clearTimers();
+    document.dispatchEvent(new window.CustomEvent("header-overlay-open", {detail: {owner: "navigation"}}));
+    setOpenGroup(url);
+  };
   return (
     <>
       <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
@@ -422,39 +435,48 @@ export function Header() {
                       <NavLink
                         to={url}
                         end={url === "/"}
+                        data-group={subnavigation[url] ? url : undefined}
+                        aria-expanded={subnavigation[url] ? openGroup === url : undefined}
+                        aria-controls={subnavigation[url] ? `desktop-subnav-${i}` : undefined}
                         className={({ isActive }) =>
-                          isActive || sectionHasChild(url, location.pathname)
-                            ? "active"
-                            : undefined
+                          isActive || sectionHasChild(url, location.pathname) ? "active" : undefined
                         }
-                        onClick={() => {
-                          clearTimers();
-                          setOpenGroup(null);
+                        onPointerDown={(event) => { pointerKind.current = event.pointerType; }}
+                        onFocus={() => {
+                          if (focusBlocked.current === url || pointerKind.current === "touch") return;
+                          if (subnavigation[url]) openMenu(url);
+                          else { clearTimers(); setOpenGroup(null); }
+                        }}
+                        onBlur={(event) => {
+                          if (!event.currentTarget.closest(".desktop-nav-group")?.contains(event.relatedTarget as Node | null)) focusBlocked.current = null;
+                        }}
+                        onKeyDown={(event) => {
+                          pointerKind.current = null;
+                          if (subnavigation[url] && (event.key === "ArrowDown" || event.key === " ")) {
+                            event.preventDefault();
+                            focusBlocked.current = null;
+                            openMenu(url);
+                            focusFrame.current = requestAnimationFrame(() => {
+                              focusFrame.current = null;
+                              const panel = navRef.current?.querySelector<HTMLElement>(`#desktop-subnav-${i}`);
+                              if (openRef.current === url && panel && !panel.hidden) panel.querySelector<HTMLAnchorElement>("a")?.focus();
+                            });
+                          }
+                        }}
+                        onClick={(event) => {
+                          if (pointerKind.current === "touch" && subnavigation[url] && openRef.current !== url) {
+                            event.preventDefault();
+                            pointerKind.current = null;
+                            openMenu(url);
+                          } else {
+                            pointerKind.current = null;
+                            clearTimers();
+                            setOpenGroup(null);
+                          }
                         }}
                       >
                         {title}
                       </NavLink>
-                      {subnavigation[url] && (
-                        <button
-                          type="button"
-                          data-group={url}
-                          aria-label={disclosureLabel(title)}
-                          aria-expanded={openGroup === url}
-                          aria-controls={`desktop-subnav-${i}`}
-                          onClick={() => {
-                            clearTimers();
-                            if (openGroup !== url)
-                              document.dispatchEvent(
-                                new window.CustomEvent("header-overlay-open", {
-                                  detail: { owner: "navigation" },
-                                }),
-                              );
-                            setOpenGroup(openGroup === url ? null : url);
-                          }}
-                        >
-                          <ChevronDown size={15} />
-                        </button>
-                      )}
                     </div>
                     {subnavigation[url] && (
                       <div
