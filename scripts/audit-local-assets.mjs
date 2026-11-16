@@ -21,7 +21,9 @@ for(const file of files.filter(file=>['.html','.css'].includes(extname(file)))){
 }
 const manifest=JSON.parse(await readFile('src/media-manifest.json','utf8'));
 for(const [source,entry] of Object.entries(manifest)){record(source,'media-manifest');for(const variant of entry.variants)record(variant.src,'media-manifest')}
-record('/optimized/hero-1600-e945407f.mp4','HomeHero / illustrative video dialog');
+const heroAssets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
+record(heroAssets.video,'HomeHero / illustrative video dialog');
+record(heroAssets.poster,'HomeHero / illustrative video dialog');
 const quote=value=>'"'+String(value).replaceAll('"','""')+'"';
 const rows=['path,live_url,bytes,used_by'];
 for(const [path,pages] of [...assets].sort(([a],[b])=>a.localeCompare(b))){

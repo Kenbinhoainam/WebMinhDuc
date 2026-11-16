@@ -4,7 +4,7 @@ import {join} from 'node:path';
 const origin='https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site';
 const sitemap=await readFile('dist/sitemap.xml','utf8');
 const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
-assert.equal(urls.length,200,'expected 40 primary routes in 5 languages');
+assert.equal(urls.length,205,'expected 41 primary routes in 5 languages');
 const titles=new Set(),descriptions=new Set();
 for(const url of urls){
  const path=new URL(url).pathname,html=await readFile(join('dist',path,'index.html'),'utf8');

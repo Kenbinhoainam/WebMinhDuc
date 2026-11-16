@@ -2,9 +2,10 @@ import {useEffect, useRef, useState} from 'react';
 import {Pause, Play} from 'lucide-react';
 import {ButtonLink} from './shared';
 import './hero-media.css';
+import heroAssets from './hero-assets.json';
 
-const VIDEO = '/optimized/hero-1600-e945407f.mp4';
-const POSTER = '/optimized/assets/hero-poster-1600.webp';
+const VIDEO = heroAssets.video;
+const POSTER = heroAssets.poster;
 type Connection = {
   saveData?: boolean;
   effectiveType?: string;
@@ -28,7 +29,8 @@ export default function HomeHero() {
   const [pageVisible, setPageVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
-  const [slide, setSlide] = useState(0);
+  const [slideState, setSlideState] = useState<{index: number; previous: number | null}>({index: 0, previous: null});
+  const slide = slideState.index;
 
   useEffect(() => {
     const el = video.current;
@@ -93,12 +95,12 @@ export default function HomeHero() {
     };
   }, []);
 
-  useEffect(() => { if (!eligible) setSlide(0); }, [eligible]);
+  useEffect(() => { if (!eligible) setSlideState(state => state.index === 0 ? state : {index: 0, previous: null}); }, [eligible]);
 
   // Rotate only while footage is actually playing, with no motion in constrained modes.
   useEffect(() => {
     if (!eligible || !playing || !frameReady || !inView || !pageVisible || hovered || focused) return;
-    const timer = window.setInterval(() => setSlide(current => (current + 1) % 4), 3000);
+    const timer = window.setInterval(() => setSlideState(({index}) => ({index: (index + 1) % 4, previous: index})), 3000);
     return () => window.clearInterval(timer);
   }, [eligible, playing, frameReady, inView, pageVisible, hovered, focused]);
 
@@ -141,16 +143,16 @@ export default function HomeHero() {
       <div className="wrap-slide-banner"><div className="item-content">
       <div className="hero-copy">
         <h1 className="hero-title-grid">
-          <span className="hero-slide" data-position={slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Kết nối nhân lực.<br/>Kiến tạo tương lai.</span>
+          <span className="hero-slide" data-position={slide === 3 ? "after" : slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Kết nối nhân lực.<br/>Kiến tạo tương lai.</span>
           <span className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Giới thiệu &amp; cung ứng nhân lực</span>
           <span className="hero-slide" data-position={slide > 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Cho thuê lao động</span>
-          <span className="hero-slide" data-position={slide > 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Headhunt &amp; lao động tay nghề</span>
+          <span className="hero-slide" data-position={slide === 0 && slideState.previous === 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Headhunt &amp; lao động tay nghề</span>
         </h1>
         <div className="hero-description-grid">
-          <p className="hero-slide" data-position={slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p>
+          <p className="hero-slide" data-position={slide === 3 ? "after" : slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p>
           <p className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.</p>
           <p className="hero-slide" data-position={slide > 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.</p>
-          <p className="hero-slide" data-position={slide > 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.</p>
+          <p className="hero-slide" data-position={slide === 0 && slideState.previous === 3 ? "before" : "after"} data-active={slide === 3} aria-hidden={slide !== 3}>Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.</p>
         </div>
       </div>
       <div className="hero-actions"><ButtonLink to={['/about-us', '/services/labor-supply', '/services/labor-leasing', '/services/recruitment'][slide]}>{slide === 0 ? 'Tìm hiểu Minh Đức' : 'Khám phá giải pháp'}</ButtonLink></div>

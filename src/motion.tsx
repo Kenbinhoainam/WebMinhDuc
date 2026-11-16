@@ -1,6 +1,19 @@
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState, type ReactNode} from 'react';
 import {useLocation} from 'react-router-dom';
 import './motion.css';
+
+/** Observe the stable outer box while its direct child performs the visual reveal. */
+export function RevealFrame({children, effect = 'up', delay, className, contentClassName}: {
+  children: ReactNode;
+  effect?: 'left' | 'right' | 'up' | 'zoom';
+  delay?: 0 | 1 | 2 | 3;
+  className?: string;
+  contentClassName?: string;
+}) {
+  return <div className={className} data-reveal={effect} data-reveal-delay={delay} data-reveal-frame="">
+    <div className={['motion-content', contentClassName].filter(Boolean).join(' ')}>{children}</div>
+  </div>;
+}
 
 /** Progressively enhance marked content; failures and unenhanced HTML remain visible. */
 export function startReveals(): () => void {
@@ -26,7 +39,7 @@ export function startReveals(): () => void {
   };
   const restore = () => {
     disconnect();
-    observed.forEach(element => element.classList.remove('motion-pending'));
+    observed.forEach(element => { element.classList.add('motion-released'); element.classList.remove('motion-pending'); });
     observed.clear();
   };
   const reveal = (element: HTMLElement) => {
@@ -79,6 +92,7 @@ export function startReveals(): () => void {
         const candidates = elements.filter(element => !observed.has(element));
         const positions = candidates.map(element => element.getBoundingClientRect().top);
         candidates.forEach((element, index) => {
+          element.classList.remove('motion-released');
           if (element.contains(document.activeElement)) {
             focusLocked.add(element);
             reveal(element);

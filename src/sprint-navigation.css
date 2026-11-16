@@ -96,3 +96,4 @@ body:not(:has(.page-banner-main, .section-home-banner)) .site-header :is(a,butto
 @supports not (backdrop-filter:blur(10px)) {
   .site-header.site-header.is-scrolled { background:#fafcfc; }
 }
+@media(max-width:767px){.navigation-panel{width:100%}}

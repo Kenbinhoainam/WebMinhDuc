@@ -1,13 +1,15 @@
 import {useEffect, useRef, useState, type RefObject} from 'react';
 
+const HOME_INTERACTION_SELECTORS = '.ref-achievement-track,.ref-solution-track,.ref-testimonial-track,.ref-news-grid,.ref-rail-controls,.ref-story-controls';
+
 /** Pause when the rail is not visible or its content is being interacted with. */
-export function useHomeCarousel(container: RefObject<HTMLElement | null>, advance: () => void | (() => void)) {
+export function useHomeCarousel(container: RefObject<HTMLElement | null>, advance: () => void | (() => void), interactionSelector = HOME_INTERACTION_SELECTORS) {
   const [paused, setPaused] = useState(false);
   const advanceRef = useRef(advance);
   advanceRef.current = advance;
   useEffect(() => {
     const element=container.current;
-    const controls=element ? Array.from(element.querySelectorAll<HTMLElement>('.ref-achievement-track,.ref-solution-track,.ref-testimonial-track,.ref-news-grid,.ref-rail-controls,.ref-story-controls')) : [];
+    const controls=element ? Array.from(element.querySelectorAll<HTMLElement>(interactionSelector)) : [];
     if (!element || controls.length===0) return;
     const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
     const hovered=new Set(controls.filter(control=>control.matches(':hover')));
@@ -37,7 +39,7 @@ export function useHomeCarousel(container: RefObject<HTMLElement | null>, advanc
     window.addEventListener('pointerup',pointerEnd,{passive:true});window.addEventListener('pointercancel',pointerEnd,{passive:true});
     document.addEventListener('visibilitychange',update);motion.addEventListener('change',update);update();
     return()=>{alive=false;stop();observer?.disconnect();for(const control of controls){control.removeEventListener('mouseenter',enter);control.removeEventListener('mouseleave',leave);control.removeEventListener('focusin',focusIn);control.removeEventListener('focusout',focusOut);control.removeEventListener('pointerdown',pointerDown);}window.removeEventListener('pointerup',pointerEnd);window.removeEventListener('pointercancel',pointerEnd);document.removeEventListener('visibilitychange',update);motion.removeEventListener('change',update);};
-  },[container,paused]);
+  },[container,paused,interactionSelector]);
   return {paused, toggle:()=>setPaused(value=>!value)};
 }
 

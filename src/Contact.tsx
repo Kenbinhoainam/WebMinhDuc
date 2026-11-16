@@ -4,15 +4,15 @@ import {useState, useRef, useId, type FormEvent} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight, CheckCircle2, Phone, MessageCircle, ExternalLink} from 'lucide-react';
 import {PageHero, MEDIA} from './shared';
-export function ContactForm({initialService='Giới thiệu & cung ứng nhân lực',onNavigate}:{initialService?:string;onNavigate?:()=>void}) {
-  const id=useId(); const [mode,setMode]=useState<'F01'|'F02'>('F01'); const [success,setSuccess]=useState(false); const [errors,setErrors]=useState<Record<string,string>>({}); const ref=useRef<HTMLFormElement>(null);
+export function ContactForm({initialService='Giới thiệu & cung ứng nhân lực',onNavigate,initialMode='F01',onComplete}:{initialService?:string;onNavigate?:()=>void;initialMode?:'F01'|'F02';onComplete?:()=>void}) {
+  const id=useId(); const [mode,setMode]=useState<'F01'|'F02'>(initialMode); const [success,setSuccess]=useState(false); const [errors,setErrors]=useState<Record<string,string>>({}); const ref=useRef<HTMLFormElement>(null);
   function submit(e:FormEvent<HTMLFormElement>){e.preventDefault(); const d=new FormData(e.currentTarget), err:Record<string,string>={};
     const required=(key:string,label:string)=>{if(!String(d.get(key)||'').trim())err[key]=`Vui lòng nhập ${label}.`};
     required('name','họ tên'); required('phone','số điện thoại');
     if(d.get('phone')&&!/^(?:0|\+?84)[35789]\d{8}$/.test(String(d.get('phone')).replace(/[\s.()-]/g,'')))err.phone='Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
     if(d.get('email')&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(d.get('email'))))err.email='Email chưa đúng định dạng.';
     if(mode==='F01'){for(const [key,label] of [['company','tên doanh nghiệp'],['location','địa điểm'],['jobrole','vị trí cần tuyển'],['shift','ca làm việc'],['needdate','ngày cần người']])required(key,label); if(!Number.isInteger(Number(d.get('quantity')))||Number(d.get('quantity'))<1)err.quantity='Vui lòng nhập số lượng từ 1 trở lên.';}else required('message','nội dung liên hệ');
-    if(!d.get('consent'))err.consent='Cần đồng ý trước khi gửi yêu cầu.'; setErrors(err); if(Object.keys(err).length){requestAnimationFrame(()=>ref.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus());return}setSuccess(true);
+    if(!d.get('consent'))err.consent='Cần đồng ý trước khi gửi yêu cầu.'; setErrors(err); if(Object.keys(err).length){requestAnimationFrame(()=>ref.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus());return}if(onComplete)onComplete();else setSuccess(true);
   }
   if(success)return <div className="form-success" role="status"><CheckCircle2 size={48}/><h3>Đã hoàn tất gửi thử</h3><p>Đây là mô phỏng trên trình duyệt. Thông tin không được gửi hoặc lưu; khu quản trị chỉ chứa dữ liệu mẫu độc lập.</p><Link className="btn" to={`/admin-demo?type=${mode}`} onClick={onNavigate}>Xem hồ sơ mẫu {mode} <ArrowUpRight size={18}/></Link><button className="text-link" onClick={()=>setSuccess(false)}>Tạo yêu cầu thử mới</button></div>;
   const field=(name:string,label:string,type='text',required=true)=> <label>{label} {required&&<span>*</span>}<input name={name} type={type} required={required} min={type==='number'?1:undefined} aria-invalid={!!errors[name]} aria-describedby={errors[name]?`${id}-${name}-error`:undefined}/>{errors[name]&&<small className="field-error" id={`${id}-${name}-error`}>{errors[name]}</small>}</label>;
@@ -26,6 +26,7 @@ export function ContactPage(){
     <a className="contact-reference-method" href="tel:0364562868"><Phone size={18}/><span>0364 562 868</span></a>
     <a className="contact-reference-method" href="https://zalo.me/0329138082" target="_blank" rel="noreferrer"><MessageCircle size={18}/><span>Nhắn tin cho Minh Đức</span></a>
     <a className="contact-reference-method" href="https://www.facebook.com/md668.com.vn" target="_blank" rel="noreferrer"><ExternalLink size={18}/><span>Facebook Minh Đức</span></a>
+    <Link className="btn" to="/consultation">Đặt lịch tư vấn <ArrowUpRight size={18}/></Link>
     <div className="contact-reference-offices"><h3>Các điểm kết nối</h3>{offices.map((office,i)=><details className="contact-office" key={office.name} open={i===0}><summary>Chi nhánh {office.name}</summary><div><p>{office.text}</p>{office.map?<a className="text-link" href={office.map} target="_blank" rel="noreferrer">Mở vị trí trên Google Maps <ExternalLink size={16}/></a>:<a className="text-link" href="tel:0364562868">Gọi để được hướng dẫn <Phone size={16}/></a>}</div></details>)}</div>
    </aside><div id="consultation" className="contact-reference-form"><h2>Để lại nhu cầu của bạn</h2><ContactForm/></div>
   </div></section></>;

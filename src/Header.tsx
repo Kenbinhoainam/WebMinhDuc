@@ -15,7 +15,8 @@ import {
   Minus,
 } from "lucide-react";
 import { Modal } from "./shared";
-import { useSavedJobs, jobs } from "./JobsPages";
+import { jobs } from "./jobs-data";
+import { useSavedJobs } from "./saved-jobs";
 import { LanguageSelector, useLocale, useTranslation } from "./i18n";
 import { translate } from "./i18n-runtime/jsx-runtime";
 import { navigation, subnavigation, sectionHasChild } from "./navigation";

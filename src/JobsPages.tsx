@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type FormEvent } from 'react';
+import CareersSections from './CareersSections';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Bookmark, BriefcaseBusiness, CheckCircle2, ChevronLeft, ChevronRight, Clock3, FileUp, MapPin, Phone, Search, SlidersHorizontal, Wallet } from 'lucide-react';
 import { PageHero, SectionHeading, ButtonLink, CTASection, DemoNote, Modal } from './shared';
@@ -6,60 +7,16 @@ import './jobs.css';
 import { useLocale, type Locale } from './i18n';
 import { translate } from './i18n-runtime/jsx-runtime';
 import {lookup} from './i18n-runtime/catalog';
+import {jobs, type Job} from './jobs-data';
+import {useSavedJobs} from './saved-jobs';
+export {jobs} from './jobs-data';
+export type {Job} from './jobs-data';
+export {useSavedJobs} from './saved-jobs';
 
 function useJobText() {
   const locale = useLocale();
   return (text: string) => locale === 'vi' ? text : lookup(locale, text, 'jobs') ?? text;
 }
-
-export type Job = {
-  id: string;
-  slug: string;
-  title: string;
-  location: string;
-  type: string;
-  salary: string;
-  category: string;
-  tags: string[];
-  internal?: boolean;
-  industrialPark?: string;
-  skillLevel?: string;
-  employmentType?: string;
-  shift?: string;
-  schedule?: string;
-  status?: string;
-  intro: string;
-  tasks: string[];
-  requirements: string[];
-  benefits: string[];
-};
-
-export const jobs: Job[] = [
-  { id: 'MD001', slug: 'cong-nhan-lap-rap-bac-ninh', title: 'Công nhân lắp ráp linh kiện', location: 'Bắc Ninh', type: 'Toàn thời gian', salary: '8–11 triệu/tháng', category: 'Sản xuất', tags: ['Được đào tạo', 'Làm việc theo ca'], intro: 'Bắt đầu công việc trong môi trường sản xuất có quy trình rõ ràng. Vị trí minh họa phù hợp với người muốn tìm việc ổn định và được hướng dẫn từ đầu.', tasks: ['Lắp ráp linh kiện theo hướng dẫn tại từng công đoạn.', 'Kiểm tra sản phẩm sau lắp ráp và báo cáo các điểm bất thường.', 'Sắp xếp khu vực làm việc, tuân thủ quy trình an toàn.'], requirements: ['Cẩn thận, có trách nhiệm và sẵn sàng học việc.', 'Có thể làm việc theo ca đã thống nhất.', 'Không yêu cầu kinh nghiệm; được hướng dẫn quy trình trước khi làm việc.'], benefits: ['Đào tạo thao tác và an toàn trước khi bắt đầu.', 'Lịch làm việc, thu nhập và phụ cấp được trao đổi rõ trước khi nhận việc.', 'Có nhân sự tư vấn hỗ trợ trong quá trình tìm hiểu công việc.'] },
-  { id: 'MD002', slug: 'kiem-tra-chat-luong-bac-giang', title: 'Nhân viên kiểm tra chất lượng', location: 'Bắc Giang', type: 'Toàn thời gian', salary: '9–12 triệu/tháng', category: 'Chất lượng', tags: ['Kiểm hàng', 'Cẩn thận'], intro: 'Tham gia kiểm tra chất lượng sản phẩm ở từng công đoạn, phát hiện lỗi và góp phần duy trì chất lượng đầu ra của dây chuyền.', tasks: ['Kiểm tra ngoại quan, đối chiếu sản phẩm với mẫu hướng dẫn.', 'Phân loại sản phẩm đạt và không đạt theo tiêu chuẩn.', 'Ghi nhận số liệu và bàn giao kết quả cho người phụ trách ca.'], requirements: ['Quan sát tốt, làm việc cẩn thận và trung thực.', 'Có khả năng đọc, ghi chép biểu mẫu đơn giản.', 'Kinh nghiệm kiểm hàng là lợi thế, không phải yêu cầu bắt buộc.'], benefits: ['Được hướng dẫn cách nhận diện lỗi và sử dụng biểu mẫu.', 'Cơ hội làm quen với quy trình quản lý chất lượng.', 'Thông tin về chế độ và ca làm được tư vấn trước khi quyết định.'] },
-  { id: 'MD003', slug: 'nhan-vien-kho-thai-nguyen', title: 'Nhân viên kho & đóng gói', location: 'Thái Nguyên', type: 'Toàn thời gian', salary: '8–10 triệu/tháng', category: 'Kho vận', tags: ['Kho vận', 'Phối hợp nhóm'], intro: 'Công việc minh họa dành cho người yêu thích sự ngăn nắp, phối hợp tốt và muốn phát triển trong lĩnh vực kho vận.', tasks: ['Nhận, kiểm đếm và sắp xếp hàng hóa đúng khu vực.', 'Soạn hàng, đóng gói và đối chiếu thông tin giao nhận.', 'Giữ khu vực kho gọn gàng, báo cáo chênh lệch khi phát hiện.'], requirements: ['Có khả năng kiểm đếm chính xác và phối hợp với đồng nghiệp.', 'Tuân thủ quy định an toàn trong kho.', 'Sẵn sàng học cách sử dụng thiết bị, biểu mẫu quản lý kho.'], benefits: ['Được đào tạo quy trình xuất nhập hàng.', 'Môi trường làm việc theo nhóm, có hướng dẫn trong thời gian đầu.', 'Chi tiết chế độ được xác nhận khi tư vấn vị trí thực tế.'] },
-  { id: 'MD004', slug: 'van-hanh-may-quang-ninh', title: 'Công nhân vận hành máy', location: 'Quảng Ninh', type: 'Toàn thời gian', salary: '9–13 triệu/tháng', category: 'Sản xuất', tags: ['Vận hành', 'Đào tạo kỹ năng'], intro: 'Tìm hiểu công việc vận hành thiết bị sản xuất, theo dõi thông số và phối hợp cùng đội kỹ thuật để bảo đảm hoạt động ổn định.', tasks: ['Vận hành máy theo quy trình và phạm vi được phân công.', 'Theo dõi thông số, phát hiện và báo cáo dấu hiệu bất thường.', 'Vệ sinh thiết bị, bàn giao tình trạng máy sau mỗi ca.'], requirements: ['Có tinh thần kỷ luật, ưu tiên an toàn trong mọi thao tác.', 'Có thể làm việc theo ca và theo dõi thông số cơ bản.', 'Ưu tiên người đã học nghề hoặc từng làm việc tại nhà máy.'], benefits: ['Hướng dẫn sử dụng thiết bị trước khi thực hành.', 'Có cơ hội nâng cao tay nghề vận hành.', 'Được tư vấn rõ yêu cầu sức khỏe và lịch ca trước khi nhận việc.'] },
-  { id: 'MD005', slug: 'ky-thuat-bao-tri-bac-ninh', title: 'Kỹ thuật viên bảo trì', location: 'Bắc Ninh', type: 'Toàn thời gian', salary: '11–15 triệu/tháng', category: 'Kỹ thuật', tags: ['Có tay nghề', 'Cơ điện'], intro: 'Vị trí minh họa cho ứng viên có nền tảng cơ điện, mong muốn làm việc cùng đội kỹ thuật và phát triển kỹ năng bảo trì thiết bị.', tasks: ['Kiểm tra, bảo dưỡng thiết bị theo lịch và hướng dẫn kỹ thuật.', 'Phối hợp xác định nguyên nhân sự cố và thực hiện sửa chữa trong phạm vi chuyên môn.', 'Ghi lại lịch sử bảo trì, vật tư sử dụng và đề xuất cải tiến.'], requirements: ['Có kiến thức nghề về điện, cơ khí hoặc cơ điện.', 'Đọc hiểu tài liệu kỹ thuật cơ bản và tuân thủ quy trình an toàn.', 'Có tinh thần hợp tác, chủ động báo cáo khi phát hiện nguy cơ.'], benefits: ['Cơ hội tích lũy kinh nghiệm trên thiết bị thực tế.', 'Được trao đổi rõ phạm vi công việc và yêu cầu chuyên môn.', 'Thu nhập và chế độ được thỏa thuận theo vị trí thực tế.'] },
-  { id: 'MD006', slug: 'dong-goi-thoi-vu-bac-giang', title: 'Nhân viên đóng gói thời vụ', location: 'Bắc Giang', type: 'Thời vụ', salary: '7–9 triệu/tháng', category: 'Sản xuất', tags: ['Thời vụ', 'Không cần kinh nghiệm'], intro: 'Lựa chọn minh họa cho người tìm công việc trong một giai đoạn cụ thể, với các thao tác đóng gói đơn giản và hướng dẫn trực tiếp.', tasks: ['Đóng gói, dán nhãn sản phẩm theo quy cách.', 'Kiểm đếm và sắp xếp thành phẩm theo đơn hàng.', 'Giữ vệ sinh khu vực làm việc và tuân thủ hướng dẫn an toàn.'], requirements: ['Cẩn thận, đúng giờ và hoàn thành lịch làm việc đã thống nhất.', 'Có thể phối hợp theo nhóm.', 'Không yêu cầu kinh nghiệm đóng gói trước đó.'], benefits: ['Được hướng dẫn công việc ngay từ đầu.', 'Thời hạn công việc được trao đổi trước khi bắt đầu.', 'Cách tính thu nhập và lịch thanh toán được xác nhận khi tư vấn thực tế.'] },
-  { id: 'MD007', slug: 'chuyen-vien-tuyen-dung-bac-ninh', title: 'Chuyên viên tuyển dụng', location: 'Bắc Ninh', type: 'Toàn thời gian', salary: '9–14 triệu/tháng', category: 'Tuyển dụng nội bộ', tags: ['Nội bộ', 'Phát triển nghề nghiệp'], internal: true, intro: 'Cùng Minh Đức kết nối người lao động với cơ hội phù hợp. Đây là vị trí nội bộ minh họa để trải nghiệm quy trình tuyển dụng trên prototype.', tasks: ['Tiếp nhận nhu cầu và tư vấn thông tin công việc cho ứng viên.', 'Sắp xếp lịch trao đổi, theo dõi tiến độ và hỗ trợ ứng viên.', 'Cập nhật nội dung tuyển dụng theo thông tin đã được xác nhận.'], requirements: ['Giao tiếp rõ ràng, biết lắng nghe và tôn trọng ứng viên.', 'Sử dụng các công cụ văn phòng cơ bản.', 'Có trách nhiệm với thông tin cá nhân và tính chính xác của nội dung tư vấn.'], benefits: ['Được hướng dẫn quy trình tư vấn và chăm sóc ứng viên.', 'Cơ hội phát triển kỹ năng tuyển dụng và phối hợp khách hàng.', 'Môi trường khuyến khích chia sẻ và hỗ trợ đồng đội.'] },
-  { id: 'MD008', slug: 'cong-tac-vien-tuyen-dung-quang-ninh', title: 'Cộng tác viên tuyển dụng', location: 'Quảng Ninh', type: 'Cộng tác viên', salary: 'Trao đổi khi tư vấn', category: 'Tuyển dụng nội bộ', tags: ['Nội bộ', 'Cộng tác linh hoạt'], internal: true, intro: 'Vị trí cộng tác minh họa dành cho người có khả năng kết nối cộng đồng, mong muốn hỗ trợ người lao động tiếp cận thông tin việc làm rõ ràng.', tasks: ['Giới thiệu thông tin việc làm đã được xác nhận tới người có nhu cầu.', 'Kết nối ứng viên với đội tư vấn phụ trách.', 'Theo dõi phản hồi và hỗ trợ giải đáp trong phạm vi được hướng dẫn.'], requirements: ['Truyền đạt trung thực, không tự đưa ra cam kết về việc làm hoặc thu nhập.', 'Có kỹ năng giao tiếp và sử dụng điện thoại, mạng xã hội.', 'Tôn trọng quyền riêng tư và sự đồng ý của ứng viên.'], benefits: ['Có tài liệu và nhân sự hỗ trợ tư vấn.', 'Hình thức cộng tác, phạm vi và quyền lợi được trao đổi riêng.', 'Cơ hội tích lũy kinh nghiệm trong lĩnh vực nhân lực.'] },
-];
-
-// Synthetic attributes for the prototype; industrial parks are not verified operating data.
-const jobAttributes = [
-  ['KCN Yên Phong', 'Phổ thông', 'Chính thức', 'Ngày', 'Xoay ca', 'active'],
-  ['KCN Tân Hưng', 'Phổ thông', 'Chính thức', 'Ngày', 'Cố định', 'active'],
-  ['KCN Sông Công', 'Phổ thông', 'Chính thức', 'Ngày', 'Cố định', 'active'],
-  ['KCN Đông Mai', 'Tay nghề', 'Chính thức', 'Đêm', 'Xoay ca', 'active'],
-  ['KCN Yên Phong', 'Tay nghề', 'Chính thức', 'Ngày', 'Cố định', 'closed'],
-  ['KCN Tân Hưng', 'Phổ thông', 'Thời vụ', 'Đêm', 'Xoay ca', 'active'],
-  ['', 'Tay nghề', 'Chính thức', 'Ngày', 'Cố định', 'active'],
-  ['', 'Phổ thông', 'Thời vụ', 'Ngày', 'Cố định', 'active'],
-];
-jobs.forEach((job, index) => {
-  const [industrialPark, skillLevel, employmentType, shift, schedule, status] = jobAttributes[index];
-  Object.assign(job, { industrialPark, skillLevel, employmentType, shift, schedule, status });
-});
 
 const filterOptions: Record<string, { label: string; options: [string, string][] }> = {
   industrialPark: { label: 'Khu công nghiệp', options: [['KCN Yên Phong', 'KCN Yên Phong'], ['KCN Tân Hưng', 'KCN Tân Hưng'], ['KCN Sông Công', 'KCN Sông Công'], ['KCN Đông Mai', 'KCN Đông Mai']] },
@@ -89,50 +46,6 @@ export function filterJobs(params: URLSearchParams, internal = false, savedOnly 
 const HERO_IMAGE = '/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg';
 const LOCATIONS = ['Bắc Ninh', 'Bắc Giang', 'Thái Nguyên', 'Quảng Ninh'];
 const TYPES = ['Toàn thời gian', 'Thời vụ', 'Cộng tác viên'];
-const SAVED_KEY = 'minhduc.saved-jobs.v1';
-const SAVED_EVENT = 'minhduc:saved-jobs';
-let memorySaved = '[]';
-let useMemorySaved = false;
-
-function getSavedSnapshot() {
-  if (useMemorySaved) return memorySaved;
-  try {
-    memorySaved = window.localStorage.getItem(SAVED_KEY) ?? '[]';
-    return memorySaved;
-  } catch { return memorySaved; }
-}
-function subscribeSaved(callback: () => void) {
-  const onStorage = (event: StorageEvent) => {
-    if (event.key === SAVED_KEY || event.key === null) {
-      memorySaved = event.newValue ?? '[]';
-      useMemorySaved = false;
-      callback();
-    }
-  };
-  window.addEventListener('storage', onStorage);
-  window.addEventListener(SAVED_EVENT, callback);
-  return () => { window.removeEventListener('storage', onStorage); window.removeEventListener(SAVED_EVENT, callback); };
-}
-function parseSaved(raw: string): string[] {
-  try { const result: unknown = JSON.parse(raw); return Array.isArray(result) ? [...new Set(result.filter((id): id is string => typeof id === 'string' && jobs.some(job => job.id === id)))] : []; } catch { return []; }
-}
-export function useSavedJobs() {
-  const raw = useSyncExternalStore(subscribeSaved, getSavedSnapshot, () => '[]');
-  const savedIds = useMemo(() => parseSaved(raw), [raw]);
-  const toggleSaved = (id: string) => {
-    if (!jobs.some(job => job.id === id)) return;
-    const current = parseSaved(getSavedSnapshot());
-    const next = current.includes(id) ? current.filter(item => item !== id) : [...current, id];
-    memorySaved = JSON.stringify(next);
-    try {
-      window.localStorage.setItem(SAVED_KEY, memorySaved);
-      useMemorySaved = false;
-    } catch { useMemorySaved = true; }
-    window.dispatchEvent(new Event(SAVED_EVENT));
-  };
-  return { savedIds, toggleSaved, isSaved: (id: string) => savedIds.includes(id), count: savedIds.length };
-}
-
 function normalized(value: string) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().trim().replace(/\s+/g, ' '); }
 
 function validateApplicationFile(file?: Pick<File, 'name' | 'size' | 'type'> | null, required = false) {
@@ -219,17 +132,7 @@ export function SavedJobsPage() {
 }
 
 export function CareersPage() {
-  return <><PageHero title="Gia nhập Minh Đức" eyebrow="TUYỂN DỤNG NỘI BỘ" description="Kết nối con người, cùng nhau tạo dựng giá trị." image={HERO_IMAGE} /><section className="section career-reference"><div className="container">
-   <div id="open-positions" data-reveal="up"><JobBrowser internal /></div>
-   <SectionHeading eyebrow="PHÁT TRIỂN CÙNG NHAU" title="Công việc ý nghĩa bắt đầu từ con người" description="Nếu bạn thích lắng nghe, kết nối và giúp người khác tìm được cơ hội phù hợp, hãy khám phá hành trình nghề nghiệp cùng Minh Đức." />
-   <div id="position-benefits" className="career-reference-rows" data-reveal="up">
-    <article><img src="/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-960.webp" alt="" loading="lazy" width="960" height="500"/><div><h3>Đồng đội đồng hành</h3><p>Chia sẻ kinh nghiệm, hỗ trợ nhau và cùng giải quyết công việc.</p></div></article>
-    <article><img src="/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-960.webp" alt="" loading="lazy" width="960" height="500"/><div><h3>Học từ thực tế</h3><p>Phát triển kỹ năng tư vấn, tuyển dụng và chăm sóc người lao động.</p></div></article>
-   </div>
-   <section className="career-reference-values"><h2>Giá trị thiết thực</h2><div><article><h3>Đồng đội đồng hành</h3><p>Chia sẻ kinh nghiệm, hỗ trợ nhau và cùng giải quyết công việc.</p></article><article><h3>Học từ thực tế</h3><p>Phát triển kỹ năng tư vấn, tuyển dụng và chăm sóc người lao động.</p></article><article><h3>Giá trị thiết thực</h3><p>Đặt sự rõ ràng, trách nhiệm và tôn trọng con người vào từng kết nối.</p></article></div></section>
-   <section id="cv-requirements" className="career-reference-process" data-reveal="up"><h2>Chuẩn bị CV ứng tuyển</h2><div><article><span>01</span><p>Xem mô tả công việc của từng vị trí để hiểu nhiệm vụ và yêu cầu. CV nội bộ là bắt buộc; hãy trình bày kinh nghiệm, kỹ năng và thông tin liên hệ phù hợp.</p></article><article><span>02</span><p>Biểu mẫu nhận tệp PDF, DOC hoặc DOCX tối đa 5 MB. Đây là bản trải nghiệm: tệp không được tải lên hay gửi đến Minh Đức.</p></article><article><span>03</span><p>Bạn có câu hỏi về vị trí hoặc hồ sơ? Liên hệ đội ngũ Minh Đức để được hướng dẫn.</p></article></div></section>
-   <section id="career-contact" className="career-guidance" data-reveal="up"><h2>Trao đổi về tuyển dụng nội bộ</h2><p>Bạn có câu hỏi về vị trí hoặc hồ sơ? Liên hệ đội ngũ Minh Đức để được hướng dẫn.</p><a className="btn btn-secondary" href="tel:0364562868">Gọi 0364 562 868</a> <ButtonLink to="/contact#consultation" secondary>Để lại nhu cầu tư vấn</ButtonLink></section>
-  </div></section><CTASection /></>;
+  return <><PageHero title="Gia nhập Minh Đức" eyebrow="TUYỂN DỤNG NỘI BỘ" description="Kết nối con người, cùng nhau tạo dựng giá trị." image={HERO_IMAGE}/><CareersSections openings={<JobBrowser internal/>}/></>;
 }
 
 type ApplicationErrors = Partial<Record<'name' | 'phone' | 'location' | 'cv' | 'consent', string>>;

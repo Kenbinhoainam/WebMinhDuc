@@ -904,5 +904,281 @@
     "zh": "示例学生 F",
     "ko": "샘플 학생 F",
     "ja": "サンプル学生 F"
+  },
+  "Không gian kết nối": {
+    "en": "A place to connect",
+    "zh": "连接的空间",
+    "ko": "소통 공간",
+    "ja": "つながる空間"
+  },
+  "Cùng trao đổi, phối hợp và hỗ trợ người lao động trong từng bước.": {
+    "en": "Share, collaborate and support workers at every step.",
+    "zh": "在每个环节交流协作，支持劳动者。",
+    "ko": "모든 단계에서 소통하고 협력하며 근로자를 지원합니다.",
+    "ja": "各段階で話し合い、協力し、働く人を支えます。"
+  },
+  "Đồng hành cùng nhau": {
+    "en": "Moving forward together",
+    "zh": "携手同行",
+    "ko": "함께하는 여정",
+    "ja": "共に歩む"
+  },
+  "Tích lũy kinh nghiệm qua các tình huống tuyển dụng và tư vấn.": {
+    "en": "Build experience through recruitment and consultation scenarios.",
+    "zh": "通过招聘与咨询场景积累经验。",
+    "ko": "채용과 상담 사례를 통해 경험을 쌓습니다.",
+    "ja": "採用や相談の場面を通じて経験を積みます。"
+  },
+  "Phúc lợi theo vị trí": {
+    "en": "Role-specific benefits",
+    "zh": "岗位福利",
+    "ko": "직무별 혜택",
+    "ja": "職種別の福利厚生"
+  },
+  "Điều kiện và quyền lợi được trao đổi cụ thể khi tìm hiểu vị trí.": {
+    "en": "Terms and benefits are discussed when exploring a position.",
+    "zh": "了解岗位时具体商议条件和福利。",
+    "ko": "직무를 살펴볼 때 조건과 혜택을 구체적으로 논의합니다.",
+    "ja": "条件と福利厚生は職種の検討時に詳しく話し合います。"
+  },
+  "Đào tạo và hướng dẫn": {
+    "en": "Training and guidance",
+    "zh": "培训与指导",
+    "ko": "교육과 안내",
+    "ja": "研修とサポート"
+  },
+  "Tìm hiểu quy trình và phát triển kỹ năng theo nhu cầu công việc.": {
+    "en": "Learn processes and develop skills for the role.",
+    "zh": "了解流程并根据工作需求发展技能。",
+    "ko": "업무에 필요한 절차와 기술을 익힙니다.",
+    "ja": "仕事に必要な手順とスキルを学びます。"
+  },
+  "Cơ hội phát triển": {
+    "en": "Growth opportunities",
+    "zh": "发展机会",
+    "ko": "성장 기회",
+    "ja": "成長の機会"
+  },
+  "Mở rộng kinh nghiệm qua hoạt động kết nối và phối hợp.": {
+    "en": "Expand experience through connection and collaboration.",
+    "zh": "通过沟通与协作拓展经验。",
+    "ko": "소통과 협업을 통해 경험을 넓힙니다.",
+    "ja": "交流と協力を通して経験を広げます。"
+  },
+  "Không gian làm việc": {
+    "en": "Our workspace",
+    "zh": "工作空间",
+    "ko": "업무 공간",
+    "ja": "働く環境"
+  },
+  "Quyền lợi và phát triển": {
+    "en": "Benefits and growth",
+    "zh": "福利与发展",
+    "ko": "혜택과 성장",
+    "ja": "福利厚生と成長"
+  },
+  "Tìm hiểu vị trí": {
+    "en": "Explore the role",
+    "zh": "了解岗位",
+    "ko": "직무 알아보기",
+    "ja": "職種を知る"
+  },
+  "Trao đổi thông tin": {
+    "en": "Discuss the details",
+    "zh": "交流信息",
+    "ko": "정보 상담",
+    "ja": "詳細を相談"
+  },
+  "Đồng hành khi bắt đầu": {
+    "en": "Support as you begin",
+    "zh": "启程时的陪伴",
+    "ko": "시작을 함께합니다",
+    "ja": "新しい一歩をサポート"
+  },
+  "Người mới có thể tìm hiểu công việc qua hướng dẫn, trao đổi và hỗ trợ từ đội ngũ.": {
+    "en": "New team members can learn through guidance, conversation and team support.",
+    "zh": "新成员可通过指导、交流和团队支持了解工作。",
+    "ko": "새 구성원은 안내와 소통, 팀의 지원을 통해 업무를 배울 수 있습니다.",
+    "ja": "新しい仲間は案内や対話、チームの支援を通じて仕事を学べます。"
+  },
+  "Trao đổi với Minh Đức": {
+    "en": "Talk with Minh Đức",
+    "zh": "与 Minh Đức 交流",
+    "ko": "Minh Đức와 상담",
+    "ja": "Minh Đứcに相談"
+  },
+  "Những câu chuyện đồng hành": {
+    "en": "Stories of support",
+    "zh": "携手同行的故事",
+    "ko": "함께한 이야기",
+    "ja": "共に歩むストーリー"
+  },
+  "Ứng viên giả định": {
+    "en": "Illustrative candidate",
+    "zh": "虚构应聘者",
+    "ko": "가상 지원자",
+    "ja": "架空の応募者"
+  },
+  "Thành viên giả định": {
+    "en": "Illustrative team member",
+    "zh": "虚构团队成员",
+    "ko": "가상 팀원",
+    "ja": "架空のチームメンバー"
+  },
+  "Hình ảnh kết nối": {
+    "en": "Connections in pictures",
+    "zh": "连接的影像",
+    "ko": "소통의 모습",
+    "ja": "つながりの写真"
+  },
+  "Hình ảnh minh họa cho giao diện, không thể hiện hoạt động thực tế.": {
+    "en": "Illustrative imagery for the interface; it does not depict actual activities.",
+    "zh": "界面示意图片，并非实际活动。",
+    "ko": "화면용 예시 이미지이며 실제 활동을 나타내지 않습니다.",
+    "ja": "画面用のイメージであり、実際の活動を示すものではありません。"
+  },
+  "KẾT NỐI CÙNG MINH ĐỨC": {
+    "en": "CONNECT WITH MINH ĐỨC",
+    "zh": "联系 MINH ĐỨC",
+    "ko": "MINH ĐỨC와 연결",
+    "ja": "MINH ĐỨCとつながる"
+  },
+  "Chọn thời gian để bắt đầu": {
+    "en": "Choose a time to begin",
+    "zh": "选择开始时间",
+    "ko": "시작할 시간을 선택하세요",
+    "ja": "開始する時間を選択"
+  },
+  "Chọn ngày và giờ bạn muốn trao đổi, sau đó điền thông tin liên hệ.": {
+    "en": "Choose a date and time, then enter your contact details.",
+    "zh": "选择希望交流的日期和时间，然后填写联系信息。",
+    "ko": "상담 날짜와 시간을 선택한 후 연락처를 입력하세요.",
+    "ja": "相談する日時を選び、連絡先を入力してください。"
+  },
+  "Đây là bản mô phỏng: không đặt lịch thật, không gửi hoặc lưu thông tin.": {
+    "en": "This is a simulation: no real appointment is booked and information is not sent or saved.",
+    "zh": "这是模拟演示：不会实际预约，也不会发送或保存信息。",
+    "ko": "모의 체험입니다. 실제 예약이 생성되지 않으며 정보는 전송되거나 저장되지 않습니다.",
+    "ja": "これはデモです。実際の予約は作成されず、情報は送信・保存されません。"
+  },
+  "Xem thông tin liên hệ": {
+    "en": "View contact information",
+    "zh": "查看联系信息",
+    "ko": "연락처 보기",
+    "ja": "連絡先を見る"
+  },
+  "Chọn ngày và giờ": {
+    "en": "Choose a date and time",
+    "zh": "选择日期和时间",
+    "ko": "날짜와 시간 선택",
+    "ja": "日時を選択"
+  },
+  "Ngày tư vấn": {
+    "en": "Consultation date",
+    "zh": "咨询日期",
+    "ko": "상담 날짜",
+    "ja": "相談日"
+  },
+  "Giờ tư vấn": {
+    "en": "Consultation time",
+    "zh": "咨询时间",
+    "ko": "상담 시간",
+    "ja": "相談時間"
+  },
+  "Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.": {
+    "en": "Choose today or a future date.",
+    "zh": "请选择今天或未来日期。",
+    "ko": "오늘 또는 이후 날짜를 선택하세요.",
+    "ja": "今日以降の日付を選択してください。"
+  },
+  "Vui lòng chọn giờ tư vấn.": {
+    "en": "Choose a consultation time.",
+    "zh": "请选择咨询时间。",
+    "ko": "상담 시간을 선택하세요.",
+    "ja": "相談時間を選択してください。"
+  },
+  "Tiếp tục": {
+    "en": "Continue",
+    "zh": "继续",
+    "ko": "계속",
+    "ja": "続ける"
+  },
+  "Đã hoàn tất trải nghiệm": {
+    "en": "Demo completed",
+    "zh": "已完成演示",
+    "ko": "체험 완료",
+    "ja": "デモが完了しました"
+  },
+  "Thời gian đã chọn:": {
+    "en": "Selected time:",
+    "zh": "已选时间：",
+    "ko": "선택한 시간:",
+    "ja": "選択した日時："
+  },
+  "Không có lịch hẹn thực tế nào được tạo. Thông tin chưa được gửi hoặc lưu.": {
+    "en": "No actual appointment was created. Information was not sent or saved.",
+    "zh": "未创建实际预约。信息未发送或保存。",
+    "ko": "실제 예약은 생성되지 않았으며 정보는 전송되거나 저장되지 않았습니다.",
+    "ja": "実際の予約は作成されていません。情報は送信・保存されていません。"
+  },
+  "Chọn thời gian khác": {
+    "en": "Choose another time",
+    "zh": "选择其他时间",
+    "ko": "다른 시간 선택",
+    "ja": "別の時間を選ぶ"
+  },
+  "Nội dung minh họa; hồ sơ trong bản trải nghiệm không được tải lên hoặc gửi đi.": {
+    "en": "Illustrative content; demo applications are not uploaded or sent.",
+    "zh": "示意内容；演示申请材料不会上传或发送。",
+    "ko": "예시 콘텐츠입니다. 체험용 서류는 업로드되거나 전송되지 않습니다.",
+    "ja": "イメージ内容です。デモの応募書類はアップロードまたは送信されません。"
+  },
+  "“Một cuộc trao đổi rõ ràng giúp tôi hiểu công việc trước khi bắt đầu.”": {
+    "en": "“A clear conversation helps me understand the role before I start.”",
+    "zh": "“清晰的交流让我在开始前了解工作。”",
+    "ko": "“명확한 대화 덕분에 시작 전에 업무를 이해할 수 있습니다.”",
+    "ja": "「明確な対話により、始める前に仕事を理解できます。」"
+  },
+  "“Chia sẻ kinh nghiệm giúp cả nhóm phối hợp tốt hơn mỗi ngày.”": {
+    "en": "“Sharing experience helps the team work better together every day.”",
+    "zh": "“分享经验让团队每天都能更好地协作。”",
+    "ko": "“경험을 나누면 팀이 매일 더 잘 협력할 수 있습니다.”",
+    "ja": "「経験を共有することで、チームは毎日より良く協力できます。」"
+  },
+  "CV nội bộ là bắt buộc. Biểu mẫu nhận PDF, DOC hoặc DOCX tối đa 5 MB.": {
+    "en": "A CV is required for internal roles. The form accepts PDF, DOC or DOCX up to 5 MB.",
+    "zh": "内部岗位必须提供简历。表单接受最大 5 MB 的 PDF、DOC 或 DOCX 文件。",
+    "ko": "내부 지원에는 이력서가 필요합니다. PDF, DOC 또는 DOCX 파일을 최대 5 MB까지 선택할 수 있습니다.",
+    "ja": "社内応募には履歴書が必要です。PDF、DOC、DOCX形式で最大5 MBまで選択できます。"
+  },
+  "Chia sẻ kinh nghiệm để cùng giải quyết công việc.": {
+    "en": "Share experience to solve challenges together.",
+    "zh": "分享经验，共同解决工作问题。",
+    "ko": "경험을 나누며 함께 업무를 해결합니다.",
+    "ja": "経験を共有し、一緒に課題を解決します。"
+  },
+  "Liên hệ đội ngũ Minh Đức để làm rõ thông tin và các bước tiếp theo.": {
+    "en": "Contact the Minh Đức team to clarify details and next steps.",
+    "zh": "联系 Minh Đức 团队，了解详情及后续步骤。",
+    "ko": "상세 정보와 다음 단계를 확인하려면 Minh Đức 팀에 문의하세요.",
+    "ja": "詳細と次の手順についてMinh Đứcチームにお問い合わせください。"
+  },
+  "Xem mô tả công việc của từng vị trí để hiểu nhiệm vụ và yêu cầu.": {
+    "en": "Review each job description to understand its duties and requirements.",
+    "zh": "查看各岗位的职位描述，了解职责和要求。",
+    "ko": "각 직무 설명을 확인하여 업무와 요건을 이해하세요.",
+    "ja": "各職種の説明を読み、業務と応募要件を確認してください。"
+  },
+  "Đối tác giả định": {
+    "en": "Illustrative partner",
+    "zh": "虚构合作伙伴",
+    "ko": "가상 파트너",
+    "ja": "架空のパートナー"
+  },
+  "“Lắng nghe giúp chúng tôi tìm được hướng trao đổi phù hợp.”": {
+    "en": "“Listening helps us find the right way forward together.”",
+    "zh": "“倾听帮助我们找到合适的交流方向。”",
+    "ko": "“경청은 적절한 소통 방향을 찾는 데 도움이 됩니다.”",
+    "ja": "「耳を傾けることで、適切な対話の道筋が見えてきます。」"
   }
 }

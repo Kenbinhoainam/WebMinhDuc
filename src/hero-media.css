@@ -50,7 +50,7 @@
   .section-home-banner .hero-title-grid { font-size: 58px; }
   .section-home-banner .hero-description-grid { font-size: 1.6666667rem; }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .section-home-banner .hero-title-grid { font-size: 3.75rem; }
 }
 @media (min-width: 1200px) {
@@ -62,6 +62,5 @@
   .section-home-banner .item-banner { min-height: max(560px, 100dvh); align-items: end; }
   .section-home-banner .hero-shade { background: rgba(0,0,0,.4); }
   .section-home-banner .hero-content { align-items: flex-end; padding-block: 100px 80px; }
-  .section-home-banner .hero-title-grid { font-size: 40px; }
   .section-home-banner .hero-description-grid { font-size: 20px; }
 }

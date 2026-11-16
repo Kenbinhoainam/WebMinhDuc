@@ -48,7 +48,7 @@ export const subnavigation: Record<string, string[][]> = {
     ["/news?category=workers#news-listings", "Thông tin về lao động"],
     ["/events", "Hoạt động của Minh Đức Vina"],
   ],
-  "/contact": [["/contact#consultation", "Tư vấn"]],
+  "/contact": [["/consultation", "Tư vấn"]],
 };
 // Parent styling follows its child destinations without claiming the parent is the current page.
 export function sectionHasChild(url: string, pathname: string) {

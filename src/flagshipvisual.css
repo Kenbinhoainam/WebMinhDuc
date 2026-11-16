@@ -1,9 +1,9 @@
 /* Shared, verified partner assets and continuous logo rail. */
-.partners-strip { position: relative; border-block: 1px solid var(--flagship-line); margin-top: 35px; }
+.partners-strip { position: relative; margin-top: 35px; }
 .partners-viewport { overflow: hidden; }
 .partners-track { display: flex; width: max-content; animation: partners-loop 32s linear infinite; }
-.partners-set { display: flex; flex: none; gap: 18px; padding: 24px 18px 24px 0; margin: 0; list-style: none; }
-.partners-set li { display: grid; place-items: center; width: clamp(180px, 18vw, 250px); min-height: 110px; padding: 20px; border: 1px solid #e4eaed; border-radius: 14px; background: #fff; box-shadow: 0 4px 18px #173e5010; }
+.partners-set { display: flex; flex: none; gap: 16px; padding: 24px 16px 24px 0; margin: 0; list-style: none; }
+.partners-set li { display: grid; place-items: center; width: calc((100vw - 24px)/2.5); min-height: 88px; padding: 5px; border: 1px solid rgba(255,255,255,.1); }
 .partner-logo { display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; min-height: 54px; text-align: center; }
 .partner-logo img { width: min(100%, 180px); max-height: 42px; object-fit: contain; }
 .partner-logo--text { color: #244962; font-size: clamp(15px, 1.4vw, 19px); font-weight: 800; letter-spacing: .025em; }
@@ -17,16 +17,17 @@
  .info-partner-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 575px) {
- .partners-set li { width: 185px; min-height: 88px; }
  .info-partner-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
  .info-partner { min-width: 0; overflow-wrap: anywhere; font-size: 16px; }
 }
+@media (min-width: 768px) { .partners-set li { width: calc((100vw - 48px)/4); } }
+@media (min-width: 1024px) { .partners-set li { width: calc((100vw - 104px)/7.5); padding: 1.04167rem; } }
 @media (prefers-reduced-motion: reduce) {
  .partners-viewport { overflow: visible; }
  .partners-track { display: block; width: auto; animation: none; }
  .partners-set { flex-wrap: wrap; gap: 10px; padding: 20px 0; }
  .partners-set li { flex: 1 1 150px; width: auto; }
- .partners-set[aria-hidden="true"], .partners-toggle { display: none; }
+ .partners-set[aria-hidden="true"], .partners-set [data-repeat], .partners-toggle { display: none; }
 }
 
 .partners-viewport:focus-visible{outline:2px solid var(--flagship-red);outline-offset:4px}

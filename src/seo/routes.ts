@@ -30,6 +30,7 @@ export const pages:Page[] = [
  page('/education/tu-xa-ke-toan','Kế toán từ xa','Tìm hiểu chương trình Kế toán từ xa và trải nghiệm các bước chuẩn bị hồ sơ.'),
  page('/admin-demo','Không gian quản trị mẫu','Trải nghiệm phân loại, phân công và xử lý hồ sơ cùng quản lý nội dung bằng dữ liệu giả định.'),
  page('/contact','Liên hệ Minh Đức','Xem thông tin liên hệ và gửi yêu cầu tư vấn minh họa tới Minh Đức Vina.'),
+ page('/consultation','Đặt lịch tư vấn','Chọn ngày và khung giờ để trải nghiệm quy trình đặt lịch tư vấn minh họa cùng Minh Đức Vina.'),
  page('/e-brochure','Hồ sơ giới thiệu','Xem hồ sơ giới thiệu trực tuyến về Minh Đức và các giải pháp nhân lực.'),
  page('/privacy-policy','Chính sách bảo mật','Tìm hiểu cách bản prototype xử lý thông tin và lưu lựa chọn trên thiết bị.'),
  page('/terms-of-use','Điều khoản sử dụng','Tìm hiểu điều khoản sử dụng và phạm vi nội dung minh họa của website.')

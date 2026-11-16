@@ -1,4 +1,4 @@
-# Minh Đức Vina — Prototype 11 / Live reference & Minh Đức navigation
+# Minh Đức Vina — Prototype 12 / Reference corrections & shared interactions
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
@@ -27,13 +27,13 @@ npm run test:header
 npm run audit:i18n
 ```
 
-`npm run build` tạo HTML sẵn cho 40 trang × 5 ngôn ngữ và các alias cũ. `audit:i18n` là báo cáo phát hiện chữ Việt còn lại, cần phân biệt tên riêng với thiếu bản dịch.
+`npm run build` tạo HTML sẵn cho 41 trang × 5 ngôn ngữ và các alias cũ. `audit:i18n` là báo cáo phát hiện chữ Việt còn lại, cần phân biệt tên riêng với thiếu bản dịch.
 
 ## Nâng cấp flagship
 
-Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Bản v11: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
-[Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v11.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
+[Khắc phục đối chiếu và tối ưu v12](docs/flagship/reference-v12-review.md) · [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v12.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
 
 Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `prebuild` kiểm tra file sinh có khớp nguồn. Các ảnh tối ưu đã được lưu trong repository; chỉ cần ffmpeg/ffprobe khi muốn tái sinh bằng `node scripts/optimize-media.mjs`.
 
@@ -46,6 +46,7 @@ Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `p
 - Tám vị trí mẫu, bộ lọc KCN/loại việc/tay nghề/ca ngày–đêm/chuyên–xoay/trạng thái; lưu việc trên thiết bị. Tuyển nội bộ tách khỏi danh sách lao động. Tin đóng vẫn đọc được nhưng không nhận ứng tuyển thử.
 - Ba chương trình tuyển sinh giả định theo hình thức từ xa/chính quy; không gắn với trường chưa xác minh.
 - Sáu biểu mẫu F01–F06: nhu cầu doanh nghiệp, liên hệ chung, ứng tuyển lao động, ứng tuyển nội bộ, tư vấn tuyển sinh, hồ sơ tuyển sinh. CV nội bộ/hồ sơ tuyển sinh bắt buộc; PDF/DOC/DOCX tối đa 5 MB theo giả định demo.
+- `/consultation`: chọn ngày/giờ, điền biểu mẫu F02 và xem xác nhận minh họa; không đặt lịch hoặc gửi dữ liệu thực tế.
 - `/admin-demo`: sáu hàng đợi hồ sơ giả, tìm/lọc, mã tin/chương trình, nguồn, ngày nhận, người phụ trách, trạng thái, cảnh báo trùng, xuất CSV mẫu, CMS và vai trò minh họa.
 - SEO/AEO: HTML prerender, tiêu đề/mô tả/canonical/OG riêng, `html lang`, hreflang, sitemap; Organization/WebSite/WebPage/BreadcrumbList/FAQPage khớp nội dung. Giữ **noindex** và quyền xem riêng tư. Không dùng schema JobPosting/Event/Review cho dữ liệu giả.
 
@@ -60,7 +61,7 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 ## Kiến trúc
 
 - `App.tsx`, `Header.tsx`, `navigation.ts`, `Home.tsx`, `shared.tsx`: khung, header và sitemap dùng chung, trang chủ và thành phần chung.
-- `JobsPages.tsx`, `Education.tsx`, `Contact.tsx`: dữ liệu và sáu luồng demo.
+- `JobsPages.tsx`, `jobs-data.ts`, `saved-jobs.ts`, `CareersSections.tsx`, `Education.tsx`, `Contact.tsx`, `Consultation.tsx`: dữ liệu dùng chung, bộ lưu việc và các luồng demo.
 - `AdminDemo.tsx`, `admin-demo-data.ts`: quản trị minh họa, dữ liệu giả độc lập.
 - `InfoPages.tsx`: giới thiệu, dịch vụ, tin tức, sự kiện, chính sách và hồ sơ năng lực.
 - `i18n.tsx`, `i18n-runtime/`, `i18n-catalogs/`: locale theo URL và bản dịch. JSX runtime dịch nội dung/nhãn hiển thị, giữ nguyên IDs, URL, form values và dữ liệu người dùng nhập. Chuỗi động dùng `useTranslation`.

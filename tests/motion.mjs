@@ -8,13 +8,15 @@ const dir = '.motion-test';
 await mkdir(dir, {recursive: true});
 try {
   await build({entryPoints: ['src/motion.tsx'], bundle: true, platform: 'node', format: 'esm', outfile: `${dir}/bundle.mjs`, packages: 'external', loader: {'.css': 'empty'}, logLevel: 'silent'});
-  const dom = new JSDOM('<main><div id="shown" data-reveal></div><div id="below" data-reveal><div id="nested" data-reveal><button>Focus</button></div></div></main>', {url: 'https://example.test/', pretendToBeVisual: true});
+  const dom = new JSDOM('<main><div id="shown" data-reveal></div><div id="below" data-reveal><div id="nested" data-reveal><button>Focus</button></div></div><div id="frame" data-reveal="zoom" data-reveal-frame><div class="motion-content">Framed content</div></div></main>', {url: 'https://example.test/', pretendToBeVisual: true});
   for (const key of ['window', 'document', 'HTMLElement', 'MutationObserver']) Object.defineProperty(globalThis, key, {value: dom.window[key], configurable: true});
   Object.defineProperty(window, 'innerHeight', {value: 800, configurable: true});
   Object.defineProperty(window, 'innerWidth', {value: 1000, configurable: true});
-  const shown = document.querySelector('#shown'), below = document.querySelector('#below'), nested = document.querySelector('#nested');
+  const shown = document.querySelector('#shown'), below = document.querySelector('#below'), nested = document.querySelector('#nested'), frame = document.querySelector('#frame');
+  const child=frame.querySelector('.motion-content');
   shown.getBoundingClientRect = () => ({top: 100});
-  below.getBoundingClientRect = nested.getBoundingClientRect = () => ({top: 900});
+  below.getBoundingClientRect = nested.getBoundingClientRect = frame.getBoundingClientRect = () => ({top: 900});
+  child.getBoundingClientRect=()=>({top:-10000,left:-10000,right:-9000});
   const listeners = new Set();
   const preference = {matches: false, addEventListener: (_, fn) => listeners.add(fn), removeEventListener: (_, fn) => listeners.delete(fn)};
   window.matchMedia = () => preference;
@@ -32,13 +34,22 @@ try {
   const css = await readFile('src/motion.css', 'utf8');
   assert.match(css, /\.service-card\[data-reveal\]:hover:not\(\.motion-pending\)\s*\{\s*transform:\s*none/);
   assert.match(css, /\.service-card\[data-reveal\]\.motion-pending:hover\s*\{\s*transform:\s*translateY\(22px\)/);
-  assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*380ms;\s*transition-delay:\s*0ms/);
+  assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*1000ms;\s*transition-delay:\s*0ms/);
+  assert.match(css, /data-reveal-delay="3"[^}]*transition-delay:\s*900ms/, 'reference stagger is entry-only');
+  assert.match(css, /\[data-reveal\]\[data-reveal-frame\]\.motion-pending\s*\{[^}]*opacity:\s*1;\s*transform:\s*none;\s*transition:\s*none/s, 'pending frame stays geometrically stable');
+  assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(100px\) scale\(\.6\)/, 'reference zoom belongs to inner content');
+  assert.match(css, /motion-released > \.motion-content\s*\{\s*transition:\s*none/, 'failure restores without a transition');
   const {startReveals} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
   let stop = startReveals();
   let [enter, exit] = observers.slice(-2);
   assert.match(enter.options.rootMargin, /px/); assert(!enter.options.rootMargin.includes('%'));
   assert(shown.classList.contains('motion-visible'), 'initial viewport remains visible');
   assert(below.classList.contains('motion-pending'), 'below viewport begins pending');
+  assert(frame.classList.contains('motion-pending') && enter.targets.has(frame) && !enter.targets.has(child), 'observer tracks only the stable frame');
+  exit.emit(frame,false,{top:900});enter.emit(frame,true);
+  assert(!frame.classList.contains('motion-pending'), 'frame enters regardless of the child’s transformed rect');
+  exit.emit(frame,false,{top:100});assert(!frame.classList.contains('motion-pending'),'a child rect cannot force a reset');
+  exit.emit(frame,false,{top:770});assert(frame.classList.contains('motion-pending'),'outer crossing resets the frame');
   exit.emit(shown, false, {top: 770});
   assert(!shown.classList.contains('motion-pending'), 'initial exit baseline cannot hide visible content');
   exit.emit(below, false, {top: 900}); // Initial observer delivery.
@@ -85,7 +96,7 @@ try {
   preference.matches = false; for (const listener of listeners) listener();
   [enter, exit] = observers.slice(-2); exit.emit(below, false, {top: 770}); exit.emit(below, false, {top: 770});
   assert(!below.classList.contains('motion-pending'), 'focus lock survives preference toggle');
-  stop(); assert.equal(listeners.size, 0); assert(!enter.targets.size && !exit.targets.size, 'cleanup removes listeners and observers');
+  stop(); assert(frame.classList.contains('motion-released') && !frame.classList.contains('motion-pending'), 'cleanup immediately releases pending frame'); assert.equal(listeners.size, 0); assert(!enter.targets.size && !exit.targets.size, 'cleanup removes listeners and observers');
   // A partial resize rebind failure must restore every target, even those not yet rebound.
   const extras = Array.from({length: 3}, () => {
     const element = document.createElement('div'); element.setAttribute('data-reveal', '');

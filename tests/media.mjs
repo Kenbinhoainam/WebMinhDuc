@@ -83,6 +83,19 @@ if(!process.argv.includes('--case')) {
    assert.equal(cta().getAttribute('href'),'/services/labor-supply','CTA follows the active service');
    await act(async()=>button.focus()); assert.equal(timers.size,0,'focus pauses headline rotation');
    await act(async()=>button.blur()); assert.equal(timers.size,1,'rotation resumes after focus leaves');
+   assert.match(active().textContent,/Giới thiệu/,'pause and resume preserve active slide');
+   const advance=()=>act(async()=>[...timers.values()][0]());
+   await advance();await advance();
+   const titles=window.document.querySelectorAll('.hero-title-grid .hero-slide');
+   assert.equal(titles[0].dataset.position,'after','first slide waits to the right before wrap');
+   await advance();
+   assert.equal(titles[3].dataset.position,'before','outgoing final slide travels left on wrap');
+   assert.match(active().textContent,/Kết nối nhân lực/);
+   assert.equal(cta().getAttribute('href'),'/about-us');
+   assert.equal(window.document.querySelectorAll('.hero-title-grid .hero-slide[aria-hidden="false"]').length,1);
+   assert.equal(window.document.querySelectorAll('.hero-description-grid .hero-slide[aria-hidden="false"]').length,1);
+   await advance();assert.match(active().textContent,/Giới thiệu/);assert.equal(titles[3].getAttribute('aria-hidden'),'true');
+   assert.equal(cta().getAttribute('href'),'/services/labor-supply');
    const hero=window.document.querySelector('.home-hero');
    await act(async()=>hero.dispatchEvent(new window.MouseEvent('mouseover',{bubbles:true})));
    assert.equal(timers.size,0,'hover pauses titles'); assert.equal(paused,false,'hover does not pause video');
@@ -106,7 +119,7 @@ if(!process.argv.includes('--case')) {
   } else {
    await waitForAutoplay();
    if(mode==='desktop') {
-    assert.match(video.getAttribute('src'),/hero-1600-e945407f/);assert.equal(plays,1);
+    assert.match(video.getAttribute('src'),/hero-1080-ea988cd5/);assert.equal(plays,1);
     await observe(false);assert.equal(paused,true);await observe(true);await waitForAutoplay();assert.equal(plays,2);
     await click();assert.equal(paused,true);await observe(false);await observe(true);await waitForAutoplay();
     assert.equal(plays,2,'user pause must persist');
@@ -115,7 +128,7 @@ if(!process.argv.includes('--case')) {
     await observe(true); await act(async()=>button.blur());
     let intervals = 0; window.setInterval = () => { intervals++; return 1; };
     await click(); await act(async()=>video.dispatchEvent(new window.Event('playing')));
-    assert.match(video.getAttribute('src'),/hero-1600-e945407f/);assert.equal(plays,1,'manual play');
+    assert.match(video.getAttribute('src'),/hero-1080-ea988cd5/);assert.equal(plays,1,'manual play');
     assert.equal(intervals,0,'constrained modes do not rotate titles even after manual play');
    }
   }

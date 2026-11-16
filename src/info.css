@@ -19,34 +19,16 @@
 .info-about-statement .info-lead{font-family:Lato,sans-serif;color:#292929;font-size:clamp(21px,1.8vw,30px);line-height:1.35}
 .info-about-statement p{line-height:1.8}.info-about-statement .btn{margin-top:12px}
 .info-soft-section{border-radius:0}
-.info-values{grid-template-columns:1fr;gap:0;margin-top:clamp(35px,4vw,70px)}
-.info-value-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.info-value-tabs button{min-height:82px;padding:18px 0;background:transparent;border:0;border-bottom:1px solid #dcdcdc;border-radius:0;color:#292929}
-.info-value-tabs button.active{background:transparent;border-color:#e42824;color:#e42824}
-.info-value-panel{margin-top:24px;padding:30px 0;background:transparent;border-radius:0;min-height:180px}
-.info-value-panel p{max-width:760px}.info-value-watermark{display:none}
 .info-history{background:#f6f6f6}
-.info-history .info-story-grid{position:relative;gap:32px}
-.info-history .info-story-grid:before{content:'';position:absolute;top:31px;left:0;right:0;border-top:1px solid #dcdcdc}
-.info-history .info-story-grid article{position:relative;background:transparent;border:0;border-radius:0;padding:0 20px 0 0}
-.info-history .info-story-grid article>span{position:relative;display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border:1px solid #e42824;border-radius:50%;background:#f6f6f6;color:#e42824;font-size:16px}
-.info-history .info-story-grid h3{margin-top:24px}
 .info-category-strip{padding:24px 0;border-bottom:1px solid #e8e8e8}
 .info-category-strip .info-tabs{margin:0;justify-content:flex-start;gap:12px 32px}
 .info-category-strip .info-tabs button{min-height:44px;border:0;border-radius:0;background:transparent;color:#666;padding:8px 0;border-bottom:2px solid transparent}
 .info-category-strip .info-tabs button.active{background:transparent;color:#e42824;border-color:#e42824}
 .info-news-section{background:#f6f6f6}
 .info-news-grid.grid-3{gap:clamp(24px,3vw,48px)}
-.info-news-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,64px);align-items:start}
-.info-news-card:first-child .info-news-image{grid-row:1/6;height:auto;aspect-ratio:440/248}
-.info-news-card:first-child .info-news-meta{margin-top:clamp(16px,3vw,40px)}
-.info-news-card:first-child h2{font-size:clamp(24px,2.2vw,36px)}
-.info-news-card:first-child>p{max-width:38rem}
 .info-event-card>div{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;text-align:right;padding:clamp(24px,4vw,70px)}
 .info-event-card h2{font-size:clamp(23px,2.2vw,40px);line-height:1.2}
 .info-event-meta{justify-content:flex-end}.info-event-card .info-text-link{margin-top:8px}
-.info-service-panel{border-radius:0;gap:clamp(24px,4vw,70px);padding:0;background:transparent}
-.info-service-panel>img{border-radius:6px;aspect-ratio:358/182;height:auto;min-height:260px}
 .info-intro-grid .info-rounded-photo{border-radius:6px}
 .info-service-card,.info-service-card>div{min-height:clamp(350px,33vw,500px)}
 .info-article-layout{gap:clamp(36px,5vw,90px)}
@@ -65,9 +47,7 @@
 .info-about-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,55px);margin-top:clamp(60px,5vw,90px)}
 .info-about-values article>svg{color:#e42824;margin-bottom:24px}.info-about-values h3{font-size:clamp(20px,1.5vw,26px);padding-bottom:15px;border-bottom:1px solid #dedede;margin:0 0 20px}.info-about-values p{line-height:1.7;color:#555}
 .info-values-detail{padding-top:0}.info-values-detail .section-heading{text-align:left;margin-left:0}.info-values-detail .info-values{margin-top:20px}
-.info-history .info-story-grid article{padding:0 20px 25px}.info-history .info-story-grid article:after{content:'';display:block;margin-top:20px;aspect-ratio:358/182;background:url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-960.webp') center/cover;border-radius:6px}
 .info-featured-news{margin:40px 0 70px}.info-featured-news .info-featured-card{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,64px);align-items:start}.info-featured-news .info-news-image{grid-row:1/6;height:auto;aspect-ratio:440/248}.info-featured-news .info-news-meta{margin-top:clamp(16px,3vw,40px)}.info-featured-news h2{font-size:clamp(24px,2.2vw,36px)}
-.info-news-grid.grid-3 .info-news-card:first-child{grid-column:auto;display:block}.info-news-grid.grid-3 .info-news-card:first-child .info-news-image{height:210px;aspect-ratio:auto}.info-news-grid.grid-3 .info-news-card:first-child .info-news-meta{margin-top:17px}.info-news-grid.grid-3 .info-news-card:first-child h2{font-size:21px}
 @media(max-width:767px){.info-about-values{grid-template-columns:1fr;gap:32px}.info-featured-news .info-featured-card{grid-template-columns:1fr;gap:0}.info-featured-news .info-news-image{grid-row:auto}}
 
 .info-about-statistics .container{background:#e42824;color:#fff;border-radius:24px;padding:clamp(25px,3vw,52px)}
@@ -102,3 +82,17 @@
 .info-history-rail .info-history-slide.is-side{opacity:.62;animation:none}
 @media(max-width:767px){.info-history-rail{grid-template-columns:1fr}.info-history-rail .info-history-slide.is-side{display:none}}
 @media(prefers-reduced-motion:reduce){.info-history-rail .info-history-slide{animation:none}}
+/* v12 reference layout: the value rail spans both introduction columns. */
+.info-about-statement>.info-about-values{grid-column:1/-1}
+.info-team-card{border:0;padding:0;background:transparent;text-align:left;color:inherit;font:inherit}.info-team-portrait img{width:100%;height:100%;object-fit:cover}.info-team-dialog{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.info-team-dialog img{width:100%;aspect-ratio:169/193;object-fit:cover;border-radius:6px}
+.info-document-art{background:#f4f4f4;position:relative}.info-document-art:before{content:'';position:absolute;inset:14px 20px;background:white;border:1px solid #ddd;box-shadow:0 2px 8px #0001}.info-document-art svg{position:relative;color:#d05d57}
+.info-service-why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,70px);align-items:center}.info-service-why img{width:100%;aspect-ratio:358/182;object-fit:cover;border-radius:6px}.info-service-why h2{font-size:clamp(28px,2.5vw,40px);line-height:1.2}
+.info-fee-table-wrap{overflow-x:auto;margin:30px 0;overscroll-behavior-inline:contain}.info-fee-table{width:100%;min-width:640px;border-collapse:collapse;background:#fff}.info-fee-table caption{text-align:left;font-weight:700;padding:14px 0}.info-fee-table th,.info-fee-table td{padding:18px;border:1px solid #dedede;text-align:left;vertical-align:top}.info-fee-table thead{background:#e42824;color:white}.info-fee-table tbody th{width:24%}
+.info-service-customers{background:#f6f6f6}
+.info-news-listing{background:#fff}.info-news-section .info-featured-news{margin:0}
+@media(max-width:767px){.info-service-why,.info-team-dialog{grid-template-columns:1fr}.info-team-dialog img{max-height:300px}.info-about-statement>.info-about-values{grid-column:auto}}
+.info-service-customers .info-testimonial-rail{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 12px}
+.info-service-customers .info-testimonial-rail blockquote{flex:0 0 calc((100% - 24px)/2);scroll-snap-align:start;margin:0;padding:clamp(24px,3vw,48px);background:white;border-radius:12px;text-align:left;font-size:clamp(18px,1.4vw,24px)}
+.info-service-customers .info-testimonial-rail footer{display:flex;align-items:center;gap:14px;margin-top:25px;padding-top:20px;border-top:1px solid #e4e4e4;font-size:14px;color:#666}.info-testimonial-avatar{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:#f2f2f2;color:#777}.info-testimonial-rail footer strong,.info-testimonial-rail footer small{display:block}.info-testimonial-rail footer strong{color:#292929}.info-testimonial-rail footer small{font-size:12px}
+@media(max-width:767px){.info-service-customers .info-testimonial-rail blockquote{flex-basis:100%}}
+.info-carousel-pause{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px auto 0;border:0;background:transparent;color:#555;min-height:44px;padding:8px 12px;font-size:13px}.info-carousel-pause:hover{color:#e42824}

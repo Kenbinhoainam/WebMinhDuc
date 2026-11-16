@@ -5,7 +5,9 @@ import ts from 'typescript';
 
 // Evaluate the real TypeScript module with a minimal hook adapter, without a browser.
 // Tests below exercise its actual data, normalization, saved-job store and CV validation.
-const source = fs.readFileSync(new URL('../src/JobsPages.tsx', import.meta.url), 'utf8');
+const read = file => fs.readFileSync(new URL(`../src/${file}`, import.meta.url), 'utf8');
+// Assemble the real data, store and page functions in a single isolated test module.
+const source = ["import {useMemo,useSyncExternalStore} from 'react';", read('jobs-data.ts'), read('saved-jobs.ts').replace(/^import .*;\n/gm,''), read('JobsPages.tsx').replace(/^import .*;\n/gm,'').replace(/^export (?:type )?\{.*\} from .*;\n/gm,'')].join('\n');
 const js = ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText + '\nexports.__review={parseSaved,normalized,validateApplicationFile,getSavedSnapshot,subscribeSaved};';
 const key='minhduc.saved-jobs.v1';
 function make(seed){

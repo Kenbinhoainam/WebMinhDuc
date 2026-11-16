@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 
 const folder='.home-carousel-test';
 await mkdir(folder,{recursive:true});
-await build({stdin:{contents:`import React,{useRef,useState} from 'react'; import {useHomeCarousel} from './src/useHomeCarousel'; export {advanceHomeRail} from './src/useHomeCarousel'; export function Harness(){const area=useRef(null);const [count,setCount]=useState(0);const auto=useHomeCarousel(area,()=>{setCount(v=>v+1);return ()=>window.__cancelled++});return <section ref={area}><div className="ref-news-grid"><button className="slide">slide</button><span>{count}</span></div><div className="ref-rail-controls"><button className="next">next</button></div><button className="pause" onClick={auto.toggle} aria-pressed={auto.paused}>pause</button></section>}`,resolveDir:process.cwd(),sourcefile:'home-carousel-test.tsx',loader:'tsx'},bundle:true,format:'esm',platform:'node',packages:'external',outfile:`${folder}/bundle.mjs`,logLevel:'silent'});
+await build({stdin:{contents:`import React,{useRef,useState} from 'react'; import {useHomeCarousel} from './src/useHomeCarousel'; export {advanceHomeRail} from './src/useHomeCarousel'; export function Harness({custom=false}){const area=useRef(null);const [count,setCount]=useState(0);const auto=useHomeCarousel(area,()=>{setCount(v=>v+1);return ()=>window.__cancelled++},custom?'.service-rail,.service-controls':undefined);return <section ref={area}><div className={custom?'service-rail':'ref-news-grid'}><button className="slide">slide</button><span>{count}</span></div><div className={custom?"service-controls":"ref-rail-controls"}><button className="next">next</button></div><button className="pause" onClick={auto.toggle} aria-pressed={auto.paused}>pause</button></section>}`,resolveDir:process.cwd(),sourcefile:'home-carousel-test.tsx',loader:'tsx'},bundle:true,format:'esm',platform:'node',packages:'external',outfile:`${folder}/bundle.mjs`,logLevel:'silent'});
 const dom=new JSDOM('<div id="root"></div>',{pretendToBeVisual:true});
 for(const k of ['window','document','navigator','HTMLElement','Element','Node','Event','FocusEvent'])Object.defineProperty(globalThis,k,{configurable:true,writable:true,value:dom.window[k]});
 let callback, timer, schedules=0, reduced=false, hidden=false, motionChange, observerFailure='';
@@ -44,6 +44,14 @@ try {
  await React.act(async()=>root.render(null));assert.equal(timer,undefined,'cleanup clears timer');
  oldObserver([{isIntersecting:true}]);staleObserver([{isIntersecting:true}]);staleTimer();assert.equal(timer,undefined,'stale callbacks cannot restart');
  for(const mode of ['constructor','observe']){observerFailure=mode;await React.act(async()=>root.render(React.createElement(Harness,{key:mode})));assert.equal(timer,undefined,`${mode} failure remains static`);if(mode==='observe'){callback([{isIntersecting:true}]);assert.equal(timer,undefined,'failed observer callback ignored');}await React.act(async()=>root.render(null));}
+ observerFailure='';
+ await React.act(async()=>root.render(React.createElement(Harness,{key:'custom',custom:true})));
+ const customRail=document.querySelector('.service-rail'),customNext=document.querySelector('.service-controls .next');
+ await React.act(async()=>callback([{isIntersecting:true}]));assert.equal(typeof timer,'function','custom selector starts when visible');
+ customRail.dispatchEvent(new window.Event('mouseenter'));assert.equal(timer,undefined,'custom rail hover pauses');
+ customRail.dispatchEvent(new window.Event('mouseleave'));assert.equal(typeof timer,'function');
+ await React.act(async()=>customNext.focus());assert.equal(timer,undefined,'custom controls focus pauses');
+ await React.act(async()=>root.render(null));assert.equal(timer,undefined,'custom selector cleanup removes timer');
  // Exercise real 500ms scroll and cancellation with snap restoration.
  const rail=document.createElement('div');rail.innerHTML='<i></i><i></i>';document.body.append(rail);
  Object.defineProperties(rail,{scrollWidth:{value:600},clientWidth:{value:200}});Object.defineProperty(rail.children[1],'offsetLeft',{value:200});rail.style.scrollSnapType='x mandatory';

@@ -1,1 +1,44 @@
-{}
+{
+  "Trao đổi rõ nhu cầu, thống nhất rõ phạm vi.": {
+    "en": "Clarify needs and agree on the scope.",
+    "zh": "明确需求，商定服务范围。",
+    "ko": "필요를 명확히 하고 범위를 합의합니다.",
+    "ja": "ニーズを明確にし、範囲を合意します。"
+  },
+  "Cơ cấu chi phí tham khảo": {
+    "en": "Illustrative fee structure",
+    "zh": "参考费用结构",
+    "ko": "참고 비용 구조",
+    "ja": "参考費用の構成"
+  },
+  "Bảng minh họa; chi phí thực tế được thống nhất theo từng nhu cầu.": {
+    "en": "Illustrative table; actual fees are agreed for each request.",
+    "zh": "此表仅供参考；实际费用根据具体需求商定。",
+    "ko": "예시 표이며 실제 비용은 각 요청에 따라 합의합니다.",
+    "ja": "この表は例示です。実際の費用はご要望ごとに合意します。"
+  },
+  "Hạng mục": {
+    "en": "Item",
+    "zh": "项目",
+    "ko": "항목",
+    "ja": "項目"
+  },
+  "Phạm vi": {
+    "en": "Scope",
+    "zh": "范围",
+    "ko": "범위",
+    "ja": "範囲"
+  },
+  "Chi phí": {
+    "en": "Fee",
+    "zh": "费用",
+    "ko": "비용",
+    "ja": "費用"
+  },
+  "Trao đổi theo nhu cầu": {
+    "en": "Discussed according to needs",
+    "zh": "根据需求协商",
+    "ko": "요구에 따라 협의",
+    "ja": "ご要望に応じて相談"
+  }
+}

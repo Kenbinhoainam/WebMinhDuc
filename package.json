@@ -8,9 +8,9 @@
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .ssr && node scripts/prerender.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node tests/jobs-logic.mjs",
-    "test:seo": "node tests/seo-output.mjs",
+    "test:seo": "node tests/seo-output.mjs && node tests/preload-output.mjs",
     "test:hydration": "node tests/hydration.mjs",
-    "test:sprint": "node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs",
+    "test:sprint": "node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs && node tests/consultation.mjs",
     "audit:i18n": "node scripts/audit-i18n.mjs",
     "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs",
     "predev": "node scripts/generate-locales.mjs --check",
@@ -23,7 +23,7 @@
     "test:motion": "node tests/motion.mjs && node tests/motion-repeat-review.mjs",
     "test:hero": "node tests/hero-review.mjs",
     "test:reference": "node tests/reference-structure.mjs",
-    "test:carousel": "node tests/home-carousel.mjs"
+    "test:carousel": "node tests/home-carousel.mjs && node tests/info-carousel.mjs && node tests/careers-carousel.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

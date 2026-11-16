@@ -30,10 +30,13 @@ if(imagesOnly) { console.log(`Updated ${files.length} selected image sources.`);
 const video='public/mirror/www.hr2b.com/wp-content/uploads/2025/10/hr2b-intro.mp4';
 // Use source 0–10.9 s, excluding the branded montage. Start at 0.7 s and
 // crossfade the last 0.7 s into the opening 0–0.7 s for a continuous loop.
-const heroFilter='[0:v]scale=1600:900,split=2[main][head];[main]trim=start=0.7:end=10.9,setpts=PTS-STARTPTS,fps=30,settb=AVTB[a];[head]trim=start=0:end=0.7,setpts=PTS-STARTPTS,fps=30,settb=AVTB[b];[a][b]xfade=transition=fade:duration=0.7:offset=9.5,format=yuv420p[out]';
-const heroTemp='public/optimized/hero-1600.tmp.mp4';
-execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',video,'-filter_complex',heroFilter,'-map','[out]','-an','-c:v','libx264','-preset','slow','-crf','26','-movflags','+faststart',heroTemp]);
+const heroFilter='[0:v]scale=1920:1080,split=2[main][head];[main]trim=start=0.7:end=10.9,setpts=PTS-STARTPTS,fps=30,settb=AVTB[a];[head]trim=start=0:end=0.7,setpts=PTS-STARTPTS,fps=30,settb=AVTB[b];[a][b]xfade=transition=fade:duration=0.7:offset=9.5,format=yuv420p[out]';
+const heroTemp='public/optimized/hero-1080.tmp.mp4';
+execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',video,'-filter_complex',heroFilter,'-map','[out]','-an','-c:v','libx264','-threads','2','-preset','slow','-crf','27','-movflags','+faststart',heroTemp]);
 const heroHash=createHash('sha256').update(await readFile(heroTemp)).digest('hex').slice(0,8);
-const heroOut=`public/optimized/hero-1600-${heroHash}.mp4`;
+const heroOut=`public/optimized/hero-1080-${heroHash}.mp4`;
 await rename(heroTemp,heroOut);
-console.log(`Generated ${Object.keys(manifest).length} image sets and ${heroOut}. Update the video URL if the hash changes.`);
+const heroAssets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
+heroAssets.video='/'+relative('public',heroOut);
+await writeFile('src/hero-assets.json',JSON.stringify(heroAssets,null,2)+'\n');
+console.log(`Generated ${Object.keys(manifest).length} image sets and ${heroOut}; updated hero-assets.json.`);

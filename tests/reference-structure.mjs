@@ -14,10 +14,10 @@ import {MemoryRouter, Routes, Route} from 'react-router-dom';
 const temp = '.reference-structure-test';
 await mkdir(temp, {recursive: true});
 try {
-  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,NewsPage,ArticlePage,EventPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
+  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,ServicePage,NewsPage,ArticlePage,EventPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {default as ConsultationPage} from './src/Consultation'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
   const components = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
   const {LocaleProvider, localeBase, loadLocale, jobs} = components;
-  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ['/news', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage']];
+  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ...['labor-supply','labor-leasing','recruitment','college-admissions','hr-consulting'].map(slug=>[`/services/${slug}`, '/services/:slug', 'ServicePage']), ['/news', '/news', 'NewsPage'], ['/news?page=2', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage'], ['/consultation', '/consultation', 'ConsultationPage']];
   for (const locale of ['vi', 'en', 'zh', 'ko', 'ja']) {
     await loadLocale(locale);
     const base = localeBase(locale);
@@ -39,6 +39,14 @@ try {
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
         assert.deepEqual(sections.map(node => [...node.classList].find(value => value.startsWith('section-home-'))), ['section-home-banner','section-home-about','section-home-about-achievement','section-home-solution','section-home-customer','section-home-coop','section-home-news','section-home-event','section-home-video'], `${label}: reference homepage sequence without added FAQ/CTA`);
+        for (const section of sections.slice(1)) assert.ok(section.querySelector('[data-reveal]'), `${label}: ${section.className} includes progressive reveal coverage`);
+        const frames=[...doc.querySelectorAll('[data-reveal-frame]')];
+        assert.ok(frames.length > 4, 'stable frames cover more than the original About-only reveal');
+        for (const frame of frames) {
+          assert.equal(frame.children.length, 1, 'each observed frame has one normal-flow animation child');
+          assert.ok(frame.firstElementChild.classList.contains('motion-content'));
+        }
+        assert.equal(doc.querySelectorAll('[data-reveal] [data-reveal]').length, 0, 'nested reveals must not multiply transforms or hide interactive descendants twice');
         const customers = doc.querySelector('.section-home-customer');
         assert.ok(customers.querySelector('.partners-track'), 'customer composition includes its logo rail');
         assert.ok(customers.querySelectorAll('.ref-customer-review article').length >= 1, 'testimonial composition is separate');
@@ -51,6 +59,8 @@ try {
       }
       if (name === 'AboutPage') {
         assert.equal(doc.querySelectorAll('.info-about-values article').length, 3);
+        assert.ok(doc.querySelector('.info-about-statement > .info-about-values'), 'value cards use the reviewed spanning grid position');
+        assert.equal(doc.querySelectorAll('button.info-team-card').length, 4, 'sample profiles expose actual dialog triggers');
         assert.equal(doc.querySelectorAll('.info-stat-grid article').length, 4);
         assert.equal(doc.querySelector('.info-about-values [role="tablist"],.info-value-tabs'), null, 'source simultaneous values replace custom value tabs');
         assert.equal(doc.querySelectorAll('#history [role="tab"]').length, 3, 'history phases retain a distinct synchronized selector');
@@ -63,10 +73,51 @@ try {
         assert.equal(doc.querySelectorAll('.info-service-card').length, 5);
         assert.ok(doc.querySelector('.info-service-cards[tabindex="0"]'), 'service rail is keyboard reachable');
       }
-      if (name === 'NewsPage') {
+      if (name === 'ServicePage') {
+        const selectors = ['.info-service-why','.info-fee-section','.info-faq-section','.info-service-customers','.info-service-rail','.info-contact-section'];
+        const nodes = selectors.map(selector=>doc.querySelector(selector));
+        assert.ok(nodes.every(Boolean), `${label}: complete service modules`);
+        for(let i=1;i<nodes.length;i++) assert.ok(nodes[i-1].compareDocumentPosition(nodes[i]) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, `${label}: source service sequence ${selectors[i]}`);
+        const table = doc.querySelector('table.info-fee-table');
+        assert.ok(table.querySelector('caption')?.textContent.trim(), 'pricing example has a caption');
+        assert.equal(table.querySelectorAll('thead th[scope="col"]').length, 3);
+        assert.equal(table.querySelectorAll('tbody th[scope="row"]').length, table.querySelectorAll('tbody tr').length);
+        assert.ok(table.closest('[tabindex="0"][role="region"]'), 'wide table remains keyboard reachable');
+        assert.ok(doc.querySelector('.info-service-customers .partners-track'));
+        assert.ok(doc.querySelector('.info-testimonial-rail[tabindex="0"][role="region"]'));
+        assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
+        assert.equal(doc.querySelectorAll('.info-service-card').length, 4, 'related services exclude the current one');
+        assert.ok(doc.querySelector('.info-contact-section form'));
+      }
+      if (name === 'NewsPage' && !path.includes('?')) {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');
         assert.equal(doc.querySelectorAll('.info-featured-news button').length, 2, 'feature presentation exposes previous/next controls');
         assert.ok(doc.querySelectorAll('.info-news-grid article').length > 1, 'regular article listing remains separate');
+        const featureBand=doc.querySelector('.info-featured-news').closest('section');
+        const listingBand=doc.querySelector('.info-news-grid').closest('section');
+        assert.notEqual(featureBand,listingBand, 'featured and regular articles occupy separate background bands');
+        assert.equal(featureBand.parentElement,listingBand.parentElement, 'news bands are siblings');
+      }
+      if (name === 'NewsPage' && path.includes('?')) {
+        assert.ok(!doc.querySelector('.info-news-section'), 'later pages do not leave an empty padded feature band');
+        assert.ok(doc.querySelector('.info-news-listing article'));
+      }
+      if (name === 'CareersPage') {
+        for (const id of ['open-positions','position-benefits','cv-requirements','career-contact']) assert.ok(doc.getElementById(id), `${label}: stable career anchor ${id}`);
+        assert.equal(doc.querySelectorAll('.career-feature-grid article').length, 2);
+        assert.equal(doc.querySelectorAll('.career-rail-section').length, 2);
+        assert.ok(doc.querySelector('.career-buddy-grid > img'));
+        assert.ok(doc.querySelector('.career-story-grid[tabindex="0"][role="region"]'));
+        assert.equal(doc.querySelectorAll('.career-story-grid blockquote').length, 3);
+        assert.equal(doc.querySelectorAll('.career-story-controls button').length, 2);
+        assert.ok(doc.querySelectorAll('.career-gallery-grid button[aria-label] > img').length >= 3, 'gallery images have actual enlargement controls');
+      }
+      if (name === 'ConsultationPage') {
+        assert.ok(!doc.querySelector('.page-hero,.page-banner-main'), 'reference scheduling surface has no invented image banner');
+        assert.ok(doc.querySelector('input[type="date"]#consultation-date'));
+        assert.equal(doc.querySelectorAll('input[type="radio"][name="consultation-time"]').length, 4);
+        assert.ok(doc.querySelector('.consultation-note').textContent.trim(), 'mock booking status is disclosed before interaction');
+        assert.equal(doc.querySelectorAll('iframe,form[action]').length, 0, 'no external booking integration is silently enabled');
       }
       if (name === 'JobDetailPage') {
         assert.equal(doc.querySelector('.page-banner-main,.page-hero'), null, 'job detail has no extra image hero');
@@ -100,6 +151,12 @@ try {
   css.walkRules('.ref-news-grid', rule => rule.walkDecls('overflow-x', decl => {if (decl.value === 'auto') rail = true;}));
   css.walkRules('.ref-partner-grid', rule => rule.walkDecls('display', decl => {if (decl.value === 'grid') grid = true;}));
   assert.ok(rail && grid, 'news rail and static partner-grid source rules are present');
+  const infoCss=postcss.parse(await readFile('src/info.css','utf8'));
+  let spansValues=false;
+  infoCss.walkRules('.info-about-statement>.info-about-values', rule=>{
+    if(rule.parent.type==='root') rule.walkDecls('grid-column', decl=>{if(decl.value.replaceAll(' ','')==='1/-1') spansValues=true;});
+  });
+  assert.ok(spansValues, 'About values explicitly span both desktop statement columns; this checks the known source regression, not rendered width');
   const dom = new JSDOM('<div id="root"></div>', {url:'https://example.test/news', pretendToBeVisual:true});
   for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver']) Object.defineProperty(globalThis,key,{configurable:true,value:dom.window[key]});
   globalThis.IS_REACT_ACT_ENVIRONMENT = true;
@@ -115,7 +172,7 @@ try {
     await React.act(()=>document.querySelectorAll('.info-featured-news button')[0].click());
     assert.equal(document.querySelector('.info-featured-news h2').textContent, first, 'previous feature returns to prior content');
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
-  console.log('PASS reference structures: ten page types × five locales, article/event/history composition, CTA/form/anchor retention, no HR2B endpoints');
+  console.log('PASS independent reference structures: 12 page types × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
 } finally {
   await rm(temp, {recursive: true, force: true});
 }
