@@ -7,7 +7,7 @@ const partners = ['Luxshare ICT', 'FOXCONN', 'SAMSUNG', 'JEILTECH VINA', 'TACU']
 export default function PartnersStrip() {
  const [paused, setPaused] = useState(false);
  return <div className="partners-strip" data-paused={paused}>
-  <div className="partners-viewport">
+  <div className="partners-viewport" tabIndex={0} role="region" aria-label="Đối tác tiêu biểu">
    <div className="partners-track">
     <ul className="partners-set" aria-label="Các đối tác theo thông tin Minh Đức">{partners.map(name => <li key={name}><span>{name}</span></li>)}</ul>
     <ul className="partners-set" aria-hidden="true">{partners.map(name => <li key={name}><span>{name}</span></li>)}</ul>

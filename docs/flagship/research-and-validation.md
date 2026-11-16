@@ -57,6 +57,8 @@ Người xem tiếng Việt không tải từ điển. Các ngôn ngữ khác t�
 - `npm run test:hydration`: 15/15 trường hợp đạt.
 - `npm run test:flagship`: menu, cờ/ngôn ngữ, đối tác, observer, 7 tình huống media và kiểm tra độc lập đạt.
 
+Vùng đối tác dừng khi hover/focus vào dải tên; nút điều khiển nằm ngoài vùng này để lệnh Phát có hiệu lực ngay cả khi nút vẫn được focus.
+
 Phản biện đã buộc sửa: menu và chọn ngôn ngữ cùng mở; video tự phát lại sau thao tác phát–dừng nhanh; header chật ở 361–430 px; menu không đóng khi Tab ra ngoài; trạng thái inner-header thiếu tương phản; thứ tự CSS khiến hamburger còn hiện desktop và offset bị ghi đè. Bộ kiểm tra CSS build được bổ sung cho lỗi thứ tự cascade.
 
 ## Giới hạn kiểm chứng
