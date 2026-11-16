@@ -21,8 +21,9 @@ for(const url of urls){
  assert.ok(!types.some(x=>['Review','AggregateRating','JobPosting','Event'].includes(x)),`${path}: unsupported schema`);
  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,`${path}: duplicate IDs`);
  if(['/', '/en','/zh','/ko','/ja'].includes(path)){const visible=html.replace(/<script type="application\/ld\+json" id="structured-data">[\s\S]*?<\/script>/,'');const faq=data['@graph'].find(x=>x['@type']==='FAQPage');assert.ok(faq?.mainEntity.length);for(const q of faq.mainEntity){assert.ok(visible.includes(q.name),`FAQ question missing: ${q.name}`);assert.ok(visible.includes(q.acceptedAnswer.text),`FAQ answer missing: ${q.name}`)}}
- for(const m of html.matchAll(/href="(\/(?!assets\/|mirror\/)[^"?#]*)/g)) {const dest=m[1]; await access(join('dist',dest,'index.html')).catch(()=>{throw Error(`${path}: missing local route ${dest}`)});}
- for(const m of html.matchAll(/(?:src|href)="(\/(?:assets|mirror)\/[^"?#]+)[^"]*"/g)) await access(join('dist',m[1])).catch(()=>{throw Error(`${path}: missing asset ${m[1]}`)});
+ for(const m of html.matchAll(/href="(\/(?!assets\/|mirror\/|optimized\/)[^"?#]*)/g)) {const dest=m[1]; await access(join('dist',dest,'index.html')).catch(()=>{throw Error(`${path}: missing local route ${dest}`)});}
+ for(const match of html.matchAll(/srcSet="([^"]+)"/gi))for(const candidate of match[1].split(',')){const asset=candidate.trim().split(/\s+/)[0];if(asset.startsWith('/'))await access(join('dist',asset)).catch(()=>{throw Error(`${path}: missing responsive asset ${asset}`)});}
+ for(const m of html.matchAll(/(?:src|href)="(\/(?:assets|mirror|optimized)\/[^"?#]+)[^"]*"/g)) await access(join('dist',m[1])).catch(()=>{throw Error(`${path}: missing asset ${m[1]}`)});
 }
 assert.ok(!(await readFile('dist/robots.txt','utf8')).toLowerCase().includes('sitemap'));
 console.log(`SEO output audit passed: ${urls.length} pages`);

@@ -1,0 +1,268 @@
+{
+  "/assets/hero-poster.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/assets/hero-poster-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/assets/hero-poster-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/assets/hero-poster-1600.webp"
+      }
+    ]
+  },
+  "/assets/minh-duc-logo.jpg": {
+    "width": 1182,
+    "height": 1182,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/optimized/assets/minh-duc-logo-96.webp"
+      },
+      {
+        "width": 192,
+        "src": "/optimized/assets/minh-duc-logo-192.webp"
+      },
+      {
+        "width": 288,
+        "src": "/optimized/assets/minh-duc-logo-288.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh.jpg": {
+    "width": 1200,
+    "height": 628,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-960.webp"
+      },
+      {
+        "width": 1200,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh-1200.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1.jpg": {
+    "width": 1200,
+    "height": 628,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-960.webp"
+      },
+      {
+        "width": 1200,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1-1200.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg": {
+    "width": 2560,
+    "height": 1440,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1.jpg": {
+    "width": 1114,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-960.webp"
+      },
+      {
+        "width": 1114,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-1-1114.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2.jpg": {
+    "width": 1114,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-960.webp"
+      },
+      {
+        "width": 1114,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-2-1114.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3.jpg": {
+    "width": 1114,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-960.webp"
+      },
+      {
+        "width": 1114,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/GPNS-3-1114.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he.jpg": {
+    "width": 2048,
+    "height": 1127,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing.jpg": {
+    "width": 2121,
+    "height": 1245,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Tin-tuc-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner.jpg": {
+    "width": 2203,
+    "height": 1361,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-2-1.png": {
+    "width": 1180,
+    "height": 1185,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-2-1-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-2-1-960.webp"
+      },
+      {
+        "width": 1180,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-2-1-1180.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner.jpg": {
+    "width": 2048,
+    "height": 1364,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/about-banner-1600.webp"
+      }
+    ]
+  },
+  "/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong.jpg": {
+    "width": 840,
+    "height": 480,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-480.webp"
+      },
+      {
+        "width": 840,
+        "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong-840.webp"
+      }
+    ]
+  }
+}

@@ -5,7 +5,7 @@ import { rm } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
 const bundle = '/tmp/minhduc-jobs-sprint1-test.mjs';
-await build({stdin:{contents:`export { JobsPage, CareersPage, SavedJobsPage, JobDetailPage, filterJobs } from './src/JobsPages.tsx';`,resolveDir:process.cwd(),sourcefile:'test-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:bundle,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+await build({stdin:{contents:`export {loadLocale} from './src/i18n-runtime/catalog'; export { JobsPage, CareersPage, SavedJobsPage, JobDetailPage, filterJobs } from './src/JobsPages.tsx';`,resolveDir:process.cwd(),sourcefile:'test-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:bundle,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
 // Bundled modules must resolve React from this project.
 const localBundle = `${process.cwd()}/.jobs-sprint1-test.mjs`;
 await (await import('node:fs/promises')).copyFile(bundle, localBundle);
@@ -15,7 +15,8 @@ try {
  window.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});window.scrollTo=()=>{};window.HTMLElement.prototype.scrollIntoView=()=>{};
  globalThis.IS_REACT_ACT_ENVIRONMENT=true;
  const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter,Routes,Route}=await import('react-router-dom');
- const {JobsPage,CareersPage,SavedJobsPage,JobDetailPage,filterJobs}=await import(pathToFileURL(localBundle).href);
+ const {JobsPage,CareersPage,SavedJobsPage,JobDetailPage,filterJobs,loadLocale}=await import(pathToFileURL(localBundle).href);
+ await Promise.all(['vi','en','zh','ko','ja'].map(loadLocale));
  const root=createRoot(document.getElementById('root'));
  const render=async(path,component)=>act(async()=>root.render(React.createElement(MemoryRouter,{initialEntries:[path],key:path},React.createElement(Routes,null,React.createElement(Route,{path:component===JobDetailPage?'/jobs/:slug':'*',element:React.createElement(component)})))));
  const click=async(el)=>act(async()=>el.dispatchEvent(new window.MouseEvent('click',{bubbles:true})));

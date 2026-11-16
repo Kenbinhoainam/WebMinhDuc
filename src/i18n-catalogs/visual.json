@@ -1,0 +1,7 @@
+{
+  "Phát chuyển động đối tác": {"en":"Play partner animation","zh":"播放合作伙伴动画","ko":"파트너 애니메이션 재생","ja":"パートナーのアニメーションを再生"},
+  "Tạm dừng chuyển động đối tác": {"en":"Pause partner animation","zh":"暂停合作伙伴动画","ko":"파트너 애니메이션 일시 정지","ja":"パートナーのアニメーションを一時停止"},
+  "Phát": {"en":"Play","zh":"播放","ko":"재생","ja":"再生"},
+  "Tạm dừng": {"en":"Pause","zh":"暂停","ko":"일시 정지","ja":"一時停止"},
+  "Danh sách giải pháp": {"en":"Solutions list","zh":"解决方案列表","ko":"솔루션 목록","ja":"ソリューション一覧"}
+}

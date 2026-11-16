@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "d576d6c55b7f4369521f331253cd011802630937",
+  "main_js_before": {
+    "raw": 635111,
+    "gzip": 208259
+  },
+  "main_js_after": {
+    "file": "index-mJfuS9yp.js",
+    "raw": 376370,
+    "gzip": 116885
+  },
+  "locales_after": {
+    "zh": {
+      "file": "zh-BdP5ca6q.js",
+      "raw": 121698,
+      "gzip": 38700
+    },
+    "ko": {
+      "file": "ko-BrBuZ5pj.js",
+      "raw": 136131,
+      "gzip": 39347
+    },
+    "en": {
+      "file": "en-C8Q7tBi3.js",
+      "raw": 130222,
+      "gzip": 39057
+    },
+    "ja": {
+      "file": "ja-QvGVhZnG.js",
+      "raw": 140179,
+      "gzip": 40923
+    }
+  },
+  "video_before": 5759805,
+  "video_after": 1959454,
+  "images_count": 15,
+  "images_original_bytes": 4095198,
+  "images_largest_derivative_bytes": 1516564
+}

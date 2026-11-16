@@ -5,11 +5,11 @@ import { PageHero, SectionHeading, ButtonLink, CTASection, DemoNote, Modal } fro
 import './jobs.css';
 import { useLocale, type Locale } from './i18n';
 import { translate } from './i18n-runtime/jsx-runtime';
-import jobTranslations from './i18n-catalogs/jobs.json';
+import {lookup} from './i18n-runtime/catalog';
 
 function useJobText() {
   const locale = useLocale();
-  return (text: string) => locale === 'vi' ? text : (jobTranslations as Record<string, Record<string, string>>)[text]?.[locale] ?? text;
+  return (text: string) => locale === 'vi' ? text : lookup(locale, text, 'jobs') ?? text;
 }
 
 export type Job = {

@@ -1,10 +1,10 @@
-# Minh Đức Vina — Prototype 3
+# Minh Đức Vina — Prototype 4 / Flagship
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
 ## Chạy dự án
 
-Node.js 22.12 trở lên. Trên Windows PowerShell có thể dùng `npm.cmd`.
+Khuyến nghị Node.js 24 (phiên bản dùng để kiểm thử). Trên Windows PowerShell có thể dùng `npm.cmd`.
 
 ```sh
 npm ci
@@ -16,10 +16,20 @@ npm run test:sprint
 npm run test:seo
 npm run test:hydration
 npm run test:review
+npm run test:catalog
+npm run test:flagship
 npm run audit:i18n
 ```
 
 `npm run build` tạo HTML sẵn cho 40 trang × 5 ngôn ngữ và các alias cũ. `audit:i18n` là báo cáo phát hiện chữ Việt còn lại, cần phân biệt tên riêng với thiếu bản dịch.
+
+## Nâng cấp flagship
+
+Menu 7 nhóm hiển thị trực tiếp trên desktop; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết kế hoạch, nghiên cứu và kết quả đo: [research-and-validation.md](docs/flagship/research-and-validation.md).
+
+[Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-current.csv).
+
+Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `prebuild` kiểm tra file sinh có khớp nguồn. Các ảnh tối ưu đã được lưu trong repository; chỉ cần ffmpeg/ffprobe khi muốn tái sinh bằng `node scripts/optimize-media.mjs`.
 
 ## Phạm vi
 
@@ -53,9 +63,9 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 
 ## Kiểm thử
 
-Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả cuối được ghi trong `docs/sprint-1/validation.md`.
+Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/research-and-validation.md`.
 
-Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Preview trong môi trường hiện trả `relay could not open browser port 4173: timed out waiting for relay readiness`; chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser.
+Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Công cụ browser hiện trả `Browser Use could not read requirements`; preview trước đó cũng lỗi relay. Chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser và chưa có điểm Lighthouse/CWV.
 
 ## Nguồn và bàn giao
 

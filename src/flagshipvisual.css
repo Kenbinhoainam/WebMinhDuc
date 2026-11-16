@@ -1,0 +1,60 @@
+/* A shared editorial rhythm for the public site. */
+:root { --flagship-ink: #102d43; --flagship-red: #bb2635; --flagship-line: #dfe6e9; }
+.section { padding-block: clamp(56px, 7vw, 100px); }
+.section h2 { color: var(--flagship-ink); letter-spacing: -.035em; line-height: 1.17; }
+.section .eyebrow { letter-spacing: .14em; }
+.home-about .about-layout { gap: clamp(36px, 6vw, 90px); }
+.home-about .about-layout p:not(.lead) { max-width: 540px; line-height: 1.85; }
+.home-about .about-image img { object-fit: cover; }
+.home-services { background: #f5f8f9; }
+.home-services .section-heading { margin-bottom: 36px; }
+/* A continuous rail avoids the orphaned pair caused by a three-column grid. */
+.home-services .service-carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; padding: 4px 0 18px; scrollbar-width: thin; scrollbar-color: #a9bac3 transparent; }
+.home-services .service-carousel:focus-visible { outline: 2px solid var(--flagship-red); outline-offset: 4px; }
+.home-services .service-card { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; min-height: 460px; scroll-snap-align: start; padding: 34px; border-radius: 18px; }
+.home-services .service-card h3 { overflow-wrap: anywhere; }
+.home-services .service-card p { line-height: 1.65; }
+.home-services .service-card .btn { max-width: 100%; white-space: normal; }
+.home-services .carousel-controls { display: flex; margin-top: 18px; }
+.pathway-grid article { border: 1px solid var(--flagship-line); }
+.home-process, .home-faq { background: #f3f7f8; }
+.journey-steps article { border-color: #c3d2d8; }
+.journey-steps h3, .pathway-grid h3, .editorial-grid h3, .moments-grid h3 { color: var(--flagship-ink); }
+.story-quote { background: #f2f6f7; }
+.editorial-side > a { border-color: var(--flagship-line); }
+.info-service-card, .info-news-image, .job-card, .education-cards article { border-radius: 16px; }
+.info-service-card h3 { color: inherit; }
+.info-intro-grid, .education-detail, .education-form-layout { gap: clamp(30px, 5vw, 70px); }
+.info-partner { border-color: var(--flagship-line); border-radius: 12px; }
+
+/* Names are typeset text, not reconstructed brand logos. Each set has the
+   same trailing spacing, so translating half the track has no jump. */
+.partner-section { background: #fff; }
+.partners-strip { position: relative; border-block: 1px solid var(--flagship-line); margin-top: 35px; }
+.partners-viewport { overflow: hidden; }
+.partners-track { display: flex; width: max-content; animation: partners-loop 32s linear infinite; }
+.partners-set { display: flex; flex: none; gap: 18px; padding: 24px 18px 24px 0; margin: 0; list-style: none; }
+.partners-set li { display: grid; place-items: center; width: clamp(180px, 18vw, 250px); min-height: 100px; padding: 18px; border: 1px solid #e4eaed; border-radius: 12px; background: #f9fbfb; color: #244962; text-align: center; font-size: clamp(15px, 1.4vw, 19px); font-weight: 800; letter-spacing: .025em; }
+.partners-strip[data-paused="true"] .partners-track, .partners-strip:hover .partners-track, .partners-strip:focus-within .partners-track { animation-play-state: paused; }
+.partners-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin: 0 0 12px; padding: 8px 13px; border: 1px solid #d6e0e4; border-radius: 999px; background: white; color: #284b60; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.partners-toggle:focus-visible { outline: 2px solid var(--flagship-red); outline-offset: 3px; }
+@keyframes partners-loop { to { transform: translateX(-50%); } }
+@media (max-width: 900px) {
+ .home-services .service-card { flex-basis: calc((100% - 20px) / 2); }
+ .info-partner-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 575px) {
+ .home-services .service-carousel { width: calc(100% - 36px); margin-inline: 18px; }
+ .home-services .service-card { flex-basis: 86%; min-height: 410px; padding: 28px; }
+ .partners-set li { width: 185px; min-height: 88px; }
+ .partner-footer { display: flex; flex-wrap: wrap; }
+ .info-partner-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .info-partner { min-width: 0; overflow-wrap: anywhere; font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .partners-viewport { overflow: visible; }
+ .partners-track { display: block; width: auto; animation: none; }
+ .partners-set { flex-wrap: wrap; gap: 10px; padding: 20px 0; }
+ .partners-set li { flex: 1 1 150px; width: auto; }
+ .partners-set[aria-hidden="true"], .partners-toggle { display: none; }
+}

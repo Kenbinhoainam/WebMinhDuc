@@ -12,7 +12,12 @@
     "test:hydration": "node tests/hydration.mjs",
     "test:sprint": "node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs",
     "audit:i18n": "node scripts/audit-i18n.mjs",
-    "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs"
+    "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs",
+    "predev": "node scripts/generate-locales.mjs --check",
+    "prebuild": "node scripts/generate-locales.mjs --check",
+    "generate:locales": "node scripts/generate-locales.mjs",
+    "test:catalog": "node tests/catalog-parity.mjs",
+    "test:flagship": "node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && node tests/motion.mjs && node tests/media.mjs && node tests/flagship-review.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

@@ -9,7 +9,7 @@ const temp='.hydration-test';
 if(!process.argv.includes('--case')) {
  await mkdir(temp,{recursive:true});
  try {
-  await build({entryPoints:['src/i18n.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/i18n.mjs`,packages:'external',logLevel:'silent'});
+  await build({entryPoints:['src/i18n.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/i18n.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
   const {localizedPath,localeFromPath,languageSwitchUrl}=await import(pathToFileURL(`${process.cwd()}/${temp}/i18n.mjs`).href);
   assert.equal(localizedPath('/ko/jobs/example','en'),'/en/jobs/example');
   assert.equal(localizedPath('/en/jobs/example','vi'),'/jobs/example');
@@ -44,7 +44,7 @@ if(!process.argv.includes('--case')) {
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
  assert.match(window.document.title,/Minh Đức Vina/);
  const locale=/^\/(en|zh|ko|ja)(?:\/|$)/.exec(path)?.[1]||'vi';
- assert.equal(window.document.querySelector('.language-selector select')?.value,locale);
+ assert.equal(window.document.querySelector('.language-trigger')?.getAttribute('data-locale'),locale);
  assert.equal(window.document.documentElement.lang,locale==='zh'?'zh-Hans':locale);
  if(locale!=='vi') assert.ok(window.document.querySelector('.brand')?.getAttribute('href')?.startsWith('/'+locale));
  assert.match(window.document.querySelector('.header-saved')?.getAttribute('aria-label')||'',/2/);

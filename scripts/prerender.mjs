@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import {join} from 'node:path';
-import {pages,seo,render,localizedSeo,locales,languageTags,localizedPath} from '../.ssr/entry-server.js';
+import {pages,seo,render,localizedSeo,locales,languageTags,localizedPath,loadLocale} from '../.ssr/entry-server.js';
+await Promise.all(locales.map(loadLocale));
 const template=await readFile('dist/index.html','utf8');
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 for(const page of pages) for(const locale of locales){
@@ -12,6 +13,7 @@ for(const page of pages) for(const locale of locales){
  html=html.replace('<html lang="vi">',`<html lang="${languageTags[locale]}">`);
  const alternates=locales.map(l=>`<link rel="alternate" hreflang="${languageTags[l]}" href="${escape(localizedSeo(page.path,l).url)}"/>`).join('');
  html=html.replace('</head>',alternates+`<link rel="alternate" hreflang="x-default" href="${escape(localizedSeo(page.path,'vi').url)}"/>`+'</head>');
+ if(page.path==='/') html=html.replace('</head>','<link rel="preload" as="image" href="/optimized/assets/hero-poster-1600.webp" fetchpriority="high"/>'+'</head>');
  let body=await render(path);
  // React 19 static prerender still emits a completed Suspense segment; inline it
  // to expose content without relying on the streaming replacement script.

@@ -1,0 +1,42 @@
+import {build} from 'esbuild';
+import {mkdir,rm} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+import {JSDOM} from 'jsdom';
+import React, {act} from 'react';
+import {createRoot} from 'react-dom/client';
+import {MemoryRouter} from 'react-router-dom';
+
+const temp='.locale-selector-test';
+await mkdir(temp,{recursive:true});
+try {
+ await build({entryPoints:['src/i18n.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/i18n.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+ const {LanguageSelector,LocaleProvider}=await import(pathToFileURL(`${process.cwd()}/${temp}/i18n.mjs`).href);
+ const dom=new JSDOM('<div id="root"></div><button id="outside">Outside</button>',{url:'https://example.com/ko/jobs?q=kho#details',pretendToBeVisual:true});
+ for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MouseEvent','KeyboardEvent','CustomEvent']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
+ globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+ const root=createRoot(document.getElementById('root'));
+ await act(async()=>root.render(React.createElement(LocaleProvider,{value:'ko'},React.createElement(MemoryRouter,{initialEntries:['/jobs?q=kho#details']},React.createElement(LanguageSelector)))));
+ const trigger=document.querySelector('.language-trigger');
+ assert.equal(trigger.dataset.locale,'ko'); assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ let openedBy; document.addEventListener('header-overlay-open', event => { openedBy=event.detail?.owner; });
+ await act(async()=>trigger.click());
+ assert.equal(openedBy,'language');
+ assert.equal(trigger.getAttribute('aria-expanded'),'true');
+ const links=[...document.querySelectorAll('.language-panel a')];
+ assert.equal(links.length,5); assert.equal(links[1].getAttribute('href'),'/en/jobs?q=kho#details');
+ assert.equal(links[3].getAttribute('aria-current'),'true');
+ await act(async()=>{links[0].focus(); document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));});
+ assert.equal(trigger.getAttribute('aria-expanded'),'false'); assert.equal(document.activeElement,trigger);
+ await act(async()=>trigger.click());
+ await act(async()=>document.getElementById('outside').focus());
+ assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ await act(async()=>trigger.click());
+ await act(async()=>document.getElementById('outside').dispatchEvent(new Event('pointerdown',{bubbles:true})));
+ assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ await act(async()=>trigger.click());
+ await act(async()=>document.dispatchEvent(new CustomEvent('header-overlay-open',{detail:{owner:'navigation'}})));
+ assert.equal(trigger.getAttribute('aria-expanded'),'false');
+ await act(async()=>root.unmount()); dom.window.close();
+ console.log('PASS locale selector');
+} finally {await rm(temp,{recursive:true,force:true});}

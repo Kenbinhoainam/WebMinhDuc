@@ -2,27 +2,26 @@ import {useEffect, useRef, useState} from 'react';
 import {useLocation} from 'react-router-dom';
 import './motion.css';
 
-/** Enhances explicitly marked content. Content remains visible without this controller. */
-export function MotionController() {
-  const {pathname, search, hash} = useLocation();
+/** Enhance only marked, below-the-fold content; the unenhanced state stays visible. */
+export function startReveals(): () => void {
+  if (typeof IntersectionObserver === 'undefined' || !window.matchMedia) return () => {};
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let observer: IntersectionObserver | undefined;
+  let mutations: MutationObserver | undefined;
+  const observed = new Set<HTMLElement>();
 
-  useEffect(() => {
-    if (typeof IntersectionObserver === 'undefined' || !window.matchMedia) return;
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let observer: IntersectionObserver | undefined;
-    let mutations: MutationObserver | undefined;
-    const observed = new Set<HTMLElement>();
-
-    const clear = () => {
-      observer?.disconnect();
-      mutations?.disconnect();
-      observed.forEach(element => element.classList.remove('motion-pending'));
-      observed.clear();
-    };
-    const setup = () => {
-      clear();
-      if (preference.matches) return;
-      try {
+  const clear = () => {
+    observer?.disconnect();
+    mutations?.disconnect();
+    observer = undefined;
+    mutations = undefined;
+    observed.forEach(element => element.classList.remove('motion-pending'));
+    observed.clear();
+  };
+  const setup = () => {
+    clear();
+    if (preference.matches) return;
+    try {
       observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
@@ -32,17 +31,16 @@ export function MotionController() {
           observer?.unobserve(element);
           observed.delete(element);
         });
-      }, {threshold: 0});
+      }, {threshold: 0, rootMargin: '0px 0px -8% 0px'});
       const register = (root: ParentNode) => {
         const elements = root instanceof HTMLElement && root.matches('[data-reveal]')
           ? [root, ...root.querySelectorAll<HTMLElement>('[data-reveal]')]
           : Array.from(root.querySelectorAll<HTMLElement>('[data-reveal]'));
-        // Batch geometry reads before writing classes to avoid repeated layout work.
         const candidates = elements.filter(element => !element.classList.contains('motion-visible') && !observed.has(element));
+        // Read all positions before changing classes to avoid repeated layouts.
         const positions = candidates.map(element => element.getBoundingClientRect().top);
         candidates.forEach((element, index) => {
-          // Never conceal content already on screen, even briefly.
-          if (positions[index] < window.innerHeight) {
+          if (positions[index] < window.innerHeight || element.contains(document.activeElement)) {
             element.classList.add('motion-visible');
             return;
           }
@@ -51,28 +49,39 @@ export function MotionController() {
             observed.add(element);
             element.classList.add('motion-pending');
           } catch {
-            // If observation fails, leave the content visible.
             element.classList.remove('motion-pending');
           }
         });
       };
       register(document);
-      // Lazy routes and content can arrive after the location effect has run.
       if (typeof MutationObserver !== 'undefined') {
-        mutations = new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(node => {
-          if (node instanceof HTMLElement) register(node);
-        })));
+        mutations = new MutationObserver(records => {
+          // Detached route and translated content must not remain retained by the observer.
+          observed.forEach(element => {
+            if (!element.isConnected) {
+              observer?.unobserve(element);
+              element.classList.remove('motion-pending');
+              observed.delete(element);
+            }
+          });
+          records.forEach(record => record.addedNodes.forEach(node => {
+            if (node instanceof HTMLElement && node.isConnected) register(node);
+          }));
+        });
         mutations.observe(document.body, {childList: true, subtree: true});
       }
-      } catch {
-        // Restore all content if an observer implementation fails unexpectedly.
-        clear();
-      }
-    };
-    setup();
-    preference.addEventListener('change', setup);
-    return () => { preference.removeEventListener('change', setup); clear(); };
-  }, [pathname, search, hash]);
+    } catch {
+      clear();
+    }
+  };
+  setup();
+  preference.addEventListener('change', setup);
+  return () => { preference.removeEventListener('change', setup); clear(); };
+}
+
+export function MotionController() {
+  const {pathname, search, hash} = useLocation();
+  useEffect(() => startReveals(), [pathname, search, hash]);
   return null;
 }
 

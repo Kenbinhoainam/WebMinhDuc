@@ -6,12 +6,13 @@ import assert from 'node:assert/strict';
 const dir='.admin-test';
 await mkdir(dir,{recursive:true});
 try {
- await writeFile(`${dir}/entry.tsx`,"export {AdminDemo} from '../src/AdminDemo'; export {ContactForm} from '../src/Contact'; export {LocaleProvider} from '../src/i18n';");
+ await writeFile(`${dir}/entry.tsx`,"export {AdminDemo} from '../src/AdminDemo'; export {ContactForm} from '../src/Contact'; export {loadLocale} from '../src/i18n-runtime/catalog'; export {LocaleProvider} from '../src/i18n';");
  await build({entryPoints:[`${dir}/entry.tsx`],bundle:true,platform:'node',format:'esm',outfile:`${dir}/bundle.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
  const dom=new JSDOM('<div id="root"></div>',{url:'https://example.test/admin-demo?type=F06',pretendToBeVisual:true});
  for(const k of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','FormData','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,k,{value:dom.window[k],configurable:true});
  globalThis.IS_REACT_ACT_ENVIRONMENT=true;
- const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');const {AdminDemo,ContactForm,LocaleProvider}=await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
+ const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');const {AdminDemo,ContactForm,LocaleProvider,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
+ await Promise.all(['vi','en','zh','ko','ja'].map(loadLocale));
  const root=createRoot(document.getElementById('root'));const render=(component,route='/')=>act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:[route]},React.createElement(component))));
  await render(AdminDemo,'/admin-demo?type=F06');assert.match(document.body.textContent,/Học viên mẫu F/);assert.doesNotMatch(document.querySelector('tbody').textContent,/MD-001/);
  const click=async text=>{const btn=[...document.querySelectorAll('button')].find(x=>x.textContent.trim()===text);assert.ok(btn,text);await act(()=>btn.click())};
