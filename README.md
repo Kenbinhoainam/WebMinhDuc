@@ -1,10 +1,10 @@
-# Minh Đức Vina — Prototype 2
+# Minh Đức Vina — Prototype 3
 
-Prototype React + TypeScript, dựa trên cấu trúc giao diện của bản HR2B reconstruction do người dùng cung cấp. Dùng logo và thông tin liên hệ Minh Đức từ MDxGenZ_Website.
+Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
 ## Chạy dự án
 
-Yêu cầu Node.js 22.12 trở lên.
+Node.js 22.12 trở lên. Trên Windows PowerShell có thể dùng `npm.cmd`.
 
 ```sh
 npm ci
@@ -12,63 +12,55 @@ npm run dev
 npm run build
 npm run preview
 npm test
+npm run test:sprint
 npm run test:seo
 npm run test:hydration
+npm run test:review
+npm run audit:i18n
 ```
 
-Windows PowerShell có thể dùng `npm.cmd` thay `npm`.
+`npm run build` tạo HTML sẵn cho 40 trang × 5 ngôn ngữ và các alias cũ. `audit:i18n` là báo cáo phát hiện chữ Việt còn lại, cần phân biệt tên riêng với thiếu bản dịch.
 
-## Phạm vi triển khai
+## Phạm vi
 
-- Trang chủ: video hero, hai hành trình doanh nghiệp/người lao động, giới thiệu, dịch vụ, đối tác, cẩm nang, CTA.
-- Bổ sung 4 chỉ số mô phỏng có count-up, quy trình 4 bước theo nhóm người dùng, carousel câu chuyện giả định, spotlight sự kiện/hình ảnh và FAQ.
-- Animation xuất hiện khi cuộn, tương tác hover, mở menu/modal; tôn trọng reduced-motion và giữ nội dung đọc được khi JavaScript/observer không chạy.
-- Giới thiệu; 3 dịch vụ và trang chi tiết; đối tác; tin tức/6 bài viết; sự kiện/3 chi tiết; hồ sơ năng lực in được; liên hệ/3 chi nhánh; chính sách/điều khoản dự thảo.
-- Tuyển dụng: 8 vị trí minh họa, tìm kiếm bỏ dấu, lọc địa điểm/loại hình, phân trang, chi tiết riêng, việc đã lưu, tuyển dụng nội bộ.
-- Form tư vấn và ứng tuyển: kiểm tra dữ liệu, đồng ý chính sách, CV PDF/DOC/DOCX ≤5 MB, xác nhận mô phỏng. Không gửi hay lưu thông tin cá nhân.
-- Menu drawer có lối vào cho hai nhóm người dùng; search cả việc làm/bài viết; focus trap, Escape, return focus, skip link; office tabs điều khiển bằng bàn phím; vùng chạm mobile tối thiểu 44px cho các điều khiển đã cập nhật.
-- SEO/AEO: 33 trang HTML prerender + 3 alias, metadata/canonical/Open Graph riêng, sitemap, Organization/WebSite/WebPage/BreadcrumbList và FAQPage đồng bộ nội dung hiển thị. Giữ noindex cho prototype; không đưa dữ liệu việc làm/sự kiện/review giả vào structured data tương ứng.
+- Năm ngôn ngữ hoạt động: Việt, Anh, Trung giản thể, Hàn, Nhật. Chuyển ngôn ngữ giữ trang, bộ lọc và anchor; các bản dịch là bản nháp prototype.
+- Bảy nhóm menu chính: Trang chủ, Giới thiệu, Dịch vụ, Việc làm, Tuyển dụng nội bộ, Tin tức, Liên hệ; trang phụ có lối truy cập theo nhóm.
+- Năm dịch vụ: giới thiệu/cung ứng nhân lực, cho thuê lao động, headhunt/tay nghề, tuyển sinh cao đẳng, setup tổ chức/phần mềm doanh nghiệp.
+- Trang chủ có video hero, hai hành trình B2B/B2C, chỉ số mô phỏng, quy trình, đối tác, câu chuyện giả định, cẩm nang, hoạt động và FAQ. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
+- Tám vị trí mẫu, bộ lọc KCN/loại việc/tay nghề/ca ngày–đêm/chuyên–xoay/trạng thái; lưu việc trên thiết bị. Tuyển nội bộ tách khỏi danh sách lao động. Tin đóng vẫn đọc được nhưng không nhận ứng tuyển thử.
+- Ba chương trình tuyển sinh giả định theo hình thức từ xa/chính quy; không gắn với trường chưa xác minh.
+- Sáu biểu mẫu F01–F06: nhu cầu doanh nghiệp, liên hệ chung, ứng tuyển lao động, ứng tuyển nội bộ, tư vấn tuyển sinh, hồ sơ tuyển sinh. CV nội bộ/hồ sơ tuyển sinh bắt buộc; PDF/DOC/DOCX tối đa 5 MB theo giả định demo.
+- `/admin-demo`: sáu hàng đợi hồ sơ giả, tìm/lọc, mã tin/chương trình, nguồn, ngày nhận, người phụ trách, trạng thái, cảnh báo trùng, xuất CSV mẫu, CMS và vai trò minh họa.
+- SEO/AEO: HTML prerender, tiêu đề/mô tả/canonical/OG riêng, `html lang`, hreflang, sitemap; Organization/WebSite/WebPage/BreadcrumbList/FAQPage khớp nội dung. Giữ **noindex** và quyền xem riêng tư. Không dùng schema JobPosting/Event/Review cho dữ liệu giả.
 
-## Nội dung và giới hạn
+## Dữ liệu và giới hạn
 
-- Giao diện hiện là **tiếng Việt**. Chưa thực hiện bản dịch hay chuyển ngôn ngữ.
-- Tin tuyển dụng, mức thu nhập, bài viết và lịch sự kiện là dữ liệu minh họa, có nhãn trên giao diện. Không thể dùng để tuyển dụng thật.
-- Thông tin doanh nghiệp, hotline, link Zalo/Facebook và 5 đối tác lấy từ bảng nguồn. Email telesale không hiển thị công khai vì mục đích trong bảng là cấu hình nội bộ.
-- Chi nhánh Quảng Ninh chưa có địa chỉ/bản đồ chính xác; dẫn về hotline. Bản đồ đồ họa là minh họa.
-- Ảnh/video theo mẫu HR2B chỉ dùng tham chiếu prototype, không phải hình ảnh hoạt động của Minh Đức. Cần thay bằng ảnh được duyệt trước khi dùng chính thức. Không tái sử dụng testimonial, chứng nhận hoặc số liệu thành tựu của HR2B.
-- Chưa có backend, CMS, email/Google Sheets integration, xác thực, reCAPTCHA, analytics hay chức năng gửi dữ liệu thật.
-- Nội dung chat “MinhDucWeb - Sprint 1” chưa truy xuất được: công cụ đọc chat không trả kết quả. Phạm vi đã chốt riêng trong chat cần đối chiếu bổ sung.
+Thông tin nhập và tệp **không gửi, không tải lên, không lưu**. Quản trị chỉ chứa dữ liệu giả độc lập; liên kết “xem hồ sơ mẫu” không mang dữ liệu cá nhân sang quản trị. Thao tác quản trị tồn tại trong bộ nhớ đến khi tải lại trang. Chuyển vai trò là mô phỏng giao diện, không phải xác thực hay phân quyền bảo mật.
+
+Chưa có backend, CMS vận hành, tiếp nhận hồ sơ thật, tệp riêng tư, email/Google Sheets, chống spam, analytics thật, AI hoặc CRM. Cần chốt quy tắc nghiệp vụ, nội dung, bảo mật và hạ tầng trước phát triển bản sản xuất. Xem [đối chiếu yêu cầu và quyết định](docs/sprint-1/requirements-and-decisions.md).
+
+Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ảnh/video HR2B chỉ là tham chiếu giao diện; không phải ảnh tập thể Minh Đức. Số liệu, lương, nhân vật, bài viết và sự kiện đều minh họa. Chi nhánh Quảng Ninh chưa có bản đồ chính xác nên dẫn về hotline. Tài khoản WeChat chưa được cung cấp. “Ảnh 1” được nhắc trong chat nhưng chưa có file để đối chiếu.
 
 ## Kiến trúc
 
-`App.tsx`: routing, header/footer, menu, search, lưu lựa chọn.
-`Home.tsx`: trang chủ.
-`shared.tsx`: component chung, dialog accessible, hero, CTA.
-`JobsPages.tsx`: dữ liệu, bộ lọc, việc đã lưu, ứng tuyển.
-`InfoPages.tsx`: nội dung giới thiệu/dịch vụ/tin tức/sự kiện/chính sách.
-`Contact.tsx`: liên hệ và form tư vấn.
-`styles.css`, `jobs.css`, `info.css`, `home-enhancements.css`: responsive styling.
-`motion.tsx` / `motion.css`: reveal, counter, reduced-motion và observer cleanup.
-`src/seo/`: thông tin SEO từng route và cập nhật metadata phía client.
-`entry-server.tsx`, `scripts/prerender.mjs`: xuất nội dung HTML đầy đủ; module nội dung tải theo nhu cầu.
-`tests/hydration.mjs`: kiểm tra DOM với jsdom; không thay thế browser visual QA.
+- `App.tsx`, `Home.tsx`, `shared.tsx`: khung, điều hướng, trang chủ và thành phần chung.
+- `JobsPages.tsx`, `Education.tsx`, `Contact.tsx`: dữ liệu và sáu luồng demo.
+- `AdminDemo.tsx`, `admin-demo-data.ts`: quản trị minh họa, dữ liệu giả độc lập.
+- `InfoPages.tsx`: giới thiệu, dịch vụ, tin tức, sự kiện, chính sách và hồ sơ năng lực.
+- `i18n.tsx`, `i18n-runtime/`, `i18n-catalogs/`: locale theo URL và bản dịch. JSX runtime dịch nội dung/nhãn hiển thị, giữ nguyên IDs, URL, form values và dữ liệu người dùng nhập. Chuỗi động dùng `useTranslation`.
+- `src/seo/`, `entry-server.tsx`, `scripts/prerender.mjs`: metadata và xuất HTML tĩnh; không dùng dịch DOM sau hydration.
+- `motion.tsx`/`motion.css` và CSS theo trang: animation, responsive, reduced-motion.
 
-## Kiểm tra và đánh giá
+## Kiểm thử
 
-Quy trình bản 2: một agent lập kế hoạch (GPT-6 Astra), bốn agent worker độc lập (GPT-6.1 Terra: Home, Motion, UX, SEO/AEO), một agent phản biện (GPT-6 Astra), sau đó sửa theo findings và kiểm tra lại.
+Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 200 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả cuối được ghi trong `docs/sprint-1/validation.md`.
 
-- TypeScript + Vite production build + prerender: đạt.
-- Logic tuyển dụng: 21/21 kiểm thử đạt.
-- SEO output: 33/33 trang chính đạt metadata/canonical/noindex, JSON-LD, một H1, ID duy nhất, nội dung đầy đủ, link/asset nội bộ.
-- Audit reviewer: 36 HTML gồm alias, không còn đoạn Suspense ẩn hoặc fallback tải nội dung.
-- DOM hydration: 7/7 trường hợp đạt với actual client entry — trang chủ, trang tải trễ, danh sách việc, việc đã lưu, query filter và alias. Media playback được stub và muted property được chuẩn hóa trong jsdom, không phải bằng chứng video trên browser thật.
-- Reviewer yêu cầu sửa và đã xác nhận: query lọc việc làm không làm mất focus; form IDs duy nhất; tabs keyboard; nội dung FAQ không ngụ ý gửi form thật; video tuân thủ reduced-motion; metadata alias và query hydration guard.
-- Browser visual QA chưa xác minh: managed preview trả `relay could not open browser port 4173: timed out waiting for relay readiness`; CUA trả `Browser Use could not read requirements`. Không tuyên bố pixel-perfect hay responsive thực tế đã kiểm trên browser.
-- Người dùng nhắc “ảnh 1” nhưng ảnh chưa có trong tin nhắn; phần bổ sung dựa trên mẫu HR2B và yêu cầu mô tả, chưa đối chiếu riêng ảnh này.
+Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Preview trong môi trường hiện trả `relay could not open browser port 4173: timed out waiting for relay readiness`; chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser.
 
-## Nguồn
+## Nguồn và bàn giao
 
-- Mẫu: https://drive.google.com/drive/folders/1BOV8hCaMc4JsXmkmUMKKcALsjm06gdfC
-- Thông tin: https://docs.google.com/spreadsheets/d/1SFbcwntvl7E13yGO--6tAISyIuxddhx4UwsrOGgx6VA/edit
-
-Bản tham chiếu nguyên gốc được giữ riêng, không sửa đổi. Cần thay `.openai/hosting.json` nếu triển khai dưới một Site khác.
+- Baseline người dùng chọn: `Kenbinhoainam/WebMinhDuc`; bản local bàn giao tại `/workspace/WebMinhDuc`. Chưa đẩy thay đổi lên GitHub.
+- Sites dùng kho source hosting riêng; `.openai/hosting.json` giữ ID của prototype đang triển khai. Thay cấu hình này khi triển khai dưới Site khác.
+- [Mẫu HR2B](https://drive.google.com/drive/folders/1BOV8hCaMc4JsXmkmUMKKcALsjm06gdfC)
+- [Thông tin Minh Đức](https://docs.google.com/spreadsheets/d/1SFbcwntvl7E13yGO--6tAISyIuxddhx4UwsrOGgx6VA/edit)
+- `docs/sprint-1/source.txt`: nguyên văn nội dung Sprint 1 do người dùng cung cấp.

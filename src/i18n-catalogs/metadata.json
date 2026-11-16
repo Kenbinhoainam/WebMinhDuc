@@ -1,0 +1,482 @@
+{
+  "Kết nối nhân lực, kiến tạo tương lai": {
+    "en": "Connecting people, creating futures",
+    "zh": "连接人才，共创未来",
+    "ko": "사람을 연결하고 미래를 만듭니다",
+    "ja": "人をつなぎ、未来をつくる"
+  },
+  "Minh Đức Vina đồng hành cùng doanh nghiệp và người lao động qua giải pháp nhân lực và kết nối việc làm.": {
+    "en": "Minh Đức connects businesses and workers through workforce solutions and employment opportunities.",
+    "zh": "明德通过人力解决方案和就业机会连接企业与劳动者。",
+    "ko": "민득은 인력 솔루션과 취업 기회를 통해 기업과 근로자를 연결합니다.",
+    "ja": "ミンドゥックは人材ソリューションと就業機会を通じて企業と働く人をつなぎます。"
+  },
+  "Về Minh Đức": {
+    "en": "About Minh Đức",
+    "zh": "关于明德",
+    "ko": "민득 소개",
+    "ja": "ミンドゥックについて"
+  },
+  "Tìm hiểu tầm nhìn, sứ mệnh và giá trị của Minh Đức Vina trong hành trình kết nối nhân lực.": {
+    "en": "Learn about the vision, mission and values behind Minh Đức’s work connecting people.",
+    "zh": "了解明德连接人才事业的愿景、使命和价值观。",
+    "ko": "사람을 연결하는 민득의 비전, 사명과 가치를 소개합니다.",
+    "ja": "人をつなぐミンドゥックのビジョン、使命、価値観をご紹介します。"
+  },
+  "Giải pháp nhân lực": {
+    "en": "Workforce solutions",
+    "zh": "人力资源解决方案",
+    "ko": "인력 솔루션",
+    "ja": "人材ソリューション"
+  },
+  "Khám phá năm nhóm dịch vụ nhân lực, tuyển sinh và tổ chức doanh nghiệp của Minh Đức.": {
+    "en": "Explore five services spanning staffing, admissions and business organization.",
+    "zh": "探索涵盖人力、招生和企业组织的五类服务。",
+    "ko": "인력, 입학 안내, 기업 조직에 걸친 다섯 가지 서비스를 살펴보세요.",
+    "ja": "人材、入学案内、企業組織の5つのサービスをご覧ください。"
+  },
+  "Giới thiệu & cung ứng nhân lực": {
+    "en": "Recruitment & workforce supply",
+    "zh": "招聘与人力供应",
+    "ko": "채용 및 인력 공급",
+    "ja": "採用・人材供給"
+  },
+  "Tìm hiểu cách Minh Đức trao đổi nhu cầu và kết nối nguồn lao động với doanh nghiệp.": {
+    "en": "Learn how Minh Đức discusses workforce needs and connects workers with businesses.",
+    "zh": "了解明德如何沟通用工需求并为企业对接劳动者。",
+    "ko": "민득이 기업의 인력 수요를 파악하고 근로자를 연결하는 방법을 알아보세요.",
+    "ja": "ミンドゥックが企業の人材ニーズを確認し、働く人とつなぐ流れをご紹介します。"
+  },
+  "Headhunt & lao động tay nghề": {
+    "en": "Headhunting & skilled workers",
+    "zh": "猎头与技能人才",
+    "ko": "헤드헌팅 및 숙련 인력",
+    "ja": "ヘッドハンティング・技能人材"
+  },
+  "Kết nối doanh nghiệp với nhân sự có kinh nghiệm và kỹ năng phù hợp từng vị trí.": {
+    "en": "Connect businesses with experienced, skilled candidates suited to each position.",
+    "zh": "为企业对接经验和技能符合岗位要求的候选人。",
+    "ko": "각 직무에 맞는 경험과 기술을 갖춘 인재를 기업에 연결합니다.",
+    "ja": "各職種に合った経験と技能を持つ人材を企業につなぎます。"
+  },
+  "Setup tổ chức & phần mềm doanh nghiệp": {
+    "en": "Organization & business software",
+    "zh": "组织架构与企业软件",
+    "ko": "조직 설계 및 기업 소프트웨어",
+    "ja": "組織設計・業務ソフトウェア"
+  },
+  "Tìm hiểu giải pháp tổ chức, quy trình và phần mềm hỗ trợ vận hành doanh nghiệp.": {
+    "en": "Explore organization design, workflows and software that support business operations.",
+    "zh": "了解组织设计、工作流程和支持企业运营的软件。",
+    "ko": "기업 운영을 지원하는 조직 설계, 업무 절차와 소프트웨어를 살펴보세요.",
+    "ja": "企業運営を支える組織設計、業務手順、ソフトウェアをご紹介します。"
+  },
+  "Cho thuê lao động": {
+    "en": "Labor leasing",
+    "zh": "劳务派遣",
+    "ko": "인력 파견",
+    "ja": "労働者派遣"
+  },
+  "Trao đổi phương án nhân lực linh hoạt theo thời gian và phạm vi công việc.": {
+    "en": "Discuss flexible staffing options for an agreed duration and scope of work.",
+    "zh": "根据商定的用工期限和工作范围，交流灵活用工方案。",
+    "ko": "합의된 기간과 업무 범위에 맞는 유연한 인력 방안을 상담하세요.",
+    "ja": "合意した期間と業務範囲に応じた柔軟な人員配置についてご相談ください。"
+  },
+  "Tuyển sinh cao đẳng": {
+    "en": "College admissions",
+    "zh": "专科招生",
+    "ko": "전문대학 입학 안내",
+    "ja": "高等教育入学案内"
+  },
+  "Khám phá hình thức học từ xa, chính quy và các bước tư vấn tuyển sinh minh họa.": {
+    "en": "Explore distance and campus study options and try a sample admissions journey.",
+    "zh": "了解远程与全日制学习方式，体验招生咨询示例流程。",
+    "ko": "원격 및 정규 학습 방식을 살펴보고 입학 안내 데모를 체험하세요.",
+    "ja": "遠隔・通学の学習方法を確認し、入学相談のデモを体験できます。"
+  },
+  "Cơ hội việc làm": {
+    "en": "Job opportunities",
+    "zh": "工作机会",
+    "ko": "채용 정보",
+    "ja": "求人情報"
+  },
+  "Khám phá các vị trí việc làm minh họa theo địa điểm, ngành nghề và hình thức làm việc.": {
+    "en": "Browse illustrative jobs by location, industrial park, skills and work schedule.",
+    "zh": "按地区、工业园区、技能和班次浏览示例职位。",
+    "ko": "지역, 산업단지, 기술과 근무 일정별로 예시 채용 정보를 검색하세요.",
+    "ja": "地域、工業団地、技能、勤務時間でサンプル求人を探せます。"
+  },
+  "Công nhân lắp ráp linh kiện": {
+    "en": "Component assembly worker",
+    "zh": "零部件组装工",
+    "ko": "부품 조립 작업자",
+    "ja": "部品組立スタッフ"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí công nhân lắp ráp linh kiện trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Component assembly worker. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：零部件组装工。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 부품 조립 작업자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：部品組立スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Nhân viên kiểm tra chất lượng": {
+    "en": "Quality control worker",
+    "zh": "质量检验员",
+    "ko": "품질 검사 직원",
+    "ja": "品質検査スタッフ"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên kiểm tra chất lượng trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Quality control worker. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：质量检验员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 품질 검사 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：品質検査スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Nhân viên kho và đóng gói": {
+    "en": "Warehouse & packing worker",
+    "zh": "仓储与包装员",
+    "ko": "창고 및 포장 직원",
+    "ja": "倉庫・梱包スタッフ"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên kho và đóng gói trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Warehouse & packing worker. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：仓储与包装员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 창고 및 포장 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：倉庫・梱包スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Công nhân vận hành máy": {
+    "en": "Machine operator",
+    "zh": "机器操作员",
+    "ko": "기계 운전원",
+    "ja": "機械オペレーター"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí công nhân vận hành máy trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Machine operator. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：机器操作员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 기계 운전원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：機械オペレーター。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Kỹ thuật viên bảo trì": {
+    "en": "Maintenance technician",
+    "zh": "维修技术员",
+    "ko": "유지보수 기술자",
+    "ja": "保守技術者"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí kỹ thuật viên bảo trì trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Maintenance technician. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：维修技术员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 유지보수 기술자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：保守技術者。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Nhân viên đóng gói thời vụ": {
+    "en": "Seasonal packing worker",
+    "zh": "季节性包装工",
+    "ko": "단기 포장 직원",
+    "ja": "短期梱包スタッフ"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên đóng gói thời vụ trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Seasonal packing worker. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：季节性包装工。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 단기 포장 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：短期梱包スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Chuyên viên tuyển dụng": {
+    "en": "Recruitment specialist",
+    "zh": "招聘专员",
+    "ko": "채용 담당자",
+    "ja": "採用担当者"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí chuyên viên tuyển dụng trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Recruitment specialist. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：招聘专员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 채용 담당자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：採用担当者。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Cộng tác viên tuyển dụng": {
+    "en": "Recruitment collaborator",
+    "zh": "招聘合作人员",
+    "ko": "채용 협력 담당자",
+    "ja": "採用協力スタッフ"
+  },
+  "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí cộng tác viên tuyển dụng trong bản minh họa của Minh Đức.": {
+    "en": "Sample role: Recruitment collaborator. Review duties, requirements and benefits in the Minh Đức prototype.",
+    "zh": "示例岗位：招聘合作人员。在明德原型中了解职责、要求和待遇。",
+    "ko": "예시 직무: 채용 협력 담당자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요.",
+    "ja": "職種例：採用協力スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+  },
+  "Việc làm đã lưu": {
+    "en": "Saved jobs",
+    "zh": "已收藏职位",
+    "ko": "저장한 채용 정보",
+    "ja": "保存した求人"
+  },
+  "Xem các vị trí bạn đã đánh dấu trên thiết bị và tiếp tục tìm hiểu cơ hội việc làm.": {
+    "en": "Revisit jobs saved on this device and continue exploring your options.",
+    "zh": "查看在此设备收藏的职位，继续探索工作机会。",
+    "ko": "이 기기에 저장한 채용 정보를 다시 확인하고 기회를 탐색하세요.",
+    "ja": "この端末に保存した求人を確認し、仕事探しを続けられます。"
+  },
+  "Gia nhập Minh Đức": {
+    "en": "Join Minh Đức",
+    "zh": "加入明德",
+    "ko": "민득과 함께하기",
+    "ja": "ミンドゥックで働く"
+  },
+  "Khám phá môi trường làm việc và các cơ hội nội bộ minh họa tại Minh Đức.": {
+    "en": "Discover Minh Đức’s working environment and illustrative internal vacancies.",
+    "zh": "了解明德的工作环境和内部招聘示例。",
+    "ko": "민득의 근무 환경과 사내 채용 예시를 살펴보세요.",
+    "ja": "ミンドゥックの職場環境と社内採用のサンプルをご紹介します。"
+  },
+  "Tin tức và cẩm nang": {
+    "en": "News & guides",
+    "zh": "新闻与指南",
+    "ko": "소식 및 안내",
+    "ja": "ニュース・ガイド"
+  },
+  "Đọc những gợi ý về tìm việc, tuyển dụng và nhân sự dành cho người lao động và doanh nghiệp.": {
+    "en": "Read practical guidance on job hunting, recruitment and workforce planning.",
+    "zh": "阅读有关求职、招聘和人力规划的实用指南。",
+    "ko": "구직, 채용, 인력 계획에 관한 실용적인 안내를 확인하세요.",
+    "ja": "求職、採用、人材計画に関する実用的なガイドをご覧ください。"
+  },
+  "Chuẩn bị hồ sơ xin việc tại nhà máy": {
+    "en": "Preparing a factory job application",
+    "zh": "准备工厂求职材料",
+    "ko": "공장 입사 서류 준비",
+    "ja": "工場への応募書類の準備"
+  },
+  "Cẩm nang Minh Đức: chuẩn bị hồ sơ xin việc tại nhà máy với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Preparing a factory job application. Practical suggestions for your employment journey.",
+    "zh": "明德指南：准备工厂求职材料。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 공장 입사 서류 준비. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：工場への応募書類の準備。就職・採用に役立つヒントをご紹介します。"
+  },
+  "Lập kế hoạch bổ sung lao động": {
+    "en": "Planning workforce additions",
+    "zh": "制定补充用工计划",
+    "ko": "인력 충원 계획",
+    "ja": "人員補充の計画"
+  },
+  "Cẩm nang Minh Đức: lập kế hoạch bổ sung lao động với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Planning workforce additions. Practical suggestions for your employment journey.",
+    "zh": "明德指南：制定补充用工计划。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 인력 충원 계획. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：人員補充の計画。就職・採用に役立つヒントをご紹介します。"
+  },
+  "Những câu hỏi trước khi nhận việc": {
+    "en": "Questions before accepting a job",
+    "zh": "入职前应询问的问题",
+    "ko": "입사 전 확인할 질문",
+    "ja": "入社前に確認すること"
+  },
+  "Cẩm nang Minh Đức: những câu hỏi trước khi nhận việc với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Questions before accepting a job. Practical suggestions for your employment journey.",
+    "zh": "明德指南：入职前应询问的问题。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 입사 전 확인할 질문. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：入社前に確認すること。就職・採用に役立つヒントをご紹介します。"
+  },
+  "Thông tin tuyển dụng rõ ràng": {
+    "en": "Clear recruitment information",
+    "zh": "清晰的招聘信息",
+    "ko": "명확한 채용 정보",
+    "ja": "明確な採用情報"
+  },
+  "Cẩm nang Minh Đức: thông tin tuyển dụng rõ ràng với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Clear recruitment information. Practical suggestions for your employment journey.",
+    "zh": "明德指南：清晰的招聘信息。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 명확한 채용 정보. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：明確な採用情報。就職・採用に役立つヒントをご紹介します。"
+  },
+  "Chuẩn bị ngày đầu làm việc": {
+    "en": "Preparing for the first workday",
+    "zh": "准备入职第一天",
+    "ko": "첫 출근 준비",
+    "ja": "初出勤の準備"
+  },
+  "Cẩm nang Minh Đức: chuẩn bị ngày đầu làm việc với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Preparing for the first workday. Practical suggestions for your employment journey.",
+    "zh": "明德指南：准备入职第一天。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 첫 출근 준비. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：初出勤の準備。就職・採用に役立つヒントをご紹介します。"
+  },
+  "An toàn thông tin khi tìm việc": {
+    "en": "Personal data safety when job hunting",
+    "zh": "求职时的个人信息安全",
+    "ko": "구직 중 개인정보 보호",
+    "ja": "求職時の個人情報保護"
+  },
+  "Cẩm nang Minh Đức: an toàn thông tin khi tìm việc với những gợi ý thực tế cho hành trình việc làm.": {
+    "en": "Minh Đức guide: Personal data safety when job hunting. Practical suggestions for your employment journey.",
+    "zh": "明德指南：求职时的个人信息安全。为求职和用工提供实用建议。",
+    "ko": "민득 가이드: 구직 중 개인정보 보호. 취업과 채용을 위한 실용적인 제안입니다.",
+    "ja": "ミンドゥックのガイド：求職時の個人情報保護。就職・採用に役立つヒントをご紹介します。"
+  },
+  "Sự kiện": {
+    "en": "Events",
+    "zh": "活动",
+    "ko": "행사",
+    "ja": "イベント"
+  },
+  "Khám phá các chương trình kết nối việc làm và trao đổi nhân lực minh họa của Minh Đức.": {
+    "en": "Explore sample events for employment connections and workforce discussions.",
+    "zh": "探索就业对接和人力交流的示例活动。",
+    "ko": "취업 연결과 인력 교류를 위한 예시 행사를 살펴보세요.",
+    "ja": "仕事との出会いや人材に関する意見交換のイベント例をご紹介します。"
+  },
+  "Ngày hội kết nối việc làm": {
+    "en": "Job connection day",
+    "zh": "就业对接日",
+    "ko": "취업 연결의 날",
+    "ja": "仕事との出会いの日"
+  },
+  "Tìm hiểu nội dung chương trình minh họa ngày hội kết nối việc làm cùng Minh Đức.": {
+    "en": "Explore the sample program for Job connection day with Minh Đức.",
+    "zh": "了解明德“就业对接日”示例活动的内容。",
+    "ko": "민득과 함께하는 취업 연결의 날 예시 프로그램을 살펴보세요.",
+    "ja": "ミンドゥックの「仕事との出会いの日」イベント例の内容をご紹介します。"
+  },
+  "Trao đổi kế hoạch nhân lực": {
+    "en": "Workforce planning discussion",
+    "zh": "用工规划交流会",
+    "ko": "인력 계획 간담회",
+    "ja": "人材計画の意見交換会"
+  },
+  "Tìm hiểu nội dung chương trình minh họa trao đổi kế hoạch nhân lực cùng Minh Đức.": {
+    "en": "Explore the sample program for Workforce planning discussion with Minh Đức.",
+    "zh": "了解明德“用工规划交流会”示例活动的内容。",
+    "ko": "민득과 함께하는 인력 계획 간담회 예시 프로그램을 살펴보세요.",
+    "ja": "ミンドゥックの「人材計画の意見交換会」イベント例の内容をご紹介します。"
+  },
+  "Hành trang tìm việc": {
+    "en": "Getting ready for a job search",
+    "zh": "求职准备",
+    "ko": "구직 준비",
+    "ja": "求職活動の準備"
+  },
+  "Tìm hiểu nội dung chương trình minh họa hành trang tìm việc cùng Minh Đức.": {
+    "en": "Explore the sample program for Getting ready for a job search with Minh Đức.",
+    "zh": "了解明德“求职准备”示例活动的内容。",
+    "ko": "민득과 함께하는 구직 준비 예시 프로그램을 살펴보세요.",
+    "ja": "ミンドゥックの「求職活動の準備」イベント例の内容をご紹介します。"
+  },
+  "Đối tác": {
+    "en": "Partners",
+    "zh": "合作伙伴",
+    "ko": "파트너",
+    "ja": "パートナー"
+  },
+  "Tìm hiểu về kết nối và định hướng đồng hành cùng đối tác của Minh Đức.": {
+    "en": "Learn about Minh Đức’s connections and approach to working with partners.",
+    "zh": "了解明德的合作网络及与伙伴协作的方向。",
+    "ko": "민득의 파트너 네트워크와 협력 방향을 알아보세요.",
+    "ja": "ミンドゥックのパートナーとのつながりと協力方針をご紹介します。"
+  },
+  "Tuyển sinh": {
+    "en": "Admissions",
+    "zh": "招生",
+    "ko": "입학 안내",
+    "ja": "入学案内"
+  },
+  "Tìm hiểu các chương trình học từ xa và chính quy cùng quy trình đăng ký minh họa.": {
+    "en": "Explore illustrative distance and campus programs, advice and application forms.",
+    "zh": "了解远程与全日制示例课程、咨询和申请表。",
+    "ko": "원격 및 정규 과정 예시와 상담, 지원 양식을 살펴보세요.",
+    "ja": "遠隔・通学のサンプル課程と相談・出願フォームをご覧ください。"
+  },
+  "Quản trị kinh doanh từ xa": {
+    "en": "Distance business administration",
+    "zh": "远程工商管理课程",
+    "ko": "원격 경영학 과정",
+    "ja": "経営管理の遠隔学習"
+  },
+  "Khám phá chương trình Quản trị kinh doanh từ xa và thử tư vấn hoặc đăng ký học.": {
+    "en": "Explore Distance business administration and try the sample advice and application process.",
+    "zh": "了解远程工商管理课程并体验咨询和申请示例流程。",
+    "ko": "원격 경영학 과정을 살펴보고 상담 및 지원 데모를 체험하세요.",
+    "ja": "経営管理の遠隔学習の内容を確認し、相談・出願のデモを体験できます。"
+  },
+  "Công nghệ kỹ thuật chính quy": {
+    "en": "Campus engineering technology",
+    "zh": "全日制工程技术课程",
+    "ko": "정규 공학 기술 과정",
+    "ja": "工学技術の通学課程"
+  },
+  "Tìm hiểu chương trình Công nghệ kỹ thuật chính quy trong bản minh họa tuyển sinh.": {
+    "en": "Explore Campus engineering technology and try the sample advice and application process.",
+    "zh": "了解全日制工程技术课程并体验咨询和申请示例流程。",
+    "ko": "정규 공학 기술 과정을 살펴보고 상담 및 지원 데모를 체험하세요.",
+    "ja": "工学技術の通学課程の内容を確認し、相談・出願のデモを体験できます。"
+  },
+  "Kế toán từ xa": {
+    "en": "Distance accounting",
+    "zh": "远程会计课程",
+    "ko": "원격 회계 과정",
+    "ja": "会計の遠隔学習"
+  },
+  "Tìm hiểu chương trình Kế toán từ xa và trải nghiệm các bước chuẩn bị hồ sơ.": {
+    "en": "Explore Distance accounting and try the sample advice and application process.",
+    "zh": "了解远程会计课程并体验咨询和申请示例流程。",
+    "ko": "원격 회계 과정을 살펴보고 상담 및 지원 데모를 체험하세요.",
+    "ja": "会計の遠隔学習の内容を確認し、相談・出願のデモを体験できます。"
+  },
+  "Không gian quản trị mẫu": {
+    "en": "Demo administration workspace",
+    "zh": "演示管理工作区",
+    "ko": "관리 화면 데모",
+    "ja": "管理ワークスペースのデモ"
+  },
+  "Trải nghiệm phân loại, phân công và xử lý hồ sơ cùng quản lý nội dung bằng dữ liệu giả định.": {
+    "en": "Try classifying, assigning and handling synthetic cases, alongside a mock content editor.",
+    "zh": "通过虚构资料体验分类、分配和处理流程，以及内容编辑演示。",
+    "ko": "가상 사례의 분류, 담당자 배정, 처리와 콘텐츠 편집 데모를 체험하세요.",
+    "ja": "架空の案件の分類・担当者割り当て・処理と、コンテンツ編集のデモを体験できます。"
+  },
+  "Liên hệ Minh Đức": {
+    "en": "Contact Minh Đức",
+    "zh": "联系明德",
+    "ko": "민득 문의",
+    "ja": "ミンドゥックへのお問い合わせ"
+  },
+  "Xem thông tin liên hệ và gửi yêu cầu tư vấn minh họa tới Minh Đức Vina.": {
+    "en": "Find Minh Đức contact details and try the sample business and general inquiry forms.",
+    "zh": "查看明德联系方式，体验企业需求和一般咨询示例表单。",
+    "ko": "민득 연락처를 확인하고 기업 및 일반 문의 데모 양식을 체험하세요.",
+    "ja": "ミンドゥックの連絡先を確認し、企業向け・一般向けの問い合わせデモを体験できます。"
+  },
+  "Hồ sơ giới thiệu": {
+    "en": "Company profile",
+    "zh": "公司简介",
+    "ko": "회사 소개 자료",
+    "ja": "会社案内"
+  },
+  "Xem hồ sơ giới thiệu trực tuyến về Minh Đức và các giải pháp nhân lực.": {
+    "en": "View Minh Đức’s online company profile and workforce service overview.",
+    "zh": "在线查看明德公司简介和人力服务概览。",
+    "ko": "민득의 온라인 회사 소개 자료와 인력 서비스 개요를 확인하세요.",
+    "ja": "ミンドゥックのオンライン会社案内と人材サービスの概要をご覧ください。"
+  },
+  "Chính sách bảo mật": {
+    "en": "Privacy policy",
+    "zh": "隐私政策",
+    "ko": "개인정보 처리방침",
+    "ja": "プライバシーポリシー"
+  },
+  "Tìm hiểu cách bản prototype xử lý thông tin và lưu lựa chọn trên thiết bị.": {
+    "en": "Learn how this prototype handles information and saves preferences on your device.",
+    "zh": "了解本原型如何处理信息并在设备上保存偏好。",
+    "ko": "프로토타입의 정보 처리 방식과 기기 내 설정 저장 방식을 확인하세요.",
+    "ja": "このプロトタイプでの情報の取り扱いと端末への設定保存について説明します。"
+  },
+  "Điều khoản sử dụng": {
+    "en": "Terms of use",
+    "zh": "使用条款",
+    "ko": "이용약관",
+    "ja": "利用規約"
+  },
+  "Tìm hiểu điều khoản sử dụng và phạm vi nội dung minh họa của website.": {
+    "en": "Read the terms of use and understand the scope of this demonstration website.",
+    "zh": "阅读使用条款，了解本演示网站的内容范围。",
+    "ko": "이용약관과 데모 웹사이트의 범위를 확인하세요.",
+    "ja": "利用規約と、このデモサイトの内容の範囲をご確認ください。"
+  }
+}

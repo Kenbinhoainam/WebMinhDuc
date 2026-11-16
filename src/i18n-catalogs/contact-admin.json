@@ -1,0 +1,908 @@
+{
+  "Doanh nghiệp · F01": {
+    "en": "Business · F01",
+    "zh": "企业 · F01",
+    "ko": "기업 · F01",
+    "ja": "企業 · F01"
+  },
+  "Liên hệ chung · F02": {
+    "en": "General inquiry · F02",
+    "zh": "一般咨询 · F02",
+    "ko": "일반 문의 · F02",
+    "ja": "一般お問い合わせ · F02"
+  },
+  "Chia sẻ nhu cầu nhân lực của doanh nghiệp.": {
+    "en": "Tell us about your workforce needs.",
+    "zh": "请告诉我们企业用工需求。",
+    "ko": "기업의 인력 수요를 알려주세요.",
+    "ja": "企業の人材ニーズをお聞かせください。"
+  },
+  "Gửi câu hỏi hoặc nội dung bạn muốn trao đổi.": {
+    "en": "Send us your question or message.",
+    "zh": "请发送您的问题或留言。",
+    "ko": "질문이나 문의 내용을 보내주세요.",
+    "ja": "ご質問やお問い合わせ内容をお送りください。"
+  },
+  "Doanh nghiệp": {
+    "en": "Company",
+    "zh": "企业",
+    "ko": "기업",
+    "ja": "企業名"
+  },
+  "Người liên hệ": {
+    "en": "Contact name",
+    "zh": "联系人",
+    "ko": "담당자",
+    "ja": "ご担当者名"
+  },
+  "Số điện thoại": {
+    "en": "Phone number",
+    "zh": "电话号码",
+    "ko": "전화번호",
+    "ja": "電話番号"
+  },
+  "Email": {
+    "en": "Email",
+    "zh": "邮箱",
+    "ko": "이메일",
+    "ja": "メール"
+  },
+  "Địa điểm làm việc": {
+    "en": "Work location",
+    "zh": "工作地点",
+    "ko": "근무 지역",
+    "ja": "勤務地"
+  },
+  "Vị trí cần tuyển": {
+    "en": "Position needed",
+    "zh": "招聘职位",
+    "ko": "채용 직무",
+    "ja": "募集職種"
+  },
+  "Số lượng": {
+    "en": "Number of workers",
+    "zh": "人数",
+    "ko": "인원",
+    "ja": "人数"
+  },
+  "Ca làm việc": {
+    "en": "Shift",
+    "zh": "工作班次",
+    "ko": "근무 교대",
+    "ja": "勤務シフト"
+  },
+  "Chọn ca": {
+    "en": "Choose a shift",
+    "zh": "选择班次",
+    "ko": "교대 선택",
+    "ja": "シフトを選択"
+  },
+  "Ngày": {
+    "en": "Day",
+    "zh": "白班",
+    "ko": "주간",
+    "ja": "日勤"
+  },
+  "Đêm": {
+    "en": "Night",
+    "zh": "夜班",
+    "ko": "야간",
+    "ja": "夜勤"
+  },
+  "Xoay ca": {
+    "en": "Rotating",
+    "zh": "轮班",
+    "ko": "교대 근무",
+    "ja": "交代制"
+  },
+  "Khác": {
+    "en": "Other",
+    "zh": "其他",
+    "ko": "기타",
+    "ja": "その他"
+  },
+  "Ngày cần người": {
+    "en": "Workers needed by",
+    "zh": "需要人员日期",
+    "ko": "인력 필요일",
+    "ja": "人材が必要な日"
+  },
+  "Dịch vụ quan tâm": {
+    "en": "Service of interest",
+    "zh": "感兴趣的服务",
+    "ko": "관심 서비스",
+    "ja": "ご希望のサービス"
+  },
+  "Cung ứng nhân lực": {
+    "en": "Workforce supply",
+    "zh": "人力供应",
+    "ko": "인력 공급",
+    "ja": "人材供給"
+  },
+  "Tư vấn và giới thiệu việc làm": {
+    "en": "Career advice and placement",
+    "zh": "就业咨询与介绍",
+    "ko": "취업 상담 및 소개",
+    "ja": "就職相談・紹介"
+  },
+  "Tư vấn nhân sự": {
+    "en": "HR consulting",
+    "zh": "人力资源咨询",
+    "ko": "인사 컨설팅",
+    "ja": "人事コンサルティング"
+  },
+  "Hợp tác doanh nghiệp": {
+    "en": "Business partnership",
+    "zh": "企业合作",
+    "ko": "기업 협력",
+    "ja": "企業提携"
+  },
+  "Nội dung liên hệ": {
+    "en": "Your message",
+    "zh": "联系内容",
+    "ko": "문의 내용",
+    "ja": "お問い合わせ内容"
+  },
+  "Tôi đồng ý với ": {
+    "en": "I agree to the ",
+    "zh": "我同意",
+    "ko": "동의합니다: ",
+    "ja": "同意します："
+  },
+  "chính sách bảo mật": {
+    "en": "privacy policy",
+    "zh": "隐私政策",
+    "ko": "개인정보 처리방침",
+    "ja": "プライバシーポリシー"
+  },
+  " và cho phép liên hệ về nhu cầu này. *": {
+    "en": " and agree to be contacted about this request. *",
+    "zh": "并同意就此需求与我联系。*",
+    "ko": " 및 이 요청에 대한 연락에 동의합니다. *",
+    "ja": "また、このお問い合わせに関する連絡に同意します。*"
+  },
+  "Gửi yêu cầu tư vấn": {
+    "en": "Send inquiry",
+    "zh": "发送咨询请求",
+    "ko": "상담 요청 보내기",
+    "ja": "相談を送信"
+  },
+  "Bản trải nghiệm: biểu mẫu mô phỏng, không gửi hoặc lưu thông tin cá nhân.": {
+    "en": "Demo: this form does not send or store personal information.",
+    "zh": "演示：此表单不会发送或保存个人信息。",
+    "ko": "데모: 이 양식은 개인 정보를 전송하거나 저장하지 않습니다.",
+    "ja": "デモ：このフォームは個人情報を送信・保存しません。"
+  },
+  "Đã hoàn tất gửi thử": {
+    "en": "Demo submission complete",
+    "zh": "模拟提交完成",
+    "ko": "제출 시뮬레이션 완료",
+    "ja": "送信デモが完了しました"
+  },
+  "Đây là mô phỏng trên trình duyệt. Thông tin không được gửi hoặc lưu; khu quản trị chỉ chứa dữ liệu mẫu độc lập.": {
+    "en": "This is a browser simulation. No information is sent or saved; the admin area contains separate sample data.",
+    "zh": "这是浏览器模拟。信息不会发送或保存；管理区仅包含独立样本数据。",
+    "ko": "브라우저 시뮬레이션입니다. 정보는 전송되거나 저장되지 않으며 관리자 영역에는 별도의 샘플 데이터만 있습니다.",
+    "ja": "ブラウザ上のシミュレーションです。情報は送信・保存されず、管理画面には独立したサンプルデータのみがあります。"
+  },
+  "Tạo yêu cầu thử mới": {
+    "en": "Start another demo request",
+    "zh": "创建新的模拟请求",
+    "ko": "새 데모 요청 만들기",
+    "ja": "新しいデモ依頼を作成"
+  },
+  "Vui lòng nhập số điện thoại Việt Nam hợp lệ.": {
+    "en": "Enter a valid Vietnamese phone number.",
+    "zh": "请输入有效的越南电话号码。",
+    "ko": "유효한 베트남 전화번호를 입력하세요.",
+    "ja": "有効なベトナムの電話番号を入力してください。"
+  },
+  "Email chưa đúng định dạng.": {
+    "en": "Enter a valid email address.",
+    "zh": "邮箱格式不正确。",
+    "ko": "올바른 이메일 주소를 입력하세요.",
+    "ja": "有効なメールアドレスを入力してください。"
+  },
+  "Vui lòng nhập số lượng từ 1 trở lên.": {
+    "en": "Enter a quantity of at least 1.",
+    "zh": "请输入至少为1的数量。",
+    "ko": "1 이상의 수량을 입력하세요.",
+    "ja": "1以上の人数を入力してください。"
+  },
+  "Cần đồng ý trước khi gửi yêu cầu.": {
+    "en": "Please consent before submitting.",
+    "zh": "提交前请先同意。",
+    "ko": "제출하기 전에 동의해 주세요.",
+    "ja": "送信前に同意してください。"
+  },
+  "Loại yêu cầu": {
+    "en": "Request type",
+    "zh": "请求类型",
+    "ko": "요청 유형",
+    "ja": "お問い合わせ種別"
+  },
+  "WORKSPACE / DEMO": {
+    "en": "WORKSPACE / DEMO",
+    "zh": "工作区 / 演示",
+    "ko": "워크스페이스 / 데모",
+    "ja": "ワークスペース / デモ"
+  },
+  "KHÔNG GIAN LÀM VIỆC": {
+    "en": "WORKSPACE",
+    "zh": "工作区",
+    "ko": "워크스페이스",
+    "ja": "ワークスペース"
+  },
+  "Hồ sơ tiếp nhận": {
+    "en": "Incoming records",
+    "zh": "接收记录",
+    "ko": "접수 기록",
+    "ja": "受付記録"
+  },
+  "Nội dung website": {
+    "en": "Website content",
+    "zh": "网站内容",
+    "ko": "웹사이트 콘텐츠",
+    "ja": "ウェブサイトの内容"
+  },
+  "Bản trình diễn": {
+    "en": "Demonstration",
+    "zh": "演示版",
+    "ko": "데모",
+    "ja": "デモ版"
+  },
+  "Dữ liệu và vai trò chỉ là mẫu": {
+    "en": "Data and roles are illustrative",
+    "zh": "数据和角色仅供演示",
+    "ko": "데이터와 역할은 예시입니다",
+    "ja": "データと役割はサンプルです"
+  },
+  "MINH ĐỨC / QUẢN TRỊ MẪU": {
+    "en": "MINH ĐỨC / DEMO ADMIN",
+    "zh": "MINH ĐỨC / 管理演示",
+    "ko": "MINH ĐỨC / 관리자 데모",
+    "ja": "MINH ĐỨC / 管理デモ"
+  },
+  "Vai trò minh họa": {
+    "en": "Example role",
+    "zh": "示例角色",
+    "ko": "예시 역할",
+    "ja": "サンプルの役割"
+  },
+  "Quản trị mẫu": {
+    "en": "Demo administrator",
+    "zh": "演示管理员",
+    "ko": "데모 관리자",
+    "ja": "デモ管理者"
+  },
+  "Marketing mẫu": {
+    "en": "Demo marketing",
+    "zh": "演示营销人员",
+    "ko": "데모 마케팅",
+    "ja": "デモマーケティング"
+  },
+  "Tuyển dụng mẫu": {
+    "en": "Demo recruiter",
+    "zh": "演示招聘人员",
+    "ko": "데모 채用担当",
+    "ja": "デモ採用担当"
+  },
+  "Chỉ là bản minh họa.": {
+    "en": "Illustration only.",
+    "zh": "仅供演示。",
+    "ko": "데모입니다.",
+    "ja": "デモ専用です。"
+  },
+  " Không có đăng nhập hay phân quyền thực, không nhận hồ sơ hoặc tệp. Tất cả tên và số điện thoại là dữ liệu giả; thay đổi chỉ tồn tại trong phiên trang này.": {
+    "en": " No real login or access control; no records or files are received. Names and phone numbers are fictional; changes last only for this page session.",
+    "zh": " 没有真实登录或权限控制，不接收申请或文件。姓名和电话号码均为虚构；更改仅在本页面会话中保留。",
+    "ko": " 실제 로그인이나 권한 제어가 없으며 기록이나 파일을 받지 않습니다. 이름과 전화번호는 가상이며 변경 사항은 이 페이지 세션에만 유지됩니다.",
+    "ja": " 実際のログインや権限制御はなく、応募やファイルは受け付けません。名前と電話番号は架空で、変更はこのページのセッション中のみ保持されます。"
+  },
+  "Tổng hồ sơ mẫu": {
+    "en": "Total sample records",
+    "zh": "样本记录总数",
+    "ko": "전체 샘플 기록",
+    "ja": "サンプル記録合計"
+  },
+  "6 nhóm tiếp nhận": {
+    "en": "6 intake categories",
+    "zh": "6个接收类别",
+    "ko": "6개 접수 그룹",
+    "ja": "6つの受付グループ"
+  },
+  "Mới": {
+    "en": "New",
+    "zh": "新建",
+    "ko": "신규",
+    "ja": "新規"
+  },
+  "Cần xem xét": {
+    "en": "Needs review",
+    "zh": "待查看",
+    "ko": "검토 필요",
+    "ja": "確認待ち"
+  },
+  "Đang xử lý": {
+    "en": "In progress",
+    "zh": "处理中",
+    "ko": "처리 중",
+    "ja": "対応中"
+  },
+  "Đã tiếp nhận": {
+    "en": "Received",
+    "zh": "已接收",
+    "ko": "접수됨",
+    "ja": "受付済み"
+  },
+  "Đã đóng": {
+    "en": "Closed",
+    "zh": "已关闭",
+    "ko": "종료",
+    "ja": "完了"
+  },
+  "Kết quả minh họa": {
+    "en": "Example outcomes",
+    "zh": "示例结果",
+    "ko": "예시 결과",
+    "ja": "サンプル結果"
+  },
+  "HỘP THƯ CÔNG VIỆC": {
+    "en": "WORK INBOX",
+    "zh": "工作收件箱",
+    "ko": "업무 수신함",
+    "ja": "ワーク受信箱"
+  },
+  "Danh sách hồ sơ mẫu": {
+    "en": "Sample records",
+    "zh": "样本记录列表",
+    "ko": "샘플 기록 목록",
+    "ja": "サンプル記録一覧"
+  },
+  "Theo dõi, phân công và cập nhật kết quả xử lý.": {
+    "en": "Track, assign and update outcomes.",
+    "zh": "跟踪、分配并更新处理结果。",
+    "ko": "진행 상황을 추적하고 담당자와 결과를 업데이트합니다.",
+    "ja": "進捗の確認、担当者の割り当て、結果の更新ができます。"
+  },
+  "Xuất CSV mẫu": {
+    "en": "Export sample CSV",
+    "zh": "导出样本CSV",
+    "ko": "샘플 CSV 내보내기",
+    "ja": "サンプルCSVを出力"
+  },
+  "Khôi phục mẫu": {
+    "en": "Reset samples",
+    "zh": "重置样本",
+    "ko": "샘플 초기화",
+    "ja": "サンプルをリセット"
+  },
+  "Tất cả": {
+    "en": "All",
+    "zh": "全部",
+    "ko": "전체",
+    "ja": "すべて"
+  },
+  "Tìm kiếm": {
+    "en": "Search",
+    "zh": "搜索",
+    "ko": "검색",
+    "ja": "検索"
+  },
+  "Mã, tên hoặc số mẫu": {
+    "en": "Sample ID, name or number",
+    "zh": "样本编号、名称或号码",
+    "ko": "샘플 ID, 이름 또는 번호",
+    "ja": "サンプルID、名前、番号"
+  },
+  "Nguồn": {
+    "en": "Source",
+    "zh": "来源",
+    "ko": "출처",
+    "ja": "流入元"
+  },
+  "Phụ trách": {
+    "en": "Owner",
+    "zh": "负责人",
+    "ko": "담당자",
+    "ja": "担当者"
+  },
+  "Trạng thái": {
+    "en": "Status",
+    "zh": "状态",
+    "ko": "상태",
+    "ja": "ステータス"
+  },
+  "Hồ sơ": {
+    "en": "Record",
+    "zh": "记录",
+    "ko": "기록",
+    "ja": "記録"
+  },
+  "Nhóm": {
+    "en": "Category",
+    "zh": "类别",
+    "ko": "그룹",
+    "ja": "区分"
+  },
+  "Chi tiết": {
+    "en": "Details",
+    "zh": "详情",
+    "ko": "상세",
+    "ja": "詳細"
+  },
+  "Xem →": {
+    "en": "View →",
+    "zh": "查看 →",
+    "ko": "보기 →",
+    "ja": "表示 →"
+  },
+  "Không có hồ sơ mẫu phù hợp với bộ lọc.": {
+    "en": "No sample records match the filters.",
+    "zh": "没有符合筛选条件的样本记录。",
+    "ko": "필터와 일치하는 샘플 기록이 없습니다.",
+    "ja": "条件に一致するサンプル記録はありません。"
+  },
+  "CMS MINH HỌA": {
+    "en": "CMS DEMO",
+    "zh": "CMS演示",
+    "ko": "CMS 데모",
+    "ja": "CMSデモ"
+  },
+  "Nội dung trang chủ": {
+    "en": "Homepage content",
+    "zh": "首页内容",
+    "ko": "홈페이지 콘텐츠",
+    "ja": "ホームページの内容"
+  },
+  "Chỉnh sửa, lưu và xuất bản thử chỉ trong bộ nhớ trình duyệt.": {
+    "en": "Edit, save and simulate publishing in browser memory only.",
+    "zh": "仅在浏览器内存中编辑、保存和模拟发布。",
+    "ko": "브라우저 메모리에서만 편집, 저장 및 게시를 시뮬레이션합니다.",
+    "ja": "ブラウザのメモリ内でのみ編集、保存、公開を試せます。"
+  },
+  "Thông điệp giới thiệu": {
+    "en": "Introduction message",
+    "zh": "介绍语",
+    "ko": "소개 메시지",
+    "ja": "紹介メッセージ"
+  },
+  "Lưu bản nháp": {
+    "en": "Save draft",
+    "zh": "保存草稿",
+    "ko": "초안 저장",
+    "ja": "下書きを保存"
+  },
+  "Xuất bản thử": {
+    "en": "Simulate publishing",
+    "zh": "模拟发布",
+    "ko": "게시 시뮬레이션",
+    "ja": "公開を試す"
+  },
+  "Người phụ trách": {
+    "en": "Assigned to",
+    "zh": "负责人",
+    "ko": "담당자",
+    "ja": "担当者"
+  },
+  "Kết quả xử lý": {
+    "en": "Outcome",
+    "zh": "处理结果",
+    "ko": "처리 결과",
+    "ja": "対応結果"
+  },
+  "Thay đổi được giữ trong bộ nhớ đến khi tải lại trang.": {
+    "en": "Changes remain in memory until the page reloads.",
+    "zh": "更改会保存在内存中，直到页面重新加载。",
+    "ko": "변경 사항은 페이지를 새로 고칠 때까지 메모리에 유지됩니다.",
+    "ja": "変更はページの再読み込みまでメモリに保持されます。"
+  },
+  "Chưa phân công": {
+    "en": "Unassigned",
+    "zh": "未分配",
+    "ko": "미배정",
+    "ja": "未割り当て"
+  },
+  "Tin tuyển dụng": {
+    "en": "Job posting",
+    "zh": "招聘信息",
+    "ko": "채용 공고",
+    "ja": "求人情報"
+  },
+  "Tuyển sinh": {
+    "en": "Admissions",
+    "zh": "招生",
+    "ko": "입학",
+    "ja": "入学"
+  },
+  "Nhu cầu doanh nghiệp": {
+    "en": "Business requests",
+    "zh": "企业需求",
+    "ko": "기업 요청",
+    "ja": "企業からの依頼"
+  },
+  "Liên hệ chung": {
+    "en": "General inquiries",
+    "zh": "一般咨询",
+    "ko": "일반 문의",
+    "ja": "一般お問い合わせ"
+  },
+  "Ứng tuyển việc làm": {
+    "en": "Job applications",
+    "zh": "求职申请",
+    "ko": "구직 신청",
+    "ja": "求人応募"
+  },
+  "Tuyển dụng nội bộ": {
+    "en": "Internal recruitment",
+    "zh": "内部招聘",
+    "ko": "내부 채용",
+    "ja": "社内採用"
+  },
+  "Tư vấn tuyển sinh": {
+    "en": "Admissions advice",
+    "zh": "招生咨询",
+    "ko": "입학 상담",
+    "ja": "入学相談"
+  },
+  "Hồ sơ tuyển sinh": {
+    "en": "Admissions applications",
+    "zh": "入学申请",
+    "ko": "입학 신청",
+    "ja": "入学申請"
+  },
+  "Bản nháp mẫu": {
+    "en": "Sample draft",
+    "zh": "示例草稿",
+    "ko": "샘플 초안",
+    "ja": "サンプル下書き"
+  },
+  "Đã lưu bản nháp mẫu": {
+    "en": "Sample draft saved",
+    "zh": "示例草稿已保存",
+    "ko": "샘플 초안 저장됨",
+    "ja": "サンプル下書き保存済み"
+  },
+  "Đã xuất bản mẫu": {
+    "en": "Sample published",
+    "zh": "示例已发布",
+    "ko": "샘플 게시됨",
+    "ja": "サンプル公開済み"
+  },
+  "Hiển thị": {
+    "en": "Showing",
+    "zh": "显示",
+    "ko": "표시",
+    "ja": "表示"
+  },
+  " hồ sơ mẫu": {
+    "en": " sample records",
+    "zh": " 条样本记录",
+    "ko": " 샘플 기록",
+    "ja": " 件のサンプル記録"
+  },
+  "Số mẫu:": {
+    "en": "Sample number:",
+    "zh": "样本号码：",
+    "ko": "샘플 번호:",
+    "ja": "サンプル番号："
+  },
+  "Số mẫu trùng sau khi chuẩn hóa với": {
+    "en": "Sample number matches after normalization:",
+    "zh": "标准化后样本号码重复：",
+    "ko": "정규화 후 일치하는 샘플 번호:",
+    "ja": "正規化後に一致するサンプル番号："
+  },
+  ". Cảnh báo minh họa, không chặn xử lý.": {
+    "en": ". This illustrative warning does not block processing.",
+    "zh": "。此示例警告不会阻止处理。",
+    "ko": ". 이 예시 경고는 처리를 막지 않습니다.",
+    "ja": "。この警告はデモで、処理を妨げません。"
+  },
+  "Hồ sơ không hiển thị với vai trò Marketing mẫu": {
+    "en": "Records are hidden for the demo marketing role",
+    "zh": "演示营销角色无法查看记录",
+    "ko": "데모 마케팅 역할에는 기록이 표시되지 않습니다",
+    "ja": "デモマーケティングの役割では記録が表示されません"
+  },
+  "Chuyển vai trò để xem cách giao diện minh họa quyền truy cập. Đây không phải kiểm soát truy cập thực.": {
+    "en": "Switch roles to see the access interface demonstration. This is not real access control.",
+    "zh": "切换角色以查看访问界面演示。这不是真实的访问控制。",
+    "ko": "역할을 전환하여 접근 화면 데모를 확인하세요. 실제 접근 제어가 아닙니다.",
+    "ja": "役割を切り替えてアクセス画面をご確認ください。実際のアクセス制御ではありません。"
+  },
+  "Vai trò Tuyển dụng mẫu không hiển thị trình chỉnh sửa nội dung. Đây chỉ là mô phỏng giao diện.": {
+    "en": "The demo recruiter role cannot see the content editor. This is only a UI simulation.",
+    "zh": "演示招聘角色无法查看内容编辑器。这只是界面模拟。",
+    "ko": "데모 채용 담당 역할에는 콘텐츠 편집기가 표시되지 않습니다. 화면 시뮬레이션일 뿐입니다.",
+    "ja": "デモ採用担当にはコンテンツ編集画面が表示されません。画面のシミュレーションです。"
+  },
+  "Vai trò Marketing mẫu có thể sửa và lưu; nút xuất bản chỉ hiển thị ở vai trò Quản trị mẫu.": {
+    "en": "Demo marketing can edit and save; publishing is shown only to the demo administrator.",
+    "zh": "演示营销人员可以编辑和保存；发布按钮仅对演示管理员显示。",
+    "ko": "데모 마케팅은 편집하고 저장할 수 있으며 게시 버튼은 데모 관리자에게만 표시됩니다.",
+    "ja": "デモマーケティングは編集と保存ができ、公開ボタンはデモ管理者にのみ表示されます。"
+  },
+  "Nội dung đã lưu:": {
+    "en": "Saved content:",
+    "zh": "已保存内容：",
+    "ko": "저장된 콘텐츠:",
+    "ja": "保存済みの内容："
+  },
+  "Trạng thái:": {
+    "en": "Status:",
+    "zh": "状态：",
+    "ko": "상태:",
+    "ja": "ステータス："
+  },
+  "Xem hồ sơ mẫu": {
+    "en": "View sample record",
+    "zh": "查看样本记录",
+    "ko": "샘플 기록 보기",
+    "ja": "サンプル記録を見る"
+  },
+  "Giới thiệu & cung ứng nhân lực": {
+    "en": "Workforce introduction and supply",
+    "zh": "人力介绍与供应",
+    "ko": "인력 소개 및 공급",
+    "ja": "人材紹介・供給"
+  },
+  "Cho thuê lao động": {
+    "en": "Labor outsourcing",
+    "zh": "劳务派遣",
+    "ko": "인력 파견",
+    "ja": "労働者派遣"
+  },
+  "Headhunt & lao động tay nghề": {
+    "en": "Headhunting and skilled workers",
+    "zh": "猎头与熟练工人",
+    "ko": "헤드헌팅 및 숙련 인력",
+    "ja": "ヘッドハンティング・技能人材"
+  },
+  "Tuyển sinh cao đẳng": {
+    "en": "College admissions",
+    "zh": "大专招生",
+    "ko": "대학 입학",
+    "ja": "大学入学"
+  },
+  "Setup tổ chức & phần mềm doanh nghiệp": {
+    "en": "Organization setup and business software",
+    "zh": "组织架构与企业软件",
+    "ko": "조직 구성 및 기업 소프트웨어",
+    "ja": "組織構築・企業ソフトウェア"
+  },
+  "Mã liên kết:": {
+    "en": "Linked code:",
+    "zh": "关联代码：",
+    "ko": "연결 코드:",
+    "ja": "関連コード："
+  },
+  " · Ngày tiếp nhận:": {
+    "en": " · Received:",
+    "zh": " · 接收日期：",
+    "ko": " · 접수일:",
+    "ja": " · 受付日："
+  },
+  "Vui lòng nhập họ tên.": {
+    "en": "Please enter your name.",
+    "zh": "请输入姓名。",
+    "ko": "이름을 입력하세요.",
+    "ja": "お名前を入力してください。"
+  },
+  "Vui lòng nhập số điện thoại.": {
+    "en": "Please enter your phone number.",
+    "zh": "请输入电话号码。",
+    "ko": "전화번호를 입력하세요.",
+    "ja": "電話番号を入力してください。"
+  },
+  "Vui lòng nhập tên doanh nghiệp.": {
+    "en": "Please enter your company name.",
+    "zh": "请输入企业名称。",
+    "ko": "기업명을 입력하세요.",
+    "ja": "企業名を入力してください。"
+  },
+  "Vui lòng nhập địa điểm.": {
+    "en": "Please enter a location.",
+    "zh": "请输入地点。",
+    "ko": "지역을 입력하세요.",
+    "ja": "勤務地を入力してください。"
+  },
+  "Vui lòng nhập vị trí cần tuyển.": {
+    "en": "Please enter the position needed.",
+    "zh": "请输入招聘职位。",
+    "ko": "채용 직무를 입력하세요.",
+    "ja": "募集職種を入力してください。"
+  },
+  "Vui lòng nhập ca làm việc.": {
+    "en": "Please choose a shift.",
+    "zh": "请选择班次。",
+    "ko": "교대를 선택하세요.",
+    "ja": "シフトを選択してください。"
+  },
+  "Vui lòng nhập ngày cần người.": {
+    "en": "Please enter the required date.",
+    "zh": "请输入需要人员的日期。",
+    "ko": "인력 필요일을 입력하세요.",
+    "ja": "必要な日を入力してください。"
+  },
+  "Vui lòng nhập nội dung liên hệ.": {
+    "en": "Please enter a message.",
+    "zh": "请输入联系内容。",
+    "ko": "문의 내용을 입력하세요.",
+    "ja": "お問い合わせ内容を入力してください。"
+  },
+  "LIÊN HỆ": {
+    "en": "CONTACT",
+    "zh": "联系我们",
+    "ko": "문의",
+    "ja": "お問い合わせ"
+  },
+  "Kết nối với Minh Đức": {
+    "en": "Connect with Minh Đức",
+    "zh": "联系 Minh Đức",
+    "ko": "Minh Đức에 문의하기",
+    "ja": "Minh Đứcへのお問い合わせ"
+  },
+  "Một cuộc trò chuyện, nhiều cơ hội mới.": {
+    "en": "One conversation, many new opportunities.",
+    "zh": "一次对话，众多新机遇。",
+    "ko": "한 번의 대화, 새로운 기회.",
+    "ja": "ひとつの会話から、多くの新しい機会へ。"
+  },
+  "CHÚNG TÔI LUÔN SẴN SÀNG": {
+    "en": "WE ARE HERE TO HELP",
+    "zh": "我们随时为您服务",
+    "ko": "언제든지 도와드리겠습니다",
+    "ja": "いつでもお手伝いします"
+  },
+  "Bạn cần hỗ trợ gì?": {
+    "en": "How can we help?",
+    "zh": "您需要什么帮助？",
+    "ko": "무엇을 도와드릴까요?",
+    "ja": "どのようなご用件ですか？"
+  },
+  "Dù đang tìm công việc phù hợp hay cần đội ngũ cho doanh nghiệp, Minh Đức luôn sẵn sàng lắng nghe.": {
+    "en": "Whether you are seeking work or building a team, Minh Đức is ready to listen.",
+    "zh": "无论您正在找工作还是为企业寻找团队，Minh Đức 都愿意倾听。",
+    "ko": "일자리를 찾거나 기업을 위한 팀이 필요하다면 Minh Đức가 이야기를 듣겠습니다.",
+    "ja": "仕事をお探しの方も、企業の人材をお探しの方も、Minh Đứcにご相談ください。"
+  },
+  "Hotline tư vấn": {
+    "en": "Consultation hotline",
+    "zh": "咨询热线",
+    "ko": "상담 전화",
+    "ja": "相談ホットライン"
+  },
+  "Trao đổi qua Zalo": {
+    "en": "Chat on Zalo",
+    "zh": "通过 Zalo 联系",
+    "ko": "Zalo로 문의",
+    "ja": "Zaloで相談"
+  },
+  "Nhắn tin cho Minh Đức": {
+    "en": "Message Minh Đức",
+    "zh": "给 Minh Đức 发消息",
+    "ko": "Minh Đức에 메시지 보내기",
+    "ja": "Minh Đứcにメッセージ"
+  },
+  "Facebook Minh Đức": {
+    "en": "Minh Đức on Facebook",
+    "zh": "Minh Đức 的 Facebook",
+    "ko": "Minh Đức 페이스북",
+    "ja": "Minh ĐứcのFacebook"
+  },
+  "Để lại nhu cầu của bạn": {
+    "en": "Tell us what you need",
+    "zh": "告诉我们您的需求",
+    "ko": "필요한 사항을 알려주세요",
+    "ja": "ご要望をお聞かせください"
+  },
+  "Các điểm kết nối": {
+    "en": "Contact locations",
+    "zh": "联系地点",
+    "ko": "연락 거점",
+    "ja": "お問い合わせ拠点"
+  },
+  "Chi nhánh": {
+    "en": "Branch",
+    "zh": "分支机构",
+    "ko": "지점",
+    "ja": "支店"
+  },
+  "Mở vị trí trên Google Maps": {
+    "en": "Open location in Google Maps",
+    "zh": "在谷歌地图中打开位置",
+    "ko": "Google 지도에서 위치 열기",
+    "ja": "Googleマップで場所を開く"
+  },
+  "Gọi để được hướng dẫn": {
+    "en": "Call for directions",
+    "zh": "致电获取指引",
+    "ko": "안내 전화하기",
+    "ja": "道順を電話で確認"
+  },
+  "Bản đồ minh họa. Xem vị trí chính xác qua liên kết Google Maps.": {
+    "en": "Illustrative map. Follow the Google Maps link for the exact location.",
+    "zh": "地图仅供示意，请通过谷歌地图链接查看准确位置。",
+    "ko": "예시 지도입니다. 정확한 위치는 Google 지도 링크를 확인하세요.",
+    "ja": "地図はイメージです。正確な場所はGoogleマップをご確認ください。"
+  },
+  "Kết nối cơ hội việc làm và hỗ trợ người lao động tại khu vực Vôi.": {
+    "en": "Connecting job opportunities and supporting workers in Vôi.",
+    "zh": "在 Vôi 地区连接就业机会并支持劳动者。",
+    "ko": "Vôi 지역의 취업 기회를 연결하고 근로자를 지원합니다.",
+    "ja": "Vôi地域の仕事をつなぎ、働く人を支援します。"
+  },
+  "Tư vấn tuyển dụng và nhu cầu cung ứng nhân lực tại các khu công nghiệp.": {
+    "en": "Recruitment advice and workforce supply for industrial parks.",
+    "zh": "为工业园区提供招聘咨询和人力供应。",
+    "ko": "산업단지 채용 상담 및 인력 공급을 지원합니다.",
+    "ja": "工業団地の採用相談と人材供給を支援します。"
+  },
+  "Vui lòng liên hệ hotline để được hướng dẫn đến điểm hỗ trợ.": {
+    "en": "Call the hotline for directions to the support point.",
+    "zh": "请致电热线获取支持点的位置指引。",
+    "ko": "지원 거점 안내는 전화로 문의해 주세요.",
+    "ja": "サポート拠点への道順はホットラインにお問い合わせください。"
+  },
+  "▦   Hồ sơ tiếp nhận": {
+    "en": "▦  Incoming records",
+    "zh": "▦  接收记录",
+    "ko": "▦  접수 기록",
+    "ja": "▦  受付記録"
+  },
+  "▤   Nội dung website": {
+    "en": "▤  Website content",
+    "zh": "▤  网站内容",
+    "ko": "▤  웹사이트 콘텐츠",
+    "ja": "▤  ウェブサイトの内容"
+  },
+  "Lan (mẫu)": {
+    "en": "Lan (sample)",
+    "zh": "Lan（示例）",
+    "ko": "Lan (샘플)",
+    "ja": "Lan（サンプル）"
+  },
+  "Mai (mẫu)": {
+    "en": "Mai (sample)",
+    "zh": "Mai（示例）",
+    "ko": "Mai (샘플)",
+    "ja": "Mai（サンプル）"
+  },
+  "Doanh nghiệp mẫu A": {
+    "en": "Sample company A",
+    "zh": "示例企业 A",
+    "ko": "샘플 기업 A",
+    "ja": "サンプル企業 A"
+  },
+  "Liên hệ mẫu B": {
+    "en": "Sample contact B",
+    "zh": "示例联系人 B",
+    "ko": "샘플 문의자 B",
+    "ja": "サンプル連絡先 B"
+  },
+  "Ứng viên mẫu C": {
+    "en": "Sample applicant C",
+    "zh": "示例申请人 C",
+    "ko": "샘플 지원자 C",
+    "ja": "サンプル応募者 C"
+  },
+  "Ứng viên mẫu D": {
+    "en": "Sample applicant D",
+    "zh": "示例申请人 D",
+    "ko": "샘플 지원자 D",
+    "ja": "サンプル応募者 D"
+  },
+  "Học viên mẫu E": {
+    "en": "Sample student E",
+    "zh": "示例学生 E",
+    "ko": "샘플 학생 E",
+    "ja": "サンプル学生 E"
+  },
+  "Học viên mẫu F": {
+    "en": "Sample student F",
+    "zh": "示例学生 F",
+    "ko": "샘플 학생 F",
+    "ja": "サンプル学生 F"
+  }
+}

@@ -3,6 +3,14 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Bookmark, BriefcaseBusiness, CheckCircle2, ChevronLeft, ChevronRight, Clock3, FileUp, MapPin, Phone, Search, SlidersHorizontal, Users, Wallet } from 'lucide-react';
 import { PageHero, SectionHeading, ButtonLink, CTASection, DemoNote, Modal } from './shared';
 import './jobs.css';
+import { useLocale, type Locale } from './i18n';
+import { translate } from './i18n-runtime/jsx-runtime';
+import jobTranslations from './i18n-catalogs/jobs.json';
+
+function useJobText() {
+  const locale = useLocale();
+  return (text: string) => locale === 'vi' ? text : (jobTranslations as Record<string, Record<string, string>>)[text]?.[locale] ?? text;
+}
 
 export type Job = {
   id: string;
@@ -14,6 +22,12 @@ export type Job = {
   category: string;
   tags: string[];
   internal?: boolean;
+  industrialPark?: string;
+  skillLevel?: string;
+  employmentType?: string;
+  shift?: string;
+  schedule?: string;
+  status?: string;
   intro: string;
   tasks: string[];
   requirements: string[];
@@ -30,6 +44,47 @@ export const jobs: Job[] = [
   { id: 'MD007', slug: 'chuyen-vien-tuyen-dung-bac-ninh', title: 'Chuyên viên tuyển dụng', location: 'Bắc Ninh', type: 'Toàn thời gian', salary: '9–14 triệu/tháng', category: 'Tuyển dụng nội bộ', tags: ['Nội bộ', 'Phát triển nghề nghiệp'], internal: true, intro: 'Cùng Minh Đức kết nối người lao động với cơ hội phù hợp. Đây là vị trí nội bộ minh họa để trải nghiệm quy trình tuyển dụng trên prototype.', tasks: ['Tiếp nhận nhu cầu và tư vấn thông tin công việc cho ứng viên.', 'Sắp xếp lịch trao đổi, theo dõi tiến độ và hỗ trợ ứng viên.', 'Cập nhật nội dung tuyển dụng theo thông tin đã được xác nhận.'], requirements: ['Giao tiếp rõ ràng, biết lắng nghe và tôn trọng ứng viên.', 'Sử dụng các công cụ văn phòng cơ bản.', 'Có trách nhiệm với thông tin cá nhân và tính chính xác của nội dung tư vấn.'], benefits: ['Được hướng dẫn quy trình tư vấn và chăm sóc ứng viên.', 'Cơ hội phát triển kỹ năng tuyển dụng và phối hợp khách hàng.', 'Môi trường khuyến khích chia sẻ và hỗ trợ đồng đội.'] },
   { id: 'MD008', slug: 'cong-tac-vien-tuyen-dung-quang-ninh', title: 'Cộng tác viên tuyển dụng', location: 'Quảng Ninh', type: 'Cộng tác viên', salary: 'Trao đổi khi tư vấn', category: 'Tuyển dụng nội bộ', tags: ['Nội bộ', 'Cộng tác linh hoạt'], internal: true, intro: 'Vị trí cộng tác minh họa dành cho người có khả năng kết nối cộng đồng, mong muốn hỗ trợ người lao động tiếp cận thông tin việc làm rõ ràng.', tasks: ['Giới thiệu thông tin việc làm đã được xác nhận tới người có nhu cầu.', 'Kết nối ứng viên với đội tư vấn phụ trách.', 'Theo dõi phản hồi và hỗ trợ giải đáp trong phạm vi được hướng dẫn.'], requirements: ['Truyền đạt trung thực, không tự đưa ra cam kết về việc làm hoặc thu nhập.', 'Có kỹ năng giao tiếp và sử dụng điện thoại, mạng xã hội.', 'Tôn trọng quyền riêng tư và sự đồng ý của ứng viên.'], benefits: ['Có tài liệu và nhân sự hỗ trợ tư vấn.', 'Hình thức cộng tác, phạm vi và quyền lợi được trao đổi riêng.', 'Cơ hội tích lũy kinh nghiệm trong lĩnh vực nhân lực.'] },
 ];
+
+// Synthetic attributes for the prototype; industrial parks are not verified operating data.
+const jobAttributes = [
+  ['KCN Yên Phong', 'Phổ thông', 'Chính thức', 'Ngày', 'Xoay ca', 'active'],
+  ['KCN Tân Hưng', 'Phổ thông', 'Chính thức', 'Ngày', 'Cố định', 'active'],
+  ['KCN Sông Công', 'Phổ thông', 'Chính thức', 'Ngày', 'Cố định', 'active'],
+  ['KCN Đông Mai', 'Tay nghề', 'Chính thức', 'Đêm', 'Xoay ca', 'active'],
+  ['KCN Yên Phong', 'Tay nghề', 'Chính thức', 'Ngày', 'Cố định', 'closed'],
+  ['KCN Tân Hưng', 'Phổ thông', 'Thời vụ', 'Đêm', 'Xoay ca', 'active'],
+  ['', 'Tay nghề', 'Chính thức', 'Ngày', 'Cố định', 'active'],
+  ['', 'Phổ thông', 'Thời vụ', 'Ngày', 'Cố định', 'active'],
+];
+jobs.forEach((job, index) => {
+  const [industrialPark, skillLevel, employmentType, shift, schedule, status] = jobAttributes[index];
+  Object.assign(job, { industrialPark, skillLevel, employmentType, shift, schedule, status });
+});
+
+const filterOptions: Record<string, { label: string; options: [string, string][] }> = {
+  industrialPark: { label: 'Khu công nghiệp', options: [['KCN Yên Phong', 'KCN Yên Phong'], ['KCN Tân Hưng', 'KCN Tân Hưng'], ['KCN Sông Công', 'KCN Sông Công'], ['KCN Đông Mai', 'KCN Đông Mai']] },
+  skillLevel: { label: 'Trình độ', options: [['Phổ thông', 'Phổ thông'], ['Tay nghề', 'Tay nghề']] },
+  employmentType: { label: 'Hình thức tuyển', options: [['Chính thức', 'Chính thức'], ['Thời vụ', 'Thời vụ']] },
+  shift: { label: 'Ca làm việc', options: [['Ngày', 'Ngày'], ['Đêm', 'Đêm']] },
+  schedule: { label: 'Lịch ca', options: [['Cố định', 'Cố định'], ['Xoay ca', 'Xoay ca']] },
+  status: { label: 'Trạng thái', options: [['active', 'Đang tuyển'], ['closed', 'Đã đóng']] },
+};
+
+export function filterJobs(params: URLSearchParams, internal = false, savedOnly = false, savedIds: string[] = [], locale: Locale = 'vi') {
+  const query = params.get('q') ?? '';
+  return jobs.filter(job => {
+    if (savedOnly ? !savedIds.includes(job.id) : internal ? !job.internal : job.internal) return false;
+    const location = params.get('location');
+    const type = params.get('type');
+    if (location && LOCATIONS.includes(location) && job.location !== location) return false;
+    if (type && TYPES.includes(type) && job.type !== type) return false;
+    if (Object.entries(filterOptions).some(([key, field]) => { const value = params.get(key); return value && field.options.some(option => option[0] === value) && job[key as keyof Job] !== value; })) return false;
+    if (!savedOnly && !['active', 'closed'].includes(params.get('status') ?? '') && job.status === 'closed') return false;
+    const searchable = [job.title, job.category, job.location, job.industrialPark ?? '', ...job.tags];
+    const localized = searchable.map(text => translate(text, locale));
+    return !query || normalized([...searchable, ...localized].join(' ')).includes(normalized(query));
+  });
+}
 
 const HERO_IMAGE = '/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg';
 const LOCATIONS = ['Bắc Ninh', 'Bắc Giang', 'Thái Nguyên', 'Quảng Ninh'];
@@ -80,8 +135,8 @@ export function useSavedJobs() {
 
 function normalized(value: string) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().trim().replace(/\s+/g, ' '); }
 
-function validateApplicationFile(file?: Pick<File, 'name' | 'size' | 'type'> | null) {
-  if (!file || !file.name) return '';
+function validateApplicationFile(file?: Pick<File, 'name' | 'size' | 'type'> | null, required = false) {
+  if (!file || !file.name) return required ? 'Vui lòng chọn CV của bạn.' : '';
   const extension = file.name.split('.').pop()?.toLowerCase();
   const mimeTypes: Record<string, string[]> = {
     pdf: ['application/pdf'],
@@ -97,13 +152,14 @@ function validateApplicationFile(file?: Pick<File, 'name' | 'size' | 'type'> | n
 
 function SaveButton({ job, showLabel = false }: { job: Job; showLabel?: boolean }) {
   const { isSaved, toggleSaved } = useSavedJobs();
+  const t = useJobText();
   const saved = isSaved(job.id);
-  return <button type="button" className={`job-save ${saved ? 'is-saved' : ''} ${showLabel ? 'has-label' : ''}`} aria-pressed={saved} aria-label={`${saved ? 'Bỏ lưu' : 'Lưu'} ${job.title}`} title={saved ? 'Bỏ lưu việc làm' : 'Lưu việc làm'} onClick={() => toggleSaved(job.id)}><Bookmark size={19} fill={saved ? 'currentColor' : 'none'} aria-hidden="true" />{showLabel && <span>{saved ? 'Đã lưu việc làm' : 'Lưu việc làm'}</span>}</button>;
+  return <button type="button" className={`job-save ${saved ? 'is-saved' : ''} ${showLabel ? 'has-label' : ''}`} aria-pressed={saved} aria-label={`${t(saved ? 'Bỏ lưu' : 'Lưu')} ${t(job.title)}`} title={saved ? 'Bỏ lưu việc làm' : 'Lưu việc làm'} onClick={() => toggleSaved(job.id)}><Bookmark size={19} fill={saved ? 'currentColor' : 'none'} aria-hidden="true" />{showLabel && <span>{saved ? 'Đã lưu việc làm' : 'Lưu việc làm'}</span>}</button>;
 }
 
 function JobCard({ job }: { job: Job }) {
   return <article className="job-card">
-    <div className="job-card-top"><span className="job-category">{job.category}</span><SaveButton job={job} /></div>
+    <div className="job-card-top"><span className="job-category"><span>{job.category}</span> · <span>{job.status === 'closed' ? 'Đã đóng' : 'Đang tuyển'}</span></span><SaveButton job={job} /></div>
     <h3><Link to={`/jobs/${job.slug}`}>{job.title}</Link></h3>
     <div className="job-card-specs"><p><Wallet size={17} aria-hidden="true" /><strong>{job.salary}</strong></p><p><MapPin size={17} aria-hidden="true" />{job.location}<span className="job-spec-divider" aria-hidden="true">·</span>{job.type}</p></div>
     <div className="job-tags">{job.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
@@ -117,6 +173,8 @@ function EmptyJobs({ saved = false, onReset }: { saved?: boolean; onReset?: () =
 
 function JobBrowser({ internal = false, savedOnly = false }: { internal?: boolean; savedOnly?: boolean }) {
   const [params, setParams] = useSearchParams();
+  const t = useJobText();
+  const locale = useLocale();
   const { savedIds, count } = useSavedJobs();
   const [page, setPage] = useState(1);
   const listRef = useRef<HTMLDivElement>(null);
@@ -125,12 +183,12 @@ function JobBrowser({ internal = false, savedOnly = false }: { internal?: boolea
   const typeValue = params.get('type') ?? '';
   const location = LOCATIONS.includes(locationValue) ? locationValue : '';
   const type = TYPES.includes(typeValue) ? typeValue : '';
-  const allJobs = jobs.filter(job => (!internal || job.internal) && (!savedOnly || savedIds.includes(job.id)));
-  const filtered = allJobs.filter(job => (!location || job.location === location) && (!type || job.type === type) && (!query || normalized(`${job.title} ${job.category} ${job.location} ${job.tags.join(' ')}`).includes(normalized(query))));
+  const allJobs = filterJobs(new URLSearchParams(), internal, savedOnly, savedIds, locale);
+  const filtered = filterJobs(params, internal, savedOnly, savedIds, locale);
   const pageSize = 6;
   const totalPages = Math.ceil(filtered.length / pageSize);
   const currentPage = Math.min(page, Math.max(totalPages, 1));
-  useEffect(() => setPage(1), [query, location, type]);
+  useEffect(() => setPage(1), [params.toString()]);
   useEffect(() => setPage(previous => Math.min(previous, Math.max(totalPages, 1))), [totalPages]);
   const updateFilter = (key: string, value: string) => { const next = new URLSearchParams(params); if (value) next.set(key, value); else next.delete(key); setParams(next, { replace: true }); };
   const reset = () => { setParams({}, { replace: true }); setPage(1); };
@@ -140,19 +198,20 @@ function JobBrowser({ internal = false, savedOnly = false }: { internal?: boolea
     <div className="jobs-heading-row"><h2>{savedOnly ? 'Danh sách đã lưu' : internal ? 'Cơ hội trong đội ngũ Minh Đức' : 'Cơ hội việc làm dành cho bạn'}</h2>{!savedOnly && <Link className="jobs-saved-link" to="/saved-jobs"><Bookmark size={18} aria-hidden="true" />Việc đã lưu <span>{count}</span></Link>}</div>
     <form className="jobs-filters" role="search" aria-label="Tìm việc làm" onSubmit={event => { event.preventDefault(); setPage(1); scrollToResults(); }}>
       <div className="jobs-filter-field jobs-keyword"><label htmlFor="jobs-query">Từ khóa</label><div className="jobs-input-icon"><Search size={18} aria-hidden="true" /><input id="jobs-query" type="search" value={query} placeholder="Tên công việc, kỹ năng…" onChange={event => updateFilter('q', event.target.value)} /></div></div>
-      <div className="jobs-filter-field"><label htmlFor="jobs-location">Địa điểm</label><select id="jobs-location" value={location} onChange={event => updateFilter('location', event.target.value)}><option value="">Tất cả địa điểm</option>{LOCATIONS.map(item => <option key={item}>{item}</option>)}</select></div>
-      <div className="jobs-filter-field"><label htmlFor="jobs-type">Loại công việc</label><select id="jobs-type" value={type} onChange={event => updateFilter('type', event.target.value)}><option value="">Tất cả loại việc</option>{TYPES.map(item => <option key={item}>{item}</option>)}</select></div>
+      <div className="jobs-filter-field"><label htmlFor="jobs-location">Địa điểm</label><select id="jobs-location" value={location} onChange={event => updateFilter('location', event.target.value)}><option value="">Tất cả địa điểm</option>{LOCATIONS.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
+      <div className="jobs-filter-field"><label htmlFor="jobs-type">Loại công việc</label><select id="jobs-type" value={type} onChange={event => updateFilter('type', event.target.value)}><option value="">Tất cả loại việc</option>{TYPES.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
+      {Object.entries(filterOptions).map(([key, field]) => <div className="jobs-filter-field" key={key}><label htmlFor={`jobs-${key}`}>{field.label}</label><select id={`jobs-${key}`} value={field.options.some(option => option[0] === params.get(key)) ? params.get(key) ?? '' : ''} onChange={event => updateFilter(key, event.target.value)}><option value="">Tất cả</option>{field.options.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>)}
       <button className="btn jobs-search-button" type="submit"><Search size={18} aria-hidden="true" />Tìm việc</button>
     </form>
-    <div className="jobs-result-bar" ref={listRef}><p role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> cho “{query}”</>}</p>{(query || location || type) && <button type="button" onClick={reset}><SlidersHorizontal size={15} aria-hidden="true" />Xóa bộ lọc</button>}</div>
+    <div className="jobs-result-bar" ref={listRef}><p role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {t('cho')} “{query}”</>}</p>{(query || location || type || Object.keys(filterOptions).some(key => params.get(key))) && <button type="button" onClick={reset}><SlidersHorizontal size={15} aria-hidden="true" />Xóa bộ lọc</button>}</div>
     {filtered.length > 0 ? <div className="jobs-grid">{filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(job => <JobCard key={job.id} job={job} />)}</div> : <EmptyJobs saved={savedOnly && allJobs.length === 0} onReset={reset} />}
-    {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={currentPage === 1} aria-label="Trang trước" onClick={() => changePage(currentPage - 1)}><ChevronLeft size={18} /></button>{Array.from({ length: totalPages }, (_, index) => index + 1).map(number => <button type="button" key={number} aria-label={`Trang ${number}`} aria-current={currentPage === number ? 'page' : undefined} onClick={() => changePage(number)}>{number}</button>)}<button type="button" disabled={currentPage === totalPages} aria-label="Trang sau" onClick={() => changePage(currentPage + 1)}><ChevronRight size={18} /></button></nav>}
+    {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={currentPage === 1} aria-label="Trang trước" onClick={() => changePage(currentPage - 1)}><ChevronLeft size={18} /></button>{Array.from({ length: totalPages }, (_, index) => index + 1).map(number => <button type="button" key={number} aria-label={`${t('Trang')} ${number}`} aria-current={currentPage === number ? 'page' : undefined} onClick={() => changePage(number)}>{number}</button>)}<button type="button" disabled={currentPage === totalPages} aria-label="Trang sau" onClick={() => changePage(currentPage + 1)}><ChevronRight size={18} /></button></nav>}
     <p className="jobs-data-note">Các vị trí và mức thu nhập trên đây là dữ liệu minh họa cho prototype, chưa phải thông báo tuyển dụng. Thu nhập thực tế cần được xác nhận khi tư vấn.</p>
   </div>;
 }
 
 export function JobsPage() {
-  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>Một công việc phù hợp.<br />Một khởi đầu vững vàng.</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div><div className="jobs-intro-icon" aria-hidden="true"><BriefcaseBusiness size={70} strokeWidth={1.1} /><span>Nhân lực là tài sản</span></div></div><JobBrowser /></div></section><CTASection /></>;
+  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>Một công việc phù hợp.<br />Một khởi đầu vững vàng.</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div><div className="jobs-intro-icon" aria-hidden="true"><BriefcaseBusiness size={70} strokeWidth={1.1} /><span>Nhân lực là tài sản</span></div></div><JobBrowser /><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section><CTASection /></>;
 }
 
 export function SavedJobsPage() {
@@ -173,13 +232,14 @@ function ApplicationDialog({ job, onClose }: { job: Job; onClose: () => void }) 
   useEffect(() => { if (success) successRef.current?.focus(); }, [success]);
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (job.status === 'closed') return;
     const data = new FormData(event.currentTarget);
     const next: ApplicationErrors = {};
     if (String(data.get('name') ?? '').trim().length < 2) next.name = 'Vui lòng nhập họ và tên, tối thiểu 2 ký tự.';
     const phone = String(data.get('phone') ?? '').replace(/[\s().-]/g, '');
     if (!/^(?:0|\+?84)[35789]\d{8}$/.test(phone)) next.phone = 'Nhập số di động Việt Nam hợp lệ, ví dụ 0912345678.';
     if (!LOCATIONS.includes(String(data.get('location') ?? ''))) next.location = 'Vui lòng chọn địa điểm mong muốn.';
-    const fileError = validateApplicationFile(data.get('cv') as File | null);
+    const fileError = validateApplicationFile(data.get('cv') as File | null, !!job.internal);
     if (fileError) next.cv = fileError;
     if (!data.get('consent')) next.consent = 'Bạn cần đồng ý trước khi trải nghiệm gửi hồ sơ.';
     setErrors(next);
@@ -193,15 +253,16 @@ function ApplicationDialog({ job, onClose }: { job: Job; onClose: () => void }) 
     setSuccess(true);
   };
   const error = (key: keyof ApplicationErrors) => errors[key] ? <span className="application-error" id={`apply-${key}-error`} role="alert">{errors[key]}</span> : null;
-  return <Modal title={success ? 'Hoàn tất trải nghiệm ứng tuyển' : 'Ứng tuyển vị trí'} onClose={onClose}>{success ? <div className="application-success"><CheckCircle2 size={56} aria-hidden="true" /><h3 ref={successRef} tabIndex={-1}>Bạn đã hoàn tất bước ứng tuyển mô phỏng</h3><p>Hồ sơ <strong>chưa được gửi tới nhà tuyển dụng</strong>. Thông tin cá nhân và tệp CV không được lưu hoặc tải lên.</p><p>Để được tư vấn việc làm thực tế, hãy liên hệ Minh Đức qua hotline.</p><a className="btn" href="tel:0364562868"><Phone size={18} aria-hidden="true" />0364 562 868</a><button className="application-close-link" type="button" onClick={onClose}>Đóng cửa sổ</button></div> : <form className="application-form" ref={formRef} onSubmit={submit} noValidate><div className="application-job"><strong>{job.title}</strong><span><MapPin size={15} aria-hidden="true" />{job.location} · {job.type}</span></div><p className="application-note">Bạn đang trải nghiệm form mô phỏng. Không có hồ sơ nào được gửi; có thể dùng thông tin mẫu để thử.</p><div className="application-field"><label htmlFor="apply-name">Họ và tên <span aria-hidden="true">*</span></label><input id="apply-name" name="name" placeholder="Nguyễn Văn An" autoComplete="name" required maxLength={100} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'apply-name-error' : undefined} />{error('name')}</div><div className="application-fields-row"><div className="application-field"><label htmlFor="apply-phone">Số điện thoại <span aria-hidden="true">*</span></label><input id="apply-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="0912 345 678" required maxLength={20} aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'apply-phone-error' : undefined} />{error('phone')}</div><div className="application-field"><label htmlFor="apply-location">Địa điểm mong muốn <span aria-hidden="true">*</span></label><select id="apply-location" name="location" required defaultValue="" aria-invalid={!!errors.location} aria-describedby={errors.location ? 'apply-location-error' : undefined}><option value="">Chọn địa điểm</option>{LOCATIONS.map(item => <option key={item}>{item}</option>)}</select>{error('location')}</div></div><div className="application-field"><label htmlFor="apply-cv">CV của bạn <span className="optional">(không bắt buộc)</span></label><div className={`application-upload ${errors.cv ? 'has-error' : ''}`}><FileUp size={25} aria-hidden="true" /><input id="apply-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-invalid={!!errors.cv} aria-describedby={`apply-cv-help${errors.cv ? ' apply-cv-error' : ''}`} onChange={event => { const file = event.target.files?.[0]; setFileName(file?.name ?? ''); setErrors(previous => ({ ...previous, cv: validateApplicationFile(file) || undefined })); }} /><span>{fileName || 'Chọn tệp từ thiết bị của bạn'}</span></div><small id="apply-cv-help">PDF, DOC hoặc DOCX · Tối đa 5 MB · Tệp không được tải lên</small>{error('cv')}</div><div className="application-consent"><label><input name="consent" type="checkbox" required aria-invalid={!!errors.consent} aria-describedby={errors.consent ? 'apply-consent-error' : undefined} /><span>Tôi đồng ý trải nghiệm bước ứng tuyển mô phỏng và đã đọc <Link to="/privacy-policy" onClick={onClose}>chính sách bảo mật</Link>. <span aria-hidden="true">*</span></span></label>{error('consent')}</div><button className="btn application-submit" type="submit">Gửi hồ sơ mô phỏng <ArrowRight size={18} aria-hidden="true" /></button><p className="application-required">Các trường có dấu * là bắt buộc.</p></form>}</Modal>;
+  return <Modal title={success ? 'Hoàn tất trải nghiệm ứng tuyển' : 'Ứng tuyển vị trí'} onClose={onClose}>{success ? <div className="application-success"><CheckCircle2 size={56} aria-hidden="true" /><h3 ref={successRef} tabIndex={-1}>Bạn đã hoàn tất bước ứng tuyển mô phỏng</h3><p>Hồ sơ <strong>chưa được gửi tới nhà tuyển dụng</strong>. Thông tin cá nhân và tệp CV không được lưu hoặc tải lên.</p><p>{job.internal ? 'F04 · Ứng tuyển nội bộ' : 'F03 · Ứng tuyển việc làm'} · Mã vị trí <strong>{job.id}</strong></p><p><Link to={`/admin-demo?type=${job.internal ? 'F04' : 'F03'}`} onClick={onClose}>Xem ví dụ quản trị minh họa</Link></p><p>Để được tư vấn việc làm thực tế, hãy liên hệ Minh Đức qua hotline.</p><a className="btn" href="tel:0364562868"><Phone size={18} aria-hidden="true" />0364 562 868</a><button className="application-close-link" type="button" onClick={onClose}>Đóng cửa sổ</button></div> : <form className="application-form" ref={formRef} onSubmit={submit} noValidate><div className="application-job"><strong>{job.internal ? 'F04 · Ứng tuyển nội bộ' : 'F03 · Ứng tuyển việc làm'} · {job.id}</strong><strong>{job.title}</strong><span><MapPin size={15} aria-hidden="true" /><span>{job.location}</span> · <span>{job.type}</span></span></div><p className="application-note">Bạn đang trải nghiệm form mô phỏng. Không có hồ sơ nào được gửi; có thể dùng thông tin mẫu để thử.</p><div className="application-field"><label htmlFor="apply-name">Họ và tên <span aria-hidden="true">*</span></label><input id="apply-name" name="name" placeholder="Nguyễn Văn An" autoComplete="name" required maxLength={100} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'apply-name-error' : undefined} />{error('name')}</div><div className="application-fields-row"><div className="application-field"><label htmlFor="apply-phone">Số điện thoại <span aria-hidden="true">*</span></label><input id="apply-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="0912 345 678" required maxLength={20} aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'apply-phone-error' : undefined} />{error('phone')}</div><div className="application-field"><label htmlFor="apply-location">Địa điểm mong muốn <span aria-hidden="true">*</span></label><select id="apply-location" name="location" required defaultValue="" aria-invalid={!!errors.location} aria-describedby={errors.location ? 'apply-location-error' : undefined}><option value="">Chọn địa điểm</option>{LOCATIONS.map(item => <option key={item} value={item}>{item}</option>)}</select>{error('location')}</div></div><div className="application-field"><label htmlFor="apply-cv">CV của bạn {job.internal ? <span aria-hidden="true">*</span> : <span className="optional">(không bắt buộc)</span>}</label><div className={`application-upload ${errors.cv ? 'has-error' : ''}`}><FileUp size={25} aria-hidden="true" /><input id="apply-cv" name="cv" type="file" required={!!job.internal} accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-invalid={!!errors.cv} aria-describedby={`apply-cv-help${errors.cv ? ' apply-cv-error' : ''}`} onChange={event => { const file = event.target.files?.[0]; setFileName(file?.name ?? ''); setErrors(previous => ({ ...previous, cv: validateApplicationFile(file, !!job.internal) || undefined })); }} /><span>{fileName || 'Chọn tệp từ thiết bị của bạn'}</span></div><small id="apply-cv-help">PDF, DOC hoặc DOCX · Tối đa 5 MB · Tệp không được tải lên</small>{error('cv')}</div><div className="application-consent"><label><input name="consent" type="checkbox" required aria-invalid={!!errors.consent} aria-describedby={errors.consent ? 'apply-consent-error' : undefined} /><span>Tôi đồng ý trải nghiệm bước ứng tuyển mô phỏng và đã đọc <Link to="/privacy-policy" onClick={onClose}>chính sách bảo mật</Link>. <span aria-hidden="true">*</span></span></label>{error('consent')}</div><button className="btn application-submit" type="submit">Gửi hồ sơ mô phỏng <ArrowRight size={18} aria-hidden="true" /></button><p className="application-required">Các trường có dấu * là bắt buộc.</p></form>}</Modal>;
 }
 
 export function JobDetailPage() {
   const { slug } = useParams();
+  const t = useJobText();
   const job = jobs.find(item => item.slug === slug);
   const [applying, setApplying] = useState(false);
   useEffect(() => { setApplying(false); }, [slug]);
   if (!job) return <><PageHero title="Không tìm thấy việc làm" eyebrow="404" description="Vị trí này không có trong danh sách. Hãy khám phá những cơ hội khác." /><section className="section"><div className="container jobs-not-found"><ButtonLink to="/jobs">Xem tất cả việc làm</ButtonLink></div></section></>;
   const related = jobs.filter(item => item.id !== job.id && (!!item.internal === !!job.internal)).slice(0, 3);
-  return <><PageHero title={job.title} eyebrow={job.internal ? 'TUYỂN DỤNG NỘI BỘ · MINH HỌA' : 'CƠ HỘI VIỆC LÀM · MINH HỌA'} description={`${job.location} · ${job.type}`} image={HERO_IMAGE} /><section className="section jobs-detail-section"><div className="container"><Link className="jobs-back" to={job.internal ? '/careers' : '/jobs'}><ArrowLeft size={18} aria-hidden="true" />{job.internal ? 'Tuyển dụng nội bộ' : 'Tất cả việc làm'}</Link><div className="job-detail-layout"><div className="job-detail-body"><div className="job-detail-intro"><span className="eyebrow">MÃ VỊ TRÍ {job.id}</span><h2>{job.title}</h2><p>{job.intro}</p><div className="job-tags">{job.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div><section className="job-description-block"><h2>Mô tả công việc</h2><ul>{job.tasks.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Điều gì giúp bạn phù hợp?</h2><ul>{job.requirements.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Quyền lợi & sự đồng hành</h2><ul>{job.benefits.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Ba bước để bắt đầu</h2><ol className="job-steps"><li><span>01</span><div><strong>Chia sẻ mong muốn</strong><p>Chọn vị trí, điền thông tin cơ bản và địa điểm bạn quan tâm.</p></div></li><li><span>02</span><div><strong>Trao đổi với tư vấn viên</strong><p>Ở quy trình thực tế, đội tư vấn sẽ xác nhận yêu cầu và thông tin công việc.</p></div></li><li><span>03</span><div><strong>Sẵn sàng cho khởi đầu mới</strong><p>Hiểu rõ điều kiện làm việc trước khi quyết định nhận việc.</p></div></li></ol></section><DemoNote /></div><aside className="job-summary"><h2>Thông tin vị trí</h2><dl><div><dt><Wallet size={18} aria-hidden="true" />Thu nhập tham khảo</dt><dd className="job-summary-salary">{job.salary}</dd></div><div><dt><MapPin size={18} aria-hidden="true" />Địa điểm</dt><dd>{job.location}</dd></div><div><dt><Clock3 size={18} aria-hidden="true" />Hình thức</dt><dd>{job.type}</dd></div><div><dt><BriefcaseBusiness size={18} aria-hidden="true" />Nhóm công việc</dt><dd>{job.category}</dd></div></dl><p className="job-summary-demo">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p><button className="btn job-apply-button" type="button" onClick={() => setApplying(true)}>Ứng tuyển ngay <ArrowRight size={18} aria-hidden="true" /></button><SaveButton job={job} showLabel /><div className="job-help"><p>Cần thêm thông tin?</p><a href="tel:0364562868"><Phone size={16} aria-hidden="true" />0364 562 868</a><span>Đội ngũ Minh Đức sẵn sàng hỗ trợ</span></div></aside></div>{related.length > 0 && <section className="jobs-related"><SectionHeading eyebrow="KHÁM PHÁ THÊM" title="Có thể bạn quan tâm" /><div className="jobs-grid">{related.map(item => <JobCard key={item.id} job={item} />)}</div></section>}</div></section>{applying && <ApplicationDialog job={job} onClose={() => setApplying(false)} />}</>;
+  return <><PageHero title={job.title} eyebrow={job.internal ? 'TUYỂN DỤNG NỘI BỘ · MINH HỌA' : 'CƠ HỘI VIỆC LÀM · MINH HỌA'} description={`${t(job.location)} · ${t(job.type)}`} image={HERO_IMAGE} /><section className="section jobs-detail-section"><div className="container"><Link className="jobs-back" to={job.internal ? '/careers' : '/jobs'}><ArrowLeft size={18} aria-hidden="true" />{job.internal ? 'Tuyển dụng nội bộ' : 'Tất cả việc làm'}</Link><div className="job-detail-layout"><div className="job-detail-body"><div className="job-detail-intro"><span className="eyebrow">MÃ VỊ TRÍ {job.id}</span><h2>{job.title}</h2><p>{job.intro}</p><div className="job-tags">{job.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div><section className="job-description-block"><h2>Mô tả công việc</h2><ul>{job.tasks.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Điều gì giúp bạn phù hợp?</h2><ul>{job.requirements.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Quyền lợi & sự đồng hành</h2><ul>{job.benefits.map(item => <li key={item}>{item}</li>)}</ul></section><section className="job-description-block"><h2>Ba bước để bắt đầu</h2><ol className="job-steps"><li><span>01</span><div><strong>Chia sẻ mong muốn</strong><p>Chọn vị trí, điền thông tin cơ bản và địa điểm bạn quan tâm.</p></div></li><li><span>02</span><div><strong>Trao đổi với tư vấn viên</strong><p>Ở quy trình thực tế, đội tư vấn sẽ xác nhận yêu cầu và thông tin công việc.</p></div></li><li><span>03</span><div><strong>Sẵn sàng cho khởi đầu mới</strong><p>Hiểu rõ điều kiện làm việc trước khi quyết định nhận việc.</p></div></li></ol></section><DemoNote /></div><aside className="job-summary"><h2>Thông tin vị trí</h2><dl><div><dt><Wallet size={18} aria-hidden="true" />Thu nhập tham khảo</dt><dd className="job-summary-salary">{job.salary}</dd></div><div><dt><MapPin size={18} aria-hidden="true" />Địa điểm</dt><dd>{job.location}</dd></div><div><dt><Clock3 size={18} aria-hidden="true" />Hình thức</dt><dd>{job.type}</dd></div><div><dt><BriefcaseBusiness size={18} aria-hidden="true" />Nhóm công việc</dt><dd>{job.category}</dd></div><div><dt>Trạng thái</dt><dd>{job.status === 'closed' ? 'Đã đóng' : 'Đang tuyển'}</dd></div>{job.industrialPark && <div><dt>Khu công nghiệp</dt><dd>{job.industrialPark}</dd></div>}<div><dt>Ca làm việc</dt><dd>{job.shift} · {job.schedule}</dd></div></dl><p className="job-summary-demo">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>{job.status === 'closed' ? <p className="job-closed">Vị trí đã đóng, không nhận ứng tuyển.</p> : <button className="btn job-apply-button" type="button" onClick={() => { if (job.status !== 'closed') setApplying(true); }}>Ứng tuyển ngay <ArrowRight size={18} aria-hidden="true" /></button>}<SaveButton job={job} showLabel /><div className="job-help"><p>Cần thêm thông tin?</p><a href="tel:0364562868"><Phone size={16} aria-hidden="true" />0364 562 868</a><span>Đội ngũ Minh Đức sẵn sàng hỗ trợ</span></div></aside></div>{related.length > 0 && <section className="jobs-related"><SectionHeading eyebrow="KHÁM PHÁ THÊM" title="Có thể bạn quan tâm" /><div className="jobs-grid">{related.map(item => <JobCard key={item.id} job={item} />)}</div></section>}</div></section>{applying && job.status !== 'closed' && <ApplicationDialog job={job} onClose={() => setApplying(false)} />}</>;
 }

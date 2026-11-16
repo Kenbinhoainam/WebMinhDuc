@@ -1,0 +1,1196 @@
+{
+  "Tuyển sinh cao đẳng": {
+    "en": "College admissions",
+    "zh": "大专招生",
+    "ko": "전문대 입학",
+    "ja": "短期大学入学"
+  },
+  "Quản trị kinh doanh": {
+    "en": "Business administration",
+    "zh": "工商管理",
+    "ko": "경영학",
+    "ja": "経営管理"
+  },
+  "Công nghệ thông tin": {
+    "en": "Information technology",
+    "zh": "信息技术",
+    "ko": "정보 기술",
+    "ja": "情報技術"
+  },
+  "Kế toán": {
+    "en": "Accounting",
+    "zh": "会计",
+    "ko": "회계",
+    "ja": "会計"
+  },
+  "Từ xa": {
+    "en": "Distance learning",
+    "zh": "远程学习",
+    "ko": "원격 교육",
+    "ja": "遠隔学習"
+  },
+  "Chính quy": {
+    "en": "Full-time",
+    "zh": "全日制",
+    "ko": "정규 과정",
+    "ja": "全日制"
+  },
+  "Tìm hiểu kiến thức nền tảng về quản trị và vận hành kinh doanh.": {
+    "en": "Explore foundational knowledge of business management and operations.",
+    "zh": "了解企业管理和运营的基础知识。",
+    "ko": "경영 및 운영의 기초 지식을 알아보세요.",
+    "ja": "経営と事業運営の基礎知識を学びます。"
+  },
+  "Khám phá kiến thức nền tảng về công nghệ và ứng dụng.": {
+    "en": "Explore foundational knowledge of technology and its applications.",
+    "zh": "探索技术及应用的基础知识。",
+    "ko": "기술과 응용의 기초 지식을 살펴보세요.",
+    "ja": "技術と応用の基礎知識を学びます。"
+  },
+  "Tìm hiểu kiến thức cơ bản về kế toán và nghiệp vụ doanh nghiệp.": {
+    "en": "Learn the basics of accounting and business operations.",
+    "zh": "了解会计和企业业务的基础知识。",
+    "ko": "회계와 기업 업무의 기초를 알아보세요.",
+    "ja": "会計と企業実務の基礎を学びます。"
+  },
+  "Hình thức học từ xa phù hợp với người muốn chủ động sắp xếp thời gian học. Nội dung, thời lượng và điều kiện tuyển sinh cần được xác nhận với đơn vị đào tạo.": {
+    "en": "Distance learning suits those who want to arrange their own study time. Confirm the content, duration and admission requirements with the training provider.",
+    "zh": "远程学习适合希望自主安排学习时间的人。课程内容、学制和招生条件需向培训机构确认。",
+    "ko": "원격 교육은 학습 시간을 자율적으로 조정하려는 분에게 적합합니다. 내용, 기간 및 입학 요건은 교육기관에 확인해야 합니다.",
+    "ja": "遠隔学習は学習時間を自分で調整したい方に適しています。内容、期間、入学条件は教育機関に確認してください。"
+  },
+  "Hình thức chính quy dành cho người quan tâm đến môi trường học tập tập trung. Lịch học, điều kiện và nội dung cụ thể cần được xác nhận với đơn vị đào tạo.": {
+    "en": "Full-time study is for those interested in a structured learning environment. Confirm the schedule, requirements and content with the training provider.",
+    "zh": "全日制适合希望集中学习的人。课表、条件和具体内容需向培训机构确认。",
+    "ko": "정규 과정은 집중적인 학습 환경에 관심 있는 분을 위한 것입니다. 일정, 요건 및 내용은 교육기관에 확인해야 합니다.",
+    "ja": "全日制は集中的な学習環境を希望する方向けです。日程、条件、内容は教育機関に確認してください。"
+  },
+  "Chương trình minh họa hình thức học từ xa. Người học cần xác nhận chương trình, điều kiện và chi phí trước khi quyết định đăng ký.": {
+    "en": "This is an illustrative distance-learning program. Confirm the curriculum, requirements and fees before applying.",
+    "zh": "这是远程学习示例课程。申请前请确认课程、条件和费用。",
+    "ko": "원격 교육 예시 과정입니다. 지원 전 과정, 요건 및 비용을 확인하세요.",
+    "ja": "遠隔学習のサンプル課程です。申し込み前に内容、条件、費用を確認してください。"
+  },
+  "MINH HỌA": {
+    "en": "ILLUSTRATIVE",
+    "zh": "示例",
+    "ko": "예시",
+    "ja": "サンプル"
+  },
+  "Xem chương trình": {
+    "en": "View program",
+    "zh": "查看课程",
+    "ko": "과정 보기",
+    "ja": "課程を見る"
+  },
+  "BẮT ĐẦU TỪ ĐÂY": {
+    "en": "START HERE",
+    "zh": "从这里开始",
+    "ko": "여기서 시작",
+    "ja": "ここから始める"
+  },
+  "Hành trình học tập của bạn": {
+    "en": "Your learning journey",
+    "zh": "您的学习之旅",
+    "ko": "여러분의 학습 여정",
+    "ja": "あなたの学びの旅"
+  },
+  "Chọn tư vấn nếu bạn muốn tìm hiểu thêm, hoặc chọn hồ sơ để trải nghiệm bước đăng ký.": {
+    "en": "Choose consultation to learn more, or application to try the registration step.",
+    "zh": "选择咨询了解更多，或选择申请材料体验报名步骤。",
+    "ko": "자세한 내용을 원하면 상담을, 지원 절차를 체험하려면 서류를 선택하세요.",
+    "ja": "詳しく知りたい場合は相談を、申請手順を体験する場合は書類を選んでください。"
+  },
+  "Đây là bản mô phỏng. Thông tin và tệp chỉ được kiểm tra trên thiết bị, không được lưu hoặc tải lên. Không gửi giấy tờ thật.": {
+    "en": "This is a simulation. Information and files are checked only on your device and are not saved or uploaded. Do not use real documents.",
+    "zh": "这是模拟体验。信息和文件仅在设备上检查，不会保存或上传。请勿使用真实文件。",
+    "ko": "시뮬레이션입니다. 정보와 파일은 기기에서만 확인되며 저장하거나 업로드하지 않습니다. 실제 서류를 사용하지 마세요.",
+    "ja": "これはシミュレーションです。情報とファイルは端末内でのみ確認され、保存やアップロードはされません。本物の書類は使用しないでください。"
+  },
+  "Tư vấn tuyển sinh": {
+    "en": "Admissions consultation",
+    "zh": "招生咨询",
+    "ko": "입학 상담",
+    "ja": "入学相談"
+  },
+  "Hồ sơ đăng ký": {
+    "en": "Application documents",
+    "zh": "申请材料",
+    "ko": "지원 서류",
+    "ja": "申請書類"
+  },
+  "Đăng ký tư vấn tuyển sinh": {
+    "en": "Request admissions advice",
+    "zh": "申请招生咨询",
+    "ko": "입학 상담 신청",
+    "ja": "入学相談を申し込む"
+  },
+  "Hồ sơ đăng ký tuyển sinh": {
+    "en": "Admissions application",
+    "zh": "招生申请材料",
+    "ko": "입학 지원 서류",
+    "ja": "入学申請書類"
+  },
+  "Chia sẻ câu hỏi để trải nghiệm bước tư vấn.": {
+    "en": "Share your questions to try the consultation step.",
+    "zh": "填写问题以体验咨询步骤。",
+    "ko": "질문을 입력해 상담 단계를 체험하세요.",
+    "ja": "質問を入力して相談手順を体験してください。"
+  },
+  "Trải nghiệm bước chuẩn bị hồ sơ bằng tệp minh họa.": {
+    "en": "Try preparing an application using a sample file.",
+    "zh": "使用示例文件体验准备申请材料。",
+    "ko": "예시 파일로 서류 준비 단계를 체험하세요.",
+    "ja": "サンプルファイルで書類準備を体験してください。"
+  },
+  "Họ và tên": {
+    "en": "Full name",
+    "zh": "姓名",
+    "ko": "성명",
+    "ja": "氏名"
+  },
+  "Số điện thoại": {
+    "en": "Phone number",
+    "zh": "电话号码",
+    "ko": "전화번호",
+    "ja": "電話番号"
+  },
+  "Chương trình quan tâm": {
+    "en": "Program of interest",
+    "zh": "感兴趣的课程",
+    "ko": "관심 과정",
+    "ja": "希望する課程"
+  },
+  "Chọn chương trình": {
+    "en": "Choose a program",
+    "zh": "选择课程",
+    "ko": "과정 선택",
+    "ja": "課程を選択"
+  },
+  "Nội dung cần tư vấn": {
+    "en": "Your question",
+    "zh": "咨询内容",
+    "ko": "상담 내용",
+    "ja": "相談内容"
+  },
+  "Tệp hồ sơ minh họa": {
+    "en": "Sample application file",
+    "zh": "示例申请文件",
+    "ko": "예시 지원 파일",
+    "ja": "サンプル申請ファイル"
+  },
+  "PDF, DOC hoặc DOCX; tối đa 5 MB. Tệp chỉ ở trên thiết bị.": {
+    "en": "PDF, DOC or DOCX; maximum 5 MB. The file stays on your device.",
+    "zh": "PDF、DOC 或 DOCX，最大 5 MB。文件仅保留在设备上。",
+    "ko": "PDF, DOC 또는 DOCX, 최대 5 MB. 파일은 기기에만 남습니다.",
+    "ja": "PDF、DOC、DOCX、最大5 MB。ファイルは端末内にのみ保持されます。"
+  },
+  "Vui lòng chọn một tệp PDF, DOC hoặc DOCX có nội dung, không quá 5 MB.": {
+    "en": "Choose a nonempty PDF, DOC or DOCX file no larger than 5 MB.",
+    "zh": "请选择不超过 5 MB 的非空 PDF、DOC 或 DOCX 文件。",
+    "ko": "5 MB 이하의 비어 있지 않은 PDF, DOC 또는 DOCX 파일을 선택하세요.",
+    "ja": "5 MB以下の空でないPDF、DOC、DOCXファイルを選択してください。"
+  },
+  "Tôi hiểu đây là bản mô phỏng và đồng ý kiểm tra thông tin trên thiết bị.": {
+    "en": "I understand this is a simulation and agree to checking information on my device.",
+    "zh": "我了解这是模拟体验，同意在设备上检查信息。",
+    "ko": "시뮬레이션임을 이해하고 기기에서 정보를 확인하는 데 동의합니다.",
+    "ja": "シミュレーションであることを理解し、端末上で情報を確認することに同意します。"
+  },
+  "Mô phỏng gửi tư vấn": {
+    "en": "Simulate consultation request",
+    "zh": "模拟提交咨询",
+    "ko": "상담 요청 시뮬레이션",
+    "ja": "相談送信をシミュレート"
+  },
+  "Mô phỏng gửi hồ sơ": {
+    "en": "Simulate application submission",
+    "zh": "模拟提交申请",
+    "ko": "서류 제출 시뮬레이션",
+    "ja": "書類送信をシミュレート"
+  },
+  "Biểu mẫu đã được kiểm tra trên thiết bị. Không có thông tin hay tệp nào được gửi hoặc lưu.": {
+    "en": "The form was checked on your device. No information or files were sent or saved.",
+    "zh": "表单已在设备上检查，信息和文件均未发送或保存。",
+    "ko": "양식이 기기에서 확인되었습니다. 정보나 파일은 전송되거나 저장되지 않았습니다.",
+    "ja": "フォームは端末上で確認されました。情報やファイルは送信・保存されていません。"
+  },
+  "Xem quản trị minh họa": {
+    "en": "View admin demo",
+    "zh": "查看管理演示",
+    "ko": "관리 데모 보기",
+    "ja": "管理画面デモを見る"
+  },
+  "Thử lại biểu mẫu": {
+    "en": "Try the form again",
+    "zh": "再次填写表单",
+    "ko": "양식 다시 시도",
+    "ja": "フォームを再試行"
+  },
+  "Khám phá hướng học phù hợp với hành trình của bạn.": {
+    "en": "Explore a learning path that suits your journey.",
+    "zh": "探索适合您的学习方向。",
+    "ko": "자신에게 맞는 학습 경로를 찾아보세요.",
+    "ja": "あなたに合った学びの道を探しましょう。"
+  },
+  "CƠ HỘI HỌC TẬP": {
+    "en": "LEARNING OPPORTUNITIES",
+    "zh": "学习机会",
+    "ko": "학습 기회",
+    "ja": "学習の機会"
+  },
+  "Học theo cách phù hợp với bạn": {
+    "en": "Learn in a way that suits you",
+    "zh": "以适合您的方式学习",
+    "ko": "나에게 맞는 방식으로 배우기",
+    "ja": "自分に合った方法で学ぶ"
+  },
+  "Tìm hiểu các hình thức học từ xa và chính quy qua những chương trình minh họa.": {
+    "en": "Explore distance and full-time study through sample programs.",
+    "zh": "通过示例课程了解远程和全日制学习。",
+    "ko": "예시 과정을 통해 원격 및 정규 교육을 알아보세요.",
+    "ja": "サンプル課程を通じて遠隔学習と全日制を知りましょう。"
+  },
+  "Các chương trình dưới đây là dữ liệu giả định để trải nghiệm giao diện, chưa đại diện cho trường hoặc đợt tuyển sinh có thật. Điều kiện, học phí và văn bằng cần được xác nhận trước khi đăng ký.": {
+    "en": "These programs are fictional examples for this prototype and do not represent a real school or admissions cycle. Confirm requirements, fees and qualifications before applying.",
+    "zh": "以下课程为界面体验的虚构数据，不代表真实学校或招生。申请前请确认条件、学费和学历。",
+    "ko": "아래 과정은 화면 체험을 위한 가상 예시이며 실제 학교나 모집을 나타내지 않습니다. 지원 전에 요건, 학비 및 학위를 확인하세요.",
+    "ja": "以下は画面体験のための架空の課程であり、実在の学校や募集を示すものではありません。申し込み前に条件、学費、資格を確認してください。"
+  },
+  "Không tìm thấy chương trình": {
+    "en": "Program not found",
+    "zh": "未找到课程",
+    "ko": "과정을 찾을 수 없습니다",
+    "ja": "課程が見つかりません"
+  },
+  "Chương trình này không tồn tại.": {
+    "en": "This program does not exist.",
+    "zh": "该课程不存在。",
+    "ko": "해당 과정이 없습니다.",
+    "ja": "この課程は存在しません。"
+  },
+  "Xem tuyển sinh": {
+    "en": "View admissions",
+    "zh": "查看招生",
+    "ko": "입학 안내 보기",
+    "ja": "入学案内を見る"
+  },
+  "CHƯƠNG TRÌNH MINH HỌA": {
+    "en": "SAMPLE PROGRAM",
+    "zh": "示例课程",
+    "ko": "예시 과정",
+    "ja": "サンプル課程"
+  },
+  "Thêm một hướng đi cho tương lai": {
+    "en": "Another path to your future",
+    "zh": "为未来增添一个方向",
+    "ko": "미래를 위한 또 하나의 길",
+    "ja": "未来への新たな道"
+  },
+  "Đây là chương trình giả định, không gắn với trường cụ thể. Vui lòng xác nhận thông tin tuyển sinh trước khi đưa ra quyết định.": {
+    "en": "This fictional program is not affiliated with a specific school. Confirm admissions information before making a decision.",
+    "zh": "这是虚构课程，不关联任何学校。决定前请确认招生信息。",
+    "ko": "특정 학교와 연계되지 않은 가상 과정입니다. 결정 전에 입학 정보를 확인하세요.",
+    "ja": "特定の学校に所属しない架空の課程です。決定前に入学情報を確認してください。"
+  },
+  "Tìm hiểu và đăng ký": {
+    "en": "Learn more and apply",
+    "zh": "了解并申请",
+    "ko": "알아보고 신청하기",
+    "ja": "詳細を見て申し込む"
+  },
+  "Thông tin cần xác nhận": {
+    "en": "Information to confirm",
+    "zh": "需要确认的信息",
+    "ko": "확인할 정보",
+    "ja": "確認すべき情報"
+  },
+  "Đơn vị đào tạo và điều kiện tuyển sinh": {
+    "en": "Training provider and admission requirements",
+    "zh": "培训机构和招生条件",
+    "ko": "교육기관 및 입학 요건",
+    "ja": "教育機関と入学条件"
+  },
+  "Thời lượng, lịch học và hình thức học": {
+    "en": "Duration, schedule and study format",
+    "zh": "学制、课表和学习形式",
+    "ko": "기간, 일정 및 학습 방식",
+    "ja": "期間、日程、学習形式"
+  },
+  "Học phí, hồ sơ và văn bằng": {
+    "en": "Fees, documents and qualifications",
+    "zh": "学费、材料和学历",
+    "ko": "학비, 서류 및 학위",
+    "ja": "学費、書類、資格"
+  },
+  "Xem tất cả chương trình": {
+    "en": "View all programs",
+    "zh": "查看全部课程",
+    "ko": "모든 과정 보기",
+    "ja": "すべての課程を見る"
+  },
+  "Giới thiệu & cung ứng nhân lực": {
+    "en": "Recruitment and workforce supply",
+    "zh": "人才介绍与供应",
+    "ko": "인력 소개 및 공급",
+    "ja": "人材紹介・供給"
+  },
+  "Cho thuê lao động": {
+    "en": "Labor leasing",
+    "zh": "劳务派遣",
+    "ko": "인력 파견",
+    "ja": "人材派遣"
+  },
+  "Headhunt & lao động tay nghề": {
+    "en": "Headhunting and skilled workers",
+    "zh": "猎头与技能人才",
+    "ko": "헤드헌팅 및 숙련 인력",
+    "ja": "ヘッドハンティング・技能人材"
+  },
+  "Setup tổ chức & phần mềm doanh nghiệp": {
+    "en": "Organization setup and business software",
+    "zh": "组织架构与企业软件",
+    "ko": "조직 구축 및 기업 소프트웨어",
+    "ja": "組織構築・企業ソフトウェア"
+  },
+  "Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.": {
+    "en": "Connect workers and businesses based on actual needs.",
+    "zh": "根据实际需求连接劳动者与企业。",
+    "ko": "실제 수요에 따라 근로자와 기업을 연결합니다.",
+    "ja": "実際のニーズに応じて働き手と企業をつなぎます。"
+  },
+  "Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.": {
+    "en": "Discuss flexible workforce solutions for your operations.",
+    "zh": "洽谈灵活的人力方案，支持运营计划。",
+    "ko": "운영 계획에 맞는 유연한 인력 방안을 논의합니다.",
+    "ja": "事業計画に合わせた柔軟な人材ソリューションを相談します。"
+  },
+  "Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.": {
+    "en": "Find experienced people with the right skills.",
+    "zh": "寻找具备合适经验和技能的人才。",
+    "ko": "적합한 경험과 기술을 갖춘 인력을 찾습니다.",
+    "ja": "適切な経験と技能を持つ人材を探します。"
+  },
+  "Tìm hiểu cơ hội học tập từ xa và chính quy.": {
+    "en": "Explore distance and full-time learning opportunities.",
+    "zh": "了解远程和全日制学习机会。",
+    "ko": "원격 및 정규 학습 기회를 알아보세요.",
+    "ja": "遠隔学習と全日制の機会を探します。"
+  },
+  "Cùng làm rõ cấu trúc, quy trình và nhu cầu phần mềm quản lý.": {
+    "en": "Clarify organizational structure, processes and management software needs together.",
+    "zh": "共同明确组织结构、流程和管理软件需求。",
+    "ko": "조직 구조, 프로세스 및 관리 소프트웨어 요구를 함께 파악합니다.",
+    "ja": "組織構造、業務フロー、管理ソフトのニーズを明確にします。"
+  },
+  "Mở thêm cơ hội học tập.": {
+    "en": "Open up more learning opportunities.",
+    "zh": "拓展学习机会。",
+    "ko": "더 많은 학습 기회를 열어보세요.",
+    "ja": "学びの機会を広げましょう。"
+  },
+  "Khám phá các chương trình minh họa theo hình thức từ xa và chính quy.": {
+    "en": "Explore sample distance and full-time programs.",
+    "zh": "探索远程和全日制示例课程。",
+    "ko": "원격 및 정규 예시 과정을 살펴보세요.",
+    "ja": "遠隔学習と全日制のサンプル課程をご覧ください。"
+  },
+  "Tìm hiểu tuyển sinh": {
+    "en": "Explore admissions",
+    "zh": "了解招生",
+    "ko": "입학 안내 알아보기",
+    "ja": "入学案内を見る"
+  },
+  "Hoàn tất mô phỏng": {
+    "en": "Simulation complete",
+    "zh": "模拟完成",
+    "ko": "시뮬레이션 완료",
+    "ja": "シミュレーション完了"
+  },
+  "Hình thức học": {
+    "en": "Study format",
+    "zh": "学习形式",
+    "ko": "학습 방식",
+    "ja": "学習形式"
+  },
+  "Chọn chương trình để xem hình thức học": {
+    "en": "Choose a program to see its format",
+    "zh": "选择课程以查看学习形式",
+    "ko": "학습 방식을 보려면 과정을 선택하세요",
+    "ja": "課程を選択して学習形式を確認してください"
+  },
+  "Từ xa · Chương trình minh họa": {
+    "en": "Distance learning · Sample program",
+    "zh": "远程学习 · 示例课程",
+    "ko": "원격 교육 · 예시 과정",
+    "ja": "遠隔学習・サンプル課程"
+  },
+  "Chính quy · Chương trình minh họa": {
+    "en": "Full-time · Sample program",
+    "zh": "全日制 · 示例课程",
+    "ko": "정규 과정 · 예시 과정",
+    "ja": "全日制・サンプル課程"
+  },
+  "Vui lòng nhập số điện thoại hợp lệ.": {
+    "en": "Please enter a valid phone number.",
+    "zh": "请输入有效的电话号码。",
+    "ko": "유효한 전화번호를 입력하세요.",
+    "ja": "有効な電話番号を入力してください。"
+  },
+  "Vui lòng nhập nội dung.": {
+    "en": "Please enter a value.",
+    "zh": "请输入内容。",
+    "ko": "내용을 입력하세요.",
+    "ja": "内容を入力してください。"
+  },
+  "Hiểu nhu cầu": {
+    "en": "Understand needs",
+    "zh": "了解需求",
+    "ko": "요구 파악",
+    "ja": "ニーズの把握"
+  },
+  "Kết nối phù hợp": {
+    "en": "Make the right connection",
+    "zh": "精准匹配",
+    "ko": "적합한 연결",
+    "ja": "適切なマッチング"
+  },
+  "Đồng hành tiếp nhận": {
+    "en": "Support onboarding",
+    "zh": "协助入职",
+    "ko": "입사 지원",
+    "ja": "受け入れ支援"
+  },
+  "Linh hoạt": {
+    "en": "Flexible",
+    "zh": "灵活",
+    "ko": "유연성",
+    "ja": "柔軟性"
+  },
+  "Rõ trách nhiệm": {
+    "en": "Clear responsibilities",
+    "zh": "明确责任",
+    "ko": "명확한 책임",
+    "ja": "責任の明確化"
+  },
+  "Theo dõi": {
+    "en": "Follow-up",
+    "zh": "跟进",
+    "ko": "후속 관리",
+    "ja": "フォローアップ"
+  },
+  "Rõ tiêu chí": {
+    "en": "Clear criteria",
+    "zh": "明确标准",
+    "ko": "명확한 기준",
+    "ja": "明確な基準"
+  },
+  "Tìm kiếm có định hướng": {
+    "en": "Focused search",
+    "zh": "有针对性的搜索",
+    "ko": "목적에 맞는 검색",
+    "ja": "的を絞った検索"
+  },
+  "Phối hợp tuyển chọn": {
+    "en": "Coordinate selection",
+    "zh": "协助选拔",
+    "ko": "선발 협력",
+    "ja": "選考の連携"
+  },
+  "Chọn hướng học": {
+    "en": "Choose your path",
+    "zh": "选择学习方向",
+    "ko": "학습 방향 선택",
+    "ja": "学習の方向を選ぶ"
+  },
+  "Được tư vấn": {
+    "en": "Get advice",
+    "zh": "获取咨询",
+    "ko": "상담 받기",
+    "ja": "相談を受ける"
+  },
+  "Chuẩn bị hồ sơ": {
+    "en": "Prepare documents",
+    "zh": "准备材料",
+    "ko": "서류 준비",
+    "ja": "書類を準備する"
+  },
+  "Hiểu hiện trạng": {
+    "en": "Understand the current situation",
+    "zh": "了解现状",
+    "ko": "현황 파악",
+    "ja": "現状の把握"
+  },
+  "Rõ phương án": {
+    "en": "Clear plan",
+    "zh": "明确方案",
+    "ko": "명확한 방안",
+    "ja": "明確な方針"
+  },
+  "Hỗ trợ vận hành": {
+    "en": "Support operations",
+    "zh": "支持运营",
+    "ko": "운영 지원",
+    "ja": "運営を支援"
+  },
+  "Tiếp nhận nhu cầu": {
+    "en": "Understand requirements",
+    "zh": "接收需求",
+    "ko": "요구 접수",
+    "ja": "ニーズの受付"
+  },
+  "Thống nhất kế hoạch": {
+    "en": "Agree on a plan",
+    "zh": "确定计划",
+    "ko": "계획 합의",
+    "ja": "計画の合意"
+  },
+  "Tìm nguồn và tư vấn": {
+    "en": "Source and advise",
+    "zh": "寻找资源并咨询",
+    "ko": "인력 발굴 및 상담",
+    "ja": "人材の発掘と相談"
+  },
+  "Kết nối, phỏng vấn": {
+    "en": "Connect and interview",
+    "zh": "对接与面试",
+    "ko": "연결 및 면접",
+    "ja": "紹介と面接"
+  },
+  "Theo dõi phản hồi": {
+    "en": "Follow up on feedback",
+    "zh": "跟进反馈",
+    "ko": "피드백 확인",
+    "ja": "フィードバックの確認"
+  },
+  "Tìm hiểu nhu cầu": {
+    "en": "Understand needs",
+    "zh": "了解需求",
+    "ko": "요구 파악",
+    "ja": "ニーズの把握"
+  },
+  "Đánh giá phương án": {
+    "en": "Evaluate options",
+    "zh": "评估方案",
+    "ko": "방안 평가",
+    "ja": "方針の評価"
+  },
+  "Thống nhất điều kiện": {
+    "en": "Agree on terms",
+    "zh": "商定条件",
+    "ko": "조건 합의",
+    "ja": "条件の合意"
+  },
+  "Phối hợp triển khai": {
+    "en": "Coordinate implementation",
+    "zh": "协调实施",
+    "ko": "실행 협력",
+    "ja": "実施の連携"
+  },
+  "Theo dõi và phản hồi": {
+    "en": "Follow up and review",
+    "zh": "跟进与反馈",
+    "ko": "후속 관리 및 피드백",
+    "ja": "フォローアップとフィードバック"
+  },
+  "Làm rõ vị trí": {
+    "en": "Define the role",
+    "zh": "明确职位",
+    "ko": "직무 명확화",
+    "ja": "職務の明確化"
+  },
+  "Xác định tiêu chí": {
+    "en": "Set criteria",
+    "zh": "确定标准",
+    "ko": "기준 설정",
+    "ja": "基準の設定"
+  },
+  "Tìm kiếm ứng viên": {
+    "en": "Find candidates",
+    "zh": "寻找候选人",
+    "ko": "후보자 검색",
+    "ja": "候補者の検索"
+  },
+  "Theo dõi kết quả": {
+    "en": "Follow up on results",
+    "zh": "跟进结果",
+    "ko": "결과 확인",
+    "ja": "結果の確認"
+  },
+  "Tìm hiểu chương trình": {
+    "en": "Explore programs",
+    "zh": "了解课程",
+    "ko": "과정 알아보기",
+    "ja": "課程を調べる"
+  },
+  "Chọn hình thức học": {
+    "en": "Choose a study format",
+    "zh": "选择学习形式",
+    "ko": "학습 방식 선택",
+    "ja": "学習形式を選ぶ"
+  },
+  "Nhận tư vấn": {
+    "en": "Get advice",
+    "zh": "获取咨询",
+    "ko": "상담 받기",
+    "ja": "相談を受ける"
+  },
+  "Xác nhận thông tin": {
+    "en": "Confirm information",
+    "zh": "确认信息",
+    "ko": "정보 확인",
+    "ja": "情報を確認する"
+  },
+  "Lắng nghe hiện trạng": {
+    "en": "Understand the current situation",
+    "zh": "了解现状",
+    "ko": "현황 파악",
+    "ja": "現状を把握する"
+  },
+  "Làm rõ mục tiêu": {
+    "en": "Clarify objectives",
+    "zh": "明确目标",
+    "ko": "목표 명확화",
+    "ja": "目標の明確化"
+  },
+  "Trao đổi phương án": {
+    "en": "Discuss options",
+    "zh": "讨论方案",
+    "ko": "방안 논의",
+    "ja": "方針の相談"
+  },
+  "Thống nhất phạm vi": {
+    "en": "Agree on scope",
+    "zh": "商定范围",
+    "ko": "범위 합의",
+    "ja": "範囲の合意"
+  },
+  "Theo dõi và điều chỉnh": {
+    "en": "Follow up and adjust",
+    "zh": "跟进与调整",
+    "ko": "후속 관리 및 조정",
+    "ja": "確認と調整"
+  },
+  "Minh Đức tiếp nhận nhu cầu tuyển dụng, tìm nguồn và giới thiệu người lao động phù hợp với công việc và điều kiện của doanh nghiệp.": {
+    "en": "Minh Đức receives hiring requirements, sources candidates and introduces workers suited to the role and business conditions.",
+    "zh": "明德接收招聘需求、寻找资源并介绍适合岗位和企业条件的劳动者。",
+    "ko": "Minh Đức는 채용 요구를 접수하고 인력을 발굴하여 업무와 기업 조건에 맞는 근로자를 소개합니다.",
+    "ja": "Minh Đứcは採用ニーズを受け、人材を探し、業務と企業条件に合う働き手を紹介します。"
+  },
+  "Dành cho doanh nghiệp cần bổ sung nhân lực và người lao động tìm kiếm cơ hội việc làm.": {
+    "en": "For businesses seeking workers and people seeking employment.",
+    "zh": "面向需要补充人力的企业和求职者。",
+    "ko": "인력 충원이 필요한 기업과 일자리를 찾는 근로자를 위한 서비스입니다.",
+    "ja": "人材を必要とする企業と仕事を探す方向けです。"
+  },
+  "Dịch vụ cho thuê lao động hướng đến nhu cầu nhân sự theo thời gian và phạm vi công việc được các bên thống nhất.": {
+    "en": "Labor leasing addresses staffing needs for a period and scope agreed by the parties.",
+    "zh": "劳务派遣服务按各方商定的期限和工作范围满足人力需求。",
+    "ko": "인력 파견은 당사자가 합의한 기간과 업무 범위에 따른 인력 수요를 지원합니다.",
+    "ja": "人材派遣は、関係者が合意した期間と業務範囲に応じた人材ニーズに対応します。"
+  },
+  "Dành cho doanh nghiệp cần tìm hiểu phương án bổ sung nhân lực linh hoạt.": {
+    "en": "For businesses exploring flexible staffing options.",
+    "zh": "面向了解灵活人力补充方案的企业。",
+    "ko": "유연한 인력 충원 방안을 찾는 기업을 위한 서비스입니다.",
+    "ja": "柔軟な人員補充を検討する企業向けです。"
+  },
+  "Minh Đức hỗ trợ tìm kiếm ứng viên theo yêu cầu vị trí, kinh nghiệm và kỹ năng, từ lao động tay nghề đến các vai trò cần tuyển chọn chuyên sâu.": {
+    "en": "Minh Đức helps find candidates based on role, experience and skills, from skilled workers to specialist hires.",
+    "zh": "明德根据职位、经验和技能要求寻找候选人，涵盖技能工人和专业人才。",
+    "ko": "Minh Đức는 숙련 인력부터 전문 채용까지 직무, 경력 및 기술 요건에 맞는 후보자 검색을 지원합니다.",
+    "ja": "Minh Đứcは技能人材から専門職まで、職務、経験、技能に応じた候補者探しを支援します。"
+  },
+  "Dành cho doanh nghiệp tìm nhân sự tay nghề và ứng viên muốn tìm cơ hội phù hợp.": {
+    "en": "For businesses seeking skilled staff and candidates seeking suitable opportunities.",
+    "zh": "面向寻找技能人才的企业和寻求合适机会的候选人。",
+    "ko": "숙련 인력을 찾는 기업과 적합한 기회를 찾는 지원자를 위한 서비스입니다.",
+    "ja": "技能人材を探す企業と適切な機会を求める候補者向けです。"
+  },
+  "Minh Đức giới thiệu thông tin tuyển sinh và hỗ trợ người học tìm hiểu hình thức học, điều kiện và các bước chuẩn bị hồ sơ.": {
+    "en": "Minh Đức shares admissions information and helps learners understand study formats, requirements and application preparation.",
+    "zh": "明德介绍招生信息，帮助学习者了解学习形式、条件和材料准备步骤。",
+    "ko": "Minh Đức는 입학 정보를 소개하고 학습 방식, 요건 및 서류 준비를 안내합니다.",
+    "ja": "Minh Đứcは入学情報を紹介し、学習形式、条件、書類準備の確認を支援します。"
+  },
+  "Dành cho người quan tâm đến các chương trình cao đẳng từ xa hoặc chính quy.": {
+    "en": "For people interested in distance or full-time college programs.",
+    "zh": "面向关注远程或全日制大专课程的人。",
+    "ko": "원격 또는 정규 전문대 과정에 관심 있는 분을 위한 서비스입니다.",
+    "ja": "遠隔または全日制の短期大学課程に関心のある方向けです。"
+  },
+  "Minh Đức trao đổi cùng doanh nghiệp về thiết lập tổ chức, quy trình làm việc và nhu cầu phần mềm hỗ trợ vận hành.": {
+    "en": "Minh Đức discusses organizational setup, workflows and operational software needs with businesses.",
+    "zh": "明德与企业讨论组织建设、工作流程和运营软件需求。",
+    "ko": "Minh Đức는 기업과 조직 구축, 업무 프로세스 및 운영 소프트웨어 요구를 논의합니다.",
+    "ja": "Minh Đứcは企業と組織構築、業務フロー、運営ソフトのニーズを話し合います。"
+  },
+  "Dành cho doanh nghiệp muốn rà soát tổ chức và công cụ quản lý.": {
+    "en": "For businesses reviewing their organization and management tools.",
+    "zh": "面向希望审视组织和管理工具的企业。",
+    "ko": "조직과 관리 도구를 검토하려는 기업을 위한 서비스입니다.",
+    "ja": "組織と管理ツールを見直したい企業向けです。"
+  },
+  "Làm rõ vị trí, địa điểm, số lượng và điều kiện làm việc.": {
+    "en": "Clarify the role, location, headcount and working conditions.",
+    "zh": "明确职位、地点、人数和工作条件。",
+    "ko": "직무, 위치, 인원 및 근무 조건을 명확히 합니다.",
+    "ja": "職務、場所、人数、勤務条件を明確にします。"
+  },
+  "Tư vấn và sàng lọc dựa trên thông tin hai bên cung cấp.": {
+    "en": "Advise and screen based on information from both parties.",
+    "zh": "根据双方提供的信息进行咨询和筛选。",
+    "ko": "양측이 제공한 정보를 바탕으로 상담하고 선별합니다.",
+    "ja": "双方の情報に基づき相談と選考を行います。"
+  },
+  "Hướng dẫn các bước trao đổi, hồ sơ và nhận việc.": {
+    "en": "Guide the discussion, paperwork and onboarding steps.",
+    "zh": "指导沟通、材料和入职步骤。",
+    "ko": "상담, 서류 및 입사 절차를 안내합니다.",
+    "ja": "相談、書類、入社の手順を案内します。"
+  },
+  "Trao đổi thời gian, quy mô và yêu cầu công việc.": {
+    "en": "Discuss timing, scale and job requirements.",
+    "zh": "讨论时间、规模和工作要求。",
+    "ko": "기간, 규모 및 업무 요건을 논의합니다.",
+    "ja": "期間、規模、業務要件を相談します。"
+  },
+  "Làm rõ phạm vi phối hợp và đầu mối quản lý.": {
+    "en": "Clarify the scope of coordination and management contacts.",
+    "zh": "明确合作范围和管理联系人。",
+    "ko": "협력 범위와 관리 담당자를 명확히 합니다.",
+    "ja": "連携範囲と管理窓口を明確にします。"
+  },
+  "Cùng cập nhật tình hình triển khai và nhu cầu điều chỉnh.": {
+    "en": "Review progress and any need for adjustment together.",
+    "zh": "共同更新实施情况和调整需求。",
+    "ko": "진행 상황과 조정 필요 사항을 함께 확인합니다.",
+    "ja": "進捗と調整の必要性を共に確認します。"
+  },
+  "Thống nhất kỹ năng, kinh nghiệm và yêu cầu công việc.": {
+    "en": "Agree on skills, experience and job requirements.",
+    "zh": "确定技能、经验和岗位要求。",
+    "ko": "기술, 경력 및 직무 요건에 합의합니다.",
+    "ja": "技能、経験、職務要件を合意します。"
+  },
+  "Tiếp cận ứng viên theo chân dung vị trí.": {
+    "en": "Reach candidates based on the role profile.",
+    "zh": "根据职位画像接触候选人。",
+    "ko": "직무 프로필에 맞는 후보자에게 접근합니다.",
+    "ja": "職務像に基づいて候補者に働きかけます。"
+  },
+  "Hỗ trợ trao đổi thông tin và sắp xếp các bước tiếp theo.": {
+    "en": "Support information exchange and arrange next steps.",
+    "zh": "协助信息交流并安排后续步骤。",
+    "ko": "정보 교환과 다음 단계 준비를 지원합니다.",
+    "ja": "情報交換と次の手順の調整を支援します。"
+  },
+  "Tìm hiểu hình thức và lĩnh vực phù hợp với mục tiêu.": {
+    "en": "Explore formats and fields that suit your goals.",
+    "zh": "了解符合目标的学习形式和领域。",
+    "ko": "목표에 맞는 학습 방식과 분야를 알아봅니다.",
+    "ja": "目標に合う形式と分野を探します。"
+  },
+  "Trao đổi câu hỏi trước khi quyết định đăng ký.": {
+    "en": "Discuss your questions before deciding to apply.",
+    "zh": "决定申请前咨询问题。",
+    "ko": "지원 결정 전에 질문을 상담합니다.",
+    "ja": "申し込みを決める前に質問を相談します。"
+  },
+  "Tìm hiểu các bước và giấy tờ cần xác minh.": {
+    "en": "Learn which steps and documents need confirmation.",
+    "zh": "了解需要确认的步骤和材料。",
+    "ko": "확인이 필요한 절차와 서류를 알아봅니다.",
+    "ja": "確認が必要な手順と書類を調べます。"
+  },
+  "Lắng nghe mục tiêu, nhân sự và quy trình hiện có.": {
+    "en": "Understand existing goals, staff and processes.",
+    "zh": "了解现有目标、人员和流程。",
+    "ko": "현재 목표, 인력 및 프로세스를 파악합니다.",
+    "ja": "現在の目標、人員、業務フローを把握します。"
+  },
+  "Xác định phạm vi, ưu tiên và cách phối hợp.": {
+    "en": "Define scope, priorities and how to work together.",
+    "zh": "确定范围、优先事项和合作方式。",
+    "ko": "범위, 우선순위 및 협력 방식을 정합니다.",
+    "ja": "範囲、優先事項、連携方法を定めます。"
+  },
+  "Trao đổi nhu cầu phần mềm phù hợp với thực tế.": {
+    "en": "Discuss software needs suited to your situation.",
+    "zh": "讨论适合实际情况的软件需求。",
+    "ko": "실제 상황에 맞는 소프트웨어 요구를 논의합니다.",
+    "ja": "実情に合うソフトウェアのニーズを相談します。"
+  },
+  "Tìm kiếm và kết nối nhân sự có kinh nghiệm, kỹ năng phù hợp.": {
+    "en": "Find and connect experienced people with the right skills.",
+    "zh": "寻找并对接经验和技能合适的人才。",
+    "ko": "적합한 경험과 기술을 갖춘 인력을 찾아 연결합니다.",
+    "ja": "適切な経験と技能を持つ人材を探してつなぎます。"
+  },
+  "Cần cung cấp thông tin gì?": {
+    "en": "What information is needed?",
+    "zh": "需要提供什么信息？",
+    "ko": "어떤 정보가 필요한가요?",
+    "ja": "どのような情報が必要ですか？"
+  },
+  "Vị trí, số lượng, địa điểm, ca làm và thời gian cần người sẽ giúp làm rõ nhu cầu.": {
+    "en": "The role, headcount, location, shift and required start date help clarify your needs.",
+    "zh": "职位、人数、地点、班次和用人时间有助于明确需求。",
+    "ko": "직무, 인원, 위치, 교대 및 필요 시기를 알려주시면 요구를 파악하는 데 도움이 됩니다.",
+    "ja": "職務、人数、場所、シフト、必要時期をお知らせいただくとニーズを把握できます。"
+  },
+  "Có hỗ trợ tuyển theo đợt không?": {
+    "en": "Can you support phased hiring?",
+    "zh": "支持分批招聘吗？",
+    "ko": "단계별 채용을 지원하나요?",
+    "ja": "段階的な採用に対応できますか？"
+  },
+  "Có thể trao đổi kế hoạch theo từng đợt; khả năng đáp ứng được xác nhận sau khi tìm hiểu nhu cầu.": {
+    "en": "We can discuss a phased plan; availability is confirmed after reviewing your needs.",
+    "zh": "可以讨论分批计划；了解需求后确认能否满足。",
+    "ko": "단계별 계획을 논의할 수 있으며, 요구를 검토한 후 지원 가능 여부를 확인합니다.",
+    "ja": "段階ごとの計画を相談できます。対応可能かどうかはニーズを確認した後にお伝えします。"
+  },
+  "Chi phí được xác định thế nào?": {
+    "en": "How are fees determined?",
+    "zh": "如何确定费用？",
+    "ko": "비용은 어떻게 정해지나요?",
+    "ja": "費用はどのように決まりますか？"
+  },
+  "Phạm vi và chi phí được thống nhất theo từng yêu cầu cụ thể.": {
+    "en": "Scope and fees are agreed for each specific request.",
+    "zh": "范围和费用根据具体需求商定。",
+    "ko": "범위와 비용은 각 요청에 따라 합의합니다.",
+    "ja": "範囲と費用は個別のご依頼に応じて合意します。"
+  },
+  "Có thể thuê theo thời hạn không?": {
+    "en": "Can workers be leased for a fixed period?",
+    "zh": "可以按期限派遣吗？",
+    "ko": "정해진 기간 동안 인력을 이용할 수 있나요?",
+    "ja": "期間を定めて派遣を利用できますか？"
+  },
+  "Thời hạn và khả năng đáp ứng được trao đổi theo nhu cầu cụ thể.": {
+    "en": "The term and availability are discussed based on your needs.",
+    "zh": "期限和可行性根据具体需求商议。",
+    "ko": "기간과 지원 가능 여부는 구체적인 요구에 따라 논의합니다.",
+    "ja": "期間と対応可能性は具体的なニーズに応じて相談します。"
+  },
+  "Điều kiện triển khai là gì?": {
+    "en": "What are the conditions for implementation?",
+    "zh": "实施条件是什么？",
+    "ko": "진행 조건은 무엇인가요?",
+    "ja": "実施条件は何ですか？"
+  },
+  "Các bên cần xác minh ngành nghề, điều kiện pháp lý và trách nhiệm trước khi ký kết.": {
+    "en": "The parties must verify permitted work, legal conditions and responsibilities before signing.",
+    "zh": "签约前各方需核实行业、法律条件和责任。",
+    "ko": "계약 전에 당사자는 업종, 법적 조건 및 책임을 확인해야 합니다.",
+    "ja": "契約前に関係者は業種、法的条件、責任を確認する必要があります。"
+  },
+  "Chi phí phụ thuộc vào phạm vi, thời gian và điều kiện đã thống nhất.": {
+    "en": "Fees depend on the agreed scope, duration and conditions.",
+    "zh": "费用取决于商定的范围、时间和条件。",
+    "ko": "비용은 합의된 범위, 기간 및 조건에 따라 달라집니다.",
+    "ja": "費用は合意した範囲、期間、条件によって異なります。"
+  },
+  "Vị trí nào có thể trao đổi?": {
+    "en": "Which roles can be discussed?",
+    "zh": "可以咨询哪些职位？",
+    "ko": "어떤 직무를 문의할 수 있나요?",
+    "ja": "どのような職種を相談できますか？"
+  },
+  "Doanh nghiệp có thể chia sẻ yêu cầu cụ thể để đánh giá khả năng hỗ trợ.": {
+    "en": "Businesses can share specific requirements so we can assess how we can help.",
+    "zh": "企业可以提供具体要求，以便评估支持能力。",
+    "ko": "기업이 구체적인 요구를 공유하면 지원 가능 여부를 검토합니다.",
+    "ja": "企業が具体的な要件を共有することで、支援可能性を検討できます。"
+  },
+  "Ứng viên cần chuẩn bị gì?": {
+    "en": "What should candidates prepare?",
+    "zh": "候选人需要准备什么？",
+    "ko": "지원자는 무엇을 준비해야 하나요?",
+    "ja": "候補者は何を準備すればよいですか？"
+  },
+  "Thông tin về kinh nghiệm, kỹ năng và mong muốn giúp việc tư vấn phù hợp hơn.": {
+    "en": "Information about your experience, skills and goals helps us offer relevant advice.",
+    "zh": "经验、技能和意愿信息有助于提供更合适的咨询。",
+    "ko": "경력, 기술 및 희망 사항을 알려주시면 적합한 상담에 도움이 됩니다.",
+    "ja": "経験、技能、希望に関する情報があると、より適切な相談につながります。"
+  },
+  "Thời gian tuyển là bao lâu?": {
+    "en": "How long does hiring take?",
+    "zh": "招聘需要多长时间？",
+    "ko": "채용에는 얼마나 걸리나요?",
+    "ja": "採用にはどのくらい時間がかかりますか？"
+  },
+  "Thời gian phụ thuộc vào vị trí, thị trường và yêu cầu tuyển chọn.": {
+    "en": "Timing depends on the role, market and selection requirements.",
+    "zh": "时间取决于职位、市场和选拔要求。",
+    "ko": "기간은 직무, 시장 및 선발 요건에 따라 달라집니다.",
+    "ja": "期間は職種、市場、選考要件によって異なります。"
+  },
+  "Có những hình thức nào?": {
+    "en": "What study formats are available?",
+    "zh": "有哪些学习形式？",
+    "ko": "어떤 학습 방식이 있나요?",
+    "ja": "どのような学習形式がありますか？"
+  },
+  "Trang tuyển sinh giới thiệu các ví dụ từ xa và chính quy.": {
+    "en": "The admissions page presents examples of distance and full-time study.",
+    "zh": "招生页面介绍远程和全日制学习示例。",
+    "ko": "입학 안내 페이지에서 원격 및 정규 과정 예시를 소개합니다.",
+    "ja": "入学案内では遠隔学習と全日制の例を紹介しています。"
+  },
+  "Thông tin chương trình đã chính thức chưa?": {
+    "en": "Is the program information official?",
+    "zh": "课程信息是正式的吗？",
+    "ko": "과정 정보가 공식적인가요?",
+    "ja": "課程情報は正式なものですか？"
+  },
+  "Các chương trình trên prototype là dữ liệu minh họa, chưa gắn với trường cụ thể.": {
+    "en": "The programs in this prototype are illustrative and are not affiliated with a specific school.",
+    "zh": "原型中的课程仅为示例，不关联任何学校。",
+    "ko": "프로토타입의 과정은 예시이며 특정 학교와 연결되지 않습니다.",
+    "ja": "このプロトタイプの課程はサンプルで、特定の学校には所属していません。"
+  },
+  "Làm sao đăng ký?": {
+    "en": "How do I apply?",
+    "zh": "如何申请？",
+    "ko": "어떻게 신청하나요?",
+    "ja": "どのように申し込みますか？"
+  },
+  "Bạn có thể dùng biểu mẫu tư vấn hoặc hồ sơ minh họa trên trang tuyển sinh.": {
+    "en": "You can use the sample consultation or application form on the admissions page.",
+    "zh": "您可以使用招生页面上的示例咨询或申请表。",
+    "ko": "입학 페이지에서 상담 또는 지원 예시 양식을 이용할 수 있습니다.",
+    "ja": "入学案内ページの相談または申請サンプルフォームを利用できます。"
+  },
+  "Dịch vụ bao gồm những gì?": {
+    "en": "What does the service include?",
+    "zh": "服务包括什么？",
+    "ko": "서비스에는 무엇이 포함되나요?",
+    "ja": "サービスには何が含まれますか？"
+  },
+  "Phạm vi tổ chức, quy trình và phần mềm được thống nhất theo nhu cầu cụ thể.": {
+    "en": "The scope of organizational, process and software work is agreed based on your needs.",
+    "zh": "组织、流程和软件的范围根据具体需求商定。",
+    "ko": "조직, 프로세스 및 소프트웨어 범위는 구체적인 요구에 따라 합의합니다.",
+    "ja": "組織、業務フロー、ソフトウェアの範囲は具体的なニーズに応じて合意します。"
+  },
+  "Có thể trao đổi trước không?": {
+    "en": "Can we discuss our needs first?",
+    "zh": "可以先进行沟通吗？",
+    "ko": "먼저 상담할 수 있나요?",
+    "ja": "事前に相談できますか？"
+  },
+  "Có. Hãy liên hệ và trình bày ngắn gọn vấn đề cần hỗ trợ.": {
+    "en": "Yes. Contact us and briefly describe the issue you need help with.",
+    "zh": "可以。请联系我们并简要说明需要帮助的问题。",
+    "ko": "네. 연락하여 도움이 필요한 문제를 간단히 설명해 주세요.",
+    "ja": "はい。お問い合わせのうえ、支援が必要な問題を簡潔にお伝えください。"
+  },
+  "Có thay thế tư vấn pháp lý không?": {
+    "en": "Does this replace legal advice?",
+    "zh": "这能替代法律咨询吗？",
+    "ko": "법률 자문을 대신하나요?",
+    "ja": "法的助言の代わりになりますか？"
+  },
+  "Nội dung tư vấn tổng quát không thay thế ý kiến pháp lý chuyên biệt.": {
+    "en": "General advice does not replace specialist legal advice.",
+    "zh": "一般咨询不能替代专业法律意见。",
+    "ko": "일반 상담은 전문 법률 자문을 대신하지 않습니다.",
+    "ja": "一般的な相談は専門的な法的助言に代わるものではありません。"
+  },
+  "Khám phá chương trình tuyển sinh": {
+    "en": "Explore admissions programs",
+    "zh": "探索招生课程",
+    "ko": "입학 과정 살펴보기",
+    "ja": "入学課程を見る"
+  },
+  "Mục đích đăng ký": {
+    "en": "Purpose of registration",
+    "zh": "申请目的",
+    "ko": "신청 목적",
+    "ja": "申請目的"
+  },
+  "Nhập số điện thoại hợp lệ": {
+    "en": "Enter a valid phone number",
+    "zh": "请输入有效电话号码",
+    "ko": "유효한 전화번호를 입력하세요",
+    "ja": "有効な電話番号を入力してください"
+  },
+  " (minh họa)": {
+    "en": " (sample)",
+    "zh": "（示例）",
+    "ko": " (예시)",
+    "ja": "（サンプル）"
+  },
+  "TUYỂN SINH CAO ĐẲNG": {
+    "en": "COLLEGE ADMISSIONS",
+    "zh": "大专招生",
+    "ko": "전문대 입학",
+    "ja": "短期大学入学"
+  },
+  "· MINH HỌA": {
+    "en": "· SAMPLE",
+    "zh": "· 示例",
+    "ko": "· 예시",
+    "ja": "・サンプル"
+  },
+  "GIẢI PHÁP TỪ MINH ĐỨC": {
+    "en": "SOLUTIONS FROM MINH ĐỨC",
+    "zh": "明德的解决方案",
+    "ko": "MINH ĐỨC의 솔루션",
+    "ja": "MINH ĐỨCのソリューション"
+  },
+  "Kết nối đúng nhu cầu. Đồng hành từng bước.": {
+    "en": "Connecting the right needs. Supporting every step.",
+    "zh": "精准对接需求，步步同行。",
+    "ko": "필요에 맞게 연결하고 모든 단계에 함께합니다.",
+    "ja": "ニーズをつなぎ、一歩ずつ寄り添います。"
+  },
+  "Cùng bạn xây dựng": {
+    "en": "Building with you",
+    "zh": "与您共同建设",
+    "ko": "함께 구축하는",
+    "ja": "共に築く"
+  },
+  "đội ngũ phù hợp": {
+    "en": "the right team",
+    "zh": "合适的团队",
+    "ko": "적합한 팀",
+    "ja": "最適なチーム"
+  },
+  "Từ tìm nguồn lao động đến giới thiệu việc làm, chúng tôi bắt đầu với những điều bạn thực sự cần.": {
+    "en": "From sourcing workers to introducing opportunities, we start with what you really need.",
+    "zh": "从寻找劳动力到介绍工作，我们从您的实际需求出发。",
+    "ko": "인력 발굴부터 일자리 소개까지 실제 필요한 것에서 시작합니다.",
+    "ja": "人材の発掘から仕事の紹介まで、本当に必要なことから始めます。"
+  },
+  "Chia sẻ kế hoạch tuyển dụng hoặc mong muốn tìm việc của bạn. Minh Đức sẽ cùng làm rõ yêu cầu và trao đổi hướng kết nối phù hợp.": {
+    "en": "Share your hiring plans or job search goals. Minh Đức will clarify your needs and discuss suitable connections.",
+    "zh": "分享您的招聘计划或求职意愿，明德将共同明确需求并讨论合适的对接方式。",
+    "ko": "채용 계획이나 구직 목표를 공유해 주세요. Minh Đức가 요구를 명확히 하고 적합한 연결 방안을 논의합니다.",
+    "ja": "採用計画や求職の希望をお聞かせください。Minh Đứcが要件を明確にし、適切な紹介方法を相談します。"
+  },
+  "Trao đổi nhu cầu": {
+    "en": "Discuss your needs",
+    "zh": "讨论需求",
+    "ko": "요구 상담",
+    "ja": "ニーズを相談する"
+  },
+  "Nhân lực cho sản xuất và vận hành": {
+    "en": "Workforce for production and operations",
+    "zh": "生产运营人力",
+    "ko": "생산 및 운영 인력",
+    "ja": "生産と運営の人材"
+  },
+  "Dịch vụ của chúng tôi": {
+    "en": "Our services",
+    "zh": "我们的服务",
+    "ko": "서비스 소개",
+    "ja": "サービス一覧"
+  },
+  "/ DỊCH VỤ": {
+    "en": "/ SERVICE",
+    "zh": "/ 服务",
+    "ko": "/ 서비스",
+    "ja": "/ サービス"
+  },
+  "Khám phá dịch vụ": {
+    "en": "Explore the service",
+    "zh": "了解服务",
+    "ko": "서비스 살펴보기",
+    "ja": "サービスを見る"
+  },
+  "Một kết nối. Nhiều cơ hội.": {
+    "en": "One connection. Many opportunities.",
+    "zh": "一次连接，多个机会。",
+    "ko": "하나의 연결, 다양한 기회.",
+    "ja": "一つのつながり、多くの機会。"
+  },
+  "MINH ĐỨC ĐỒNG HÀNH": {
+    "en": "MINH ĐỨC BY YOUR SIDE",
+    "zh": "明德与您同行",
+    "ko": "MINH ĐỨC가 함께합니다",
+    "ja": "MINH ĐỨCが寄り添います"
+  },
+  "bắt đầu từ sự thấu hiểu": {
+    "en": "starts with understanding",
+    "zh": "从理解开始",
+    "ko": "이해에서 시작합니다",
+    "ja": "理解から始まります"
+  },
+  "Hình ảnh minh họa dịch vụ": {
+    "en": "Illustrative service image",
+    "zh": "服务示意图",
+    "ko": "서비스 예시 이미지",
+    "ja": "サービスのイメージ画像"
+  },
+  "Giá trị trong từng kết nối": {
+    "en": "Value in every connection",
+    "zh": "每一次连接的价值",
+    "ko": "모든 연결의 가치",
+    "ja": "一つひとつのつながりの価値"
+  },
+  "Quy trình phối hợp": {
+    "en": "How we work together",
+    "zh": "合作流程",
+    "ko": "협력 절차",
+    "ja": "連携の流れ"
+  },
+  "Các bước tham khảo; phạm vi cụ thể được thống nhất theo nhu cầu thực tế.": {
+    "en": "Illustrative steps; the exact scope is agreed based on actual needs.",
+    "zh": "参考步骤；具体范围根据实际需求商定。",
+    "ko": "참고 단계이며 구체적인 범위는 실제 요구에 따라 합의합니다.",
+    "ja": "参考手順です。具体的な範囲は実際のニーズに応じて合意します。"
+  },
+  "PHƯƠNG ÁN PHÙ HỢP CHO BẠN": {
+    "en": "A SOLUTION FOR YOU",
+    "zh": "适合您的方案",
+    "ko": "당신에게 맞는 방안",
+    "ja": "あなたに合った方法"
+  },
+  "Trao đổi rõ nhu cầu,": {
+    "en": "Clarify your needs,",
+    "zh": "明确需求，",
+    "ko": "요구를 명확히 하고,",
+    "ja": "ニーズを明確にし、"
+  },
+  "thống nhất rõ phạm vi.": {
+    "en": "agree on the scope.",
+    "zh": "明确范围。",
+    "ko": "범위에 합의합니다.",
+    "ja": "範囲を合意します。"
+  },
+  "Mỗi yêu cầu có đặc điểm riêng về số lượng, địa điểm và thời gian. Hãy để lại thông tin để bắt đầu một cuộc trao đổi cụ thể.": {
+    "en": "Each request differs in size, location and timing. Leave your details to start a specific discussion.",
+    "zh": "每项需求在人数、地点和时间方面各不相同。留下信息以开始具体讨论。",
+    "ko": "요청마다 인원, 위치 및 시간이 다릅니다. 구체적인 상담을 위해 정보를 남겨주세요.",
+    "ja": "ご依頼ごとに人数、場所、時期は異なります。具体的な相談のために情報をお寄せください。"
+  },
+  "Yêu cầu tư vấn": {
+    "en": "Request advice",
+    "zh": "申请咨询",
+    "ko": "상담 요청",
+    "ja": "相談を依頼する"
+  },
+  "Câu hỏi thường gặp": {
+    "en": "Frequently asked questions",
+    "zh": "常见问题",
+    "ko": "자주 묻는 질문",
+    "ja": "よくある質問"
+  },
+  "Những thông tin thường gặp về dịch vụ.": {
+    "en": "Common information about the service.",
+    "zh": "有关服务的常见信息。",
+    "ko": "서비스에 관한 자주 묻는 정보입니다.",
+    "ja": "サービスに関するよくある情報です。"
+  },
+  "Khám phá dịch vụ khác": {
+    "en": "Explore other services",
+    "zh": "了解其他服务",
+    "ko": "다른 서비스 살펴보기",
+    "ja": "他のサービスを見る"
+  }
+}

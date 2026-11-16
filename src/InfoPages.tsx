@@ -28,54 +28,21 @@ type Service = {
   questions: [string, string][];
 };
 const services: Service[] = [
-  {
-    slug: 'labor-supply', title: 'Cung ứng nhân lực', short: 'Kết nối nguồn lao động với nhu cầu sản xuất của doanh nghiệp.', image: assets.service2, banner: assets.services,
-    intro: 'Minh Đức kết nối doanh nghiệp với nguồn lao động phổ thông, đồng hành trong quá trình tiếp nhận nhu cầu, tuyển chọn và hướng dẫn người lao động đến nơi làm việc.',
-    audience: 'Dành cho nhà máy, doanh nghiệp sản xuất và đơn vị có nhu cầu bổ sung lao động theo kế hoạch vận hành.',
-    benefits: [
-      { title: 'Đúng nhu cầu', text: 'Làm rõ vị trí, số lượng, địa điểm, ca làm và điều kiện tuyển dụng trước khi tìm nguồn.' },
-      { title: 'Thông tin rõ ràng', text: 'Trao đổi minh bạch về công việc, thu nhập dự kiến và các yêu cầu của doanh nghiệp.' },
-      { title: 'Đồng hành tiếp nhận', text: 'Hướng dẫn hồ sơ, lịch hẹn và đầu mối liên hệ trong quá trình nhận việc.' },
-    ],
-    steps: ['Tiếp nhận nhu cầu & điều kiện làm việc', 'Thống nhất kế hoạch tìm nguồn', 'Tư vấn & sàng lọc người lao động', 'Phối hợp phỏng vấn, tiếp nhận', 'Theo dõi & cập nhật phản hồi'],
-    questions: [
-      ['Doanh nghiệp cần cung cấp thông tin gì?', 'Vui lòng chuẩn bị vị trí, số lượng dự kiến, địa điểm, ca làm, yêu cầu tuyển dụng, thời gian tiếp nhận và đầu mối phụ trách. Minh Đức sẽ trao đổi để làm rõ nhu cầu cụ thể.'],
-      ['Có hỗ trợ nhu cầu lao động theo đợt không?', 'Doanh nghiệp có thể gửi kế hoạch theo đợt hoặc theo giai đoạn sản xuất. Khả năng đáp ứng và thời gian thực hiện sẽ được xác nhận sau khi trao đổi trực tiếp.'],
-      ['Chi phí dịch vụ được xác định như thế nào?', 'Chi phí phụ thuộc vào phạm vi công việc, số lượng, địa điểm và điều kiện phối hợp. Không có bảng phí cố định trong prototype; vui lòng liên hệ để nhận tư vấn phù hợp.'],
-    ],
-  },
-  {
-    slug: 'recruitment', title: 'Giới thiệu việc làm', short: 'Giúp người lao động tìm công việc phù hợp và chuẩn bị nhận việc.', image: assets.service1, banner: assets.recruitment,
-    intro: 'Từ tìm hiểu nhu cầu đến chuẩn bị hồ sơ, Minh Đức hỗ trợ người tìm việc tiếp cận các cơ hội lao động phổ thông và công việc tại nhà máy phù hợp với điều kiện cá nhân.',
-    audience: 'Dành cho người đang tìm việc, mong muốn đổi công việc hoặc cần được tư vấn về cơ hội làm việc tại nhà máy.',
-    benefits: [
-      { title: 'Dễ tiếp cận', text: 'Tìm việc theo địa điểm, hình thức làm việc và các thông tin tuyển dụng được giới thiệu.' },
-      { title: 'Tư vấn thực tế', text: 'Trao đổi về mong muốn, khả năng đi làm, kinh nghiệm và yêu cầu của từng vị trí.' },
-      { title: 'Chuẩn bị tốt hơn', text: 'Được hướng dẫn các bước nộp hồ sơ và thông tin cần hỏi trước khi nhận việc.' },
-    ],
-    steps: ['Chia sẻ nhu cầu tìm việc', 'Tìm hiểu vị trí phù hợp', 'Chuẩn bị hồ sơ ứng tuyển', 'Trao đổi với đơn vị tuyển dụng', 'Xác nhận thông tin trước khi nhận việc'],
-    questions: [
-      ['Chưa có kinh nghiệm có thể đăng ký không?', 'Bạn có thể liên hệ để được tư vấn. Mỗi vị trí có điều kiện riêng; hãy kiểm tra yêu cầu trong tin tuyển dụng và xác nhận lại với người phụ trách.'],
-      ['Cần chuẩn bị giấy tờ gì?', 'Thông thường bạn nên chuẩn bị thông tin liên hệ, kinh nghiệm nếu có và các giấy tờ theo yêu cầu của vị trí. Không gửi giấy tờ nhạy cảm trước khi xác minh được đơn vị tiếp nhận.'],
-      ['Các tin tuyển dụng trong prototype có đang tuyển thật không?', 'Các vị trí có nhãn “Dữ liệu minh họa” dùng để trải nghiệm chức năng. Vui lòng gọi hotline hoặc nhắn Zalo để xác nhận cơ hội tuyển dụng hiện tại.'],
-    ],
-  },
-  {
-    slug: 'hr-consulting', title: 'Tư vấn nhân sự', short: 'Bắt đầu từ nhu cầu thực tế, cùng xây dựng hướng tiếp cận phù hợp.', image: assets.service3, banner: assets.about,
-    intro: 'Một kế hoạch nhân lực hiệu quả bắt đầu bằng việc hiểu đúng nhu cầu. Minh Đức tiếp nhận thông tin và trao đổi với doanh nghiệp về việc tìm nguồn, tuyển chọn và phối hợp tiếp nhận lao động.',
-    audience: 'Dành cho doanh nghiệp cần trao đổi về kế hoạch tuyển dụng, cách tiếp cận ứng viên và quy trình phối hợp nhân sự.',
-    benefits: [
-      { title: 'Hiểu bối cảnh', text: 'Xem xét đặc điểm công việc, địa điểm, ca làm và thời điểm cần bổ sung nhân lực.' },
-      { title: 'Rõ quy trình', text: 'Thống nhất đầu mối và các bước phối hợp để hạn chế thiếu thông tin khi tuyển dụng.' },
-      { title: 'Phù hợp thực tế', text: 'Trao đổi giải pháp dựa trên mục tiêu và nguồn lực của doanh nghiệp.' },
-    ],
-    steps: ['Lắng nghe vấn đề cần giải quyết', 'Làm rõ dữ liệu & mục tiêu', 'Trao đổi phương án phối hợp', 'Thống nhất phạm vi thực hiện', 'Ghi nhận phản hồi & điều chỉnh'],
-    questions: [
-      ['Dịch vụ tư vấn bao gồm những gì?', 'Phạm vi được trao đổi trực tiếp theo nhu cầu của từng doanh nghiệp. Nội dung trên trang mô tả cách tiếp cận; các hạng mục, thời hạn và kết quả bàn giao cần được hai bên thống nhất.'],
-      ['Có thể trao đổi trước khi gửi yêu cầu chính thức không?', 'Có. Bạn có thể gọi hotline hoặc dùng biểu mẫu để trình bày ngắn gọn nhu cầu và thông tin liên hệ.'],
-      ['Tư vấn có thay thế ý kiến pháp lý không?', 'Nội dung tư vấn nhân sự tổng quát không thay thế ý kiến pháp lý chuyên biệt. Các vấn đề liên quan hợp đồng, pháp luật hoặc nghĩa vụ cụ thể cần được xác minh với đơn vị có chuyên môn phù hợp.'],
-    ],
-  },
+  { slug: 'labor-supply', title: 'Giới thiệu & cung ứng nhân lực', short: 'Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.', image: assets.service2, banner: assets.services,
+    intro: 'Minh Đức tiếp nhận nhu cầu tuyển dụng, tìm nguồn và giới thiệu người lao động phù hợp với công việc và điều kiện của doanh nghiệp.', audience: 'Dành cho doanh nghiệp cần bổ sung nhân lực và người lao động tìm kiếm cơ hội việc làm.',
+    benefits: [{title:'Hiểu nhu cầu',text:'Làm rõ vị trí, địa điểm, số lượng và điều kiện làm việc.'},{title:'Kết nối phù hợp',text:'Tư vấn và sàng lọc dựa trên thông tin hai bên cung cấp.'},{title:'Đồng hành tiếp nhận',text:'Hướng dẫn các bước trao đổi, hồ sơ và nhận việc.'}], steps: ['Tiếp nhận nhu cầu','Thống nhất kế hoạch','Tìm nguồn và tư vấn','Kết nối, phỏng vấn','Theo dõi phản hồi'], questions: [['Cần cung cấp thông tin gì?', 'Vị trí, số lượng, địa điểm, ca làm và thời gian cần người sẽ giúp làm rõ nhu cầu.'],['Có hỗ trợ tuyển theo đợt không?', 'Có thể trao đổi kế hoạch theo từng đợt; khả năng đáp ứng được xác nhận sau khi tìm hiểu nhu cầu.'],['Chi phí được xác định thế nào?', 'Phạm vi và chi phí được thống nhất theo từng yêu cầu cụ thể.']] },
+  { slug: 'labor-leasing', title: 'Cho thuê lao động', short: 'Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.', image: assets.service3, banner: assets.services,
+    intro: 'Dịch vụ cho thuê lao động hướng đến nhu cầu nhân sự theo thời gian và phạm vi công việc được các bên thống nhất.', audience: 'Dành cho doanh nghiệp cần tìm hiểu phương án bổ sung nhân lực linh hoạt.',
+    benefits: [{title:'Linh hoạt',text:'Trao đổi thời gian, quy mô và yêu cầu công việc.'},{title:'Rõ trách nhiệm',text:'Làm rõ phạm vi phối hợp và đầu mối quản lý.'},{title:'Theo dõi',text:'Cùng cập nhật tình hình triển khai và nhu cầu điều chỉnh.'}], steps: ['Tìm hiểu nhu cầu','Đánh giá phương án','Thống nhất điều kiện','Phối hợp triển khai','Theo dõi và phản hồi'], questions: [['Có thể thuê theo thời hạn không?', 'Thời hạn và khả năng đáp ứng được trao đổi theo nhu cầu cụ thể.'],['Điều kiện triển khai là gì?', 'Các bên cần xác minh ngành nghề, điều kiện pháp lý và trách nhiệm trước khi ký kết.'],['Chi phí được xác định thế nào?', 'Chi phí phụ thuộc vào phạm vi, thời gian và điều kiện đã thống nhất.']] },
+  { slug: 'recruitment', title: 'Headhunt & lao động tay nghề', short: 'Tìm kiếm và kết nối nhân sự có kinh nghiệm, kỹ năng phù hợp.', image: assets.service1, banner: assets.recruitment,
+    intro: 'Minh Đức hỗ trợ tìm kiếm ứng viên theo yêu cầu vị trí, kinh nghiệm và kỹ năng, từ lao động tay nghề đến các vai trò cần tuyển chọn chuyên sâu.', audience: 'Dành cho doanh nghiệp tìm nhân sự tay nghề và ứng viên muốn tìm cơ hội phù hợp.',
+    benefits: [{title:'Rõ tiêu chí',text:'Thống nhất kỹ năng, kinh nghiệm và yêu cầu công việc.'},{title:'Tìm kiếm có định hướng',text:'Tiếp cận ứng viên theo chân dung vị trí.'},{title:'Phối hợp tuyển chọn',text:'Hỗ trợ trao đổi thông tin và sắp xếp các bước tiếp theo.'}], steps: ['Làm rõ vị trí','Xác định tiêu chí','Tìm kiếm ứng viên','Phối hợp tuyển chọn','Theo dõi kết quả'], questions: [['Vị trí nào có thể trao đổi?', 'Doanh nghiệp có thể chia sẻ yêu cầu cụ thể để đánh giá khả năng hỗ trợ.'],['Ứng viên cần chuẩn bị gì?', 'Thông tin về kinh nghiệm, kỹ năng và mong muốn giúp việc tư vấn phù hợp hơn.'],['Thời gian tuyển là bao lâu?', 'Thời gian phụ thuộc vào vị trí, thị trường và yêu cầu tuyển chọn.']] },
+  { slug: 'college-admissions', title: 'Tuyển sinh cao đẳng', short: 'Tìm hiểu cơ hội học tập từ xa và chính quy.', image: assets.opportunity, banner: assets.about,
+    intro: 'Minh Đức giới thiệu thông tin tuyển sinh và hỗ trợ người học tìm hiểu hình thức học, điều kiện và các bước chuẩn bị hồ sơ.', audience: 'Dành cho người quan tâm đến các chương trình cao đẳng từ xa hoặc chính quy.',
+    benefits: [{title:'Chọn hướng học',text:'Tìm hiểu hình thức và lĩnh vực phù hợp với mục tiêu.'},{title:'Được tư vấn',text:'Trao đổi câu hỏi trước khi quyết định đăng ký.'},{title:'Chuẩn bị hồ sơ',text:'Tìm hiểu các bước và giấy tờ cần xác minh.'}], steps: ['Tìm hiểu chương trình','Chọn hình thức học','Nhận tư vấn','Chuẩn bị hồ sơ','Xác nhận thông tin'], questions: [['Có những hình thức nào?', 'Trang tuyển sinh giới thiệu các ví dụ từ xa và chính quy.'],['Thông tin chương trình đã chính thức chưa?', 'Các chương trình trên prototype là dữ liệu minh họa, chưa gắn với trường cụ thể.'],['Làm sao đăng ký?', 'Bạn có thể dùng biểu mẫu tư vấn hoặc hồ sơ minh họa trên trang tuyển sinh.']] },
+  { slug: 'hr-consulting', title: 'Setup tổ chức & phần mềm doanh nghiệp', short: 'Cùng làm rõ cấu trúc, quy trình và nhu cầu phần mềm quản lý.', image: assets.service3, banner: assets.about,
+    intro: 'Minh Đức trao đổi cùng doanh nghiệp về thiết lập tổ chức, quy trình làm việc và nhu cầu phần mềm hỗ trợ vận hành.', audience: 'Dành cho doanh nghiệp muốn rà soát tổ chức và công cụ quản lý.',
+    benefits: [{title:'Hiểu hiện trạng',text:'Lắng nghe mục tiêu, nhân sự và quy trình hiện có.'},{title:'Rõ phương án',text:'Xác định phạm vi, ưu tiên và cách phối hợp.'},{title:'Hỗ trợ vận hành',text:'Trao đổi nhu cầu phần mềm phù hợp với thực tế.'}], steps: ['Lắng nghe hiện trạng','Làm rõ mục tiêu','Trao đổi phương án','Thống nhất phạm vi','Theo dõi và điều chỉnh'], questions: [['Dịch vụ bao gồm những gì?', 'Phạm vi tổ chức, quy trình và phần mềm được thống nhất theo nhu cầu cụ thể.'],['Có thể trao đổi trước không?', 'Có. Hãy liên hệ và trình bày ngắn gọn vấn đề cần hỗ trợ.'],['Có thay thế tư vấn pháp lý không?', 'Nội dung tư vấn tổng quát không thay thế ý kiến pháp lý chuyên biệt.']] },
 ];
 
 function navigateTabs(event: KeyboardEvent<HTMLButtonElement>, selected: number, count: number, select: (index: number) => void) {
@@ -134,15 +101,15 @@ export function ServicePage() {
   const service = services.find(s => s.slug === slug);
   const openContact = useContact();
   if (!service) return <InfoNotFound kind="Dịch vụ" />;
-  const contactServiceTitle = service.slug === 'recruitment' ? 'Tư vấn và giới thiệu việc làm' : service.title;
+  const contactServiceTitle = service.title;
   return <>
     <PageHero title={service.title} description={service.short} image={service.banner} />
     <nav className="container info-breadcrumb" aria-label="Đường dẫn"><Link to="/">Trang chủ</Link><ChevronRight size={14} /><Link to="/services">Dịch vụ</Link><ChevronRight size={14} /><span>{service.title}</span></nav>
-    <section className="section container info-intro-grid"><div><span className="eyebrow">MINH ĐỨC ĐỒNG HÀNH</span><h2>{service.title}<br />bắt đầu từ sự thấu hiểu</h2><p className="info-lead">{service.intro}</p><p>{service.audience}</p><button className="btn" onClick={() => openContact(contactServiceTitle)} type="button">Nhận tư vấn <ArrowRight size={18} /></button></div><img className="info-rounded-photo" src={service.image} alt={`Giải pháp ${service.title.toLowerCase()}`} loading="lazy" /></section>
+    <section className="section container info-intro-grid"><div><span className="eyebrow">MINH ĐỨC ĐỒNG HÀNH</span><h2>{service.title}<br />bắt đầu từ sự thấu hiểu</h2><p className="info-lead">{service.intro}</p><p>{service.audience}</p>{service.slug === 'college-admissions' && <p><Link to="/education" className="info-text-link">Khám phá chương trình tuyển sinh <ArrowRight size={18} /></Link></p>}<button className="btn" onClick={() => openContact(contactServiceTitle)} type="button">Nhận tư vấn <ArrowRight size={18} /></button></div><img className="info-rounded-photo" src={service.image} alt="Hình ảnh minh họa dịch vụ" loading="lazy" /></section>
     <section className="section info-soft-section"><div className="container"><SectionHeading title="Giá trị trong từng kết nối" /><div className="grid-3 info-benefits">{service.benefits.map((benefit, i) => <article key={benefit.title}><span className="info-benefit-icon">{i === 0 ? <Users /> : i === 1 ? <ClipboardCheck /> : <Handshake />}</span><h3>{benefit.title}</h3><p>{benefit.text}</p></article>)}</div></div></section>
     <section className="section container"><SectionHeading title="Quy trình phối hợp" description="Các bước tham khảo; phạm vi cụ thể được thống nhất theo nhu cầu thực tế." /><ol className="info-process">{service.steps.map((step, i) => <li key={step}><span>0{i + 1}</span><p>{step}</p></li>)}</ol></section>
     <section className="section info-fee-section"><div className="container info-fee"><div><span className="eyebrow">PHƯƠNG ÁN PHÙ HỢP CHO BẠN</span><h2>Trao đổi rõ nhu cầu,<br />thống nhất rõ phạm vi.</h2></div><div><p>Mỗi yêu cầu có đặc điểm riêng về số lượng, địa điểm và thời gian. Hãy để lại thông tin để bắt đầu một cuộc trao đổi cụ thể.</p><button className="btn" onClick={() => openContact(contactServiceTitle)} type="button">Yêu cầu tư vấn <ArrowRight size={18} /></button></div></div></section>
-    <section className="section container info-faq-section"><SectionHeading title="Câu hỏi thường gặp" description={`Những điều bạn có thể muốn biết về ${service.title.toLowerCase()}.`} /><FAQ questions={service.questions} /></section>
+    <section className="section container info-faq-section"><SectionHeading title="Câu hỏi thường gặp" description="Những thông tin thường gặp về dịch vụ." /><FAQ questions={service.questions} /></section>
     <section className="section wide"><SectionHeading title="Khám phá dịch vụ khác" /><ServiceCards exclude={service.slug} /></section><CTASection />
   </>;
 }

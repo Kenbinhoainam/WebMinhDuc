@@ -9,8 +9,16 @@ const temp='.hydration-test';
 if(!process.argv.includes('--case')) {
  await mkdir(temp,{recursive:true});
  try {
+  await build({entryPoints:['src/i18n.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/i18n.mjs`,packages:'external',logLevel:'silent'});
+  const {localizedPath,localeFromPath,languageSwitchUrl}=await import(pathToFileURL(`${process.cwd()}/${temp}/i18n.mjs`).href);
+  assert.equal(localizedPath('/ko/jobs/example','en'),'/en/jobs/example');
+  assert.equal(localizedPath('/en/jobs/example','vi'),'/jobs/example');
+  assert.equal(localizedPath('/','ja'),'/ja');
+  assert.equal(localizedPath('/vi','en'),'/en');
+  assert.equal(localeFromPath('/zh/jobs'),'zh');
+  assert.equal(languageSwitchUrl('/ko/jobs','?q=kho','#details','ja'),'/ja/jobs?q=kho#details');
   await build({entryPoints:['src/main.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/client.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
-  for(const url of ['/','/about-us','/services','/jobs','/saved-jobs','/jobs?q=kho','/testimonials']) {
+  for(const url of ['/','/about-us','/services','/jobs','/saved-jobs','/jobs?q=kho','/testimonials','/en','/zh','/ko','/ja','/en/jobs','/zh/jobs','/ko/jobs','/ja/jobs']) {
    const result=spawnSync(process.execPath,[process.argv[1],'--case',url],{encoding:'utf8',timeout:15000});
    assert.equal(result.status,0,`${url}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }
@@ -35,7 +43,11 @@ if(!process.argv.includes('--case')) {
  assert.equal(errors.length,0,`React errors: ${errors.join('\n')}`);
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
  assert.match(window.document.title,/Minh Đức Vina/);
- assert.equal(window.document.querySelector('.header-saved')?.getAttribute('aria-label'),'Việc đã lưu: 2');
+ const locale=/^\/(en|zh|ko|ja)(?:\/|$)/.exec(path)?.[1]||'vi';
+ assert.equal(window.document.querySelector('.language-selector select')?.value,locale);
+ assert.equal(window.document.documentElement.lang,locale==='zh'?'zh-Hans':locale);
+ if(locale!=='vi') assert.ok(window.document.querySelector('.brand')?.getAttribute('href')?.startsWith('/'+locale));
+ assert.match(window.document.querySelector('.header-saved')?.getAttribute('aria-label')||'',/2/);
  if(!route.includes('?') && path!=='/testimonials') assert.equal(window.document.querySelector('h1'),initialHeading,'pre-rendered heading was replaced');
  if(path==='/saved-jobs') {assert.equal(window.document.querySelectorAll('.job-card').length,2);assert.match(window.document.querySelector('.jobs-result-bar')?.textContent||'',/2/);}
  if(route.includes('?') || path==='/testimonials') assert.notEqual(window.document.querySelector('h1'),initialHeading,'fallback should render fresh');

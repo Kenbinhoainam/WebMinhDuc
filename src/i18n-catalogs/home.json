@@ -1,0 +1,866 @@
+{
+  "01 / DOANH NGHIỆP": {
+    "en": "01 / BUSINESSES",
+    "zh": "01 / 企业",
+    "ko": "01 / 기업",
+    "ja": "01 / 企業"
+  },
+  "02 / NGƯỜI LAO ĐỘNG": {
+    "en": "02 / WORKERS",
+    "zh": "02 / 劳动者",
+    "ko": "02 / 근로자",
+    "ja": "02 / 働く方"
+  },
+  "Bạn cần biết": {
+    "en": "What do you",
+    "zh": "您需要了解",
+    "ko": "무엇이 궁금",
+    "ja": "何を知りたい"
+  },
+  "Bạn đang tìm kiếm điều gì?": {
+    "en": "What are you looking for?",
+    "zh": "您在寻找什么？",
+    "ko": "무엇을 찾고 계신가요?",
+    "ja": "何をお探しですか？"
+  },
+  "Bắt đầu hành trình": {
+    "en": "Start your journey",
+    "zh": "开启旅程",
+    "ko": "여정 시작하기",
+    "ja": "新たな一歩を踏み出す"
+  },
+  "Bắt đầu trao đổi": {
+    "en": "Start a conversation",
+    "zh": "开始交流",
+    "ko": "상담 시작하기",
+    "ja": "相談を始める"
+  },
+  "Chia sẻ nguyện vọng": {
+    "en": "Share your goals",
+    "zh": "分享您的意愿",
+    "ko": "희망 사항 공유",
+    "ja": "希望を伝える"
+  },
+  "Chia sẻ vị trí, số lượng và khu vực tuyển dụng. Cùng Minh Đức xây dựng phương án cung ứng phù hợp.": {
+    "en": "Share the roles, headcount and hiring area. Work with Minh Đức to develop a suitable staffing plan.",
+    "zh": "分享职位、人数和招聘地区，与 Minh Đức 共同制定合适的人力供应方案。",
+    "ko": "직무, 인원 및 채용 지역을 알려주세요. Minh Đức와 함께 적합한 인력 공급 방안을 마련합니다.",
+    "ja": "職種、人数、採用地域をお知らせください。Minh Đứcとともに適切な人材供給プランを作ります。"
+  },
+  "Chia sẻ vị trí, số lượng, địa điểm và thời gian tuyển dụng.": {
+    "en": "Share the roles, headcount, location and hiring timeline.",
+    "zh": "分享职位、人数、地点和招聘时间。",
+    "ko": "직무, 인원, 장소 및 채용 시기를 알려주세요.",
+    "ja": "職種、人数、勤務地、採用時期をお知らせください。"
+  },
+  "Chuẩn bị cho hành trình tìm việc": {
+    "en": "Preparing for your job search",
+    "zh": "为求职之旅做准备",
+    "ko": "구직 여정 준비",
+    "ja": "就職活動の準備"
+  },
+  "Chuẩn bị hồ sơ xin việc: bắt đầu từ những điều cần thiết": {
+    "en": "Preparing a job application: start with the essentials",
+    "zh": "准备求职材料：从必需事项开始",
+    "ko": "입사 서류 준비: 필수 사항부터 시작하세요",
+    "ja": "応募書類の準備：必要なことから始めよう"
+  },
+  "Chuẩn bị nhu cầu tuyển dụng cho doanh nghiệp": {
+    "en": "Preparing your business's hiring needs",
+    "zh": "准备企业招聘需求",
+    "ko": "기업 채용 수요 준비",
+    "ja": "企業の採用ニーズを準備する"
+  },
+  "Chúng tôi đồng hành từ bước tìm hiểu nhu cầu, kết nối tuyển dụng đến hỗ trợ người lao động tiếp cận công việc.": {
+    "en": "We support you from understanding needs and recruitment connections through to helping workers access jobs.",
+    "zh": "我们从了解需求、招聘对接到帮助劳动者获得工作全程相伴。",
+    "ko": "수요 파악과 채용 연결부터 근로자의 취업까지 함께합니다.",
+    "ja": "ニーズの把握や採用のマッチングから、働く方の就業までサポートします。"
+  },
+  "Chọn hành trình": {
+    "en": "Choose a journey",
+    "zh": "选择旅程",
+    "ko": "여정 선택",
+    "ja": "進む道を選ぶ"
+  },
+  "Con người là trọng tâm.": {
+    "en": "People come first.",
+    "zh": "以人为本。",
+    "ko": "사람이 중심입니다.",
+    "ja": "人を中心に。"
+  },
+  "Con người tạo nên những kết nối bền vững.": {
+    "en": "People create lasting connections.",
+    "zh": "人创造持久的联系。",
+    "ko": "사람이 지속적인 연결을 만듭니다.",
+    "ja": "人が持続的なつながりを生み出します。"
+  },
+  "CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA": {
+    "en": "MINH ĐỨC VINA HUMAN RESOURCES COMPANY LIMITED",
+    "zh": "MINH ĐỨC VINA 人力资源有限责任公司",
+    "ko": "MINH ĐỨC VINA 인력 유한회사",
+    "ja": "MINH ĐỨC VINA人材有限会社"
+  },
+  "CÙNG NHAU TIẾN XA": {
+    "en": "GO FURTHER TOGETHER",
+    "zh": "携手前行",
+    "ko": "함께 더 멀리",
+    "ja": "ともに前へ"
+  },
+  "Các đối tác theo thông tin Minh Đức": {
+    "en": "Partners according to Minh Đức",
+    "zh": "Minh Đức 提供的合作伙伴信息",
+    "ko": "Minh Đức가 안내하는 파트너",
+    "ja": "Minh Đứcの情報に基づくパートナー"
+  },
+  "Câu chuyện tiếp theo": {
+    "en": "Next story",
+    "zh": "下一个故事",
+    "ko": "다음 이야기",
+    "ja": "次のストーリー"
+  },
+  "Câu chuyện trước": {
+    "en": "Previous story",
+    "zh": "上一个故事",
+    "ko": "이전 이야기",
+    "ja": "前のストーリー"
+  },
+  "Công việc phù hợp.": {
+    "en": "The right job.",
+    "zh": "合适的工作。",
+    "ko": "적합한 일자리.",
+    "ja": "自分に合う仕事。"
+  },
+  "Cùng phát triển": {
+    "en": "Grow together",
+    "zh": "共同发展",
+    "ko": "함께 성장",
+    "ja": "ともに成長"
+  },
+  "Cùng trao đổi về nguồn nhân lực và cách triển khai phù hợp.": {
+    "en": "Discuss workforce options and a suitable approach together.",
+    "zh": "共同探讨合适的人力资源和实施方式。",
+    "ko": "적합한 인력과 실행 방안을 함께 논의합니다.",
+    "ja": "人材と適切な進め方を一緒に検討します。"
+  },
+  "CẨM NANG VIỆC LÀM · NỘI DUNG MẪU": {
+    "en": "JOB GUIDE · SAMPLE CONTENT",
+    "zh": "就业指南 · 示例内容",
+    "ko": "취업 가이드 · 예시 콘텐츠",
+    "ja": "就職ガイド · サンプル内容"
+  },
+  "Doanh nghiệp": {
+    "en": "Businesses",
+    "zh": "企业",
+    "ko": "기업",
+    "ja": "企業"
+  },
+  "Dịch vụ tiếp theo": {
+    "en": "Next service",
+    "zh": "下一个服务",
+    "ko": "다음 서비스",
+    "ja": "次のサービス"
+  },
+  "Dịch vụ trước": {
+    "en": "Previous service",
+    "zh": "上一个服务",
+    "ko": "이전 서비스",
+    "ja": "前のサービス"
+  },
+  "GIẢI PHÁP CHO BẠN": {
+    "en": "SOLUTIONS FOR YOU",
+    "zh": "为您提供解决方案",
+    "ko": "당신을 위한 솔루션",
+    "ja": "あなたのためのソリューション"
+  },
+  "Giải pháp nhân lực toàn diện": {
+    "en": "Comprehensive workforce solutions",
+    "zh": "全面的人力解决方案",
+    "ko": "종합 인력 솔루션",
+    "ja": "総合人材ソリューション"
+  },
+  "GÓC DOANH NGHIỆP": {
+    "en": "BUSINESS INSIGHTS",
+    "zh": "企业视角",
+    "ko": "기업 인사이트",
+    "ja": "企業向け情報"
+  },
+  "GÓC NHÌN MINH ĐỨC": {
+    "en": "MINH ĐỨC PERSPECTIVE",
+    "zh": "MINH ĐỨC 视角",
+    "ko": "MINH ĐỨC의 시선",
+    "ja": "MINH ĐỨCの視点"
+  },
+  "GÓC THÔNG TIN": {
+    "en": "INSIGHTS",
+    "zh": "资讯天地",
+    "ko": "정보 나눔",
+    "ja": "情報コーナー"
+  },
+  "GẦN BẠN HƠN": {
+    "en": "CLOSER TO YOU",
+    "zh": "更贴近您",
+    "ko": "더 가까이",
+    "ja": "あなたのそばに"
+  },
+  "Gặp gỡ để mở": {
+    "en": "Meet to open",
+    "zh": "相聚以开启",
+    "ko": "만남으로 더 많은",
+    "ja": "出会いから"
+  },
+  "Gặp gỡ, tìm hiểu cơ hội và trao đổi trực tiếp về hành trình nghề nghiệp.": {
+    "en": "Meet, explore opportunities and discuss your career journey in person.",
+    "zh": "相聚、了解机会并面对面交流职业发展。",
+    "ko": "만나서 기회를 알아보고 경력 여정에 대해 직접 이야기하세요.",
+    "ja": "出会い、機会を探し、キャリアについて直接話し合いましょう。"
+  },
+  "Gặp gỡ. Trao đổi. Mở cơ hội.": {
+    "en": "Meet. Talk. Open opportunities.",
+    "zh": "相聚，交流，开启机遇。",
+    "ko": "만나고, 이야기하고, 기회를 엽니다.",
+    "ja": "出会い、語り、機会を開く。"
+  },
+  "Gợi ý cho hành trình tìm việc": {
+    "en": "Tips for your job search",
+    "zh": "求职建议",
+    "ko": "구직 여정을 위한 조언",
+    "ja": "就職活動へのヒント"
+  },
+  "Hoàn thiện bước tiếp nhận và bắt đầu công việc mới.": {
+    "en": "Complete onboarding and start your new job.",
+    "zh": "完成入职手续并开始新工作。",
+    "ko": "입사 절차를 마치고 새 일을 시작하세요.",
+    "ja": "受け入れ手続きを終えて新しい仕事を始めます。"
+  },
+  "Hành trình kết nối": {
+    "en": "The journey to connect",
+    "zh": "连接之旅",
+    "ko": "연결의 여정은",
+    "ja": "つながりの旅は"
+  },
+  "Hình ảnh minh họa con người cùng làm việc": {
+    "en": "Illustrative image of people working together",
+    "zh": "人们共同工作的示意图",
+    "ko": "함께 일하는 사람들의 예시 이미지",
+    "ja": "一緒に働く人々のイメージ画像"
+  },
+  "Hình ảnh minh họa hoạt động kết nối việc làm": {
+    "en": "Illustrative image of a job connection activity",
+    "zh": "就业对接活动示意图",
+    "ko": "취업 연결 활동 예시 이미지",
+    "ja": "就職マッチング活動のイメージ画像"
+  },
+  "Hình ảnh minh họa kết nối con người và doanh nghiệp": {
+    "en": "Illustrative image of people and businesses connecting",
+    "zh": "连接人与企业的示意图",
+    "ko": "사람과 기업의 연결을 나타내는 예시 이미지",
+    "ja": "人と企業のつながりを表すイメージ画像"
+  },
+  "Hình ảnh minh họa theo mẫu thiết kế": {
+    "en": "Illustrative image from the design template",
+    "zh": "设计模板示意图",
+    "ko": "디자인 템플릿 예시 이미지",
+    "ja": "デザインテンプレートのイメージ画像"
+  },
+  "Hình ảnh và hoạt động mang tính minh họa cho giao diện.": {
+    "en": "Images and activities are illustrative interface examples.",
+    "zh": "图片和活动仅为界面示例。",
+    "ko": "이미지와 활동은 화면 예시입니다.",
+    "ja": "画像と活動は画面のイメージです。"
+  },
+  "Khu vực kết nối": {
+    "en": "Areas served",
+    "zh": "连接区域",
+    "ko": "연결 지역",
+    "ja": "対応地域"
+  },
+  "Khám phá các chương trình minh họa theo hình thức từ xa và chính quy.": {
+    "en": "Explore sample distance and full-time programs.",
+    "zh": "了解远程和全日制示例课程。",
+    "ko": "원격 및 정규 과정 예시를 살펴보세요.",
+    "ja": "通信・全日制のサンプルプログラムをご覧ください。"
+  },
+  "Khám phá giải pháp": {
+    "en": "Explore solutions",
+    "zh": "探索解决方案",
+    "ko": "솔루션 살펴보기",
+    "ja": "ソリューションを見る"
+  },
+  "Khám phá mạng lưới": {
+    "en": "Explore our network",
+    "zh": "探索合作网络",
+    "ko": "네트워크 살펴보기",
+    "ja": "ネットワークを見る"
+  },
+  "Khám phá sự kiện": {
+    "en": "Explore events",
+    "zh": "探索活动",
+    "ko": "행사 살펴보기",
+    "ja": "イベントを見る"
+  },
+  "Khám phá việc làm": {
+    "en": "Explore jobs",
+    "zh": "探索职位",
+    "ko": "일자리 살펴보기",
+    "ja": "求人を見る"
+  },
+  "Khám phá vị trí, địa điểm và yêu cầu công việc.": {
+    "en": "Explore roles, locations and job requirements.",
+    "zh": "了解职位、地点和工作要求。",
+    "ko": "직무, 근무지 및 요건을 살펴보세요.",
+    "ja": "職種、勤務地、応募要件をご確認ください。"
+  },
+  "Khởi đầu vững chắc.": {
+    "en": "A strong start.",
+    "zh": "稳健的起点。",
+    "ko": "든든한 시작.",
+    "ja": "確かなスタート。"
+  },
+  "Kiến tạo tương lai.": {
+    "en": "Build the future.",
+    "zh": "共创未来。",
+    "ko": "미래를 만듭니다.",
+    "ja": "未来を創る。"
+  },
+  "KẾT NỐI & CHIA SẺ": {
+    "en": "CONNECT & SHARE",
+    "zh": "连接与分享",
+    "ko": "연결과 나눔",
+    "ja": "つながりと共有"
+  },
+  "KẾT NỐI NGOÀI CÔNG VIỆC": {
+    "en": "CONNECTIONS BEYOND WORK",
+    "zh": "工作之外的联系",
+    "ko": "일을 넘어 연결하기",
+    "ja": "仕事を超えたつながり"
+  },
+  "KẾT NỐI ĐỂ PHÁT TRIỂN": {
+    "en": "CONNECT TO GROW",
+    "zh": "连接共发展",
+    "ko": "성장을 위한 연결",
+    "ja": "成長のためのつながり"
+  },
+  "Kết nối nhân lực.": {
+    "en": "Connecting people.",
+    "zh": "连接人力。",
+    "ko": "인력을 연결합니다.",
+    "ja": "人材をつなぐ。"
+  },
+  "Kết nối trong các lĩnh vực điện tử, công nghệ và sản xuất.": {
+    "en": "Connecting across electronics, technology and manufacturing.",
+    "zh": "连接电子、科技和制造领域。",
+    "ko": "전자, 기술 및 제조 분야의 연결.",
+    "ja": "電子、技術、製造分野をつなぎます。"
+  },
+  "Kết nối từ Vôi, Bắc Ninh đến Quảng Ninh.": {
+    "en": "Connecting from Vôi and Bắc Ninh to Quảng Ninh.",
+    "zh": "从 Vôi、Bắc Ninh 连接至 Quảng Ninh。",
+    "ko": "Vôi, Bắc Ninh에서 Quảng Ninh까지 연결합니다.",
+    "ja": "Vôi、Bắc NinhからQuảng Ninhまでつなぎます。"
+  },
+  "Kết nối việc làm": {
+    "en": "Job connections",
+    "zh": "就业对接",
+    "ko": "일자리 연결",
+    "ja": "仕事のマッチング"
+  },
+  "Kết nối ứng viên": {
+    "en": "Connect candidates",
+    "zh": "对接候选人",
+    "ko": "지원자 연결",
+    "ja": "候補者をつなぐ"
+  },
+  "Liên hệ với chúng tôi": {
+    "en": "Contact us",
+    "zh": "联系我们",
+    "ko": "문의하기",
+    "ja": "お問い合わせ"
+  },
+  "Lập kế hoạch nguồn nhân lực": {
+    "en": "Workforce planning",
+    "zh": "人力规划",
+    "ko": "인력 계획",
+    "ja": "人員計画"
+  },
+  "Lắng nghe nhu cầu": {
+    "en": "Listen to your needs",
+    "zh": "倾听需求",
+    "ko": "수요 경청",
+    "ja": "ニーズを伺う"
+  },
+  "Lịch sự kiện minh họa": {
+    "en": "Sample event schedule",
+    "zh": "示例活动日程",
+    "ko": "예시 행사 일정",
+    "ja": "イベント予定のサンプル"
+  },
+  "Lựa chọn công việc phù hợp với bạn": {
+    "en": "Choosing the right job for you",
+    "zh": "选择适合您的工作",
+    "ko": "나에게 맞는 일자리 선택",
+    "ja": "自分に合った仕事の選び方"
+  },
+  "MỖI NHU CẦU, MỘT HÀNH TRÌNH": {
+    "en": "EVERY NEED, A JOURNEY",
+    "zh": "每种需求，一段旅程",
+    "ko": "모든 수요에 맞는 여정",
+    "ja": "ニーズに合わせた道のり"
+  },
+  "Mỗi cuộc gặp gỡ mở ra một góc nhìn và một cơ hội mới.": {
+    "en": "Every meeting opens a new perspective and opportunity.",
+    "zh": "每一次相遇都带来新视角和新机会。",
+    "ko": "만남마다 새로운 시각과 기회가 열립니다.",
+    "ja": "一つひとつの出会いが新たな視点と機会を生みます。"
+  },
+  "Mỗi kết nối là một": {
+    "en": "Every connection is a",
+    "zh": "每一次连接都是",
+    "ko": "모든 연결은",
+    "ja": "一つひとつのつながりが"
+  },
+  "Mỗi nhu cầu đều khác nhau. Chúng tôi bắt đầu bằng việc lắng nghe và cùng bạn đi từng bước.": {
+    "en": "Every need is different. We begin by listening and take each step together.",
+    "zh": "每种需求各不相同。我们从倾听开始，与您携手走好每一步。",
+    "ko": "필요는 모두 다릅니다. 먼저 경청하고 한 걸음씩 함께합니다.",
+    "ja": "ニーズはそれぞれ異なります。まず耳を傾け、一歩ずつともに進みます。"
+  },
+  "Mở thêm cơ hội học tập.": {
+    "en": "Open more learning opportunities.",
+    "zh": "开启更多学习机会。",
+    "ko": "더 많은 배움의 기회를 열어갑니다.",
+    "ja": "学びの機会を広げる。"
+  },
+  "Mức độ hài lòng": {
+    "en": "Satisfaction",
+    "zh": "满意度",
+    "ko": "만족도",
+    "ja": "満足度"
+  },
+  "NHỮNG CÂU CHUYỆN KẾT NỐI": {
+    "en": "STORIES OF CONNECTION",
+    "zh": "连接的故事",
+    "ko": "연결의 이야기",
+    "ja": "つながりのストーリー"
+  },
+  "Ngày hội kết nối việc làm": {
+    "en": "Job connection day",
+    "zh": "就业对接日",
+    "ko": "일자리 연결의 날",
+    "ja": "就職マッチングデー"
+  },
+  "Người lao động": {
+    "en": "Workers",
+    "zh": "劳动者",
+    "ko": "근로자",
+    "ja": "働く方"
+  },
+  "Người lao động giả định": {
+    "en": "Fictional worker",
+    "zh": "虚构劳动者",
+    "ko": "가상의 근로자",
+    "ja": "架空の働き手"
+  },
+  "Nhu cầu doanh nghiệp": {
+    "en": "Business needs",
+    "zh": "企业需求",
+    "ko": "기업 수요",
+    "ja": "企業のニーズ"
+  },
+  "Nhân lực là tài sản": {
+    "en": "People are an asset",
+    "zh": "人力是资产",
+    "ko": "인력은 자산입니다",
+    "ja": "人材は財産"
+  },
+  "Những con số kể câu chuyện về hành trình đồng hành cùng doanh nghiệp và người lao động.": {
+    "en": "These numbers tell the story of our journey with businesses and workers.",
+    "zh": "这些数字讲述了我们与企业和劳动者同行的历程。",
+    "ko": "숫자로 보는 기업과 근로자와 함께한 여정입니다.",
+    "ja": "企業と働く方に寄り添ってきた歩みを数字でご紹介します。"
+  },
+  "Những câu trả lời để bắt đầu kết nối cùng Minh Đức.": {
+    "en": "Answers to help you start connecting with Minh Đức.",
+    "zh": "帮助您开始与 Minh Đức 联系的解答。",
+    "ko": "Minh Đức와 연결을 시작하기 위한 답변입니다.",
+    "ja": "Minh Đứcとのつながりを始めるための回答です。"
+  },
+  "Phát video": {
+    "en": "Play video",
+    "zh": "播放视频",
+    "ko": "동영상 재생",
+    "ja": "動画を再生"
+  },
+  "Phối hợp tìm kiếm, lựa chọn và giới thiệu nhân sự.": {
+    "en": "Work together to find, select and introduce candidates.",
+    "zh": "协作寻找、筛选并推荐人才。",
+    "ko": "함께 인재를 찾고 선발하여 소개합니다.",
+    "ja": "人材の募集、選考、紹介を協力して進めます。"
+  },
+  "Phụ trách tuyển dụng · Doanh nghiệp giả định": {
+    "en": "Recruitment lead · Fictional business",
+    "zh": "招聘负责人 · 虚构企业",
+    "ko": "채용 담당자 · 가상 기업",
+    "ja": "採用担当 · 架空の企業"
+  },
+  "Quản lý nhân sự · Doanh nghiệp sản xuất giả định": {
+    "en": "HR manager · Fictional manufacturing business",
+    "zh": "人力资源经理 · 虚构制造企业",
+    "ko": "인사 관리자 · 가상 제조 기업",
+    "ja": "人事マネージャー · 架空の製造企業"
+  },
+  "Số liệu mô phỏng cho giao diện": {
+    "en": "Illustrative figures for the interface",
+    "zh": "界面模拟数据",
+    "ko": "화면 예시 수치",
+    "ja": "画面用のサンプル数値"
+  },
+  "SỰ KIỆN MINH HỌA": {
+    "en": "SAMPLE EVENT",
+    "zh": "示例活动",
+    "ko": "예시 행사",
+    "ja": "イベントのサンプル"
+  },
+  "THÔNG TIN HỮU ÍCH": {
+    "en": "USEFUL INFORMATION",
+    "zh": "实用信息",
+    "ko": "유용한 정보",
+    "ja": "役立つ情報"
+  },
+  "TUYỂN SINH CAO ĐẲNG": {
+    "en": "COLLEGE ADMISSIONS",
+    "zh": "大专招生",
+    "ko": "대학 입학 안내",
+    "ja": "短期大学の入学案内"
+  },
+  "Theo dõi quá trình tiếp nhận và hỗ trợ khi cần.": {
+    "en": "Follow onboarding and provide support when needed.",
+    "zh": "跟进入职过程并在需要时提供支持。",
+    "ko": "입사 과정을 살피고 필요할 때 지원합니다.",
+    "ja": "受け入れの進捗を確認し、必要に応じて支援します。"
+  },
+  "Trao đổi công việc": {
+    "en": "Discuss the job",
+    "zh": "交流工作详情",
+    "ko": "업무 상담",
+    "ja": "仕事について話す"
+  },
+  "Tìm cơ hội": {
+    "en": "Find opportunities",
+    "zh": "寻找机会",
+    "ko": "기회 찾기",
+    "ja": "機会を探す"
+  },
+  "Tìm hiểu Minh Đức": {
+    "en": "About Minh Đức",
+    "zh": "了解 Minh Đức",
+    "ko": "Minh Đức 알아보기",
+    "ja": "Minh Đứcを知る"
+  },
+  "Tìm hiểu câu chuyện": {
+    "en": "Discover the story",
+    "zh": "了解故事",
+    "ko": "이야기 알아보기",
+    "ja": "ストーリーを見る"
+  },
+  "Tìm hiểu thông tin và chuẩn bị cho buổi gặp nhà tuyển dụng.": {
+    "en": "Learn more and prepare to meet the employer.",
+    "zh": "了解信息并准备与雇主会面。",
+    "ko": "정보를 확인하고 채용 담당자와의 만남을 준비하세요.",
+    "ja": "情報を確認し、採用担当者との面談に備えます。"
+  },
+  "Tìm hiểu tuyển sinh": {
+    "en": "Explore admissions",
+    "zh": "了解招生",
+    "ko": "입학 안내 보기",
+    "ja": "入学案内を見る"
+  },
+  "Tìm hiểu vị trí, địa điểm và yêu cầu công việc. Đăng ký tư vấn để bắt đầu hành trình mới.": {
+    "en": "Learn about roles, locations and requirements. Request a consultation to start your new journey.",
+    "zh": "了解职位、地点和工作要求。申请咨询，开启新旅程。",
+    "ko": "직무, 근무지와 요건을 알아보세요. 상담을 신청하고 새로운 여정을 시작하세요.",
+    "ja": "職種、勤務地、要件をご確認ください。相談を申し込み、新たな一歩を踏み出しましょう。"
+  },
+  "Tìm điểm hỗ trợ": {
+    "en": "Find support locations",
+    "zh": "查找支持点",
+    "ko": "지원 거점 찾기",
+    "ja": "サポート拠点を探す"
+  },
+  "Tình huống minh họa · Nhân vật giả định": {
+    "en": "Illustrative scenario · Fictional people",
+    "zh": "示例情境 · 虚构人物",
+    "ko": "예시 상황 · 가상 인물",
+    "ja": "サンプルの状況 · 架空の人物"
+  },
+  "Tôi cần tuyển nhân lực": {
+    "en": "I need to hire staff",
+    "zh": "我需要招聘人力",
+    "ko": "인력 채용이 필요합니다",
+    "ja": "人材を採用したい"
+  },
+  "Tôi đang tìm việc": {
+    "en": "I am looking for work",
+    "zh": "我在找工作",
+    "ko": "일자리를 찾고 있습니다",
+    "ja": "仕事を探しています"
+  },
+  "Tạm dừng video": {
+    "en": "Pause video",
+    "zh": "暂停视频",
+    "ko": "동영상 일시정지",
+    "ja": "動画を一時停止"
+  },
+  "Từ nhu cầu của doanh nghiệp đến hành trình nghề nghiệp của mỗi người.": {
+    "en": "From business needs to each person's career journey.",
+    "zh": "从企业需求到每个人的职业旅程。",
+    "ko": "기업의 필요부터 개인의 경력 여정까지.",
+    "ja": "企業のニーズから一人ひとりのキャリアまで。"
+  },
+  "Vận hành hiệu quả.": {
+    "en": "Effective operations.",
+    "zh": "高效运营。",
+    "ko": "효율적인 운영.",
+    "ja": "効率的な運営。"
+  },
+  "VỀ MINH ĐỨC": {
+    "en": "ABOUT MINH ĐỨC",
+    "zh": "关于 MINH ĐỨC",
+    "ko": "MINH ĐỨC 소개",
+    "ja": "MINH ĐỨCについて"
+  },
+  "Xem cơ hội việc làm": {
+    "en": "View job opportunities",
+    "zh": "查看就业机会",
+    "ko": "취업 기회 보기",
+    "ja": "求人情報を見る"
+  },
+  "Xem tất cả tin tức": {
+    "en": "View all news",
+    "zh": "查看所有新闻",
+    "ko": "모든 뉴스 보기",
+    "ja": "ニュースをすべて見る"
+  },
+  "Yêu cầu tư vấn nhân lực": {
+    "en": "Request workforce advice",
+    "zh": "申请人力咨询",
+    "ko": "인력 상담 요청",
+    "ja": "人材相談を申し込む"
+  },
+  "bước tiến mới.": {
+    "en": "a new step forward.",
+    "zh": "新的进步。",
+    "ko": "새로운 도약입니다.",
+    "ja": "新たな一歩に。"
+  },
+  "bắt đầu từ bạn.": {
+    "en": "begins with you.",
+    "zh": "从您开始。",
+    "ko": "당신에게서 시작됩니다.",
+    "ja": "あなたから始まります。"
+  },
+  "sự thấu hiểu.": {
+    "en": "understanding.",
+    "zh": "理解相伴。",
+    "ko": "이해로 함께합니다.",
+    "ja": "理解とともに。"
+  },
+  "thêm cơ hội.": {
+    "en": "more opportunities.",
+    "zh": "更多机会。",
+    "ko": "기회를 엽니다.",
+    "ja": "新たな機会へ。"
+  },
+  "Đúng cơ hội": {
+    "en": "The right opportunity",
+    "zh": "合适的机会",
+    "ko": "적합한 기회",
+    "ja": "最適な機会"
+  },
+  "Đúng nhu cầu": {
+    "en": "The right fit",
+    "zh": "契合需求",
+    "ko": "필요에 맞게",
+    "ja": "ニーズに合う"
+  },
+  "Đăng ký tư vấn và cho biết kinh nghiệm, mong muốn của bạn.": {
+    "en": "Request a consultation and share your experience and goals.",
+    "zh": "申请咨询，分享您的经验和期望。",
+    "ko": "상담을 신청하고 경험과 희망 사항을 알려주세요.",
+    "ja": "相談を申し込み、経験や希望をお聞かせください。"
+  },
+  "Đề xuất phương án": {
+    "en": "Propose a plan",
+    "zh": "提出方案",
+    "ko": "방안 제안",
+    "ja": "プランの提案"
+  },
+  "ĐỊNH HƯỚNG NGHỀ NGHIỆP": {
+    "en": "CAREER GUIDANCE",
+    "zh": "职业规划",
+    "ko": "진로 안내",
+    "ja": "キャリアガイド"
+  },
+  "Đọc bài viết": {
+    "en": "Read the article",
+    "zh": "阅读文章",
+    "ko": "글 읽기",
+    "ja": "記事を読む"
+  },
+  "Đối tác tiêu biểu": {
+    "en": "Featured partners",
+    "zh": "代表合作伙伴",
+    "ko": "주요 파트너",
+    "ja": "主なパートナー"
+  },
+  "ĐỒNG HÀNH TỪ BƯỚC ĐẦU": {
+    "en": "WITH YOU FROM THE START",
+    "zh": "从一开始就与您同行",
+    "ko": "첫걸음부터 함께",
+    "ja": "最初の一歩からともに"
+  },
+  "Đồng hành bằng": {
+    "en": "Together through",
+    "zh": "以",
+    "ko": "함께하는",
+    "ja": "寄り添うのは"
+  },
+  "Đồng hành cùng bạn": {
+    "en": "Here for you",
+    "zh": "与您同行",
+    "ko": "당신과 함께",
+    "ja": "あなたとともに"
+  },
+  "Đồng hành cùng doanh nghiệp.": {
+    "en": "Alongside businesses.",
+    "zh": "与企业同行。",
+    "ko": "기업과 함께합니다.",
+    "ja": "企業に寄り添い。"
+  },
+  "Đồng hành triển khai": {
+    "en": "Support implementation",
+    "zh": "协助实施",
+    "ko": "실행 지원",
+    "ja": "導入をサポート"
+  },
+  "Đồng hành tận tâm": {
+    "en": "Dedicated support",
+    "zh": "用心相伴",
+    "ko": "정성 어린 지원",
+    "ja": "真心を込めて支援"
+  },
+  "Đội ngũ phù hợp.": {
+    "en": "The right team.",
+    "zh": "合适的团队。",
+    "ko": "적합한 팀.",
+    "ja": "最適なチーム。"
+  },
+  "điều gì?": {
+    "en": "need to know?",
+    "zh": "什么？",
+    "ko": "하신가요?",
+    "ja": "ですか？"
+  },
+  " Khám phá Minh Đức": {
+    "en": " Discover Minh Đức",
+    "zh": " 了解 Minh Đức",
+    "ko": " Minh Đức 알아보기",
+    "ja": " Minh Đứcを知る"
+  },
+  " Vững bước cùng người lao động.": {
+    "en": " Standing with workers.",
+    "zh": " 与劳动者稳步前行。",
+    "ko": " 근로자와 함께 힘차게 나아갑니다.",
+    "ja": " 働く方とともに歩む。"
+  },
+  "Bạn có thể gọi hotline 0364 562 868 hoặc nhắn Zalo qua trang Liên hệ. Biểu mẫu trên bản trải nghiệm chỉ mang tính minh họa và không gửi hoặc lưu thông tin.": {
+    "en": "Call the hotline at 0364 562 868 or message us on Zalo via the Contact page. The form in this prototype is illustrative and does not send or store information.",
+    "zh": "您可以拨打热线 0364 562 868，或通过联系页面使用 Zalo 留言。体验版表单仅供演示，不会发送或保存信息。",
+    "ko": "핫라인 0364 562 868로 전화하거나 문의 페이지의 Zalo로 메시지를 보내세요. 체험판 양식은 예시이며 정보를 전송하거나 저장하지 않습니다.",
+    "ja": "ホットライン0364 562 868に電話するか、お問い合わせページからZaloでご連絡ください。体験版のフォームはサンプルで、情報は送信・保存されません。"
+  },
+  "Bạn có thể xem các vị trí trên trang Việc làm, đọc kỹ địa điểm và yêu cầu, sau đó gọi hotline 0364 562 868 hoặc nhắn Zalo để trao đổi. Biểu mẫu trên bản trải nghiệm không gửi hoặc lưu thông tin.": {
+    "en": "Browse roles on the Jobs page and review the location and requirements, then call 0364 562 868 or message us on Zalo. The prototype form does not send or store information.",
+    "zh": "您可以浏览职位页面，仔细查看地点和要求，然后拨打 0364 562 868 或通过 Zalo 联系。体验版表单不会发送或保存信息。",
+    "ko": "일자리 페이지에서 직무와 근무지, 요건을 확인한 뒤 0364 562 868로 전화하거나 Zalo로 문의하세요. 체험판 양식은 정보를 전송하거나 저장하지 않습니다.",
+    "ja": "求人ページで職種、勤務地、要件を確認し、0364 562 868に電話するかZaloでお問い合わせください。体験版のフォームは情報を送信・保存しません。"
+  },
+  "Hãy chuẩn bị thông tin về vị trí, số lượng nhân sự, địa điểm làm việc, ca làm và thời gian dự kiến. Những thông tin này giúp việc trao đổi rõ ràng hơn.": {
+    "en": "Prepare details of the role, headcount, workplace, shifts and expected timing. This helps make the conversation clearer.",
+    "zh": "请准备职位、人数、工作地点、班次和预计时间等信息，以便更清楚地交流。",
+    "ko": "직무, 인원, 근무지, 근무조와 예상 시기에 관한 정보를 준비해 주세요. 더 명확한 상담에 도움이 됩니다.",
+    "ja": "職種、人数、勤務地、シフト、予定時期の情報をご用意ください。相談をより円滑に進められます。"
+  },
+  "Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.": {
+    "en": "When needs change, having someone to work through solutions with makes recruitment easier.",
+    "zh": "需求变化时，有人陪伴并共同寻找方案，让招聘过程更轻松。",
+    "ko": "수요가 바뀔 때 함께 해결책을 찾는 사람이 있어 채용 과정이 한결 수월해집니다.",
+    "ja": "ニーズが変わったとき、一緒に方法を考えてくれる人がいると採用が楽になります。"
+  },
+  "Minh Đức hỗ trợ cung ứng nhân lực, tư vấn nhân sự và kết nối tuyển dụng. Doanh nghiệp có thể chia sẻ vị trí, số lượng và địa điểm để được tư vấn phương án phù hợp.": {
+    "en": "Minh Đức supports workforce supply, HR consulting and recruitment connections. Businesses can share the roles, headcount and location to discuss a suitable approach.",
+    "zh": "Minh Đức 提供人力供应、人事咨询和招聘对接。企业可提供职位、人数和地点，以咨询合适的方案。",
+    "ko": "Minh Đức는 인력 공급, 인사 상담 및 채용 연결을 지원합니다. 기업은 직무, 인원과 지역을 알려주시면 적합한 방안을 상담받을 수 있습니다.",
+    "ja": "Minh Đứcは人材供給、人事相談、採用のマッチングを支援します。職種、人数、勤務地をお知らせいただければ、適切な方法をご相談いただけます。"
+  },
+  "Minh Đức hỗ trợ doanh nghiệp những dịch vụ nhân sự nào?": {
+    "en": "What workforce services does Minh Đức provide to businesses?",
+    "zh": "Minh Đức 为企业提供哪些人力服务？",
+    "ko": "Minh Đức는 기업에 어떤 인력 서비스를 제공하나요?",
+    "ja": "Minh Đứcは企業にどのような人材サービスを提供していますか？"
+  },
+  "Minh Đức kết nối nhu cầu của doanh nghiệp với nguồn lao động phù hợp, tập trung vào cung ứng nhân lực, tư vấn và giới thiệu việc làm, đặc biệt là lao động phổ thông tại nhà máy.": {
+    "en": "Minh Đức connects businesses with suitable workers, focusing on workforce supply, employment advice and placement, especially for general factory roles.",
+    "zh": "Minh Đức 为企业需求匹配合适的劳动力，专注于人力供应、就业咨询与介绍，特别是工厂普工。",
+    "ko": "Minh Đức는 기업의 수요에 맞는 인력을 연결하며 인력 공급과 취업 상담 및 알선, 특히 공장 일반 인력에 집중합니다.",
+    "ja": "Minh Đứcは企業のニーズに合う人材をつなぎ、人材供給や就職相談・紹介、特に工場の一般作業員に力を入れています。"
+  },
+  "Người lao động bắt đầu tìm việc như thế nào?": {
+    "en": "How can workers start looking for a job?",
+    "zh": "劳动者如何开始找工作？",
+    "ko": "근로자는 어떻게 구직을 시작하나요?",
+    "ja": "働く方はどうやって仕事探しを始められますか？"
+  },
+  "Tôi có thể liên hệ Minh Đức ở đâu?": {
+    "en": "How can I contact Minh Đức?",
+    "zh": "我可以在哪里联系 Minh Đức？",
+    "ko": "Minh Đức에 어떻게 연락할 수 있나요?",
+    "ja": "Minh Đứcにはどこから連絡できますか？"
+  },
+  "Tôi cần chuẩn bị gì khi trao đổi về nhu cầu tuyển dụng?": {
+    "en": "What should I prepare when discussing hiring needs?",
+    "zh": "讨论招聘需求时需要准备什么？",
+    "ko": "채용 수요를 상담할 때 무엇을 준비해야 하나요?",
+    "ja": "採用ニーズを相談する際に何を準備すればよいですか？"
+  },
+  "Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.": {
+    "en": "I want to understand the work and location before deciding. A thoughtful conversation helps me feel more confident.",
+    "zh": "做决定前，我想了解工作内容和地点。一次耐心的交流让我更有信心。",
+    "ko": "결정하기 전에 업무와 근무지를 정확히 알고 싶어요. 친절한 상담 덕분에 자신감이 생겼습니다.",
+    "ja": "決める前に仕事内容と勤務地をよく知りたいです。丁寧に話を聞いてもらい、自信が持てました。"
+  },
+  "Từ những buổi trao đổi đến hành trình tìm việc, mỗi cuộc gặp là dịp để lắng nghe và cùng tiến về phía trước.": {
+    "en": "From conversations to the job search, every meeting is a chance to listen and move forward together.",
+    "zh": "从交流到求职，每一次相遇都是倾听和携手前进的机会。",
+    "ko": "상담부터 구직 여정까지 모든 만남은 경청하고 함께 앞으로 나아갈 기회입니다.",
+    "ja": "相談から仕事探しまで、一つひとつの出会いは耳を傾け、ともに前へ進む機会です。"
+  },
+  "Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.": {
+    "en": "We need a partner who understands our operations and communicates clearly from the start.",
+    "zh": "我们需要一个了解运营节奏、从一开始就能清晰沟通的伙伴。",
+    "ko": "운영 흐름을 이해하고 처음부터 명확하게 소통할 수 있는 파트너가 필요합니다.",
+    "ja": "私たちに必要なのは、業務の流れを理解し、最初から明確に話し合えるパートナーです。"
+  },
+  "Chị Lan Anh": {
+    "en": "Ms Lan Anh",
+    "zh": "Lan Anh 女士",
+    "ko": "Lan Anh 님",
+    "ja": "Lan Anhさん"
+  },
+  "Chị Thu Hà": {
+    "en": "Ms Thu Hà",
+    "zh": "Thu Hà 女士",
+    "ko": "Thu Hà 님",
+    "ja": "Thu Hàさん"
+  }
+}

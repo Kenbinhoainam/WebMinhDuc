@@ -1,0 +1,548 @@
+{
+  "Biểu mẫu minh họa trong prototype.": {
+    "en": "Sample form in this prototype.",
+    "zh": "原型中的示例表单。",
+    "ko": "프로토타입 예시 양식입니다.",
+    "ja": "プロトタイプのサンプルフォームです。"
+  },
+  "Bạn đang tìm gì?": {
+    "en": "What are you looking for?",
+    "zh": "您在寻找什么？",
+    "ko": "무엇을 찾고 계신가요?",
+    "ja": "何をお探しですか？"
+  },
+  "Bỏ qua đến nội dung": {
+    "en": "Skip to content",
+    "zh": "跳至内容",
+    "ko": "본문으로 건너뛰기",
+    "ja": "本文へスキップ"
+  },
+  "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?": {
+    "en": "Preparing a factory job application: where to start?",
+    "zh": "准备工厂求职材料：从哪里开始？",
+    "ko": "공장 입사 서류 준비: 어디서부터 시작할까요?",
+    "ja": "工場の応募書類の準備：何から始める？"
+  },
+  "Chuẩn bị ngày đầu làm việc cho người lao động mới": {
+    "en": "Preparing new workers for their first day",
+    "zh": "为新员工的第一天做好准备",
+    "ko": "신규 근로자의 첫 출근 준비",
+    "ja": "新しい従業員の初出勤に向けた準備"
+  },
+  "Chính sách bảo mật": {
+    "en": "Privacy policy",
+    "zh": "隐私政策",
+    "ko": "개인정보 처리방침",
+    "ja": "プライバシーポリシー"
+  },
+  "Chưa tìm thấy kết quả": {
+    "en": "No results found",
+    "zh": "未找到结果",
+    "ko": "검색 결과가 없습니다",
+    "ja": "検索結果がありません"
+  },
+  "Cung ứng nhân lực": {
+    "en": "Workforce supply",
+    "zh": "人力供应",
+    "ko": "인력 공급",
+    "ja": "人材供給"
+  },
+  "Cung ứng nhân lực · Tư vấn và giới thiệu việc làm": {
+    "en": "Workforce supply · Employment advice and placement",
+    "zh": "人力供应 · 就业咨询与介绍",
+    "ko": "인력 공급 · 취업 상담 및 알선",
+    "ja": "人材供給 · 就職相談・紹介"
+  },
+  "CÔNG TY TNHH NHÂN LỰC": {
+    "en": "HUMAN RESOURCES COMPANY LIMITED",
+    "zh": "人力资源有限责任公司",
+    "ko": "인력 유한회사",
+    "ja": "人材有限会社"
+  },
+  "CÙNG BẠN TÌM GIẢI PHÁP": {
+    "en": "FINDING SOLUTIONS TOGETHER",
+    "zh": "与您共寻解决方案",
+    "ko": "함께 해결책을 찾습니다",
+    "ja": "ともに解決策を探す"
+  },
+  "CÙNG MINH ĐỨC TIẾN XA HƠN": {
+    "en": "GO FURTHER WITH MINH ĐỨC",
+    "zh": "与 MINH ĐỨC 携手前行",
+    "ko": "MINH ĐỨC와 함께 더 멀리",
+    "ja": "MINH ĐỨCとともに前へ"
+  },
+  "Cơ hội việc làm": {
+    "en": "Job opportunities",
+    "zh": "就业机会",
+    "ko": "취업 기회",
+    "ja": "求人情報"
+  },
+  "Cẩm nang": {
+    "en": "Guides",
+    "zh": "指南",
+    "ko": "가이드",
+    "ja": "ガイド"
+  },
+  "Dịch vụ": {
+    "en": "Services",
+    "zh": "服务",
+    "ko": "서비스",
+    "ja": "サービス"
+  },
+  "Email của bạn": {
+    "en": "Your email",
+    "zh": "您的邮箱",
+    "ko": "이메일 주소",
+    "ja": "メールアドレス"
+  },
+  "Email nhận bản tin": {
+    "en": "Newsletter email",
+    "zh": "订阅通讯的邮箱",
+    "ko": "뉴스레터 이메일",
+    "ja": "ニュースレター用メールアドレス"
+  },
+  "Gia nhập Minh Đức": {
+    "en": "Join Minh Đức",
+    "zh": "加入 Minh Đức",
+    "ko": "Minh Đức 합류하기",
+    "ja": "Minh Đứcで働く"
+  },
+  "Giải pháp nhân lực": {
+    "en": "Workforce solutions",
+    "zh": "人力解决方案",
+    "ko": "인력 솔루션",
+    "ja": "人材ソリューション"
+  },
+  "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến": {
+    "en": "Protecting personal information when job hunting online",
+    "zh": "在线求职时保护个人信息",
+    "ko": "온라인 구직 시 개인정보 보호",
+    "ja": "オンライン求職時の個人情報の守り方"
+  },
+  "Gọi hotline": {
+    "en": "Call the hotline",
+    "zh": "拨打热线",
+    "ko": "핫라인 전화",
+    "ja": "ホットラインに電話"
+  },
+  "Hãy trở về trang chủ hoặc khám phá cơ hội việc làm.": {
+    "en": "Return to the home page or explore job opportunities.",
+    "zh": "请返回首页或浏览就业机会。",
+    "ko": "홈으로 돌아가거나 채용 기회를 살펴보세요.",
+    "ja": "トップページに戻るか、求人情報をご覧ください。"
+  },
+  "Hồ sơ năng lực": {
+    "en": "Company profile",
+    "zh": "公司简介",
+    "ko": "회사 소개서",
+    "ja": "会社案内"
+  },
+  "Hỗ trợ": {
+    "en": "Support",
+    "zh": "支持",
+    "ko": "지원",
+    "ja": "サポート"
+  },
+  "Khám phá": {
+    "en": "Explore",
+    "zh": "探索",
+    "ko": "둘러보기",
+    "ja": "見る"
+  },
+  "Khám phá Minh Đức": {
+    "en": "Discover Minh Đức",
+    "zh": "了解 Minh Đức",
+    "ko": "Minh Đức 알아보기",
+    "ja": "Minh Đứcを知る"
+  },
+  "Khám phá nhanh": {
+    "en": "Quick links",
+    "zh": "快速浏览",
+    "ko": "빠른 둘러보기",
+    "ja": "クイックリンク"
+  },
+  "Không tìm thấy trang": {
+    "en": "Page not found",
+    "zh": "找不到页面",
+    "ko": "페이지를 찾을 수 없습니다",
+    "ja": "ページが見つかりません"
+  },
+  "Kết nối cùng Minh Đức": {
+    "en": "Connect with Minh Đức",
+    "zh": "联系 Minh Đức",
+    "ko": "Minh Đức와 연결하기",
+    "ja": "Minh Đứcとつながる"
+  },
+  "Kết nối nhu cầu của bạn với giải pháp nhân lực phù hợp.": {
+    "en": "Connect your needs with the right workforce solution.",
+    "zh": "为您的需求匹配合适的人力解决方案。",
+    "ko": "필요에 맞는 인력 솔루션을 연결합니다.",
+    "ja": "お客様のニーズに合った人材ソリューションをご提案します。"
+  },
+  "Liên hệ": {
+    "en": "Contact",
+    "zh": "联系我们",
+    "ko": "문의",
+    "ja": "お問い合わせ"
+  },
+  "Liên hệ & chi nhánh": {
+    "en": "Contact & branches",
+    "zh": "联系方式与分支机构",
+    "ko": "문의 및 지점",
+    "ja": "お問い合わせ・拠点"
+  },
+  "Liên hệ Zalo": {
+    "en": "Contact via Zalo",
+    "zh": "通过 Zalo 联系",
+    "ko": "Zalo로 문의",
+    "ja": "Zaloで問い合わせる"
+  },
+  "Lên đầu trang": {
+    "en": "Back to top",
+    "zh": "返回顶部",
+    "ko": "맨 위로",
+    "ja": "ページ上部へ"
+  },
+  "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất": {
+    "en": "Planning staffing for production cycles",
+    "zh": "按生产批次规划补充人力",
+    "ko": "생산 단계별 인력 충원 계획",
+    "ja": "生産サイクルごとの人員補充計画"
+  },
+  "Minh Đức — Nhân lực là tài sản": {
+    "en": "Minh Đức — People are an asset",
+    "zh": "Minh Đức — 人力是资产",
+    "ko": "Minh Đức — 인력은 자산입니다",
+    "ja": "Minh Đức — 人材は財産"
+  },
+  "Minh Đức — Trang chủ": {
+    "en": "Minh Đức — Home",
+    "zh": "Minh Đức — 首页",
+    "ko": "Minh Đức — 홈",
+    "ja": "Minh Đức — ホーム"
+  },
+  "Một trải nghiệm thuận tiện hơn": {
+    "en": "A more convenient experience",
+    "zh": "更便捷的体验",
+    "ko": "더 편리한 이용을 위해",
+    "ja": "より便利にご利用いただくために"
+  },
+  "Mở hỗ trợ nhanh": {
+    "en": "Open quick support",
+    "zh": "打开快捷支持",
+    "ko": "빠른 지원 열기",
+    "ja": "クイックサポートを開く"
+  },
+  "Mở menu": {
+    "en": "Open menu",
+    "zh": "打开菜单",
+    "ko": "메뉴 열기",
+    "ja": "メニューを開く"
+  },
+  "Mở tìm kiếm": {
+    "en": "Open search",
+    "zh": "打开搜索",
+    "ko": "검색 열기",
+    "ja": "検索を開く"
+  },
+  "Mở yêu cầu tư vấn": {
+    "en": "Open consultation request",
+    "zh": "打开咨询请求",
+    "ko": "상담 요청 열기",
+    "ja": "相談リクエストを開く"
+  },
+  "Ngôn ngữ hiện tại: Tiếng Việt": {
+    "en": "Current language: Vietnamese",
+    "zh": "当前语言：越南语",
+    "ko": "현재 언어: 베트남어",
+    "ja": "現在の言語：ベトナム語"
+  },
+  "Nhân lực là tài sản.": {
+    "en": "People are an asset.",
+    "zh": "人力是资产。",
+    "ko": "인력은 자산입니다.",
+    "ja": "人材は財産です。"
+  },
+  "Những câu hỏi nên làm rõ trước khi nhận việc": {
+    "en": "Questions to clarify before accepting a job",
+    "zh": "接受工作前应问清的问题",
+    "ko": "취업 전에 확인해야 할 질문",
+    "ja": "就職前に確認したい質問"
+  },
+  "Nội dung minh họa cho prototype. Thông tin chính thức sẽ được Minh Đức cập nhật.": {
+    "en": "Sample content for the prototype. Minh Đức will update the official information.",
+    "zh": "原型示例内容。Minh Đức 将更新正式信息。",
+    "ko": "프로토타입 예시 콘텐츠입니다. 공식 정보는 Minh Đức에서 업데이트합니다.",
+    "ja": "プロトタイプのサンプル内容です。正式な情報はMinh Đứcが更新します。"
+  },
+  "Prototype · Hình ảnh tham chiếu từ HR2B": {
+    "en": "Prototype · Reference images from HR2B",
+    "zh": "原型 · 参考图片来自 HR2B",
+    "ko": "프로토타입 · HR2B 참조 이미지",
+    "ja": "プロトタイプ · HR2Bの参照画像"
+  },
+  "Sự kiện": {
+    "en": "Events",
+    "zh": "活动",
+    "ko": "행사",
+    "ja": "イベント"
+  },
+  "Thu gọn hỗ trợ": {
+    "en": "Collapse support",
+    "zh": "收起支持",
+    "ko": "지원 접기",
+    "ja": "サポートを閉じる"
+  },
+  "Thông tin lưu trữ": {
+    "en": "Storage information",
+    "zh": "存储信息",
+    "ko": "저장 정보",
+    "ja": "保存に関する情報"
+  },
+  "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn": {
+    "en": "Clear recruitment information builds better connections",
+    "zh": "清晰的招聘信息促成更好的连接",
+    "ko": "명확한 채용 정보가 더 나은 연결을 만듭니다",
+    "ja": "明確な採用情報がより良いつながりを生む"
+  },
+  "Thử từ khóa ngắn hơn, như “nhân lực” hoặc “việc làm”.": {
+    "en": "Try a shorter keyword, such as “workforce” or “jobs”.",
+    "zh": "尝试更简短的关键词，如“人力”或“工作”。",
+    "ko": "“인력” 또는 “일자리”처럼 짧은 검색어를 사용해 보세요.",
+    "ja": "「人材」や「求人」など、短いキーワードをお試しください。"
+  },
+  "Tin tức & Cẩm nang": {
+    "en": "News & guides",
+    "zh": "新闻与指南",
+    "ko": "뉴스 및 가이드",
+    "ja": "ニュース・ガイド"
+  },
+  "Trang bạn tìm chưa có ở đây.": {
+    "en": "The page you are looking for is not here.",
+    "zh": "您寻找的页面不在这里。",
+    "ko": "찾으시는 페이지가 없습니다.",
+    "ja": "お探しのページは見つかりません。"
+  },
+  "Trang chủ": {
+    "en": "Home",
+    "zh": "首页",
+    "ko": "홈",
+    "ja": "ホーム"
+  },
+  "Trang thông tin": {
+    "en": "Information page",
+    "zh": "信息页面",
+    "ko": "정보 페이지",
+    "ja": "情報ページ"
+  },
+  "Trao đổi cùng chúng tôi": {
+    "en": "Talk to us",
+    "zh": "与我们交流",
+    "ko": "문의하기",
+    "ja": "ご相談ください"
+  },
+  "Tìm hiểu thêm": {
+    "en": "Learn more",
+    "zh": "了解更多",
+    "ko": "자세히 알아보기",
+    "ja": "詳しく見る"
+  },
+  "Tìm kiếm": {
+    "en": "Search",
+    "zh": "搜索",
+    "ko": "검색",
+    "ja": "検索"
+  },
+  "Tìm kiếm trên website": {
+    "en": "Search the website",
+    "zh": "搜索网站",
+    "ko": "사이트 검색",
+    "ja": "サイト内検索"
+  },
+  "Tìm việc làm": {
+    "en": "Find jobs",
+    "zh": "找工作",
+    "ko": "일자리 찾기",
+    "ja": "仕事を探す"
+  },
+  "Tôi cần nhân sự": {
+    "en": "I need staff",
+    "zh": "我需要人力",
+    "ko": "인력이 필요합니다",
+    "ja": "人材を探しています"
+  },
+  "Tôi tìm việc": {
+    "en": "I am looking for work",
+    "zh": "我在找工作",
+    "ko": "일자리를 찾습니다",
+    "ja": "仕事を探しています"
+  },
+  "Tư vấn nhân sự": {
+    "en": "HR consulting",
+    "zh": "人力资源咨询",
+    "ko": "인사 컨설팅",
+    "ja": "人事コンサルティング"
+  },
+  "Tư vấn và giới thiệu việc làm": {
+    "en": "Employment advice and placement",
+    "zh": "就业咨询与介绍",
+    "ko": "취업 상담 및 알선",
+    "ja": "就職相談・紹介"
+  },
+  "Việc làm": {
+    "en": "Jobs",
+    "zh": "工作",
+    "ko": "일자리",
+    "ja": "求人"
+  },
+  "Việc làm đã lưu": {
+    "en": "Saved jobs",
+    "zh": "已保存的职位",
+    "ko": "저장한 일자리",
+    "ja": "保存した求人"
+  },
+  "Việc làm, dịch vụ, liên hệ…": {
+    "en": "Jobs, services, contact…",
+    "zh": "工作、服务、联系……",
+    "ko": "일자리, 서비스, 문의…",
+    "ja": "求人、サービス、お問い合わせ…"
+  },
+  "Về Minh Đức": {
+    "en": "About Minh Đức",
+    "zh": "关于 Minh Đức",
+    "ko": "Minh Đức 소개",
+    "ja": "Minh Đứcについて"
+  },
+  "Về trang chủ": {
+    "en": "Back to home",
+    "zh": "返回首页",
+    "ko": "홈으로",
+    "ja": "ホームへ戻る"
+  },
+  "Website lưu lựa chọn và việc làm bạn đánh dấu ngay trên thiết bị. Không dùng cookie quảng cáo.": {
+    "en": "This website stores your preferences and saved jobs on your device. It does not use advertising cookies.",
+    "zh": "本网站将您的选择和收藏的职位保存在设备上，不使用广告 Cookie。",
+    "ko": "이 웹사이트는 설정과 저장한 일자리를 기기에 보관하며 광고 쿠키를 사용하지 않습니다.",
+    "ja": "このサイトは設定と保存した求人を端末に保存し、広告Cookieは使用しません。"
+  },
+  "Xóa tìm kiếm": {
+    "en": "Clear search",
+    "zh": "清除搜索",
+    "ko": "검색어 지우기",
+    "ja": "検索をクリア"
+  },
+  "Yêu cầu tư vấn": {
+    "en": "Request a consultation",
+    "zh": "申请咨询",
+    "ko": "상담 요청",
+    "ja": "相談を申し込む"
+  },
+  "Đang tải nội dung…": {
+    "en": "Loading content…",
+    "zh": "正在加载内容……",
+    "ko": "콘텐츠를 불러오는 중…",
+    "ja": "コンテンツを読み込み中…"
+  },
+  "Điều hướng chính": {
+    "en": "Main navigation",
+    "zh": "主导航",
+    "ko": "주 메뉴",
+    "ja": "メインナビゲーション"
+  },
+  "Điều khoản sử dụng": {
+    "en": "Terms of use",
+    "zh": "使用条款",
+    "ko": "이용약관",
+    "ja": "利用規約"
+  },
+  "Đã hiểu": {
+    "en": "Got it",
+    "zh": "知道了",
+    "ko": "확인",
+    "ja": "了解しました"
+  },
+  "Đã đăng ký thử. Email chưa được gửi hoặc lưu.": {
+    "en": "Sample registration complete. Your email has not been sent or stored.",
+    "zh": "示例注册完成。邮箱未发送或保存。",
+    "ko": "체험 등록이 완료되었습니다. 이메일은 전송되거나 저장되지 않았습니다.",
+    "ja": "登録のデモが完了しました。メールは送信・保存されていません。"
+  },
+  "Đón nhận cơ hội mới": {
+    "en": "Welcome new opportunities",
+    "zh": "迎接新机会",
+    "ko": "새로운 기회를 만나보세요",
+    "ja": "新しい機会を迎える"
+  },
+  "Đóng cửa sổ": {
+    "en": "Close window",
+    "zh": "关闭窗口",
+    "ko": "창 닫기",
+    "ja": "ウィンドウを閉じる"
+  },
+  "Đóng thông báo lưu trữ": {
+    "en": "Close storage notice",
+    "zh": "关闭存储提示",
+    "ko": "저장 안내 닫기",
+    "ja": "保存に関する通知を閉じる"
+  },
+  "Đúng người. Đúng cơ hội.": {
+    "en": "The right people. The right opportunities.",
+    "zh": "合适的人，合适的机会。",
+    "ko": "적합한 인재, 적합한 기회.",
+    "ja": "最適な人材、最適な機会。"
+  },
+  "Đăng ký nhận bản tin": {
+    "en": "Subscribe to newsletter",
+    "zh": "订阅通讯",
+    "ko": "뉴스레터 구독",
+    "ja": "ニュースレターを購読"
+  },
+  "Đăng ký trải nghiệm nhận thông tin việc làm và hoạt động.": {
+    "en": "Try subscribing for job and activity updates.",
+    "zh": "体验订阅工作与活动资讯。",
+    "ko": "일자리와 활동 소식 구독을 체험해 보세요.",
+    "ja": "求人や活動情報の購読をお試しください。"
+  },
+  "Đối tác": {
+    "en": "Partners",
+    "zh": "合作伙伴",
+    "ko": "파트너",
+    "ja": "パートナー"
+  },
+  "Giới thiệu": {
+    "en": "About",
+    "zh": "关于我们",
+    "ko": "소개",
+    "ja": "会社紹介"
+  },
+  "Sự kiện & hoạt động": {
+    "en": "Events & activities",
+    "zh": "活动与动态",
+    "ko": "행사 및 활동",
+    "ja": "イベント・活動"
+  },
+  "Tin tức": {
+    "en": "News",
+    "zh": "新闻",
+    "ko": "뉴스",
+    "ja": "ニュース"
+  },
+  "Trải nghiệm quản trị mẫu": {
+    "en": "Explore the admin demo",
+    "zh": "体验管理示例",
+    "ko": "관리 데모 체험",
+    "ja": "管理画面のデモを体験"
+  },
+  "Tuyển dụng nội bộ": {
+    "en": "Careers at Minh Đức",
+    "zh": "内部招聘",
+    "ko": "사내 채용",
+    "ja": "社内採用"
+  },
+  "Tuyển sinh": {
+    "en": "Admissions",
+    "zh": "招生",
+    "ko": "입학 안내",
+    "ja": "入学案内"
+  }
+}

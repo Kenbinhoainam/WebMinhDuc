@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {sampleRecords,normalizePhone,duplicates,toCsv} from '../src/admin-demo-data.ts';
+assert.equal(normalizePhone('000 000-0105'),'0000000105');
+assert.deepEqual(duplicates(sampleRecords,sampleRecords[4]).map(r=>r.id),['MD-006']);
+assert.deepEqual(duplicates(sampleRecords,sampleRecords[0]),[]);
+const csv=toCsv([sampleRecords[0],{...sampleRecords[1],result:'Test, "quoted"'}]);
+assert.match(csv,/"Test, ""quoted"""/);
+assert.match(csv,/MD-001/);
+assert.doesNotMatch(csv,/MD-003/);
+console.log('Admin sample duplicate detection and filtered CSV checks passed');

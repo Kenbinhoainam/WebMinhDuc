@@ -9,7 +9,10 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "node tests/jobs-logic.mjs",
     "test:seo": "node tests/seo-output.mjs",
-    "test:hydration": "node tests/hydration.mjs"
+    "test:hydration": "node tests/hydration.mjs",
+    "test:sprint": "node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs",
+    "audit:i18n": "node scripts/audit-i18n.mjs",
+    "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

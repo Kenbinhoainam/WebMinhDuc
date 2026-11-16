@@ -1,0 +1,28 @@
+import {build} from 'esbuild';
+import {JSDOM} from 'jsdom';
+import assert from 'node:assert/strict';
+import {pathToFileURL} from 'node:url';
+import {rm} from 'node:fs/promises';
+const bundle = `${process.cwd()}/.education-test.mjs`;
+await build({stdin:{contents:`export { EducationPage } from './src/Education.tsx';`,resolveDir:process.cwd(),sourcefile:'education-test-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:bundle,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+try {
+ const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost/',pretendToBeVisual:true});
+ for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','File']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
+ globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+ const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');const {EducationPage}=await import(pathToFileURL(bundle).href);
+ const root=createRoot(document.getElementById('root'));
+ await act(async()=>root.render(React.createElement(MemoryRouter,null,React.createElement(EducationPage))));
+ const click=async(el)=>act(async()=>el.dispatchEvent(new window.MouseEvent('click',{bubbles:true})));
+ const change=async(selector,value)=>act(async()=>{const el=document.querySelector(selector);const proto=el.tagName==='SELECT'?window.HTMLSelectElement.prototype:window.HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(el,value);el.dispatchEvent(new window.Event('input',{bubbles:true}));el.dispatchEvent(new window.Event('change',{bubbles:true}));});
+ const submit=async()=>act(async()=>document.querySelector('.education-form-card form').dispatchEvent(new window.Event('submit',{bubbles:true,cancelable:true})));
+ await click(document.querySelectorAll('.education-form-tabs button')[1]);
+ await change('[name=name]','Nguyen An');await change('[name=phone]','abc12345678');await change('[name=program]','tu-xa-quan-tri');
+ await submit();assert.equal(document.activeElement.name,'phone');assert.ok(document.querySelector('[name=phone]').validationMessage);assert.equal(document.querySelector('.education-success'),null);
+ await change('[name=phone]','0912345678');
+ const input=document.querySelector('[name=document]');
+ for(const file of [new window.File([], 'empty.pdf',{type:'application/pdf'}),new window.File([new Uint8Array(5*1024*1024+1)], 'large.pdf',{type:'application/pdf'})]) {
+  Object.defineProperty(input,'files',{configurable:true,value:[file]});await submit();assert.equal(document.activeElement,input);assert.equal(input.getAttribute('aria-invalid'),'true');assert.ok(document.querySelector('#education-file-error[role=alert]'));assert.equal(document.querySelector('.education-success'),null);
+ }
+ Object.defineProperty(input,'files',{configurable:true,value:[new window.File(['sample'],'sample.pdf',{type:'application/pdf'})]});await submit();assert.match(document.querySelector('.education-success').textContent,/F06/);
+ await act(async()=>root.unmount());dom.window.close();console.log('PASS Education rejects phone letters and focuses empty/oversize files; valid demo completes');
+} finally {await rm(bundle,{force:true});}

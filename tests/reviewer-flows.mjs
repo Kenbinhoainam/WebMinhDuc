@@ -1,0 +1,40 @@
+import {build} from 'esbuild';
+import {JSDOM} from 'jsdom';
+import {mkdir,rm} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+
+const folder = '.reviewer-qa';
+await mkdir(folder,{recursive:true});
+await build({stdin:{contents:`export {default as App} from './src/App'; export {ContactForm} from './src/Contact'; export {EducationPage} from './src/Education'; export {AdminDemo} from './src/AdminDemo'; export {LocaleProvider} from './src/i18n'; export {filterJobs} from './src/JobsPages';`,resolveDir:process.cwd(),sourcefile:'reviewer-entry.tsx'},bundle:true,format:'esm',platform:'node',packages:'external',outfile:`${folder}/bundle.mjs`,loader:{'.css':'empty'},logLevel:'silent'});
+const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost/',pretendToBeVisual:true});
+for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','localStorage','location','requestAnimationFrame','cancelAnimationFrame','File','FormData'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
+window.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});window.scrollTo=()=>{};window.HTMLElement.prototype.scrollIntoView=()=>{};
+window.HTMLMediaElement.prototype.play=()=>Promise.resolve();window.HTMLMediaElement.prototype.pause=()=>{};
+globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter}=await import('react-router-dom');
+const {App,ContactForm,EducationPage,AdminDemo,LocaleProvider,filterJobs}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);
+const root=createRoot(document.getElementById('root'));let renderId=0;
+const render=async(Component,path='/',props={},locale='vi')=>act(async()=>{root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{initialEntries:[path],key:++renderId},React.createElement(Component,props))));await new Promise(resolve=>setTimeout(resolve,30));});
+const click=async(el)=>{assert.ok(el,'click target missing');await act(async()=>el.dispatchEvent(new window.MouseEvent('click',{bubbles:true})));};
+const set=async(el,value)=>{assert.ok(el,'input missing');await act(async()=>{const proto=el.tagName==='SELECT'?window.HTMLSelectElement.prototype:el.tagName==='TEXTAREA'?window.HTMLTextAreaElement.prototype:window.HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(el,value);el.dispatchEvent(new window.Event('input',{bubbles:true}));el.dispatchEvent(new window.Event('change',{bubbles:true}));});};
+const submit=async(selector)=>act(async()=>document.querySelector(selector).dispatchEvent(new window.Event('submit',{bubbles:true,cancelable:true})));
+const errors=[];const originalError=console.error;console.error=(...args)=>{errors.push(args.map(String).join(' '));originalError(...args);};
+try{
+ assert.deepEqual(filterJobs(new URLSearchParams({industrialPark:'KCN Tân Hưng',employmentType:'Thời vụ',shift:'Đêm'})).map(job=>job.id),['MD006']);
+ assert.ok(filterJobs(new URLSearchParams()).every(job=>job.status!=='closed'&&!job.internal));
+ assert.deepEqual(filterJobs(new URLSearchParams({location:'unknown',shift:'unknown'})).map(j=>j.id),filterJobs(new URLSearchParams()).map(j=>j.id));
+ await render(ContactForm);await submit('.contact-form');assert.equal(document.querySelector('.form-success'),null);assert.ok(document.querySelectorAll('[aria-invalid="true"]').length>=8);
+ await click([...document.querySelectorAll('.form-mode button')].find(el=>el.textContent.includes('F02')));await set(document.querySelector('[name=name]'),'Review Example');await set(document.querySelector('[name=phone]'),'........');await set(document.querySelector('[name=message]'),'Review question');await click(document.querySelector('[name=consent]'));await submit('.contact-form');assert.equal(document.querySelector('.form-success'),null);assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'true');assert.equal(document.querySelector('[name=name]').value,'Review Example');
+ await set(document.querySelector('[name=phone]'),'0912345678');await submit('.contact-form');assert.match(document.querySelector('.form-success')?.textContent||'',/không được gửi hoặc lưu/);assert.ok(document.querySelector('a[href="/admin-demo?type=F02"]'));
+ await render(EducationPage);await set(document.querySelector('[name=name]'),'Review Example');await set(document.querySelector('[name=phone]'),'........');await set(document.querySelector('[name=program]'),'tu-xa-quan-tri');await set(document.querySelector('[name=question]'),'Example question');await click(document.querySelector('.education-consent input'));await submit('.education-form-card form');assert.equal(document.querySelector('.education-success'),null,'F05 rejects punctuation-only telephone');
+ await set(document.querySelector('[name=phone]'),'0912345678');await submit('.education-form-card form');assert.match(document.querySelector('.education-success')?.textContent||'',/F05/);assert.ok(document.querySelector('a[href="/admin-demo?type=F05"]'));
+ await click(document.querySelector('.education-again'));await click(document.querySelectorAll('.education-form-tabs button')[1]);await set(document.querySelector('[name=name]'),'Review Example');await set(document.querySelector('[name=phone]'),'0912345678');await click(document.querySelector('.education-consent input'));await submit('.education-form-card form');assert.equal(document.querySelector('.education-success'),null,'F06 rejects missing file');assert.ok(document.querySelector('#education-file-error'));
+ const upload=document.querySelector('[name=document]');Object.defineProperty(upload,'files',{configurable:true,value:[new window.File(['content'],'example.pdf',{type:'text/html'})]});await submit('.education-form-card form');assert.equal(document.querySelector('.education-success'),null,'F06 rejects mismatched MIME');
+ Object.defineProperty(upload,'files',{configurable:true,value:[new window.File(['example content'],'example.pdf',{type:'application/pdf'})]});await submit('.education-form-card form');assert.match(document.querySelector('.education-success')?.textContent||'',/F06/);assert.ok(document.querySelector('a[href="/admin-demo?type=F06"]'));
+ await render(AdminDemo,'/admin-demo?type=F04');assert.equal(document.querySelectorAll('tbody tr').length,1);assert.match(document.querySelector('tbody').textContent,/F04/);assert.equal(document.querySelectorAll('main').length,0,'Admin does not create nested main landmark');
+ await click(document.querySelector('tbody button'));assert.ok(document.querySelector('[role=dialog]'));await click(document.querySelector('[aria-label="Đóng cửa sổ"]'));
+ await set(document.querySelector('.admin-top select'),'Marketing mẫu');assert.equal(document.querySelector('tbody'),null);assert.match(document.querySelector('.admin-empty').textContent,/Marketing mẫu/);
+ await render(App,'/jobs');assert.equal(document.querySelectorAll('main').length,1);await click(document.querySelector('.menu-button'));assert.equal(document.querySelectorAll('.drawer-nav > a,.drawer-nav > div').length,7,'seven primary menu groups');await act(async()=>document.dispatchEvent(new window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));assert.equal(document.querySelector('[role=dialog]'),null);assert.equal(document.getElementById('root').hasAttribute('inert'),false);
+ assert.equal(errors.length,0,errors.join('\n'));console.log('PASS reviewer: negative contact/education validation, jobs query semantics, case roles, seven-group navigation and dialog cleanup');
+}finally{console.error=originalError;await act(async()=>root.unmount());dom.window.close();await rm(folder,{recursive:true,force:true});}

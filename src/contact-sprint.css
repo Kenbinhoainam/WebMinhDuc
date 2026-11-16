@@ -1,0 +1,1 @@
+.form-mode{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}.form-mode button{border:1px solid #c8d8e2;background:white;color:#31536a;padding:.65rem .9rem;border-radius:6px;cursor:pointer}.form-mode button.active{background:#075681;color:white;border-color:#075681}.form-success .btn{margin:1rem 1rem 1rem 0}

@@ -33,6 +33,7 @@ test('Cross-tab clear resets count',()=>{api.useSavedJobs().toggleSaved('MD002')
 test('Failed write still toggles existing state',()=>{const e=make(['MD001']);e.mode.failWrite=true;e.api.useSavedJobs().toggleSaved('MD002');assert.deepEqual(plain(e.api.useSavedJobs().savedIds),['MD001','MD002']);e.api.useSavedJobs().toggleSaved('MD001');assert.deepEqual(plain(e.api.useSavedJobs().savedIds),['MD002']);assert.equal(e.persisted.get(key),'["MD001"]')});
 test('Blocked storage remains usable in memory',()=>{const e=make();e.mode.failRead=e.mode.failWrite=true;e.api.useSavedJobs().toggleSaved('MD003');assert.equal(e.api.useSavedJobs().count,1);e.api.useSavedJobs().toggleSaved('MD003');assert.equal(e.api.useSavedJobs().count,0)});
 test('Optional CV can be absent',()=>assert.equal(r.validateApplicationFile(null),''));
+test('Internal CV is required',()=>assert.match(r.validateApplicationFile(null,true),/chọn CV/));
 test('PDF exactly 5MB accepted',()=>assert.equal(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:5*1024*1024}),''));
 test('CV above 5MB rejected',()=>assert.match(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:5*1024*1024+1}),/5 MB/));
 test('Empty CV rejected',()=>assert.match(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:0}),/trống/));
