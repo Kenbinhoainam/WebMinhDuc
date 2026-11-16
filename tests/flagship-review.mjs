@@ -56,7 +56,11 @@ try {
  window.HTMLMediaElement.prototype.play=function(){paused=false;plays++;this.dispatchEvent(new Event('play'));return Promise.resolve()};
  window.HTMLMediaElement.prototype.pause=function(){paused=true;this.dispatchEvent(new Event('pause'))};
  await act(()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
- const video=document.querySelector('video');assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');assert.ok(video.getAttribute('poster'));
+ const video=document.querySelector('video');assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');
+ const poster=document.querySelector('.hero-poster');assert.ok(poster,'an independent poster is present before video loading');
+ assert.equal(document.querySelectorAll('.hero-poster').length,1);assert.equal(poster.getAttribute('src'),'/optimized/assets/hero-poster-1600.webp');
+ assert.equal(poster.getAttribute('alt'),'');assert.equal(poster.closest('.hero-media')?.getAttribute('aria-hidden'),'true');
+ assert.equal(poster.getAttribute('fetchpriority'),'high');assert.notEqual(poster.getAttribute('loading'),'lazy');assert.equal(video.classList.contains('is-ready'),false);
  assert.ok(!document.querySelector('.hero-bottom,.hero-caption,.scroll-hint'),'removed hero footer content must not return');
  const control=document.querySelector('.video-control');assert.ok(control.getAttribute('aria-label'));assert.equal(control.tabIndex,0,'keyboard video control remains reachable');await click(control);await click(control);
  assert.equal(paused,true);
@@ -68,6 +72,7 @@ try {
  // compiled rule order only; it is not a browser layout assertion.
  const builtHtml=await readFile('dist/index.html','utf8');
  const builtDocument=new window.DOMParser().parseFromString(builtHtml,'text/html');
+ assert.ok([...builtDocument.querySelectorAll('link[rel="preload"][as="image"]')].some(link=>link.getAttribute('href')===poster.getAttribute('src')),'poster markup uses the same URL as the homepage preload');
  const cssPath=builtDocument.querySelector('link[rel="stylesheet"]')?.getAttribute('href');
  assert.ok(cssPath?.startsWith('/assets/'),'compiled entry stylesheet exists');
  const css=await readFile(`dist${cssPath}`,'utf8');

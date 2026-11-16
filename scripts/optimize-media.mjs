@@ -23,5 +23,8 @@ for(const file of files.sort()){
 }
 await writeFile('src/media-manifest.json',JSON.stringify(manifest,null,2)+'\n');
 const video='public/mirror/www.hr2b.com/wp-content/uploads/2025/10/hr2b-intro.mp4';
-execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',video,'-an','-vf','scale=1280:-2','-c:v','libx264','-preset','medium','-crf','27','-pix_fmt','yuv420p','-movflags','+faststart','public/optimized/hero-1280.mp4']);
+// Use source 0–10.9 s, excluding the branded montage. Start at 0.7 s and
+// crossfade the last 0.7 s into the opening 0–0.7 s for a continuous loop.
+const heroFilter='[0:v]scale=1280:720,split=2[main][head];[main]trim=start=0.7:end=10.9,setpts=PTS-STARTPTS,fps=30,settb=AVTB[a];[head]trim=start=0:end=0.7,setpts=PTS-STARTPTS,fps=30,settb=AVTB[b];[a][b]xfade=transition=fade:duration=0.7:offset=9.5,format=yuv420p[out]';
+execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',video,'-filter_complex',heroFilter,'-map','[out]','-an','-c:v','libx264','-preset','medium','-crf','27','-movflags','+faststart','public/optimized/hero-1280.mp4']);
 console.log(`Generated ${Object.keys(manifest).length} image sets and a silent hero video.`);

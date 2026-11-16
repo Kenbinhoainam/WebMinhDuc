@@ -1,6 +1,6 @@
-import {useEffect,useRef,useState} from 'react';
+import {useRef,useState} from 'react';
 import {Link} from 'react-router-dom';
-import {ArrowUpRight,ArrowRight,ChevronLeft,ChevronRight,Users,Building2,BriefcaseBusiness,MapPin,ShieldCheck,Handshake} from 'lucide-react';
+import {ArrowUpRight,ArrowRight,ChevronLeft,ChevronRight,Users,Building2,BriefcaseBusiness,MapPin,Handshake} from 'lucide-react';
 import {MEDIA,ButtonLink,SectionHeading,CTASection,useContact} from './shared';
 import {HOME_FAQS} from './home-demo-data';
 import './home-enhancements.css';
@@ -10,7 +10,24 @@ import HomeHero from './HomeHero';
 import {backgroundImage} from './media';
 const services=[{title:'Giới thiệu & cung ứng nhân lực',desc:'Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.',image:'GPNS-3.jpg',path:'labor-supply',icon:Users},{title:'Cho thuê lao động',desc:'Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.',image:'GPNS-2.jpg',path:'labor-leasing',icon:Building2},{title:'Headhunt & lao động tay nghề',desc:'Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.',image:'GPNS-1.jpg',path:'recruitment',icon:BriefcaseBusiness},{title:'Tuyển sinh cao đẳng & đại học',desc:'Tìm hiểu cơ hội học tập từ xa và chính quy.',image:'GPNS-3.jpg',path:'college-admissions',icon:Users},{title:'Setup tổ chức & phần mềm doanh nghiệp',desc:'Cùng làm rõ cấu trúc, quy trình và nhu cầu phần mềm quản lý.',image:'GPNS-2.jpg',path:'hr-consulting',icon:Building2}];
 export default function Home(){const contact=useContact(),serviceRow=useRef<HTMLDivElement>(null);return <><HomeHero/>
-<section id="about" className="section home-about"><div className="container about-layout"><div data-reveal="left"><span className="eyebrow">VỀ MINH ĐỨC</span><h2>Nhân lực là tài sản.<br/>Con người là trọng tâm.</h2><p className="lead">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p><p>Minh Đức kết nối nhu cầu của doanh nghiệp với nguồn lao động phù hợp, tập trung vào cung ứng nhân lực, tư vấn và giới thiệu việc làm, đặc biệt là lao động phổ thông tại nhà máy.</p><p>Chúng tôi đồng hành từ bước tìm hiểu nhu cầu, kết nối tuyển dụng đến hỗ trợ người lao động tiếp cận công việc.</p><ButtonLink to="/about-us">Tìm hiểu Minh Đức</ButtonLink></div><div className="about-image" data-reveal="media"><img src={MEDIA+'2025/10/HR2B-2-1.png'} alt="Hình ảnh minh họa kết nối con người và doanh nghiệp" width="1180" height="1185" loading="lazy"/><span className="photo-note">Hình ảnh minh họa theo mẫu thiết kế</span></div></div></section>
+<section id="about" className="section home-about">
+  <div className="container about-layout">
+    <div data-reveal="left">
+      <span className="eyebrow">VỀ MINH ĐỨC</span>
+      <h2>Nhân lực là tài sản.<br/>Con người là trọng tâm.</h2>
+      <p className="lead">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
+      <p>Minh Đức kết nối nhu cầu của doanh nghiệp với nguồn lao động phù hợp, tập trung vào cung ứng nhân lực, tư vấn và giới thiệu việc làm, đặc biệt là lao động phổ thông tại nhà máy.</p>
+      <p>Chúng tôi đồng hành từ bước tìm hiểu nhu cầu, kết nối tuyển dụng đến hỗ trợ người lao động tiếp cận công việc.</p>
+      <ButtonLink to="/about-us">Tìm hiểu Minh Đức</ButtonLink>
+    </div>
+    <div className="about-image" data-reveal="media">
+      <div className="about-portrait">
+        <img src={MEDIA+'2025/09/GPNS-1.jpg'} alt="Hình ảnh minh họa kết nối con người và doanh nghiệp" width="1114" height="1280" sizes="(max-width: 575px) 90vw, (max-width: 900px) 42vw, 520px" loading="lazy"/>
+      </div>
+      <span className="photo-note">Hình ảnh minh họa theo mẫu thiết kế</span>
+    </div>
+  </div>
+</section>
 <section className="wide strengths"><Link data-reveal="up" to="/services/labor-supply"><Users/><span>Cung ứng nhân lực</span><strong>Đúng nhu cầu</strong><ArrowUpRight/></Link><Link data-reveal="up" data-reveal-delay="1" to="/jobs"><BriefcaseBusiness/><span>Kết nối việc làm</span><strong>Đúng cơ hội</strong><ArrowUpRight/></Link><Link data-reveal="up" data-reveal-delay="2" to="/contact"><Handshake/><span>Đồng hành tận tâm</span><strong>Cùng phát triển</strong><ArrowUpRight/></Link></section>
 <section className="section home-services"><div className="container" data-reveal="up"><SectionHeading eyebrow="GIẢI PHÁP CHO BẠN" title="Giải pháp nhân lực toàn diện" description="Từ nhu cầu của doanh nghiệp đến hành trình nghề nghiệp của mỗi người."/></div><div className="wide service-carousel" ref={serviceRow} tabIndex={0} role="region" aria-label="Danh sách giải pháp">{services.map((s,i)=><article data-reveal="up" data-reveal-delay={String(i%3+1)} className="service-card" key={s.path} style={{backgroundImage:`linear-gradient(180deg,rgba(15,24,35,.17),rgba(15,24,35,.85)),url(${backgroundImage(MEDIA+'2025/09/'+s.image,960)})`}}><s.icon size={45} strokeWidth={1.2}/><h3><Link to={'/services/'+s.path}>{s.title}</Link></h3><p>{s.desc}</p><Link className="btn" to={'/services/'+s.path}>Khám phá giải pháp <ArrowUpRight size={18}/></Link></article>)}</div><div className="carousel-controls"><button className="circle-button" aria-label="Dịch vụ trước" onClick={()=>serviceRow.current?.scrollBy({left:-350,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}><ChevronLeft/></button><button className="circle-button" aria-label="Dịch vụ tiếp theo" onClick={()=>serviceRow.current?.scrollBy({left:350,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}><ChevronRight/></button></div></section>
 <section className="section light-section"><div className="container connection-inner" data-reveal="up"><div><span className="eyebrow">TUYỂN SINH CAO ĐẲNG &amp; ĐẠI HỌC</span><h2>Mở thêm cơ hội học tập.</h2><p>Khám phá các chương trình minh họa theo hình thức từ xa và chính quy.</p></div><ButtonLink to="/education" secondary>Tìm hiểu tuyển sinh</ButtonLink></div></section><Achievements/>
