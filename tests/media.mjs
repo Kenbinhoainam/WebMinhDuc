@@ -9,6 +9,9 @@ if(!process.argv.includes('--case')) {
  await mkdir(temp,{recursive:true});
  try {
   await build({entryPoints:['src/HomeHero.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/hero.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+  const heroCss=await readFile('src/home-enhancements.css','utf8');
+  assert.match(heroCss,/\.home-hero \.video-control\s*\{[^}]*clip-path:inset\(50%\)/,'video control is visually hidden by default');
+  assert.match(heroCss,/\.home-hero \.video-control:focus\s*\{[^}]*clip-path:none/,'keyboard focus reveals the control');
   const manifest=JSON.parse(await readFile('src/media-manifest.json','utf8'));
   for(const [original,image] of Object.entries(manifest)) {await access('public'+original);for(const variant of image.variants) await access('public'+variant.src);}
   for(const mode of ['mobile','reduced','data','desktop','race','preference','observer']) {const result=spawnSync(process.execPath,[process.argv[1],'--case',mode],{encoding:'utf8',timeout:10000});assert.equal(result.status,0,`${mode}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);}
@@ -34,10 +37,13 @@ if(!process.argv.includes('--case')) {
   await act(async()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
   const video=window.document.querySelector('video'),button=window.document.querySelector('.video-control');
   assert.ok(video&&button);assert.equal(video.getAttribute('src'),null);
+  assert.equal(window.document.querySelector('.hero-bottom, .scroll-hint, .hero-caption'),null,'hero bottom bar is removed');
+  assert.equal(button.getAttribute('aria-label'),'Phát video');
+  button.focus();assert.equal(window.document.activeElement,button,'video control remains keyboard focusable');
   for(const preference of ['motion','narrow','connection'])assert.equal(typeof listeners[preference],'function',`${preference} listener is installed after effect flush`);
   const click=()=>act(async()=>button.click());
   if(mode==='race') {
-   await click();await click();assert.equal(paused,true);await waitForAutoplay();
+   await click();assert.equal(button.getAttribute('aria-label'),'Tạm dừng video');await click();assert.equal(button.getAttribute('aria-label'),'Phát video');assert.equal(paused,true);await waitForAutoplay();
    assert.equal(plays,1,'pending autoplay must not restart a manual pause');
   } else if(mode==='preference') {
    await click();assert.equal(paused,false);

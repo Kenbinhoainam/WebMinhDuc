@@ -1,6 +1,6 @@
 import {build} from 'esbuild';
 import {JSDOM} from 'jsdom';
-import {mkdir, rm} from 'node:fs/promises';
+import {mkdir, readFile, rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 
@@ -22,6 +22,15 @@ try {
  assert.equal(sets[1].querySelectorAll('a,button,[tabindex]').length,0);
  assert.deepEqual([...sets[0].querySelectorAll('li')].map(li=>li.textContent),['Luxshare ICT','FOXCONN','SAMSUNG','JEILTECH VINA','TACU']);
  assert.equal(sets[0].textContent,sets[1].textContent);
+ for (const image of sets[0].querySelectorAll('img')) {
+  assert.equal(image.getAttribute('alt'),'');
+  assert.match(image.getAttribute('src'), /^\/partners\/[a-z]+\.(svg|webp)$/);
+  if (image.getAttribute('src').endsWith('.svg')) {
+   const svg=await readFile(`public${image.getAttribute('src')}`,'utf8');
+   assert.doesNotMatch(svg, /<script|<foreignObject|\son\w+=|(?:href|src)=|https?:\/\/(?!www\.w3\.org\/)/i);
+  }
+ }
+ assert.equal(sets[0].querySelectorAll('img').length,3);
  const button=document.querySelector('.partners-toggle');
  assert.equal(button.getAttribute('aria-pressed'),'false');
  await React.act(async()=>button.click());

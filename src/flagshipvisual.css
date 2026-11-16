@@ -27,17 +27,21 @@
 .info-intro-grid, .education-detail, .education-form-layout { gap: clamp(30px, 5vw, 70px); }
 .info-partner { border-color: var(--flagship-line); border-radius: 12px; }
 
-/* Names are typeset text, not reconstructed brand logos. Each set has the
-   same trailing spacing, so translating half the track has no jump. */
+/* Equal trailing spacing keeps the two sets aligned at the loop seam. */
 .partner-section { background: #fff; }
 .partners-strip { position: relative; border-block: 1px solid var(--flagship-line); margin-top: 35px; }
 .partners-viewport { overflow: hidden; }
 .partners-track { display: flex; width: max-content; animation: partners-loop 32s linear infinite; }
 .partners-set { display: flex; flex: none; gap: 18px; padding: 24px 18px 24px 0; margin: 0; list-style: none; }
-.partners-set li { display: grid; place-items: center; width: clamp(180px, 18vw, 250px); min-height: 100px; padding: 18px; border: 1px solid #e4eaed; border-radius: 12px; background: #f9fbfb; color: #244962; text-align: center; font-size: clamp(15px, 1.4vw, 19px); font-weight: 800; letter-spacing: .025em; }
+.partners-set li { display: grid; place-items: center; width: clamp(180px, 18vw, 250px); min-height: 110px; padding: 20px; border: 1px solid #e4eaed; border-radius: 14px; background: #fff; box-shadow: 0 4px 18px #173e5010; }
+.partner-logo { display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; min-height: 54px; text-align: center; }
+.partner-logo img { width: min(100%, 180px); max-height: 42px; object-fit: contain; }
+.partner-logo--text { color: #244962; font-size: clamp(15px, 1.4vw, 19px); font-weight: 800; letter-spacing: .025em; }
+.partner-logo-name { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.info-partner { padding: 20px; background: #fff; }
 .partners-strip[data-paused="true"] .partners-track, .partners-viewport:hover .partners-track, .partners-viewport:focus-within .partners-track { animation-play-state: paused; }
-.partners-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin: 0 0 12px; padding: 8px 13px; border: 1px solid #d6e0e4; border-radius: 999px; background: white; color: #284b60; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
-.partners-toggle:focus-visible { outline: 2px solid var(--flagship-red); outline-offset: 3px; }
+.partners-toggle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.partners-toggle:focus-visible { z-index: 2; left: 8px; bottom: 8px; display: inline-flex; align-items: center; gap: 8px; width: auto; height: auto; min-height: 44px; padding: 8px 13px; overflow: visible; clip-path: none; border: 1px solid #d6e0e4; border-radius: 999px; background: white; color: #284b60; font: inherit; font-size: 13px; font-weight: 700; outline: 2px solid var(--flagship-red); outline-offset: 3px; }
 @keyframes partners-loop { to { transform: translateX(-50%); } }
 @media (max-width: 900px) {
  .home-services .service-card { flex-basis: calc((100% - 20px) / 2); }

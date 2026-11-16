@@ -19,7 +19,8 @@ const assets = {
   service2: `${uploads}2025/09/GPNS-2.jpg`,
   service3: `${uploads}2025/09/GPNS-3.jpg`,
 };
-const partners = ['Luxshare-ICT', 'Foxconn', 'Samsung', 'Jeiltech-Vina', 'TACU'];
+import PartnerLogo from './PartnerLogo';
+import {partners} from './partners';
 const contact = { phone: '0364 562 868', tel: '0364562868', email: 'vieclamminhduc.vpv2@gmail.com' };
 
 type Service = {
@@ -60,7 +61,7 @@ function ServiceCards({ exclude }: { exclude?: string }) {
   return <div className={`grid-3 info-service-cards ${exclude ? 'info-two-cards' : ''}`}>{services.filter(s => s.slug !== exclude).map(s => <Link className="info-service-card" key={s.slug} to={`/services/${s.slug}`}><img src={s.image} alt="" loading="lazy" /><div><h3>{s.title}</h3><p>{s.short}</p><span className="info-round-arrow"><ArrowUpRight size={24} /></span></div></Link>)}</div>;
 }
 function PartnerStrip() {
-  return <div className="info-partner-list">{partners.map((name, index) => <div className={`info-partner info-partner-${index}`} key={name}>{name}</div>)}</div>;
+  return <div className="info-partner-list">{partners.map((name, index) => <div className={`info-partner info-partner-${index}`} key={name}><PartnerLogo name={name}/></div>)}</div>;
 }
 function FAQ({ questions }: { questions: [string, string][] }) {
   const [active, setActive] = useState<number | null>(0);

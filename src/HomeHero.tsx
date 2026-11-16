@@ -1,5 +1,5 @@
 import {useEffect,useRef,useState} from 'react';
-import {ArrowDown,Pause,Play} from 'lucide-react';
+import {Pause,Play} from 'lucide-react';
 import {ButtonLink} from './shared';
 
 const VIDEO='/optimized/hero-1280.mp4';
@@ -30,5 +30,5 @@ export default function HomeHero(){
   return()=>{if(timer!==undefined)window.clearTimeout(timer);observer?.disconnect();document.removeEventListener('visibilitychange',update);motion.removeEventListener('change',preferenceChange);narrow.removeEventListener('change',preferenceChange);connection?.removeEventListener?.('change',preferenceChange);el.pause();};
  },[]);
  const toggle=()=>{const el=video.current;if(!el)return;if(!el.paused){pausedByUser.current=true;el.pause();}else{pausedByUser.current=false;manual.current=true;if(!el.src)el.src=VIDEO;void el.play().catch(()=>setPlaying(false));}};
- return <section className="home-hero" ref={section}><video ref={video} muted loop playsInline preload="none" poster={POSTER} aria-hidden="true" onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)}/><div className="hero-shade"/><div className="container hero-content"><span className="hero-kicker"><span/> MINH ĐỨC VINA</span><h1>Kết nối nhân lực.<br/>Kiến tạo tương lai.</h1><p>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p><div className="hero-actions"><ButtonLink to="/services">Tôi cần tuyển nhân lực</ButtonLink><ButtonLink to="/jobs" secondary>Tôi đang tìm việc</ButtonLink></div></div><div className="container hero-bottom"><a href="#about" className="scroll-hint"><ArrowDown size={18}/> Khám phá Minh Đức</a><div className="hero-caption"><span>Nhân lực là tài sản</span><button className="video-control" aria-label={playing?'Tạm dừng video':'Phát video'} onClick={toggle}>{playing?<Pause size={15}/>:<Play size={15}/>}</button></div></div></section>;
+ return <section className="home-hero" ref={section}><video ref={video} muted loop playsInline preload="none" poster={POSTER} aria-hidden="true" onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)}/><div className="hero-shade"/><div className="container hero-content"><span className="hero-kicker"><span/> MINH ĐỨC VINA</span><h1>Kết nối nhân lực.<br/>Kiến tạo tương lai.</h1><p>Đồng hành cùng doanh nghiệp.<br className="mobile-break"/> Vững bước cùng người lao động.</p><div className="hero-actions"><ButtonLink to="/services">Tôi cần tuyển nhân lực</ButtonLink><ButtonLink to="/jobs" secondary>Tôi đang tìm việc</ButtonLink></div></div><button type="button" className="video-control" aria-label={playing?'Tạm dừng video':'Phát video'} onClick={toggle}>{playing?<Pause size={15}/>:<Play size={15}/>}<span>{playing?'Tạm dừng video':'Phát video'}</span></button></section>;
 }

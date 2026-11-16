@@ -1,4 +1,4 @@
-# Minh Đức Vina — Prototype 6 / Transparent single-row header
+# Minh Đức Vina — Prototype 7 / Unified navigation & partner identities
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.
 
@@ -29,7 +29,7 @@ npm run audit:i18n
 
 ## Nâng cấp flagship
 
-Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục có nút dừng; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Chi tiết bản mới: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
 [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-current.csv).
 
@@ -57,7 +57,7 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 
 ## Kiến trúc
 
-- `App.tsx`, `Home.tsx`, `shared.tsx`: khung, điều hướng, trang chủ và thành phần chung.
+- `App.tsx`, `Header.tsx`, `navigation.ts`, `Home.tsx`, `shared.tsx`: khung, header và sitemap dùng chung, trang chủ và thành phần chung.
 - `JobsPages.tsx`, `Education.tsx`, `Contact.tsx`: dữ liệu và sáu luồng demo.
 - `AdminDemo.tsx`, `admin-demo-data.ts`: quản trị minh họa, dữ liệu giả độc lập.
 - `InfoPages.tsx`: giới thiệu, dịch vụ, tin tức, sự kiện, chính sách và hồ sơ năng lực.

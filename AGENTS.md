@@ -14,6 +14,8 @@ Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho nh�
 
 - Hướng đến prototype flagship: thiết kế nhất quán, nội dung có thứ bậc, thao tác dễ hiểu, responsive từ màn hình hẹp đến màn hình lớn.
 - Mỗi thay đổi cần xem xét UI/UX, khả năng tiếp cận, SEO/AEO và tải trang theo phạm vi liên quan; tránh mở rộng công việc không cần thiết.
+- Tối ưu code là một phần bắt buộc của từng nhiệm vụ: rà đoạn lặp và mã không dùng, dùng chung dữ liệu/thành phần khi phù hợp, giữ cấu trúc dễ đọc và phạm vi thay đổi có kiểm soát. Không viết lại phần đang hoạt động chỉ để đổi phong cách.
+- Khi tối ưu, giữ nguyên hành vi cần thiết, bản dịch và khả năng truy cập; tránh dependency thừa, giảm tài nguyên tải và đo dung lượng khi có thay đổi liên quan. Kiểm tra hồi quy tương ứng trước khi bàn giao.
 - Giữ tiếng Việt, Anh, Trung giản thể, Hàn và Nhật. Nhãn mới phải có bản dịch; sinh lại locale sau khi đổi catalog.
 - Giữ sitemap Minh Đức đúng hai cấp, 7 nhóm chính và 19 mục con, trừ khi người dùng yêu cầu thay đổi. Menu phải dẫn tới nội dung hoặc bộ lọc hoạt động.
 - Animation cần giữ nội dung đọc được, không chặn LCP, không chiếm điều khiển cuộn, tôn trọng reduced-motion và bàn phím. Tránh thêm dependency nặng cho hiệu ứng nhỏ.

@@ -56,6 +56,27 @@ try {
   assert.ok(drawerLink.classList.contains('active'));assert.equal(drawerLink.getAttribute('aria-current'),null);
   await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
  }
+ await act(()=>root.render(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{key:'hover'},React.createElement(Header)))));
+ const hoverGroups=[...document.querySelectorAll('.desktop-nav-group')], hoverButtons=[...document.querySelectorAll('.desktop-nav-heading button')];
+ const hoverPanel=document.getElementById(hoverButtons[0].getAttribute('aria-controls'));
+ const pointer=async (target,type,related=null,pointerType='mouse')=>act(()=>{const event=new dom.window.MouseEvent(type,{bubbles:true,relatedTarget:related});Object.defineProperty(event,'pointerType',{value:pointerType});target.dispatchEvent(event)});
+ const pause=async ms=>act(async()=>new Promise(resolve=>setTimeout(resolve,ms)));
+ await pointer(hoverGroups[1],'pointerover',null,'touch');await pause(130);assert.equal(hoverPanel.hidden,true,'touch does not hover open');
+ await pointer(hoverGroups[1],'pointerover');await pause(130);assert.equal(hoverPanel.hidden,false,'mouse hover opens');
+ await pointer(hoverGroups[1],'pointerout',hoverPanel);await pause(200);assert.equal(hoverPanel.hidden,false,'moving into panel keeps it open');
+ await act(()=>hoverPanel.querySelector('a').focus());await pointer(hoverGroups[2],'pointerover');await pause(130);assert.equal(hoverPanel.hidden,false,'hover does not hide focused panel');
+ await pointer(hoverGroups[2],'pointerout',hoverGroups[1]);await pointer(hoverGroups[1],'pointerover',hoverGroups[2]);await pause(130);
+ await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));assert.equal(hoverPanel.hidden,true);
+ await pointer(hoverGroups[1],'pointerover');await pause(130);assert.equal(hoverPanel.hidden,true,'Escape suppresses reopen before leave');
+ await pointer(hoverGroups[1],'pointerout',document.getElementById('outside'));await act(()=>document.getElementById('outside').focus());await pointer(hoverGroups[1],'pointerover');await pause(130);assert.equal(hoverPanel.hidden,false,'reentry allows hover after Escape');
+ await pointer(hoverGroups[1],'pointerout',document.getElementById('outside'));await pause(210);assert.equal(hoverPanel.hidden,true,'mouse leave closes after grace');
+ await pointer(hoverGroups[1],'pointerover');await act(()=>document.getElementById('outside').dispatchEvent(new dom.window.Event('pointerdown',{bubbles:true})));await pause(130);assert.equal(hoverPanel.hidden,true,'outside press cancels pending hover');
+ // Escape cancels pending intent without stealing focus, and a same-page link cancels it too.
+ await pointer(hoverGroups[1],'pointerout',document.getElementById('outside'));await act(()=>document.getElementById('outside').focus());
+ await pointer(hoverGroups[1],'pointerover');await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));await pause(130);
+ assert.equal(hoverPanel.hidden,true,'Escape cancels pending hover');assert.equal(document.activeElement,document.getElementById('outside'));
+ await pointer(hoverGroups[1],'pointerout',document.getElementById('outside'));await pointer(hoverGroups[1],'pointerover');await act(()=>hoverGroups[1].querySelector('.desktop-nav-heading a').click());await pause(130);assert.equal(hoverPanel.hidden,true,'destination click cancels pending hover');
+ await act(()=>hoverButtons[0].click());await act(()=>hoverButtons[0].focus());await pointer(hoverGroups[2],'pointerover');await pause(130);assert.equal(hoverButtons[1].getAttribute('aria-expanded'),'true','focused trigger does not block another hover');
  const {renderToStaticMarkup}=await import('react-dom/server');
  const markup=renderToStaticMarkup(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,null,React.createElement(Header))));
  assert.match(markup,/<\/header><noscript>/);assert.match(markup,/\.site-header\{position:relative!important/);assert.match(markup,/\.desktop-nav,\.header-search,\.menu-button,\.language-selector\{display:none!important/);assert.match(markup,/class="no-script-nav"/);assert.match(markup,/about-us#history/);assert.match(markup,/careers#cv-requirements/);

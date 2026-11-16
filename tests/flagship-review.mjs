@@ -57,7 +57,8 @@ try {
  window.HTMLMediaElement.prototype.pause=function(){paused=true;this.dispatchEvent(new Event('pause'))};
  await act(()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
  const video=document.querySelector('video');assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');assert.ok(video.getAttribute('poster'));
- const control=document.querySelector('.video-control');await click(control);await click(control);
+ assert.ok(!document.querySelector('.hero-bottom,.hero-caption,.scroll-hint'),'removed hero footer content must not return');
+ const control=document.querySelector('.video-control');assert.ok(control.getAttribute('aria-label'));assert.equal(control.tabIndex,0,'keyboard video control remains reachable');await click(control);await click(control);
  assert.equal(paused,true);
  await act(()=>new Promise(resolve=>setTimeout(resolve,1700)));
  assert.equal(paused,true,'quick manual play then pause must cancel pending autoplay');assert.equal(plays,1);
