@@ -67,8 +67,10 @@
 .consultation-times label { position: relative; min-width: 0; cursor: pointer; }
 .consultation-times input { position: absolute; opacity: 0; }
 .consultation-times span {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   min-height: 48px;
   padding: 8px 4px;
   border: 1px solid #9aacc0;
@@ -78,6 +80,15 @@
   font-variant-numeric: tabular-nums;
 }
 .consultation-times input:checked + span { color: #fff; background: #1a3d69; border-color: #1a3d69; }
+.consultation-times input:checked + span::before {
+  content: '';
+  width: 7px;
+  height: 12px;
+  margin-block-start: -3px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 .consultation-card :is(input,button,h2):focus-visible, .consultation-times input:focus-visible + span, .consultation-back:focus-visible {
   outline: 3px solid #255e9c;
   outline-offset: 3px;

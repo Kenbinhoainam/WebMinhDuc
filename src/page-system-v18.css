@@ -18,7 +18,6 @@ body:has(.md-page-masthead,.ed-reader){font-size:16px;line-height:1.65}
 .md-masthead-figure{margin:0;min-width:0}
 .md-masthead-figure>img{width:100%;height:auto;max-height:480px;object-fit:contain;border-radius:4px}
 .md-masthead-figure figcaption{font-size:14px;line-height:1.55;color:#4a6078;margin-top:12px}
-.md-masthead-image-fallback{width:100%;max-height:480px;background:#dbe7f5;border-radius:4px}
 @media(max-width:767px){
  .md-page-masthead{padding:96px 0 36px}
  .md-page-masthead .md-masthead-shell{width:calc(100% - 40px)}
@@ -28,7 +27,7 @@ body:has(.md-page-masthead,.ed-reader){font-size:16px;line-height:1.65}
  .md-masthead-description{font-size:16px}
  .md-masthead-actions{gap:12px 20px;margin-top:24px}
  .md-masthead-actions .btn{flex:1 1 auto;max-width:100%;white-space:normal}
- .md-masthead-figure>img,.md-masthead-image-fallback{max-height:420px}
+ .md-masthead-figure>img{max-height:420px}
 }
 @media(max-width:360px){.md-page-masthead .md-masthead-shell{width:calc(100% - 32px)}.md-masthead-actions{align-items:stretch;flex-direction:column}}
 @media print{.md-page-masthead{padding:24px 0;background:white;border:0}.md-masthead-actions{display:none}.md-page-masthead h1{font-size:32px}}

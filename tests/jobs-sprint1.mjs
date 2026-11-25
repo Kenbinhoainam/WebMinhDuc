@@ -32,10 +32,26 @@ try {
  assert.deepEqual(filterJobs(new URLSearchParams(),false,true,['MD005','MD007']).map(j=>j.id),['MD005','MD007']);
  await render('/jobs?'+combo,JobsPage);assert.equal(document.querySelectorAll('.job-card').length,1);assert.match(document.querySelector('.job-card').textContent,/đóng gói thời vụ/i);assert.equal(document.querySelector('#jobs-shift').value,'Đêm');
  await render('/jobs',JobsPage);assert.doesNotMatch(document.querySelector('.jobs-grid').textContent,/Chuyên viên tuyển dụng/);
+ assert.ok(document.querySelector('.md-masthead-actions a[href="/saved-jobs"]'));
+ const search = document.querySelector('.jobs-filters');
+ assert.equal(search.compareDocumentPosition(document.querySelector('.jobs-result-bar h2')), window.Node.DOCUMENT_POSITION_FOLLOWING);
+ await act(() => document.querySelector('.jobs-event-photo img').dispatchEvent(new window.Event('error')));
+ assert.equal(document.querySelector('.jobs-event-photo'),null);
+ assert.ok(search.isConnected && document.querySelector('[data-job-link]'),'a missing photograph must preserve search and open jobs');
  await render('/careers',CareersPage);assert.match(document.querySelector('.jobs-grid').textContent,/Chuyên viên tuyển dụng/);assert.doesNotMatch(document.querySelector('.jobs-grid').textContent,/đóng gói thời vụ/i);
  localStorage.setItem('minhduc.saved-jobs.v1',JSON.stringify(['MD006','MD007']));await render('/saved-jobs',SavedJobsPage);assert.equal(document.querySelectorAll('.job-card').length,2);
  await render('/jobs/ky-thuat-bao-tri-bac-ninh',JobDetailPage);assert.match(document.body.textContent,/Vị trí đã đóng/);assert.equal(document.querySelector('.job-apply-button'),null);assert.ok(document.querySelector('.job-description-block'));
  await render('/jobs/chuyen-vien-tuyen-dung-bac-ninh',JobDetailPage);await click(document.querySelector('.job-apply-button'));assert.match(document.querySelector('.application-job').textContent,/MD007/);assert.equal(document.querySelector('[name=position]').required,true);assert.equal(document.querySelector('[name=cv]').required,false);
+ await change('[name=email]','missing-domain');
+ await submit();
+ assert.ok(document.querySelector('#apply-email-error') && document.querySelector('#apply-phone-error'));
+ await change('[name=email]','');
+ assert.equal(document.querySelector('#apply-email-error'),null,'an optional field clears its stale error once corrected');
+ await change('[name=phone]','09');
+ assert.ok(document.querySelector('#apply-phone-error'),'an incomplete correction keeps the error visible');
+ await change('[name=phone]','0912345678');
+ assert.equal(document.querySelector('#apply-phone-error'),null);
+ assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'false');
  await change('[name=name]','Nguyen An');await change('[name=phone]','0912345678');await submit();assert.match(document.querySelector('.application-success').textContent,/MD007/);assert.match(document.querySelector('.application-success a[href^="/admin-demo"]').getAttribute('href'),/^\/admin-demo\?type=F04&id=DEMO-/);
  await render('/jobs/dong-goi-thoi-vu-bac-giang',JobDetailPage);await click(document.querySelector('.job-apply-button'));assert.equal(document.querySelector('[name=cv]'),null);await change('[name=name]','Nguyen An');await change('[name=phone]','0912345678');await submit();assert.match(document.querySelector('.application-success').textContent,/MD006/);assert.match(document.querySelector('.application-success a[href^="/admin-demo"]').getAttribute('href'),/^\/admin-demo\?type=F03&id=DEMO-/);
  // Contextual filters, saved-row focus and an actual list → detail → list history traversal.

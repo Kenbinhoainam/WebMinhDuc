@@ -19,7 +19,7 @@ try {
   window.matchMedia = () => media;
   const timers = new Map(), observers = new Set();
   let handle = 0;
-  window.setInterval = (fn, ms) => {assert.equal(ms, 3500); timers.set(++handle, fn); return handle;};
+  window.setInterval = (fn, ms) => {assert.equal(ms, 6000); timers.set(++handle, fn); return handle;};
   window.clearInterval = id => timers.delete(id);
   globalThis.IntersectionObserver = class {
     constructor(cb) {this.cb = cb;}
@@ -38,10 +38,12 @@ try {
   assert.equal(timers.size, 4);
   const tracks = [...document.querySelectorAll('.career-track')];
   assert.deepEqual(tracks.map(el => el.children.length), [3,3,3,11]);
-  assert.equal(document.querySelectorAll('.career-carousel-pause').length, 4);
+  assert.equal(document.querySelectorAll('.career-rail-controls,.career-carousel-pause').length, 0);
+  assert.ok(tracks.every(track => track.hasAttribute('data-auto-rail') && track.tabIndex === 0 && document.getElementById(track.getAttribute('aria-labelledby'))));
   const photos = [...tracks[3].querySelectorAll('img')];
   assert.equal(new Set(photos.map(photo => photo.src)).size, 11);
   assert.ok(photos.every(photo => photo.alt && /\/assets\/minhduc-v1[68]\//.test(photo.src)));
+  assert.ok(photos.every(photo => photo.width > 0 && photo.height > 0 && photo.srcset.includes('480w') && photo.srcset.includes('960w')));
   assert.equal(document.querySelectorAll('h1').length, 1);
   assert.equal(document.querySelector('a[href$="#open-positions"]').hash, '#open-positions');
   for (const id of ['open-positions','position-benefits','cv-requirements','career-contact']) assert.ok(document.getElementById(id));
@@ -56,9 +58,9 @@ try {
   assert.equal(typeof frame, 'function');
   await act(() => frame(performance.now()+600));
   assert.equal(first.scrollLeft, 280, 'autoplay advances by one item');
-  await act(() => first.dispatchEvent(new Event('mouseenter')));
+  await act(() => first.dispatchEvent(new Event('pointerenter')));
   assert.equal(timers.size, 3);
-  await act(() => first.dispatchEvent(new Event('mouseleave')));
+  await act(() => first.dispatchEvent(new Event('pointerleave')));
   assert.equal(timers.size, 4);
 
   const galleryButton = tracks[3].querySelector('button');
@@ -75,11 +77,9 @@ try {
   assert.equal(document.activeElement, galleryButton, 'lightbox returns focus to the opening thumbnail');
   await makeVisible();
   assert.equal(timers.size, 3, 'focused gallery stays paused when other rails resume');
-  const toggle = document.querySelector('.career-gallery .career-carousel-pause');
-  assert.equal(toggle.getAttribute('aria-pressed'), 'true');
-  await act(() => {toggle.focus(); toggle.click();});
+  await act(() => galleryButton.blur());
   await makeVisible();
-  assert.equal(timers.size, 4, 'explicit play restores the gallery');
+  assert.equal(timers.size, 4, 'autoplay resumes after gallery focus leaves');
   await act(() => [...observers].find(observer => observer.element.classList.contains('career-gallery')).cb([{isIntersecting: false}]));
   assert.equal(timers.size, 3);
   media.matches = true;

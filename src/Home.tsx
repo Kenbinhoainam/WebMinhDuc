@@ -1,7 +1,7 @@
 import {company} from './company';
 import {useRef} from 'react';
 import {Link} from 'react-router-dom';
-import {ArrowUpRight, ChevronLeft, ChevronRight, Play, Pause} from 'lucide-react';
+import {ArrowUpRight} from 'lucide-react';
 import {MEDIA, ButtonLink, useContact} from './shared';
 import {AnimatedNumber, RevealFrame} from './motion';
 import PartnersStrip from './PartnersStrip';
@@ -9,7 +9,7 @@ import {useTranslation} from './i18n';
 import {ContactForm} from './Contact';
 import HomeHero from './HomeHero';
 import {backgroundImage, responsiveImage} from './media';
-import {useHomeCarousel, advanceHomeRail} from './useHomeCarousel';
+import {useScrollableRail} from './useHomeCarousel';
 import './home-reference.css';
 import './home-b2b.css';
 import './home-flagship-v16.css';
@@ -23,50 +23,49 @@ const services = [
 ];
 // Reference values are illustrative prototype content and require verification before production.
 const metrics = [
-  {number:1200, suffix:'+', label:'Kết nối việc làm', image:'GPNS-1.jpg'},
-  {number:80, suffix:'+', label:'Nhu cầu doanh nghiệp', image:'GPNS-2.jpg'},
-  {number:15, suffix:'+', label:'Khu vực kết nối', image:'GPNS-3.jpg'},
-  {number:95, suffix:'%', label:'Mức độ hài lòng', image:'Staff-oursourcing.jpg'},
+  {number:1200, suffix:'+', label:'Kết nối việc làm'},
+  {number:80, suffix:'+', label:'Nhu cầu doanh nghiệp'},
+  {number:15, suffix:'+', label:'Khu vực kết nối'},
+  {number:95, suffix:'%', label:'Mức độ hài lòng'},
 ];
 
-function CarouselPause({paused,toggle}:{paused:boolean;toggle:()=>void}) {
-  const t=useTranslation();
-  const label=paused?t({vi:'Phát chuyển động',en:'Play motion',zh:'播放动画',ko:'움직임 재생',ja:'動きを再生'}):t({vi:'Tạm dừng chuyển động',en:'Pause motion',zh:'暂停动画',ko:'움직임 일시 정지',ja:'動きを一時停止'});
-  return <button type="button" className="ref-carousel-pause" aria-pressed={paused} aria-label={label} onClick={toggle}>{paused?<Play size={16}/>:<Pause size={16}/>}<span>{label}</span></button>;
-}
 function About() {
  const t=useTranslation();
- return <section id="about" className="section-home-about ref-home-section">
-  <img className="ref-edge ref-about-edge" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-1-no-noise.png" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
-  <div className="container ref-about-row">
-   <RevealFrame className="ref-about-copy" effect="left">
-    <p className="home-b2b-kicker">MINH ĐỨC VINA</p>
-    <h2 className="ref-heading">{t({vi:'Tuyển người theo ca cho nhà máy miền Bắc',en:'Shift recruitment for factories in northern Vietnam',zh:'为越南北部工厂招聘轮班人员',ko:'베트남 북부 공장의 교대 인력 채용',ja:'ベトナム北部の工場向けシフト人材採用'})}</h2>
-    <p>{t({vi:'Minh Đức kết nối doanh nghiệp sản xuất và nhà máy FDI tại miền Bắc với nguồn nhân lực phù hợp, từ lao động phổ thông đến nhân sự có tay nghề.',en:'Minh Đức connects manufacturers and FDI factories in northern Vietnam with suitable people, from general workers to skilled staff.',zh:'Minh Đức 为越南北部的制造企业和外资工厂连接合适的人才，涵盖普通劳工与技术人员。',ko:'Minh Đức는 베트남 북부의 제조 기업과 외국인 투자 공장을 일반 인력부터 숙련 인력까지 적합한 인재와 연결합니다.',ja:'Minh Đứcはベトナム北部の製造企業・外資系工場と、一般労働者から技能人材まで適切な人材をつなぎます。'})}</p>
-    <p>{t({vi:'Chia sẻ kế hoạch, vị trí và ca làm việc để cùng trao đổi phương án phù hợp với vận hành của bạn.',en:'Share your plans, roles and shifts so we can discuss an approach suited to your operations.',zh:'分享您的计划、岗位和班次，共同探讨适合运营需求的方案。',ko:'계획, 직무와 근무조를 알려주시면 운영에 맞는 방안을 함께 논의합니다.',ja:'計画、職種、シフトをお知らせください。事業運営に合う方法を一緒に検討します。'})}</p>
-    <ButtonLink to="/e-brochure">{t({vi:'Xem hồ sơ năng lực',en:'View company profile',zh:'查看公司简介',ko:'회사 소개서 보기',ja:'会社案内を見る'})}</ButtonLink>
-   </RevealFrame>
-   <RevealFrame className="ref-about-image home-b2b-about-image" effect="right"><img className="ref-about-art" src="/assets/minhduc-v16/recruitment-field.webp" {...responsiveImage('/assets/minhduc-v16/recruitment-field.webp','(max-width: 767px) 100vw, 60vw')} alt={t({vi:'Người mặc đồng phục Minh Đức cầm hồ sơ tại khu vực doanh nghiệp',en:'A person in Minh Đức uniform holding a folder near a business site',zh:'身穿 Minh Đức 制服的人在企业附近手持文件夹',ko:'기업 부근에서 서류를 든 Minh Đức 유니폼 차림의 사람',ja:'企業付近で書類を持つMinh Đứcの制服姿の人物'})} loading="lazy" decoding="async"/></RevealFrame>
-  </div>
+ const photo='/assets/minhduc-v16/recruitment-field.webp';
+ return <section id="about" aria-labelledby="field-title" className="section-home-about field-section">
+   <div className="field-container">
+     <div className="field-story">
+       <RevealFrame className="field-title" effect="left">
+         <p className="home-b2b-kicker">MINH ĐỨC VINA</p>
+         <h2 id="field-title">{t({vi:'Tuyển người theo ca cho nhà máy miền Bắc',en:'Shift recruitment for factories in northern Vietnam',zh:'为越南北部工厂招聘轮班人员',ko:'베트남 북부 공장의 교대 인력 채용',ja:'ベトナム北部の工場向けシフト人材採用'})}</h2>
+       </RevealFrame>
+       <RevealFrame className="field-portrait" effect="right">
+         <img src={photo} {...responsiveImage(photo,'(max-width: 767px) 100vw, (max-width: 1599px) 58vw, 820px')} alt={t({vi:'Nhân viên Minh Đức cầm hồ sơ tuyển dụng trước cổng nhà máy',en:'A Minh Đức team member holding recruitment documents outside a factory',zh:'Minh Đức 工作人员在工厂门口手持招聘资料',ko:'공장 앞에서 채용 서류를 든 Minh Đức 직원',ja:'工場前で採用書類を持つMinh Đứcのスタッフ'})} loading="lazy" decoding="async"/>
+       </RevealFrame>
+       <RevealFrame className="field-body" effect="up">
+         <p>{t({vi:'Từ lao động phổ thông đến thợ lành nghề, Minh Đức tìm người theo từng vị trí, ca làm và kế hoạch sản xuất của nhà máy FDI tại miền Bắc.',en:'From production workers to skilled technicians, Minh Đức recruits for the roles, shifts and production schedules of FDI factories in northern Vietnam.',zh:'从普工到熟练技工，Minh Đức 根据越南北部外资工厂的岗位、班次与生产计划招聘人员。',ko:'Minh Đức는 베트남 북부 외국인 투자 공장의 직무, 교대조와 생산 계획에 맞춰 생산직부터 숙련 기술자까지 채용합니다.',ja:'Minh Đứcはベトナム北部の外資系工場の職種・シフト・生産計画に合わせて、作業員から熟練技術者まで採用を支援します。'})}</p>
+         <ButtonLink to="/e-brochure">{t({vi:'Xem hồ sơ năng lực',en:'View company profile',zh:'查看公司简介',ko:'회사 소개서 보기',ja:'会社案内を見る'})}</ButtonLink>
+       </RevealFrame>
+     </div>
+     <Achievements/>
+   </div>
  </section>;
 }
 function Achievements() {
- const area=useRef<HTMLElement>(null), row=useRef<HTMLDivElement>(null), t=useTranslation();
- const auto=useHomeCarousel(area,()=>advanceHomeRail(row.current));
- return <section ref={area} className="section-home-about-achievement ref-achievements ref-carousel-area home-b2b-facts">
-  <img className="ref-edge ref-achievement-edge" src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/edge-2.png" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
-  <div className="ref-wide"><div ref={row} className="ref-achievement-track" tabIndex={0} role="region" aria-label={t({vi:'Các chỉ số kết nối',en:'Connection figures',zh:'连接数据',ko:'연결 지표',ja:'つながりの指標'})}>
-   {metrics.map((m,i)=><RevealFrame className="ref-achievement-frame" key={m.label} delayMs={([300,500,700,900] as const)[i]}><article className="ref-achievement" tabIndex={0}><span className="ref-achievement-bg" aria-hidden="true" style={{backgroundImage:`linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,.25)),url(${backgroundImage(MEDIA+'2025/09/'+m.image,960)})`}}/><span className="ref-achievement-label">{m.label}</span><div><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><ArrowUpRight aria-hidden="true"/></div></article></RevealFrame>)}
-  </div><CarouselPause paused={auto.paused} toggle={auto.toggle}/></div>
- </section>;
+ const row=useRef<HTMLDivElement>(null), t=useTranslation();
+ const overflow=useScrollableRail(row);
+ return <div ref={row} data-auto-rail="" className="field-metrics section-home-about-achievement" tabIndex={overflow ? 0 : undefined} role="region" aria-label={t({vi:'Các chỉ số kết nối',en:'Connection figures',zh:'连接数据',ko:'연결 지표',ja:'つながりの指標'})}>
+   {metrics.map((m,i)=><RevealFrame className="field-stat-frame" key={m.label} delayMs={([300,500,700,900] as const)[i]}>
+     <div className="field-stat"><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><span>{m.label}</span></div>
+   </RevealFrame>)}
+ </div>;
 }
 function Solutions() {
-  const row=useRef<HTMLDivElement>(null), area=useRef<HTMLElement>(null);
-  const auto=useHomeCarousel(area,()=>advanceHomeRail(row.current));
-  const scroll=(direction:number)=>row.current?.scrollBy({left:direction*(row.current?.clientWidth || 350)*.8, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-  return <section ref={area} className="section-home-solution ref-home-section ref-carousel-area"><div className="container"><RevealFrame effect="zoom"><h2 className="ref-heading ref-center">Giải pháp nhân lực toàn diện</h2></RevealFrame></div>
-    <div className="ref-wide ref-rail-wrap"><RevealFrame delayMs={500}><div ref={row} className="ref-solution-track" tabIndex={0} role="region" aria-label="Danh sách giải pháp">{services.map(s=><article className="ref-solution" key={s.path} style={{backgroundImage:`linear-gradient(180deg,rgba(15,24,35,.25),rgba(15,24,35,.82)),url(${backgroundImage(s.image,960)})`}}><img className="ref-solution-icon" src={MEDIA+'2025/09/'+s.icon} alt="" width="188" height="188" loading="lazy"/><div className="ref-solution-content"><h3><Link to={'/services/'+s.path}>{s.title}</Link></h3><p>{s.desc}</p></div><Link className="btn" to={'/services/'+s.path}>Khám phá giải pháp <ArrowUpRight size={18}/></Link></article>)}</div></RevealFrame>
-    <CarouselPause paused={auto.paused} toggle={auto.toggle}/><div className="ref-rail-controls"><button className="circle-button" aria-label="Dịch vụ trước" onClick={()=>scroll(-1)}><ChevronLeft/></button><button className="circle-button" aria-label="Dịch vụ tiếp theo" onClick={()=>scroll(1)}><ChevronRight/></button></div></div>
+  const row=useRef<HTMLDivElement>(null);
+  const overflow=useScrollableRail(row);
+  return <section className="section-home-solution ref-home-section ref-carousel-area"><div className="container"><RevealFrame effect="zoom"><h2 className="ref-heading ref-center">Giải pháp nhân lực toàn diện</h2></RevealFrame></div>
+    <div className="ref-wide ref-rail-wrap"><RevealFrame delayMs={500}><div data-auto-rail="" ref={row} className="ref-solution-track" tabIndex={overflow ? 0 : undefined} role="region" aria-label="Danh sách giải pháp">{services.map(s=><article className="ref-solution" key={s.path} style={{backgroundImage:`linear-gradient(180deg,rgba(15,24,35,.25),rgba(15,24,35,.82)),url(${backgroundImage(s.image,960)})`}}><img className="ref-solution-icon" src={MEDIA+'2025/09/'+s.icon} alt="" width="188" height="188" loading="lazy"/><div className="ref-solution-content"><h3><Link to={'/services/'+s.path}>{s.title}</Link></h3><p>{s.desc}</p></div><Link className="btn" to={'/services/'+s.path}>Khám phá giải pháp <ArrowUpRight size={18}/></Link></article>)}</div></RevealFrame>
+    </div>
   </section>;
 }
 function Needs() {
@@ -94,15 +93,14 @@ function People() {
  return <section className="home-v16-people ref-home-section"><div className="container"><RevealFrame effect="left"><p className="home-b2b-kicker">{t({vi:'CON NGƯỜI MINH ĐỨC',en:'THE PEOPLE OF MINH ĐỨC',zh:'Minh Đức 的人们',ko:'Minh Đức의 사람들',ja:'Minh Đứcの人々'})}</p><h2 className="ref-heading home-v16-heading">{t({vi:'Con người tạo nên kết nối.',en:'People make connections possible.',zh:'人与人创造连接。',ko:'사람이 연결을 만듭니다.',ja:'人がつながりをつくる。'})}</h2><p className="home-v16-people-intro">{t({vi:'Từ những cuộc gặp gỡ trong công việc đến khoảnh khắc bên nhau, mỗi kết nối bắt đầu bằng con người.',en:'From conversations at work to moments together, every connection begins with people.',zh:'从工作交流到相聚时刻，每一份连接都始于人。',ko:'업무 속 만남부터 함께하는 순간까지 모든 연결은 사람에게서 시작됩니다.',ja:'仕事での出会いからともに過ごす時間まで、つながりは人から始まります。'})}</p></RevealFrame><div className="home-v16-people-grid"><RevealFrame effect="media" className="home-v16-group"><img src="/assets/minhduc-v16/team-yearend.webp" {...responsiveImage('/assets/minhduc-v16/team-yearend.webp','(max-width: 767px) 100vw, 65vw')} alt={t({vi:'Ảnh tập thể Minh Đức tại buổi tất niên',en:'Minh Đức group at a year-end gathering',zh:'Minh Đức 年终聚会合影',ko:'Minh Đức 연말 모임 단체 사진',ja:'Minh Đứcの年末会の集合写真'})} loading="lazy" decoding="async"/></RevealFrame><RevealFrame effect="media" className="home-v16-activity"><img src="/assets/minhduc-v16/community.webp" {...responsiveImage('/assets/minhduc-v16/community.webp','(max-width: 767px) 100vw, 35vw')} alt={t({vi:'Nhóm người cùng dụng cụ vệ sinh ngoài trời',en:'A group outdoors with cleaning equipment',zh:'户外持清洁工具的团队',ko:'야외에서 청소 도구를 든 단체',ja:'屋外で清掃用具を持つグループ'})} loading="lazy" decoding="async"/><Link className="text-link" to="/about-us#activities">{t({vi:'Tìm hiểu câu chuyện',en:'Explore our story',zh:'了解我们的故事',ko:'우리의 이야기 보기',ja:'私たちの歩みを見る'})} <ArrowUpRight size={18}/></Link></RevealFrame></div></div></section>;
 }
 function News() {
- const row=useRef<HTMLDivElement>(null), area=useRef<HTMLElement>(null), t=useTranslation();
- const auto=useHomeCarousel(area,()=>advanceHomeRail(row.current));
- const scroll=(direction:number)=>row.current?.scrollBy({left:direction*(row.current?.clientWidth || 350)*.8,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+ const row=useRef<HTMLDivElement>(null), t=useTranslation();
+ const overflow=useScrollableRail(row);
  const articles=[
   {to:'/news/nhu-cau-tuyen-dung',title:t({vi:'Chuẩn bị nhu cầu tuyển dụng cho doanh nghiệp',en:'Preparing your hiring requirements',zh:'为企业招聘需求做准备',ko:'기업 채용 수요 준비하기',ja:'企業の採用ニーズを準備する'}),tag:t({vi:'GÓC DOANH NGHIỆP',en:'FOR BUSINESS',zh:'企业视角',ko:'기업 관점',ja:'企業向け'}),image:'/assets/minhduc-v18/industrial-campus.webp'},
   {to:'/news/ho-so-xin-viec',title:t({vi:'Chuẩn bị hồ sơ xin việc: bắt đầu từ những điều cần thiết',en:'Preparing a job application: start with the essentials',zh:'准备求职资料：从必需事项开始',ko:'입사 지원서 준비: 필수 사항부터',ja:'応募書類の準備：必要なことから'}),tag:t({vi:'CẨM NANG VIỆC LÀM',en:'CAREER GUIDE',zh:'求职指南',ko:'취업 안내',ja:'就職ガイド'}),image:'/assets/minhduc-v18/field-team.webp'},
   {to:'/about-us#activities',title:t({vi:'Những khoảnh khắc kết nối của Minh Đức',en:'Moments of connection at Minh Đức',zh:'Minh Đức 的连接时刻',ko:'Minh Đức의 연결 순간',ja:'Minh Đứcのつながりの瞬間'}),tag:t({vi:'HOẠT ĐỘNG MINH ĐỨC',en:'MINH ĐỨC ACTIVITIES',zh:'Minh Đức 活动',ko:'Minh Đức 활동',ja:'Minh Đứcの活動'}),image:'/assets/minhduc-v16/yearend-gifts.webp'},
  ];
- return <section ref={area} className="section-home-news ref-home-section ref-carousel-area home-v16-news"><div className="container"><RevealFrame effect="zoom"><h2 className="ref-heading">{t({vi:'Kiến thức & hoạt động',en:'Insights & activities',zh:'资讯与活动',ko:'인사이트와 활동',ja:'情報と活動'})}</h2></RevealFrame><div className="ref-news-grid" ref={row} tabIndex={0} role="region" aria-label={t({vi:'Tin tức',en:'News',zh:'新闻',ko:'뉴스',ja:'ニュース'})}>{articles.map(a=><article className="ref-news-card" key={a.to}><Link to={a.to} className="ref-news-image" aria-label={a.title}><img src={a.image} {...responsiveImage(a.image,'(max-width: 767px) 85vw, 33vw')} alt="" loading="lazy"/></Link><div className="ref-news-meta"><span>{a.tag}</span></div><h3><Link to={a.to}>{a.title}</Link></h3><Link to={a.to} className="text-link">{t({vi:'Khám phá',en:'Explore',zh:'了解更多',ko:'자세히 보기',ja:'詳しく見る'})} <ArrowUpRight size={18}/></Link></article>)}</div><CarouselPause paused={auto.paused} toggle={auto.toggle}/><div className="ref-rail-controls"><button className="circle-button" aria-label={t({vi:'Tin tức trước',en:'Previous news',zh:'上一条新闻',ko:'이전 뉴스',ja:'前のニュース'})} onClick={()=>scroll(-1)}><ChevronLeft/></button><button className="circle-button" aria-label={t({vi:'Tin tức tiếp theo',en:'Next news',zh:'下一条新闻',ko:'다음 뉴스',ja:'次のニュース'})} onClick={()=>scroll(1)}><ChevronRight/></button></div></div></section>;
+ return <section className="section-home-news ref-home-section ref-carousel-area home-v16-news"><div className="container"><RevealFrame effect="zoom"><h2 className="ref-heading">{t({vi:'Kiến thức & hoạt động',en:'Insights & activities',zh:'资讯与活动',ko:'인사이트와 활동',ja:'情報と活動'})}</h2></RevealFrame><div data-auto-rail="" className="ref-news-grid" ref={row} tabIndex={overflow ? 0 : undefined} role="region" aria-label={t({vi:'Tin tức',en:'News',zh:'新闻',ko:'뉴스',ja:'ニュース'})}>{articles.map(a=><article className="ref-news-card" key={a.to}><Link to={a.to} className="ref-news-image" aria-label={a.title}><img src={a.image} {...responsiveImage(a.image,'(max-width: 767px) 85vw, 33vw')} alt="" loading="lazy"/></Link><div className="ref-news-meta"><span>{a.tag}</span></div><h3><Link to={a.to}>{a.title}</Link></h3><Link to={a.to} className="text-link">{t({vi:'Khám phá',en:'Explore',zh:'了解更多',ko:'자세히 보기',ja:'詳しく見る'})} <ArrowUpRight size={18}/></Link></article>)}</div></div></section>;
 }
 function Offices() {
  const t=useTranslation();
@@ -113,5 +111,5 @@ function BusinessContact() {
  return <section id="business-contact" tabIndex={-1} aria-labelledby="business-heading" className="home-b2b-contact ref-home-section"><div className="container home-b2b-contact-layout"><RevealFrame effect="left"><p className="home-b2b-kicker">MINH ĐỨC VINA</p><h2 id="business-heading" className="ref-heading">{t({vi:'Gửi nhu cầu nhân lực',en:'Share your staffing needs',zh:'提交用工需求',ko:'인력 수요 보내기',ja:'人材ニーズを送る'})}</h2><p>{t({vi:'Cho chúng tôi biết vị trí, số lượng và địa điểm bạn cần. Minh Đức sẵn sàng trao đổi để tìm phương án phù hợp.',en:'Tell us the roles, headcount and location you need. Minh Đức is ready to discuss an approach with you.',zh:'请告诉我们您需要的岗位、人数和地点。Minh Đức 愿与您共同探讨合适的方案。',ko:'필요한 직무, 인원과 지역을 알려주세요. Minh Đức가 적합한 방안을 함께 논의합니다.',ja:'必要な職種、人数、勤務地をお知らせください。Minh Đứcが適切な方法を一緒に検討します。'})}</p><a className="home-b2b-phone" href={`tel:${company.tel}`}>{company.phone} <ArrowUpRight size={20}/></a></RevealFrame><RevealFrame effect="right"><div className="home-b2b-form"><ContactForm initialMode="F01" lockMode source="home-business"/></div></RevealFrame></div></section>;
 }
 export default function Home() {
- return <><HomeHero/><About/><Achievements/><Needs/><Solutions/><Process/><People/><BusinessContact/><Offices/><News/></>;
+ return <><HomeHero/><About/><Needs/><Solutions/><Process/><People/><BusinessContact/><Offices/><News/></>;
 }

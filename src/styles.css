@@ -42,3 +42,7 @@ body:has(.cookie-notice) .floating-tools{visibility:hidden}
 @media screen and (max-height:480px) and (orientation:landscape){
  .cookie-notice{left:auto;right:max(8px,env(safe-area-inset-right));max-width:min(310px,55vw)}
 }
+
+/* Native horizontal scrolling is available by touch, trackpad and keyboard. */
+[data-auto-rail], [data-auto-rail][tabindex] { scrollbar-width: none; }
+[data-auto-rail]::-webkit-scrollbar { display: none; }

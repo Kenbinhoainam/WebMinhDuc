@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {ArrowUpRight, ChevronLeft, ChevronRight} from 'lucide-react';
+import {ArrowUpRight} from 'lucide-react';
 import {SectionHeading, useContact} from '../../shared';
 import {PageMasthead} from '../../PageMasthead';
 import {responsiveImage} from '../../media';
@@ -10,7 +10,7 @@ import {useHomeCarousel, advanceHomeRail} from '../../useHomeCarousel';
 import {subnavigation} from '../../navigation';
 import PartnersStrip from '../../PartnersStrip';
 import {campusAlt, consultingTopics, industrialCampus, services, type Service} from './data';
-import {ServiceCards, InfoContact, FAQ, InfoCarouselPause} from './components';
+import {ServiceCards, InfoContact, FAQ} from './components';
 import './services-reference.css';
 
 export function ServicesPage() {
@@ -44,21 +44,16 @@ export function ServicesPage() {
   </>;
 }
 export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
- const area=useRef<HTMLElement>(null), track=useRef<HTMLDivElement>(null), t=useTranslation();
- const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.info-testimonial-rail,.info-rail-controls');
+ const track = useRef<HTMLDivElement>(null);
+ const t = useTranslation();
+ useHomeCarousel(track, () => advanceHomeRail(track.current));
  const stories=[{quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.',name:'Chị Lan Anh',role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},{quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.',name:'Anh Minh',role:'Người lao động giả định'},{quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.',name:'Chị Thu Hà',role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'}];
- const scroll=(direction:number, pointer:boolean)=>track.current?.scrollBy({left:direction*(track.current?.clientWidth||350)*.6,behavior:pointer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'});
  const partners = <><SectionHeading title="Đối tác doanh nghiệp"/><PartnersStrip/></>;
- return <section className="section info-service-customers" ref={area}><div className="container">
+ return <section className="section info-service-customers"><div className="container">
    {!logosAfter && partners}
    <div className="service-stories-heading"><SectionHeading title={t({vi:'Chia sẻ minh họa',en:'Illustrative stories',zh:'示例分享',ko:'예시 이야기',ja:'参考事例'})}/><p>Tình huống minh họa · Nhân vật giả định</p></div>
-   <div className="info-testimonial-rail" ref={track} tabIndex={0} role="region" aria-label="Tình huống minh họa · Nhân vật giả định">
+   <div className="info-testimonial-rail" ref={track} data-auto-rail="" tabIndex={0} role="region" aria-label="Tình huống minh họa · Nhân vật giả định">
      {stories.map(story => <blockquote key={story.quote}><p>{story.quote}</p><footer><span><strong>{story.name}</strong><small>{story.role}</small></span></footer></blockquote>)}
-   </div>
-   <div className="info-rail-controls">
-     <button type="button" className="circle-button" aria-label="Câu chuyện trước" onClick={event=>scroll(-1,event.detail>0)}><ChevronLeft/></button>
-     <InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-     <button type="button" className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={event=>scroll(1,event.detail>0)}><ChevronRight/></button>
    </div>
    {logosAfter && partners}
  </div></section>;

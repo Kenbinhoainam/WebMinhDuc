@@ -70,7 +70,7 @@ export function EducationDetailPage() {
     ? ['Học trực tuyến vào khung giờ nào?', 'Thi trực tuyến hay tại điểm thi?']
     : ['Lịch học tại lớp được sắp xếp thế nào?', 'Điều kiện thực hành của chương trình là gì?'];
   return <div className="education-pages">
-    <PageMasthead eyebrow={program.mode} title={program.title} description={program.description} image={learningSpace} imageAlt={learningAlt} imageCaption={learningAlt}>
+    <PageMasthead eyebrow={program.mode} title={program.title} description={program.description} image={program.mode === 'Chính quy' ? learningSpace : undefined} imageAlt={learningAlt} imageCaption={learningAlt}>
       <Link to="?form=F05#dang-ky" className="btn">Tư vấn tuyển sinh</Link>
       <Link to="?form=F06#dang-ky" className="education-link">Nộp hồ sơ tuyển sinh</Link>
     </PageMasthead>

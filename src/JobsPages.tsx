@@ -19,7 +19,7 @@ export {useSavedJobs} from './saved-jobs';
 
 const PAGE_SIZE = 6;
 const EVENT_IMAGE = '/assets/minhduc-v16/recruitment-event.webp';
-const EVENT_ALT = 'Nhóm người tham gia sự kiện có bảng thông tin tuyển dụng Minh Đức';
+const EVENT_ALT = 'Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng.';
 const WORKERS = jobs.filter(job => !job.internal);
 const TEAM = jobs.filter(job => job.internal);
 type FilterKey = 'location' | 'type' | 'industrialPark' | 'skillLevel' | 'employmentType' | 'shift' | 'schedule' | 'status';
@@ -96,6 +96,11 @@ function EmptyJobs({saved,teamClosed,onReset,onClosed}: {saved?: boolean;teamClo
     <p>{saved ? 'Chạm biểu tượng đánh dấu ở vị trí bạn quan tâm để xem lại tại đây.' : 'Thử từ khóa khác hoặc mở rộng địa điểm và loại công việc.'}</p>
     {saved ? <Link className="btn" to="/jobs#job-listings">Khám phá việc làm</Link> : <button className="jobs-quiet-button" type="button" onClick={teamClosed ? onClosed : onReset}>{teamClosed ? 'Xem vị trí đã đóng' : 'Xóa bộ lọc'}</button>}
   </div>;
+}
+
+function SavedJobsLink() {
+  const {count} = useSavedJobs();
+  return <Link className="jobs-saved-link" to="/saved-jobs"><Bookmark size={18} aria-hidden="true"/>Việc đã lưu <span>{count}</span></Link>;
 }
 
 function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; savedOnly?:boolean}) {
@@ -182,9 +187,10 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   }
   if (savedOnly && !clientReady) return <p className="jobs-storage-note" role="status">Đang đọc danh sách đã lưu…</p>;
   return <div className={`jobs-browser${internal ? ' is-internal' : ''}`} ref={browserRef}>
-    <div className="jobs-heading-row"><h2>{savedOnly ? 'Danh sách đã lưu' : internal ? 'Cơ hội trong đội ngũ Minh Đức' : 'Cơ hội việc làm dành cho bạn'}</h2>
-      {!savedOnly && <Link className="jobs-saved-link" to="/saved-jobs"><Bookmark size={18} aria-hidden="true"/>Việc đã lưu <span>{count}</span></Link>}
-    </div>
+    {(internal || savedOnly) && <div className="jobs-heading-row">
+      <h2>{savedOnly ? 'Danh sách đã lưu' : 'Cơ hội trong đội ngũ Minh Đức'}</h2>
+      {internal && <SavedJobsLink/>}
+    </div>}
     {savedOnly && <p className="jobs-storage-note">{isTemporary ? 'Trình duyệt chỉ cho lưu tạm. Danh sách sẽ mất khi tải lại trang.' : 'Danh sách được lưu trên trình duyệt này. Bạn có thể bỏ lưu bất kỳ lúc nào.'}</p>}
     {!isEmptySaved && <form className="jobs-filters" role="search" aria-label="Tìm việc làm" onSubmit={event => {event.preventDefault(); showResults();}}>
       <div className="jobs-filter-main"><div className="jobs-filter-field jobs-keyword"><label htmlFor="jobs-query">Từ khóa</label><div className="jobs-search-input"><Search size={18} aria-hidden="true"/><input id="jobs-query" type="search" placeholder="Tên công việc hoặc kỹ năng" value={query} onChange={event => updateFilter('q',event.currentTarget.value)}/></div></div>
@@ -204,7 +210,10 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
         <button type="button" className="jobs-reset" onClick={reset}>Xóa bộ lọc</button>
       </div>}
     </form>}
-    <div className="jobs-result-bar"><p tabIndex={-1} ref={resultsRef} role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {String(translate('cho',locale))} “{query}”</>}</p></div>
+    <div className="jobs-result-bar">
+      {!internal && !savedOnly && <h2>Cơ hội việc làm dành cho bạn</h2>}
+      <p tabIndex={-1} ref={resultsRef} role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {String(translate('cho',locale))} “{query}”</>}</p>
+    </div>
     {filtered.length ? <div className="jobs-grid">{filtered.slice(start,start+PAGE_SIZE).map((job,index) => <JobCard key={job.id} job={job} origin={origin} remember={() => {lastOpened = {entryKey:location.key, jobId:job.id};}} afterRemove={savedOnly ? () => {nextFocus.current = filtered[start+index+1]?.id || filtered[start+index-1]?.id || '';} : undefined}/> )}</div>
       : <EmptyJobs saved={isEmptySaved} teamClosed={internal && !TEAM.some(job => job.status === 'active') && !query && activeFields.length === 0} onReset={reset} onClosed={() => updateFilter('status','closed')}/>}
     {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={page === 1} aria-label="Trang trước" onClick={() => goToPage(page-1)}><ChevronLeft size={18}/></button>{Array.from({length:totalPages},(_,i)=>i+1).map(number => <button type="button" key={number} aria-label={`${translate('Trang',locale)} ${number}`} aria-current={number === page ? 'page' : undefined} onClick={() => goToPage(number)}>{number}</button>)}<button type="button" aria-label="Trang sau" disabled={page === totalPages} onClick={() => goToPage(page+1)}><ChevronRight size={18}/></button></nav>}
@@ -213,13 +222,14 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
 }
 
 export function JobsPage() {
+  const [photoFailed, setPhotoFailed] = useState(false);
   return <div className="jobs-directory">
-    <PageMasthead title="Tìm việc làm" description="Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp."/>
+    <PageMasthead title="Tìm việc làm" description="Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp."><SavedJobsLink/></PageMasthead>
     <section className="jobs-section"><div className="container"><div id="job-listings" tabIndex={-1}><JobBrowser/></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section>
-    <figure className="jobs-event-photo">
-      <img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1072px) calc(40.5vw - 26px), 408px" loading="lazy"/>
-      <figcaption>Bảng tuyển dụng Minh Đức tại sự kiện</figcaption>
-    </figure>
+    {!photoFailed && <figure className="jobs-event-photo">
+      <img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1072px) calc(40.5vw - 26px), 408px" loading="lazy" onError={() => setPhotoFailed(true)}/>
+      <figcaption>Gặp gỡ tại hội trường</figcaption>
+    </figure>}
   </div>;
 }
 export function SavedJobsPage() {
@@ -273,6 +283,9 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
   function errorFor(field: keyof ApplicationErrors) {
     return errors[field] && <span className="application-error" id={`apply-${field}-error`} role="alert">{errors[field]}</span>;
   }
+  function clearCorrectedError(field: 'name' | 'phone' | 'email', valid: boolean) {
+    if (errors[field] && valid) setErrors(previous => ({...previous, [field]: undefined}));
+  }
   return <Modal title={receipt ? 'Hoàn tất trải nghiệm ứng tuyển' : 'Ứng tuyển vị trí'} onClose={onClose}>
     {receipt ? <div className="application-success">
       <CheckCircle2 size={48} aria-hidden="true"/>
@@ -286,12 +299,14 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
       <p className="application-note">Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài.</p>
       <div className="application-field">
         <label htmlFor="apply-name">Họ và tên <span aria-hidden="true">*</span></label>
-        <input id="apply-name" name="name" required autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errors.name ? 'apply-name-error' : undefined}/>
+        <input id="apply-name" name="name" required autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errors.name ? 'apply-name-error' : undefined}
+          onChange={event => clearCorrectedError('name', !!event.currentTarget.value.trim())}/>
         {errorFor('name')}
       </div>
       <div className="application-field">
         <label htmlFor="apply-phone">Số điện thoại <span aria-hidden="true">*</span></label>
-        <input id="apply-phone" name="phone" type="tel" required autoComplete="tel" aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'apply-phone-error' : undefined}/>
+        <input id="apply-phone" name="phone" type="tel" required autoComplete="tel" aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'apply-phone-error' : undefined}
+          onChange={event => clearCorrectedError('phone', validDemoPhone(event.currentTarget.value))}/>
         {errorFor('phone')}
       </div>
       {job.internal && <>
@@ -301,7 +316,8 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
         </div>
         <div className="application-field">
           <label htmlFor="apply-email">Email (không bắt buộc)</label>
-          <input id="apply-email" name="email" type="email" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'apply-email-error' : undefined}/>
+          <input id="apply-email" name="email" type="email" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'apply-email-error' : undefined}
+            onChange={event => clearCorrectedError('email', validOptionalEmail(event.currentTarget.value))}/>
           {errorFor('email')}
         </div>
         <div className="application-field">

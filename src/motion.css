@@ -58,18 +58,6 @@
 }
 @keyframes motion-page-in { from { transform: translateY(10px); } to { transform: translateY(0); } }
 
-/* Keep the partner loop still until it is on screen and the document is visible. */
-.partners-strip[data-visible="false"] .partners-track { animation-play-state: paused; }
-
-/* Without an observer (or without JavaScript), expose the unique set without clipping. */
-.partners-strip[data-static="true"] .partners-viewport { overflow: visible; }
-.partners-strip[data-static="true"] .partners-track { display: block; width: auto; animation: none; }
-.partners-strip[data-static="true"] .partners-set { flex-wrap: wrap; gap: 10px; padding: 20px 0; }
-.partners-strip[data-static="true"] .partners-set li { flex: 1 1 150px; width: auto; }
-.partners-strip[data-static="true"] .partners-set[aria-hidden="true"],
-.partners-strip[data-static="true"] .partners-set [data-repeat],
-.partners-strip[data-static="true"] .partners-toggle { display: none; }
-
 /* An observer failure or teardown restores content immediately. */
 [data-reveal].motion-released, [data-reveal-frame].motion-released > .motion-content { transition: none; }
 

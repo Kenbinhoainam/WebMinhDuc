@@ -2,6 +2,15 @@ import manifest from './media-manifest.json';
 
 type ImageSet = {width:number; height:number; variants:{width:number;src:string}[]};
 const images: Record<string, ImageSet> = manifest;
+const originalsByVariant = new Map<string,string>();
+for (const [original, image] of Object.entries(images)) {
+ for (const variant of image.variants) originalsByVariant.set(variant.src, original);
+}
+
+/** Callers can pass the original URL or the src returned by responsiveImage. */
+export function originalImageSource(src:string) {
+ return originalsByVariant.get(src) ?? src;
+}
 /** Responsive derivatives for local images; originals remain valid as fallbacks. */
 export function responsiveImage(src: string, sizes = '100vw') {
  const image = images[src];

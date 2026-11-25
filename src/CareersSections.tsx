@@ -1,15 +1,22 @@
-import {useEffect, useId, useRef, useState, type ReactNode} from 'react';
-import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin, Maximize2, Pause, Play} from 'lucide-react';
+import {useEffect, useId, useRef, useState, type CSSProperties, type ReactNode} from 'react';
+import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin} from 'lucide-react';
 import {Link, useLocation} from 'react-router-dom';
 import {useLocale} from './i18n';
 import {lookup} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {PageMasthead} from './PageMasthead';
+import {responsiveImage} from './media';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
 import {advanceHomeRail, useHomeCarousel} from './useHomeCarousel';
 import media from './careers-media.json';
 import './Careers.css';
+
+const gallery = media.gallery.map(photo => {
+  const dimensions = responsiveImage(photo.src);
+  const frame = dimensions && {'--photo-ratio': dimensions.width / dimensions.height} as CSSProperties;
+  return {...photo, frame};
+});
 
 const internalJobs = jobs.filter(job => job.internal);
 const specialist = internalJobs.find(job => job.id === 'MD007');
@@ -58,24 +65,12 @@ const questions = [
   {title: 'Làm sao xem lại vị trí đã lưu?', text: 'Chọn biểu tượng lưu bên cạnh một vị trí. Danh sách đã lưu có trên trình duyệt và thiết bị bạn đang dùng.', link: '/saved-jobs', label: 'Việc đã lưu'},
 ];
 
-function scrollItem(track: HTMLDivElement, direction: number, keyboard: boolean) {
-  const last = track.scrollWidth - track.clientWidth;
-  if (last < 2) return;
-  const children = track.children;
-  const step = children.length > 1 ? (children[1] as HTMLElement).offsetLeft - (children[0] as HTMLElement).offsetLeft : track.clientWidth;
-  const left = direction > 0 && track.scrollLeft >= last - 2 ? 0
-    : direction < 0 && track.scrollLeft <= 2 ? last
-    : Math.max(0, Math.min(last, track.scrollLeft + direction * (step || track.clientWidth)));
-  track.scrollTo({left, behavior: keyboard || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
-}
-
 function CareerRail({title, id, kind, modalOpen, children}: {
   title: string; id?: string; kind: 'work' | 'benefits' | 'questions' | 'gallery'; modalOpen: boolean; children: ReactNode;
 }) {
   const section = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const labelId = useId();
-  const trackId = useId();
   const [overflow, setOverflow] = useState(true);
   useEffect(() => {
     const element = track.current;
@@ -92,21 +87,13 @@ function CareerRail({title, id, kind, modalOpen, children}: {
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  const auto = useHomeCarousel(section, () => advanceHomeRail(track.current), '.career-track,.career-rail-controls', {disabled: modalOpen || !overflow});
+  useHomeCarousel(section, () => advanceHomeRail(track.current), '[data-auto-rail]', {disabled: modalOpen || !overflow});
   return <section id={id} ref={section} className={`career-block career-rail-section career-${kind}`} aria-labelledby={labelId}>
     <div className="container">
-      <div className="career-rail-heading">
-        <h2 id={labelId}>{title}</h2>
-        {overflow && <div className="career-rail-controls">
-          <button type="button" className="career-carousel-pause" aria-pressed={auto.paused} aria-controls={trackId} onClick={auto.toggle}>
-            {auto.paused ? <Play size={16} aria-hidden="true"/> : <Pause size={16} aria-hidden="true"/>}
-            <span>{auto.paused ? 'Phát' : 'Tạm dừng'}</span>
-          </button>
-          <button type="button" aria-controls={trackId} aria-label="Mục trước" onClick={event => track.current && scrollItem(track.current, -1, event.detail === 0)}><ArrowLeft size={18} aria-hidden="true"/></button>
-          <button type="button" aria-controls={trackId} aria-label="Mục tiếp theo" onClick={event => track.current && scrollItem(track.current, 1, event.detail === 0)}><ArrowRight size={18} aria-hidden="true"/></button>
-        </div>}
+      <h2 id={labelId}>{title}</h2>
+      <div ref={track} className="career-track" data-auto-rail="" role="region" aria-labelledby={labelId} tabIndex={overflow ? 0 : undefined}>
+        {children}
       </div>
-      <div id={trackId} ref={track} className="career-track" role="region" aria-labelledby={labelId} tabIndex={overflow ? 0 : undefined}>{children}</div>
     </div>
   </section>;
 }
@@ -188,10 +175,9 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
     </CareerRail>
 
     {media.gallery.length > 0 && <CareerRail kind="gallery" title="Hoạt động của Minh Đức" modalOpen={modalOpen}>
-      {media.gallery.map((photo, index) => <figure key={photo.src} className="career-gallery-item">
+      {gallery.map((photo, index) => <figure key={photo.src} className="career-gallery-item" style={photo.frame}>
         <button type="button" aria-label={translate('Xem ảnh lớn') + ' · ' + translate(photo.caption)} onClick={event => {event.currentTarget.focus({preventScroll: true}); setGalleryIndex(index);}}>
-          <img src={photo.src} sizes="auto, (max-width: 640px) 83vw, (max-width: 850px) 70vw, 450px" alt={photo.alt} loading="lazy" decoding="async"/>
-          <span aria-hidden="true"><Maximize2 size={17}/></span>
+          <img src={photo.src} sizes="auto, (max-width: 640px) calc(100vw - 68px), 520px" alt={photo.alt} loading="lazy" decoding="async"/>
         </button>
         <figcaption>{photo.caption}</figcaption>
       </figure>)}

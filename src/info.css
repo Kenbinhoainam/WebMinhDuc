@@ -60,7 +60,7 @@
 @media(max-width:1023px){.info-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.info-document-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:575px){.info-document-grid{grid-template-columns:1fr}.info-team-card strong{font-size:16px}}
 .info-about-values article>img{width:60px;height:60px;object-fit:contain;margin-bottom:24px}
-.info-service-cards{display:flex;overflow-x:auto;gap:clamp(16px,2vw,32px);scroll-snap-type:x mandatory;padding-bottom:10px}.info-service-cards .info-service-card{flex:0 0 calc((100% - 64px)/3);scroll-snap-align:start}.info-rail-controls{display:flex;justify-content:center;gap:10px;margin-top:25px}.info-rail-controls button{background:#fff}
+.info-service-cards{display:flex;overflow-x:auto;gap:clamp(16px,2vw,32px);scroll-snap-type:x mandatory;padding-bottom:10px}.info-service-cards .info-service-card{flex:0 0 calc((100% - 64px)/3);scroll-snap-align:start}
 .info-contact-section{background:#f6f6f6}.info-contact-section .contact-form{max-width:900px;margin:auto}
 @media(max-width:900px){.info-service-cards .info-service-card{flex-basis:calc((100% - 24px)/2)}}
 @media(max-width:575px){.info-service-cards .info-service-card{flex-basis:85%}}
@@ -95,4 +95,3 @@
 .info-service-customers .info-testimonial-rail blockquote{flex:0 0 calc((100% - 24px)/2);scroll-snap-align:start;margin:0;padding:clamp(24px,3vw,48px);background:white;border-radius:12px;text-align:left;font-size:clamp(18px,1.4vw,24px)}
 .info-service-customers .info-testimonial-rail footer{display:flex;align-items:center;gap:14px;margin-top:25px;padding-top:20px;border-top:1px solid #e4e4e4;font-size:14px;color:#666}.info-testimonial-avatar{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:#f2f2f2;color:#777}.info-testimonial-rail footer strong,.info-testimonial-rail footer small{display:block}.info-testimonial-rail footer strong{color:#292929}.info-testimonial-rail footer small{font-size:12px}
 @media(max-width:767px){.info-service-customers .info-testimonial-rail blockquote{flex-basis:100%}}
-.info-carousel-pause{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px auto 0;border:0;background:transparent;color:#555;min-height:44px;padding:8px 12px;font-size:13px}.info-carousel-pause:hover{color:#e42824}

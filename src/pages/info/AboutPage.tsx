@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
 import {Link, useLocation, useNavigationType} from 'react-router-dom';
-import {ChevronLeft, ChevronRight} from 'lucide-react';
+import {ChevronRight} from 'lucide-react';
 import {PageMasthead} from '../../PageMasthead';
 import {Modal} from '../../shared';
 import {useTranslation} from '../../i18n';
@@ -9,7 +9,7 @@ import {advanceHomeRail, useHomeCarousel} from '../../useHomeCarousel';
 import {partners} from '../../partners';
 import PartnerLogo from '../../PartnerLogo';
 import {contact, services} from './data';
-import {InfoCarouselPause, ServiceCards, InfoContact} from './components';
+import {ServiceCards, InfoContact} from './components';
 import './about-reference.css';
 import './info-v16.css';
 
@@ -72,17 +72,60 @@ function ChapterNav(){
 function HistorySection(){
   const [phase,setPhase] = useState(0);
   const [detail,setDetail] = useState(false);
-  const [instant,setInstant] = useState(false);
-  const previous = useRef(0);
   const area = useRef<HTMLElement>(null);
-  const change = (next:number,instantChange=false) => {
-    const nextPhase=(next+phases.length)%phases.length;
-    if (nextPhase===phase) return;
-    previous.current=phase;
-    setInstant(instantChange);
-    setPhase(nextPhase);
+  const rail = useRef<HTMLDivElement>(null);
+  const scrollingTo = useRef<number | null>(null);
+  const change = (next: number, immediate = false) => {
+    const track = rail.current;
+    const index = (next + phases.length) % phases.length;
+    const card = track?.children[index] as HTMLElement | undefined;
+    setPhase(index);
+    if (!track || !card || !track.clientWidth) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const left = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+    const behavior = immediate || reduce ? 'instant' : 'smooth';
+    scrollingTo.current = behavior === 'smooth' ? left : null;
+    track.scrollTo({left, behavior});
   };
-  const auto = useHomeCarousel(area,()=>change(phase+1),'.about-history-interaction',{intervalMs:7000,disabled:detail});
+  useHomeCarousel(area, () => change(phase + 1, phase === phases.length - 1), '.about-history-interaction', {intervalMs:6000, disabled:detail});
+  useEffect(() => {
+    const track = rail.current;
+    if (!track) return;
+    let settle: number | undefined;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const cancelTarget = () => {scrollingTo.current = null;};
+    const finishImmediately = () => {
+      if (motion.matches && scrollingTo.current !== null) {
+        track.scrollTo({left:scrollingTo.current, behavior:'instant'});
+        cancelTarget();
+      }
+    };
+    function readSelection() {
+      if (!track || !track.clientWidth) return;
+      cancelTarget();
+      const center = track.scrollLeft + track.clientWidth / 2;
+      const cards = Array.from(track.children) as HTMLElement[];
+      const distances = cards.map(card => Math.abs(card.offsetLeft + card.offsetWidth / 2 - center));
+      setPhase(distances.indexOf(Math.min(...distances)));
+    }
+    const scrolled = () => {
+      window.clearTimeout(settle);
+      settle = window.setTimeout(readSelection, 110);
+    };
+    track.addEventListener('scroll', scrolled, {passive:true});
+    track.addEventListener('pointerdown', cancelTarget, {passive:true});
+    track.addEventListener('wheel', cancelTarget, {passive:true});
+    track.addEventListener('keydown', cancelTarget);
+    motion.addEventListener('change', finishImmediately);
+    return () => {
+      window.clearTimeout(settle);
+      track.removeEventListener('scroll', scrolled);
+      track.removeEventListener('pointerdown', cancelTarget);
+      track.removeEventListener('wheel', cancelTarget);
+      track.removeEventListener('keydown', cancelTarget);
+      motion.removeEventListener('change', finishImmediately);
+    };
+  }, []);
   const keyboard = (event:KeyboardEvent<HTMLButtonElement>,index:number) => {
     const targets:Record<string,number> = {ArrowRight:(index+1)%phases.length,ArrowLeft:(index+phases.length-1)%phases.length,Home:0,End:phases.length-1};
     const next=targets[event.key];
@@ -91,7 +134,6 @@ function HistorySection(){
     change(next,true);
     document.getElementById('history-tab-'+next)?.focus();
   };
-  const position = (index:number,current:number) => ((index-current+4)%3)-1;
   return <section id="history" className="section info-history" ref={area}>
     <div className="container">
       <h2>Quá trình hình thành và phát triển</h2>
@@ -101,18 +143,11 @@ function HistorySection(){
           <div className="info-history-track" role="tablist" aria-label="Các giai đoạn">
             {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={event=>change(index,event.detail===0)}>{item.label}</button>)}
           </div>
-          <div className="about-rail-actions">
-            <InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-            <button type="button" className="circle-button" aria-label="Giai đoạn trước" onClick={event=>change(phase-1,event.detail===0)}><ChevronLeft aria-hidden="true"/></button>
-            <button type="button" className="circle-button" aria-label="Giai đoạn tiếp theo" onClick={event=>change(phase+1,event.detail===0)}><ChevronRight aria-hidden="true"/></button>
-          </div>
         </div>
-        <RevealFrame effect="up"><div className="info-history-rail" data-instant={instant || undefined}>
+        <RevealFrame effect="up"><div className="info-history-rail" ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Các giai đoạn">
           {phases.map((item,index)=>{
-            const slot=position(index,phase);
-            const active=slot===0;
-            const recycled=Math.abs(slot-position(index,previous.current))===2;
-            return <article key={item.label} className={['info-history-slide',active?'is-active':'is-side',recycled?'is-recycled':'','md-history-position-'+(slot+1)].join(' ')}
+            const active=index===phase;
+            return <article key={item.label} className={'info-history-slide '+(active?'is-active':'is-side')}
               role={active?'tabpanel':undefined} aria-hidden={active?undefined:true} id={active?'history-panel':undefined} aria-labelledby={active?'history-tab-'+phase:undefined}>
               <div className="md-history-image"><img src={item.image} alt={item.alt} sizes="(max-width:767px) 100vw, (max-width:1440px) 64vw, 800px" loading="lazy" decoding="async"/></div>
               <div className="about-history-copy"><h3>{item.title}</h3><p>{item.text}</p>
@@ -134,7 +169,7 @@ function AboutTeam(){
   return <section className="section container info-team">
     <h2>Đội ngũ Minh Đức sẵn sàng hỗ trợ</h2>
     <div className="md-team-overview">
-      <RevealFrame effect="media"><img className="md-team-photo" src="/assets/minhduc-meeting-10s.webp" alt="Nhóm Minh Đức trao đổi trong phòng họp" width="1024" height="576" loading="lazy"/></RevealFrame>
+      <RevealFrame effect="media"><img className="md-team-photo" src="/assets/minhduc-v18/field-team.webp" alt="Nhóm nhân viên Minh Đức trao đổi ngoài trời" sizes="(max-width:767px) calc(100vw - 40px), (max-width:1280px) 45vw, 580px" loading="lazy" decoding="async"/></RevealFrame>
       <div className="info-team-grid">{roles.map(role=><button type="button" key={role.title} className="info-team-card" onClick={()=>setSelected(role)} aria-haspopup="dialog">{role.title}<ChevronRight aria-hidden="true" size={20}/></button>)}</div>
     </div>
     {selected&&<Modal title={selected.title} onClose={()=>setSelected(null)}><p>{selected.text}</p>
@@ -167,27 +202,14 @@ function AboutMilestones(){
     window.addEventListener('resize',measure);
     return ()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
   },[]);
-  const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{disabled:!overflow});
-  const scroll=(direction:number,fromKeyboard:boolean)=>{
-    const rail=track.current;
-    if(!rail)return;
-    const first=rail.children[0] as HTMLElement;
-    const second=rail.children[1] as HTMLElement;
-    const end=rail.scrollWidth-rail.clientWidth;
-    const wraps=direction<0 ? rail.scrollLeft<2 : rail.scrollLeft>=end-2;
-    const target=wraps ? (direction<0 ? end : 0) : rail.scrollLeft+direction*(second.offsetLeft-first.offsetLeft);
-    const immediate=fromKeyboard || wraps || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    rail.scrollTo({left:target,behavior:immediate?'instant':'smooth'});
-  };
+  useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{intervalMs:6000,disabled:!overflow});
   return <section id="achievements" ref={area} className="section container info-documentation"><h2>Thành tựu và dấu ấn</h2>
     <p className="about-intro-line">Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.</p>
     <div className="about-milestone-interaction">
-      <RevealFrame effect="up"><div className="info-document-grid" ref={track} role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
+      <RevealFrame effect="up"><div className="info-document-grid" ref={track} data-auto-rail role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
         {milestones.map(item=><article className="info-document-card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
       </div></RevealFrame>
-      {overflow&&<div className="about-rail-actions"><InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-        <button type="button" className="circle-button" aria-label="Mục trước" onClick={event=>scroll(-1,event.detail===0)}><ChevronLeft aria-hidden="true"/></button>
-        <button type="button" className="circle-button" aria-label="Mục tiếp theo" onClick={event=>scroll(1,event.detail===0)}><ChevronRight aria-hidden="true"/></button></div>}
+
     </div>
   </section>;
 }

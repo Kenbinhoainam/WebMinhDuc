@@ -28,12 +28,12 @@ try {
   assert.ok(doc.querySelector('.home-v16-people a[href$="/about-us#activities"]'),`${locale}: activities link`);
   assert.equal(doc.querySelectorAll('.home-v16-people img[src^="/assets/minhduc-v16/"]').length,2,`${locale}: two real activity images`);
   assert.equal(doc.querySelectorAll('.ref-testimonial-card,.ref-partner-grid').length,0,`${locale}: no fake testimonials or duplicate partner grid`);
-  assert.equal(doc.querySelectorAll('.ref-achievement').length,4,`${locale}: four reference metric cards`);
-  const figures=[...doc.querySelectorAll('.ref-achievement .motion-sr-only')].map(node=>node.textContent);assert.deepEqual(figures,['1.200+','80+','15+','95%']);
+  assert.equal(doc.querySelectorAll('.field-stat').length,4,`${locale}: four reference metric cards`);
+  const figures=[...doc.querySelectorAll('.field-stat .motion-sr-only')].map(node=>node.textContent);assert.deepEqual(figures,['1.200+','80+','15+','95%']);
   assert.doesNotMatch(doc.body.textContent,/Nhân vật giả định|Số liệu mô phỏng/);
   const images=[...doc.querySelectorAll('.ref-solution')].map(node=>node.getAttribute('style'));
   assert.equal(new Set(images).size,5,`${locale}: distinct service imagery`);
-  assert.match(images[3],/admissions-seminar\.webp/);assert.match(images[4],/business-team\.webp/);
+  assert.match(images[3],/admissions-seminar\.webp/);assert.match(images[4],/learning-space(?:-[0-9]+)?\.webp/);
   assert.ok(images.every(image=>!image.includes('HR2B-2-1')),`${locale}: no branded admission image`);
   assert.equal(doc.querySelectorAll('.home-b2b-office-layout img').length,0,`${locale}: office details do not imply a stock building is a branch`);
  }

@@ -16,10 +16,10 @@ try {
   await loadLocale(locale);
   const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,null,React.createElement(Home))));
   const dom=new JSDOM(html),doc=dom.window.document;
-  const about=doc.querySelector('.ref-about-image');assert.equal(about.dataset.reveal,'right');
-  const metrics=[...doc.querySelectorAll('.ref-achievement-frame')];assert.equal(metrics.length,4);
+  const about=doc.querySelector('.field-portrait');assert.equal(about.dataset.reveal,'right');
+  const metrics=[...doc.querySelectorAll('.field-stat-frame')];assert.equal(metrics.length,4);
   assert.deepEqual(metrics.map(x=>x.getAttribute('data-reveal-delay-ms')),['90','150','210','270']);
-  assert.ok(metrics.every(x=>x.querySelector('.motion-content > .ref-achievement')));
+  assert.ok(metrics.every(x=>x.querySelector('.motion-content > .field-stat')));
   assert.equal(doc.querySelector('.section-home-solution h2').closest('[data-reveal]').dataset.reveal,'zoom');
   assert.equal(doc.querySelectorAll('.partners-strip').length,1);
   assert.equal(doc.querySelector('.home-v16-process-image').dataset.reveal,'media');

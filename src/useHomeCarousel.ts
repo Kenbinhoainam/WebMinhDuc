@@ -1,76 +1,186 @@
 import {useEffect, useRef, useState, type RefObject} from 'react';
 
-const HOME_INTERACTION_SELECTORS = '.ref-achievement-track,.ref-solution-track,.ref-testimonial-track,.ref-news-grid,.ref-rail-controls,.ref-story-controls';
-const CAROUSEL_TOGGLES = '[data-carousel-toggle],.ref-carousel-pause,.info-carousel-pause,.career-carousel-pause,.editorial-feature-pause';
+type Advance = () => void | (() => void);
 
-/** Pause when the rail is not visible or its content is being interacted with. */
-export function useHomeCarousel(container: RefObject<HTMLElement | null>, advance: () => void | (() => void), interactionSelector = HOME_INTERACTION_SELECTORS, options: {intervalMs?:number;disabled?:boolean} = {}) {
-  const [paused, setPaused] = useState(false);
-  const intervalMs=Math.max(1000,options.intervalMs ?? 3500), disabled=options.disabled ?? false;
+/** A fresh reading interval begins when all interaction with the rail has ended. */
+export function useHomeCarousel(
+  container: RefObject<HTMLElement | null>,
+  advance: Advance,
+  interactionSelector = '[data-auto-rail]',
+  {intervalMs = 6000, disabled = false}: {intervalMs?: number; disabled?: boolean} = {},
+) {
   const advanceRef = useRef(advance);
   advanceRef.current = advance;
   useEffect(() => {
-    const element=container.current;
-    const controls=element ? Array.from(element.querySelectorAll<HTMLElement>(`${interactionSelector},${CAROUSEL_TOGGLES}`)) : [];
-    if (!element || controls.length===0 || disabled) return;
-    const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
-    const pageRoot=document.getElementById('root');
-    let blocked=pageRoot?.hasAttribute('inert') ?? false;
-    const isToggle=(target:EventTarget|null)=>target instanceof Element && !!target.closest(CAROUSEL_TOGGLES);
-    const hovered=new Set(controls.filter(control=>control.matches(':hover')));
-    let alive=true, visible=false, focused=!isToggle(document.activeElement)&&controls.some(control=>control.contains(document.activeElement)), dragging=false;
-    let timer:number|undefined, cancelAnimation:(()=>void)|undefined;
-    const stop=()=>{if(timer!==undefined){window.clearInterval(timer);timer=undefined;}cancelAnimation?.();cancelAnimation=undefined;};
-    const update=()=>{
-      if(!alive)return;
+    const element = container.current;
+    if (!element || disabled) return;
+    const surfaces = element.matches(interactionSelector) ? [element] : [...element.querySelectorAll<HTMLElement>(interactionSelector)];
+    if (!surfaces.length) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const root = document.getElementById('root');
+    const hovered = new Set(surfaces.filter(node => window.matchMedia('(hover: hover)').matches && node.matches(':hover')));
+    const containsFocus = (target: EventTarget | null) => target instanceof Node && surfaces.some(node => node.contains(target));
+    let focused = containsFocus(document.activeElement);
+    let visible = false;
+    let alive = true;
+    let pressed = false;
+    let timer: number | undefined;
+    let cancelSlide: (() => void) | undefined;
+
+    function stop() {
+      window.clearInterval(timer);
+      timer = undefined;
+      cancelSlide?.();
+      cancelSlide = undefined;
+    }
+    function schedule() {
       stop();
-      if(!paused && !blocked && visible && hovered.size===0 && !focused && !dragging && !document.hidden && !motion.matches)
-        timer=window.setInterval(()=>{if(!alive)return;cancelAnimation?.();cancelAnimation=advanceRef.current() || undefined;},intervalMs);
+      if (!alive || !visible || pressed || focused || hovered.size || document.hidden || motion.matches || root?.hasAttribute('inert')) return;
+      timer = window.setInterval(() => {
+        if (!alive) return;
+        cancelSlide?.();
+        cancelSlide = advanceRef.current() || undefined;
+      }, intervalMs);
+    }
+    const enter = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
+      hovered.add(event.currentTarget as HTMLElement);
+      schedule();
     };
-    const enter=(event:Event)=>{hovered.add(event.currentTarget as HTMLElement);update();};
-    const leave=(event:Event)=>{hovered.delete(event.currentTarget as HTMLElement);update();};
-    // Pointer focus precedes a click: let the toggle click perform exactly one state change.
-    // Keyboard entry pauses immediately; an explicit Play can then resume on the same button.
-    const focusIn=(event:FocusEvent)=>{if(isToggle(event.target)&&dragging)return;focused=true;setPaused(true);update();};
-    const focusOut=(event:FocusEvent)=>{focused=!isToggle(event.relatedTarget)&&controls.some(control=>control.contains(event.relatedTarget as Node | null));update();};
-    const pointerDown=()=>{dragging=true;update();};
-    const pointerEnd=()=>{dragging=false;update();};
-    let observer:IntersectionObserver | undefined, observerValid=false;
-    try {
-      if(typeof IntersectionObserver!=='undefined') {
-        observer=new IntersectionObserver(entries=>{if(!alive || !observerValid)return;visible=entries[0]?.isIntersecting ?? false;update();},{threshold:.1});
-        observer.observe(element);observerValid=true;
+    const leave = (event: PointerEvent) => { hovered.delete(event.currentTarget as HTMLElement); schedule(); };
+    const focusIn = () => { focused = true; schedule(); };
+    const focusOut = (event: FocusEvent) => { focused = containsFocus(event.relatedTarget); schedule(); };
+    const down = () => { pressed = true; schedule(); };
+    const up = () => { if (pressed) { pressed = false; schedule(); } };
+    // React gives specialized rails the first chance to handle their own keys.
+    const keyDown = (event: KeyboardEvent) => {
+      const rail = event.target;
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+          !(rail instanceof HTMLElement) || rail !== document.activeElement ||
+          !rail.hasAttribute('data-auto-rail') || !containsFocus(rail)) return;
+      const max = rail.scrollWidth - rail.clientWidth;
+      if (max < 2) return;
+      let target: number;
+      switch (event.key) {
+        case 'ArrowRight': target = adjacentRailOffset(rail, false); break;
+        case 'ArrowLeft': target = adjacentRailOffset(rail, true); break;
+        case 'Home': target = 0; break;
+        case 'End': target = max; break;
+        default: return;
       }
-    } catch { observer?.disconnect();observer=undefined;visible=false; }
-    const modalObserver=pageRoot && typeof MutationObserver!=='undefined'
-      ? new MutationObserver(()=>{blocked=pageRoot.hasAttribute('inert');update();}) : undefined;
-    modalObserver?.observe(pageRoot!,{attributes:true,attributeFilter:['inert']});
-    for(const control of controls){control.addEventListener('mouseenter',enter);control.addEventListener('mouseleave',leave);control.addEventListener('focusin',focusIn);control.addEventListener('focusout',focusOut);control.addEventListener('pointerdown',pointerDown,{passive:true});}
-    window.addEventListener('pointerup',pointerEnd,{passive:true});window.addEventListener('pointercancel',pointerEnd,{passive:true});
-    document.addEventListener('visibilitychange',update);motion.addEventListener('change',update);update();
-    return()=>{alive=false;stop();observer?.disconnect();modalObserver?.disconnect();for(const control of controls){control.removeEventListener('mouseenter',enter);control.removeEventListener('mouseleave',leave);control.removeEventListener('focusin',focusIn);control.removeEventListener('focusout',focusOut);control.removeEventListener('pointerdown',pointerDown);}window.removeEventListener('pointerup',pointerEnd);window.removeEventListener('pointercancel',pointerEnd);document.removeEventListener('visibilitychange',update);motion.removeEventListener('change',update);};
-  },[container,paused,interactionSelector,intervalMs,disabled]);
-  return {paused, toggle:()=>setPaused(value=>!value)};
+      event.preventDefault();
+      rail.scrollLeft = target;
+    };
+    let observer: IntersectionObserver | undefined;
+    try {
+      observer = new IntersectionObserver(entries => {
+        if (!alive || !observer) return;
+        visible = !!entries[0]?.isIntersecting;
+        schedule();
+      }, {threshold: .05});
+      observer.observe(element);
+    } catch {
+      observer?.disconnect();
+      observer = undefined;
+    }
+    const modalObserver = root && new MutationObserver(schedule);
+    if (root) modalObserver?.observe(root, {attributes: true, attributeFilter: ['inert']});
+    for (const node of surfaces) {
+      node.addEventListener('pointerenter', enter);
+      node.addEventListener('pointerleave', leave);
+      node.addEventListener('focusin', focusIn);
+      node.addEventListener('focusout', focusOut);
+      node.addEventListener('pointerdown', down, {passive: true});
+      node.addEventListener('wheel', schedule, {passive: true});
+    }
+    window.addEventListener('pointerup', up, {passive: true});
+    window.addEventListener('pointercancel', up, {passive: true});
+    document.addEventListener('keydown', keyDown);
+    document.addEventListener('visibilitychange', schedule);
+    motion.addEventListener('change', schedule);
+    return () => {
+      alive = false;
+      stop();
+      observer?.disconnect();
+      modalObserver?.disconnect();
+      for (const node of surfaces) {
+        node.removeEventListener('pointerenter', enter);
+        node.removeEventListener('pointerleave', leave);
+        node.removeEventListener('focusin', focusIn);
+        node.removeEventListener('focusout', focusOut);
+        node.removeEventListener('pointerdown', down);
+        node.removeEventListener('wheel', schedule);
+      }
+      window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointercancel', up);
+      document.removeEventListener('keydown', keyDown);
+      document.removeEventListener('visibilitychange', schedule);
+      motion.removeEventListener('change', schedule);
+    };
+  }, [container, interactionSelector, intervalMs, disabled]);
 }
 
-/** Scroll one card over 500ms, suspending snap until completion or cancellation. */
+/** Static rows need neither an extra tab stop nor an autoplay timer. */
+export function useScrollableRail(rail: RefObject<HTMLElement | null>) {
+  const [overflow, setOverflow] = useState(true);
+  useEffect(() => {
+    const element = rail.current;
+    if (!element) return;
+    const measure = () => {
+      if (element.clientWidth > 0) setOverflow(element.scrollWidth > element.clientWidth + 1);
+    };
+    measure();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', measure);
+      return () => window.removeEventListener('resize', measure);
+    }
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    for (const card of element.children) observer.observe(card);
+    return () => observer.disconnect();
+  }, [rail]);
+  useHomeCarousel(rail, () => advanceHomeRail(rail.current), undefined, {disabled: !overflow});
+  return overflow;
+}
+
+function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
+  const start = rail.scrollLeft;
+  const max = rail.scrollWidth - rail.clientWidth;
+  const cards = Array.from(rail.children) as HTMLElement[];
+  const origin = cards[0]?.offsetLeft ?? 0;
+  const offsets = cards.map(card => Math.min(max, card.offsetLeft - origin));
+  return backwards
+    ? offsets.reverse().find(offset => offset < start - 2) ?? 0
+    : offsets.find(offset => offset > start + 2) ?? max;
+}
+
+// Reverse at either end so a long strip never sweeps back through every card.
+const reverseRail = new WeakSet<HTMLElement>();
 export function advanceHomeRail(rail: HTMLElement | null) {
-  if(!rail || rail.scrollWidth <= rail.clientWidth + 1) return;
-  const cards=rail.children;
-  const step=cards.length>1 ? (cards[1] as HTMLElement).offsetLeft-(cards[0] as HTMLElement).offsetLeft : rail.clientWidth;
-  const start=rail.scrollLeft, max=rail.scrollWidth-rail.clientWidth;
-  const target=start >= max-2 ? 0 : Math.min(max,start+(step || rail.clientWidth));
-  const started=performance.now(), previousSnap=rail.style.scrollSnapType;
-  rail.style.scrollSnapType='none';
-  let frame=0, alive=true;
-  const finish=()=>{if(!alive)return;alive=false;cancelAnimationFrame(frame);rail.style.scrollSnapType=previousSnap;};
-  const tick=(now:number)=>{
-    if(!alive)return;
-    if(!rail.isConnected){finish();return;}
-    const progress=Math.max(0,Math.min(1,(now-started)/500));
-    rail.scrollLeft=start+(target-start)*(1-(1-progress)**3);
-    if(progress<1)frame=requestAnimationFrame(tick);else finish();
+  if (!rail || rail.scrollWidth <= rail.clientWidth + 1) return;
+  const start = rail.scrollLeft;
+  const max = rail.scrollWidth - rail.clientWidth;
+  if (start >= max - 2) reverseRail.add(rail);
+  if (start <= 2) reverseRail.delete(rail);
+  const target = adjacentRailOffset(rail, reverseRail.has(rail));
+  const started = performance.now();
+  const previousSnap = rail.style.scrollSnapType;
+  rail.style.scrollSnapType = 'none';
+  let frame = 0, alive = true;
+  const finish = () => {
+    if (!alive) return;
+    alive = false;
+    cancelAnimationFrame(frame);
+    rail.style.scrollSnapType = previousSnap;
   };
-  frame=requestAnimationFrame(tick);
+  const tick = (now: number) => {
+    if (!alive) return;
+    if (!rail.isConnected) { finish(); return; }
+    const progress = Math.min(1, Math.max(0, (now - started) / 500));
+    rail.scrollLeft = start + (target - start) * (1 - (1 - progress) ** 3);
+    if (progress < 1) frame = requestAnimationFrame(tick);
+    else finish();
+  };
+  frame = requestAnimationFrame(tick);
   return finish;
 }

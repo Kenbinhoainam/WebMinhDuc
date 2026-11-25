@@ -766,5 +766,41 @@
         "src": "/assets/minhduc-v18/event-hall.webp"
       }
     ]
+  },
+  "/assets/minhduc-meeting-10s.webp": {
+    "width": 1024,
+    "height": 576,
+    "variants": [
+      {
+        "width": 240,
+        "src": "/optimized/assets/minhduc-meeting-10s-240.webp"
+      },
+      {
+        "width": 512,
+        "src": "/optimized/assets/minhduc-meeting-10s-512.webp"
+      },
+      {
+        "width": 1024,
+        "src": "/assets/minhduc-meeting-10s.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-working-60s.webp": {
+    "width": 1024,
+    "height": 576,
+    "variants": [
+      {
+        "width": 240,
+        "src": "/optimized/assets/minhduc-working-60s-240.webp"
+      },
+      {
+        "width": 512,
+        "src": "/optimized/assets/minhduc-working-60s-512.webp"
+      },
+      {
+        "width": 1024,
+        "src": "/assets/minhduc-working-60s.webp"
+      }
+    ]
   }
 }

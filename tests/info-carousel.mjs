@@ -8,9 +8,15 @@ await build({stdin:{contents:"export {ServicePage} from './src/InfoPages';export
 try{
  const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost/',pretendToBeVisual:true});
  for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame','FormData'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
- globalThis.IS_REACT_ACT_ENVIRONMENT=true;window.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});
+ globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+ const reducedMotion = new window.EventTarget();
+ reducedMotion.matches = false;
+ window.matchMedia = query => query.includes('reduced-motion') ? reducedMotion : {matches:false,addEventListener(){},removeEventListener(){}};
  const observers=[];globalThis.IntersectionObserver=class{constructor(cb){this.cb=cb;observers.push(this)}observe(el){this.target=el}disconnect(){}};
- let timers=0;window.setInterval=()=>{timers++;return timers};window.clearInterval=()=>{};
+ const timers = new Map();
+ let nextTimer = 0;
+ window.setInterval = (callback, delay) => {timers.set(++nextTimer, delay);return nextTimer;};
+ window.clearInterval = id => timers.delete(id);
  const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter,Routes,Route,useNavigate}=await import('react-router-dom');const {ServicePage,ContactContext,getDemoSubmissions}=await import(pathToFileURL(bundle).href);const root=createRoot(document.getElementById('root'));
  let navigate,requestedService;
  function VisitService(){
@@ -18,8 +24,30 @@ try{
    return React.createElement(ContactContext.Provider,{value:value=>{requestedService=value}},React.createElement(ServicePage));
  }
  await act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:['/services/labor-supply']},React.createElement(Routes,null,React.createElement(Route,{path:'/services/:slug',element:React.createElement(VisitService)})))));
- const pause=[...document.querySelectorAll('.info-carousel-pause')];assert.equal(pause.length,2);const own=observers.filter(o=>o.target?.matches('.info-service-customers,.info-service-rail'));assert.equal(own.length,2);await act(()=>own.forEach(o=>o.cb([{isIntersecting:true}])));assert.equal(timers,2,'both rails start only when visible');
- await act(()=>pause[0].click());assert.equal(pause[0].getAttribute('aria-pressed'),'true');assert.equal(pause[1].getAttribute('aria-pressed'),'false');
+ const serviceRail = document.querySelector('.info-service-cards');
+ const storyRail = document.querySelector('.info-testimonial-rail');
+ const rails = [serviceRail, storyRail];
+ assert.equal(document.querySelector('.info-service-rail button,.info-rail-controls,.info-carousel-pause'), null);
+ const ownObservers = observers.filter(observer => rails.includes(observer.target));
+ assert.equal(ownObservers.length, 2, 'visibility is observed at each track');
+ assert.equal(timers.size, 0, 'no rail advances before it is visible');
+ for (const rail of rails) {
+   assert.ok(rail.matches('[data-auto-rail][role="region"][tabindex="0"][aria-label]'));
+   Object.defineProperties(rail, {clientWidth:{value:390},scrollWidth:{value:1170}});
+   await act(() => ownObservers.find(observer => observer.target === rail).cb([{target:rail,isIntersecting:true,intersectionRatio:1}]));
+ }
+ assert.deepEqual([...timers.values()], [6000, 6000]);
+ await act(() => serviceRail.focus());
+ assert.equal(timers.size, 1, 'reading one track pauses only that track');
+ await act(() => serviceRail.blur());
+ assert.equal(timers.size, 2, 'the track resumes after focus leaves');
+ await act(() => storyRail.dispatchEvent(new Event('pointerdown', {bubbles:true})));
+ assert.equal(timers.size, 1, 'touching a story does not interrupt the service gallery');
+ await act(() => window.dispatchEvent(new Event('pointercancel')));
+ assert.equal(timers.size, 2, 'a cancelled gesture releases the story rail');
+ await act(() => {reducedMotion.matches=true;reducedMotion.dispatchEvent(new Event('change'));});
+ assert.equal(timers.size, 0, 'reduced motion stops both tracks immediately');
+
  const cases=[
    ['labor-supply','Giới thiệu & cung ứng nhân lực'],
    ['labor-leasing','Cho thuê lao động'],

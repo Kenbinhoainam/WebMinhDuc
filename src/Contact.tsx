@@ -161,6 +161,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
 export function ContactPage() {
   const t = useTranslation();
   const [mode, setMode] = useState<Mode>('F02');
+  const [showTeamPhoto, setShowTeamPhoto] = useState(true);
   const formTitle = useRef<HTMLHeadingElement>(null);
   function choose(value: Mode) {
     setMode(value);
@@ -180,15 +181,18 @@ export function ContactPage() {
         <ContactForm mode={mode} lockMode/>
       </section>
       <aside className="contact-reference-info">
-        <div className="contact-team">
-          <div><h2>Trao đổi trực tiếp</h2><p>CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p></div>
-          <img {...responsiveImage('/assets/minhduc-v18/contact-team.webp', '(max-width:767px) 96px, 112px')}
-            alt="Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa." loading="lazy" decoding="async"/>
-        </div>
+        <h2>Trao đổi trực tiếp</h2>
+        <p className="contact-company">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
         <Link className="contact-method" to="/consultation"><CalendarDays aria-hidden="true"/>Chọn giờ tư vấn</Link>
         <a className="contact-method" href={company.zalo} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Zalo Minh Đức</a>
         <a className="contact-method" href={company.facebook} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Facebook Minh Đức</a>
         <a className="contact-method" href={'mailto:' + company.email}><Mail aria-hidden="true"/>{company.email}</a>
+        {showTeamPhoto && <figure className="contact-team">
+          <img {...responsiveImage('/assets/minhduc-v18/contact-team.webp', '(max-width:359px) 180px, (max-width:767px) 228px, 245px')}
+            alt="Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa." loading="lazy" decoding="async"
+            onError={() => setShowTeamPhoto(false)}/>
+          <figcaption>Hoạt động tập thể tại Minh Đức Vina</figcaption>
+        </figure>}
       </aside>
     </div>
     <section id="contact-offices" tabIndex={-1} className="contact-directory" aria-labelledby="contact-offices-heading">

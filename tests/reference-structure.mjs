@@ -39,7 +39,7 @@ try {
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
         const sequence=sections.map(node => [...node.classList].find(value => value.startsWith('section-home-') || value.startsWith('home-b2b-') || value.startsWith('home-v16-')));
-        assert.deepEqual(sequence, ['section-home-banner','section-home-about','section-home-about-achievement','home-v16-needs','section-home-solution','home-v16-process','home-v16-people','home-b2b-contact','home-b2b-offices','section-home-news'], `${label}: homepage buyer journey`);
+        assert.deepEqual(sequence, ['section-home-banner','section-home-about','home-v16-needs','section-home-solution','home-v16-process','home-v16-people','home-b2b-contact','home-b2b-offices','section-home-news'], `${label}: homepage buyer journey`);
         for (const section of sections.slice(1)) assert.ok(section.querySelector('[data-reveal]'), `${label}: ${section.className} includes progressive reveal coverage`);
         const frames=[...doc.querySelectorAll('[data-reveal-frame]')];
         assert.ok(frames.length > 4, 'stable frames cover the journey');
@@ -56,8 +56,8 @@ try {
         assert.ok(doc.querySelector('#business-contact .contact-form'), 'business inquiry form');
         assert.equal(doc.querySelectorAll('.section-home-news article').length,3, 'news rail has three unique articles');
         assert.equal(new Set([...doc.querySelectorAll('.section-home-news article h3 a')].map(a=>a.getAttribute('href'))).size,3, 'news destinations are distinct');
-        assert.equal(doc.querySelectorAll('.section-home-news .ref-rail-controls button').length, 2);
-        assert.ok(doc.querySelector('.section-home-news .ref-carousel-pause'), 'news autoplay exposes a pause control');
+        assert.ok(doc.querySelector('.section-home-news [data-auto-rail][role="region"]'));
+        assert.equal(doc.querySelector('.ref-carousel-pause,.ref-rail-controls button'),null,'reading strips have no playback controls');
         assert.equal(doc.querySelectorAll('video').length,1, 'one company hero video');
         assert.equal(doc.querySelectorAll('.home-b2b-video-button,.section-home-event,.ref-testimonial-card').length,0, 'no duplicate intro or invented event/testimonial section');
         assert.equal(doc.querySelectorAll('.home-v16-people img[src^="/assets/minhduc-v16/"]').length,2, 'people section uses two real activity images');
@@ -83,7 +83,9 @@ try {
         const heroPhoto=doc.querySelector('.service-index-masthead .md-masthead-figure');
         assert.ok(directory.compareDocumentPosition(heroPhoto) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'mobile reading order puts all five choices before the campus photo');
         assert.deepEqual(panels, direct, 'directory and autoplay rail lead to the same five services');
-        assert.ok(doc.querySelector('.info-service-cards[tabindex="0"]'), 'service rail is keyboard reachable');
+        assert.ok(doc.querySelector('.info-service-cards[data-auto-rail][tabindex="0"]'), 'the service rail stays keyboard reachable without controls');
+        assert.equal(doc.querySelector('.info-service-rail button'), null);
+        assert.equal(panels.length, doc.querySelectorAll('.service-panel-photo img[width][height]').length, 'card photos reserve their native dimensions');
       }
       if (name === 'ServicePage') {
         const recruitment = path.endsWith('/recruitment');
@@ -142,6 +144,7 @@ try {
           assert.equal(doc.querySelectorAll('.education-program-groups > section').length,2);
           assert.equal(new Set([...doc.querySelectorAll('.education-program-groups a')].map(link=>link.href)).size,3);
         } else {
+          assert.equal(!!doc.querySelector('.md-masthead-figure'), path.endsWith('/chinh-quy-cong-nghe'), 'only on-campus program details depict campus facilities');
           assert.equal(form.querySelector('[name="program"]').value,path.split('/').at(-1),'deep link selects the program in the form');
           assert.ok(doc.querySelector(`a[href="${base}${path}?form=F06#dang-ky"]`));
         }
@@ -150,10 +153,9 @@ try {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');
         const featureSlides=doc.querySelectorAll('.editorial-feature-slide');
         assert.ok(featureSlides.length>1,'feature is a real rail of unique articles');
-        assert.equal(doc.querySelectorAll('.editorial-feature-dots button').length,featureSlides.length);
+        assert.equal(doc.querySelector('.info-featured-news button'),null,'automatic stories have no control bar');
         assert.equal(new Set([...featureSlides].map(node=>node.querySelector('h2 a').getAttribute('href'))).size,featureSlides.length);
         assert.ok(doc.querySelector('.editorial-feature-track[tabindex="0"][role="region"]'));
-        assert.equal(doc.querySelector('.editorial-feature-pause').closest('.editorial-feature-surface'),null,'Play remains outside the hover/focus pause surface');
         assert.equal(doc.querySelectorAll('.editorial-feature-slide img[loading="eager"]').length,1,'offscreen feature images do not all fetch eagerly');
         assert.ok(doc.querySelectorAll('.info-news-grid article').length > 1, 'regular article listing remains separate');
         const featureBand=doc.querySelector('.info-featured-news').closest('section');
@@ -172,8 +174,8 @@ try {
         assert.equal(doc.querySelectorAll('.career-rail-section').length,4);
         assert.equal(doc.querySelectorAll('.career-process-grid .career-step').length,4);
         assert.equal(doc.querySelectorAll('.career-questions .career-track article').length,3);
-        assert.equal(doc.querySelectorAll('.career-rail-controls .career-carousel-pause').length,4);
-        assert.equal(doc.querySelectorAll('.career-rail-controls button[aria-label]').length,8);
+        assert.equal(doc.querySelectorAll('.career-track[data-auto-rail][tabindex="0"][aria-labelledby]').length,4);
+        assert.equal(doc.querySelectorAll('.career-rail-controls,.career-carousel-pause').length,0);
         const photos=[...doc.querySelectorAll('.career-gallery .career-track figure > button[aria-label] > img')];
         assert.equal(new Set(photos.map(photo=>photo.getAttribute('src'))).size,11,'eleven distinct real photographs open at larger size');
         assert.ok(photos.every(photo=>/\/minhduc-v1[68]\//.test(photo.getAttribute('src'))));
@@ -256,16 +258,21 @@ try {
   try {
     await React.act(()=>root.render(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{initialEntries:['/news']},React.createElement(components.NewsPage)))));
     const track = document.querySelector('.editorial-feature-track');
-    Object.defineProperty(track,'offsetLeft',{value:0});
+    Object.defineProperties(track,{offsetLeft:{value:0},scrollWidth:{value:800},clientWidth:{value:400}});
     [...track.children].forEach((child,i)=>Object.defineProperty(child,'offsetLeft',{value:i*400}));
     track.scrollTo=({left})=>{track.scrollLeft=left;track.dispatchEvent(new Event('scroll'));};
     const listing = [...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent);
-    await React.act(()=>document.querySelectorAll('.editorial-feature-dots button')[1].click());
-    assert.equal(track.scrollLeft,400,'second feature control scrolls to its unique article');
-    assert.equal(document.querySelectorAll('.editorial-feature-dots button')[1].getAttribute('aria-pressed'),'true');
+    await React.act(()=>track.focus());
+    const press = key => React.act(()=>{
+      track.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key,bubbles:true}));
+      track.dispatchEvent(new Event('scroll'));
+    });
+    await press('ArrowRight');
+    assert.equal(track.scrollLeft,400,'keyboard moves to the next story even in reduced motion');
+    assert.ok(!track.children[1].hasAttribute('inert'));
     assert.deepEqual([...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent), listing, 'feature navigation does not replace the regular listing');
-    await React.act(()=>document.querySelectorAll('.editorial-feature-dots button')[0].click());
-    assert.equal(track.scrollLeft,0,'first feature control returns to the first article');
+    await press('ArrowLeft');
+    assert.equal(track.scrollLeft,0,'keyboard can return to the first story');
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
   console.log('PASS independent reference structures: page families × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
 } finally {

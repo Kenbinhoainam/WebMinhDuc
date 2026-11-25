@@ -1,6 +1,5 @@
 /* Homepage body additions follow the HR2B type, spacing and rounded imagery. */
 .home-b2b-kicker{color:#c51f1b;font:700 12px/1.4 var(--font-display);letter-spacing:.12em;margin:0 0 18px;text-transform:uppercase}
-.home-b2b-about-image .ref-about-art{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:20px}
 .home-b2b-needs .ref-customer-logos{margin-bottom:clamp(70px,8vw,120px)}
 .home-b2b-intro{max-width:720px;margin-bottom:30px}
 .home-b2b-need-list{border-top:1px solid #ccc}

@@ -91,23 +91,34 @@ try {
   slides.forEach((slide,i) => Object.defineProperty(slide,'offsetLeft',{value:80 + i * 400}));
   await act(() => observer([{isIntersecting:true}]));
   assert.equal(typeof timer,'function');
-  const dots = document.querySelectorAll('.editorial-feature-dots button');
-  await click(dots[1]);
-  assert.equal(track.scrollLeft,400);
-  assert.equal(dots[1].getAttribute('aria-pressed'),'true');
+  assert.equal(track.closest('section').querySelector('button'),null,'the story rail has no manual control bar');
+  assert.match(slides[0].querySelector('img').getAttribute('srcset'),/240w/);
+  Object.defineProperties(track,{scrollWidth:{value:800},clientWidth:{value:400}});
+  let nextFrame;
+  globalThis.requestAnimationFrame=cb=>{nextFrame=cb; return 1;};
+  globalThis.cancelAnimationFrame=()=>{};
+  await act(() => {
+    timer();
+    nextFrame(performance.now()+600);
+    track.dispatchEvent(new dom.window.Event('scroll'));
+  });
+  assert.equal(track.scrollLeft,400,'six-second timer advances the featured article');
   assert.ok(slides[0].hasAttribute('inert'));
-  await act(() => dots[1].focus());
+  await act(() => track.dispatchEvent(new dom.window.Event('pointerenter')));
   assert.equal(timer,undefined);
-  const pause = document.querySelector('.editorial-feature-pause');
-  assert.match(pause.textContent,/Tiếp tục/);
-  await act(() => pause.focus());
-  await click(pause);
-  await act(() => observer([{isIntersecting:true}]));
+  await act(() => track.dispatchEvent(new dom.window.Event('pointerleave')));
+  assert.equal(typeof timer,'function');
+  await act(() => track.focus());
+  assert.equal(timer,undefined);
+  await act(() => {
+    track.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Home',bubbles:true}));
+    track.dispatchEvent(new dom.window.Event('scroll')); // jsdom does not emit this when scrollLeft changes.
+  });
+  assert.equal(track.scrollLeft,0);
+  assert.ok(!slides[0].hasAttribute('inert'));
+  await act(() => track.blur());
   assert.equal(typeof timer,'function');
   await act(() => observer([{isIntersecting:false}]));
-  assert.equal(timer,undefined);
-  await click(pause);
-  await act(() => observer([{isIntersecting:true}]));
   assert.equal(timer,undefined);
   const filter = [...document.querySelectorAll('.ed-filters button')].find(el => el.textContent.includes('doanh nghiệp'));
   await click(filter);
@@ -146,7 +157,7 @@ try {
   assert.equal(location.search,'?status=upcoming');
   assert.equal(document.querySelectorAll('.ed-event-line').length,2);
   await act(() => root.unmount()); dom.window.close();
-  console.log('PASS 11 editorial routes, two policy routes, anchored reading, real galleries, curated rail, keyboard pause, clipboard fallback and filter history');
+  console.log('PASS 11 editorial routes, two policy routes, anchored reading, real galleries, autonomous control-free rail, pointer/keyboard pause and keyboard navigation, clipboard fallback and filter history');
 } finally {
   await rm(temp,{recursive:true,force:true});
 }

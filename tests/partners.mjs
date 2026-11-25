@@ -1,104 +1,92 @@
 import {build} from 'esbuild';
 import {JSDOM} from 'jsdom';
-import {mkdir, readFile, rm} from 'node:fs/promises';
+import {mkdtemp, readFile, rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 
-const folder = '.partners-test';
-await mkdir(folder, {recursive:true});
-await build({stdin:{contents:"export {default as PartnersStrip} from './src/PartnersStrip'; export {LocaleProvider} from './src/i18n';",resolveDir:process.cwd(),sourcefile:'partners-test.tsx',loader:'tsx'}, bundle:true, format:'esm', platform:'node', packages:'external', loader:{'.css':'empty'}, outfile:`${folder}/bundle.mjs`, logLevel:'silent'});
+const folder = await mkdtemp('.partners-test-');
+const file = folder + '/bundle.mjs';
+await build({stdin:{contents:"export {default as PartnersStrip} from './src/PartnersStrip';export {LocaleProvider} from './src/i18n';",resolveDir:process.cwd(),sourcefile:'partners-entry.tsx'},bundle:true,format:'esm',platform:'node',packages:'external',loader:{'.css':'empty'},outfile:file,logLevel:'silent'});
 const dom = new JSDOM('<div id="root"></div>', {pretendToBeVisual:true});
 for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
-let observer, disconnected=false;
+const frames = new Map();
+let frameId=0, observer, disconnected=false, now=1000, prefChange;
+globalThis.requestAnimationFrame=callback=>{frames.set(++frameId,callback);return frameId;};
+globalThis.cancelAnimationFrame=id=>frames.delete(id);
+const motion={matches:false,addEventListener(_,fn){prefChange=fn;},removeEventListener(){}};
+window.matchMedia=()=>motion;
 globalThis.IntersectionObserver=class {
  constructor(callback){this.callback=callback;observer=this;}
  observe(target){this.target=target;}
  disconnect(){disconnected=true;}
  emit(isIntersecting){this.callback([{isIntersecting}]);}
 };
-const React=await import('react');
+const {act, createElement:h}=await import('react');
 const {createRoot}=await import('react-dom/client');
-const {PartnersStrip,LocaleProvider}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);
+const {renderToStaticMarkup}=await import('react-dom/server');
+const {PartnersStrip,LocaleProvider}=await import(pathToFileURL(process.cwd()+'/'+file).href);
 const root=createRoot(document.getElementById('root'));
+function advance(ms) {
+ now+=ms;
+ const pending=[...frames.values()];
+ frames.clear();
+ pending.forEach(fn=>fn(now));
+}
 try {
- await React.act(async()=>root.render(React.createElement(PartnersStrip)));
- const sets=document.querySelectorAll('.partners-set');
- assert.equal(sets.length,2);
- assert.equal(sets[1].getAttribute('aria-hidden'),'true');
- assert.equal(sets[1].querySelectorAll('a,button,[tabindex]').length,0);
- assert.equal(sets[0].querySelectorAll('li').length,10,'each visual set exceeds the 7.5-logo viewport');
- assert.deepEqual([...sets[0].querySelectorAll('li:not([data-repeat])')].map(li=>li.textContent),['Luxshare ICT','FOXCONN','SAMSUNG','JEILTECH VINA','TACU']);
- assert.equal(sets[0].querySelectorAll('li[data-repeat][aria-hidden="true"]').length,5,'repeated visual names are hidden from assistive technology');
- assert.equal(sets[0].textContent,sets[1].textContent);
- for (const image of sets[0].querySelectorAll('img')) {
-  assert.equal(image.getAttribute('alt'),'');
-  assert.match(image.getAttribute('src'), /^\/partners\/[a-z]+\.(svg|webp)$/);
-  if (image.getAttribute('src').endsWith('.svg')) {
-   const svg=await readFile(`public${image.getAttribute('src')}`,'utf8');
-   assert.doesNotMatch(svg, /<script|<foreignObject|\son\w+=|(?:href|src)=|https?:\/\/(?!www\.w3\.org\/)/i);
-  }
+ await act(()=>root.render(h(PartnersStrip)));
+ const rail=document.querySelector('.partners-viewport');
+ const set=rail.querySelector('.partners-set');
+ Object.defineProperty(set,'offsetWidth',{value:960});
+ rail.scrollTo=({left})=>{rail.scrollLeft=left;};
+ assert.equal(rail.tabIndex,0);
+ assert.equal(rail.querySelectorAll('[aria-hidden=true] li').length,5);
+ assert.equal(rail.querySelectorAll('ul:not([aria-hidden]) li').length,5);
+ assert.deepEqual([...set.children].map(li=>li.textContent),['Luxshare ICT','FOXCONN','SAMSUNG','JEILTECH VINA','TACU']);
+ assert.equal(rail.querySelector('button'),null);
+ assert.equal(set.querySelectorAll('img').length,3);
+ for(const image of set.querySelectorAll('img')) {
+  assert.equal(image.alt,'');
+  const src=image.getAttribute('src');
+  assert.match(src,/^\/partners\/[a-z]+\.(svg|webp)$/);
+  if(src.endsWith('.svg'))assert.doesNotMatch(await readFile('public'+src,'utf8'),/<script|<foreignObject|\son\w+=|(?:href|src)=|https?:\/\/(?!www\.w3\.org\/)/i);
  }
- assert.equal(sets[0].querySelectorAll('li:not([data-repeat]) img').length,3);
- const firstMark=sets[0].querySelector('img');
- const firstName=firstMark.closest('li');
- await React.act(async()=>firstMark.dispatchEvent(new Event('error',{bubbles:false})));
- assert.equal(firstName.querySelector('img'),null,'a failed mark falls back to its name');
- assert.equal(firstName.querySelector('.partner-logo--text').textContent,'Luxshare ICT');
- const strip=document.querySelector('.partners-strip');
- assert.equal(strip.dataset.static,'false','successful observer enables the rail');
- assert.equal(strip.dataset.visible,'false','initially paused until visibility is known');
- await React.act(async()=>observer.emit(true)); assert.equal(strip.dataset.visible,'true');
- await React.act(async()=>observer.emit(false)); assert.equal(strip.dataset.visible,'false','offscreen loop pauses');
- await React.act(async()=>observer.emit(true));
- Object.defineProperty(document,'hidden',{configurable:true,value:true});await React.act(async()=>document.dispatchEvent(new Event('visibilitychange')));
- assert.equal(strip.dataset.visible,'false','hidden document pauses');
- Object.defineProperty(document,'hidden',{configurable:true,value:false});await React.act(async()=>document.dispatchEvent(new Event('visibilitychange')));
- assert.equal(strip.dataset.visible,'true');
- const button=document.querySelector('.partners-toggle');
- const visualCss=await readFile('src/flagshipvisual.css','utf8');
- assert.match(visualCss, /\.partners-toggle\s*\{[^}]*display:\s*inline-flex/,'pause control is visible without focus');
- assert.match(visualCss, /\.partners-toggle\s*\{[^}]*min-height:\s*44px/,'pause control has a comfortable target');
- assert.equal(button.getAttribute('aria-pressed'),'false');
- await React.act(async()=>button.click());
- assert.equal(button.getAttribute('aria-pressed'),'true');
- assert.equal(document.querySelector('.partners-strip').dataset.paused,'true');
- await React.act(async()=>button.click());
- assert.equal(button.getAttribute('aria-pressed'),'false');
- await React.act(async()=>document.querySelector('.partners-viewport').focus());assert.equal(button.getAttribute('aria-pressed'),'true','focus entry latches partner pause');
- await React.act(async()=>document.querySelector('.partners-viewport').blur());assert.equal(button.getAttribute('aria-pressed'),'true','blur does not silently resume');
- await React.act(async()=>button.focus());await React.act(async()=>button.click());assert.equal(button.getAttribute('aria-pressed'),'false','explicit play resumes');
- await React.act(async()=>document.getElementById('root').setAttribute('inert',''));assert.equal(strip.dataset.visible,'false','global modal pauses partner loop');
- await React.act(async()=>document.getElementById('root').removeAttribute('inert'));assert.equal(strip.dataset.visible,'true');
- await React.act(async()=>root.render(null));assert(disconnected,'observer cleanup');
- globalThis.IntersectionObserver=class {constructor(){throw Error('unavailable')}};
- await React.act(async()=>root.render(React.createElement(PartnersStrip)));
- assert.equal(document.querySelector('.partners-strip').dataset.visible,'false','observer constructor failure remains paused');
- assert.equal(document.querySelector('.partners-strip').dataset.static,'true','observer failure exposes static unique names');
- await React.act(async()=>root.render(null));
- let staleCallback;globalThis.IntersectionObserver=class {constructor(callback){staleCallback=callback;}observe(){throw Error('observe failed');}disconnect(){}};
- await React.act(async()=>root.render(React.createElement(PartnersStrip)));
- await React.act(async()=>staleCallback([{isIntersecting:true}]));
- assert.equal(document.querySelector('.partners-strip').dataset.visible,'false','stale callback after observe failure cannot start loop');
- assert.equal(document.querySelector('.partners-strip').dataset.static,'true');
- const {renderToStaticMarkup}=await import('react-dom/server');
- const labels={vi:'Tạm dừng chuyển động đối tác',en:'Pause partner animation',zh:'暂停合作伙伴动画',ko:'파트너 애니메이션 일시 정지',ja:'パートナーの動きを一時停止'};
+ const mark=set.querySelector('img');
+ await act(()=>mark.dispatchEvent(new Event('error')));
+ assert.equal(set.querySelector('.partner-logo--text').textContent,'Luxshare ICT');
+ assert.equal(frames.size,0,'starts only when seen');
+ await act(()=>observer.emit(true));advance(16);advance(50);
+ assert.ok(rail.scrollLeft>0 && rail.scrollLeft<2,'small continuous movement at 22px/s');
+ await act(()=>rail.focus());assert.equal(frames.size,0,'keyboard reader pauses the loop');
+ rail.dispatchEvent(new window.KeyboardEvent('keydown',{key:'End',bubbles:true}));assert.equal(rail.scrollLeft,768);
+ rail.dispatchEvent(new window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));assert.equal(rail.scrollLeft,0);
+ await act(()=>rail.blur());assert.equal(frames.size,1,'focus departure resumes');
+ rail.dispatchEvent(new Event('pointerenter'));assert.equal(frames.size,0);
+ rail.dispatchEvent(new Event('pointerleave'));assert.equal(frames.size,1);
+ rail.dispatchEvent(new Event('pointerdown'));assert.equal(frames.size,0);
+ window.dispatchEvent(new Event('pointerup'));assert.equal(frames.size,1);
+ rail.scrollLeft=954;advance(16);for(let i=0;i<72;i++)advance(32);
+ assert.ok(rail.scrollLeft<50,'rotation wraps within the identical copy with no reverse traversal');
+ await act(()=>document.getElementById('root').setAttribute('inert',''));assert.equal(frames.size,0);
+ await act(()=>document.getElementById('root').removeAttribute('inert'));assert.equal(frames.size,1);
+ Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));assert.equal(frames.size,0);
+ Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));assert.equal(frames.size,1);
+ await act(()=>observer.emit(false));assert.equal(frames.size,0);
+ await act(()=>{motion.matches=true;prefChange();});assert.equal(rail.tabIndex,-1);assert.equal(rail.querySelectorAll('ul').length,1);
+ await act(()=>observer.emit(true));assert.equal(frames.size,0);
+ await act(()=>root.render(null));assert.ok(disconnected);
+ globalThis.IntersectionObserver=class{constructor(){throw Error('unavailable');}};
+ await act(()=>root.render(h(PartnersStrip)));assert.equal(document.querySelectorAll('.partners-set').length,1);assert.equal(frames.size,0);
+ const labels={vi:'Đối tác tiêu biểu',en:'Featured partners',zh:'精选合作伙伴',ko:'주요 파트너',ja:'主なパートナー'};
  for(const [locale,label] of Object.entries(labels)) {
-  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(PartnersStrip)));
-  const rendered=new JSDOM(html);assert.equal(rendered.window.document.querySelector('.partners-toggle').getAttribute('aria-label'),label,`${locale} pause label`);rendered.window.close();
+  const doc=new JSDOM(renderToStaticMarkup(h(LocaleProvider,{value:locale},h(PartnersStrip))));
+  assert.equal(doc.window.document.querySelector('[role=region]').getAttribute('aria-label'),label);
+  assert.equal(doc.window.document.querySelectorAll('.partners-set li').length,5);
+  doc.window.close();
  }
- const playLabels={vi:'Phát chuyển động đối tác',en:'Play partner animation',zh:'播放合作伙伴动画',ko:'파트너 애니메이션 재생',ja:'パートナーの動きを再生'};
- for(const [locale,label] of Object.entries(playLabels)) {
-  await React.act(async()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(PartnersStrip,{key:locale}))));
-  const toggle=document.querySelector('.partners-toggle');await React.act(async()=>toggle.click());
-  assert.equal(toggle.getAttribute('aria-label'),label,`${locale} play label`);
- }
- const css=await readFile('src/motion.css','utf8');
- assert.match(css,/data-static="true"\] \.partners-viewport\s*\{\s*overflow:\s*visible/,'static fallback is not clipped');
- assert.match(css,/data-static="true"\] \.partners-set \[data-repeat\]/,'static fallback hides repeated names');
- console.log('PASS partners: unique names, wider hidden duplicates, visibility and pause safeguards');
+ console.log('PASS partners: semantic names, native browsing, continuous loop, hover/focus/hold/visibility/reduced-motion and static SSR.');
 } finally {
- await React.act(async()=>root.unmount());
+ await act(()=>root.unmount());
  dom.window.close();
  await rm(folder,{recursive:true,force:true});
 }

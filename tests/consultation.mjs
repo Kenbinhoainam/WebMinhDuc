@@ -96,6 +96,12 @@ try {
   assert.equal(document.querySelectorAll('h1').length,1);
   assert.equal(get('.form-mode button:last-child').getAttribute('aria-pressed'),'true');
   assert.ok(get('#consultation').compareDocumentPosition(get('.contact-reference-info')) & Node.DOCUMENT_POSITION_FOLLOWING,'mobile reads form before other channels');
+  const appointmentLink = get('.contact-method[href="/consultation"]');
+  const teamPhoto = get('.contact-team img');
+  assert.ok(appointmentLink.compareDocumentPosition(teamPhoto) & Node.DOCUMENT_POSITION_FOLLOWING,'channels precede the documentary photo');
+  await act(() => teamPhoto.dispatchEvent(new Event('error')));
+  assert.equal(document.querySelector('.contact-team'),null,'a failed image leaves no empty portrait or caption');
+  assert.ok(appointmentLink.isConnected && get('.contact-hotline').href.startsWith('tel:'));
   await write('[name=message]','Nháp liên hệ');
   await click('.form-mode button:first-child');
   await waitForFocus();

@@ -1,11 +1,11 @@
 import {useEffect, useRef, useState} from 'react';
 import {Link, useLocation, useNavigate, useParams} from 'react-router-dom';
-import {ChevronDown, ChevronLeft, ChevronRight, Link2, Pause, Phone, Play, ShieldCheck} from 'lucide-react';
+import {ChevronDown, ChevronLeft, ChevronRight, Link2, Phone, ShieldCheck} from 'lucide-react';
 import {company} from './company';
 import {ButtonLink} from './shared';
 import {PageMasthead} from './PageMasthead';
 import {responsiveImage} from './media';
-import {useLocale, useTranslation, localizedPath, type Locale} from './i18n';
+import {useLocale, localizedPath, type Locale} from './i18n';
 import {RevealFrame} from './motion';
 import {ORIGIN} from './seo/routes';
 import {useHomeCarousel, advanceHomeRail} from './useHomeCarousel';
@@ -83,19 +83,9 @@ function useListingQuery() {
 }
 
 function FeaturedNews({archive}: {archive: string}) {
-  const area = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  const {paused, toggle} = useHomeCarousel(area, () => advanceHomeRail(track.current), '.editorial-feature-surface,.ed-feature-bar', {intervalMs: 6000, disabled:featured.length < 2});
-  const t = useTranslation();
-  const slide = t({vi:'Bài viết', en:'Article', zh:'文章', ko:'글', ja:'記事'});
-  function go(next: number, animate: boolean) {
-    const el = track.current;
-    const child = el?.children[next] as HTMLElement | undefined;
-    if (!el || !child) return;
-    const smooth = animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    el.scrollTo({left: child.offsetLeft - (el.children[0] as HTMLElement).offsetLeft, behavior: smooth ? 'smooth' : 'instant'});
-  }
+  useHomeCarousel(track, () => advanceHomeRail(track.current));
   function syncIndex() {
     const el = track.current;
     if (!el) return;
@@ -103,31 +93,21 @@ function FeaturedNews({archive}: {archive: string}) {
     const offsets = Array.from(el.children, child => Math.abs((child as HTMLElement).offsetLeft - first - el.scrollLeft));
     setIndex(offsets.indexOf(Math.min(...offsets)));
   }
-  return <section className="info-news-section ed-feature-band"><div className="ed-frame info-featured-news" ref={area}>
-    <div className="ed-feature-bar"><h2>Bài chọn lọc</h2>
-      {featured.length > 1 && <button type="button" className="editorial-feature-pause ed-control" onClick={toggle}>
-        {paused ? <Play size={16}/> : <Pause size={16}/>}
-        {paused ? 'Tiếp tục chuyển bài' : 'Tạm dừng chuyển bài'}
-      </button>}
-    </div>
-    <div className="editorial-feature-surface">
-      <div ref={track} className="editorial-feature-track" role="region" aria-label="Bài chọn lọc" tabIndex={0} onScroll={syncIndex}>
-        {featured.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
-          <article className="ed-feature">
-            {article.image ? <img className="ed-feature-image" src={article.image} width={1024} height={576} alt="" loading={i === 0 ? 'eager' : 'lazy'}/> :
-              <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
-            <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
-              <h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p>
-            </div>
-          </article>
-        </div>)}
-      </div>
-      {featured.length > 1 && <div className="ed-rail-nav">
-        <button type="button" className="ed-control" aria-label="Bài trước" onClick={e => go((index + featured.length - 1) % featured.length, e.detail > 0)}><ChevronLeft size={20}/></button>
-        <div className="editorial-feature-dots">{featured.map((entry, i) =>
-          <button type="button" key={entry.slug} aria-label={slide + ' ' + (i + 1)} aria-pressed={index === i} onClick={e => go(i, e.detail > 0)}>{i + 1}</button>)}</div>
-        <button type="button" className="ed-control" aria-label="Bài sau" onClick={e => go((index + 1) % featured.length, e.detail > 0)}><ChevronRight size={20}/></button>
-      </div>}
+  return <section className="info-news-section ed-feature-band"><div className="ed-frame info-featured-news">
+    <h2 className="ed-feature-heading" id="featured-news-heading">Bài chọn lọc</h2>
+    <div ref={track} className="editorial-feature-track" data-auto-rail role="region" aria-labelledby="featured-news-heading"
+      tabIndex={0} onScroll={syncIndex}>
+      {featured.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
+        <article className="ed-feature">
+          {article.image ? <div className="ed-feature-media"><img className="ed-feature-image"
+            {...responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 48vw, 612px')} src={article.image}
+            alt="" decoding="async" loading={i === 0 ? 'eager' : 'lazy'}/></div> :
+            <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
+          <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
+            <h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p>
+          </div>
+        </article>
+      </div>)}
     </div>
   </div></section>;
 }
@@ -245,7 +225,7 @@ function ArticleReader({article}: {article: Article}) {
         </div>
         <aside className="info-related-news editorial-related-aside ed-related"><h2>Có thể bạn quan tâm</h2>{related.map(item =>
           <article className="editorial-related-item" key={item.slug}>
-            {item.image && <img src={item.image} {...responsiveImage(item.image, '74px')} alt="" loading="lazy"/>}
+            {item.image && <img {...responsiveImage(item.image, '74px')} src={item.image} className={item.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''} alt="" loading="lazy"/>}
             <h3><Link to={'/news/' + item.slug} state={{archive}}>{item.title}</Link></h3>
           </article>)}</aside>
       </div>

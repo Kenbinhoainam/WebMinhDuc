@@ -18,8 +18,6 @@
   border:1px solid #cfdae4;
   border-radius:0;
 }
-.md-partners-grid .partners-toggle,
-.md-partners-grid .info-carousel-pause { min-height:44px; min-width:44px; font-size:14px; }
 .md-partners-grid .info-content-note { font-size:16px; line-height:1.6; }
 .partners-contact {
   padding-block:clamp(44px,6vw,92px);

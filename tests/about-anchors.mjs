@@ -30,7 +30,9 @@ try {
   assert.ok([...doc.querySelectorAll('#history [role=tab]')].every(tab=>tab.textContent.trim() && !/^\d+$/.test(tab.textContent.trim())),'phases have readable names');
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
   assert.equal(doc.querySelectorAll('.md-team-overview img').length,1,'one genuine group image accompanies the role list');
-  assert.equal(doc.querySelector('.md-team-photo').getAttribute('src'),'/assets/minhduc-meeting-10s.webp');
+  const teamPhoto=doc.querySelector('.md-team-photo');
+  assert.equal(teamPhoto.getAttribute('src'),'/assets/minhduc-v18/field-team.webp');
+  assert.match(teamPhoto.getAttribute('srcset'), /480w.*960w.*1600w/,'documentary role image serves phone and desktop variants');
   assert.equal(doc.querySelectorAll('.info-team-grid button').length,4,'four accessible role details');
   assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>img.getAttribute('src').startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
   const labels=[...doc.querySelectorAll('.info-stat-grid article span')].map(node=>node.textContent.trim());
