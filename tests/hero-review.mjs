@@ -18,7 +18,7 @@ try {
   const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{basename:base||'/',initialEntries:[`${base}/`]},React.createElement(Hero))));
   const dom=new JSDOM(html),doc=dom.window.document,heading=doc.querySelector('h1'),video=doc.querySelector('video'),poster=doc.querySelector('.hero-poster');
   assert.equal(doc.querySelectorAll('h1').length,1);assert.ok(!heading.closest('[aria-hidden="true"]'));assert.ok(heading.textContent.trim());
-  assert.deepEqual([...doc.querySelectorAll('.hero-actions a')].map(a=>a.getAttribute('href')),[`${base||"/"}#business-contact`,`${base}/jobs`]);
+  assert.deepEqual([...doc.querySelectorAll('.hero-brand-finish .hero-actions a')].map(a=>a.getAttribute('href')),[`${base||"/"}#business-contact`,`${base}/jobs`]);assert.equal(doc.querySelectorAll('.hero-actions').length,1,'one CTA group in end card');assert.equal(doc.querySelectorAll('.hero-end-card .hero-actions a').length,2,'both links belong to compact end card');assert.ok(doc.querySelector('.hero-end-card .hero-finish-logo'));
   const copy=[heading.textContent,...[...doc.querySelectorAll('.hero-actions a')].map(a=>a.textContent),doc.querySelector('.hero-finish-slogan').textContent,doc.querySelector('.video-control').getAttribute('aria-label')];
   if(locale==='vi')viCopy=copy;else assert.ok(copy.every((s,i)=>s!==viCopy[i]),`${locale}: hero messages translated`);
   assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');assert.equal(video.hasAttribute('loop'),false);assert.equal(video.hasAttribute('autoplay'),false,'all playback is gated explicitly');assert.equal(video.hasAttribute('playsinline'),true);
@@ -27,7 +27,12 @@ try {
   dom.window.close();
  }
  const css=await readFile('src/hero-media.css','utf8');
- assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain/,'film uses contain');
- assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*aspect-ratio:16\/9/,'film frame is 16:9');
+ assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain;object-position:center/,'film remains centered and uncropped');
+ assert.match(css,/\.hero-end-card\s*\{[^}]*width:min\(100%,700px\)[^}]*border-radius:24px[^}]*background:rgba\(248,251,255,\.91\)/,'compact translucent card');
+ assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*background:linear-gradient\(rgba\(12,27,42,\.22\).*Executive-Search-banner-1600\.webp/,'finish-specific backdrop is above the video and remains visible through subtle scrim');
+ assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*width:100%;min-height:100svh/,'desktop stage fills viewport');
+ assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*aspect-ratio:16\/9;min-height:0/,'mobile playback is 16:9');
+ assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*position:relative[^}]*pointer-events:auto/,'visible end card contributes layout height and links accept input');
+ assert.match(css,/data-stage='ended'.*data-stage='fallback'.*hero-stage\s*\{[^}]*aspect-ratio:auto;min-height:100svh/,'mobile end card can grow beyond film ratio');
  console.log('PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules');
 } finally {await rm(temp,{recursive:true,force:true});}

@@ -30,7 +30,7 @@
 
 .reference-footer .footer-social-mobile{display:none}.reference-footer .footer-social img{display:block;width:24px;height:24px;object-fit:contain}
 @media(max-width:1023px){.reference-footer .footer-social-desktop{display:none}.reference-footer .footer-social-mobile{display:flex}.reference-footer .footer-address,.reference-footer .footer-form-wrap{grid-column:1;padding-left:0}.reference-footer .footer-title{font-size:16px}}
-@media(min-width:1024px)and(max-width:1199px){.reference-footer .footer-logo img{height:84px}}
+@media(min-width:1024px) and (max-width:1199px){.reference-footer .footer-logo img{height:84px}}
 
 .reference-footer .footer-menu-mobile{display:none}.reference-footer .footer-address .footer-title{margin-bottom:.625rem}.reference-footer .footer-form-wrap .footer-title{margin-bottom:1.25rem}
 @media(max-width:1023px){.reference-footer .footer-menu-desktop{display:none}.reference-footer .footer-menu-mobile{display:block;margin:0 0 32px}}

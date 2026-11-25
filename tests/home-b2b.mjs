@@ -21,7 +21,14 @@ try {
   assert.equal(doc.querySelectorAll('#business-contact .form-mode').length,0,`${locale}: mode locked`);
   assert.equal(doc.querySelectorAll('.home-b2b-video-button').length,1,`${locale}: one company video entry`);
   assert.equal(doc.querySelectorAll('.ref-testimonial-card,.ref-partner-grid').length,0,`${locale}: no fake testimonials or duplicate partner grid`);
-  assert.doesNotMatch(doc.body.textContent,/95%|1,?200\+|Nhân vật giả định|Số liệu mô phỏng/);
+  assert.equal(doc.querySelectorAll('.ref-achievement').length,4,`${locale}: four reference metric cards`);
+  const figures=[...doc.querySelectorAll('.ref-achievement .motion-sr-only')].map(node=>node.textContent);assert.deepEqual(figures,['1.200+','80+','15+','95%']);
+  assert.doesNotMatch(doc.body.textContent,/Nhân vật giả định|Số liệu mô phỏng/);
+  const images=[...doc.querySelectorAll('.ref-solution')].map(node=>node.getAttribute('style'));
+  assert.equal(new Set(images).size,5,`${locale}: distinct service imagery`);
+  assert.match(images[3],/admissions-seminar\.webp/);assert.match(images[4],/business-team\.webp/);
+  assert.ok(images.every(image=>!image.includes('HR2B-2-1')),`${locale}: no branded admission image`);
+  assert.equal(doc.querySelectorAll('.home-b2b-office-layout img').length,0,`${locale}: office details do not imply a stock building is a branch`);
  }
- console.log('PASS homepage B2B: five services, factual blocks, process, offices, one video and locked F01 in five languages');
+ console.log('PASS homepage B2B: five services, reference metrics, process, offices, one video and locked F01 in five languages');
 } finally {await rm(output,{force:true});}

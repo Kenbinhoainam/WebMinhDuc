@@ -18,8 +18,9 @@ try {
   const dom=new JSDOM(html),doc=dom.window.document;
   for(const id of ids){
    const nodes=doc.querySelectorAll(`[id="${id}"]`);assert.equal(nodes.length,1,`${locale}: unique ${id}`);assert.ok(nodes[0].querySelector('h2'),`${locale}: ${id} has a section heading`);
-   assert.ok(doc.querySelector(`.desktop-subnav a[href="${base}/about-us#${id}"]`),`${locale}: menu reaches ${id}`);
+   if(id!=='profile')assert.ok(doc.querySelector(`.desktop-subnav a[href="${base}/about-us#${id}"]`),`${locale}: menu reaches ${id}`);
   }
+  assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/e-brochure`,`${locale}: profile menu opens brochure`);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
   assert.equal(doc.querySelectorAll('.md-team-overview img').length,1,'one genuine group image accompanies the role list');

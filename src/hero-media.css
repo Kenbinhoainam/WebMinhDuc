@@ -1,39 +1,38 @@
-/* The original film owns the frame. Website messaging arrives only after ended. */
-.home-hero.section-home-banner{display:block;position:relative;min-height:0;height:auto;overflow:hidden;background:#132028;color:#fff;padding-top:80px}
-.home-hero .hero-stage{position:relative;aspect-ratio:16/9;max-height:calc(100svh - 170px);min-height:300px;background:#080d11}
-.hero-media{position:absolute;inset:0;overflow:hidden}
-.hero-media .hero-poster,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+/* The complete film remains centered and uncropped against a full-bleed backdrop. */
+.home-hero.section-home-banner{display:block;position:relative;min-height:0;height:auto;overflow:hidden;background:#132028;color:#fff}
+.home-hero .hero-stage{position:relative;display:grid;width:100%;min-height:100svh;background:#132028 url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp') center/cover no-repeat}
+.hero-media{position:absolute;inset:0;overflow:hidden;background:#13202855}
+.hero-media .hero-poster,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .hero-media video{opacity:0}
 .hero-media video.is-ready{opacity:1}
-.home-hero .hero-brand-finish{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:42px 24px 62px;background:#fafbfc;color:#20478f;text-align:center;opacity:0;visibility:hidden;pointer-events:none}
-.home-hero .hero-brand-finish.is-visible{opacity:1;visibility:visible}
-.home-hero .hero-finish-logo{width:clamp(90px,13vw,180px);height:auto;max-height:36%;object-fit:contain}
-.home-hero .hero-finish-slogan{font-family:Lato,'Open Sans',sans-serif;font-weight:600;font-size:clamp(25px,3.4vw,52px);line-height:1.15;letter-spacing:-.025em;margin:0}
-.home-hero .hero-finish-message{max-width:640px;font-size:clamp(13px,1.3vw,18px);line-height:1.6;color:#58656e;margin:0}
+.home-hero .hero-brand-finish{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;background:transparent;color:#20478f;text-align:center;opacity:0;visibility:hidden;pointer-events:none}
+.home-hero .hero-brand-finish.is-visible{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:linear-gradient(rgba(12,27,42,.22),rgba(12,27,42,.22)),url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp') center/cover no-repeat}
+.home-hero .hero-end-card{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,1.3vw,18px);width:min(100%,700px);padding:clamp(32px,3vw,44px);border:1px solid rgba(255,255,255,.8);border-radius:24px;background:rgba(248,251,255,.91);box-shadow:0 22px 70px rgba(8,29,51,.22)}
+.home-hero .hero-finish-logo{width:clamp(140px,12vw,180px);height:auto;object-fit:contain}
+.home-hero .hero-finish-slogan{font-family:Lato,'Open Sans',sans-serif;font-weight:700;font-size:clamp(28px,3vw,46px);line-height:1.15;letter-spacing:-.025em;margin:0}
+.home-hero .hero-finish-message{max-width:640px;font-size:clamp(14px,1.3vw,18px);line-height:1.6;color:#43586a;margin:0}
+.home-hero .hero-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:8px}
+.home-hero .hero-actions .btn{min-width:0;min-height:46px;justify-content:center;font-size:13px}
+.home-hero .hero-actions .btn-secondary{color:#20478f;border-color:#20478f;background:#ffffffad}
+.home-hero .hero-actions .btn-secondary:hover{color:white;border-color:#20478f;background:#20478f}
+.home-hero .hero-semantic-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .home-hero .hero-player-tools{position:absolute;right:24px;bottom:16px;z-index:2;display:flex;align-items:center;gap:8px}
 .home-hero .hero-player-tools button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;border:1px solid #ffffff70;border-radius:999px;background:#17242bcc;color:#fff;padding:10px;font-size:12px}
 .home-hero .video-control span{position:absolute;overflow:hidden;width:1px;height:1px;clip-path:inset(50%);white-space:nowrap}
 .home-hero .video-control.is-idle span,.home-hero .video-control:focus-visible span{position:static;width:auto;height:auto;clip-path:none}
 .home-hero .hero-player-tools button:hover{background:#17242b}
-.home-hero .hero-action-bar{background:#fafbfc;color:#20478f;padding:22px 0;border-bottom:1px solid #e7ecef}
-.home-hero .hero-action-inner{display:flex;align-items:center;justify-content:center}
-.home-hero .hero-semantic-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.home-hero .hero-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px}
-.home-hero .hero-actions .btn{min-width:0;min-height:46px;justify-content:center;font-size:13px}
-.home-hero .hero-actions .btn-secondary{color:#20478f;border-color:#a9b6c5;background:transparent}
-.home-hero .hero-actions .btn-secondary:hover{color:white;border-color:#20478f;background:#20478f}
 @media(prefers-reduced-motion:no-preference){.hero-brand-finish{transition:opacity 650ms ease,visibility 650ms}.hero-media video{transition:opacity 250ms ease}}
 @media(max-width:767px){
- .home-hero .hero-stage{aspect-ratio:16/9;min-height:0;max-height:none}
- .home-hero .hero-brand-finish{gap:8px;padding:12px 12px 50px}
- .home-hero .hero-finish-logo{width:80px;max-height:44%}
- .home-hero .hero-finish-slogan{font-size:clamp(18px,4.6vw,28px)}
- .home-hero .hero-finish-message{display:none}
- .home-hero .hero-player-tools{bottom:8px;right:12px}
+ .home-hero .hero-stage{aspect-ratio:16/9;min-height:0;background-image:none}
+ .home-hero:is([data-stage='ended'],[data-stage='fallback']) .hero-stage{aspect-ratio:auto;min-height:100svh;background-image:url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp')}
+ .home-hero .hero-brand-finish{padding:100px 14px 92px}
+ .home-hero .hero-end-card{gap:12px;padding:24px 20px}
+ .home-hero .hero-finish-logo{width:clamp(110px,32vw,150px)}
+ .home-hero .hero-finish-slogan{font-size:clamp(25px,6vw,34px)}
+ .home-hero .hero-finish-message{font-size:14px}
+ .home-hero .hero-actions{width:100%;gap:10px}
+ .home-hero .hero-actions .btn{font-size:12px;padding:11px 16px}
+ .home-hero .hero-player-tools{bottom:12px;right:12px}
  .home-hero .hero-player-tools button{font-size:11px;padding:8px}
- .home-hero .hero-action-bar{padding:18px 0}
- .home-hero .hero-action-inner{width:calc(100% - 24px)}
- .home-hero .hero-actions{gap:8px;width:100%}
- .home-hero .hero-actions .btn{font-size:12px;padding:11px 14px;gap:8px;flex:1}
 }
-@media(forced-colors:active){.home-hero .hero-brand-finish,.home-hero .hero-action-bar{background:Canvas;color:CanvasText}.home-hero .hero-player-tools button{background:Canvas;color:CanvasText;border-color:CanvasText}}
+@media(forced-colors:active){.home-hero .hero-brand-finish,.home-hero .hero-end-card{background:Canvas;color:CanvasText}.home-hero .hero-player-tools button{background:Canvas;color:CanvasText;border-color:CanvasText}}

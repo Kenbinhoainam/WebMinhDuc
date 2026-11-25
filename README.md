@@ -1,4 +1,12 @@
-## v14 — B2B Minh Đức, 25/11/2026
+## v15 — Hero và hình ảnh, 25/11/2026
+
+Header trong suốt phủ lên video. Video đầy đủ 132,13 giây được căn giữa và giữ tỷ lệ; mobile phát trong khung 16:9. Khi phát hết, thẻ kính chứa logo gốc, slogan và hai CTA nằm giữa vùng hero trên ảnh kiến trúc xanh/vàng. Khung kết thúc tăng chiều cao theo nội dung trên màn hình hẹp; phát lại do người xem chọn.
+
+Menu Hồ sơ năng lực mở trực tiếp `/e-brochure`, giữ nguyên trình xem ba trang như v13. Khôi phục bốn thẻ chỉ số v13 và chuyển động tương ứng. Ba mục Giới thiệu còn lại giữ anchor, `/about-us#profile` vẫn truy cập được. Sáu biểu mẫu v14 và năm ngôn ngữ được giữ nguyên.
+
+Ảnh mới dùng các bản WebP đáp ứng theo kích thước; video và logo không tạo lại bằng AI. Xem [phương án và kiểm tra v15](docs/flagship/hero-imagery-v15.md). Managed preview hiện lỗi relay; kiểm tra mã/DOM không thay cho kiểm tra trực quan trên trình duyệt.
+
+## v14 — B2B Minh Đức, 25/11/2026 (lịch sử)
 
 Giữ phong cách HR2B; trang chủ hướng tới nhà máy/FDI miền Bắc với CTA “Gửi nhu cầu nhân lực”. Video gốc phát đủ 132,13 giây rồi hiện màn kết logo/slogan, không tự lặp; replay do người xem chọn. Hai CTA luôn có bên dưới khung video. Mobile giữ 16:9, không cắt hai bên.
 

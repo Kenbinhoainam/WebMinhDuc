@@ -3,8 +3,8 @@ from pathlib import Path
 from urllib.parse import urljoin
 import json,sys
 P=Path(__file__).resolve().parents[1]
-source=Path(sys.argv[1]) if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v14.json'
-target=Path(sys.argv[2]) if len(sys.argv)>2 else P/'docs/flagship/media-tables-v14.json'
+source=Path(sys.argv[1]) if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v15.json'
+target=Path(sys.argv[2]) if len(sys.argv)>2 else P/'docs/flagship/media-tables-v15.json'
 inventory=json.loads(source.read_text());base=inventory['dia_chi_website']
 headers={
  'catalog':['Mã','Loại','Tài nguyên','Link xem tài nguyên','Vị trí chính','Công dụng','Trang sử dụng','Link nguồn gốc','Dung lượng link xem (KB)','Số phiên bản tệp','Tên file gốc','Ghi chú'],

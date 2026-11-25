@@ -17,8 +17,8 @@ try {
   const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,null,React.createElement(Home))));
   const dom=new JSDOM(html),doc=dom.window.document;
   const about=doc.querySelector('.ref-about-image');assert.equal(about.dataset.reveal,'right');assert.equal(about.getAttribute('data-reveal-delay'),null);
-  const metrics=[...doc.querySelectorAll('.ref-achievement-frame')];assert.equal(metrics.length,3);
-  assert.deepEqual(metrics.map(x=>x.getAttribute('data-reveal-delay-ms')),['300','500','700']);
+  const metrics=[...doc.querySelectorAll('.ref-achievement-frame')];assert.equal(metrics.length,4);
+  assert.deepEqual(metrics.map(x=>x.getAttribute('data-reveal-delay-ms')),['300','500','700','900']);
   assert.ok(metrics.every(x=>x.querySelector('.motion-content > .ref-achievement')));
   assert.equal(doc.querySelector('.section-home-solution h2').closest('[data-reveal]').dataset.reveal,'zoom');
   const solution=doc.querySelector('.ref-solution-track').closest('[data-reveal-frame]');assert.equal(solution.dataset.revealDelayMs,'500');assert.equal(solution.querySelectorAll('[data-reveal]').length,0);
@@ -36,7 +36,7 @@ try {
   dom.window.close();
  }
  const motion=await readFile('src/motion.css','utf8');
- const bodyCss=await readFile('src/home-b2b.css','utf8');assert.match(bodyCss,/home-b2b-fact-grid\{display:grid/);assert.match(bodyCss,/@media\(max-width:767px\)/);
+ const bodyCss=await readFile('src/home-b2b.css','utf8'),referenceCss=await readFile('src/home-reference.css','utf8');assert.match(bodyCss,/@media\(max-width:767px\)/);assert.match(referenceCss,/\.ref-achievement-track[^\{]*\{display:flex;overflow-x:auto/);assert.match(referenceCss,/\.ref-achievement:focus-visible/);
  assert.match(motion,/data-reveal="zoom-right"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateX\(-100px\) scale\(\.6\)/,'AOS zoom-in-right starts from the left');
  for(const value of ['400ms','600ms','800ms'])assert.ok(motion.includes(value),`reference stagger ${value}`);
  console.log('PASS home reference motion: five locales, stable frames, source AOS sequence, densities and eight distinct sample-topic cards');

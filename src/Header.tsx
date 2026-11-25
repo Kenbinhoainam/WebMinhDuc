@@ -137,7 +137,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
     </Modal>
   );
 }
-function NavigationDrawer({ onClose }: { onClose: () => void }) {
+function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch: () => void }) {
   const [openGroup, setOpenGroup] = useState<string | null>(null),
     locale = useLocale(),
     t = useTranslation(),
@@ -188,6 +188,10 @@ function NavigationDrawer({ onClose }: { onClose: () => void }) {
           </div>
         ))}
       </nav>
+      <div className="drawer-utilities">
+        <button type="button" onClick={onSearch}><Search size={18}/>{t({vi:"Tìm kiếm",en:"Search",zh:"搜索",ko:"검색",ja:"検索"})}</button>
+        <Link to="/saved-jobs" onClick={onClose}><Bookmark size={18}/>{t({vi:"Việc làm đã lưu",en:"Saved jobs",zh:"已收藏职位",ko:"저장한 채용 정보",ja:"保存した求人"})}</Link>
+      </div>
     </Modal>
   );
 }
@@ -554,7 +558,7 @@ export function Header() {
       </noscript>
       {menu && (
         <div className="drawer-root">
-          <NavigationDrawer onClose={() => setMenu(false)} />
+          <NavigationDrawer onClose={() => setMenu(false)} onSearch={() => { setMenu(false); setSearch(true); }} />
         </div>
       )}
       {search && <SearchPanel onClose={() => setSearch(false)} />}

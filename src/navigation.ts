@@ -9,7 +9,7 @@ export const navigation = [
 ];
 export const subnavigation: Record<string, string[][]> = {
   "/about-us": [
-    ["/about-us#profile", "Hồ sơ năng lực"],
+    ["/e-brochure", "Hồ sơ năng lực"],
     ["/about-us#history", "Quá trình hình thành và phát triển"],
     ["/about-us#partners", "Đối tác tiêu biểu"],
     ["/about-us#achievements", "Thành tựu và dấu ấn"],

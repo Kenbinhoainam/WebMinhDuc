@@ -40,3 +40,12 @@ Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho nh�
 - Video giới thiệu Minh Đức giữ toàn bộ nội dung/âm thanh/thời lượng; MP4 H.264 faststart và WebM, poster WebP, mobile giữ khung 16:9 không cắt cảnh.
 - Quyết định mới nhất thay loop: phát hết video rồi hiện màn kết thương hiệu, chỉ phát lại theo thao tác người dùng. Không dùng bộ đếm thời gian giả sự kiện kết thúc.
 - Sáu biểu mẫu theo v1.2, biên nhận demo trong bộ nhớ phiên; không tuyên bố đã gửi dữ liệu thật. Nội dung marketing mẫu không cần nhãn lặp lại.
+
+## Quyết định v15 — 25/11/2026
+
+- Header trong suốt phủ lên hero, bỏ khoảng đệm 80 px ở trang chủ; vẫn chuyển sang nền kính sáng khi cuộn.
+- Video giữ nguyên nội dung và tỷ lệ. Khung rộng căn giữa, mobile phát 16:9; phần dư của màn hình rộng dùng ảnh nền có chủ đích, không kéo méo hoặc cắt cảnh.
+- Khi kết thúc, logo gốc đã tách nền theo điểm ảnh, slogan và đúng hai CTA xuất hiện cùng nhau trong thẻ kính ở giữa vùng hero, trên ảnh nền kiến trúc xanh/vàng. Không đặt CTA xuống dưới video.
+- Người dùng xác nhận khôi phục cả trang hồ sơ và khối trong ảnh 2 như v13: menu Hồ sơ năng lực mở thẳng `/e-brochure`; ba mục Giới thiệu còn lại giữ anchor. `/about-us#profile` vẫn hoạt động.
+- Khôi phục bốn thẻ chỉ số và chuyển động v13. Các con số 1200+, 80+, 15+, 95% là nội dung mẫu đã được cho phép; cần xác minh trước sản xuất.
+- Dùng ảnh tham chiếu chất lượng cao, phân biệt ảnh minh họa doanh nghiệp với ảnh hoạt động thật Minh Đức; tránh ảnh mang logo HR2B trong nội dung mới.

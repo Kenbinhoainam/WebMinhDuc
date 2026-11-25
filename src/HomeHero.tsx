@@ -113,11 +113,17 @@ export default function HomeHero() {
           onError={onError}/>
       </div>
       <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>
+       <div className="hero-end-card">
         <img className="hero-finish-logo" src="/assets/minh-duc-logo-transparent.webp" width="384" height="274" alt="Minh Đức Vina" loading="lazy"/>
         <p className="hero-finish-slogan">{t({vi:'Nhân lực là tài sản',en:'People are our greatest asset',zh:'人才是宝贵的资产',ko:'인재는 소중한 자산입니다',ja:'人材はかけがえのない財産'})}</p>
         <p className="hero-finish-message">{t({vi:'Đồng hành cùng nhà máy và doanh nghiệp FDI miền Bắc.',en:'Supporting factories and FDI businesses in Northern Vietnam.',zh:'携手越南北部工厂与外资企业。',ko:'베트남 북부의 공장 및 외국인 투자 기업과 함께합니다.',ja:'ベトナム北部の工場・外資系企業とともに。'})}</p>
+        <div className="hero-actions">
+          <ButtonLink to="/#business-contact">{t({vi:'Gửi nhu cầu nhân lực',en:'Request workforce support',zh:'提交用工需求',ko:'인력 지원 요청',ja:'人材の相談を送る'})}</ButtonLink>
+          <ButtonLink to="/jobs" secondary>{t({vi:'Tìm việc làm',en:'Find a job',zh:'寻找工作',ko:'일자리 찾기',ja:'仕事を探す'})}</ButtonLink>
+        </div>
+       </div>
       </div>
-      <noscript><style>{'.hero-brand-finish{opacity:1!important;visibility:visible!important}.hero-player-tools{display:none!important}'}</style></noscript>
+      <noscript><style>{'.home-hero .hero-stage{min-height:100svh;aspect-ratio:auto}.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:linear-gradient(rgba(12,27,42,.22),rgba(12,27,42,.22)),url(/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp) center/cover no-repeat}.hero-player-tools{display:none!important}'}</style></noscript>
       <div className="hero-player-tools">
         <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={ending ? replayLabel : playing ? pauseLabel : playLabel}>
           {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{ending ? replayLabel : playing ? pauseLabel : playLabel}</span>
@@ -125,14 +131,6 @@ export default function HomeHero() {
         <button type="button" className="video-sound" aria-pressed={!muted} aria-label={muted ? t({vi:'Bật âm thanh',en:'Enable sound',zh:'开启声音',ko:'소리 켜기',ja:'音声をオン'}) : t({vi:'Tắt âm thanh',en:'Mute sound',zh:'关闭声音',ko:'소리 끄기',ja:'音声をオフ'})} onClick={() => setMuted(value => !value)}>{muted ? <VolumeX size={17}/> : <Volume2 size={17}/>}</button>
       </div>
     </div>
-    <div className="hero-action-bar">
-      <div className="container hero-action-inner">
-        <h1 className="hero-semantic-heading">{t({vi:'Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc',en:'Workforce solutions for factories and FDI businesses in Northern Vietnam',zh:'越南北部工厂与外资企业的人力资源解决方案',ko:'베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션',ja:'ベトナム北部の工場・外資系企業向け人材ソリューション'})}</h1>
-        <div className="hero-actions">
-          <ButtonLink to="/#business-contact">{t({vi:'Gửi nhu cầu nhân lực',en:'Request workforce support',zh:'提交用工需求',ko:'인력 지원 요청',ja:'人材の相談を送る'})}</ButtonLink>
-          <ButtonLink to="/jobs" secondary>{t({vi:'Tìm việc làm',en:'Find a job',zh:'寻找工作',ko:'일자리 찾기',ja:'仕事を探す'})}</ButtonLink>
-        </div>
-      </div>
-    </div>
+    <h1 className="hero-semantic-heading">{t({vi:'Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc',en:'Workforce solutions for factories and FDI businesses in Northern Vietnam',zh:'越南北部工厂与外资企业的人力资源解决方案',ko:'베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션',ja:'ベトナム北部の工場・外資系企業向け人材ソリューション'})}</h1>
   </section>;
 }
