@@ -1,0 +1,49 @@
+{
+  "status": "generated and optimized; proposed placements are not implemented",
+  "assets": [
+    {
+      "name": "industrial-campus",
+      "source": "image_gen.imagegen",
+      "created": "2026-11-25",
+      "type": "AI conceptual architecture; not Minh Duc premises",
+      "original_path": "/workspace/generated_images/exec-81c6a285-4943-47ce-beed-422fd3c59330.png",
+      "original_sha256": "b43eb037fa1d36b77099ebcb83fe5ffaf2d4639c41386bcf492321c32fb042b0",
+      "brief": "Campus sản xuất hư cấu ở miền Bắc Việt Nam, mặt đứng trắng và xanh navy/cobalt, ánh sáng sớm, kiến trúc thấp tầng, cảnh quan, không người/logo/chữ.",
+      "proposed_placement": "Trang Dịch vụ: đầu danh mục và ngữ cảnh công nghiệp",
+      "derivatives": [
+        {
+          "path": "review/images/industrial-campus-1600.webp",
+          "bytes": 192732,
+          "sha256": "05534fdeca99c618b7883e7c7e7f3db90a033f674cffbf69f263afa53141ed2f"
+        },
+        {
+          "path": "review/images/industrial-campus.webp",
+          "bytes": 84344,
+          "sha256": "0ecb4ae2f200717341e96147def10dc81437c9c3d6256bdee724fc86b8fbc6bc"
+        }
+      ]
+    },
+    {
+      "name": "learning-space",
+      "source": "image_gen.imagegen",
+      "created": "2026-11-25",
+      "type": "AI conceptual architecture; not Minh Duc premises",
+      "original_path": "/workspace/generated_images/exec-9b68a1a3-bc78-47f6-a066-fefedba2dd98.png",
+      "original_sha256": "77af92814494eb85092b3d793477808982714c22bb304f745234f144f629ac2e",
+      "brief": "Không gian học tập và cộng tác hư cấu, kính lấy sáng, tường trắng, xanh navy/cobalt, gỗ tự nhiên, không người/logo/chữ.",
+      "proposed_placement": "Đào tạo và tư vấn tổ chức: không gian minh họa",
+      "derivatives": [
+        {
+          "path": "review/images/learning-space-1600.webp",
+          "bytes": 183882,
+          "sha256": "e264de75df701b7d3fe85676a85dc624301dde07a7f034ceb938fdb58b959d46"
+        },
+        {
+          "path": "review/images/learning-space.webp",
+          "bytes": 76370,
+          "sha256": "0ef7af7a83f7d3c60e6ec6c8cf0002f556ea98024195b1c2c22a870cbf3d5cdf"
+        }
+      ]
+    }
+  ]
+}

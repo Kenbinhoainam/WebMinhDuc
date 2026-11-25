@@ -1,0 +1,25 @@
+MINH ĐỨC V17 — KIỂM TRA VÀ PHẠM VI
+Ngày 25/11/2026
+
+Thay đổi ứng dụng
+- src/Header.tsx: biểu tượng và huy hiệu trang trí không bị đọc lặp; từ 100 hiển thị 99+, aria-label năm ngôn ngữ giữ đầy đủ số.
+- src/sprint-navigation.css: huy hiệu riêng được căn giữa bằng Grid, nút giữ 44×44 px, không co theo Flex, số rộng có padding và không chặn pointer.
+- src/styles.css: xóa nguyên quy tắc generic .header-saved>span cũ để một nơi chịu trách nhiệm huy hiệu.
+- README: liên kết hồ sơ kế hoạch và sửa ghi chú cũ về bản đồ Đông Mai theo company.ts hiện có.
+- docs/flagship/v17: sáu báo cáo, bản tổng hợp, hồ sơ HTML và hai ảnh AI ý niệm tối ưu. Các bố cục đề xuất chưa triển khai lên trang sản phẩm.
+
+Kiểm tra đã đạt
+- header-reference.mjs; header-hover-review.mjs; locale-selector.mjs.
+- Đánh giá độc lập bởi agent Liên hệ: SSR 35 tổ hợp (0/1/8/12/99/100/1234 × vi/en/zh/ko/ja), liên kết đúng, aria-label đủ số, ẩn số 0, hiển thị 99+.
+- Đánh giá độc lập xác nhận xóa CSS cũ không mất thuộc tính; không thấy xung đột mới.
+- npm run build: kiểm locale, TypeScript, Vite client/SSR và prerender hoàn tất.
+- npm run test:hydration: tất cả tuyến trong bộ kiểm tra, gồm các locale và trang có header, đạt.
+- tests/navigation.mjs: năm ngôn ngữ, desktop/mobile/bàn phím đạt.
+- tests/seo-output.mjs: 205 trang đạt.
+- git diff --check đạt.
+- Hồ sơ HTML: đủ sáu báo cáo nguyên văn, sáu neo chuyên trang, liên kết nội bộ và ảnh tồn tại. Tài liệu không cần JavaScript để đọc hoặc mở chi tiết.
+
+Giới hạn
+Managed Sites preview trả lỗi “relay could not open browser port 4173: timed out waiting for relay readiness”. Không dựng server/browser thay thế. Chưa có kiểm tra ảnh chụp trình duyệt, zoom, touch hoặc chuyển động thực ở lượt này. Các kiểm tra mã, SSR và DOM không chứng minh bố cục/crop/tốc độ thực tế trên thiết bị.
+
+Hai ảnh AI đã xem và tạo bản WebP 960/1600 px bằng mã hóa, không vẽ lại logo hay người thật. Nguồn và SHA ghi trong image-provenance.json. Ảnh chưa được gán vào sáu trang sản phẩm; vị trí sử dụng nằm trong kế hoạch. Quyền xem Site và site đối chiếu v13 được giữ nguyên.

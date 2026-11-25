@@ -1,0 +1,34 @@
+TUYỂN DỤNG NỘI BỘ | Gia nhập đội ngũ Minh Đức
+
+Phạm vi và bằng chứng
+/careers dẫn đến hai vị trí minh họa qua /jobs/chuyen-vien-tuyen-dung-bac-ninh (MD007) và /jobs/cong-tac-vien-tuyen-dung-quang-ninh (MD008). F04 mở trong hộp thoại trên từng trang chi tiết. /saved-jobs giữ các việc đã lưu trên thiết bị. Cả năm ngôn ngữ dùng cùng mã vị trí.
+
+Đã đọc src/CareersSections.tsx, src/Careers.css, src/careers-media.json, src/JobsPages.tsx, src/jobs.css, src/jobs-data.ts và xem ảnh nguồn. Hiện JobBrowser tách đúng tin nội bộ, hỗ trợ tìm không dấu, lưu việc và báo số kết quả. Tuy nhiên, chín trường lọc gồm cả KCN, trình độ và ca cho hai tin nội bộ. Banner và 11 ảnh thư viện trỏ tới HR2B. PageHero trong src/shared.tsx chỉ xuất H1 và đường dẫn, dù nơi gọi có truyền mô tả. CSS đặt nút dừng và điều hướng rail vào vùng 1 px đến khi có focus. Ba lời kể giả định cùng ảnh minh họa khiến người đọc khó nhận ra hoạt động thực. Đây là nhận xét từ mã và tệp ảnh, chưa kiểm tra trang trong trình duyệt.
+
+Trang danh sách
+1. Đầu trang chia 5/7 cột. Bên trái là “Gia nhập đội ngũ Minh Đức”, câu dẫn “Tìm hiểu các vị trí tư vấn, tuyển dụng và kết nối người lao động tại Minh Đức”, nút “Xem vị trí nội bộ” đến #open-positions. Liên kết chữ “Tìm việc tại nhà máy” đến /jobs#job-listings. Bên phải là ảnh tập thể cuối năm, chú thích riêng. Dùng Lato/Open Sans, nền sáng và chữ #20478f, giữ độ tương phản ở vùng header. Mobile xếp tiêu đề, CTA, ảnh theo thứ tự đó.
+2. “Vị trí tại Minh Đức” dùng các hàng có tên, mã, tỉnh, hình thức, thu nhập tham khảo, trạng thái và nút lưu riêng. Tỉnh/hình thức lấy từ các tin nội bộ, có từ khóa và trạng thái. Việc lọc phản hồi ngay, giữ URL khi quay lại. Với URL cũ có điều kiện nhà máy, chỉ áp dụng các khóa phù hợp ngữ cảnh nội bộ. Mobile cho tìm tên trực tiếp và mở các bộ lọc còn lại bằng nút “Lọc vị trí”. Nếu không khớp, giữ tiêu chí và nút “Xóa bộ lọc”. Khi toàn bộ vị trí đã đóng, hiện “Hiện chưa có vị trí nội bộ đang tuyển” và lối xem tin đã đóng. Một chú thích ngắn ghi dữ liệu vị trí và thu nhập minh họa.
+3. Hai khối ảnh–chữ giới thiệu công việc tư vấn và phối hợp tại hiện trường. Hai rail kế tiếp giữ chức năng “Công việc hằng ngày” và “Quyền lợi theo vị trí” (#position-benefits). Chọn nội dung từ nhiệm vụ và quyền lợi MD007/008, dẫn đến vị trí tương ứng. Dùng ảnh lớn xen các đoạn ngắn, phân tách bằng đường kẻ. Trên điện thoại đọc một cột.
+4. #cv-requirements trình bày bốn bước dọc trên mobile, ngang trên desktop. “Chọn vị trí”, “Điền thông tin mẫu”, “Đính kèm CV nếu muốn”, “Xem mã mô phỏng”. #career-contact luôn hiển thị liên kết “Trao đổi với Minh Đức” đến /contact#consultation. Rail câu chuyện chuyển thành ba câu hỏi có câu trả lời về cộng tác, CV và lưu vị trí. Kết bằng dải 11 ảnh “Hoạt động của Minh Đức” tự chạy, có nút mở từng ảnh. Khi mở ảnh lớn, chỉ thao tác chủ động mới chuyển ảnh.
+
+Chi tiết và F04
+Đầu trang chi tiết có đường dẫn “Tuyển dụng nội bộ”, H1, mã, tỉnh, hình thức, thu nhập tham khảo và nút đỏ “Ứng tuyển vị trí này”. Desktop đặt bản tóm tắt bên phải, mobile xếp theo thứ tự DOM ngay trước nhiệm vụ, yêu cầu, quyền lợi và vị trí nội bộ liên quan. Giữ lưu việc, hotline và thông tin lịch làm có trong nguồn. Tin đóng vẫn đọc/lưu được, chặn mở và gửi form. Đường dẫn chi tiết giữ nguyên để bảo toàn liên kết đã chia sẻ.
+
+F04 hiển thị mã, chức danh chỉ đọc, họ tên và điện thoại Việt Nam bắt buộc, email và CV tùy chọn. Ghi ngay bên ô chọn “Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX. Mỗi tệp tối đa 5 MB, tổng 15 MB.” Tái dùng src/sharedformvalidation.ts và src/form-experience-v16.css. Giữ giá trị khi lỗi, hiện lỗi tại trường, focus lỗi đầu. Nút “Gửi hồ sơ mô phỏng” tạo một bản ghi F04 qua src/demo-submissions.ts, gồm nguồn, mã tin, vị trí, email và thông tin bắt buộc. Chỉ xét metadata tệp. Biên nhận dẫn /admin-demo?type=F04&id=<mã>, mất khi tải lại. Giữ bẫy Tab, Escape và trả focus về nút mở. Trạng thái chờ chỉ dùng khi tải mô-đun, không dựng tiến trình gửi.
+
+Ảnh và cách cắt
+Sáu WebP tại public/assets/minhduc-v16/. team-yearend.webp (DSCF7800) giữ trọn khung 3:2, hai vai ngoài và hàng ngồi phía trước. culture-birthday.webp giữ khung 2,14:1 và chiếc bánh. yearend-gifts.webp ghi “Trao quà trong buổi tất niên”. community.webp giữ đoàn người, dụng cụ và tòa nhà trong khung 4:3. recruitment-event.webp giữ sân khấu. recruitment-field.webp giữ dọc 3:4, khuôn mặt và bìa hồ sơ. Chú thích mô tả cảnh, tránh suy diễn chức danh hoặc quan hệ đối tác. Chỉ ảnh hero ưu tiên cao. Ảnh dưới màn hình dùng srcset 480/960/1600, kích thước tường minh, tải lười. Lightbox giữ tỷ lệ gốc và alt riêng.
+
+Năm nguồn bổ sung đã xem, dùng cho thư viện và hai khối ảnh–chữ. Xuất WebP xoay đúng EXIF từ tệp gốc khi triển khai, đối chiếu /workspace/research/minhduc-v16/Anh-Minh-Duc-audit.json.
+• /workspace/attachments/ab33251c-dd17-4d6c-8045-9fbe54cf5a04/DJI_20261104091634_0676_D.JPG — nhóm trao đổi ngoài trời, giữ khung ngang.
+• /workspace/attachments/93feaeb7-9b0c-45c9-8994-acb74b1ba975/20261017_153058.jpg — năm người cầm hoa trước biển Minh Đức, giữ dọc 3:4.
+• /workspace/research/minhduc-v16/birthday/originals/17.jpg — nhóm cầm túi quà, giữ đủ hai đầu.
+• /workspace/attachments/5f92f85a-3885-42ae-ba6a-affbf35f119b/20260204_115843.jpg — nhóm cầm túi đỏ, cắt nhẹ người xuất hiện một phần ở mép trái.
+• /workspace/attachments/dd9bcf67-67dc-4b87-ab26-2a29437d1b0d/IMG_4010.JPG — toàn cảnh hội trường từ cuối phòng. Ảnh thật đã phủ đủ hành trình, không cần sinh thêm ảnh AI cho trang này.
+
+Chuyển động, ưu tiên và nghiệm thu
+P0 — Tách cấu hình lọc theo internal, thay banner, sửa thứ tự chi tiết, bảo toàn F03/F04 và bốn neo. Phối hợp người phụ trách Việc làm và Header để hai slug nội bộ nhận đúng nhóm menu. Kiểm tra không lẫn MD001–006, không mất bộ lọc khi Back, tệp 5.000.000 byte hợp lệ, 5.000.001 byte báo lỗi, gửi hai lần liên tiếp chỉ sinh một mã.
+
+P1 — Dùng src/motion.tsx và src/useHomeCarousel.ts. Reveal ở khoảng 84% chiều cao, trượt lên 32 px trong 750 ms theo cubic-bezier(.2,.7,.2,1), đảo khi cuộn ngược qua 96% trong 300 ms. Mobile 16 px, stagger tối đa 240 ms. Để lộ mép ảnh kế tiếp trên desktop và mobile. Mọi rail tự chuyển khi có phần tràn, 3,5 giây/mục và 500 ms trượt. Nút lùi, tới, dừng/phát 44 px luôn thấy. Dừng khi hover, focus, chạm, mở lightbox, khuất màn hình, tab ẩn hoặc người dùng bấm dừng. Giảm chuyển động giữ nội dung tĩnh và duyệt thủ công. Lightbox nhận ←/→, Escape, trả focus đúng ảnh. H1, CTA và form hiển thị tức thì.
+
+P2 — Đổi nội dung trong src/i18n-catalogs/jobs.json và tái sinh locale. Thử ở 360/390/768/1440 px, zoom 200%, đủ năm locale. Kiểm tra không tràn ngang trang, chữ và mặt người không bị cắt, tải ảnh lỗi vẫn đọc được chú thích. Cập nhật tests/reference-structure.mjs cho rail hỏi đáp, chạy careers-carousel, sitemap-destinations, jobs-sprint1, v14-forms-demo, hydration. Giữ noindex, URL hiện có và quyền xem hiện hành.

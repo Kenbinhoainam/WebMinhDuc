@@ -1,0 +1,39 @@
+DỊCH VỤ VÀ TUYỂN SINH · PHƯƠNG ÁN V17
+
+Hiện trạng qua mã và ảnh nguồn
+
+Dưới /workspace/sites/minhduc-prototype, src/pages/info/ServicesPages.tsx và data.ts điều khiển danh mục cùng năm dịch vụ. V16 đã có câu hỏi riêng, năm bước riêng, rail có nút dừng và hai lối tuyển sinh F05/F06. Tuy nhiên H2 nhắc lại H1, đoạn giới thiệu xuất hiện hai lần, lợi ích lặp đến ba lần trong phần chữ, điểm nhấn và bảng phí. src/info.css ép bảng rộng tối thiểu 640 px. src/home-reference.css ẩn nút khám phá dưới 1024 px, chỉ tiêu đề còn là liên kết. Quan trọng hơn, modal nhận đúng service.title nhưng InfoContact cuối trang dựng ContactForm mặc định, khiến ba dịch vụ khác bị chọn thành cung ứng. Đã đối chiếu HTML HR2B lưu trong archive/13b8c6c264f57778.html, bbc8d09115ba98b9.html và 90da530c9ca522ea.html. Chưa kiểm chứng trực quan trên trình duyệt.
+
+Danh mục /services
+
+Desktop mở bằng “Giải pháp nhân lực cho nhà máy và doanh nghiệp”, nút đỏ “Gửi nhu cầu nhân lực”, liên kết “Tôi đang tìm việc” tới /jobs. Bên dưới, “Bạn cần giải quyết việc gì?” dẫn thẳng tới năm tuyến bằng năm dòng luôn hiển thị. Mỗi dòng ghép vấn đề với tên dịch vụ. Ví dụ “Bổ sung người cho đợt sản xuất” và “Cung ứng nhân lực”. Dùng chữ Lato, nội dung Open Sans, đường phân cách xanh #20478f. Tiếp đến là ba số mẫu hiện có của danh mục và rail năm dịch vụ tự chạy dạng ảnh ngang có chú thích. Bốn chỉ số trang chủ và trình xem hồ sơ giữ theo v13. Mobile xếp tiêu đề, CTA, năm dòng, ảnh, số liệu rồi rail. Tiêu đề liên kết và dấu mũi tên luôn thấy khi chạm.
+
+Năm hành trình chi tiết
+
+• /services/labor-supply — Trưởng nhân sự xác định số người theo đợt. Sau H1 đặt “Bạn cần bao nhiêu người, tại đâu và khi nào?” cùng CTA F01. Mở tiếp bằng ví dụ kế hoạch có các cột đợt tuyển, địa điểm, ca và ngày nhận việc, rồi năm bước bàn giao. Chú thích riêng phần việc của nhà máy và Minh Đức. Liên kết phụ “Xem việc phổ thông” dùng URL skillLevel sẵn trong navigation.ts.
+
+• /services/labor-leasing — Quản đốc cần bổ sung người trong một giai đoạn. Hero hỏi “Ca nào cần bổ sung và trong thời gian bao lâu?”. Bên dưới là bảng đối chiếu thời hạn, đầu mối, nơi làm, cách phản hồi khi đổi ca. Ghi “Hai bên cần xác minh công việc, điều kiện pháp lý và trách nhiệm trước khi ký kết”. Tiếp theo là quy trình, các yếu tố hình thành chi phí và F01 chọn “Cho thuê lao động”.
+
+• /services/recruitment — Quản lý kỹ thuật cần tuyển người đạt yêu cầu vị trí. “Vị trí này cần kiểm tra kỹ năng gì?” dẫn đến mẫu mô tả một vị trí với ba dòng kỹ năng bắt buộc, kinh nghiệm mong muốn, cách đánh giá. Theo sau là năm bước tìm và sàng lọc, đoạn phí thỏa thuận, FAQ rồi F01. Đưa “Xem việc tay nghề” tới bộ lọc Tay nghề trong navigation.ts. Không thêm cam kết thời hạn hoặc tỷ lệ đạt.
+
+• /services/hr-consulting — Người phụ trách vận hành bắt đầu bằng điểm nghẽn. “Khâu nào đang phải nhập lại dữ liệu?” mở sơ đồ ví dụ “Tiếp nhận nhu cầu → Phân công → Theo dõi”. Dùng danh sách HTML có thứ tự, đọc dọc trên mobile. Đối chiếu hiện trạng và nội dung cần thống nhất, lần lượt nêu phạm vi tổ chức, quy trình, công cụ. Giữ phí trước ba điểm tư vấn như template HR Consulting. CTA F01 điền đúng dịch vụ setup.
+
+• /services/college-admissions — Người học xuất phát từ thời gian có thể dành cho việc học. Mở hai cột “Từ xa” và “Chính quy”, so sánh cách học và câu hỏi cần hỏi trường. “Xem chương trình” tới /education. “Tư vấn tuyển sinh” và “Nộp hồ sơ tuyển sinh” lần lượt đến /education?form=F05#dang-ky và /education?form=F06#dang-ky. Chi phí trình bày qua hạng mục cần xác nhận, bên cung cấp thông tin, nội dung còn thiếu. Tách dải đối tác doanh nghiệp khỏi danh sách chương trình để tránh ngụ ý quan hệ với trường.
+
+Cuối trang giữ thứ tự phí → FAQ → đối tác và chia sẻ minh họa nếu hiện có → rail bốn dịch vụ khác → F01 ở bốn tuyến doanh nghiệp. Truyền service.title cho cả modal lẫn form cuối, đặt lại lựa chọn khi chuyển slug. Tuyển sinh tiếp tục dùng F05/F06. Desktop dành khoảng 7/12 cột cho nội dung chính. Mobile đọc một cột, tiêu đề và hành động đứng trước ảnh phụ, bảng giữ caption/tiêu đề hàng, cột và cuộn trong vùng riêng nếu cần.
+
+Từ /education đến hồ sơ
+
+Danh mục có hai nhóm hình thức học và ba dòng chương trình dẫn tới /education/tu-xa-quan-tri, /education/tu-xa-ke-toan và /education/chinh-quy-cong-nghe. Mỗi trang hiển thị tên, hình thức, câu hỏi về lịch học, điều kiện, học phí, văn bằng rồi biểu mẫu đã chọn chương trình. Ghi rõ các chương trình giả định một lần sát danh sách hoặc nội dung chi tiết. Tại form giải thích chỉ dùng dữ liệu mẫu. F05/F06 cùng bắt buộc họ tên và điện thoại Việt Nam. F05 có câu hỏi tùy chọn. F06 có email tùy chọn và tối đa ba tệp JPG/JPEG/PNG/PDF/DOC/DOCX, 5.000.000 byte/tệp, 15.000.000 tổng. Chỉ kiểm tra metadata. Giữ lựa chọn chưa rõ, linkId, source, mã biên nhận, chống gửi lặp và bộ nhớ phiên. Lỗi đưa focus tới trường đầu, thành công tới tiêu đề biên nhận. Slug sai có đường về danh mục. Đang tải dùng trạng thái route hiện có, ảnh lỗi vẫn đọc được tiêu đề và CTA.
+
+Ảnh và chuyển động
+
+Đường dẫn sau tính từ public/. Ảnh thật assets/minhduc-v16/recruitment-field.webp đặt ở phần tìm nguồn, giữ nguyên khung dọc 3:4, không suy diễn bảng tên phía sau thành quan hệ đối tác. assets/minhduc-v16/recruitment-event.webp đặt cạnh mục kết nối tại sự kiện, giữ trọn nhóm 3:2. Dùng srcset 480/960/1600. Headhunt dùng assets/minhduc-working-60s.webp 16:9 cạnh tiêu chí trao đổi, ghi xuất xứ khung hình phim Minh Đức. Tuyển sinh dùng assets/editorial/admissions-seminar.webp, crop 4:3 giữ micro bên phải. Setup dùng assets/editorial/business-team.webp gần tỷ lệ gốc 5:4. Hai ảnh editorial là minh họa. Đề xuất một ảnh AI dùng chung cho đầu danh mục và ngữ cảnh thuê lao động. Khung cảnh là sảnh chuyển tiếp công nghiệp có mái lấy sáng, thép xanh, chân trời thấp, vùng chữ sạch bên trái 40%, 16:9, không người, chữ hay logo. Ghi nguồn AI và mục đích minh họa trong manifest. Nếu thiếu ảnh, dùng nền xanh và nội dung đã prerender.
+
+RevealFrame dùng khung ổn định, bắt đầu gần 84% viewport, lên 32 px trong 750 ms cubic-bezier(.2,.7,.2,1), ẩn lại 300 ms khi cuộn ngược qua 96%. Stagger 80 ms, tối đa 240 ms. Mobile giảm biên độ còn 16 px. Khối có focus giữ mở, H1/CTA hiện ngay. Rail giữ nhịp 3,5 giây, dịch một mục trong 500 ms, nút dừng/phát và trước/sau. Dừng khi focus, hover, kéo, khuất, tab ẩn. Reduced-motion đọc trực tiếp và điều khiển rail thủ công. Tab/Enter mở liên kết, Space/Enter mở FAQ, Escape đóng modal và trả focus.
+
+Ưu tiên và nghiệm thu
+
+P0 sửa ngữ cảnh form trong components.tsx, ServicesPages.tsx và kiểm tra Contact.tsx, Education.tsx, sharedformvalidation.ts, demo-submissions.ts. P1 triển khai năm bố cục trong services-reference.css, education.css và nội dung theo slug. Cập nhật src/i18n-catalogs, sinh lại locale, đối chiếu src/seo/routes.ts. P2 hoàn thiện crop và sắc độ sau kiểm tra thiết bị.
+
+Kiểm tra đủ 10 tuyến × 5 ngôn ngữ. Mỗi dịch vụ truy cập được bằng một lần bấm từ mục lục. Bốn F01 giữ đúng dịch vụ trong hồ sơ quản trị. Ba chương trình giữ đúng linkId. Kiểm thử giới hạn tệp và lỗi qua tests/v14-forms-demo.mjs, education-validation.mjs. Kiểm tra reference-structure, motion, SEO và hydration. Tại 360/768/1440 px, chữ không bị cắt, bảng không gây tràn trang, liên kết/điều khiển có vùng chạm 44 px, focus nhìn thấy. Đối chiếu ảnh thực tế và đo tải trước nghiệm thu hình ảnh.

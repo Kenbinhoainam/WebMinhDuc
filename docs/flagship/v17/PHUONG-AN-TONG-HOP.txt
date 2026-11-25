@@ -1,0 +1,70 @@
+MINH ĐỨC | PHƯƠNG ÁN THIẾT KẾ SÁU NHÓM TRANG V17
+25/11/2026 · Sáu agent GPT-6.2 Astra, mỗi agent phụ trách một nhóm trang
+
+PHẠM VI BÀN GIAO
+
+Đã sửa huy hiệu số việc đã lưu trong header: căn giữa hai chiều, giữ vùng bấm 44×44 px, không co ép nút, ẩn khi bằng 0 và rút gọn thành 99+ từ 100. Trình đọc màn hình vẫn nhận đầy đủ số lượng, không đọc trùng biểu tượng và huy hiệu. Xóa quy tắc CSS cũ để tránh chồng lớp.
+
+Sáu phương án dưới đây là thiết kế đề xuất cho vòng triển khai tiếp theo. Chúng được nghiên cứu từ mã v16, HTML dựng sẵn, template HR2B, audit kho ảnh Minh Đức và ảnh gốc. Hai ảnh AI mới đã tạo và tối ưu thành WebP. Không coi các bố cục đề xuất là đã triển khai lên website.
+
+HƯỚNG THIẾT KẾ CHUNG
+
+Một thương hiệu, sáu hành trình. Giữ Lato/Open Sans, xanh #20478f, đỏ #e42824 cho hành động chính, nền trắng và mảng xanh rất nhạt. Chất lượng hình ảnh đến từ ánh sáng tự nhiên, bố cục có khoảng thở, ảnh rộng không cắt mất người, thay vì tăng số lượng hiệu ứng.
+
+Desktop dùng hệ 12 cột, khoảng nội dung 1200–1320 px, khoảng cách phần 80–104 px; mobile một cột và khoảng cách 40–56 px. Đây là giá trị khởi điểm cần hiệu chỉnh bằng bản dựng thực. Thân chữ tối thiểu 16 px, nhãn thao tác 14 px, cột bài đọc 60–72 ký tự. H1, thông tin quyết định và CTA luôn có ngay; ảnh tải sau vẫn giữ được bố cục.
+
+Header desktop tiếp tục trong suốt trên vùng đầu có đủ tương phản; chuyển kính sáng khi cuộn. Mobile giữ hàng riêng 72 px. Giữ bảy nhóm menu, năm ngôn ngữ, liên kết cũ, trạng thái bộ lọc và các neo. CTA chính là “Gửi nhu cầu nhân lực”. Không thay video gốc, màn kết, bốn chỉ số và hồ sơ năng lực v13 trong đợt sửa huy hiệu này.
+
+SÁU PHƯƠNG ÁN
+
+Giới thiệu — /about-us, các neo, /partners, /testimonials và /e-brochure.
+Mở bằng lời giới thiệu ngắn và ảnh tập thể thật; tiếp theo là mục lục, phạm vi hoạt động, lịch sử, đối tác, đội ngũ/hoạt động và liên hệ. Đưa năm đối tác có trong nguồn lên trước tình huống minh họa. Lịch sử dùng tên giai đoạn thay số 01–03, đồng bộ ảnh và nội dung. Hồ sơ ba trang vẫn chuyển tay và in đủ ba trang. Ảnh đầu là nhóm cầm cờ dưới biển Minh Đức, giữ tỷ lệ gốc 2,14:1. Xem about-plan.txt.
+
+Dịch vụ — /services, năm trang chi tiết, /education và ba chương trình.
+Năm lối vào theo nhu cầu luôn thấy ngay, bên dưới là rail dịch vụ. Trang cung ứng nói về số lượng/địa điểm/ca; cho thuê nói về thời hạn và trách nhiệm; tuyển tay nghề nói về tiêu chí đánh giá; setup nói về quy trình; tuyển sinh so sánh hình thức học. Bỏ các đoạn lợi ích lặp. Cả modal và form cuối trang phải giữ đúng dịch vụ đã chọn. Dùng ảnh AI campus cho ngữ cảnh công nghiệp; không gian học tập cho đào tạo. Xem services-plan.txt.
+
+Việc làm — /jobs, /saved-jobs, /job-seekers và sáu vị trí lao động.
+Tìm kiếm và địa điểm ở phía trước, các bộ lọc khác mở khi cần. Mỗi kết quả cho so sánh lương, KCN/tỉnh, ca/lịch và hình thức ngay trong một hàng. Mobile đặt tóm tắt và “Ứng tuyển ngay” sát tiêu đề, trước mô tả. Quay lại giữ bộ lọc và trang đã xem; bỏ lưu giữ focus hợp lý. F03 giữ hai trường bắt buộc tên/điện thoại, không thêm CV. Ảnh thật sự kiện chỉ hỗ trợ nhận diện, không gán cho một vị trí mẫu. Xem jobs-plan.txt.
+
+Tuyển dụng nội bộ — /careers, hai vị trí MD007/MD008 và F04.
+Ảnh tập thể thật thay ảnh HR2B, lối vào “Xem vị trí nội bộ” rõ ràng. Bộ lọc dùng từ khóa/tỉnh/hình thức/trạng thái phù hợp với công việc tại Minh Đức. Tiếp theo là công việc hằng ngày, quyền lợi theo vị trí, cách ứng tuyển và thư viện 11 ảnh thật. Dải ảnh tự chạy, nút dừng nhìn thấy; ảnh lớn chuyển tay. Giữ CV tùy chọn và quy tắc tệp F04. Xem careers-plan.txt.
+
+Tin tức — /news, /events, sáu bài và ba lịch sự kiện.
+Hai bài biên tập nổi bật ở đầu, danh mục có chuyên mục và phân trang bằng URL. Bài chi tiết có cột đọc thoáng, một mục lục và một vùng bài liên quan, CTA theo người đọc. Hoạt động thật dùng ảnh tư liệu; lịch chương trình mẫu có trạng thái và mốc đối chiếu rõ, không ngụ ý đã đặt chỗ. Bỏ ảnh có logo HR2B và các ảnh gallery bị lặp. Xem news-plan.txt.
+
+Liên hệ — /contact và /consultation.
+Hotline, gửi nhu cầu và hỏi thông tin là ba lối vào rõ trước form. Mobile thứ tự đọc và focus trùng với bố cục. Danh bạ và ba bản đồ lấy cùng company.ts. Luồng chọn giờ khóa F02, giữ nháp khi đổi giờ, kiểm tra thời gian trước khi tạo biên nhận. Ảnh tập thể trước biển hiệu dùng một lần, không gán cho chi nhánh chưa xác minh. Xem contact-plan.txt.
+
+HỆ CHUYỂN ĐỘNG THỐNG NHẤT
+
+Reveal khối ảnh/nội dung: vào gần 84% viewport, hiện 750 ms, dịch 32 px desktop/16 px mobile, easing cubic-bezier(.2,.7,.2,1). Khi cuộn ngược qua ngưỡng 96%, thu về 300 ms. Stagger 60–80 ms, tổng không quá 300 ms. Hai ngưỡng tách nhau để tránh nhấp nháy. Khối đang focus luôn hiện.
+Rail: trượt 500 ms; dịch vụ/ảnh 3,5 giây, tin có chữ 6 giây, lịch sử 7 giây. Giữ tự chạy, nút dừng/phát và trước/sau nhìn thấy. Dừng khi hover, focus, chạm/kéo, mở modal/lightbox, tab ẩn hoặc khuất. Sau khi người dùng chủ động dừng, chỉ chạy lại khi họ chọn tiếp tục. Không đổi focus theo slide. Khi không có nội dung tràn, bỏ điều khiển thừa.
+Thao tác: bookmark 120 ms, đổi bước form fade tối đa 160 ms; kết quả tìm kiếm, lỗi và biên nhận hiện ngay. Không giấu nội dung cần quyết định sau reveal. Không bắt cuộn, không thêm con trỏ giả, không thêm thư viện nặng chỉ cho hiệu ứng.
+Reduced-motion: đọc trạng thái tĩnh, rail chuyển tay. Brochure và lightbox là công cụ đọc/xem chủ động nên chuyển tay. Quy tắc chung này ưu tiên hơn các chênh lệch nhỏ trong sáu báo cáo chuyên trang.
+
+ẢNH VÀ NỘI DUNG
+
+Giữ thư viện 244 tệp đã audit ở v16 làm nguồn. Ảnh thật dùng cho đội ngũ, hoạt động, tuyển dụng; ghi chú mô tả cảnh, không suy diễn chức danh, quan hệ đối tác hoặc thời điểm. Dùng srcset 480/960/1600 tùy kích thước, giữ EXIF đúng chiều, tải ưu tiên tối đa một ảnh đầu trang và tải chậm ảnh dưới.
+
+Hai ảnh mới là không gian ý niệm do AI tạo, không phải cơ sở thật Minh Đức: industrial-campus và learning-space. Có bản 960 px cho ô nội dung, 1600 px cho ảnh rộng. Bản 1600 lần lượt khoảng 193 KB và 184 KB. Không dùng AI vẽ lại logo hoặc ảnh nhân sự thật. Không cần thêm ảnh AI vào luồng việc làm, hồ sơ ứng tuyển hay danh bạ.
+
+Nội dung marketing mẫu không cần gắn nhãn lặp lại. Giữ thông báo chính xác tại biểu mẫu mô phỏng, lịch chưa xác nhận và tình huống không phải chứng thực thật. Không biến ảnh AI thành bằng chứng văn phòng/nhà máy của doanh nghiệp.
+
+THỨ TỰ TRIỂN KHAI
+
+P0 — Luồng đúng và điều khiển rõ: dịch vụ trong F01; bộ lọc lao động/nội bộ; tóm tắt và CTA mobile; nhãn trạng thái việc làm; giữ nháp và khóa F02 chọn giờ; pause nhìn thấy; neo, focus, ngôn ngữ. Một chủ sở hữu cho JobsPages, một chủ sở hữu ContactForm; từng agent trang không sửa chồng các tệp chung.
+P1 — Bố cục và nội dung: sáu kiểu trang đầu, chi tiết theo ngữ cảnh, phân cấp chữ, loại nội dung lặp, ảnh thật đúng khung, dùng hai ảnh AI ở vị trí đề xuất. Mỗi nhóm triển khai cùng route chi tiết/alias/bản dịch, không chỉ sửa trang danh mục.
+P2 — Chuyển động và hoàn thiện: nhịp rail, reveal, hover, khung ảnh, trạng thái tải/lỗi/rỗng, bàn phím, giảm chuyển động và dung lượng. Đánh giá độc lập sau từng gói, sau đó kiểm tra toàn tuyến.
+
+NGHIỆM THU
+
+Kiểm desktop/mobile ở 320/390/768/1440 px và màn rộng; zoom 200%; năm ngôn ngữ; chuột, bàn phím và cảm ứng. Không tràn ngang trang, không cắt CTA hoặc khuôn mặt, header không che neo, vùng chạm mục tiêu 44 px. Kiểm Back/Forward, mở liên kết trực tiếp, đổi locale giữ query/hash. Sáu form giữ trường, validation, quy tắc tệp và một biên nhận trong bộ nhớ phiên; không gửi hồ sơ thật. Lỗi, rỗng, slug sai, ảnh lỗi, localStorage/clipboard bị chặn vẫn có đường đi.
+
+Bản dựng phải qua TypeScript, locale, hydration, route/SEO và kiểm thử nghiệp vụ tương ứng. Đo hiệu năng và quan sát animation bằng trình duyệt trước khi kết luận đạt. Ở lượt này, managed preview tiếp tục lỗi relay nên chỉ có bằng chứng mã/SSR/DOM và ảnh nguồn, chưa có xác nhận trực quan trên thiết bị thật. Không dùng kết quả DOM thay cho ảnh chụp hoặc số đo CWV.
+
+CĂN CỨ CHUYỂN ĐỘNG VÀ KHẢ NĂNG TIẾP CẬN
+https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html
+https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html
+https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+https://www.w3.org/WAI/ARIA/apg/patterns/carousel/
+24×24 px là mức tối thiểu WCAG 2.2 AA có ngoại lệ; 44×44 px là mục tiêu thiết kế của phương án. Animation from Interactions là tiêu chí AAA; không coi mọi đề xuất trên là điều kiện AA bắt buộc.

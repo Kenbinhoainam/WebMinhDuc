@@ -12,7 +12,9 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
 .site-header .header-search span { display:none; }
 .site-header .header-search svg { color:inherit; }
 .site-header .header-saved, .site-header .menu-button { position:relative; width:44px; border-radius:999px; padding:0; }
-.site-header .header-saved > span { position:absolute; right:-3px; top:-3px; }
+/* Badge is decorative: the link announces the full saved count once. */
+.site-header .header-saved { flex:0 0 44px; overflow:visible; }
+.site-header .header-saved > .header-saved-count { position:absolute; inset:-2px -2px auto auto; display:grid; place-items:center; width:auto; min-width:20px; height:20px; padding:0 4px; border:2px solid #fff; border-radius:999px; background:#e42824; color:#fff; font-family:Lato,Arial,sans-serif; font-size:11px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums; white-space:nowrap; pointer-events:none; }
 .site-header .header-contact { display:flex; align-items:center; justify-content:center; min-height:44px; padding:8px 20px; background:#e42824; color:#fff; border-radius:999px; font-size:13px; font-weight:700; white-space:nowrap; }
 .site-header .header-contact:hover { background:#b20400; }
 .site-header .language-trigger { min-height:44px; background:rgba(0,0,0,.32); border-color:transparent; color:#fff; }

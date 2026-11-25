@@ -1,0 +1,35 @@
+VIỆC LÀM | Từ chọn ca đến ứng tuyển
+
+Phạm vi và căn cứ
+
+/jobs, /saved-jobs, alias /job-seekers và sáu trang /jobs/ mang slug cong-nhan-lap-rap-bac-ninh, kiem-tra-chat-luong-bac-giang, nhan-vien-kho-thai-nguyen, van-hanh-may-quang-ninh, ky-thuat-bao-tri-bac-ninh, dong-goi-thoi-vu-bac-giang. Giữ hai lối menu ?skillLevel=Phổ thông#job-listings và ?skillLevel=Tay nghề#job-listings (URL mã hóa), đường sang /education ở mục con Tuyển sinh, năm ngôn ngữ. Chi tiết chương trình và F05/F06 nằm trong phương án Dịch vụ. Hai slug nội bộ dùng chung mẫu chi tiết nhưng mở F04. Không sửa header trong gói này.
+
+Đã đọc v16 f0035f6, HTML dựng sẵn và mẫu HR2B jobs.html. src/JobsPages.tsx, jobs-data.ts, saved-jobs.ts, jobs.css quyết định hành vi chính. src/shared.tsx, sharedformvalidation.ts, demo-submissions.ts, form-experience-v16.css chi phối hộp thoại. src/navigation.ts, App.tsx, motion.tsx, motion.css, i18n-catalogs/jobs.json và seo/routes.ts là các điểm tích hợp. Chưa kiểm tra hiển thị bằng trình duyệt.
+
+V16 cho tìm tiếng Việt không dấu và tên đã dịch. Kết quả đổi ngay khi gõ/chọn, URL dùng replace; nút “Tìm việc” chỉ cuộn. Dưới 481 px, chín trường xếp một cột trước kết quả. Thẻ hiển thị lương, tỉnh, loại việc; thiếu KCN, ca đã dùng để lọc. Nhãn trạng thái “Tất cả” ở danh sách chính thực tế cho năm tin đang tuyển. Dưới 721 px, CSS cuối đưa hộp thu nhập và nút ứng tuyển xuống sau cả bài. Nút lưu trên thẻ rộng 32 px. Đây là các lý do ưu tiên rút ngắn đường từ bộ lọc đến quyết định.
+
+Danh sách đề xuất
+
+1. Desktop mở bằng dải xanh #20478f đủ tương phản cho header, breadcrumb, H1 “Tìm việc làm”, một câu “Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp.” Đặt ảnh hoạt động bên phải. Mobile giữ header riêng 72 px, tiêu đề gọn và tìm kiếm ngay dưới. Bỏ đoạn mở đầu lặp lời mời.
+2. Tại #job-listings đặt ô “Tên công việc hoặc kỹ năng”, “Địa điểm”, nút “Bộ lọc khác” có số điều kiện đang bật và link “Việc đã lưu (n)”. Nhóm mở rộng giữ nguyên type, industrialPark, skillLevel, employmentType, shift, schedule, status. Danh sách chính mặc định ghi “Đang tuyển”, trang lưu ghi “Mọi trạng thái”. Giữ query q, location và giá trị gốc ở mọi ngôn ngữ. Nhãn lọc đọc được, từng điều kiện có nút gỡ. Trên điện thoại dùng phần mở rộng trong luồng, aria-expanded/controls. Nhấn “Xem kết quả” đưa focus đến số kết quả; gõ hoặc chọn vẫn giữ focus và vị trí cuộn.
+3. Sau số kết quả đặt các hàng so sánh trên nền trắng. Trái là tên và KCN/tỉnh, giữa là thu nhập tham khảo, kế đến ca/lịch và hình thức, cuối là lưu. Trên điện thoại mỗi tin xếp tên và nút lưu, lương, KCN/tỉnh, rồi ca/lịch. Dùng Lato cho tiêu đề, Open Sans cho thông tin, đỏ dành cho hành động chính. Sáu tin/trang. Cuối danh sách có chú thích mức lương minh họa và “Khám phá đào tạo”.
+
+Chi tiết, đã lưu và F03
+
+• Chi tiết mở bằng liên kết quay về đúng danh sách, bộ lọc và trang vừa xem; vào bằng URL trực tiếp thì về /jobs. Sau H1 và mã tin là trạng thái, lương, KCN/tỉnh, ca/lịch, hình thức rồi “Ứng tuyển ngay” và “Lưu việc làm”. Desktop tóm tắt ở cột phải ngang H1; mobile sau tên trước mô tả, cùng thứ tự đọc DOM. Tiếp theo là nhiệm vụ, yêu cầu, quyền lợi, ba bước, số tư vấn và tin liên quan. Sửa bước đầu thành “Chọn vị trí, nhập họ tên và số điện thoại.” Với MD005 hiển thị “Vị trí đã đóng” và lối tìm tin đang tuyển. Slug lạ có đường về danh sách.
+• /saved-jobs dùng tiêu đề gọn, tổng số và ghi chú lưu trên trình duyệt. Hiển thị cả tin lao động, nội bộ và đã đóng; phân biệt bằng chữ. Giữ store hiện có, đồng bộ tab, lọc ID hỏng và dự phòng bộ nhớ khi lưu trữ bị chặn. Bỏ lưu chuyển focus đến nút của hàng kế tiếp, hàng trước hoặc “Khám phá việc làm” khi hết. Chỉ hiện thông báo trống sau khi đã đọc xong danh sách trên thiết bị, vì HTML prerender dùng mảng rỗng. Nếu chưa lưu gì, bỏ khối lọc trống. Nếu lọc hết kết quả nhưng còn tin đã lưu, đưa “Xóa bộ lọc”. Giữ đường về đúng xuất phát khi xem một tin đã lưu.
+• F03 mở hộp thoại có tên/mã vị trí, hai trường bắt buộc “Họ và tên”, “Số điện thoại”, chú thích dùng dữ liệu giả và “Gửi hồ sơ mô phỏng”. F03 không có tệp. Giữ kiểm tra điện thoại di động Việt Nam, focus lỗi đầu, Tab khép kín, Escape trả focus. Gửi hai lần chỉ tạo một DEMO-ID trong bộ nhớ trang; biên nhận đưa focus tới tiêu đề, có mã tin, link /admin-demo?type=F03&id=… và “Đóng cửa sổ”. Tải lại xóa hồ sơ. Chỉ hiện trạng thái tải khi thật sự chờ module; kết quả lọc cục bộ cập nhật ngay.
+
+Hình ảnh và chuyển động
+
+Chọn public/assets/minhduc-v16/recruitment-event.webp (IMG_4012.JPG), các bản recruitment-event-480.webp và recruitment-event-960.webp cùng thư mục. Ảnh cho thấy tập thể đứng giữa hai bảng thông tin trong hội trường. Desktop giữ tỷ lệ gốc 3:2, ưu tiên bản 480/960 cho ô ảnh; giữ trọn hai bên. Chú thích “Bảng tuyển dụng Minh Đức tại sự kiện”. Mobile chuyển ảnh xuống sau kết quả, lazy-load nếu ngoài màn hình. Không gắn ảnh này với công ty hay vị trí mẫu. Trang lưu, chi tiết và F03 ưu tiên chữ; không cần tạo thêm ảnh AI cho luồng này.
+
+Chỉ ảnh và các khối mô tả có reveal hai chiều. Khung cố định, vào tại khoảng 84% chiều cao viewport, dịch 24 px về 0 trong 550 ms, cubic-bezier(.2,.7,.2,1); ra khi cuộn ngược qua 96%, 220 ms, mobile 12 px. Khóa hiển thị khi focus. Kết quả, bộ lọc và CTA hiện ngay cả khi query đổi; bookmark đổi màu trong 120 ms. Reduced-motion dùng trạng thái cuối tức thời. Đây là danh sách tĩnh; các rail sẵn có ngoài luồng giữ tự chạy cùng nút dừng, tự dừng khi focus, hover, khuất hoặc ẩn tab.
+
+Thứ tự triển khai và nghiệm thu
+
+P0 thống nhất với nhóm nội bộ về JobBrowser, JobDetailPage và ApplicationDialog dùng chung; sửa nhãn trạng thái, thứ tự mobile và luồng quay lại. P1 đổi cấu trúc bộ lọc/hàng tin, xử lý focus bỏ lưu, bản dịch và CSS trong phạm vi trang. P2 ghép ảnh cùng reveal sau kiểm thử chức năng. Đánh đổi là bớt số tin thấy cạnh nhau trên màn hình rộng để đọc được lương và ca cùng hàng.
+
+• Mặc định 5 tin; lọc KCN Tân Hưng + thời vụ + ca đêm chỉ còn MD006; status=closed chỉ MD005; tin đóng không mở F03. URL sai được bỏ qua. Kiểm tra hai link menu, đổi ngôn ngữ, Back, làm mới, tìm tiếng Việt không dấu, Anh/Hàn và trạng thái rỗng.
+• Lưu MD005 và MD007, mở tab mới, gỡ từng tin và thử khi localStorage bị chặn. Kiểm tra hai trạng thái trống, focus và dữ liệu F03 bằng thông tin giả. Chạy lại tests/jobs-logic.mjs, jobs-sprint1.mjs, jobs-headline-locales.mjs và v14-forms-demo.mjs. Đợt nghiên cứu đã chạy 22 kiểm tra logic thành công.
+• Kiểm tra 320, 390, 768, 1440 px và zoom 200%, mục tiêu tương tác ≥44 px, chữ thường đạt tương phản 4.5:1, không tràn ngang. Đo thao tác lọc đến lúc vẽ kết quả dưới 200 ms với dữ liệu mẫu; kiểm tra chữ dài năm ngôn ngữ, không chờ reveal để thao tác, giữ noindex và không thêm JobPosting cho tin mẫu.

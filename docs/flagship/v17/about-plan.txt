@@ -1,0 +1,43 @@
+GIỚI THIỆU MINH ĐỨC — PHƯƠNG ÁN V17
+
+Mục tiêu
+
+Trưởng phòng nhân sự nhà máy cần biết Minh Đức phục vụ ai, xem được con người thật và mang hồ sơ vào cuộc họp. Người lao động cần biết ai hỗ trợ mình. Trang Giới thiệu sẽ giống một hồ sơ có thể đọc theo chương, với ảnh tư liệu, chú thích ngắn và mục lục. Trang Đối tác phục vụ tra tên. Brochure phục vụ đọc và in.
+
+Hiện trạng đã đối chiếu
+
+Đã đọc nguồn v16 f0035f6, bảng so sánh template HR2B, audit ảnh và xem ảnh ứng viên. Chưa kiểm tra giao diện trên trình duyệt. Các tuyến dưới đây dùng gốc tiếng Việt và các tiền tố /en, /zh, /ko, /ja. /about-us có ba giá trị, bốn thông tin phạm vi 05/03/B2B/FDI, ba giai đoạn, năm đối tác, bốn vai trò, bốn ảnh hoạt động, dấu ấn, dịch vụ và form. Khối bốn chỉ số 1200+/80+/15+/95% thuộc trang chủ v13. Hai bộ số có ý nghĩa riêng.
+
+PageHero nhận eyebrow/description nhưng chỉ xuất tiêu đề và breadcrumb. Ba nút tab lịch sử hiện chỉ ghi 01–03 dù đã hỗ trợ phím mũi tên. Chi tiết từng giai đoạn lặp nguyên câu tóm tắt. Lịch sử và dấu ấn có nút chuyển tay, chưa tự chạy. Ba mục dấu ấn đã vừa một hàng desktop nên mũi tên có thể không dịch được. Bốn vai trò đều mở cùng một lời giới thiệu. #activities cộng thêm scroll-margin vào khoảng bù header toàn cục. Trên /partners, ba lời kể giả định đứng trước danh sách đối tác.
+
+Hành trình và thứ tự đọc đề xuất
+
+1. Đầu /about-us. Giữ breadcrumb và H1 “Về Minh Đức”. Cột chữ 5/12 mang thông điệp “Nhân lực là tài sản” cùng câu dẫn “Minh Đức kết nối nhà máy phía Bắc với người lao động, từ lúc làm rõ vị trí đến khi hai bên trao đổi về công việc.” Cột ảnh 7/12 giữ đủ nhóm ở tỷ lệ ảnh gốc 2,14:1. Điện thoại đọc chữ, nút rồi đến ảnh. “Gửi nhu cầu nhân lực” tới form cuối trang qua neo mới #business-contact. “Xem hồ sơ năng lực” mở /e-brochure. Dùng nền xanh #20478f và chữ sáng dưới header desktop, đỏ cho CTA chính, Lato và Open Sans cho phần chữ.
+
+2. Mục lục trong luồng đọc dẫn đến #profile, #history, #partners, #activities và #achievements. Trên điện thoại dùng nút “Đến một mục” mở danh sách liên kết thông thường. #profile giới thiệu nhà máy/FDI miền Bắc, ba giá trị thành ba đoạn có tiêu đề, tiếp theo là bốn thông tin phạm vi trên nền xanh nhạt. Liên kết hồ sơ còn có trong chính #profile. Dùng lại số nhóm dịch vụ và điểm kết nối từ dữ liệu nguồn.
+
+3. #history giữ ba giai đoạn đồng bộ tab với ảnh. Nút ghi “Khởi đầu”, “Đồng hành”, “Mở rộng”, hiển thị tên đầy đủ trong nội dung. Desktop nhìn thấy giai đoạn trước và sau, điện thoại xem một giai đoạn. Chi tiết làm rõ việc thực hiện, chẳng hạn “Hai bên cùng xác định vị trí, ca làm và nơi làm việc”. Tách ảnh minh họa khỏi mốc lịch sử. Chỉ ghi năm khi có dữ liệu.
+
+4. #partners hiển thị đủ năm tên, CTA “Xem danh sách đối tác” tới /partners. Tiếp theo đặt bốn vai trò cạnh ảnh cuộc họp. Mỗi cửa sổ chi tiết có một việc cụ thể và một đường đi phù hợp, chẳng hạn “Tư vấn việc làm” tới /jobs, “Tư vấn tuyển sinh” tới /education. #activities dùng ảnh tư liệu và chú thích. Desktop một ảnh tập thể lớn rồi ba ảnh kế tiếp, mobile xếp cùng trình tự. #achievements giữ ba nội dung về minh bạch thông tin, hỗ trợ người lao động và phối hợp doanh nghiệp. Kết bằng năm dịch vụ, F01 mặc định và tùy chọn F02 hiện có.
+
+5. /partners và alias /testimonials. H1, dòng “Các đơn vị được nêu trong hồ sơ thông tin Minh Đức”, dải tên, ghi chú nguồn, rồi mới tới phần “Tình huống minh họa”, sau cùng là “Gửi nhu cầu nhân lực” tới /about-us#business-contact và “Xem việc đang tuyển” tới /jobs. Tránh đặt ảnh hay tên người kể sát một logo. Giữ ba logo hiện có trong public/partners/{luxshare.webp,foxconn.svg,samsung.svg} và dùng chữ cho JEILTECH VINA, TACU. Khi ảnh lỗi, hiện tên thành văn bản. Nếu danh sách rỗng, ẩn dải chạy và chỉ cách liên hệ để hỏi thông tin.
+
+6. /e-brochure giữ viewer v13 với ba trang chủ động, bộ đếm, nút trước/sau và “In / lưu PDF”. Khi chuyển trang chỉ đọc một thông báo ngắn, hiện đang có hai aria-live. In đủ bìa, năm dịch vụ, đối tác và liên hệ dù người đọc đang ở trang hai. Giữ đích menu “Hồ sơ năng lực” mở thẳng viewer trên cả năm locale.
+
+Hình ảnh và tải trang
+
+Ảnh đầu chọn 20260428_165033.jpg, bản gốc 4000×1868 ở /workspace/research/minhduc-v16/april-assets/1WQS2TxhBg_Rcj9hqaKU_Nvy9udHEv58w.jpg. Nhóm cầm cờ đứng dưới biển Minh Đức, mặt hơi tối. Giữ tỷ lệ gốc, không chồng chữ lên ảnh, kiểm ở 360 px trước khi duyệt. Xuất WebP 480/960/1600, dành ưu tiên tải cho một ảnh này. Ảnh cuộc họp /assets/minhduc-meeting-10s.webp giữ 16:9. Ảnh chụp màn hình /assets/minhduc-offices-20s.webp có chữ QUẢNG NINH xuyên khung, nên dùng /assets/minhduc-v16/recruitment-event.webp toàn khung 3:2 để minh họa giao lưu, tách khỏi chú thích niên đại.
+
+Thư viện dùng /assets/minhduc-v16/team-yearend.webp giữ hàng trước đang quỳ. Cùng thư mục, yearend-gifts.webp giữ cả quà và người, culture-birthday.webp giữ hai tay tạo hình phía trên, community.webp giữ dụng cụ dưới chân. Gắn kích thước, srcset và tải chậm ảnh dưới nếp gấp. Ảnh lỗi vẫn dành đúng chỗ và giữ chú thích. Ảnh thật đã đáp ứng nhu cầu nhận diện của trang. Nếu dùng nền kiến trúc AI chung ở /partners, chỉ đặt trong phần dẫn nhập, tách khỏi dải tên và chú thích rõ đây là phối cảnh minh họa.
+
+Chuyển động và thao tác
+
+Tái dùng RevealFrame. Khi đỉnh khối tới khoảng 84% chiều cao màn hình, chữ dịch lên 32 px trong 750 ms theo cubic-bezier(.22,1,.36,1). Các mục lệch 60 ms, trần 300 ms. Khi cuộn ngược qua ngưỡng 96%, thu về trong 300 ms. Mobile dịch 16 px. Giữ khối có focus luôn hiện. Rail lịch sử chuyển một vị trí trong 500 ms, bỏ chuyển cảnh ở ảnh tái xếp cuối vòng. Lịch sử nên có chu kỳ đọc 7 giây. Dùng chung useHomeCarousel, cho phép cấu hình chu kỳ từng rail. Dải logo giữ vòng 32 giây. Mọi rail có phần khuất tự chạy, có nút dừng nhìn thấy, dừng khi hover, focus, kéo, mở modal, khuất màn hình hoặc tab ẩn. Khi nội dung vừa hết một hàng, giấu nút thừa. Reduced-motion hoặc observer lỗi thì hiện nội dung tĩnh, nút chuyển tay vẫn hoạt động. Giữ Home/End, trái/phải ở tab. Escape đóng modal và trả focus. Không bắt cuộn dọc.
+
+Ưu tiên và nghiệm thu
+
+P0. Đối chiếu src/navigation.ts, src/partners.ts và viewer trước khi sửa. Kiểm 5 locale × 6 neo (gồm #business-contact mới), Back/Forward, alias, đổi ngôn ngữ giữ hash, một H1, tiêu đề neo không bị header che. Chuyển đến neo bằng bàn phím đặt focus tại tiêu đề đích. Dùng lại ContactForm, đưa focus đến trường sai đầu tiên và biên nhận phiên sau khi gửi thử. Bản in thử từ trang 2 có đủ ba phần, không lẫn điều khiển.
+
+P1. Sửa AboutPage.tsx, PartnersPage.tsx, BrochurePage.tsx cùng about-reference.css, partners-reference.css, brochure-reference.css và info-v16.css trong src/pages/info. Phối hợp chủ phần Dịch vụ khi chỉnh ServiceCustomers trong ServicesPages.tsx và hook chung src/useHomeCarousel.ts. Kiểm ở 360/768/1440 px, zoom 200%, không tràn ngang toàn trang. Nút ≥44 px, thân chữ ≥16 px, tương phản chữ thường ≥4,5:1. Cập nhật fixture ảnh khi thay ảnh. Chạy các bài about-anchors.mjs, info-v13.mjs, partners.mjs, motion-repeat-review.mjs trong tests/ và kiểm in, focus, dừng/phát trên trình duyệt khi có preview.
+
+P2. Cân sáng ảnh biển hiệu nếu cần, so với ảnh gốc trước khi chọn. Giữ khuôn hình rộng giúp nhận ra cả tập thể, đổi lại khuôn mặt nhỏ trên điện thoại. Mô tả trong HTML phải đọc được ngay khi ảnh đang tải.

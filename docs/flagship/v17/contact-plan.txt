@@ -1,0 +1,39 @@
+LIÊN HỆ VÀ CHỌN GIỜ TƯ VẤN | Phương án v17
+
+1. Người dùng cần đến đâu?
+
+Trưởng phòng nhân sự cần 40 lao động ca đêm có thể gửi địa điểm, ca và ngày cần người qua F01. Người lao động muốn hỏi địa chỉ có thể gọi ngay hoặc mở bản đồ. Người muốn trao đổi một câu hỏi ngắn dùng F02. Thiết kế nên giúp cả ba người nhận ra đúng lối vào trước khi phải đọc một biểu mẫu dài.
+
+Bản v16 tại f0035f6 bố trí /contact theo mẫu HR2B, danh bạ chiếm một phần ba, biểu mẫu hai phần ba. Trên mobile, CSS đưa form lên trước nhưng DOM vẫn đặt danh bạ trước. /contact mở F02, /contact#consultation trỏ đến form. Header và màn kết trang chủ trỏ tới /#business-contact, nơi F01 khóa chế độ và ghi nguồn home-business. Các CTA tại trang dịch vụ có thể mở F01 với dịch vụ đã chọn.
+
+/consultation đã có ba trạng thái chọn giờ, điền thông tin, nhận biên nhận. ContactForm tại đây lại cho chuyển sang F01. Đổi giờ gỡ form khỏi DOM nên có thể mất câu đã nhập. Việc tạo hồ sơ diễn ra trước lần kiểm tra ngày/giờ cuối, có thể sinh biên nhận khi để trang mở qua nửa đêm. Đây là nhận xét từ mã nguồn. Chưa kiểm tra hiển thị trên trình duyệt.
+
+2. Bố cục và lời dẫn
+
+/contact trên desktop. Breadcrumb → H1 “Liên hệ Minh Đức” → hotline bấm gọi và hai lối vào “Gửi nhu cầu nhân lực”, “Liên hệ chung”. Trên nền sáng, dùng chữ xanh #20478f, kiểu Lato/Open Sans, đỏ dành cho hành động chính. Bên phải lời dẫn là một ảnh dọc nhỏ. Tiếp theo, hai cột theo tỷ lệ 1:2. Cột hẹp mang tiêu đề “Trao đổi trực tiếp”, tên pháp nhân, Zalo, Facebook, email và “Chọn giờ tư vấn”. Cột rộng chứa biểu mẫu. Cuối trang là “Tìm điểm liên hệ”, ba dòng tên, địa chỉ và liên kết “Chỉ đường đến [điểm]”. Giữ details/summary gốc, mở sẵn Phúc Long. Tên điểm luôn nhìn thấy.
+
+Trên mobile, thứ tự DOM và thứ tự đọc đều là tiêu đề → hotline và lối tắt đến form/địa điểm → form một cột → các kênh khác → địa điểm. Ảnh ở sau các lối tắt hoặc dưới danh bạ khi màn hình hẹp. Lối vào doanh nghiệp chuyển F01 rồi đưa focus tới tiêu đề biểu mẫu. Lối vào chung và URL cũ vẫn mở F02. Hai nút chọn chế độ có aria-pressed. Dùng chung một bộ chọn và một form trong trang.
+
+F01 chia thành “Người liên hệ” và “Nhu cầu nhân lực”. Bắt buộc tên, điện thoại Việt Nam, địa điểm và ghi chú. Giữ doanh nghiệp, email, vị trí, số lượng nguyên dương khi nhập, ca, ngày cần người và dịch vụ. F02 bắt buộc tên và điện thoại, email và nội dung tùy chọn. Hiện hướng dẫn “Chỉ nhập dữ liệu mẫu. Biên nhận được giữ đến khi tải lại trang.” trước trường đầu. Nút cuối ghi “Gửi nhu cầu nhân lực” hoặc “Gửi câu hỏi”. Đổi chế độ giữ nháp riêng ngay trong component. Không thêm ô tải tệp. Luồng việc làm và tuyển sinh tiếp tục dùng F03–F06 theo ngữ cảnh.
+
+/consultation dùng một khối giữa trang. H1 “Chọn giờ tư vấn” → lời dẫn “Thử chọn thời gian bằng dữ liệu mẫu. Trang này không tạo lịch hẹn.” → ngày và bốn nút radio 09:00, 10:30, 14:00, 15:30 → “Tiếp tục”. Bước hai tóm tắt ngày theo locale, giờ đã chọn và nút “Đổi thời gian”, sau đó F02 khóa chế độ. Ngày tối thiểu giữ theo ngày cục bộ hiện tại. Khi quay lại, nhớ nháp F02 trong phiên tương tác. Kiểm tra lại lựa chọn trước khi tạo hồ sơ. Biên nhận hiển thị mã DEMO, ngày giờ đã chọn, trạng thái mô phỏng và “Chọn thời gian khác”. Chọn lại sau hoàn tất sẽ xóa nháp, trả focus về ngày.
+
+3. Danh bạ và hình ảnh
+
+Dùng src/company.ts cho trang, footer, launcher và liên kết bản đồ. Hotline 081 8919666, tel:0818919666. Zalo dùng số 0329138082 riêng. Facebook dùng md668.com.vn, email vieclamminhduc.vpv2@gmail.com. Ba điểm hiện có là Phúc Long (Phường Nếnh, TP Bắc Ninh), Rùa Vàng (Lạng Giang, Bắc Ninh), KCN Đông Mai (Quảng Ninh). Cả ba có URL Maps trong mã và tests/business-info.mjs, kể cả Đông Mai dù đoạn README cũ ghi khác. Hiển thị nguyên địa chỉ nguồn, để người dùng tự mở Maps khi cần.
+
+Ảnh chọn từ bộ đã audit, /workspace/attachments/93feaeb7-9b0c-45c9-8994-acb74b1ba975/20261017_153058.jpg. Đã xem preview có năm người và hoa dưới biển hiệu xanh. Chú thích “Hoạt động tập thể tại Minh Đức Vina”. Xuất WebP 480/960, xoay đúng EXIF, giữ toàn khung 3:4 và biển hiệu. Không gắn ảnh với một điểm trong danh bạ. Banner hiện có ở public/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/09/Lien-he-480.webp là cảnh cầu và thành phố. Hai trang này đã đủ hình với một ảnh tập thể thật. Dành nền trắng cho bước chọn giờ và xác nhận.
+
+4. Tương tác và chuyển động
+
+Giữ launcher hỗ trợ duy nhất, focus vào hotline khi mở, Escape trả về nút mở. Neo có khoảng trống dưới header. Mở accordion bằng Enter/Space. Trường lỗi có thông báo sát trường, aria-describedby, focus tới lỗi đầu. Với thiếu giờ, focus vào nhóm radio. Bấm gửi đôi tạo một mã. Biên nhận nhận focus và được đọc một lần. Khi tải gói trang, dùng role=status hiện có. Gửi biểu mẫu diễn ra tại chỗ, hiện biên nhận ngay. Nếu ảnh lỗi, tên công ty, hotline và địa chỉ vẫn đọc được.
+
+Dùng RevealFrame cho ảnh và phần giới thiệu danh bạ. Đi vào khoảng 84% chiều cao viewport, dịch lên 32px trong 750ms, cubic-bezier(.2,.7,.2,1). Cuộn ngược qua mốc 96%, trở về trong 300ms. Mobile giảm còn 12px. Đổi bước dùng fade 160ms, không dịch trường đang nhập. Focus khóa khối đang đọc. Reduced-motion hiển thị tức thời. Hai trang không có rail. Các rail ở những trang có nhúng F01 giữ autoplay, nút dừng, dừng khi hover/focus, ngoài viewport, tab ẩn hoặc giảm chuyển động.
+
+5. Thứ tự triển khai và nghiệm thu
+
+P0 — Chủ form sửa src/Contact.tsx và src/Consultation.tsx. Trước kiểm tra giao diện, thử thiếu/sai từng trường, đổi F01/F02, đổi giờ, qua ngày và bấm gửi đôi. Tiêu chí là đúng loại, đúng nguồn, nguyên nháp khi chỉnh, đúng một mã khi thành công, không có hồ sơ nếu lỗi, 0 yêu cầu mạng khi gửi. Xem hồ sơ F01/F02 tại ADMIN theo mã. Tải lại xóa dữ liệu mẫu.
+
+P1 — Chỉnh src/contact-reference.css, src/contact-sprint.css, src/Consultation.css, giữ src/form-experience-v16.css dùng chung. Dùng src/company.ts, src/SupportTools.tsx, src/App.tsx và src/Home.tsx để đối chiếu đầu mối. Nghiệm thu tại 320, 390, 768, 1440px và zoom 200%, năm ngôn ngữ, bàn phím và reduced-motion. Yêu cầu một H1, thứ tự focus khớp màn hình, trường ≥48px, nút ≥44px, không tràn ngang, launcher không che nút gửi. Đối chiếu chính xác ba href Maps. Chạy tests/consultation.mjs, business-info.mjs, support-tools.mjs, v14-forms-demo.mjs và kiểm tra hydration.
+
+P2 — Xuất ảnh, cập nhật manifest và alt năm ngôn ngữ, kiểm tra ảnh thật trên breakpoint. Ảnh dọc dài có thể đẩy hotline xuống thấp, nên ưu tiên lối gọi và biểu mẫu trong thứ tự đọc. Dùng ảnh nhỏ một lần, khai báo kích thước trước tải, giữ layout nếu thiếu ảnh.

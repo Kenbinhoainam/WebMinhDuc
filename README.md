@@ -1,3 +1,7 @@
+## Bản v17 — sửa huy hiệu header và phương án sáu nhóm trang
+
+Sửa số việc đã lưu: căn giữa, giữ vùng bấm 44 px, hiển thị `99+` từ 100 và đọc đủ số lượng qua nhãn truy cập. [Phương án tổng hợp](docs/flagship/v17/PHUONG-AN-TONG-HOP.txt) và [bảng thiết kế](docs/flagship/v17/review/index.html) gồm sáu báo cáo do sáu agent GPT-6.2 Astra nghiên cứu, cùng hai ảnh AI kiến trúc đã tối ưu. Các bố cục sáu nhóm trang là đề xuất, chưa triển khai. Xem [kiểm tra v17](docs/flagship/v17/VALIDATION.txt).
+
 ## Bản v16 hiện tại
 
 Hero 16:9 kín nền khi phát; desktop header trong suốt trên phim, mobile tách hàng 72px. Màn kết kiến trúc AI sáng chứa logo gốc, slogan và hai CTA. Nội dung/ảnh thật và hiệu ứng mới: [chi tiết v16](docs/flagship/v16-implementation.txt). Bản v13 đối chiếu: https://minhduc-v13-comparison.kenbinhoainam.chatgpt.site.
@@ -79,7 +83,7 @@ Thông tin nhập **không gửi ra ngoài**; dữ liệu giả đã nhập đư
 
 Chưa có backend, CMS vận hành, tiếp nhận hồ sơ thật, tệp riêng tư, email/Google Sheets, chống spam, analytics thật, AI hoặc CRM. Cần chốt quy tắc nghiệp vụ, nội dung, bảo mật và hạ tầng trước phát triển bản sản xuất. Xem [đối chiếu yêu cầu và quyết định](docs/sprint-1/requirements-and-decisions.md).
 
-Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ảnh/video HR2B chỉ là tham chiếu giao diện; không phải ảnh tập thể Minh Đức. Số liệu, lương, nhân vật, bài viết và sự kiện đều minh họa. Chi nhánh Quảng Ninh chưa có bản đồ chính xác nên dẫn về hotline. Tài khoản WeChat chưa được cung cấp. Sitemap trong ảnh mới đã được đối chiếu và áp dụng; người dùng xác nhận phần làm trong suốt là toàn bộ header/menu.
+Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ảnh/video HR2B chỉ là tham chiếu giao diện; không phải ảnh tập thể Minh Đức. Số liệu, lương, nhân vật, bài viết và sự kiện đều minh họa. Ba điểm Phúc Long, Rùa Vàng và KCN Đông Mai đều có liên kết Maps trong src/company.ts. Tài khoản WeChat chưa được cung cấp. Sitemap trong ảnh mới đã được đối chiếu và áp dụng; người dùng xác nhận phần làm trong suốt là toàn bộ header/menu.
 
 ## Kiến trúc
 

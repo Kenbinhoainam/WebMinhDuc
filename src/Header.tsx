@@ -508,8 +508,8 @@ export function Header() {
                   ja: `保存した求人：${saved.count}件`,
                 })}
               >
-                <Bookmark size={20} />
-                {saved.count > 0 && <span>{saved.count}</span>}
+                <Bookmark size={20} aria-hidden="true" />
+                {saved.count > 0 && <span className="header-saved-count" aria-hidden="true">{saved.count > 99 ? '99+' : saved.count}</span>}
               </Link>
               <LanguageSelector />
               <Link to="/#business-contact" className="header-contact">
