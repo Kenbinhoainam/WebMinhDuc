@@ -2,12 +2,13 @@ import {company} from './company';
 import {useRef} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight} from 'lucide-react';
-import {MEDIA, ButtonLink, useContact} from './shared';
+import {MEDIA, useContact} from './shared';
 import {AnimatedNumber, RevealFrame} from './motion';
 import PartnersStrip from './PartnersStrip';
 import {useTranslation} from './i18n';
 import {ContactForm} from './Contact';
 import HomeHero from './HomeHero';
+import {CompanyProfileCover} from './CompanyProfileCover';
 import {backgroundImage, responsiveImage} from './media';
 import {useScrollableRail} from './useHomeCarousel';
 import './home-reference.css';
@@ -31,34 +32,15 @@ const metrics = [
 
 function About() {
  const t=useTranslation();
- const photo='/assets/minhduc-v16/recruitment-field.webp';
  return <section id="about" aria-labelledby="field-title" className="section-home-about field-section">
-   <div className="field-container">
-     <div className="field-story">
-       <RevealFrame className="field-title" effect="left">
-         <p className="home-b2b-kicker">MINH ĐỨC VINA</p>
-         <h2 id="field-title">{t({vi:'Tuyển người theo ca cho nhà máy miền Bắc',en:'Shift recruitment for factories in northern Vietnam',zh:'为越南北部工厂招聘轮班人员',ko:'베트남 북부 공장의 교대 인력 채용',ja:'ベトナム北部の工場向けシフト人材採用'})}</h2>
-       </RevealFrame>
-       <RevealFrame className="field-portrait" effect="right">
-         <img src={photo} {...responsiveImage(photo,'(max-width: 767px) 100vw, (max-width: 1599px) 58vw, 820px')} alt={t({vi:'Nhân viên Minh Đức cầm hồ sơ tuyển dụng trước cổng nhà máy',en:'A Minh Đức team member holding recruitment documents outside a factory',zh:'Minh Đức 工作人员在工厂门口手持招聘资料',ko:'공장 앞에서 채용 서류를 든 Minh Đức 직원',ja:'工場前で採用書類を持つMinh Đứcのスタッフ'})} loading="lazy" decoding="async"/>
-       </RevealFrame>
-       <RevealFrame className="field-body" effect="up">
-         <p>{t({vi:'Từ lao động phổ thông đến thợ lành nghề, Minh Đức tìm người theo từng vị trí, ca làm và kế hoạch sản xuất của nhà máy FDI tại miền Bắc.',en:'From production workers to skilled technicians, Minh Đức recruits for the roles, shifts and production schedules of FDI factories in northern Vietnam.',zh:'从普工到熟练技工，Minh Đức 根据越南北部外资工厂的岗位、班次与生产计划招聘人员。',ko:'Minh Đức는 베트남 북부 외국인 투자 공장의 직무, 교대조와 생산 계획에 맞춰 생산직부터 숙련 기술자까지 채용합니다.',ja:'Minh Đứcはベトナム北部の外資系工場の職種・シフト・生産計画に合わせて、作業員から熟練技術者まで採用を支援します。'})}</p>
-         <ButtonLink to="/e-brochure">{t({vi:'Xem hồ sơ năng lực',en:'View company profile',zh:'查看公司简介',ko:'회사 소개서 보기',ja:'会社案内を見る'})}</ButtonLink>
-       </RevealFrame>
-     </div>
-     <Achievements/>
-   </div>
+   <CompanyProfileCover headingId="field-title">
+       <div className="field-metrics section-home-about-achievement" role="group" aria-label={t({vi:'Các chỉ số kết nối',en:'Connection figures',zh:'连接数据',ko:'연결 지표',ja:'つながりの指標'})}>
+         {metrics.map((m,i)=><RevealFrame className="field-stat-frame" key={m.label} delayMs={([300,500,700,900] as const)[i]}>
+           <div className="field-stat"><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><span>{m.label}</span></div>
+         </RevealFrame>)}
+       </div>
+   </CompanyProfileCover>
  </section>;
-}
-function Achievements() {
- const row=useRef<HTMLDivElement>(null), t=useTranslation();
- const overflow=useScrollableRail(row);
- return <div ref={row} data-auto-rail="" className="field-metrics section-home-about-achievement" tabIndex={overflow ? 0 : undefined} role="region" aria-label={t({vi:'Các chỉ số kết nối',en:'Connection figures',zh:'连接数据',ko:'연결 지표',ja:'つながりの指標'})}>
-   {metrics.map((m,i)=><RevealFrame className="field-stat-frame" key={m.label} delayMs={([300,500,700,900] as const)[i]}>
-     <div className="field-stat"><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><span>{m.label}</span></div>
-   </RevealFrame>)}
- </div>;
 }
 function Solutions() {
   const row=useRef<HTMLDivElement>(null);

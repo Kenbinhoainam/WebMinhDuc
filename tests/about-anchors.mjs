@@ -35,9 +35,16 @@ try {
   assert.match(teamPhoto.getAttribute('srcset'), /480w.*960w.*1600w/,'documentary role image serves phone and desktop variants');
   assert.equal(doc.querySelectorAll('.info-team-grid button').length,4,'four accessible role details');
   assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>img.getAttribute('src').startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
-  const labels=[...doc.querySelectorAll('.info-stat-grid article span')].map(node=>node.textContent.trim());
+  const labels=[...doc.querySelectorAll('#profile .field-cover .field-stat > span')].map(node=>node.textContent.trim());
   assert.equal(labels.length,4);if(locale==='vi')vietnameseLabels=labels;else assert.ok(labels.every((label,index)=>label!==vietnameseLabels[index]),`${locale}: all scope labels translated`);
-  assert.ok(doc.querySelector(`#profile a[href="${base}/e-brochure"]`),'existing brochure remains accessible');
+  const cover=doc.querySelector('#profile .field-cover');
+  assert.ok(cover.querySelector('h2#about-profile-title') && cover.querySelector('.field-metrics[role=group][aria-label]'));
+  assert.deepEqual([...cover.querySelectorAll('.field-stat strong')].map(node=>node.textContent),['05','03','B2B','FDI']);
+  assert.equal(doc.querySelectorAll('.about-profile .field-metrics').length,1);
+  assert.equal(doc.querySelector('.info-about-statistics'),null,'scope facts appear only inside the cover');
+  assert.notEqual(cover.querySelector('img').getAttribute('src'),doc.querySelector('.md-page-masthead img').getAttribute('src'),'cover and masthead have distinct subjects');
+  assert.equal(cover.querySelectorAll(`a[href="${base}/e-brochure"]`).length,1,'one localized brochure action inside the cover');
+  assert.ok(doc.querySelector('#profile .field-cover + .info-about-values'),'three value statements directly follow the cover');
   assert.ok(doc.querySelector(`#partners a[href="${base}/partners"]`),'existing partners page remains accessible');
   for(const id of ids.filter(id=>id!=='business-contact'))assert.doesNotMatch(doc.getElementById(id).textContent,/mô phỏng|nhân vật giả định|giải thưởng đã được xác nhận/i,`${locale}: no repeated demo disclaimer`);
   assert.equal(languageSwitchUrl(`${base}/about-us`,'?source=menu','#partners','ja'),'/ja/about-us?source=menu#partners');

@@ -65,9 +65,9 @@ try {
       }
       if (name === 'AboutPage') {
         assert.equal(doc.querySelectorAll('.info-about-values article').length, 3);
-        assert.ok(doc.querySelector('.info-about-statement > .info-about-values'), 'value cards use the reviewed spanning grid position');
+        assert.ok(doc.querySelector('#profile .field-cover + .info-about-values'), 'three values have a row below the company profile cover');
         assert.equal(doc.querySelectorAll('button.info-team-card').length, 4, 'sample profiles expose actual dialog triggers');
-        assert.equal(doc.querySelectorAll('.info-stat-grid article').length, 4);
+        assert.equal(doc.querySelectorAll('#profile .field-metrics .field-stat').length, 4);
         assert.equal(doc.querySelector('.info-about-values [role="tablist"],.info-value-tabs'), null, 'source simultaneous values replace custom value tabs');
         assert.equal(doc.querySelectorAll('#history [role="tab"]').length, 3, 'history phases retain a distinct synchronized selector');
         assert.equal(doc.querySelectorAll('#history [role="tabpanel"]').length, 1);
@@ -230,12 +230,6 @@ try {
     if(rule.parent.type==='atrule' && rule.parent.params.includes('767px') && decl.value==='86%') mobileNewsWidth=true;
   }));
   assert.ok(desktopNewsWidth && mobileNewsWidth, 'news rail keeps overflow for autoplay on desktop and mobile');
-  const infoCss=postcss.parse(await readFile('src/info.css','utf8'));
-  let spansValues=false;
-  infoCss.walkRules('.info-about-statement>.info-about-values', rule=>{
-    if(rule.parent.type==='root') rule.walkDecls('grid-column', decl=>{if(decl.value.replaceAll(' ','')==='1/-1') spansValues=true;});
-  });
-  assert.ok(spansValues, 'About values explicitly span both desktop statement columns; this checks the known source regression, not rendered width');
   const serviceCss=postcss.parse(await readFile('src/pages/info/services-reference.css','utf8'));
   serviceCss.walkRules(rule=>{
     for(const selector of rule.selectors){

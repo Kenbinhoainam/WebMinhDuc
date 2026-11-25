@@ -2,6 +2,7 @@ import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
 import {Link, useLocation, useNavigationType} from 'react-router-dom';
 import {ChevronRight} from 'lucide-react';
 import {PageMasthead} from '../../PageMasthead';
+import {CompanyProfileCover} from '../../CompanyProfileCover';
 import {Modal} from '../../shared';
 import {useTranslation} from '../../i18n';
 import {RevealFrame} from '../../motion';
@@ -241,15 +242,20 @@ export function AboutPage(){
       <Link className="btn btn-secondary" to="/e-brochure">Xem hồ sơ năng lực</Link>
     </PageMasthead>
     <ChapterNav/>
-    <section id="profile" className="section info-about-intro"><div className="container info-about-statement">
-      <div><h2>Hồ sơ năng lực</h2><Link className="about-text-action" to="/e-brochure">Đọc hồ sơ trực tuyến</Link></div>
-      <div><p className="info-lead">Minh Đức hoạt động trong lĩnh vực cung ứng nhân lực và giới thiệu việc làm, tập trung vào nhu cầu lao động phổ thông tại các nhà máy, doanh nghiệp sản xuất.</p>
-        <p>Chúng tôi hướng tới đồng hành cùng các nhà máy và doanh nghiệp sản xuất, bao gồm doanh nghiệp FDI, tại khu vực phía Bắc.</p></div>
-      <div className="info-about-values">{values.map((item,index)=><RevealFrame effect="up" delayMs={index*80} key={item.title}><article><h3>{item.title}</h3><p>{item.text}</p></article></RevealFrame>)}</div>
-    </div></section>
-    <section className="info-about-statistics" aria-label="Phạm vi hoạt động"><div className="container"><div className="info-stat-grid">
-      {metrics.map(([value,name],index)=><RevealFrame key={value} effect="up" delayMs={index*80}><article><strong>{value}</strong><span>{name}</span></article></RevealFrame>)}
-    </div></div></section>
+    <section id="profile" className="field-section about-profile" aria-labelledby="about-profile-title">
+      <CompanyProfileCover headingId="about-profile-title">
+        <div className="field-metrics" role="group" aria-label="Phạm vi hoạt động">
+          {metrics.map(([value,name],index)=><RevealFrame className="field-stat-frame" key={name} effect="up" delayMs={index*80}>
+            <div className="field-stat"><strong>{value}</strong><span>{name}</span></div>
+          </RevealFrame>)}
+        </div>
+      </CompanyProfileCover>
+      <div className="info-about-values">
+        {values.map((item,index)=><RevealFrame effect="up" delayMs={index*80} key={item.title}>
+          <article><h3>{item.title}</h3><p>{item.text}</p></article>
+        </RevealFrame>)}
+      </div>
+    </section>
     <HistorySection/>
     <section id="partners" className="section container md-about-partners"><h2>Đối tác tiêu biểu</h2>
       <p className="about-intro-line">Các đối tác được giới thiệu trong hồ sơ thông tin Minh Đức.</p>
