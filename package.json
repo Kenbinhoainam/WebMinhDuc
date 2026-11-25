@@ -12,7 +12,7 @@
     "test:hydration": "node tests/hydration.mjs",
     "test:sprint": "node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs && node tests/consultation.mjs",
     "audit:i18n": "node scripts/audit-i18n.mjs",
-    "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs",
+    "test:review": "node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs && node tests/jobs-headline-locales.mjs",
     "predev": "node scripts/generate-locales.mjs --check",
     "prebuild": "node scripts/generate-locales.mjs --check",
     "generate:locales": "node scripts/generate-locales.mjs",
@@ -21,7 +21,7 @@
     "test:sitemap": "node tests/sitemap-destinations.mjs && node tests/sitemap-review.mjs",
     "test:header": "node tests/header-reference.mjs && node tests/header-hover-review.mjs",
     "test:motion": "node tests/motion.mjs && node tests/motion-repeat-review.mjs",
-    "test:hero": "node tests/hero-review.mjs",
+    "test:hero": "node tests/hero-review.mjs && node tests/hero-lifecycle.mjs",
     "test:reference": "node tests/reference-structure.mjs && node tests/home-reference-motion.mjs && node tests/info-v13.mjs && node tests/editorial-reference.mjs",
     "test:carousel": "node tests/home-carousel.mjs && node tests/info-carousel.mjs && node tests/careers-carousel.mjs"
   },

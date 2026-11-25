@@ -3,11 +3,23 @@ import {ArrowUpRight, ChevronLeft, ChevronRight, Users, Building2, ClipboardChec
 import {PageHero, SectionHeading, ButtonLink, Modal} from '../../shared';
 import {useTranslation} from '../../i18n';
 import {RevealFrame} from '../../motion';
+import {responsiveImage} from '../../media';
 import {uploads} from './data';
 import {ServiceCards, InfoContact} from './components';
 import './about-reference.css';
+import './info-v16.css';
 import {partners} from '../../partners';
 import PartnerLogo from '../../PartnerLogo';
+function AboutActivities(){
+ const t=useTranslation();
+ const items=[
+  {image:'team-yearend',label:t({vi:'Gặp gỡ cuối năm',en:'A year-end gathering',zh:'年终相聚',ko:'연말 모임',ja:'年末の集い'}),alt:t({vi:'Tập thể Minh Đức trong buổi gặp gỡ cuối năm',en:'The Minh Đức team at a year-end gathering',zh:'明德团队在年终聚会中合影',ko:'연말 모임에서 함께한 민득 팀',ja:'年末の集いでのミンドゥックのチーム'})},
+  {image:'yearend-gifts',label:t({vi:'Những khoảnh khắc sẻ chia',en:'Moments of sharing',zh:'分享时刻',ko:'함께 나누는 순간',ja:'分かち合うひととき'}),alt:t({vi:'Mọi người cùng chụp ảnh với những phần quà trong buổi gặp gỡ',en:'A group pictured with gifts at a gathering',zh:'聚会中大家与礼物合影',ko:'모임에서 선물과 함께 찍은 단체 사진',ja:'集いで贈り物と一緒に撮影した集合写真'})},
+  {image:'culture-birthday',label:t({vi:'Niềm vui trong tập thể',en:'Celebrating together',zh:'共同庆祝',ko:'함께하는 축하',ja:'ともに祝う時間'}),alt:t({vi:'Tập thể cùng nhau mừng sinh nhật',en:'The team celebrating a birthday together',zh:'团队一起庆祝生日',ko:'함께 생일을 축하하는 팀',ja:'チームで誕生日を祝う様子'})},
+  {image:'community',label:t({vi:'Kết nối cộng đồng',en:'Connecting with the community',zh:'连接社区',ko:'지역사회와의 연결',ja:'地域とのつながり'}),alt:t({vi:'Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời',en:'A group together during an outdoor activity',zh:'大家在户外活动中合影',ko:'야외 활동 중 함께 찍은 단체 사진',ja:'屋外活動での集合写真'})},
+ ];
+ return <section id="activities" className="section md-v16-activities"><div className="container"><RevealFrame effect="up"><div className="md-v16-activities-heading"><span className="eyebrow">{t({vi:'CON NGƯỜI MINH ĐỨC',en:'OUR PEOPLE',zh:'明德团队',ko:'민득의 사람들',ja:'ミンドゥックの人々'})}</span><h2>{t({vi:'Những kết nối tạo nên Minh Đức',en:'The connections that make Minh Đức',zh:'连接成就明德',ko:'민득을 만드는 연결',ja:'ミンドゥックをつくるつながり'})}</h2><p>{t({vi:'Từ những buổi gặp gỡ của tập thể đến các hoạt động cùng cộng đồng, mỗi khoảnh khắc đều là một phần hành trình của chúng tôi.',en:'From team gatherings to moments shared with the community, each is part of our journey.',zh:'从团队相聚到社区活动，每一个时刻都是我们旅程的一部分。',ko:'팀 모임부터 지역사회와 함께한 활동까지, 모든 순간이 우리의 여정입니다.',ja:'チームの集いから地域との活動まで、一つひとつの時間が私たちの歩みです。'})}</p></div></RevealFrame><div className="md-v16-activities-grid">{items.map((item,index)=><RevealFrame key={item.image} effect="up" delayMs={300+index*100}><figure className="md-v16-activity"><img {...responsiveImage(`/assets/minhduc-v16/${item.image}.webp`, '(max-width: 767px) 100vw, 50vw')} alt={item.alt} loading="lazy" decoding="async"/><figcaption>{item.label}</figcaption></figure></RevealFrame>)}</div></div></section>;
+}
 function HistorySection(){
  const [phase,setPhase]=useState(0), [detail,setDetail]=useState(false), previous=useRef(0), t=useTranslation();
  const change=(next:number)=>{previous.current=phase;setPhase(next)};
@@ -45,6 +57,7 @@ export function AboutPage() {
     <HistorySection />
     <AboutPartners />
     <AboutTeam />
+    <AboutActivities />
     <AboutDocuments />
     <section className="section wide"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Giải pháp nhân lực" description="Dành cho doanh nghiệp cần người và người lao động cần việc."/></RevealFrame><RevealFrame effect="up" delay={1}><ServiceCards/></RevealFrame></section><InfoContact />
   </>;

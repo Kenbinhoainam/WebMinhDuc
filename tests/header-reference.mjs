@@ -30,7 +30,10 @@ try {
  assert.ok(declarations('.site-header.site-header.is-scrolled').some(([p,v])=>p==='background'&&v==='rgba(250,252,252,.97)'),'scrolled header uses high-opacity light glass');
  assert.ok(declarations('.site-header.site-header.is-scrolled').some(([p,v])=>p==='color'&&v==='#20343e'),'scrolled header uses dark foreground');
  assert.ok(declarations('.site-header::before').some(([p,v])=>p==='background'&&v==='transparent'),'top header has no dark background slab');
- assert.ok(declarations('.site-header:not(.is-scrolled) .brand::before').some(([p,v])=>p==='background'&&v.includes('radial-gradient')),'only logo gets a soft local contrast halo');
+ assert.equal(declarations('.site-header:not(.is-scrolled) .brand::before').length,0,'logo halo removed');
+ assert.ok(declarations('main:has(.section-home-banner)').some(([p,v])=>p==='padding-top'&&v==='72px'),'mobile home reserves a header row');
+ assert.ok(declarations('body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled)').some(([p,v])=>p==='color'&&v==='#20343e'),'bright end frame uses dark header text');
+ assert.ok(declarations('body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled) .desktop-nav-heading > a').some(([p,v])=>p==='text-shadow'&&v==='none'),'end frame removes dark text shadow');
  assert.ok(declarations('.site-header .brand').some(([p,v])=>p==='width'&&v==='92px'),'transparent original logo has a larger default width');
  assert.ok(declarations('.site-header .brand').some(([p,v])=>p==='overflow'&&v==='visible'),'logo halo is not clipped by base brand styles');
  assert.ok(declarations('.site-header .header-inner').some(([p,v])=>p==='height'&&v==='5rem'));

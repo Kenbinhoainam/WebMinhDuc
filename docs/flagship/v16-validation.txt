@@ -1,0 +1,18 @@
+Kiểm chứng v16 — 25/11/2026
+
+ĐÃ ĐẠT (trên source v16)
+- TypeScript + Vite client/SSR + prerender 205 trang, catalog freshness.
+- Sáu forms F01–F06, định dạng/giới hạn tệp, quản trị trong bộ nhớ, jobs filters/closed-vacancy/application, tư vấn và tuyển sinh.
+- 7 menu/14 mục con, hover/bàn phím/touch/Escape, 5 locale và chuyển ngôn ngữ giữ URL; support focus mở/đóng.
+- Video: 15 tình huống media hiện có; 7 lifecycle độc lập bổ sung (end offscreen, tab hidden, no IO/manual, no IO offscreen/return, observe failure, reduced-motion manual, autoplay blocked).
+- Hero SSR năm ngôn ngữ: một H1, đúng hai CTA trong màn kết, poster ưu tiên, không loop, không tải video trước gating. CSS nguồn stage 16:9 đặc, ảnh chỉ ở màn kết.
+- Reveal hai chiều: frame ổn định, hysteresis, focus lock, resize, reduced-motion, stale callbacks. Autoplay trên home/services/careers/partners giữ pause/focus/touch/visibility safeguards.
+- Reference structures 12 loại trang × 5 locale; bốn metric, brochure v13, 5service variants, article/event, About anchors + Back/Forward. V16 home 3needs, 5steps, 3news riêng, 1video, 1partnerrail, F01 locked.
+- SEO 205 routes, preload poster/lazy route CSS, hydration 26 route/locale states, generated catalog parity.
+- npm test: 22 saved-job/attachment checks. Harness cũ trỏ vào validateApplicationFile đã bị loại bỏ từ phiên trước; cập nhật dùng validator hiện tại validateDemoFiles, giữ quy tắc sản phẩm.
+- Tiêu đề jobs bị ghép hai câu khiến bỏ lỡ catalog từ v13: tách text nodes để dùng bản dịch hiện có; focused five-language SSR test đạt. Production build và hydration được chạy lại sau sửa này.
+- Independent review tìm và xác nhận sửa no-IO endcard, support keyboard entry và redundant play attempts.
+
+GIỚI HẠN
+Managed preview lỗi relay port4173 readiness, status stopped. Chưa có phiên browser QA thành công, screenshot responsive, Lighthouse/CWV hoặc phép đo độ mượt. DOM/CSS/source assertions không chứng minh pixel-perfect/contrast ở mọi frame video. Không có API gửi hồ sơ thật; sample content cần cập nhật khi làm production.
+Không thay đổi bản v13 đối chiếu hoặc quyền xem site.

@@ -1,38 +1,52 @@
-/* The complete film remains centered and uncropped against a full-bleed backdrop. */
-.home-hero.section-home-banner{display:block;position:relative;min-height:0;height:auto;overflow:hidden;background:#132028;color:#fff}
-.home-hero .hero-stage{position:relative;display:grid;width:100%;min-height:100svh;background:#132028 url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp') center/cover no-repeat}
-.hero-media{position:absolute;inset:0;overflow:hidden;background:#13202855}
+/* Playback owns an opaque, exact-ratio stage. Architecture exists only in the finish layer. */
+.home-hero.section-home-banner{display:block;position:relative;min-height:0;height:auto;overflow:hidden;background:#152c5d;color:#fff}
+.home-hero .hero-stage{position:relative;display:grid;width:100%;aspect-ratio:16/9;min-height:0;background:#152c5d;isolation:isolate}
+.hero-media{position:absolute;inset:0;overflow:hidden;background:#152c5d}
 .hero-media .hero-poster,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .hero-media video{opacity:0}
 .hero-media video.is-ready{opacity:1}
-.home-hero .hero-brand-finish{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;background:transparent;color:#20478f;text-align:center;opacity:0;visibility:hidden;pointer-events:none}
-.home-hero .hero-brand-finish.is-visible{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:linear-gradient(rgba(12,27,42,.22),rgba(12,27,42,.22)),url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp') center/cover no-repeat}
-.home-hero .hero-end-card{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,1.3vw,18px);width:min(100%,700px);padding:clamp(32px,3vw,44px);border:1px solid rgba(255,255,255,.8);border-radius:24px;background:rgba(248,251,255,.91);box-shadow:0 22px 70px rgba(8,29,51,.22)}
-.home-hero .hero-finish-logo{width:clamp(140px,12vw,180px);height:auto;object-fit:contain}
-.home-hero .hero-finish-slogan{font-family:Lato,'Open Sans',sans-serif;font-weight:700;font-size:clamp(28px,3vw,46px);line-height:1.15;letter-spacing:-.025em;margin:0}
-.home-hero .hero-finish-message{max-width:640px;font-size:clamp(14px,1.3vw,18px);line-height:1.6;color:#43586a;margin:0}
-.home-hero .hero-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:8px}
-.home-hero .hero-actions .btn{min-width:0;min-height:46px;justify-content:center;font-size:13px}
-.home-hero .hero-actions .btn-secondary{color:#20478f;border-color:#20478f;background:#ffffffad}
+.home-hero .hero-brand-finish{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(100px,8vw,160px) 24px 92px;color:#20478f;text-align:center;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden;isolation:isolate}
+.home-hero .hero-brand-finish::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;opacity:0}
+.home-hero .hero-brand-finish::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f3f8fd12,#f3f8fda8 38%,#f3f8fdb3 62%,#f3f8fd12)}
+.home-hero .hero-brand-finish.is-visible{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}
+.home-hero .hero-brand-finish.is-visible::before{opacity:1;background-image:url('/assets/minhduc-v16/flagship-atrium.webp')}
+.home-hero .hero-end-card{display:flex;flex-direction:column;align-items:center;gap:clamp(14px,1.6vw,24px);width:min(100%,880px);padding:0}
+.home-hero .hero-finish-logo{width:clamp(134px,12vw,190px);height:auto;object-fit:contain}
+.home-hero .hero-finish-slogan{font-family:Lato,'Open Sans',sans-serif;font-weight:700;font-size:clamp(32px,4.1vw,66px);line-height:1.12;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.home-hero .hero-finish-message{max-width:660px;font-size:clamp(16px,1.35vw,20px);line-height:1.6;color:#364f6a;margin:0;text-wrap:balance}
+.home-hero .hero-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px;margin-top:10px}
+.home-hero .hero-actions .btn{min-width:190px;min-height:54px;justify-content:center;font-size:15px;padding:16px 24px;box-shadow:0 8px 24px #17447914}
+.home-hero .hero-actions .btn-secondary{color:#20478f;border-color:#20478f;background:#ffffffc9}
 .home-hero .hero-actions .btn-secondary:hover{color:white;border-color:#20478f;background:#20478f}
 .home-hero .hero-semantic-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.home-hero .hero-player-tools{position:absolute;right:24px;bottom:16px;z-index:2;display:flex;align-items:center;gap:8px}
-.home-hero .hero-player-tools button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;border:1px solid #ffffff70;border-radius:999px;background:#17242bcc;color:#fff;padding:10px;font-size:12px}
+.home-hero .hero-player-tools{position:absolute;left:max(24px,env(safe-area-inset-left));bottom:20px;z-index:2;display:flex;align-items:center;gap:8px}
+.home-hero .hero-player-tools button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;border:1px solid #ffffff70;border-radius:999px;background:#152b49e6;color:#fff;padding:10px 14px;font-size:14px;cursor:pointer}
+.home-hero .video-sound{padding:10px!important}
 .home-hero .video-control span{position:absolute;overflow:hidden;width:1px;height:1px;clip-path:inset(50%);white-space:nowrap}
 .home-hero .video-control.is-idle span,.home-hero .video-control:focus-visible span{position:static;width:auto;height:auto;clip-path:none}
-.home-hero .hero-player-tools button:hover{background:#17242b}
-@media(prefers-reduced-motion:no-preference){.hero-brand-finish{transition:opacity 650ms ease,visibility 650ms}.hero-media video{transition:opacity 250ms ease}}
+.home-hero .hero-player-tools button:hover{background:#20478f}
+@media(prefers-reduced-motion:no-preference){
+ .hero-media video{transition:opacity 200ms ease}
+ .hero-brand-finish.is-visible{animation:hero-finish-in 700ms ease both}
+ .hero-brand-finish.is-visible::before{animation:hero-space-settle 1800ms cubic-bezier(.16,1,.3,1) both}
+ .hero-brand-finish.is-visible .hero-end-card>*{animation:hero-brand-rise 800ms cubic-bezier(.16,1,.3,1) both}
+ .hero-brand-finish.is-visible .hero-finish-slogan{animation-delay:100ms}
+ .hero-brand-finish.is-visible .hero-finish-message{animation-delay:180ms}
+ .hero-brand-finish.is-visible .hero-actions{animation-delay:260ms}
+ @keyframes hero-finish-in{from{opacity:0}to{opacity:1}}
+ @keyframes hero-space-settle{from{transform:scale(1.04)}to{transform:scale(1)}}
+ @keyframes hero-brand-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+}
 @media(max-width:767px){
- .home-hero .hero-stage{aspect-ratio:16/9;min-height:0;background-image:none}
- .home-hero:is([data-stage='ended'],[data-stage='fallback']) .hero-stage{aspect-ratio:auto;min-height:100svh;background-image:url('/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp')}
- .home-hero .hero-brand-finish{padding:100px 14px 92px}
- .home-hero .hero-end-card{gap:12px;padding:24px 20px}
- .home-hero .hero-finish-logo{width:clamp(110px,32vw,150px)}
- .home-hero .hero-finish-slogan{font-size:clamp(25px,6vw,34px)}
- .home-hero .hero-finish-message{font-size:14px}
- .home-hero .hero-actions{width:100%;gap:10px}
- .home-hero .hero-actions .btn{font-size:12px;padding:11px 16px}
- .home-hero .hero-player-tools{bottom:12px;right:12px}
- .home-hero .hero-player-tools button{font-size:11px;padding:8px}
+ .home-hero .hero-brand-finish{padding:48px 22px 90px}
+ .home-hero .hero-brand-finish::after{background:#f3f8fda6}
+ .home-hero .hero-end-card{gap:18px}
+ .home-hero .hero-finish-logo{width:136px}
+ .home-hero .hero-finish-slogan{font-size:clamp(28px,7.5vw,40px)}
+ .home-hero .hero-finish-message{font-size:16px}
+ .home-hero .hero-actions{width:min(100%,370px);gap:10px;margin-top:6px}
+ .home-hero .hero-actions .btn{width:100%;font-size:14px;min-height:50px;padding:13px 16px}
+ .home-hero .hero-player-tools{bottom:12px;left:max(12px,env(safe-area-inset-left))}
+ .home-hero .hero-brand-finish.is-visible::before{background-image:url('/assets/minhduc-v16/flagship-atrium-960.webp')}
 }
 @media(forced-colors:active){.home-hero .hero-brand-finish,.home-hero .hero-end-card{background:Canvas;color:CanvasText}.home-hero .hero-player-tools button{background:Canvas;color:CanvasText;border-color:CanvasText}}

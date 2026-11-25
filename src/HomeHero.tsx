@@ -12,6 +12,11 @@ export default function HomeHero() {
   const t = useTranslation();
   const section = useRef<HTMLElement>(null), video = useRef<HTMLVideoElement>(null);
   const mounted = useRef(false), visible = useRef(false), manual = useRef(false), pausedByUser = useRef(false);
+  const pendingEnd = useRef(false), observerAvailable = useRef(false);
+  const measureVisible = () => {
+    const box = section.current?.getBoundingClientRect();
+    return Boolean(box && box.bottom > 0 && box.top < window.innerHeight && box.right > 0 && box.left < window.innerWidth);
+  };
   const finished = useRef(false), failed = useRef(false), attempt = useRef(0), fallbackTried = useRef(false);
   const [stage, setStage] = useState<Stage>('poster');
   const [playing, setPlaying] = useState(false), [frameReady, setFrameReady] = useState(false), [muted, setMuted] = useState(true);
@@ -43,13 +48,20 @@ export default function HomeHero() {
     startPlayback.current = play;
     const update = () => {
       if (!mounted.current) return;
-      if (finished.current) return;
+      if (!observerAvailable.current) visible.current = measureVisible();
+      if (finished.current) {
+        // A late ended event must not change page height while the reader is below the film.
+        if (pendingEnd.current && visible.current && !document.hidden) {
+          pendingEnd.current = false; setStage('ended');
+        }
+        return;
+      }
       if (document.hidden || !visible.current || (!manual.current && !allowed())) {
         attempt.current++; el.pause();
         if (!allowed()) setStage('fallback');
         return;
       }
-      if (!pausedByUser.current && !failed.current) play();
+      if ((observerAvailable.current || manual.current) && !pausedByUser.current && !failed.current && el.paused) play();
     };
     let observer: IntersectionObserver | null = null, observing = false;
     try {
@@ -59,21 +71,27 @@ export default function HomeHero() {
           visible.current = entries[0]?.isIntersecting ?? false;
           update();
         }, {threshold: .1});
-        if (section.current) {observer.observe(section.current); observing = true;}
+        if (section.current) {observer.observe(section.current); observing = true; observerAvailable.current = true;}
       } else setStage('fallback');
-    } catch {observer?.disconnect(); observer = null; visible.current = false; setStage('fallback');}
+    } catch {observer?.disconnect(); observer = null; observerAvailable.current = false; visible.current = false; setStage('fallback');}
     const preferenceChange = () => {
       if (!allowed()) {manual.current = false; pausedByUser.current = true;}
       update();
     };
     document.addEventListener('visibilitychange', update);
+    // Without IO, manual playback still concludes and defers layout changes offscreen.
+    const geometryUpdate = () => {if (!observerAvailable.current) update();};
+    window.addEventListener('scroll', geometryUpdate, {passive:true});
+    window.addEventListener('resize', geometryUpdate);
     motion.addEventListener('change', preferenceChange);
     connection?.addEventListener?.('change', preferenceChange);
     update();
     return () => {
-      mounted.current = false; observing = false; attempt.current++;
+      mounted.current = false; observing = false; observerAvailable.current = false; attempt.current++;
       observer?.disconnect(); el.pause(); startPlayback.current = () => {};
       document.removeEventListener('visibilitychange', update);
+      window.removeEventListener('scroll', geometryUpdate);
+      window.removeEventListener('resize', geometryUpdate);
       motion.removeEventListener('change', preferenceChange);
       connection?.removeEventListener?.('change', preferenceChange);
     };
@@ -85,7 +103,7 @@ export default function HomeHero() {
     if (!el.paused && !failed.current && !finished.current) {
       pausedByUser.current = true; attempt.current++; el.pause(); setPlaying(false);
     } else {
-      if (finished.current) {el.currentTime = 0; finished.current = false; setFrameReady(false);}
+      if (finished.current) {el.currentTime = 0; finished.current = false; pendingEnd.current = false; setFrameReady(false);}
       manual.current = true; pausedByUser.current = false; failed.current = false;
       startPlayback.current();
     }
@@ -109,7 +127,7 @@ export default function HomeHero() {
         <video ref={video} className={frameReady ? 'is-ready' : undefined} muted={muted} playsInline preload="none"
           onPlaying={() => {if (!finished.current && !pausedByUser.current && !video.current?.paused) {failed.current = false; setStage('playing'); setPlaying(true); setFrameReady(true);}}}
           onPause={() => setPlaying(false)}
-          onEnded={() => {finished.current = true; attempt.current++; setPlaying(false); setStage('ended');}}
+          onEnded={() => {finished.current = true; attempt.current++; setPlaying(false); pendingEnd.current = true; if (!document.hidden && (observerAvailable.current ? visible.current : measureVisible())) {pendingEnd.current = false; setStage('ended');}}}
           onError={onError}/>
       </div>
       <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>
@@ -123,7 +141,7 @@ export default function HomeHero() {
         </div>
        </div>
       </div>
-      <noscript><style>{'.home-hero .hero-stage{min-height:100svh;aspect-ratio:auto}.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:linear-gradient(rgba(12,27,42,.22),rgba(12,27,42,.22)),url(/optimized/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner-1600.webp) center/cover no-repeat}.hero-player-tools{display:none!important}'}</style></noscript>
+      <noscript><style>{'.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1;background-image:url(/assets/minhduc-v16/flagship-atrium.webp)}.hero-player-tools{display:none!important}'}</style></noscript>
       <div className="hero-player-tools">
         <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={ending ? replayLabel : playing ? pauseLabel : playLabel}>
           {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{ending ? replayLabel : playing ? pauseLabel : playLabel}</span>

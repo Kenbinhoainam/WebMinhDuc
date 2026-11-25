@@ -1,3 +1,7 @@
+## Bản v16 hiện tại
+
+Hero 16:9 kín nền khi phát; desktop header trong suốt trên phim, mobile tách hàng 72px. Màn kết kiến trúc AI sáng chứa logo gốc, slogan và hai CTA. Nội dung/ảnh thật và hiệu ứng mới: [chi tiết v16](docs/flagship/v16-implementation.txt). Bản v13 đối chiếu: https://minhduc-v13-comparison.kenbinhoainam.chatgpt.site.
+
 ## v15 — Hero và hình ảnh, 25/11/2026
 
 Header trong suốt phủ lên video. Video đầy đủ 132,13 giây được căn giữa và giữ tỷ lệ; mobile phát trong khung 16:9. Khi phát hết, thẻ kính chứa logo gốc, slogan và hai CTA nằm giữa vùng hero trên ảnh kiến trúc xanh/vàng. Khung kết thúc tăng chiều cao theo nội dung trên màn hình hẹp; phát lại do người xem chọn.
@@ -50,7 +54,7 @@ npm run audit:i18n
 
 ## Nâng cấp flagship
 
-Menu đúng 2 cấp với 7 nhóm chính và 19 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng xuất hiện khi nhận focus; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Bản v11: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
+Menu đúng 2 cấp với 7 nhóm chính và 14 mục con theo sitemap; header một hàng trong suốt trên hero, kính sáng khi cuộn; menu con và chọn ngôn ngữ đồng bộ; mobile dùng accordion; selector ngôn ngữ có cờ SVG và tên; đối tác chạy liên tục với điều khiển dừng luôn nhìn thấy; rail dịch vụ điều khiển được ở mọi cỡ; animation được gắn vào các khối chính. Ảnh dùng WebP/srcset, video chỉ tải khi phù hợp, bản dịch được chia theo ngôn ngữ. Bản v11: [đối chiếu nguồn trực tiếp và menu v11](docs/flagship/live-reference-v11.md), [kiểm thử v11](docs/flagship/reference-v11-review.md). Bản trước: [bố cục, chuyển động và menu v9](docs/flagship/reversible-reveal-v9.md). Bản trước: [giao diện và chuyển động theo video v8](docs/flagship/video-reference-v8.md). Bản trước: [đồng bộ header, hover và đối tác v7](docs/flagship/unified-header-v7.md). Bản trước: [header theo ảnh tham chiếu v6](docs/flagship/header-reference-v6.md). Bản trước: [menu, kính và chuyển động v5](docs/flagship/sitemap-motion-v5.md). Kế hoạch, nghiên cứu và kết quả đo trước đó: [research-and-validation.md](docs/flagship/research-and-validation.md).
 
 [Báo cáo đối chiếu chi tiết 41 trang](docs/flagship/comparison-v12-v13/Doi-chieu-chi-tiet-41-trang-HR2B-MinhDuc.pdf) · [Tái dựng từng trang và kiểm thử v13](docs/flagship/reference-v13-review.md) · [Link media trước nâng cấp](docs/flagship/media-before.csv) · [Link media đang dùng và phiên bản tối ưu](docs/flagship/media-v13.csv) · [Google Sheet: link, vị trí và công dụng ảnh/video](https://docs.google.com/spreadsheets/d/1nlSt8TERqKC4Bq-0ea6CmovRRph1Vfgpl2U02bwCIBA/edit).
 
@@ -61,17 +65,17 @@ Sau khi sửa các catalog, chạy `npm run generate:locales` trước build. `p
 - Năm ngôn ngữ hoạt động: Việt, Anh, Trung giản thể, Hàn, Nhật. Chuyển ngôn ngữ giữ trang, bộ lọc và anchor; các bản dịch là bản nháp prototype.
 - Bảy nhóm menu chính: Trang chủ, Giới thiệu, Dịch vụ, Việc làm, Tuyển dụng nội bộ, Tin tức, Liên hệ; trang phụ có lối truy cập theo nhóm.
 - Năm dịch vụ: giới thiệu/cung ứng nhân lực, cho thuê lao động, headhunt/tay nghề, tuyển sinh cao đẳng/đại học, setup tổ chức/phần mềm doanh nghiệp.
-- Trang chủ theo thứ tự khối HR2B: video hero, chỉ số, giới thiệu, giải pháp, cảm nhận, đối tác, tin tức, sự kiện và video minh họa. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
+- Trang chủ v16: video hero, giới thiệu, bốn chỉ số v13, ba nhu cầu doanh nghiệp, năm giải pháp, quy trình cùng đối tác, con người Minh Đức, biểu mẫu nhân lực, địa điểm kết nối và ba bài viết/hoạt động. Animation cuộn, số đếm, hover, modal/menu hỗ trợ reduced-motion.
 - Tám vị trí mẫu, bộ lọc KCN/loại việc/tay nghề/ca ngày–đêm/chuyên–xoay/trạng thái; lưu việc trên thiết bị. Tuyển nội bộ tách khỏi danh sách lao động. Tin đóng vẫn đọc được nhưng không nhận ứng tuyển thử.
 - Ba chương trình tuyển sinh giả định theo hình thức từ xa/chính quy; không gắn với trường chưa xác minh.
-- Sáu biểu mẫu F01–F06: nhu cầu doanh nghiệp, liên hệ chung, ứng tuyển lao động, ứng tuyển nội bộ, tư vấn tuyển sinh, hồ sơ tuyển sinh. CV nội bộ/hồ sơ tuyển sinh bắt buộc; PDF/DOC/DOCX tối đa 5 MB theo giả định demo.
+- Sáu biểu mẫu F01–F06: nhu cầu doanh nghiệp, liên hệ chung, ứng tuyển lao động, ứng tuyển nội bộ, tư vấn tuyển sinh, hồ sơ tuyển sinh. Tệp tùy chọn theo từng biểu mẫu, JPG/JPEG/PNG/PDF/DOC/DOCX; tối đa 3 tệp, 5 MB/tệp và 15 MB tổng (đơn vị thập phân).
 - `/consultation`: chọn ngày/giờ, điền biểu mẫu F02 và xem xác nhận minh họa; không đặt lịch hoặc gửi dữ liệu thực tế.
 - `/admin-demo`: sáu hàng đợi hồ sơ giả, tìm/lọc, mã tin/chương trình, nguồn, ngày nhận, người phụ trách, trạng thái, cảnh báo trùng, xuất CSV mẫu, CMS và vai trò minh họa.
 - SEO/AEO: HTML prerender, tiêu đề/mô tả/canonical/OG riêng, `html lang`, hreflang, sitemap; Organization/WebSite/WebPage/BreadcrumbList/FAQPage khớp nội dung. Giữ **noindex** và quyền xem riêng tư. Không dùng schema JobPosting/Event/Review cho dữ liệu giả.
 
 ## Dữ liệu và giới hạn
 
-Thông tin nhập và tệp **không gửi, không tải lên, không lưu**. Quản trị chỉ chứa dữ liệu giả độc lập; liên kết “xem hồ sơ mẫu” không mang dữ liệu cá nhân sang quản trị. Thao tác quản trị tồn tại trong bộ nhớ đến khi tải lại trang. Chuyển vai trò là mô phỏng giao diện, không phải xác thực hay phân quyền bảo mật.
+Thông tin nhập **không gửi ra ngoài**; dữ liệu giả đã nhập được giữ trong bộ nhớ phiên và có thể xem trong ADMIN đến khi tải lại trang. Nội dung tệp không được đọc, tải lên hay lưu. Thao tác quản trị tồn tại trong bộ nhớ đến khi tải lại trang. Chuyển vai trò là mô phỏng giao diện, không phải xác thực hay phân quyền bảo mật.
 
 Chưa có backend, CMS vận hành, tiếp nhận hồ sơ thật, tệp riêng tư, email/Google Sheets, chống spam, analytics thật, AI hoặc CRM. Cần chốt quy tắc nghiệp vụ, nội dung, bảo mật và hạ tầng trước phát triển bản sản xuất. Xem [đối chiếu yêu cầu và quyết định](docs/sprint-1/requirements-and-decisions.md).
 
@@ -89,7 +93,7 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 
 ## Kiểm thử
 
-Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 205 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/reference-v13-review.md`.
+Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 205 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/v16-implementation.txt`.
 
 Kiểm thử DOM dùng jsdom, không thay thế kiểm thử trực quan. Managed preview gặp lỗi relay readiness timeout; chưa có phiên kiểm tra trực quan thành công cho bản này. Chưa xác minh giao diện, video hoặc responsive trực tiếp trên browser và chưa có điểm Lighthouse/CWV.
 

@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 
 const folder = '.partners-test';
 await mkdir(folder, {recursive:true});
-await build({entryPoints:['src/PartnersStrip.tsx'], bundle:true, format:'esm', platform:'node', packages:'external', outfile:`${folder}/bundle.mjs`, logLevel:'silent'});
+await build({stdin:{contents:"export {default as PartnersStrip} from './src/PartnersStrip'; export {LocaleProvider} from './src/i18n';",resolveDir:process.cwd(),sourcefile:'partners-test.tsx',loader:'tsx'}, bundle:true, format:'esm', platform:'node', packages:'external', loader:{'.css':'empty'}, outfile:`${folder}/bundle.mjs`, logLevel:'silent'});
 const dom = new JSDOM('<div id="root"></div>', {pretendToBeVisual:true});
 for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
@@ -19,7 +19,7 @@ globalThis.IntersectionObserver=class {
 };
 const React=await import('react');
 const {createRoot}=await import('react-dom/client');
-const {default:PartnersStrip}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);
+const {PartnersStrip,LocaleProvider}=await import(pathToFileURL(`${process.cwd()}/${folder}/bundle.mjs`).href);
 const root=createRoot(document.getElementById('root'));
 try {
  await React.act(async()=>root.render(React.createElement(PartnersStrip)));
@@ -51,6 +51,9 @@ try {
  Object.defineProperty(document,'hidden',{configurable:true,value:false});await React.act(async()=>document.dispatchEvent(new Event('visibilitychange')));
  assert.equal(strip.dataset.visible,'true');
  const button=document.querySelector('.partners-toggle');
+ const visualCss=await readFile('src/flagshipvisual.css','utf8');
+ assert.match(visualCss, /\.partners-toggle\s*\{[^}]*display:\s*inline-flex/,'pause control is visible without focus');
+ assert.match(visualCss, /\.partners-toggle\s*\{[^}]*min-height:\s*44px/,'pause control has a comfortable target');
  assert.equal(button.getAttribute('aria-pressed'),'false');
  await React.act(async()=>button.click());
  assert.equal(button.getAttribute('aria-pressed'),'true');
@@ -68,6 +71,18 @@ try {
  await React.act(async()=>staleCallback([{isIntersecting:true}]));
  assert.equal(document.querySelector('.partners-strip').dataset.visible,'false','stale callback after observe failure cannot start loop');
  assert.equal(document.querySelector('.partners-strip').dataset.static,'true');
+ const {renderToStaticMarkup}=await import('react-dom/server');
+ const labels={vi:'Tạm dừng chuyển động đối tác',en:'Pause partner animation',zh:'暂停合作伙伴动画',ko:'파트너 애니메이션 일시 정지',ja:'パートナーの動きを一時停止'};
+ for(const [locale,label] of Object.entries(labels)) {
+  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(PartnersStrip)));
+  const rendered=new JSDOM(html);assert.equal(rendered.window.document.querySelector('.partners-toggle').getAttribute('aria-label'),label,`${locale} pause label`);rendered.window.close();
+ }
+ const playLabels={vi:'Phát chuyển động đối tác',en:'Play partner animation',zh:'播放合作伙伴动画',ko:'파트너 애니메이션 재생',ja:'パートナーの動きを再生'};
+ for(const [locale,label] of Object.entries(playLabels)) {
+  await React.act(async()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(PartnersStrip,{key:locale}))));
+  const toggle=document.querySelector('.partners-toggle');await React.act(async()=>toggle.click());
+  assert.equal(toggle.getAttribute('aria-label'),label,`${locale} play label`);
+ }
  const css=await readFile('src/motion.css','utf8');
  assert.match(css,/data-static="true"\] \.partners-viewport\s*\{\s*overflow:\s*visible/,'static fallback is not clipped');
  assert.match(css,/data-static="true"\] \.partners-set \[data-repeat\]/,'static fallback hides repeated names');

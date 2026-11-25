@@ -514,5 +514,113 @@
         "src": "/optimized/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a-1600.webp"
       }
     ]
+  },
+  "/assets/minhduc-v16/team-yearend.webp": {
+    "width": 7728,
+    "height": 5152,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/team-yearend-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/team-yearend-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/team-yearend.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v16/yearend-gifts.webp": {
+    "width": 7728,
+    "height": 5152,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/yearend-gifts-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/yearend-gifts-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/yearend-gifts.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v16/culture-birthday.webp": {
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/culture-birthday-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/culture-birthday-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/culture-birthday.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v16/recruitment-field.webp": {
+    "width": 3000,
+    "height": 4000,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/recruitment-field-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/recruitment-field-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/recruitment-field.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v16/recruitment-event.webp": {
+    "width": 2560,
+    "height": 1706,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/recruitment-event-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/recruitment-event-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/recruitment-event.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v16/community.webp": {
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v16/community-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v16/community-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v16/community.webp"
+      }
+    ]
   }
 }

@@ -5,13 +5,16 @@ import './motion.css';
 /** Observe the stable outer box. left/right name the starting side; zoom-right matches AOS zoom-in-right (from left). */
 export function RevealFrame({children, effect = 'up', delay, delayMs, className, contentClassName}: {
   children: ReactNode;
-  effect?: 'left' | 'right' | 'up' | 'zoom' | 'zoom-right';
+  effect?: 'left' | 'right' | 'up' | 'zoom' | 'zoom-right' | 'media';
   delay?: 0 | 1 | 2 | 3 | 400 | 600 | 800;
   delayMs?: number;
   className?: string;
   contentClassName?: string;
 }) {
-  const explicitDelay = delayMs !== undefined && Number.isFinite(delayMs) && delayMs >= 0 ? delayMs : undefined;
+  // Compress legacy AOS delays into a short, capped stagger.
+  const explicitDelay = delayMs !== undefined && Number.isFinite(delayMs) && delayMs >= 0
+    ? Math.min(300, Math.round(delayMs * .3))
+    : undefined;
   const style = explicitDelay === undefined ? undefined : {'--reveal-delay': `${explicitDelay}ms`} as CSSProperties;
   return <div className={className} style={style} data-reveal={effect} data-reveal-delay={delay} data-reveal-delay-ms={explicitDelay} data-reveal-frame="">
     <div className={['motion-content', contentClassName].filter(Boolean).join(' ')}>{children}</div>

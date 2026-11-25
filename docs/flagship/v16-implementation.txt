@@ -1,0 +1,25 @@
+Minh Đức Vina — v16, 25/11/2026
+
+Triển khai theo bảy lựa chọn đã xác nhận
+- Desktop header trong suốt trên phim; mobile header riêng cao 72 px. Nền màn kết sáng đổi chữ menu sang xanh đậm, giữ header trong suốt.
+- Phim gốc 1024×576, 132,133 giây, H.264/WebM, tự phát không tiếng khi phù hợp. Không cắt cảnh, không loop; giữ nút phát/dừng, phát lại, âm thanh. Reduced-motion/tiết kiệm dữ liệu/mạng 2G cần người dùng bấm phát.
+- Stage chính xác 16:9, nền đặc. Ảnh kiến trúc chỉ gắn vào lớp màn kết, không có ảnh lộ phía trên/dưới phim. Màn kết giãn theo nội dung trên mobile; deferred end khi khuất hoặc tab ẩn tránh thay đổi chiều cao bất ngờ khi người dùng đọc bên dưới.
+- Màn kết rộng, không khung kính: logo thật tách nền theo pixel, slogan “Nhân lực là tài sản”, mô tả nhà máy/FDI miền Bắc, “Gửi nhu cầu nhân lực” và “Tìm việc làm”. Fade/settle/stagger 700–1800 ms; reduced-motion không chạy chuyển động.
+- Trang chủ: giới thiệu, bốn metric v13, ba nhu cầu, năm dịch vụ, năm bước phối hợp + đối tác, ảnh thật con người Minh Đức, F01, văn phòng, ba bài viết/hoạt động riêng biệt. Bỏ lặp phim và nội dung tin giả lặp cùng đích.
+- Chuyển động cuộn hai chiều: observed frame ổn định, translate 32–40 px, thời gian vào 750 ms/ra 300 ms; delay tối đa 300 ms; ảnh reveal với scale nhẹ. Các rail vẫn tự chạy, có điều khiển dừng và tự tạm ngưng khi hover/focus/ngoài màn hình/tab ẩn/reduced-motion.
+- Sáu biểu mẫu giữ nguyên hành vi v14, nâng kích thước chữ, trường và trạng thái focus/lỗi/biên nhận. Dữ liệu vẫn chỉ trong bộ nhớ phiên demo, không có gửi hồ sơ thật.
+- Một nút hỗ trợ mở hotline, Zalo, Facebook, tư vấn và lên đầu trang; mở bằng bàn phím đưa focus vào tác vụ đầu, Escape trả focus.
+- Giữ menu 7/14, năm ngôn ngữ, noindex, audience owner-only và site đối chiếu v13.
+
+Ảnh
+244 tệp trong thư mục cung cấp đã được kiểm tra trong audit trước triển khai (230 nội dung hash riêng, 14 bản sao byte). Bảng kết quả từng tệp: v16-photo-audit.csv; bản xem đầy đủ: /workspace/research/minhduc-v16/Anh-Minh-Duc-review.html. Phân loại: 16 chọn lọc (gồm logo), 76 phù hợp nội dung, 139 gần trùng, 13 không khuyến nghị.
+Sáu ảnh thật đưa vào web: recruitment-event, team-yearend, yearend-gifts, culture-birthday, recruitment-field, community. Nguồn, SHA256, kích thước, EXIF và biến thể: v16-media.json. Ảnh tập thể DSCF7800 có hàng trước ngồi; không phải cùng khung đứng trong ảnh người dùng. DSCF7810 là ảnh trao quà. Không diễn giải các ảnh này thành giải thưởng/khách hàng/hợp đồng đã xác minh.
+Ảnh kiến trúc mới do OpenAI image_gen tạo, không dùng logo hoặc người thật làm đầu vào, không phải văn phòng Minh Đức. Prompt/SHA: v16-architecture-source.txt. PNG 1672×941 được encode WebP 1600px (~121KB) và 960px (~56KB), không upscale; chỉ dùng màn kết hero. Sáu ảnh thật có biến thể 480/960/1600, giữ tỷ lệ tự nhiên và alt năm ngôn ngữ.
+
+Kiểm chứng
+TypeScript, production build/prerender và các bộ test chức năng được chạy sau khi source đóng băng. Các bài kiểm tra giữ video lifecycle, header/support bàn phím, reveal hai chiều, autoplay, năm locale, forms/tệp/demo-memory, sitemap, hồ sơ v13 và SEO/hydration. Chi tiết kết quả cuối ghi trong v16-validation.txt.
+Managed preview thất bại: “relay could not open browser port 4173: timed out waiting for relay readiness”; status “Sites preview stopped”. Không dựng server/browser khác để vượt hạ tầng. Chưa kiểm chứng trực quan breakpoint, màu sắc/contrast trên từng frame phim, chuyển cảnh thực tế hay Lighthouse/CWV. Tests DOM/CSS không thay thế kiểm tra trình duyệt.
+
+Xuất bản
+Nguồn Sites hiện có: appgprj_6af9854ff97481918e5f4fb346668a2b. Không thay audience. v13 đối chiếu giữ nguyên tại https://minhduc-v13-comparison.kenbinhoainam.chatgpt.site.
+Execution image thiếu bộ scripts Sites; sau khi kiểm tra các vị trí cài đặt, dùng cầu nối Git/tar cục bộ /workspace/research/minhduc-v16/sites-source-bridge.mjs với credential gốc Sites qua stdin ẩn. Mở nguồn bằng fetch/ff-only; đóng gói commit/push/kiểm tra remoteSHA rồi tar output build và hosting manifest. Không lưu token trong file hay Git.

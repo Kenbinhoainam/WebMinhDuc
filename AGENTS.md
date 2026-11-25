@@ -49,3 +49,13 @@ Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho nh�
 - Người dùng xác nhận khôi phục cả trang hồ sơ và khối trong ảnh 2 như v13: menu Hồ sơ năng lực mở thẳng `/e-brochure`; ba mục Giới thiệu còn lại giữ anchor. `/about-us#profile` vẫn hoạt động.
 - Khôi phục bốn thẻ chỉ số và chuyển động v13. Các con số 1200+, 80+, 15+, 95% là nội dung mẫu đã được cho phép; cần xác minh trước sản xuất.
 - Dùng ảnh tham chiếu chất lượng cao, phân biệt ảnh minh họa doanh nghiệp với ảnh hoạt động thật Minh Đức; tránh ảnh mang logo HR2B trong nội dung mới.
+
+## Quyết định v16 — 25/11/2026 (thay thế các quy tắc v15 mâu thuẫn)
+
+- Desktop header trong suốt chồng lên phim; mobile dùng hàng riêng 72 px. Màn kết sáng đổi chữ header sang xanh đậm; bỏ quầng sáng logo.
+- Hero giữ đúng tỷ lệ 16:9 ở mọi chiều rộng khi phát, nền đặc không lộ ảnh phía sau. Video gốc 132,13 giây tự phát không tiếng khi thiết bị cho phép, không loop.
+- Màn kết dùng kiến trúc AI sáng/xanh thương hiệu, không có hộp kính; logo tách nền theo pixel, slogan và hai CTA ở chính giữa hero. Màn kết mobile tăng chiều cao theo nội dung. Khi video kết thúc lúc khuất/tab ẩn, hoãn đổi chiều cao đến khi hero lại hiện.
+- Bố cục nội dung v16 theo hành trình doanh nghiệp, giữ 4 thẻ chỉ số và viewer hồ sơ v13. Dùng 6 ảnh thật đã audit, thêm mục Hoạt động trong trang Giới thiệu.
+- Giữ reveal hai chiều và tất cả rail tự chạy. Chuyển cảnh nổi bật nhưng stagger tối đa 300 ms, có pause nhìn thấy, bảo vệ focus/reduced-motion/ngoài viewport.
+- Sáu form giữ nguyên trường, validation, quy tắc tệp và biên nhận trong bộ nhớ phiên; chỉ cải thiện trình bày/focus. Một launcher hỗ trợ duy nhất.
+- Ảnh AI là không gian ý niệm, không phải cơ sở thật của Minh Đức. Nguồn ảnh và audit lưu trong docs/flagship; không tự ghi lên bảng nguồn bên ngoài.

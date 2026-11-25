@@ -113,7 +113,7 @@ function JobBrowser({ internal = false, savedOnly = false }: { internal?: boolea
 }
 
 export function JobsPage() {
-  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><RevealFrame><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>Một công việc phù hợp. Một khởi đầu vững vàng.</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div></div></RevealFrame><div id="job-listings"><JobBrowser /></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section></>;
+  return <><PageHero title="Cơ hội việc làm" eyebrow="DÀNH CHO NGƯỜI LAO ĐỘNG" description="Tìm công việc phù hợp. Bắt đầu hành trình mới." image={HERO_IMAGE} /><section className="section jobs-section"><div className="container"><RevealFrame><div className="jobs-intro"><div><span className="eyebrow">CÙNG MINH ĐỨC</span><h2>{'Một công việc phù hợp.'}{' '}{'Một khởi đầu vững vàng.'}</h2><p>Khám phá cơ hội theo địa điểm và công việc bạn quan tâm. Minh Đức đồng hành để bạn hiểu rõ vị trí trước khi quyết định.</p></div></div></RevealFrame><div id="job-listings"><JobBrowser /></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section></>;
 }
 
 export function SavedJobsPage() {

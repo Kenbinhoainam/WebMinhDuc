@@ -38,26 +38,30 @@ try {
       }
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
-        const sequence=sections.map(node => [...node.classList].find(value => value.startsWith('section-home-') || value.startsWith('home-b2b-')));
-        assert.deepEqual(sequence, ['section-home-banner','section-home-about','section-home-about-achievement','section-home-solution','section-home-customer','home-b2b-process','section-home-news','section-home-event','section-home-video','home-b2b-offices','home-b2b-contact'], `${label}: homepage buyer journey`);
+        const sequence=sections.map(node => [...node.classList].find(value => value.startsWith('section-home-') || value.startsWith('home-b2b-') || value.startsWith('home-v16-')));
+        assert.deepEqual(sequence, ['section-home-banner','section-home-about','section-home-about-achievement','home-v16-needs','section-home-solution','home-v16-process','home-v16-people','home-b2b-contact','home-b2b-offices','section-home-news'], `${label}: homepage buyer journey`);
         for (const section of sections.slice(1)) assert.ok(section.querySelector('[data-reveal]'), `${label}: ${section.className} includes progressive reveal coverage`);
         const frames=[...doc.querySelectorAll('[data-reveal-frame]')];
-        assert.ok(frames.length > 4, 'stable frames cover more than the original About-only reveal');
+        assert.ok(frames.length > 4, 'stable frames cover the journey');
         for (const frame of frames) {
           assert.equal(frame.children.length, 1, 'each observed frame has one normal-flow animation child');
           assert.ok(frame.firstElementChild.classList.contains('motion-content'));
         }
         assert.equal(doc.querySelectorAll('[data-reveal] [data-reveal]').length, 0, 'nested reveals must not multiply transforms or hide interactive descendants twice');
-        const customers = doc.querySelector('.section-home-customer');
-        assert.ok(customers.querySelector('.partners-track'), 'customer composition includes its logo rail');
-        assert.equal(customers.querySelectorAll('.home-b2b-need-list article').length,3, 'three buyer needs');
+        assert.equal(doc.querySelectorAll('.home-v16-need').length,3, 'three buyer needs');
+        assert.equal(doc.querySelectorAll('.home-v16-need button').length,3, 'each need can initiate an inquiry');
         assert.equal(doc.querySelectorAll('.partners-strip').length,1, 'single partner loop');
-        assert.equal(doc.querySelectorAll('.home-b2b-steps li').length,5, 'five process steps');
+        assert.ok(doc.querySelector('.home-v16-process .partners-track'), 'partner rail belongs to process evidence');
+        assert.equal(doc.querySelectorAll('.home-v16-steps > li').length,5, 'five process steps');
         assert.ok(doc.querySelector('#business-contact .contact-form'), 'business inquiry form');
-        assert.ok(doc.querySelectorAll('.section-home-news article').length > 3, 'news rail has content beyond the three visible desktop cards');
+        assert.equal(doc.querySelectorAll('.section-home-news article').length,3, 'news rail has three unique articles');
+        assert.equal(new Set([...doc.querySelectorAll('.section-home-news article h3 a')].map(a=>a.getAttribute('href'))).size,3, 'news destinations are distinct');
         assert.equal(doc.querySelectorAll('.section-home-news .ref-rail-controls button').length, 2);
-        assert.equal(doc.querySelectorAll('.section-home-video button.home-b2b-video-button').length, 1);
-        assert.equal(doc.querySelector('.section-home-video video'), null, 'intro movie loads only after activation');
+        assert.ok(doc.querySelector('.section-home-news .ref-carousel-pause'), 'news autoplay exposes a pause control');
+        assert.equal(doc.querySelectorAll('video').length,1, 'one company hero video');
+        assert.equal(doc.querySelectorAll('.home-b2b-video-button,.section-home-event,.ref-testimonial-card').length,0, 'no duplicate intro or invented event/testimonial section');
+        assert.equal(doc.querySelectorAll('.home-v16-people img[src^="/assets/minhduc-v16/"]').length,2, 'people section uses two real activity images');
+        assert.ok(doc.querySelector('.home-v16-people a[href$="/about-us#activities"]'), 'people section links to activities');
       }
       if (name === 'AboutPage') {
         assert.equal(doc.querySelectorAll('.info-about-values article').length, 3);
@@ -183,6 +187,13 @@ try {
   css.walkRules('.ref-news-grid', rule => rule.walkDecls('overflow-x', decl => {if (decl.value === 'auto') rail = true;}));
   css.walkRules('.ref-partner-grid', rule => rule.walkDecls('display', decl => {if (decl.value === 'grid') grid = true;}));
   assert.ok(rail && grid, 'news rail and static partner-grid source rules are present');
+  const homeV16=postcss.parse(await readFile('src/home-flagship-v16.css','utf8'));
+  let desktopNewsWidth=false,mobileNewsWidth=false;
+  homeV16.walkRules('.home-v16-news .ref-news-card', rule=>rule.walkDecls('flex-basis', decl=>{
+    if(rule.parent.type==='root' && /\/2\.5/.test(decl.value)) desktopNewsWidth=true;
+    if(rule.parent.type==='atrule' && rule.parent.params.includes('767px') && decl.value==='86%') mobileNewsWidth=true;
+  }));
+  assert.ok(desktopNewsWidth && mobileNewsWidth, 'news rail keeps overflow for autoplay on desktop and mobile');
   const infoCss=postcss.parse(await readFile('src/info.css','utf8'));
   let spansValues=false;
   infoCss.walkRules('.info-about-statement>.info-about-values', rule=>{

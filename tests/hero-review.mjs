@@ -28,11 +28,13 @@ try {
  }
  const css=await readFile('src/hero-media.css','utf8');
  assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain;object-position:center/,'film remains centered and uncropped');
- assert.match(css,/\.hero-end-card\s*\{[^}]*width:min\(100%,700px\)[^}]*border-radius:24px[^}]*background:rgba\(248,251,255,\.91\)/,'compact translucent card');
- assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*background:linear-gradient\(rgba\(12,27,42,\.22\).*Executive-Search-banner-1600\.webp/,'finish-specific backdrop is above the video and remains visible through subtle scrim');
- assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*width:100%;min-height:100svh/,'desktop stage fills viewport');
- assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*aspect-ratio:16\/9;min-height:0/,'mobile playback is 16:9');
- assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*position:relative[^}]*pointer-events:auto/,'visible end card contributes layout height and links accept input');
- assert.match(css,/data-stage='ended'.*data-stage='fallback'.*hero-stage\s*\{[^}]*aspect-ratio:auto;min-height:100svh/,'mobile end card can grow beyond film ratio');
+ assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*width:100%;aspect-ratio:16\/9;min-height:0/,'all playback viewports keep native16:9 without height floor');
+ const stageRule=css.match(/\.home-hero \.hero-stage\s*\{([^}]*)\}/)[1];
+ assert.ok(!stageRule.includes('url(')&&!stageRule.includes('100svh'),'active stage cannot expose decorative photo or viewport-ratio bands');
+ const mediaRule=css.match(/\.hero-media\s*\{([^}]*)\}/)[1];
+ assert.match(mediaRule,/background:#[0-9a-f]{6}(?:;|$)/i,'media has an opaque backing');
+ assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*position:relative[^}]*pointer-events:auto/,'visible conclusion contributes intrinsic height and accepts links');
+ assert.match(css,/\.hero-brand-finish\.is-visible::before\s*\{[^}]*background-image:url/,'decorative image belongs only to finish state');
+ assert.ok(!css.includes('min-height:100svh'),'finish growth uses content rather than a forced viewport floor');
  console.log('PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules');
 } finally {await rm(temp,{recursive:true,force:true});}

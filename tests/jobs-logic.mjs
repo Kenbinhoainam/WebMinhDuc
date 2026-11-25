@@ -7,8 +7,8 @@ import ts from 'typescript';
 // Tests below exercise its actual data, normalization, saved-job store and CV validation.
 const read = file => fs.readFileSync(new URL(`../src/${file}`, import.meta.url), 'utf8');
 // Assemble the real data, store and page functions in a single isolated test module.
-const source = ["import {useMemo,useSyncExternalStore} from 'react';", read('jobs-data.ts'), read('saved-jobs.ts').replace(/^import .*;\n/gm,''), read('JobsPages.tsx').replace(/^import .*;\n/gm,'').replace(/^export (?:type )?\{.*\} from .*;\n/gm,'')].join('\n');
-const js = ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText + '\nexports.__review={parseSaved,normalized,validateApplicationFile,getSavedSnapshot,subscribeSaved};';
+const source = ["import {useMemo,useSyncExternalStore} from 'react';", read('jobs-data.ts'), read('sharedformvalidation.ts'), read('saved-jobs.ts').replace(/^import .*;\n/gm,''), read('JobsPages.tsx').replace(/^import .*;\n/gm,'').replace(/^export (?:type )?\{.*\} from .*;\n/gm,'')].join('\n');
+const js = ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText + '\nexports.__review={parseSaved,normalized,validateDemoFiles,getSavedSnapshot,subscribeSaved};';
 const key='minhduc.saved-jobs.v1';
 function make(seed){
  const persisted = new Map(seed ? [[key,JSON.stringify(seed)]] : []);
@@ -34,14 +34,14 @@ test('Cross-tab remove clears stale memory',()=>{r.subscribeSaved(()=>{});env.pe
 test('Cross-tab clear resets count',()=>{api.useSavedJobs().toggleSaved('MD002');env.persisted.clear();env.window.dispatchEvent({type:'storage',key:null,newValue:null});assert.equal(api.useSavedJobs().count,0)});
 test('Failed write still toggles existing state',()=>{const e=make(['MD001']);e.mode.failWrite=true;e.api.useSavedJobs().toggleSaved('MD002');assert.deepEqual(plain(e.api.useSavedJobs().savedIds),['MD001','MD002']);e.api.useSavedJobs().toggleSaved('MD001');assert.deepEqual(plain(e.api.useSavedJobs().savedIds),['MD002']);assert.equal(e.persisted.get(key),'["MD001"]')});
 test('Blocked storage remains usable in memory',()=>{const e=make();e.mode.failRead=e.mode.failWrite=true;e.api.useSavedJobs().toggleSaved('MD003');assert.equal(e.api.useSavedJobs().count,1);e.api.useSavedJobs().toggleSaved('MD003');assert.equal(e.api.useSavedJobs().count,0)});
-test('Optional CV can be absent',()=>assert.equal(r.validateApplicationFile(null),''));
-test('Internal CV is required',()=>assert.match(r.validateApplicationFile(null,true),/chọn CV/));
-test('PDF exactly 5MB accepted',()=>assert.equal(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:5*1024*1024}),''));
-test('CV above 5MB rejected',()=>assert.match(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:5*1024*1024+1}),/5 MB/));
-test('Empty CV rejected',()=>assert.match(r.validateApplicationFile({name:'cv.pdf',type:'application/pdf',size:0}),/trống/));
-test('Wrong extension rejected',()=>assert.match(r.validateApplicationFile({name:'cv.jpg',type:'image/jpeg',size:200}),/PDF/));
-test('Renamed incompatible MIME rejected',()=>assert.match(r.validateApplicationFile({name:'cv.pdf',type:'image/png',size:200}),/khớp/));
-test('Uppercase DOCX accepted',()=>assert.equal(r.validateApplicationFile({name:'CV.DOCX',type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',size:200}),''));
-test('Generic file MIME accepted with allowed extension',()=>assert.equal(r.validateApplicationFile({name:'cv.doc',type:'application/octet-stream',size:200}),''));
-test('Missing file MIME accepted with allowed extension',()=>assert.equal(r.validateApplicationFile({name:'cv.pdf',type:'',size:200}),''));
+test('Optional attachments can be absent',()=>assert.equal(r.validateDemoFiles([]),''));
+test('PDF exactly 5,000,000 bytes accepted',()=>assert.equal(r.validateDemoFiles([{name:'cv.pdf',type:'application/pdf',size:5_000_000}]),''));
+test('Attachment above 5,000,000 bytes rejected',()=>assert.match(r.validateDemoFiles([{name:'cv.pdf',type:'application/pdf',size:5_000_001}]),/5 MB/));
+test('Maximum three files totaling 15,000,000 bytes accepted',()=>assert.equal(r.validateDemoFiles([{name:'a.jpg',type:'image/jpeg',size:5_000_000},{name:'b.pdf',type:'application/pdf',size:5_000_000},{name:'c.docx',type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',size:5_000_000}]),''));
+test('More than three files rejected',()=>assert.match(r.validateDemoFiles(Array.from({length:4},(_,i)=>({name:`${i}.pdf`,type:'application/pdf',size:1}))),/3 tệp/));
+test('Unsupported extension rejected',()=>assert.match(r.validateDemoFiles([{name:'cv.exe',type:'application/octet-stream',size:200}]),/JPG/));
+test('Renamed incompatible MIME rejected',()=>assert.match(r.validateDemoFiles([{name:'cv.pdf',type:'image/png',size:200}]),/JPG/));
+test('Uppercase DOCX accepted',()=>assert.equal(r.validateDemoFiles([{name:'CV.DOCX',type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',size:200}]),''));
+test('Generic file MIME accepted with allowed extension',()=>assert.equal(r.validateDemoFiles([{name:'cv.doc',type:'application/octet-stream',size:200}]),''));
+test('Missing file MIME accepted with allowed extension',()=>assert.equal(r.validateDemoFiles([{name:'cv.pdf',type:'',size:200}]),''));
 console.log(`${n} checks passed`);
