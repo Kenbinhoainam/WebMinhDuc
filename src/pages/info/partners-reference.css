@@ -1,2 +1,15 @@
-.md-partners-grid .info-partner-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}.md-partners-grid .info-partner{min-height:6.45833rem;border:1px solid #eee}
-@media(max-width:767px){.md-partners-grid .info-partner-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.md-partners-grid .info-partner{min-height:64px}}
+.md-partners-grid .info-service-customers .container,
+.md-partners-grid .partners-contact { max-width:1280px; width:100%; padding-inline:clamp(20px,4.5vw,64px); }
+.md-partners-grid .info-service-customers { background:white; padding-block:clamp(48px,6vw,96px); }
+.md-partners-grid .info-service-customers .section-heading h2,
+.partners-contact h2 { color:#20478f; }
+.md-partners-grid .partners-strip { margin-block:24px clamp(56px,7vw,100px); }
+.md-partners-grid .partners-set li { background:#f4f7fb; border:1px solid #d6e0ef; }
+.md-partners-grid .partners-toggle,
+.md-partners-grid .info-carousel-pause { min-height:44px; min-width:44px; font-size:14px; }
+.md-partners-grid .info-content-note { font-size:16px; line-height:1.6; }
+.partners-contact { border-top:1px solid #c6d5e6; }
+.partners-contact h2 { margin:0 0 12px; font-size:clamp(30px,3.5vw,48px); line-height:1.14; }
+.partners-contact p,.partners-empty { color:#40596d; max-width:66ch; font-size:max(16px,1rem); line-height:1.65; }
+.partners-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px; margin-top:22px; }
+.partners-secondary { display:inline-flex; align-items:center; min-height:44px; font-size:max(16px,1rem); font-weight:700; color:#20478f; text-decoration:underline; text-underline-offset:4px; }

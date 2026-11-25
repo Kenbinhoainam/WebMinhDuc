@@ -1,0 +1,110 @@
+{
+  "Chỉ nhập dữ liệu mẫu. Biểu mẫu tạo biên nhận trong phiên này và không gửi thông tin ra ngoài.": {
+    "en": "Use sample data only. The form creates a receipt for this session and does not send your details.",
+    "zh": "请仅输入示例数据。表单仅在本次会话中生成回执，不会对外发送信息。",
+    "ko": "예시 정보만 입력해 주세요. 이 양식은 현재 세션에만 접수 내역을 만들며 정보를 외부로 전송하지 않습니다.",
+    "ja": "サンプルデータのみ入力してください。受付票はこのセッションにのみ作成され、情報は外部に送信されません。"
+  },
+  "Nhu cầu nhân lực": {
+    "en": "Staffing requirements",
+    "zh": "用工需求",
+    "ko": "인력 수요",
+    "ja": "必要な人材"
+  },
+  "Gửi câu hỏi": {
+    "en": "Submit question",
+    "zh": "提交问题",
+    "ko": "질문 제출",
+    "ja": "質問を送信"
+  },
+  "Trao đổi về nhu cầu tuyển người, đặt câu hỏi hoặc tìm đường đến Minh Đức.": {
+    "en": "Discuss your staffing needs, ask a question or find directions to Minh Đức.",
+    "zh": "洽谈用工需求、提出问题或查找前往 Minh Đức 的路线。",
+    "ko": "인력 수요를 상담하거나 궁금한 점을 묻고 Minh Đức로 오시는 길을 확인하세요.",
+    "ja": "人材のご相談、お問い合わせ、Minh Đứcへのアクセスはこちらから。"
+  },
+  "Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa.": {
+    "en": "Five people stand beneath the Minh Đức Vina sign. The person in the middle holds a bouquet.",
+    "zh": "五人站在 Minh Đức Vina 招牌下，中间的人手捧鲜花。",
+    "ko": "다섯 사람이 Minh Đức Vina 간판 아래에 서 있고 가운데 사람이 꽃다발을 들고 있습니다.",
+    "ja": "Minh Đức Vinaの看板の下に5人が立ち、中央の人が花束を持っています。"
+  },
+  "Hoạt động tập thể tại Minh Đức Vina": {
+    "en": "A team gathering at Minh Đức Vina",
+    "zh": "Minh Đức Vina 集体活动",
+    "ko": "Minh Đức Vina 단체 활동",
+    "ja": "Minh Đức Vinaでのチーム活動"
+  },
+  "Hotline": {
+    "en": "Hotline",
+    "zh": "热线",
+    "ko": "대표전화",
+    "ja": "電話窓口"
+  },
+  "Tìm điểm liên hệ": {
+    "en": "Find an office",
+    "zh": "查找联系地点",
+    "ko": "연락처 위치 찾기",
+    "ja": "窓口を探す"
+  },
+  "Trao đổi trực tiếp": {
+    "en": "Contact us directly",
+    "zh": "直接联系",
+    "ko": "직접 문의",
+    "ja": "直接問い合わせる"
+  },
+  "Zalo Minh Đức": {
+    "en": "Minh Đức on Zalo",
+    "zh": "Minh Đức 的 Zalo",
+    "ko": "Minh Đức Zalo",
+    "ja": "Minh ĐứcのZalo"
+  },
+  "Chọn giờ tư vấn": {
+    "en": "Choose a consultation time",
+    "zh": "选择咨询时间",
+    "ko": "상담 시간 선택",
+    "ja": "相談時間を選ぶ"
+  },
+  "Thử chọn thời gian trao đổi bằng dữ liệu mẫu. Trang này không tạo lịch hẹn.": {
+    "en": "Try selecting a time using sample details. This page does not book an appointment.",
+    "zh": "请使用示例信息体验选择咨询时间。本页不会创建实际预约。",
+    "ko": "예시 정보로 상담 시간을 선택해 보세요. 실제 예약이 생성되지는 않습니다.",
+    "ja": "サンプルデータで相談時間を選んでみましょう。このページで実際の予約は行われません。"
+  },
+  "Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.": {
+    "en": "No appointment was booked. The sample receipt is available until you reload the page.",
+    "zh": "未创建实际预约。刷新页面前可查看示例回执。",
+    "ko": "실제 예약은 생성되지 않았습니다. 페이지를 새로 고칠 때까지 예시 접수 내역을 확인할 수 있습니다.",
+    "ja": "実際の予約は作成されていません。サンプルの受付票はページを再読み込みするまで確認できます。"
+  },
+  "Hoàn tất yêu cầu tư vấn": {
+    "en": "Complete your consultation request",
+    "zh": "完成咨询申请",
+    "ko": "상담 신청 마무리",
+    "ja": "相談の申し込みを完了する"
+  },
+  "Đổi thời gian": {
+    "en": "Change time",
+    "zh": "更改时间",
+    "ko": "시간 변경",
+    "ja": "日時を変更"
+  },
+  "Phường Nếnh, TP Bắc Ninh": {
+    "en": "Nếnh Ward, Bắc Ninh City",
+    "zh": "北宁市 Nếnh 坊",
+    "ko": "박닌시 Nếnh동",
+    "ja": "バクニン市Nếnh街区"
+  },
+  "Lạng Giang, Bắc Ninh": {
+    "en": "Lạng Giang, Bắc Ninh",
+    "zh": "北宁省 Lạng Giang",
+    "ko": "박닌성 Lạng Giang",
+    "ja": "バクニン省Lạng Giang"
+  },
+  "Biên nhận mẫu được giữ đến khi tải lại trang; thông tin không gửi ra ngoài.": {
+    "en": "The demo receipt lasts until this page is reloaded; no information is sent externally.",
+    "zh": "示例回执保留至页面重新加载；信息不会发送到外部。",
+    "ko": "데모 접수증은 페이지를 새로고침할 때까지 유지되며 정보는 외부로 전송되지 않습니다.",
+    "ja": "デモの受付票はページを再読み込みするまで保持され、情報が外部に送信されることはありません。"
+  }
+}

@@ -1,7 +1,33 @@
-.consultation-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(32px,5vw,80px);align-items:start}.consultation-layout>div:first-child p{max-width:500px;line-height:1.8;color:#666}.consultation-note{font-size:13px;background:#f6f6f6;padding:15px;border-radius:8px}.consultation-card{padding:clamp(24px,3vw,42px);background:#f6f6f6;border-radius:12px}.consultation-card h2{font-size:28px}.consultation-card label,.consultation-card legend{font-weight:700}.consultation-date{display:block;width:100%;min-height:48px;padding:10px 12px;border:1px solid #ccc;background:white;border-radius:6px;margin:8px 0 24px}.consultation-card fieldset{border:0;padding:0;margin:0 0 24px}.consultation-times{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.consultation-times label{position:relative;cursor:pointer}.consultation-times input{position:absolute;opacity:0}.consultation-times span{display:block;border:1px solid #ccc;background:#fff;border-radius:24px;padding:10px 18px;min-height:44px}.consultation-times input:checked+span{background:#e42824;color:white;border-color:#e42824}.consultation-times input:focus-visible+span{outline:3px solid #2577cd;outline-offset:3px}.consultation-error{color:#a80000;font-size:13px}.consultation-details{padding-top:26px;border-top:1px solid #ddd}.consultation-details h3{font-size:22px}.consultation-details .contact-form{background:transparent;padding:0}.consultation-success svg{color:#25805a}.consultation-success h2{margin-top:20px}.consultation-success p{line-height:1.7}.consultation-success h2:focus{outline:none}@media(max-width:767px){.consultation-layout{grid-template-columns:1fr;gap:30px}.consultation-card{padding:22px 18px}}
-/* The reference presents its booking embed as one centered scheduling block. */
-.consultation-layout{display:block;max-width:1050px}
-.consultation-layout>div:first-child{text-align:center;max-width:760px;margin:0 auto 32px}
-.consultation-layout>div:first-child p{max-width:none}
-.consultation-layout>div:first-child .text-link{display:inline-flex}
-.consultation-card{max-width:880px;margin-inline:auto;background:#f7f7f7}
+.consultation-page { background: #fff; color: #20344e; }
+.consultation-layout { width: min(760px,calc(100% - 48px)); margin: 0 auto; padding: clamp(38px,5vw,72px) 0; }
+.consultation-card { padding: clamp(22px,4vw,44px); background: #f1f5fa; border-radius: 18px; font-size: 16px; line-height: 1.6; }
+.consultation-card h2 { margin: 0 0 24px; font: 700 clamp(25px,2.4vw,34px)/1.18 Lato,Arial,sans-serif; color: #20478f; }
+.consultation-choose > label, .consultation-choose legend { display: block; margin: 0 0 8px; color: #263849; font-size: 15px; font-weight: 700; }
+.consultation-date { display: block; width: 100%; min-height: 48px; padding: 10px 13px; border: 1px solid #849bb2; border-radius: 8px; background: #fff; color: #20344e; font: inherit; }
+.consultation-choose fieldset { min-width: 0; margin: 24px 0; padding: 0; border: 0; }
+.consultation-times { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.consultation-times label { position: relative; min-width: 0; cursor: pointer; }
+.consultation-times input { position: absolute; opacity: 0; }
+.consultation-times span { display: grid; place-items: center; min-height: 48px; padding: 8px; border: 1px solid #9aacc0; background: #fff; border-radius: 8px; font-weight: 700; }
+.consultation-times input:checked + span { color: #fff; background: #20478f; border-color: #20478f; }
+.consultation-card :is(input,button,h2):focus-visible, .consultation-times input:focus-visible + span { outline: 3px solid #255e9c; outline-offset: 3px; }
+.consultation-date[aria-invalid=true], .consultation-choose fieldset[aria-invalid=true] .consultation-times span { border-color: #9e1524; }
+.consultation-error { margin: 0 0 16px; color: #9e1524; font-weight: 700; }
+.consultation-summary { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 22px; padding-block: 8px; border-block: 1px solid #bccadd; }
+.consultation-summary p { display: flex; align-items: center; gap: 8px; margin: 0; }
+.consultation-summary p svg { flex: none; }
+.consultation-summary button { display: inline-flex; align-items: center; min-height: 44px; color: #20478f; }
+.consultation-details[hidden] { display: none; }
+.consultation-success svg { color: #237046; }
+.consultation-success .btn { margin-top: 16px; }
+.consultation-back { margin-top: 16px; }
+@media (prefers-reduced-motion:no-preference) {
+  .consultation-details:not([hidden]), .consultation-choose { animation: consultation-step-in 160ms ease-out; }
+  @keyframes consultation-step-in { from { opacity: .8; } to { opacity: 1; } }
+}
+@media (max-width:767px) {
+  .consultation-layout { width: calc(100% - 36px); }
+  .consultation-card { padding: 24px 17px; }
+  .consultation-times { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .consultation-choose .btn { width: 100%; }
+}

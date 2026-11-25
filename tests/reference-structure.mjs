@@ -14,10 +14,10 @@ import {MemoryRouter, Routes, Route} from 'react-router-dom';
 const temp = '.reference-structure-test';
 await mkdir(temp, {recursive: true});
 try {
-  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,ServicePage,NewsPage,ArticlePage,EventPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {default as ConsultationPage} from './src/Consultation'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
+  await build({stdin: {contents: "export {default as Home} from './src/Home'; export {AboutPage,ServicesPage,ServicePage,NewsPage,ArticlePage,EventPage} from './src/InfoPages'; export {JobsPage,CareersPage,JobDetailPage,jobs} from './src/JobsPages'; export {ContactPage} from './src/Contact'; export {EducationPage,EducationDetailPage,educationPrograms} from './src/Education'; export {default as ConsultationPage} from './src/Consultation'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'reference-structure.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
   const components = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
   const {LocaleProvider, localeBase, loadLocale, jobs} = components;
-  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ...['labor-supply','labor-leasing','recruitment','college-admissions','hr-consulting'].map(slug=>[`/services/${slug}`, '/services/:slug', 'ServicePage']), ['/news', '/news', 'NewsPage'], ['/news?page=2', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage'], ['/consultation', '/consultation', 'ConsultationPage']];
+  const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ...['labor-supply','labor-leasing','recruitment','college-admissions','hr-consulting'].map(slug=>[`/services/${slug}`, '/services/:slug', 'ServicePage']), ['/education','/education','EducationPage'], ...components.educationPrograms.map(program=>[`/education/${program.slug}`,'/education/:slug','EducationDetailPage']), ['/news', '/news', 'NewsPage'], ['/news?page=2', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage'], ['/consultation', '/consultation', 'ConsultationPage']];
   for (const locale of ['vi', 'en', 'zh', 'ko', 'ja']) {
     await loadLocale(locale);
     const base = localeBase(locale);
@@ -76,7 +76,13 @@ try {
       }
       if (name === 'ServicesPage') {
         assert.equal(doc.querySelector('[role="tablist"]'), null);
-        assert.equal(doc.querySelectorAll('.info-service-cards .ref-solution').length, 5);
+        const direct = [...doc.querySelectorAll('.service-directory nav a')].map(link => link.getAttribute('href'));
+        const panels = [...doc.querySelectorAll('.info-service-cards article > a')].map(link => link.getAttribute('href'));
+        assert.equal(new Set(direct).size, 5, 'all five decisions have direct links without rail navigation');
+        const directory=doc.querySelector('.service-directory');
+        const heroPhoto=doc.querySelector('.service-index-masthead .md-masthead-figure');
+        assert.ok(directory.compareDocumentPosition(heroPhoto) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'mobile reading order puts all five choices before the campus photo');
+        assert.deepEqual(panels, direct, 'directory and autoplay rail lead to the same five services');
         assert.ok(doc.querySelector('.info-service-cards[tabindex="0"]'), 'service rail is keyboard reachable');
       }
       if (name === 'ServicePage') {
@@ -87,12 +93,18 @@ try {
         const nodes = selectors.map(selector=>doc.querySelector(selector));
         assert.ok(nodes.every(Boolean), `${label}: complete mapped service modules`);
         for(let i=1;i<nodes.length;i++) assert.ok(nodes[i-1].compareDocumentPosition(nodes[i]) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, `${label}: source service sequence ${selectors[i]}`);
-        assert.equal(doc.querySelectorAll('.md-ref-detail-intro').length,1,'only the source intro uses the paired media layout');
-        const intro = doc.querySelector('.md-ref-detail-intro');
-        assert.ok(intro.firstElementChild.querySelector('img'),'source intro media precedes copy');
-        const highlights = doc.querySelector('.md-ref-service-highlights');
-        assert.ok(highlights);
-        assert.equal(highlights.querySelectorAll('article').length,3);
+        const slug = path.split('/').at(-1);
+        const masthead = doc.querySelector('.md-masthead-grid');
+        assert.ok(masthead.firstElementChild.querySelector('h1'), 'service title and primary action precede the masthead photo');
+        assert.ok(masthead.querySelector('img[alt]') && masthead.querySelector('.md-masthead-actions'));
+        const highlights = doc.querySelector(`[data-service-layout="${slug}"]`);
+        const decisions = {
+          'labor-supply': ['tbody tr',2], 'labor-leasing':['dl dt',3],
+          recruitment:['dl dt',3], 'college-admissions':['article',2], 'hr-consulting':['article',3],
+        };
+        assert.ok(highlights, 'dedicated decision section for this service');
+        const [selector,count]=decisions[slug];
+        assert.equal(highlights.querySelectorAll(selector).length,count,`${slug}: actionable comparison content`);
         const fee = doc.querySelector('.md-ref-fee-section');
         assert.ok((consulting?fee:highlights).compareDocumentPosition(consulting?highlights:fee) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, 'consulting expertise follows fees; other mapped variants precede fees');
         const table = doc.querySelector('table.info-fee-table');
@@ -109,11 +121,30 @@ try {
           assert.ok(doc.querySelector('.info-testimonial-rail[tabindex="0"][role="region"]'));
           assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
         }
-        assert.equal(doc.querySelectorAll('.info-service-cards .ref-solution').length, 4, 'related services exclude the current one');
+        const related=[...doc.querySelectorAll('.info-service-cards article a')].map(link=>link.getAttribute('href'));
+        assert.equal(new Set(related).size, 4);
+        assert.ok(!related.includes(base + path),'related services exclude the current one');
         if (admissions) {
           for (const form of ['F05','F06']) assert.ok(doc.querySelector(`a[href="${base}/education?form=${form}#dang-ky"]`), `${label}: ${form} admissions link`);
           assert.equal(doc.querySelector('.info-contact-section form'), null, `${label}: admissions does not use F01`);
-        } else assert.ok(doc.querySelector('.info-contact-section form'), `${label}: business service retains F01`);
+        } else {
+          const choices = doc.querySelector('#business-contact form select[name="service"]');
+          const values = {'labor-supply':'Giới thiệu & cung ứng nhân lực','labor-leasing':'Cho thuê lao động',recruitment:'Headhunt & lao động tay nghề','hr-consulting':'Setup tổ chức & phần mềm doanh nghiệp'};
+          assert.equal(choices.value,values[slug],`${label}: inline F01 retains the service, including translated pages`);
+        }
+      }
+      if (name === 'EducationPage' || name === 'EducationDetailPage') {
+        const form = doc.querySelector('#dang-ky form');
+        assert.ok(form.querySelector('[name="phone"][required]'));
+        const modeButtons=doc.querySelectorAll('.education-form-tabs button');
+        assert.equal(modeButtons.length,2);
+        if(name === 'EducationPage') {
+          assert.equal(doc.querySelectorAll('.education-program-groups > section').length,2);
+          assert.equal(new Set([...doc.querySelectorAll('.education-program-groups a')].map(link=>link.href)).size,3);
+        } else {
+          assert.equal(form.querySelector('[name="program"]').value,path.split('/').at(-1),'deep link selects the program in the form');
+          assert.ok(doc.querySelector(`a[href="${base}${path}?form=F06#dang-ky"]`));
+        }
       }
       if (name === 'NewsPage' && !path.includes('?')) {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');
@@ -137,21 +168,22 @@ try {
       if (name === 'CareersPage') {
         for (const id of ['open-positions','position-benefits','cv-requirements','career-contact']) assert.ok(doc.getElementById(id), `${label}: stable career anchor ${id}`);
         assert.equal(doc.querySelectorAll('.career-feature-grid article').length, 2);
-        assert.equal(doc.querySelectorAll('.career-rail-section').length, 2);
-        assert.ok(doc.querySelector('.career-buddy .career-feature-image img'));
-        assert.equal(doc.querySelectorAll('.career-process-grid .career-step').length,4,'source recruitment process has four steps');
-        for(const button of doc.querySelectorAll('.career-more')) assert.ok(doc.getElementById(button.getAttribute('aria-controls')),'expand action names its actual content region');
-        assert.ok(doc.querySelector('.career-story-grid[tabindex="0"][role="region"]'));
-        assert.equal(doc.querySelectorAll('.career-story-grid blockquote').length, 3);
-        assert.equal(doc.querySelectorAll('.career-story-controls button').length, 2);
-        assert.ok(doc.querySelectorAll('.career-gallery-grid button[aria-label] > img').length === 11, 'gallery images have actual enlargement controls');
+        assert.ok(doc.querySelector('.careers-page .md-page-masthead h1'));
+        assert.equal(doc.querySelectorAll('.career-rail-section').length,4);
+        assert.equal(doc.querySelectorAll('.career-process-grid .career-step').length,4);
+        assert.equal(doc.querySelectorAll('.career-questions .career-track article').length,3);
+        assert.equal(doc.querySelectorAll('.career-rail-controls .career-carousel-pause').length,4);
+        assert.equal(doc.querySelectorAll('.career-rail-controls button[aria-label]').length,8);
+        const photos=[...doc.querySelectorAll('.career-gallery .career-track figure > button[aria-label] > img')];
+        assert.equal(new Set(photos.map(photo=>photo.getAttribute('src'))).size,11,'eleven distinct real photographs open at larger size');
+        assert.ok(photos.every(photo=>/\/minhduc-v1[68]\//.test(photo.getAttribute('src'))));
       }
       if (name === 'ConsultationPage') {
-        assert.ok(!doc.querySelector('.page-hero,.page-banner-main'), 'reference scheduling surface has no invented image banner');
-        assert.ok(doc.querySelector('input[type="date"]#consultation-date'));
-        assert.equal(doc.querySelectorAll('input[type="radio"][name="consultation-time"]').length, 4);
-        assert.ok(doc.querySelector('.consultation-note').textContent.trim(), 'mock booking status is disclosed before interaction');
-        assert.equal(doc.querySelectorAll('iframe,form[action]').length, 0, 'no external booking integration is silently enabled');
+        assert.ok(doc.querySelector('.consultation-page .md-page-masthead h1'));
+        assert.ok(doc.querySelector('form.consultation-choose input[type="date"]#consultation-date'));
+        assert.equal(doc.querySelectorAll('input[type="radio"][name="consultation-time"]').length,4);
+        assert.ok(doc.querySelector('.md-masthead-description').textContent.trim(), 'mock booking status is disclosed before interaction');
+        assert.equal(doc.querySelectorAll('iframe,form[action]').length,0,'no external booking integration is silently enabled');
       }
       if (name === 'JobDetailPage') {
         assert.equal(doc.querySelector('.page-banner-main,.page-hero'), null, 'job detail has no extra image hero');
@@ -162,7 +194,8 @@ try {
       if (name === 'ArticlePage') {
         assert.ok(!doc.querySelector('.page-banner-main,.page-hero'), 'article detail starts with its heading, without an extra image banner');
         assert.ok(doc.querySelector('.info-article h1'));
-        assert.ok(doc.querySelector('.info-related-news article'), 'related articles occupy their separate region');
+        assert.equal(doc.querySelectorAll('.info-related-news').length,1,'one related reading region');
+        assert.ok(doc.querySelector('.info-related-news article'), 'related articles occupy their dedicated region');
         assert.ok(doc.querySelector('.editorial-related-aside .editorial-related-item img'),'source sidebar includes actual related thumbnails');
         assert.equal(doc.querySelector('.editorial-related-aside a[href$="/contact"]'),null,'article sidebar does not restore the old unsourced contact card');
       }
@@ -174,6 +207,7 @@ try {
         assert.ok(links.every(link=>doc.getElementById(link.getAttribute('href').slice(1))), 'all event section links resolve');
       }
       if (name === 'ContactPage') {
+        assert.ok(doc.querySelector('.contact-page-v18 .md-page-masthead h1'));
         assert.equal(doc.querySelectorAll('.contact-office').length, 3);
         assert.equal(doc.querySelectorAll('details.contact-office > summary').length, 3);
         assert.ok(doc.querySelector('form.contact-form'));
@@ -208,9 +242,11 @@ try {
     }
   });
   const aboutCss=postcss.parse(await readFile('src/pages/info/about-reference.css','utf8'));
-  let reducedYear=false;
-  aboutCss.walkAtRules('media',rule=>{if(rule.params.includes('prefers-reduced-motion:reduce'))rule.walkRules('.md-history-years .info-history-track',r=>r.walkDecls('transition',d=>{if(d.value==='none')reducedYear=true;}));});
-  assert.ok(reducedYear,'history reduced-motion override matches the normal transition selector specificity');
+  let reducedSlide=false;
+  aboutCss.walkAtRules('media',rule=>{if(rule.params.includes('prefers-reduced-motion:reduce')) rule.walkRules(r=>{
+    if(r.selectors.includes('.about-page .info-history-slide')) r.walkDecls('transition',d=>{if(d.value==='none') reducedSlide=true;});
+  });});
+  assert.ok(reducedSlide,'history slides become static when reduced motion is requested');
   const dom = new JSDOM('<div id="root"></div>', {url:'https://example.test/news', pretendToBeVisual:true});
   for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver']) Object.defineProperty(globalThis,key,{configurable:true,value:dom.window[key]});
   dom.window.matchMedia=()=>({matches:true,addEventListener(){},removeEventListener(){}});
@@ -231,7 +267,7 @@ try {
     await React.act(()=>document.querySelectorAll('.editorial-feature-dots button')[0].click());
     assert.equal(track.scrollLeft,0,'first feature control returns to the first article');
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
-  console.log('PASS independent reference structures: 12 page types × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
+  console.log('PASS independent reference structures: page families × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
 } finally {
   await rm(temp, {recursive: true, force: true});
 }

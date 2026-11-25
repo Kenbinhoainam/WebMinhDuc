@@ -1,0 +1,16 @@
+KIỂM TRA ĐỘC LẬP VIỆC LÀM V18
+
+Đã chạy lại tests/jobs-logic.mjs (22 kiểm tra), jobs-sprint1.mjs và jobs-headline-locales.mjs, đều đạt. Đã đọc src/JobsPages.tsx, jobs.css, saved-jobs.ts, jobs-data.ts, cùng cách PageTransition xử lý hash/POP. Rà soát này không sửa mã ứng dụng và không dùng trình duyệt.
+
+Phát hiện đã báo tác giả và điều phối
+
+1. Alias đã được sửa trong bản tích hợp hiện tại. Đã đọc lại App.tsx sau khi điều phối cập nhật. Navigate chuyển pathname về /jobs và giữ nguyên location.search cùng location.hash, nên /job-seekers?status=closed#job-listings vẫn dẫn tới đúng bộ lọc và neo. Bản ghi phát hiện đầu tiên dựa trên phiên bản trước thay đổi này.
+2. Giá trị lọc của nhóm khác có thể xuất hiện như một lựa chọn của nhóm hiện tại. /careers?location=Bắc%20Giang hoặc /jobs?type=Cộng%20tác%20viên. Ba chỗ trong JobBrowser/filterJobs xác nhận giá trị qua choices(field,jobs), rồi filterSelect thêm giá trị vào danh sách dù tập ứng viên nội bộ/nhà máy không có lựa chọn này. Kết quả rỗng và hiển thị một tùy chọn ngoại lai. Chuẩn hóa theo đúng audience và dùng cùng một quy tắc cho lọc, chip và select.
+
+3. Bỏ lưu khi ở trang chi tiết, sau đó quay lại trang đã lưu. Nếu tin vừa gỡ là tin duy nhất, logic POP chỉ tìm tiêu đề của tin đã mất và đánh dấu hoàn tất, không có focus thay thế. Cần đưa focus tới tin còn lại, CTA trạng thái trống hoặc số kết quả sau khi danh sách sẵn sàng.
+
+4. Tiêu điểm khi đến kết quả từ menu. Liên kết phân loại nghề dùng #job-listings. PageTransition đã gọi focus cho đích có tabindex. Vùng kết quả id=job-listings hiện chỉ là div. Thêm tabIndex=-1 để người dùng bàn phím vào được đích ngay khi chọn menu.
+
+Các điểm đạt qua mã/test: danh sách nhà máy và nội bộ tách đúng khi đi luồng thông thường. Bộ lọc giảm gọn và có nhãn, vùng mở rộng điều khiển bằng aria-expanded/controls. Danh sách đã lưu dùng trạng thái chờ trước khi hiển thị trống. POP từ tin liên quan ở trang lưu giữ query/page và focus gốc khi tin còn hiện diện. MD005 không có nút ứng tuyển. F03/F04 tách theo loại vị trí, F04 kiểm tra metadata tệp, F03 không có trường CV. Mobile dùng DOM tiêu đề, tóm tắt và CTA trước phần mô tả dài; CSS hàng kết quả có minmax(0,1fr) và nút lưu 44 px. Độ tràn, tương phản và hồi vị trí cuộn trên thiết bị thật chưa được đo.
+
+Cập nhật sau sửa của nhóm Việc làm: đã đọc lại filterJobs, activeFields và filterSelect dùng tập audience hiện tại. Khi trở lại từ một tin đã gỡ, thứ tự focus dự phòng là tin còn lại, hành động ở trạng thái trống, rồi số kết quả. #job-listings đã có tabIndex=-1. Nhóm phụ trách đã bổ sung kiểm thử hồi quy và báo kiểm tra TypeScript/Sprint đạt. Cùng bản sửa alias ở trên, cả bốn mục đã có thay đổi tương ứng trong mã tích hợp.

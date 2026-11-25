@@ -1,0 +1,98 @@
+{
+  "Nhóm người tham gia sự kiện có bảng thông tin tuyển dụng Minh Đức": {
+    "en": "Participants at an event with Minh Đức recruitment displays",
+    "zh": "活动现场的人群与 Minh Đức 招聘展板",
+    "ko": "민득 채용 안내판이 있는 행사의 참가자들",
+    "ja": "Minh Đứcの採用案内板がある会場の参加者"
+  },
+  "Hiện chưa có vị trí nội bộ đang tuyển": {
+    "en": "There are currently no open team positions",
+    "zh": "目前没有开放的内部职位",
+    "ko": "현재 모집 중인 사내 직무가 없습니다",
+    "ja": "現在募集中の社内職種はありません"
+  },
+  "Xem vị trí đã đóng": {
+    "en": "View closed positions",
+    "zh": "查看已关闭的职位",
+    "ko": "마감된 채용 보기",
+    "ja": "募集終了の職種を見る"
+  },
+  "Mọi trạng thái": {
+    "en": "All statuses",
+    "zh": "所有状态",
+    "ko": "모든 상태",
+    "ja": "すべての募集状況"
+  },
+  "Đang đọc danh sách đã lưu…": {
+    "en": "Loading your saved jobs…",
+    "zh": "正在读取已收藏的职位…",
+    "ko": "저장한 일자리를 불러오는 중…",
+    "ja": "保存した求人を読み込み中…"
+  },
+  "Trình duyệt chỉ cho lưu tạm. Danh sách sẽ mất khi tải lại trang.": {
+    "en": "Your browser only allows temporary saves. Reloading the page clears this list.",
+    "zh": "您的浏览器仅支持临时保存。刷新页面会清除此列表。",
+    "ko": "이 브라우저에서는 임시 저장만 가능합니다. 페이지를 새로 고치면 목록이 사라집니다.",
+    "ja": "このブラウザでは一時保存のみ可能です。再読み込みすると一覧が消去されます。"
+  },
+  "Tên công việc hoặc kỹ năng": {
+    "en": "Job title or skill",
+    "zh": "职位名称或技能",
+    "ko": "직무명 또는 보유 기술",
+    "ja": "職種名またはスキル"
+  },
+  "Bộ lọc khác": {
+    "en": "More filters",
+    "zh": "更多筛选条件",
+    "ko": "추가 필터",
+    "ja": "その他の絞り込み"
+  },
+  "Xem kết quả": {
+    "en": "View results",
+    "zh": "查看结果",
+    "ko": "결과 보기",
+    "ja": "検索結果を見る"
+  },
+  "Gỡ bộ lọc": {
+    "en": "Remove filter",
+    "zh": "移除筛选条件",
+    "ko": "필터 해제",
+    "ja": "絞り込み条件を解除"
+  },
+  "Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp.": {
+    "en": "Find a job by industrial park, shift and skill level.",
+    "zh": "按工业园区、班次和技能水平寻找合适的工作。",
+    "ko": "산업단지, 근무 시간대, 숙련도에 맞는 일자리를 찾아보세요.",
+    "ja": "工業団地、勤務シフト、技能レベルから仕事を探せます。"
+  },
+  "Bảng tuyển dụng Minh Đức tại sự kiện": {
+    "en": "Minh Đức recruitment displays at an event",
+    "zh": "活动现场的 Minh Đức 招聘展板",
+    "ko": "행사장의 민득 채용 안내판",
+    "ja": "会場に設置されたMinh Đứcの採用案内板"
+  },
+  "Xem vị trí đang tuyển": {
+    "en": "View open positions",
+    "zh": "查看在招职位",
+    "ko": "모집 중인 일자리 보기",
+    "ja": "募集中の仕事を見る"
+  },
+  "Ứng tuyển vị trí này": {
+    "en": "Apply for this position",
+    "zh": "申请此职位",
+    "ko": "이 직무에 지원하기",
+    "ja": "この職種に応募する"
+  },
+  "Chọn vị trí, nhập họ tên và số điện thoại. Bạn có thể đính kèm CV.": {
+    "en": "Choose a position and enter your name and phone number. You may attach a CV.",
+    "zh": "选择职位并填写姓名和电话号码。您可以附上简历。",
+    "ko": "직무를 선택하고 이름과 전화번호를 입력하세요. 이력서를 첨부할 수 있습니다.",
+    "ja": "職種を選び、氏名と電話番号を入力してください。履歴書も添付できます。"
+  },
+  "Chọn vị trí, nhập họ tên và số điện thoại.": {
+    "en": "Choose a position and enter your name and phone number.",
+    "zh": "选择职位并填写姓名和电话号码。",
+    "ko": "직무를 선택하고 이름과 전화번호를 입력하세요.",
+    "ja": "職種を選び、氏名と電話番号を入力してください。"
+  }
+}

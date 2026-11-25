@@ -11,7 +11,7 @@ function getSavedSnapshot() {
   try {
     memorySaved = window.localStorage.getItem(SAVED_KEY) ?? '[]';
     return memorySaved;
-  } catch { return memorySaved; }
+  } catch { useMemorySaved = true; return memorySaved; }
 }
 function subscribeSaved(callback: () => void) {
   const onStorage = (event: StorageEvent) => {
@@ -42,6 +42,6 @@ export function useSavedJobs() {
     } catch { useMemorySaved = true; }
     window.dispatchEvent(new Event(SAVED_EVENT));
   };
-  return { savedIds, toggleSaved, isSaved: (id: string) => savedIds.includes(id), count: savedIds.length };
+  return { savedIds, isTemporary:useMemorySaved, toggleSaved, isSaved: (id: string) => savedIds.includes(id), count: savedIds.length };
 }
 

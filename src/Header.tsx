@@ -21,6 +21,8 @@ import { LanguageSelector, useLocale, useTranslation } from "./i18n";
 import { translate } from "./i18n-runtime/jsx-runtime";
 import { navigation, subnavigation, sectionHasChild } from "./navigation";
 
+const isInternalJobRoute = (pathname:string) => jobs.some(job => job.internal && pathname.replace(/\/+$/,'') === `/jobs/${job.slug}`);
+
 const searchItems = [
   ...navigation.map(([url, title]) => ({
     url,
@@ -150,9 +152,9 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
             <div className="drawer-group-heading">
               <NavLink
                 to={url}
-                end={url === "/"}
+                end={url === "/" || (url === "/jobs" && isInternalJobRoute(location.pathname))}
                 className={({ isActive }) =>
-                  isActive || sectionHasChild(url, location.pathname)
+                  isActive || (url === "/careers" && isInternalJobRoute(location.pathname)) || sectionHasChild(url, location.pathname)
                     ? "active"
                     : undefined
                 }
@@ -412,12 +414,12 @@ export function Header() {
                     <div className="desktop-nav-heading">
                       <NavLink
                         to={url}
-                        end={url === "/"}
+                        end={url === "/" || (url === "/jobs" && isInternalJobRoute(location.pathname))}
                         data-group={subnavigation[url] ? url : undefined}
                         aria-expanded={subnavigation[url] ? openGroup === url : undefined}
                         aria-controls={subnavigation[url] ? `desktop-subnav-${i}` : undefined}
                         className={({ isActive }) =>
-                          isActive || sectionHasChild(url, location.pathname) ? "active" : undefined
+                          isActive || (url === "/careers" && isInternalJobRoute(location.pathname)) || sectionHasChild(url, location.pathname) ? "active" : undefined
                         }
                         onPointerDown={(event) => { pointerKind.current = event.pointerType; }}
                         onFocus={() => {

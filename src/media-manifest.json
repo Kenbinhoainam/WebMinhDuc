@@ -622,5 +622,149 @@
         "src": "/assets/minhduc-v16/community.webp"
       }
     ]
+  },
+  "/assets/minhduc-v18/industrial-campus.webp": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/industrial-campus-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/industrial-campus-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/industrial-campus.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/learning-space.webp": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/learning-space-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/learning-space-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/learning-space.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/about-team.webp": {
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/about-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/about-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/about-team.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/contact-team.webp": {
+    "width": 3000,
+    "height": 4000,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/contact-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/contact-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/contact-team.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/field-team.webp": {
+    "width": 3840,
+    "height": 2160,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/field-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/field-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/field-team.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/birthday-gifts.webp": {
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/birthday-gifts-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/birthday-gifts-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/birthday-gifts.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/red-gifts.webp": {
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/red-gifts-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/red-gifts-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/red-gifts.webp"
+      }
+    ]
+  },
+  "/assets/minhduc-v18/event-hall.webp": {
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/event-hall-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/event-hall-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/event-hall.webp"
+      }
+    ]
   }
 }

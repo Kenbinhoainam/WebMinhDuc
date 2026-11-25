@@ -1,3 +1,9 @@
+## Bản v18 — triển khai sáu nhóm trang
+
+Giới thiệu, Dịch vụ/Tuyển sinh, Việc làm, Tuyển dụng nội bộ, Tin tức/Sự kiện và Liên hệ/Tư vấn đã triển khai theo phương án v17. Hệ đầu trang sáng/xanh, bố cục riêng cho từng hành trình, 11 ảnh thật trong tuyển dụng nội bộ và hai ảnh AI không gian ý niệm. [Bàn giao và kiểm tra v18](docs/flagship/v18/IMPLEMENTATION.txt).
+
+Bộ lọc theo đúng nhóm việc, CTA và tóm tắt xuất hiện trước nội dung dài trên mobile; các luồng quay lại giữ ngữ cảnh/focus. Sáu biểu mẫu giữ quy tắc dữ liệu mẫu và tệp hiện có; F01 giữ đúng dịch vụ, F05/F06 đồng bộ URL, chọn giờ khóa F02 và giữ nháp. Rail tự chạy có điều khiển nhìn thấy, dừng khi dùng bàn phím, mở modal, khuất hoặc giảm chuyển động. Hồ sơ và bốn chỉ số v13 cùng video trang chủ được giữ lại. V18 chưa có xác nhận trực quan trên trình duyệt do managed preview lỗi relay.
+
 ## Bản v17 — sửa huy hiệu header và phương án sáu nhóm trang
 
 Sửa số việc đã lưu: căn giữa, giữ vùng bấm 44 px, hiển thị `99+` từ 100 và đọc đủ số lượng qua nhãn truy cập. [Phương án tổng hợp](docs/flagship/v17/PHUONG-AN-TONG-HOP.txt) và [bảng thiết kế](docs/flagship/v17/review/index.html) gồm sáu báo cáo do sáu agent GPT-6.2 Astra nghiên cứu, cùng hai ảnh AI kiến trúc đã tối ưu. Các bố cục sáu nhóm trang là đề xuất, chưa triển khai. Xem [kiểm tra v17](docs/flagship/v17/VALIDATION.txt).

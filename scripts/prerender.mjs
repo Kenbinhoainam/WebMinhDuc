@@ -59,7 +59,14 @@ for(const page of pages) for(const locale of locales){
  html=html.replace('<div id="root"></div>',`<div id="root">${body}</div>`);
  const dir=join('dist',path);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);
 }
-for(const [alias,target] of [['/testimonials','/partners'],['/job-seekers','/jobs'],['/vi','/']]) {const dir=join('dist',alias);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),await readFile(join('dist',target,'index.html')));}
+for(const locale of locales) {
+ const base=locale==='vi'?'':`/${locale}`;
+ for(const [alias,target] of [['/testimonials','/partners'],['/job-seekers','/jobs']]) {
+  const dir=join('dist',base+alias);await mkdir(dir,{recursive:true});
+  await writeFile(join(dir,'index.html'),await readFile(join('dist',base+target,'index.html')));
+ }
+}
+await mkdir('dist/vi',{recursive:true});await writeFile('dist/vi/index.html',await readFile('dist/index.html'));
 // Private prototype: do not advertise a sitemap in robots.txt or submit one.
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.flatMap(p=>locales.map(l=>`<url><loc>${escape(localizedSeo(p.path,l).url)}</loc></url>`)).join('')}</urlset>\n`);
 await rm('.ssr',{recursive:true,force:true});

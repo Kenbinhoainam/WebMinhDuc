@@ -35,8 +35,9 @@ try {
   assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*300ms;\s*transition-delay:\s*0ms/);
   assert.match(css, /data-reveal-delay="3"[^}]*transition-delay:\s*240ms/, 'reference stagger is entry-only');
   assert.match(css, /\[data-reveal\]\[data-reveal-frame\]\.motion-pending\s*\{[^}]*opacity:\s*1;\s*transform:\s*none;\s*transition:\s*none/s, 'pending frame stays geometrically stable');
-  assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(40px\) scale\(\.96\)/, 'controlled zoom belongs to inner content');
-  assert.match(css, /data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(32px\) scale\(1\.04\)/, 'media reveals inside the clipped stable frame');
+  assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,32px\)\) scale\(\.96\)/, 'controlled zoom belongs to inner content');
+  assert.match(css, /@media\(max-width:767px\)\{\[data-reveal\]\{--motion-travel:16px\}\}/, 'mobile reveals use the smaller shared travel');
+  assert.match(css, /data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,32px\)\) scale\(1\.04\)/, 'media reveals inside the clipped stable frame');
   assert.match(css, /motion-released > \.motion-content\s*\{\s*transition:\s*none/, 'failure restores without a transition');
   const {startReveals, RevealFrame} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
   const React = await import('react'); const {renderToStaticMarkup} = await import('react-dom/server');

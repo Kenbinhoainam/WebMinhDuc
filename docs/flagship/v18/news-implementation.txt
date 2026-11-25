@@ -1,0 +1,21 @@
+MINH ĐỨC V18 | Tin tức, cẩm nang và sự kiện
+
+Phạm vi đã triển khai
+Hai danh mục /news và /events, sáu bài hướng dẫn và ba lịch mẫu giữ nguyên URL. Trang tin dùng hai bài chọn lọc khác ba kết quả đầu. Danh mục phân trang ba bài, lọc theo category và giữ hash. Rail có dừng/phát nhìn thấy, chọn bài, trước/sau và vuốt. Chu kỳ 6000ms qua hook dùng chung. Điểm dừng cũ của menu #news-listings vẫn hoạt động.
+
+Trang đọc có mục lục ba neo, một vùng bài liên quan, ngày theo locale, thân bài tối đa 68ch và CTA theo đối tượng. Xem bài từ danh sách đã lọc rồi bấm trở về sẽ giữ bộ lọc. Sao chép bị từ chối sẽ hiện và chọn URL để người đọc tự sao chép. Giữ Facebook/LinkedIn theo URL từng ngôn ngữ. Khối ảnh dùng ảnh Minh Đức, riêng bài an toàn dữ liệu trình bày nội dung hướng dẫn bằng chữ.
+
+Hoạt động có ảnh tư liệu và lối sang /about-us#activities. Danh sách dùng status=upcoming|past, mốc mẫu cố định 25/11/2026, hai lịch sắp diễn ra và một lịch đã diễn ra tại mốc này. Từng lịch có năm neo, giờ Việt Nam, lịch trình, số điện thoại từ company.ts, hai ảnh tư liệu có chú thích và hai lịch khác. Thiếu địa chỉ dùng trạng thái chờ xác nhận. Mỗi hàng có liên kết trực tiếp tới #schedule. Hai trang chính sách cùng module vẫn được giữ nguyên nội dung.
+
+Tệp thực hiện
+src/EditorialPages.tsx
+src/editorial-reference.css
+src/i18n-catalogs/v18-news.json
+tests/editorial-reference.mjs
+
+Kiểm tra tập trung
+node tests/editorial-reference.mjs đạt. Phạm vi gồm 11 trang bản tiếng Việt và hai trang chính sách, kiểm đủ ba nhóm bài, anchor/CTA, hai bài chọn lọc không trùng lưới đầu, cuộn thủ công có offset, dừng khi focus/ngoài viewport, tiếp tục theo thao tác, khôi phục query và clipboard bị từ chối. Kiểm ảnh gallery khác nguồn, chú thích, ngày cố định, 404 theo nhóm. Danh mục có trạng thái rỗng sẵn trong code; dữ liệu tĩnh hiện có đủ bài và lịch cho từng bộ lọc.
+
+Kiểm AST 183 chuỗi tiếng Việt trong module có đủ bốn bản dịch ở các catalog nguồn. Toàn bộ ảnh WebP được tham chiếu tồn tại. PostCSS đọc stylesheet thành công. git diff --check đạt cho các tệp theo dõi. Chưa chạy build toàn bộ hoặc trình duyệt trong phạm vi agent. Root tái sinh locale rồi kiểm prerender, hydration, trình bày ở breakpoint và xuất bản. CSS chung đã nhận .ed-reader cho rem 16px và màu header trên nền sáng.
+
+Sau phản biện chéo đã sửa hai hành trình quay lại. Liên kết từ dải bài chọn lọc, danh mục, mục lục và bài liên quan cùng mang theo URL danh mục, gồm category, page và hash. Breadcrumb và hành động trở về dùng cùng đích. Neo danh mục, mục bài và năm mục sự kiện nằm ngay tại tiêu đề nhận focus và dùng khoảng bù header toàn site. Nút chọn chuyên mục và tựa bài chọn lọc/liên quan có vùng bấm tối thiểu 44×44px. Bổ sung kiểm thử đi từ chuyên mục hoặc trang hai, qua mục lục và bài liên quan, rồi quay về đúng URL gốc. node tests/editorial-reference.mjs và git diff --check đã đạt sau sửa.

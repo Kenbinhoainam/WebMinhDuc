@@ -1,0 +1,362 @@
+{
+  "Gia nhập đội ngũ Minh Đức": {
+    "en": "Join the Minh Đức team",
+    "zh": "加入明德团队",
+    "ko": "민득 팀에 합류하기",
+    "ja": "ミンドゥックのチームで働く"
+  },
+  "Tìm hiểu các vị trí tư vấn, tuyển dụng và kết nối người lao động tại Minh Đức.": {
+    "en": "Explore roles in advising, recruiting and connecting workers at Minh Đức.",
+    "zh": "了解明德的咨询、招聘及劳动者对接岗位。",
+    "ko": "민득에서 상담, 채용 및 구직자 연결을 담당하는 직무를 알아보세요.",
+    "ja": "ミンドゥックで相談、採用、求職者との連携を担う仕事をご覧ください。"
+  },
+  "Xem vị trí nội bộ": {
+    "en": "View team openings",
+    "zh": "查看内部岗位",
+    "ko": "사내 채용 보기",
+    "ja": "自社の募集職種を見る"
+  },
+  "Tìm việc tại nhà máy": {
+    "en": "Find factory jobs",
+    "zh": "查找工厂岗位",
+    "ko": "공장 일자리 찾기",
+    "ja": "工場の仕事を探す"
+  },
+  "Hai cách làm nghề tuyển dụng": {
+    "en": "Two ways to work in recruitment",
+    "zh": "招聘工作的两种角色",
+    "ko": "채용 업무를 맡는 두 가지 방식",
+    "ja": "採用に携わる二つの働き方"
+  },
+  "Tiếp nhận nhu cầu, giải thích công việc và theo sát lịch trao đổi cùng ứng viên.": {
+    "en": "Understand applicants’ needs, explain the role and follow up on scheduled conversations.",
+    "zh": "了解求职者需求，说明岗位内容并跟进沟通安排。",
+    "ko": "지원자의 요구를 파악하고 업무를 설명하며 상담 일정을 관리합니다.",
+    "ja": "応募者の希望を聞き、仕事内容を説明し、面談日程をフォローします。"
+  },
+  "Chia sẻ thông tin tuyển dụng đã xác nhận và kết nối người quan tâm với đội tư vấn.": {
+    "en": "Share verified job information and introduce interested people to the advisory team.",
+    "zh": "分享已确认的招聘信息，并将有意者介绍给咨询团队。",
+    "ko": "확인된 채용 정보를 공유하고 관심 있는 사람을 상담팀과 연결합니다.",
+    "ja": "確認済みの求人情報を伝え、希望者を相談チームにつなぎます。"
+  },
+  "Công việc hằng ngày": {
+    "en": "Day-to-day work",
+    "zh": "日常工作",
+    "ko": "일상 업무",
+    "ja": "日々の仕事"
+  },
+  "Lắng nghe ứng viên": {
+    "en": "Listening to applicants",
+    "zh": "倾听求职者",
+    "ko": "지원자 의견 듣기",
+    "ja": "応募者の話を聞く"
+  },
+  "Theo dõi từng cuộc hẹn": {
+    "en": "Following up on appointments",
+    "zh": "跟进沟通安排",
+    "ko": "상담 일정 관리",
+    "ja": "面談のフォロー"
+  },
+  "Kết nối tại địa phương": {
+    "en": "Building local connections",
+    "zh": "联系当地求职者",
+    "ko": "지역 구직자 연결",
+    "ja": "地域でのつながり"
+  },
+  "Quyền lợi theo vị trí": {
+    "en": "Benefits by role",
+    "zh": "各岗位待遇",
+    "ko": "직무별 지원 및 혜택",
+    "ja": "職種別の待遇"
+  },
+  "Hướng dẫn nghiệp vụ": {
+    "en": "Guidance on the job",
+    "zh": "业务指导",
+    "ko": "실무 안내",
+    "ja": "業務指導"
+  },
+  "Phát triển kỹ năng tư vấn": {
+    "en": "Developing advisory skills",
+    "zh": "提升咨询技能",
+    "ko": "상담 역량 개발",
+    "ja": "相談スキルの向上"
+  },
+  "Điều kiện cộng tác": {
+    "en": "Terms of collaboration",
+    "zh": "合作条件",
+    "ko": "협업 조건",
+    "ja": "協力契約の条件"
+  },
+  "Cách ứng tuyển nội bộ": {
+    "en": "How to apply for a team role",
+    "zh": "内部岗位申请流程",
+    "ko": "사내 직무 지원 방법",
+    "ja": "自社の職種に応募するには"
+  },
+  "Chọn vị trí": {
+    "en": "Choose a role",
+    "zh": "选择岗位",
+    "ko": "직무 선택",
+    "ja": "職種を選ぶ"
+  },
+  "Đọc nhiệm vụ, yêu cầu và hình thức làm việc trên trang chi tiết.": {
+    "en": "Check the duties, requirements and working arrangement on the role page.",
+    "zh": "在岗位详情页了解职责、要求和工作形式。",
+    "ko": "상세 페이지에서 담당 업무, 자격 요건과 근무 형태를 확인하세요.",
+    "ja": "詳細ページで業務内容、応募条件、勤務形態を確認します。"
+  },
+  "Điền thông tin mẫu": {
+    "en": "Enter sample details",
+    "zh": "填写示例信息",
+    "ko": "예시 정보 입력",
+    "ja": "サンプル情報を入力"
+  },
+  "Nhập họ tên và số điện thoại mẫu. Bạn có thể thêm email.": {
+    "en": "Enter a sample name and phone number. Email is optional.",
+    "zh": "填写示例姓名和电话，邮箱为选填项。",
+    "ko": "예시 이름과 전화번호를 입력하세요. 이메일은 선택 사항입니다.",
+    "ja": "サンプルの氏名と電話番号を入力します。メールアドレスは任意です。"
+  },
+  "Đính kèm CV nếu muốn": {
+    "en": "Attach a CV if you wish",
+    "zh": "按需附上简历",
+    "ko": "원하면 이력서 첨부",
+    "ja": "必要に応じて履歴書を添付"
+  },
+  "CV không bắt buộc. Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX, 5 MB mỗi tệp, tổng 15 MB.": {
+    "en": "A CV is optional. Choose up to 3 JPG, JPEG, PNG, PDF, DOC or DOCX files, up to 5 MB each and 15 MB in total.",
+    "zh": "简历为选填项。最多可选择 3 个 JPG、JPEG、PNG、PDF、DOC 或 DOCX 文件，每个最多 5 MB，总计最多 15 MB。",
+    "ko": "이력서는 선택 사항입니다. JPG, JPEG, PNG, PDF, DOC 또는 DOCX 파일을 최대 3개까지 선택할 수 있으며, 파일당 5 MB, 총 15 MB까지입니다.",
+    "ja": "履歴書は任意です。JPG、JPEG、PNG、PDF、DOC、DOCX形式で最大3件、1件5 MB、合計15 MBまで選択できます。"
+  },
+  "Xem mã mô phỏng": {
+    "en": "View your demo reference",
+    "zh": "查看模拟编号",
+    "ko": "모의 접수 번호 확인",
+    "ja": "デモの受付番号を確認"
+  },
+  "Hồ sơ mẫu chỉ hiển thị trong phiên hiện tại. Tệp không được tải lên.": {
+    "en": "The sample application is available for this session only. Files are never uploaded.",
+    "zh": "示例申请仅在当前会话中显示，文件不会上传。",
+    "ko": "예시 지원서는 현재 세션에서만 확인할 수 있으며 파일은 업로드되지 않습니다.",
+    "ja": "サンプルの応募内容はこのセッション中のみ表示されます。ファイルはアップロードされません。"
+  },
+  "Câu hỏi về ứng tuyển nội bộ": {
+    "en": "Questions about joining the team",
+    "zh": "内部岗位申请常见问题",
+    "ko": "사내 채용 지원 FAQ",
+    "ja": "自社採用に関するよくある質問"
+  },
+  "Tôi có thể ứng tuyển cộng tác viên ở đâu?": {
+    "en": "Where can I apply as a recruitment associate?",
+    "zh": "在哪里申请招聘协作岗位？",
+    "ko": "채용 협력직은 어디에서 지원하나요?",
+    "ja": "採用協力スタッフにはどこから応募できますか。"
+  },
+  "Mở vị trí Cộng tác viên tuyển dụng để xem địa bàn, nhiệm vụ và hình thức cộng tác.": {
+    "en": "Open the recruitment associate role to see its location, duties and working arrangement.",
+    "zh": "打开招聘协作岗位详情，查看工作地区、职责和合作形式。",
+    "ko": "채용 협력직 상세 페이지에서 근무 지역, 담당 업무와 협업 방식을 확인하세요.",
+    "ja": "採用協力スタッフの詳細ページで、勤務地、業務内容、契約形態を確認できます。"
+  },
+  "Tôi cần chuẩn bị CV không?": {
+    "en": "Do I need a CV?",
+    "zh": "需要准备简历吗？",
+    "ko": "이력서가 필요한가요?",
+    "ja": "履歴書は必要ですか。"
+  },
+  "Bạn có thể hoàn tất đơn ứng tuyển nội bộ với họ tên và số điện thoại mẫu.": {
+    "en": "You can complete the internal application with a sample name and phone number.",
+    "zh": "填写示例姓名和电话号码即可完成内部岗位申请。",
+    "ko": "예시 이름과 전화번호만으로 사내 직무 지원을 완료할 수 있습니다.",
+    "ja": "サンプルの氏名と電話番号だけで自社の職種への応募を体験できます。"
+  },
+  "Xem cách ứng tuyển": {
+    "en": "See how to apply",
+    "zh": "查看申请流程",
+    "ko": "지원 방법 보기",
+    "ja": "応募方法を見る"
+  },
+  "Làm sao xem lại vị trí đã lưu?": {
+    "en": "How can I revisit saved roles?",
+    "zh": "如何查看已收藏的岗位？",
+    "ko": "저장한 직무는 어디서 다시 보나요?",
+    "ja": "保存した職種はどこで確認できますか。"
+  },
+  "Chọn biểu tượng lưu bên cạnh một vị trí. Danh sách đã lưu có trên trình duyệt và thiết bị bạn đang dùng.": {
+    "en": "Select the bookmark beside a role. Your saved list is available on this browser and device.",
+    "zh": "点击岗位旁的收藏图标，即可在当前设备和浏览器查看已收藏的岗位。",
+    "ko": "직무 옆의 저장 아이콘을 선택하세요. 현재 사용 중인 기기와 브라우저에서 목록을 볼 수 있습니다.",
+    "ja": "職種の横の保存アイコンを選ぶと、現在の端末とブラウザで保存済み一覧を確認できます。"
+  },
+  "Mục trước": {
+    "en": "Previous item",
+    "zh": "上一项",
+    "ko": "이전 항목",
+    "ja": "前の項目"
+  },
+  "Mục tiếp theo": {
+    "en": "Next item",
+    "zh": "下一项",
+    "ko": "다음 항목",
+    "ja": "次の項目"
+  },
+  "Ảnh trước": {
+    "en": "Previous photo",
+    "zh": "上一张照片",
+    "ko": "이전 사진",
+    "ja": "前の写真"
+  },
+  "Ảnh tiếp theo": {
+    "en": "Next photo",
+    "zh": "下一张照片",
+    "ko": "다음 사진",
+    "ja": "次の写真"
+  },
+  "Xem ảnh lớn": {
+    "en": "Enlarge photo",
+    "zh": "查看大图",
+    "ko": "사진 크게 보기",
+    "ja": "写真を拡大"
+  },
+  "Hoạt động của Minh Đức": {
+    "en": "Minh Đức in pictures",
+    "zh": "明德活动影像",
+    "ko": "사진으로 보는 민득의 활동",
+    "ja": "写真で見るミンドゥックの活動"
+  },
+  "Ảnh tập thể trong buổi tất niên": {
+    "en": "Group photo at the year-end gathering",
+    "zh": "年终聚会合影",
+    "ko": "송년 모임 단체 사진",
+    "ja": "年末の集まりでの集合写真"
+  },
+  "Nhóm chụp trước phông Minh Đức, với hàng người ngồi phía trước.": {
+    "en": "A group poses in front of the Minh Đức backdrop with the front row seated.",
+    "zh": "大家在明德背景板前合影，前排人员坐着。",
+    "ko": "민득 배경판 앞에서 앞줄이 앉은 채 단체 사진을 찍고 있습니다.",
+    "ja": "ミンドゥックの背景パネルの前で、前列が座って集合写真を撮っている様子。"
+  },
+  "Trao đổi ngoài hiện trường": {
+    "en": "A conversation in the field",
+    "zh": "现场交流",
+    "ko": "현장에서의 대화",
+    "ja": "現場での打ち合わせ"
+  },
+  "Nhóm mặc áo Minh Đức đứng trao đổi ngoài trời gần cổng nhà xưởng.": {
+    "en": "A group in Minh Đức shirts talks outside near a factory entrance.",
+    "zh": "几位穿明德上衣的人在厂区门口附近交谈。",
+    "ko": "민득 셔츠를 입은 사람들이 공장 입구 근처 야외에서 대화하고 있습니다.",
+    "ja": "ミンドゥックのシャツを着た人たちが工場の入り口付近で話している様子。"
+  },
+  "Mừng sinh nhật cùng nhau": {
+    "en": "Celebrating a birthday together",
+    "zh": "一起庆祝生日",
+    "ko": "함께하는 생일 축하",
+    "ja": "みんなで祝う誕生日"
+  },
+  "Cả nhóm đứng quanh chiếc bánh sinh nhật, một số người giơ tay hình trái tim.": {
+    "en": "The group gathers around a birthday cake, some making hearts with their arms.",
+    "zh": "大家围在生日蛋糕旁，有人举起双臂比出爱心。",
+    "ko": "모두가 생일 케이크 주위에 모여 있고 몇 사람이 팔로 하트를 만들고 있습니다.",
+    "ja": "誕生日ケーキの周りに集まり、何人かが腕でハートを作っている様子。"
+  },
+  "Khoảnh khắc bên đồng đội": {
+    "en": "A moment together",
+    "zh": "相聚时刻",
+    "ko": "동료들과 함께한 순간",
+    "ja": "仲間とのひととき"
+  },
+  "Năm người chụp cùng bó hoa trước biển hiệu Minh Đức.": {
+    "en": "Five people pose with a bouquet beneath the Minh Đức sign.",
+    "zh": "五个人拿着花束在明德招牌前合影。",
+    "ko": "민득 간판 앞에서 다섯 사람이 꽃다발과 함께 사진을 찍고 있습니다.",
+    "ja": "ミンドゥックの看板の前で、5人が花束と一緒に写っている写真。"
+  },
+  "Gặp gỡ tại hội trường": {
+    "en": "Gathering at the hall",
+    "zh": "会场相聚",
+    "ko": "행사장에서의 만남",
+    "ja": "会場での集まり"
+  },
+  "Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng.": {
+    "en": "A group poses on stage between two recruitment information boards.",
+    "zh": "大家在两块招聘信息展板之间的舞台上合影。",
+    "ko": "두 채용 안내판 사이의 무대에서 단체 사진을 찍고 있습니다.",
+    "ja": "二つの採用案内パネルの間で撮影されたステージ上の集合写真。"
+  },
+  "Trao quà trong buổi tất niên": {
+    "en": "Gift presentation at the year-end gathering",
+    "zh": "年终聚会赠礼",
+    "ko": "송년 모임 선물 전달",
+    "ja": "年末の集まりでの贈り物"
+  },
+  "Một nhóm cầm quà trước phông sự kiện, phía trước có các hộp quà.": {
+    "en": "A group holds gifts in front of an event backdrop, with gift boxes in the foreground.",
+    "zh": "大家拿着礼物站在活动背景板前，前方放着礼盒。",
+    "ko": "행사 배경판 앞에서 사람들이 선물을 들고 있고 앞쪽에는 선물 상자가 놓여 있습니다.",
+    "ja": "イベントの背景パネルの前で贈り物を持つ人々と、手前に並ぶプレゼントの箱。"
+  },
+  "Một buổi hoạt động cộng đồng": {
+    "en": "A community activity",
+    "zh": "一次社区活动",
+    "ko": "지역사회 활동",
+    "ja": "地域活動のひとこま"
+  },
+  "Nhóm cầm chổi và dụng cụ đứng trên sân trước một tòa nhà.": {
+    "en": "A group with brooms and tools stands in a courtyard outside a building.",
+    "zh": "大家拿着扫帚和工具站在一栋建筑前的院子里。",
+    "ko": "건물 앞 마당에서 사람들이 빗자루와 도구를 들고 서 있습니다.",
+    "ja": "建物前の広場で、ほうきや道具を手に並ぶグループ。"
+  },
+  "Những món quà sinh nhật": {
+    "en": "Birthday gifts",
+    "zh": "生日礼物",
+    "ko": "생일 선물",
+    "ja": "誕生日の贈り物"
+  },
+  "Nhóm chụp ảnh cùng những túi quà sau bàn tiệc sinh nhật.": {
+    "en": "A group poses with gift bags behind a birthday table.",
+    "zh": "大家站在生日餐桌后，拿着礼品袋合影。",
+    "ko": "생일상 뒤에서 사람들이 선물 가방을 들고 사진을 찍고 있습니다.",
+    "ja": "誕生日のテーブルの後ろで、プレゼントの袋を持って記念撮影する様子。"
+  },
+  "Hồ sơ tại hiện trường": {
+    "en": "Documents in the field",
+    "zh": "现场资料",
+    "ko": "현장에서의 서류",
+    "ja": "現場での資料"
+  },
+  "Một người mặc áo Minh Đức cầm bìa hồ sơ bên đường.": {
+    "en": "A person wearing a Minh Đức shirt holds a document folder by the roadside.",
+    "zh": "一位穿明德上衣的人在路边拿着文件夹。",
+    "ko": "민득 셔츠를 입은 한 사람이 길가에서 서류철을 들고 있습니다.",
+    "ja": "ミンドゥックのシャツを着て道路脇で書類を手にしている人。"
+  },
+  "Trao túi quà": {
+    "en": "Gift bags",
+    "zh": "赠送礼品袋",
+    "ko": "선물 가방 전달",
+    "ja": "ギフトバッグの贈呈"
+  },
+  "Những người tham dự cầm túi quà màu đỏ trước tòa nhà.": {
+    "en": "Participants hold red gift bags outside a building.",
+    "zh": "参加者在建筑物前拿着红色礼品袋。",
+    "ko": "참석자들이 건물 앞에서 빨간 선물 가방을 들고 있습니다.",
+    "ja": "建物前で赤いギフトバッグを手にする参加者。"
+  },
+  "Bên trong buổi gặp gỡ": {
+    "en": "Inside the gathering",
+    "zh": "会场一景",
+    "ko": "모임 현장",
+    "ja": "会場内の様子"
+  },
+  "Nhìn từ cuối hội trường, các hàng ghế hướng về người trình bày.": {
+    "en": "Seen from the back of the hall, rows of seats face the presenter.",
+    "zh": "从会场后方望去，一排排座椅面向发言人。",
+    "ko": "행사장 뒤에서 본 모습으로, 줄지어 놓인 의자가 발표자를 향하고 있습니다.",
+    "ja": "会場の後方から見た、発表者に向かって並ぶ座席。"
+  }
+}

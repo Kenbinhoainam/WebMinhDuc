@@ -1,37 +1,16 @@
 {
-  "banner": "/mirror/www.hr2b.com/wp-content/uploads/2025/10/HR2B-Careers-banner.jpg",
-  "features": [
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-2.jpg",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-6.webp"
-  ],
-  "workspace": [
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/icon-1-1.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/10/Group-5-1.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/10/Group-7-1.png"
-  ],
-  "benefits": [
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-2.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-1.png"
-  ],
-  "steps": [
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-3.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-4.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-5.png",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/Frame-6.png"
-  ],
-  "buddy": "/mirror/www.hr2b.com/wp-content/uploads/2026/04/buddy-2.png",
+  "banner": "/assets/minhduc-v16/team-yearend.webp",
   "gallery": [
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788599249654_8201555599254488289_g8680945066893583432_0191b3144d58edba41f107318209623a.jpg",
-    "/mirror/www.hr2b.com/wp-content/uploads/2025/09/carrer-7.jpg",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-5.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/09/1788597214879_7428492010007057447_g8267310010752724363_f3c3800b0d2cbaaa1e0696a2df8d0d13.jpg",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-6.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/8a378a5d89b102ef5ba0-1.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/carrer-9.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/9da65dca662ec170983f4-1.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/office3@2x-1.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/527e361144089156c819-Copy-scaled-1.webp",
-    "/mirror/www.hr2b.com/wp-content/uploads/2026/03/3b0086c1a42d03735a3c40.webp"
+    {"src": "/assets/minhduc-v16/team-yearend.webp", "caption": "Ảnh tập thể trong buổi tất niên", "alt": "Nhóm chụp trước phông Minh Đức, với hàng người ngồi phía trước."},
+    {"src": "/assets/minhduc-v18/field-team.webp", "caption": "Trao đổi ngoài hiện trường", "alt": "Nhóm mặc áo Minh Đức đứng trao đổi ngoài trời gần cổng nhà xưởng."},
+    {"src": "/assets/minhduc-v16/culture-birthday.webp", "caption": "Mừng sinh nhật cùng nhau", "alt": "Cả nhóm đứng quanh chiếc bánh sinh nhật, một số người giơ tay hình trái tim."},
+    {"src": "/assets/minhduc-v18/contact-team.webp", "caption": "Khoảnh khắc bên đồng đội", "alt": "Năm người chụp cùng bó hoa trước biển hiệu Minh Đức."},
+    {"src": "/assets/minhduc-v16/recruitment-event.webp", "caption": "Gặp gỡ tại hội trường", "alt": "Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng."},
+    {"src": "/assets/minhduc-v16/yearend-gifts.webp", "caption": "Trao quà trong buổi tất niên", "alt": "Một nhóm cầm quà trước phông sự kiện, phía trước có các hộp quà."},
+    {"src": "/assets/minhduc-v16/community.webp", "caption": "Một buổi hoạt động cộng đồng", "alt": "Nhóm cầm chổi và dụng cụ đứng trên sân trước một tòa nhà."},
+    {"src": "/assets/minhduc-v18/birthday-gifts.webp", "caption": "Những món quà sinh nhật", "alt": "Nhóm chụp ảnh cùng những túi quà sau bàn tiệc sinh nhật."},
+    {"src": "/assets/minhduc-v16/recruitment-field.webp", "caption": "Hồ sơ tại hiện trường", "alt": "Một người mặc áo Minh Đức cầm bìa hồ sơ bên đường."},
+    {"src": "/assets/minhduc-v18/red-gifts.webp", "caption": "Trao túi quà", "alt": "Những người tham dự cầm túi quà màu đỏ trước tòa nhà."},
+    {"src": "/assets/minhduc-v18/event-hall.webp", "caption": "Bên trong buổi gặp gỡ", "alt": "Nhìn từ cuối hội trường, các hàng ghế hướng về người trình bày."}
   ]
 }

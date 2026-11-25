@@ -1,0 +1,170 @@
+[
+  {
+    "name": "industrial-campus",
+    "source": "/workspace/generated_images/exec-81c6a285-4943-47ce-beed-422fd3c59330.png",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/industrial-campus-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/industrial-campus-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/industrial-campus.webp"
+      }
+    ],
+    "type": "AI conceptual space"
+  },
+  {
+    "name": "learning-space",
+    "source": "/workspace/generated_images/exec-9b68a1a3-bc78-47f6-a066-fefedba2dd98.png",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/learning-space-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/learning-space-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/learning-space.webp"
+      }
+    ],
+    "type": "AI conceptual space"
+  },
+  {
+    "name": "about-team",
+    "source": "/workspace/research/minhduc-v16/april-assets/1WQS2TxhBg_Rcj9hqaKU_Nvy9udHEv58w.jpg",
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/about-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/about-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/about-team.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  },
+  {
+    "name": "contact-team",
+    "source": "/workspace/attachments/93feaeb7-9b0c-45c9-8994-acb74b1ba975/20261017_153058.jpg",
+    "width": 3000,
+    "height": 4000,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/contact-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/contact-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/contact-team.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  },
+  {
+    "name": "field-team",
+    "source": "/workspace/attachments/ab33251c-dd17-4d6c-8045-9fbe54cf5a04/DJI_20261104091634_0676_D.JPG",
+    "width": 3840,
+    "height": 2160,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/field-team-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/field-team-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/field-team.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  },
+  {
+    "name": "birthday-gifts",
+    "source": "/workspace/research/minhduc-v16/birthday/originals/17.jpg",
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/birthday-gifts-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/birthday-gifts-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/birthday-gifts.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  },
+  {
+    "name": "red-gifts",
+    "source": "/workspace/attachments/5f92f85a-3885-42ae-ba6a-affbf35f119b/20260204_115843.jpg",
+    "width": 4000,
+    "height": 1868,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/red-gifts-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/red-gifts-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/red-gifts.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  },
+  {
+    "name": "event-hall",
+    "source": "/workspace/attachments/dd9bcf67-67dc-4b87-ab26-2a29437d1b0d/IMG_4010.JPG",
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/minhduc-v18/event-hall-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/assets/minhduc-v18/event-hall-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/assets/minhduc-v18/event-hall.webp"
+      }
+    ],
+    "type": "Minh Duc source photograph"
+  }
+]

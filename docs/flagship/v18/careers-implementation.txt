@@ -1,0 +1,16 @@
+TUYỂN DỤNG NỘI BỘ | Bàn giao triển khai v18
+
+Đã thay toàn bộ hero, nội dung và ảnh HR2B trong /careers. CareersSections nhận openings từ JobBrowser internal. Masthead “Gia nhập đội ngũ Minh Đức” sử dụng ảnh tất niên thật nguyên khung, chú thích, liên kết vị trí và liên kết việc làm tại nhà máy. Giữ bốn neo cũ. Hai khối ảnh–chữ dẫn tới MD007/MD008. Nội dung công việc và quyền lợi lấy từ jobs-data.ts. Bốn bước giải thích F04, câu hỏi thường gặp thay lời kể giả định. Liên kết nội trang giữ query. Liên kết chi tiết ghi nhận đường về có query/hash để nút quay lại giữ bộ lọc.
+
+Thư viện gồm 11 nguồn ảnh thật khác nhau với chú thích và alt năm ngôn ngữ. Sáu WebP v16 và năm WebP v18 do đầu mối tài nguyên cung cấp (field-team, contact-team, birthday-gifts, red-gifts, event-hall). Tải lười ảnh thân trang, giữ tỷ lệ gốc, riêng ảnh đầu trang ưu tiên cao. Các rail công việc, quyền lợi, FAQ và ảnh chạy 3,5 giây khi có phần tràn và điều kiện chuyển động cho phép. Mỗi dải có nút dừng/phát, trước và sau luôn nhìn thấy khi có nội dung để cuộn. Ảnh lớn chỉ chuyển khi nhấn nút hoặc phím ←/→, Escape trả focus về đúng thumbnail. Bốn rail nhận disabled khi mở ảnh lớn.
+
+Tệp phụ trách trong source:
+src/CareersSections.tsx
+src/Careers.css
+src/careers-media.json
+src/i18n-catalogs/v18-careers.json
+tests/careers-carousel.mjs
+
+Đã chạy “node tests/careers-carousel.mjs” trong repo: đạt bốn rail, bộ ảnh, dịch chuyển một mục, bảo vệ hover/focus/khuất viewport/reduced-motion, chặn mọi timer trong lightbox, điều hướng phím và phục hồi focus. Script đối chiếu 60 khóa locale mới có đủ en/zh/ko/ja, toàn bộ caption/alt và chuỗi mới trong component có nguồn dịch. git diff --check cho các tệp phụ trách không báo lỗi. Chưa chạy trình duyệt, production build hoặc publish theo phân công.
+
+Đầu mối tổng hợp thêm v18-careers vào generator/sinh locales, đăng ký năm ảnh v18 cùng srcset. Agent Việc làm sở hữu JobBrowser, trang chi tiết và F04. Agent Dịch vụ cập nhật tests/reference-structure.mjs theo hai khối nghề, bốn rail, 3 FAQ, quy trình 4 bước, gallery 11 ảnh. Giữ jobOrigin cùng hợp đồng ListOrigin trong JobsPages.tsx.

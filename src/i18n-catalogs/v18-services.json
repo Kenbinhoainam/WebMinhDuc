@@ -1,0 +1,506 @@
+{
+  "Chương trình theo hình thức học": {
+    "en": "Programs by study mode",
+    "zh": "按学习方式查看课程",
+    "ko": "학습 방식별 과정",
+    "ja": "学習形態別のプログラム"
+  },
+  "Tư vấn hoặc nộp hồ sơ": {
+    "en": "Get advice or apply",
+    "zh": "咨询或申请",
+    "ko": "상담 또는 지원",
+    "ja": "相談・出願"
+  },
+  "(minh họa)": {
+    "en": "(example)",
+    "zh": "（示例）",
+    "ko": "(예시)",
+    "ja": "（例）"
+  },
+  "Tìm hiểu hình thức học từ xa hoặc chính quy và chọn chương trình bạn muốn trao đổi.": {
+    "en": "Explore distance and campus study and choose a program to discuss.",
+    "zh": "了解远程和全日制学习，选择想咨询的课程。",
+    "ko": "원격 및 정규 과정을 살펴보고 상담할 과정을 선택하세요.",
+    "ja": "遠隔・通学の学び方から、相談したいプログラムをお選びください。"
+  },
+  "Học trực tuyến vào khung giờ nào?": {
+    "en": "When do online classes take place?",
+    "zh": "线上课程在什么时间上课？",
+    "ko": "온라인 수업은 몇 시에 진행되나요?",
+    "ja": "オンライン授業の時間帯はいつですか。"
+  },
+  "Thi trực tuyến hay tại điểm thi?": {
+    "en": "Are exams online or at a test center?",
+    "zh": "在线考试还是到考点考试？",
+    "ko": "시험은 온라인인가요, 시험장에 가야 하나요?",
+    "ja": "試験はオンラインですか、それとも会場で受けますか。"
+  },
+  "Lịch học tại lớp được sắp xếp thế nào?": {
+    "en": "How are on-campus classes scheduled?",
+    "zh": "面授课程如何安排？",
+    "ko": "대면 수업 일정은 어떻게 되나요?",
+    "ja": "通学授業はどのような日程ですか。"
+  },
+  "Điều kiện thực hành của chương trình là gì?": {
+    "en": "What practical training is available?",
+    "zh": "课程的实训条件是什么？",
+    "ko": "어떤 실습 환경이 제공되나요?",
+    "ja": "どのような実習環境がありますか。"
+  },
+  "Nộp hồ sơ tuyển sinh": {
+    "en": "Submit an application",
+    "zh": "提交入学申请",
+    "ko": "입학 서류 제출",
+    "ja": "出願する"
+  },
+  "Điều kiện tuyển sinh, học phí và văn bằng do đơn vị nào xác nhận?": {
+    "en": "Who confirms admission requirements, tuition and qualifications?",
+    "zh": "由哪个单位确认入学条件、学费和文凭？",
+    "ko": "입학 요건과 등록금, 학위는 어디에서 확인하나요?",
+    "ja": "入学要件・学費・取得資格はどこで確認できますか。"
+  },
+  "Giải pháp nhân lực cho nhà máy và doanh nghiệp": {
+    "en": "Workforce services for factories and businesses",
+    "zh": "工厂与企业用工服务",
+    "ko": "공장과 기업을 위한 인력 서비스",
+    "ja": "工場・企業向け人材サービス"
+  },
+  "Từ tuyển người theo ca đến tổ chức lại quy trình, chọn dịch vụ theo công việc bạn đang cần giải quyết.": {
+    "en": "From staffing shifts to reorganizing workflows, choose a service for the task at hand.",
+    "zh": "从班次招聘到流程调整，按当前需求选择服务。",
+    "ko": "교대 인력 채용부터 업무 절차 재정비까지 필요한 서비스를 선택하세요.",
+    "ja": "シフト人員の採用から業務手順の見直しまで、課題に合わせてサービスをお選びください。"
+  },
+  "Bạn cần giải quyết việc gì?": {
+    "en": "What do you need help with?",
+    "zh": "您需要解决什么问题？",
+    "ko": "어떤 도움이 필요하신가요?",
+    "ja": "どのような課題がありますか。"
+  },
+  "Đối tác doanh nghiệp": {
+    "en": "Business partners",
+    "zh": "企业合作伙伴",
+    "ko": "기업 파트너",
+    "ja": "企業パートナー"
+  },
+  "Tìm nguồn": {
+    "en": "Candidate sourcing",
+    "zh": "寻找候选人",
+    "ko": "인재 발굴",
+    "ja": "人材の発掘"
+  },
+  "Số lượng, vị trí và địa điểm": {
+    "en": "Headcount, roles and locations",
+    "zh": "人数、岗位和地点",
+    "ko": "인원, 직무 및 근무지",
+    "ja": "人数・職種・勤務地"
+  },
+  "Kế hoạch theo đợt": {
+    "en": "Hiring rounds",
+    "zh": "分批招聘计划",
+    "ko": "차수별 채용 계획",
+    "ja": "募集回ごとの計画"
+  },
+  "Tiếp nhận": {
+    "en": "Onboarding",
+    "zh": "人员接收",
+    "ko": "입사 인계",
+    "ja": "受け入れ"
+  },
+  "Lịch phỏng vấn và nhận việc": {
+    "en": "Interview and start dates",
+    "zh": "面试与入职日程",
+    "ko": "면접 및 입사 일정",
+    "ja": "面接日と入社日"
+  },
+  "Đầu mối phối hợp": {
+    "en": "Point of contact",
+    "zh": "对接联系人",
+    "ko": "협업 담당자",
+    "ja": "連絡窓口"
+  },
+  "Thời hạn": {
+    "en": "Duration",
+    "zh": "期限",
+    "ko": "기간",
+    "ja": "期間"
+  },
+  "Ngày bắt đầu và kết thúc": {
+    "en": "Start and end dates",
+    "zh": "起止日期",
+    "ko": "시작일과 종료일",
+    "ja": "開始日と終了日"
+  },
+  "Thời điểm rà soát": {
+    "en": "Review date",
+    "zh": "复核时间",
+    "ko": "검토 시점",
+    "ja": "見直しの時期"
+  },
+  "Quy mô từng ca": {
+    "en": "Staffing per shift",
+    "zh": "每班人数",
+    "ko": "교대별 인원",
+    "ja": "シフト別の人数"
+  },
+  "Cách xử lý thay đổi": {
+    "en": "How changes are handled",
+    "zh": "变更处理方式",
+    "ko": "변경 처리 방식",
+    "ja": "変更時の対応"
+  },
+  "Học phí": {
+    "en": "Tuition",
+    "zh": "学费",
+    "ko": "등록금",
+    "ja": "学費"
+  },
+  "Đơn vị đào tạo": {
+    "en": "Education provider",
+    "zh": "培训机构",
+    "ko": "교육기관",
+    "ja": "教育機関"
+  },
+  "Mức thu và lịch đóng": {
+    "en": "Amount and payment schedule",
+    "zh": "收费标准和缴费安排",
+    "ko": "금액 및 납부 일정",
+    "ja": "金額と納付日程"
+  },
+  "Bộ phận tuyển sinh của trường": {
+    "en": "School admissions office",
+    "zh": "学校招生部门",
+    "ko": "학교 입학처",
+    "ja": "学校の入試窓口"
+  },
+  "Các khoản phí liên quan": {
+    "en": "Related fees",
+    "zh": "相关费用",
+    "ko": "관련 비용",
+    "ja": "関連費用"
+  },
+  "Tổ chức và quy trình": {
+    "en": "Organization and workflows",
+    "zh": "组织与流程",
+    "ko": "조직 및 업무 절차",
+    "ja": "組織と業務手順"
+  },
+  "Các bộ phận tham gia": {
+    "en": "Teams involved",
+    "zh": "参与部门",
+    "ko": "참여 부서",
+    "ja": "関係部署"
+  },
+  "Phạm vi khảo sát": {
+    "en": "Scope of assessment",
+    "zh": "调研范围",
+    "ko": "조사 범위",
+    "ja": "調査範囲"
+  },
+  "Công cụ quản lý": {
+    "en": "Management tools",
+    "zh": "管理工具",
+    "ko": "관리 도구",
+    "ja": "管理ツール"
+  },
+  "Dữ liệu và phần mềm đang dùng": {
+    "en": "Current data and software",
+    "zh": "现用数据和软件",
+    "ko": "현재 데이터 및 소프트웨어",
+    "ja": "現在のデータとソフトウェア"
+  },
+  "Phạm vi triển khai": {
+    "en": "Implementation scope",
+    "zh": "实施范围",
+    "ko": "도입 범위",
+    "ja": "導入範囲"
+  },
+  "Kế hoạch bổ sung theo đợt": {
+    "en": "Plan staffing in rounds",
+    "zh": "分批补充人员计划",
+    "ko": "차수별 인력 충원 계획",
+    "ja": "募集回ごとの増員計画"
+  },
+  "Ví dụ kế hoạch tiếp nhận": {
+    "en": "Example onboarding schedule",
+    "zh": "人员接收计划示例",
+    "ko": "인력 인수 일정 예시",
+    "ja": "受け入れ計画の例"
+  },
+  "Đợt": {
+    "en": "Round",
+    "zh": "批次",
+    "ko": "차수",
+    "ja": "回"
+  },
+  "Nhà máy xác nhận ca và lịch nhận việc. Minh Đức trao đổi nguồn ứng viên theo từng đợt.": {
+    "en": "The factory confirms shifts and start dates. Minh Đức discusses sourcing for each round.",
+    "zh": "工厂确认班次和入职日期，明德按批次沟通人选来源。",
+    "ko": "공장에서 교대조와 입사 일정을 확인하면 민득이 차수별 후보자 확보 방안을 협의합니다.",
+    "ja": "工場がシフトと入社日程を確認し、ミンドゥックが各回の候補者の確保について相談します。"
+  },
+  "Ghi nhận hoạt động tìm nguồn tại hiện trường": {
+    "en": "Recruitment outreach in the field",
+    "zh": "现场招募活动记录",
+    "ko": "현장 인재 발굴 활동",
+    "ja": "現地での人材募集の様子"
+  },
+  "Hoạt động tìm nguồn": {
+    "en": "Recruitment outreach",
+    "zh": "现场招募",
+    "ko": "인재 발굴 활동",
+    "ja": "人材募集活動"
+  },
+  "Xác định khoảng thời gian và số người cần cho từng ca.": {
+    "en": "Specify the period and the number of people needed per shift.",
+    "zh": "明确用工时段和每班所需人数。",
+    "ko": "기간과 교대별 필요 인원을 정합니다.",
+    "ja": "期間とシフトごとの必要人数を決めます。"
+  },
+  "Thống nhất người tiếp nhận tại nơi làm việc và người xử lý thay đổi ca.": {
+    "en": "Agree who welcomes workers and who handles shift changes.",
+    "zh": "明确现场接收人员和负责调班的联系人。",
+    "ko": "현장 인수 담당자와 교대 변경 담당자를 정합니다.",
+    "ja": "現場での受け入れ担当者とシフト変更の担当者を決めます。"
+  },
+  "Điều kiện triển khai": {
+    "en": "Implementation requirements",
+    "zh": "实施条件",
+    "ko": "실행 조건",
+    "ja": "実施条件"
+  },
+  "Thống nhất trách nhiệm trước khi triển khai": {
+    "en": "Agree responsibilities before work starts",
+    "zh": "实施前明确职责",
+    "ko": "시행 전 역할 합의",
+    "ja": "開始前に役割分担を確認"
+  },
+  "Tiêu chí tuyển kỹ thuật viên bảo trì": {
+    "en": "Hiring criteria for a maintenance technician",
+    "zh": "维修技术员招聘标准",
+    "ko": "설비 정비 기술자 채용 기준",
+    "ja": "保全技術者の採用基準"
+  },
+  "Mẫu mô tả vị trí để thống nhất cách tuyển chọn.": {
+    "en": "An example role profile for agreeing how to assess candidates.",
+    "zh": "用于商定甄选方式的岗位说明示例。",
+    "ko": "선발 방식을 협의하기 위한 직무 설명 예시입니다.",
+    "ja": "選考方法を話し合うための職務記述例です。"
+  },
+  "Kỹ năng bắt buộc": {
+    "en": "Required skills",
+    "zh": "必备技能",
+    "ko": "필수 역량",
+    "ja": "必須スキル"
+  },
+  "Đọc sơ đồ và nhận diện lỗi thiết bị.": {
+    "en": "Read diagrams and identify equipment faults.",
+    "zh": "读懂图纸并识别设备故障。",
+    "ko": "도면을 읽고 장비 이상을 파악합니다.",
+    "ja": "図面を読み、設備の不具合を特定する。"
+  },
+  "Kinh nghiệm mong muốn": {
+    "en": "Preferred experience",
+    "zh": "期望经验",
+    "ko": "우대 경험",
+    "ja": "望ましい経験"
+  },
+  "Mô tả thiết bị đã bảo trì và phần việc đã đảm nhiệm.": {
+    "en": "Describe equipment maintained and your responsibilities.",
+    "zh": "说明维护过的设备及承担的工作。",
+    "ko": "정비한 설비와 담당 업무를 설명합니다.",
+    "ja": "保全した設備と担当した作業を説明する。"
+  },
+  "Cách đánh giá": {
+    "en": "Assessment method",
+    "zh": "考核方式",
+    "ko": "평가 방법",
+    "ja": "評価方法"
+  },
+  "Trao đổi một tình huống xử lý sự cố với người phụ trách kỹ thuật.": {
+    "en": "Discuss a troubleshooting scenario with the technical lead.",
+    "zh": "与技术主管讨论一个故障处理情境。",
+    "ko": "기술 담당자와 고장 대응 사례를 논의합니다.",
+    "ja": "技術担当者とトラブル対応の事例について話し合う。"
+  },
+  "So sánh hình thức học": {
+    "en": "Compare study modes",
+    "zh": "比较学习方式",
+    "ko": "학습 방식 비교",
+    "ja": "学習形態を比較"
+  },
+  "Hỏi trường về lịch học trực tuyến, thời gian tự học và địa điểm thi.": {
+    "en": "Ask about online classes, independent study time and exam locations.",
+    "zh": "向学校了解网课安排、自学时间和考试地点。",
+    "ko": "온라인 수업 일정과 자율 학습 시간, 시험 장소를 학교에 문의하세요.",
+    "ja": "オンライン授業の日程、自習時間、試験会場を学校に確認しましょう。"
+  },
+  "Hỏi trường về lịch học tại lớp, yêu cầu có mặt và điều kiện thực hành.": {
+    "en": "Ask about class schedules, attendance and practical training.",
+    "zh": "向学校了解面授安排、出勤要求和实训条件。",
+    "ko": "대면 수업 일정, 출석 요건과 실습 조건을 학교에 문의하세요.",
+    "ja": "授業日程、出席要件、実習環境を学校に確認しましょう。"
+  },
+  "Nội dung cần thống nhất": {
+    "en": "What to agree on",
+    "zh": "待商定事项",
+    "ko": "협의할 사항",
+    "ja": "合意すべき事項"
+  },
+  "Nơi xác nhận": {
+    "en": "Who to ask",
+    "zh": "确认渠道",
+    "ko": "확인처",
+    "ja": "確認先"
+  },
+  "Căn cứ tính phí": {
+    "en": "Pricing basis",
+    "zh": "计费依据",
+    "ko": "비용 산정 기준",
+    "ja": "料金算定の基準"
+  },
+  "Điểm cần thống nhất": {
+    "en": "Details to agree",
+    "zh": "待确定细节",
+    "ko": "합의할 내용",
+    "ja": "確認する事項"
+  },
+  "Chi phí cần xác nhận với trường": {
+    "en": "Fees to confirm with the school",
+    "zh": "需向学校确认的费用",
+    "ko": "학교에 확인할 비용",
+    "ja": "学校に確認する費用"
+  },
+  "Phạm vi tìm kiếm, tiêu chí kỹ năng và các bước đánh giá là cơ sở trao đổi phí tuyển chọn.": {
+    "en": "Search scope, skill requirements and assessment stages inform the fee discussion.",
+    "zh": "根据寻访范围、技能要求和评估环节商定招聘费用。",
+    "ko": "탐색 범위, 기술 요건, 평가 단계에 따라 채용 수수료를 협의합니다.",
+    "ja": "候補者の探索範囲、必要な技能、評価段階に基づいて採用費用を相談します。"
+  },
+  "Các yếu tố để trao đổi chi phí": {
+    "en": "What shapes the fee discussion",
+    "zh": "费用磋商要素",
+    "ko": "비용 협의 요소",
+    "ja": "料金を相談する際の要素"
+  },
+  "Xem tất cả dịch vụ": {
+    "en": "View all services",
+    "zh": "查看全部服务",
+    "ko": "전체 서비스 보기",
+    "ja": "すべてのサービスを見る"
+  },
+  "Xem việc phổ thông": {
+    "en": "Browse general labor jobs",
+    "zh": "查看普工岗位",
+    "ko": "일반직 일자리 보기",
+    "ja": "一般作業の求人を見る"
+  },
+  "Xem việc tay nghề": {
+    "en": "Browse skilled jobs",
+    "zh": "查看技能岗位",
+    "ko": "기능직 일자리 보기",
+    "ja": "技能職の求人を見る"
+  },
+  "Quy trình cần rà soát": {
+    "en": "Workflow to review",
+    "zh": "待梳理流程",
+    "ko": "검토할 업무 절차",
+    "ja": "見直す業務手順"
+  },
+  "Phân công": {
+    "en": "Assign the work",
+    "zh": "分配任务",
+    "ko": "업무 배정",
+    "ja": "担当を決める"
+  },
+  "Phối cảnh minh họa khu công nghiệp": {
+    "en": "Concept illustration of an industrial campus",
+    "zh": "工业园区概念示意图",
+    "ko": "산업단지 콘셉트 이미지",
+    "ja": "工業団地のイメージ図"
+  },
+  "Phối cảnh minh họa không gian học tập": {
+    "en": "Concept illustration of a learning space",
+    "zh": "学习空间概念示意图",
+    "ko": "학습 공간 콘셉트 이미지",
+    "ja": "学習空間のイメージ図"
+  },
+  "Đại diện tham gia hoạt động kết nối việc làm": {
+    "en": "Participants at an employment outreach event",
+    "zh": "就业交流活动参与者",
+    "ko": "취업 연계 행사 참가자",
+    "ja": "就労支援イベントの参加者"
+  },
+  "Bổ sung người cho đợt sản xuất": {
+    "en": "Staff a production run",
+    "zh": "为生产批次补员",
+    "ko": "생산 일정에 맞춘 충원",
+    "ja": "生産計画に合わせて増員する"
+  },
+  "Bạn cần bao nhiêu người, tại đâu và khi nào?": {
+    "en": "How many people do you need, where and when?",
+    "zh": "何时、何地需要多少人？",
+    "ko": "언제 어디에 몇 명이 필요한가요?",
+    "ja": "いつ、どこで、何人必要ですか。"
+  },
+  "Bổ sung nhân lực theo thời hạn": {
+    "en": "Add staff for a defined period",
+    "zh": "按期限补充人力",
+    "ko": "정해진 기간 동안 인력 충원",
+    "ja": "一定期間の人員を補う"
+  },
+  "Ca nào cần bổ sung và trong thời gian bao lâu?": {
+    "en": "Which shifts need coverage, and for how long?",
+    "zh": "哪些班次需要补员，持续多久？",
+    "ko": "어떤 교대조에 얼마 동안 인력이 필요한가요?",
+    "ja": "どのシフトに、どのくらいの期間、人員が必要ですか。"
+  },
+  "Trao đổi công việc trong phim giới thiệu Minh Đức": {
+    "en": "Work discussion from the Minh Đức company film",
+    "zh": "截自明德介绍片的工作讨论场景",
+    "ko": "민득 회사 소개 영상 속 업무 논의",
+    "ja": "ミンドゥックの紹介映像に登場する打ち合わせ"
+  },
+  "Tuyển người có kỹ năng chuyên biệt": {
+    "en": "Recruit people with specialist skills",
+    "zh": "招聘具备专业技能的人才",
+    "ko": "전문 기술 인재 채용",
+    "ja": "専門技能を持つ人材を採用する"
+  },
+  "Vị trí này cần kiểm tra kỹ năng gì?": {
+    "en": "Which skills does this role require you to assess?",
+    "zh": "该岗位需要考核哪些技能？",
+    "ko": "이 직무는 어떤 기술을 평가해야 하나요?",
+    "ja": "この職種で確認すべき技能は何ですか。"
+  },
+  "Tìm hướng học phù hợp": {
+    "en": "Find a study option",
+    "zh": "寻找合适的学习方向",
+    "ko": "알맞은 학습 방식 찾기",
+    "ja": "適した学び方を選ぶ"
+  },
+  "Bạn có thể dành thời gian nào cho việc học?": {
+    "en": "When can you set aside time to study?",
+    "zh": "您可以安排哪些时段学习？",
+    "ko": "언제 학습할 시간을 낼 수 있나요?",
+    "ja": "学習にはどの時間帯を充てられますか。"
+  },
+  "Minh họa buổi trao đổi về vận hành": {
+    "en": "Illustration of an operations discussion",
+    "zh": "运营工作讨论示意图",
+    "ko": "운영 회의 예시 이미지",
+    "ja": "業務運営に関する打ち合わせのイメージ"
+  },
+  "Cải thiện quy trình và công cụ quản lý": {
+    "en": "Improve workflows and management tools",
+    "zh": "改进流程和管理工具",
+    "ko": "업무 절차와 관리 도구 개선",
+    "ja": "業務手順と管理ツールを改善する"
+  },
+  "Khâu nào đang phải nhập lại dữ liệu?": {
+    "en": "Where do you have to re-enter data?",
+    "zh": "哪个环节需要重复录入数据？",
+    "ko": "어느 단계에서 데이터를 다시 입력하나요?",
+    "ja": "どの段階でデータを再入力していますか。"
+  }
+}

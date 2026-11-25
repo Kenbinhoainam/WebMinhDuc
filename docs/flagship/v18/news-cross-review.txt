@@ -1,0 +1,8 @@
+Phản biện độc lập Tin tức & Sự kiện v18
+
+Đối chiếu src/EditorialPages.tsx, src/editorial-reference.css, CSS chung, hook carousel, navigation, metadata và kế hoạch v17. node tests/editorial-reference.mjs đã qua các trạng thái lọc, phân trang, Back, clipboard bị từ chối, focus, pause, hai chính sách và 11 route biên tập. Kiểm SSR độc lập bằng chính module và locale v18 trên 55 trang (11 × 5 ngôn ngữ) đều có một H1. Tất cả bài giữ ba neo mục lục có đích, URL Facebook theo đúng locale. Tất cả lịch có năm neo, hai figure được chú thích riêng, các giờ trong lịch trình có offset +07:00; trang danh sách và chi tiết cùng mốc 25/11/2026. Tiêu đề, lịch và nội dung vẫn đọc được khi ảnh không tải. Chưa đo trình duyệt thực, thiết bị chạm hay khung hình chuyển động.
+
+Đã chuyển hai vấn đề cho nhóm sở hữu
+
+1. Liên kết trong hàng danh mục truyền state.archive. Liên kết trong rail Bài chọn lọc và trong “Có thể bạn quan tâm” lại không truyền. Mở /news?category=workers#news-listings, theo bài chọn lọc hoặc đi thêm qua một bài liên quan rồi chọn liên kết trở về sẽ về /news mặc định. Cần truyền cùng đường dẫn danh mục từ rail và chuỗi bài liên quan, thêm kiểm tra giữ query/hash.
+2. Kiểm nguồn CSS cho thấy nút nhóm “All” chỉ có min-height 44 px và padding ngang hai bên 2 px. Liên kết tựa bài trong rail hoặc cột liên quan là phần tử inline, nên khi tựa một dòng thì vùng bấm có thể thấp hơn 44 px. Đạt mục tiêu thiết kế bằng min-inline-size/min-block-size hoặc mở vùng bấm cả hàng có đúng một đích; kiểm các nút tiếng Anh/Japan và viewport hẹp khi có browser.

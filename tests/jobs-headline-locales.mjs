@@ -10,11 +10,11 @@ const file='.jobs-headline-locales-test.mjs';
 try {
  await build({stdin:{contents:"export {JobsPage} from './src/JobsPages'; export {LocaleProvider} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'jobs-headline-locales.tsx'},bundle:true,platform:'node',format:'esm',outfile:file,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
  const {JobsPage,LocaleProvider,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${file}`).href);
- const expected={vi:'Một công việc phù hợp. Một khởi đầu vững vàng.',en:'A suitable job. A strong start.',zh:'一份合适的工作。 一个稳健的开始。',ko:'나에게 맞는 일자리. 든든한 출발.',ja:'自分に合った仕事。 確かなスタート。'};
+ const expected={"vi": "Tìm việc làm", "en": "Search jobs", "zh": "搜索职位", "ko": "일자리 검색", "ja": "求人検索"};
  for(const locale of Object.keys(expected)) {
   await loadLocale(locale);
   const html=renderToString(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,null,React.createElement(JobsPage))));
-  const dom=new JSDOM(html);assert.equal(dom.window.document.querySelector('.jobs-intro h2')?.textContent,expected[locale],`${locale}: localized SSR headline`);dom.window.close();
+  const dom=new JSDOM(html);assert.equal(dom.window.document.querySelector('.md-page-masthead h1')?.textContent,expected[locale],`${locale}: localized SSR headline`);dom.window.close();
  }
  console.log('PASS jobs headline SSR in five locales');
 } finally {await rm(file,{force:true});}

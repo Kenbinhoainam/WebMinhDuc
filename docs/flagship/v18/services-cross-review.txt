@@ -1,0 +1,11 @@
+Rà soát độc lập Dịch vụ và Tuyển sinh | Triển khai v18
+
+Đã đọc ServicesPages.tsx, components.tsx, data.ts, Education.tsx, hai stylesheet, navigation.ts, các hook rail, PageTransition, ContactForm và test liên quan. Bốn dịch vụ doanh nghiệp truyền đúng service.title cho cả modal và form cuối trang. Đổi slug dựng lại form theo dịch vụ. Tuyển sinh dẫn thẳng F05/F06, ba chương trình giữ linkId và source trong biên nhận. Việc kiểm tra tệp chỉ dùng metadata, giữ đúng quy tắc 3 tệp, 5 MB/tệp, 15 MB tổng. F05/F06 cùng giữ tên và số điện thoại Việt Nam bắt buộc. Các liên kết từ dịch vụ đến việc làm dùng URL bộ lọc dùng chung. Đã rà tên tệp ảnh và catalog theo mã.
+
+Hai lỗi đã báo chủ trang và xác nhận lại trong mã:
+• Chọn tab hồ sơ làm chế độ hiển thị khác query F05, dẫn đến bấm CTA F05 nhưng thực tế thấy F06. EducationForm nay lấy loại biểu mẫu từ URL, cập nhật query/hash khi chuyển tab, quay Back về URL trống đúng F05. Chủ trang bổ sung kiểm thử cho Back và quay lại từ masthead.
+• Bảng kế hoạch 490px trong cột grid 1fr trên điện thoại có nguy cơ đẩy rộng trang. Cột mobile đã đổi sang minmax(0,1fr), vùng bảng tự cuộn; có caption, tiêu đề cột/hàng, vùng focus được.
+
+Lưu ý đã chuyển cho root: PageTransition.findAnchor chỉ gọi scrollIntoView ở thời điểm rà soát, dù #dang-ky có tabIndex=-1. Sau khi bấm CTA từ masthead, nên chuyển focus tới vùng đích khi đi bằng bàn phím. Khi người dùng đang chuyển tab ngay bên trong vùng thì giữ focus trên nút đang dùng. Với /services mobile, ảnh đầu trang hiện trước mục lục năm dịch vụ; lộ trình chi tiết đề xuất mục lục trước ảnh.
+
+Rà soát này đọc mã và CSS. Không dựng lại web, chạy song song bộ test, sửa mã của dịch vụ hoặc xác nhận bố cục bằng ảnh trình duyệt.

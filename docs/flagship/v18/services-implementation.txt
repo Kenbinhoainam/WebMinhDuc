@@ -1,0 +1,22 @@
+DỊCH VỤ VÀ TUYỂN SINH · TRIỂN KHAI V18
+
+Phạm vi
+Đã triển khai /services, năm trang dịch vụ, /education và ba chương trình. Trên mobile, CTA và năm liên kết trực tiếp đứng trước ảnh campus trong cả DOM và bố cục. Desktop dùng cùng ảnh ở cột phải. Ba số liệu minh họa và dải ảnh tự chạy nằm dưới mục lục. Mỗi trang chi tiết có câu hỏi mở đầu, hình ảnh và công cụ hỗ trợ quyết định riêng.
+
+Cung ứng có bảng kế hoạch theo đợt và ảnh dọc hoạt động tại hiện trường. Cho thuê phân định trách nhiệm theo thời hạn và ca. Headhunt có ví dụ tiêu chí kỹ thuật viên bảo trì. Setup hiển thị một quy trình cần rà soát. Tuyển sinh so sánh học từ xa và chính quy, dẫn đúng F05 hoặc F06. Các trang vẫn có năm bước, thông tin về phí riêng, FAQ và bốn dịch vụ liên quan, cùng các dải đối tác/chia sẻ ở những tuyến vốn có. Campus và không gian học tập dùng ảnh ý niệm có chú thích. Tên đối tác xuất hiện trong dải doanh nghiệp riêng. Hình trong phim Minh Đức và ảnh tư liệu được phân biệt với minh họa.
+
+F01 trong modal và cuối trang giữ đúng dịch vụ, kể cả khi chuyển trang trong SPA. InfoContact nhận service và id tùy chọn, mặc định business-contact, vẫn cho phép F02. Danh mục giáo dục nhóm ba chương trình theo hình thức. Trong trang chương trình, hai đường dẫn giữ nguyên slug, thông tin chương trình và liên kết với hồ sơ minh họa trong ADMIN. F05/F06 lấy chế độ trực tiếp từ URL. Chọn tab cập nhật query/hash, kể cả quay lại URL không có query. Giữ nguyên các trường, điều kiện điện thoại/email, loại và dung lượng tệp, bộ nhớ phiên, cách tạo mã và focus khi lỗi hoặc thành công.
+
+Nguồn
+src/pages/info/ServicesPages.tsx, components.tsx, data.ts, services-reference.css
+src/Education.tsx, src/education.css, src/i18n-catalogs/v18-services.json
+tests/info-carousel.mjs, tests/education-validation.mjs, tests/reference-structure.mjs
+
+Đã kiểm tra
+• tests/info-carousel.mjs đạt. Hai rail chạy độc lập và có nút dừng. Mở yêu cầu và gửi F01 lần lượt ở cả bốn dịch vụ doanh nghiệp trong cùng một router. Từng bản ghi có đúng source và giá trị service. Chuyển sang tuyển sinh có F05/F06.
+• tests/education-validation.mjs đạt. Kiểm tra tệp quá lớn, số điện thoại sai, giữ dữ liệu khi sửa, tệp không bắt buộc, chuyển tab đưa chế độ vào URL, quay lại về F05 mặc định, CTA đầu trang và tab cùng chọn đúng biểu mẫu.
+• tests/v14-forms-demo.mjs đạt cho sáu form, biên tệp, bản ghi và điều hướng chương trình.
+• TypeScript --noEmit, git diff --check đạt. Kiểm tra SSR cục bộ 10 trang × 5 ngôn ngữ với catalog ghép trong bộ nhớ đạt, không ghi vào locale sinh tự động.
+• Đã cập nhật tests/reference-structure.mjs cùng chủ sở hữu năm nhóm khác. Lần chạy sau khi sinh đủ catalog đã đạt trên năm ngôn ngữ, gồm kiểm tra thứ tự mục lục và ảnh, toàn bộ dịch vụ, tuyển sinh, việc làm, tuyển nội bộ, liên hệ và tin tức.
+
+Không chạy server, trình duyệt, build, commit hoặc xuất bản trong phần việc này. Nghiệm thu trực quan và bộ test tích hợp thuộc bản dựng cuối của điều phối.

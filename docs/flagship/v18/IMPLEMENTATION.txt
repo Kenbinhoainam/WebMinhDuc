@@ -1,0 +1,39 @@
+MINH ĐỨC V18 — BÀN GIAO TRIỂN KHAI
+25/11/2026
+
+Sáu agent GPT-6.2 Astra triển khai sáu nhóm trang theo phương án v17; các agent đánh giá chéo, đầu mối chính tích hợp khung dùng chung. Phạm vi gồm danh mục, chi tiết và luồng liên quan ở năm ngôn ngữ.
+
+Đã triển khai
+• Giới thiệu: masthead ảnh thật, mục lục theo chương, lịch sử có tên và tự chạy 7 giây, vai trò có hành động riêng, hoạt động thật; tên đối tác theo nguồn đứng trước tình huống; brochure ba trang chuyển tay và in đủ ba phần như v13.
+• Dịch vụ và Tuyển sinh: năm lối vào trực tiếp, năm kiểu nội dung theo quyết định, bảng nhỏ có vùng cuộn riêng, modal/form cuối giữ đúng dịch vụ; chương trình và F05/F06 đồng bộ query, giữ đích chương trình và Back.
+• Việc làm và đã lưu: bộ lọc phù hợp nhóm việc, bỏ giá trị URL ngoài nhóm, hàng so sánh lương/KCN/ca; tóm tắt và CTA trước bài trên mobile; lưu/bỏ lưu và quay lại giữ ngữ cảnh/focus, kể cả khi tin gốc bị bỏ lưu.
+• Tuyển dụng nội bộ: hình và nội dung Minh Đức, hai vai trò có đường đi đúng, bốn rail điều khiển được, thư viện 11 ảnh thật, lightbox chuyển tay/điều khiển bàn phím và trả focus.
+• Tin tức và Sự kiện: hai bài chọn, URL phân loại/phân trang/trạng thái, cột bài đọc và mục lục, giữ bộ lọc qua chuỗi bài liên quan, sao chép dự phòng; ảnh thật tách lịch mẫu, mốc đối chiếu ổn định, neo focus được.
+• Liên hệ và Tư vấn: hotline/lối vào rõ, DOM theo thứ tự mobile, giữ nháp F01/F02, selector không mất focus; chọn giờ khóa F02, đổi giờ giữ nháp và kiểm tra trước khi ghi. Mọi biên nhận tiếp tục là mô phỏng trong bộ nhớ, không gửi ra ngoài.
+
+Khung và hiệu năng
+Masthead sáng/xanh, chữ cơ sở 16 px, ảnh giữ nguyên tỷ lệ, srcset và kích thước nội tại. Sáu ảnh thật bổ sung và hai ảnh AI ý niệm có 24 biến thể WebP 480/960/1600, tổng khoảng 2,81 MB; chỉ tải biến thể phù hợp. Không tạo lại logo, nhân viên hoặc cơ sở thật bằng AI.
+Header trong suốt trên masthead sáng dùng chữ xanh, bài đọc không cộng hai lần khoảng header. Menu nhận đúng tuyển nội bộ kể cả dấu / cuối. Alias /job-seekers và /testimonials có HTML cho năm ngôn ngữ; alias tìm việc giữ query/hash.
+Reveal hai chiều dùng 32 px desktop/16 px mobile, giữ focus, reduced-motion và ngưỡng 84/96%. Rail dùng nhịp phù hợp, dừng khi Tab đến cả nút pause, thao tác chạm, modal/lightbox, khuất và tab ẩn. Explicit Play khởi động lại, pointer focus không đảo trạng thái hai lần. Dải logo đối tác dùng cùng nguyên tắc dừng.
+
+Rà soát chéo và sửa trước bàn giao
+Các báo cáo *-cross-review.txt và shared-independent-review.txt là bằng chứng tại thời điểm đánh giá. Các lỗi cụ thể trong đó đã được giải quyết trước bản dựng cuối: mất focus ở selector; ngữ cảnh F01 và F05/F06; bộ lọc ngoài nhóm; quay lại sau bỏ lưu; bộ lọc bài liên quan; kích thước liên kết; neo và khoảng bù header; modal che rail; phân loại internal trailing slash; alias địa phương hóa; khung ảnh lỗi giữ tỷ lệ.
+
+Kiểm tra cuối
+• TypeScript, Vite client/SSR, prerender: đạt.
+• SEO: 205 trang chính; stylesheet route và shared chunk sẵn trong head trước hydration.
+• Catalog năm ngôn ngữ: đồng bộ và parity đạt.
+• Jobs logic, sprint/admin/education/consultation; toàn bộ F01–F06, giới hạn tệp và bản ghi phiên: đạt.
+• Header, hover, locale selector, sitemap destinations/review, alias/query: đạt.
+• Carousel home/info/careers/partners; focus, explicit play, pointer, modal, giảm chuyển động, observer lỗi và teardown: đạt.
+• Reveal/repeat, media, video hero SSR và các lifecycle: đạt.
+• Reference structures, home motion, Info/brochure, About anchor, News/Event: đạt.
+• Hydration của bộ tuyến hiện có; reviewer flow; 40 route/state đa ngôn ngữ và tiêu đề jobs năm locale: đạt.
+• git diff --check: đạt.
+Các bài cũ chốt 40 px và CSS phải nằm trực tiếp ở chunk được cập nhật theo thiết kế 32/16 px và đồ thị import CSS mới; giữ kiểm tra hành vi và stylesheet trước hydration.
+
+Giới hạn kiểm chứng
+Managed Sites preview vẫn trả “relay could not open browser port 4173: timed out waiting for relay readiness”. Chưa có bằng chứng trình duyệt thật, viewport, ảnh chụp, touch, zoom hay số đo CWV cho bản v18. Kiểm thử SSR/DOM không được gọi là kiểm tra trực quan. Không cài trình duyệt hoặc dựng server thay thế.
+
+Trạng thái tiếp theo
+Sau bản triển khai này, người dùng yêu cầu audit bằng 20 skill Emil Kowalski. Đợt audit đó chỉ đọc nguồn và kiểm tra, ghi nhận đề xuất; mọi sửa code, cài thư viện hoặc cập nhật DESIGN.md từ phát hiện audit phải đợi người dùng duyệt. Tài liệu audit sẽ nằm ngoài source đã đóng băng.

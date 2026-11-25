@@ -28,8 +28,8 @@ section.consultation-page .consultation-card [aria-invalid=true]{border-color:#a
 form.contact-form .field-error, form.application-form .application-field .application-error,
 section.education-form-section .education-form-card .education-error,
 section.consultation-page .consultation-error{display:block;margin-top:7px;color:#9e1524;font-size:14px;font-weight:600;line-height:1.45}
-form.contact-form .form-mode, section.education-form-section .education-form-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-form.contact-form .form-mode button, section.education-form-section .education-form-tabs button{min-height:44px;padding:10px 16px;font-size:14px;font-weight:700;line-height:1.35;white-space:normal}
+.contact-form-switchable > .form-mode, section.education-form-section .education-form-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.contact-form-switchable > .form-mode button, section.education-form-section .education-form-tabs button{min-height:44px;padding:10px 16px;font-size:14px;font-weight:700;line-height:1.35;white-space:normal}
 form.contact-form button[type=submit], form.application-form button[type=submit],
 section.education-form-section .education-form-card button[type=submit]{min-height:48px;margin-top:22px;font-size:15px;line-height:1.35}
 form.application-form .application-field{margin-bottom:20px}
@@ -49,7 +49,7 @@ form.contact-form .form-disclaimer{margin-top:18px}
 .application-success p, .consultation-card .consultation-success[role=status] p{font-size:16px;line-height:1.6;color:#344b41}
 .form-success[role=status] :is(a,button), .education-form-card .education-success[role=status] :is(a,button),
 .application-success :is(a,button), .consultation-card .consultation-success[role=status] :is(a,button){min-height:44px}
-@media(max-width:767px){form.contact-form .form-grid,form.application-form .application-fields-row{grid-template-columns:minmax(0,1fr);gap:16px}form.contact-form .form-grid .full-field{grid-column:auto}section.education-form-section .education-form-card{padding:24px 20px}form.contact-form .form-mode button,section.education-form-section .education-form-tabs button{flex:1 1 170px}form.contact-form button[type=submit],section.education-form-section .education-form-card button[type=submit]{width:100%;justify-content:center}}
+@media(max-width:767px){form.contact-form .form-grid,form.application-form .application-fields-row{grid-template-columns:minmax(0,1fr);gap:16px}form.contact-form .form-grid .full-field{grid-column:auto}section.education-form-section .education-form-card{padding:24px 20px}.contact-form-switchable > .form-mode button,section.education-form-section .education-form-tabs button{flex:1 1 170px}form.contact-form button[type=submit],section.education-form-section .education-form-card button[type=submit]{width:100%;justify-content:center}}
 .form-success[role=status] :is(h3,a,button):focus-visible,
 .education-form-card .education-success[role=status] :is(h3,a,button):focus-visible,
 .application-success :is(h3,a,button):focus-visible,

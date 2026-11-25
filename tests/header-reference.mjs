@@ -24,6 +24,13 @@ try {
   assert.equal(doc.querySelectorAll('.no-script-nav > ul > li').length,7);assert.equal(doc.querySelectorAll('.no-script-nav ul ul a').length,14);
   dom.window.close();
  }
+ for(const slug of ['chuyen-vien-tuyen-dung-bac-ninh','cong-tac-vien-tuyen-dung-quang-ninh'])for(const suffix of ['', '/']){
+  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{initialEntries:[`/jobs/${slug}${suffix}`]},React.createElement(Header))));
+  const dom=new JSDOM(html),d=dom.window.document;
+  assert.ok(d.querySelector('.desktop-nav-heading a[href="/careers"]').classList.contains('active'),'internal role belongs to Careers');
+  assert.ok(!d.querySelector('.desktop-nav-heading a[href="/jobs"]').classList.contains('active'),'factory menu is not active for internal role');
+  dom.window.close();
+ }
  const css=await readFile('src/sprint-navigation.css','utf8'), sheet=postcss.parse(css);
  const declarations=selector=>{const values=[];sheet.walkRules(rule=>{if(rule.selectors.includes(selector))rule.walkDecls(decl=>values.push([decl.prop,decl.value]));});return values;};
  assert.ok(declarations('.site-header.site-header').some(([p,v])=>p==='background'&&v==='transparent'));
@@ -37,7 +44,7 @@ try {
  assert.ok(declarations('.site-header .brand').some(([p,v])=>p==='width'&&v==='92px'),'transparent original logo has a larger default width');
  assert.ok(declarations('.site-header .brand').some(([p,v])=>p==='overflow'&&v==='visible'),'logo halo is not clipped by base brand styles');
  assert.ok(declarations('.site-header .header-inner').some(([p,v])=>p==='height'&&v==='5rem'));
- assert.ok(declarations('body:not(:has(.page-banner-main, .section-home-banner)) .site-header').some(([p,v])=>p==='position'&&v==='sticky'),'bannerless pages use an in-flow contrast header');
+ assert.ok(declarations('body:not(:has(.page-banner-main, .section-home-banner, .ed-reader)) .site-header').some(([p,v])=>p==='position'&&v==='sticky'),'bannerless pages use an in-flow contrast header');
  let narrowChevron=false,narrowTarget=false;sheet.walkAtRules('media',rule=>{if(!/max-width:\s*380px/.test(rule.params))return;rule.walkRules(child=>{if(child.selector==='.site-header .language-trigger .language-chevron')child.walkDecls('display',decl=>{if(decl.value==='none')narrowChevron=true});if(child.selector==='.site-header .language-trigger')child.walkDecls('min-width',decl=>{if(decl.value==='44px')narrowTarget=true})})});assert.ok(narrowChevron&&narrowTarget,'narrow header hides decorative locale chevron and retains 44px target');
  assert.match(css,/@media \(min-width:1280px\)/,'desktop navigation has a wide responsive breakpoint');
  assert.match(css,/grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/,'seven groups can shrink without overflowing');

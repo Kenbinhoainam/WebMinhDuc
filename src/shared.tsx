@@ -8,9 +8,9 @@ export const ContactContext=createContext<(service?:string)=>void>(()=>{});
 export const useContact=()=>useContext(ContactContext);
 export function ButtonLink({to,children,secondary=false}:{to:string;children:ReactNode;secondary?:boolean}){return <Link to={to} className={`btn ${secondary?'btn-secondary':''}`}>{children}<ArrowUpRight size={18}/></Link>}
 export function SectionHeading({eyebrow,title,description}:{eyebrow?:string;title:string;description?:string}){return <div className="section-heading">{eyebrow&&<span className="eyebrow">{eyebrow}</span>}<h2>{title}</h2>{description&&<p>{description}</p>}</div>}
-export function PageHero({title,image}:{title:string;eyebrow?:string;description?:string;image?:string}){return <section className={`page-hero page-banner-main ${image?'with-image':''}`}>
+export function PageHero({title,image,eyebrow,description}:{title:string;eyebrow?:string;description?:string;image?:string}){return <section className={`page-hero page-banner-main ${image?'with-image':''}`}>
   {image&&<div className="img"><img src={image} alt="" loading="eager" fetchPriority="high" sizes="100vw"/></div>}
-  <div className="content container"><h1>{title}</h1>
+  <div className="content container">{eyebrow&&<p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{description&&<p>{description}</p>}
     <nav className="global-breadcrumb" aria-label="Điều hướng trang"><div className="breadcrumb"><Link to="/">Trang chủ</Link><span aria-hidden="true">›</span><span aria-current="page">{title}</span></div></nav>
   </div>
 </section>}

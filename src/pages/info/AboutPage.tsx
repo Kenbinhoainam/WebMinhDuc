@@ -1,65 +1,234 @@
-import {useRef, useState, type KeyboardEvent} from 'react';
-import {ArrowUpRight, ChevronLeft, ChevronRight, Users, Building2, ClipboardCheck, Handshake} from 'lucide-react';
-import {PageHero, SectionHeading, ButtonLink, Modal} from '../../shared';
+import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
+import {Link, useLocation, useNavigationType} from 'react-router-dom';
+import {ChevronLeft, ChevronRight} from 'lucide-react';
+import {PageMasthead} from '../../PageMasthead';
+import {Modal} from '../../shared';
 import {useTranslation} from '../../i18n';
 import {RevealFrame} from '../../motion';
-import {responsiveImage} from '../../media';
-import {uploads} from './data';
-import {ServiceCards, InfoContact} from './components';
-import './about-reference.css';
-import './info-v16.css';
+import {advanceHomeRail, useHomeCarousel} from '../../useHomeCarousel';
 import {partners} from '../../partners';
 import PartnerLogo from '../../PartnerLogo';
-function AboutActivities(){
- const t=useTranslation();
- const items=[
-  {image:'team-yearend',label:t({vi:'Gặp gỡ cuối năm',en:'A year-end gathering',zh:'年终相聚',ko:'연말 모임',ja:'年末の集い'}),alt:t({vi:'Tập thể Minh Đức trong buổi gặp gỡ cuối năm',en:'The Minh Đức team at a year-end gathering',zh:'明德团队在年终聚会中合影',ko:'연말 모임에서 함께한 민득 팀',ja:'年末の集いでのミンドゥックのチーム'})},
-  {image:'yearend-gifts',label:t({vi:'Những khoảnh khắc sẻ chia',en:'Moments of sharing',zh:'分享时刻',ko:'함께 나누는 순간',ja:'分かち合うひととき'}),alt:t({vi:'Mọi người cùng chụp ảnh với những phần quà trong buổi gặp gỡ',en:'A group pictured with gifts at a gathering',zh:'聚会中大家与礼物合影',ko:'모임에서 선물과 함께 찍은 단체 사진',ja:'集いで贈り物と一緒に撮影した集合写真'})},
-  {image:'culture-birthday',label:t({vi:'Niềm vui trong tập thể',en:'Celebrating together',zh:'共同庆祝',ko:'함께하는 축하',ja:'ともに祝う時間'}),alt:t({vi:'Tập thể cùng nhau mừng sinh nhật',en:'The team celebrating a birthday together',zh:'团队一起庆祝生日',ko:'함께 생일을 축하하는 팀',ja:'チームで誕生日を祝う様子'})},
-  {image:'community',label:t({vi:'Kết nối cộng đồng',en:'Connecting with the community',zh:'连接社区',ko:'지역사회와의 연결',ja:'地域とのつながり'}),alt:t({vi:'Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời',en:'A group together during an outdoor activity',zh:'大家在户外活动中合影',ko:'야외 활동 중 함께 찍은 단체 사진',ja:'屋外活動での集合写真'})},
- ];
- return <section id="activities" className="section md-v16-activities"><div className="container"><RevealFrame effect="up"><div className="md-v16-activities-heading"><span className="eyebrow">{t({vi:'CON NGƯỜI MINH ĐỨC',en:'OUR PEOPLE',zh:'明德团队',ko:'민득의 사람들',ja:'ミンドゥックの人々'})}</span><h2>{t({vi:'Những kết nối tạo nên Minh Đức',en:'The connections that make Minh Đức',zh:'连接成就明德',ko:'민득을 만드는 연결',ja:'ミンドゥックをつくるつながり'})}</h2><p>{t({vi:'Từ những buổi gặp gỡ của tập thể đến các hoạt động cùng cộng đồng, mỗi khoảnh khắc đều là một phần hành trình của chúng tôi.',en:'From team gatherings to moments shared with the community, each is part of our journey.',zh:'从团队相聚到社区活动，每一个时刻都是我们旅程的一部分。',ko:'팀 모임부터 지역사회와 함께한 활동까지, 모든 순간이 우리의 여정입니다.',ja:'チームの集いから地域との活動まで、一つひとつの時間が私たちの歩みです。'})}</p></div></RevealFrame><div className="md-v16-activities-grid">{items.map((item,index)=><RevealFrame key={item.image} effect="up" delayMs={300+index*100}><figure className="md-v16-activity"><img {...responsiveImage(`/assets/minhduc-v16/${item.image}.webp`, '(max-width: 767px) 100vw, 50vw')} alt={item.alt} loading="lazy" decoding="async"/><figcaption>{item.label}</figcaption></figure></RevealFrame>)}</div></div></section>;
-}
-function HistorySection(){
- const [phase,setPhase]=useState(0), [detail,setDetail]=useState(false), previous=useRef(0), t=useTranslation();
- const change=(next:number)=>{previous.current=phase;setPhase(next)};
- const phases=[{title:'Khởi đầu từ kết nối',text:'Tiếp nhận nhu cầu tìm việc và tuyển dụng, làm rõ thông tin để hai bên có cơ sở trao đổi.',image:"/assets/minhduc-meeting-10s.webp"},{title:'Đồng hành từng bước',text:'Hướng dẫn người lao động tìm hiểu công việc, hồ sơ và các bước tiếp theo.',image:"/assets/minhduc-working-60s.webp"},{title:'Mở rộng giải pháp',text:'Trao đổi thêm về nhân lực, tổ chức và học tập theo nhu cầu thực tế.',image:"/assets/minhduc-offices-20s.webp"}];
- const keys=(e:KeyboardEvent<HTMLButtonElement>,index:number)=>{let next=index;if(e.key==='ArrowRight')next=(index+1)%phases.length;else if(e.key==='ArrowLeft')next=(index+phases.length-1)%phases.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=phases.length-1;else return;e.preventDefault();change(next);e.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('button')[next]?.focus()};
- return <section id="history" className="section info-history"><div className="container"><RevealFrame effect="zoom" delay={0}><SectionHeading eyebrow="HÀNH TRÌNH MINH ĐỨC" title="Quá trình hình thành và phát triển" description="Từ việc lắng nghe nhu cầu đến đồng hành cùng người lao động và doanh nghiệp."/></RevealFrame><RevealFrame effect="up" delay={0}><div className="md-history-years"><div className="info-history-track" style={{transform:`translateX(${(1-phase)*33.3333}%)`}} role="tablist" aria-label={t({vi:'Các giai đoạn',en:'History stages',zh:'发展阶段',ko:'발전 단계',ja:'歩みの段階'})}>{phases.map((item,i)=><button key={item.title} type="button" role="tab" id={`history-tab-${i}`} aria-selected={phase===i} aria-controls="history-panel" tabIndex={phase===i?0:-1} onKeyDown={e=>keys(e,i)} onClick={()=>change(i)}><span>{String(i+1).padStart(2,'0')}</span><i aria-hidden="true"/></button>)}</div></div></RevealFrame><RevealFrame effect="up" delay={1}><div className="info-history-rail">{phases.map((item,index)=>{const delta=(index-phase+phases.length)%phases.length;const position=delta===2?-1:delta;const oldDelta=(index-previous.current+phases.length)%phases.length;const oldPosition=oldDelta===2?-1:oldDelta;const recycled=Math.abs(position-oldPosition)===2;return <div key={item.title} className={`info-history-slide ${position===0?'is-active':'is-side'} ${recycled?'is-recycled':''} md-history-position-${position+1}`} role={position===0?'tabpanel':undefined} id={position===0?'history-panel':undefined} aria-labelledby={position===0?`history-tab-${phase}`:undefined} aria-hidden={position!==0?true:undefined}><div className="md-history-image"><img src={item.image} alt=""/><span aria-hidden="true">{String(index+1).padStart(2,'0')}</span></div><div><h3>{item.title}</h3><p>{item.text}</p>{position===0&&<button type="button" className="text-link" onClick={()=>setDetail(true)}>Xem chi tiết <ArrowUpRight size={16}/></button>}</div></div>})}</div></RevealFrame><div className="info-rail-controls"><button type="button" className="circle-button" aria-label={t({vi:'Giai đoạn trước',en:'Previous stage',zh:'上一阶段',ko:'이전 단계',ja:'前の段階'})} onClick={()=>change((phase+phases.length-1)%phases.length)}><ChevronLeft/></button><button type="button" className="circle-button" aria-label={t({vi:'Giai đoạn tiếp theo',en:'Next stage',zh:'下一阶段',ko:'다음 단계',ja:'次の段階'})} onClick={()=>change((phase+1)%phases.length)}><ChevronRight/></button></div></div>{detail&&<Modal title={phases[phase].title} onClose={()=>setDetail(false)}><img className="md-history-dialog-image" src={phases[phase].image} alt=""/><p>{phases[phase].text}</p></Modal>}</section>;
-}
-function AboutPartners(){return <section id="partners" className="section container md-about-partners"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Cùng kết nối, cùng phát triển" description="Các đối tác được giới thiệu trong hồ sơ thông tin Minh Đức."/></RevealFrame><div className="info-partner-list">{partners.map((name,index)=><RevealFrame key={name} effect="up" delay={([1,600,2,800,800] as const)[index]} contentClassName="info-partner"><PartnerLogo name={name}/></RevealFrame>)}</div><div className="info-centered-action"><ButtonLink to="/partners" secondary>Tìm hiểu mạng lưới đối tác</ButtonLink></div></section>}
-function AboutDocuments(){const rail=useRef<HTMLDivElement>(null),t=useTranslation();const items=[{title:'Thông tin rõ ràng',text:'Làm rõ vị trí, điều kiện và nhu cầu trước khi kết nối.'},{title:'Hỗ trợ gần gũi',text:'Đồng hành cùng người lao động trong quá trình tìm hiểu cơ hội.'},{title:'Phối hợp cùng doanh nghiệp',text:'Trao đổi phương án nhân lực theo yêu cầu cụ thể.'}];const scroll=(direction:number)=>rail.current?.scrollBy({left:direction*(rail.current?.clientWidth||300)*.7,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return <section id="achievements" className="section container info-documentation"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Thành tựu và dấu ấn" description={t({vi:'Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.',en:'The priorities that shape how we support businesses and workers.',zh:'这些重点塑造了我们与企业及劳动者同行的方式。',ko:'기업과 근로자와 함께하는 방식을 이끄는 핵심 원칙입니다.',ja:'企業と働く人に寄り添うための大切な取り組みです。'})}/></RevealFrame><RevealFrame effect="up" delay={1}><div className="info-document-grid" ref={rail} tabIndex={0} role="region" aria-label={t({vi:'Cách chúng tôi đồng hành',en:'How we support you',zh:'我们的支持方式',ko:'함께하는 방식',ja:'私たちのサポート'})}>{items.map(item=><article key={item.title} className="info-document-card"><div><h3>{item.title}</h3><p>{item.text}</p></div><div className="info-document-art" aria-hidden="true"><ClipboardCheck size={40} strokeWidth={1}/></div></article>)}</div></RevealFrame><div className="info-rail-controls"><button type="button" className="circle-button" aria-label={t({vi:'Tài liệu trước',en:'Previous document',zh:'上一份文件',ko:'이전 자료',ja:'前の資料'})} onClick={()=>scroll(-1)}><ChevronLeft/></button><button type="button" className="circle-button" aria-label={t({vi:'Tài liệu tiếp theo',en:'Next document',zh:'下一份文件',ko:'다음 자료',ja:'次の資料'})} onClick={()=>scroll(1)}><ChevronRight/></button></div></section>}
-function AboutTeam(){
- const [selected,setSelected]=useState<number|null>(null), t=useTranslation();
- const roles=['Tư vấn nhân sự','Tư vấn và giới thiệu việc làm','Tư vấn tuyển sinh','Cung ứng nhân lực'];
- return <section className="section container info-team">
-  <RevealFrame effect="zoom" delay={0}><SectionHeading title="Đội ngũ Minh Đức sẵn sàng hỗ trợ" description={t({vi:'Kết nối những vai trò cùng hỗ trợ doanh nghiệp và người lao động.',en:'Connecting the roles that support businesses and workers.',zh:'汇聚支持企业与劳动者的不同角色。',ko:'기업과 근로자를 지원하는 역할을 연결합니다.',ja:'企業と働く人を支える役割をつなぎます。'})}/></RevealFrame>
-  <RevealFrame effect="up" delay={1}><div className="md-team-overview"><img className="md-team-photo" src="/assets/minhduc-meeting-10s.webp" alt="" loading="lazy"/><div className="info-team-grid">{roles.map((role,i)=><button key={role} type="button" className="info-team-card" onClick={()=>setSelected(i)}><strong>{role}</strong><span>Xem chi tiết <ArrowUpRight size={16}/></span></button>)}</div></div></RevealFrame>
-  {selected!==null&&<Modal title={roles[selected]} onClose={()=>setSelected(null)}><p>{t({vi:'Cùng lắng nghe nhu cầu, làm rõ thông tin và trao đổi bước tiếp theo phù hợp.',en:'We listen to your needs, clarify information and discuss appropriate next steps.',zh:'我们倾听需求、澄清信息，并共同探讨合适的下一步。',ko:'요구를 듣고 정보를 명확히 하며 적합한 다음 단계를 논의합니다.',ja:'ご要望を伺い、情報を明確にして適切な次の一歩を一緒に考えます。'})}</p><ButtonLink to="/contact#consultation">Liên hệ Minh Đức</ButtonLink></Modal>}
- </section>;
-}
-export function AboutPage() {
-  const t=useTranslation();
-  const values = [
-    { title: 'Tầm nhìn', text: 'Trở thành cầu nối tin cậy giữa doanh nghiệp và người lao động, tạo nên những kết nối công việc bền vững.', icon: Building2 },
-    { title: 'Sứ mệnh', text: 'Lắng nghe nhu cầu, kết nối cơ hội và đồng hành cùng người lao động trên hành trình tìm việc.', icon: Users },
-    { title: 'Giá trị cốt lõi', text: 'Minh bạch trong thông tin. Tận tâm trong hỗ trợ. Trách nhiệm trong từng kết nối.', icon: Handshake },
-  ];
-  return <>
-    <PageHero title="Về Minh Đức" eyebrow="Kết nối con người · Kiến tạo cơ hội" image="/assets/minhduc-working-60s.webp" />
-    <section id="profile" className="section info-about-intro"><div className="container info-about-statement"><RevealFrame effect="left" delay={0}><span className="eyebrow">MINH ĐỨC</span><h2>Nhân lực là tài sản</h2><p className="info-lead">Mỗi người lao động có một mong muốn. Mỗi doanh nghiệp có một nhu cầu. Minh Đức kết nối hai hành trình ấy.</p></RevealFrame><RevealFrame effect="right" delay={0}><p>Minh Đức hoạt động trong lĩnh vực cung ứng nhân lực và giới thiệu việc làm, tập trung vào nhu cầu lao động phổ thông tại các nhà máy, doanh nghiệp sản xuất.</p><p>Chúng tôi bắt đầu bằng việc lắng nghe, làm rõ thông tin tuyển dụng và hướng dẫn các bước tiếp theo để doanh nghiệp và người lao động có thể đưa ra quyết định phù hợp.</p><p>{t({vi:'Chúng tôi hướng tới đồng hành cùng các nhà máy và doanh nghiệp sản xuất, bao gồm doanh nghiệp FDI, tại khu vực phía Bắc.',en:'We aim to support factories and manufacturing businesses, including FDI enterprises, across northern Vietnam.',zh:'我们致力于支持越南北部的工厂和制造企业，包括外资企业。',ko:'베트남 북부의 공장과 생산 기업, 외국인 투자 기업을 지원하고자 합니다.',ja:'ベトナム北部の工場や製造企業、外資系企業に寄り添うことを目指します。'})}</p><div className="md-profile-actions"><ButtonLink to="/e-brochure">Hồ sơ năng lực</ButtonLink><ButtonLink to="/contact" secondary>Kết nối với Minh Đức</ButtonLink></div></RevealFrame><div className="info-about-values">{values.map((item, index) => <RevealFrame key={item.title} effect="up" delay={([0,400,1] as const)[index]}><article><img src={`${uploads}2025/09/Advantages-${index + 1}.png`} alt="" loading="lazy"/><h3>{item.title}</h3><p>{item.text}</p></article></RevealFrame>)}</div></div></section>
-    <section className="info-about-statistics"><div className="container"><div className="info-stat-grid">
-      <RevealFrame effect="up" delayMs={300}><article><strong>05</strong><span>{t({vi:'Nhóm dịch vụ',en:'Service groups',zh:'服务类别',ko:'서비스 분야',ja:'サービス分野'})}</span></article></RevealFrame>
-      <RevealFrame effect="up" delayMs={400}><article><strong>03</strong><span>{t({vi:'Điểm kết nối',en:'Connection points',zh:'联系地点',ko:'연결 거점',ja:'つながりの拠点'})}</span></article></RevealFrame>
-      <RevealFrame effect="up" delayMs={500}><article><strong>B2B</strong><span>{t({vi:'Hướng tới doanh nghiệp',en:'Focused on businesses',zh:'面向企业',ko:'기업을 위한 방향',ja:'企業に向けた取り組み'})}</span></article></RevealFrame>
-      <RevealFrame effect="up" delayMs={600}><article><strong>FDI</strong><span>{t({vi:'Định hướng kết nối',en:'Connection focus',zh:'连接方向',ko:'연결 지향',ja:'つながりへの取り組み'})}</span></article></RevealFrame>
-    </div></div></section>
-    <HistorySection />
-    <AboutPartners />
-    <AboutTeam />
-    <AboutActivities />
-    <AboutDocuments />
-    <section className="section wide"><RevealFrame effect="zoom" delay={0}><SectionHeading title="Giải pháp nhân lực" description="Dành cho doanh nghiệp cần người và người lao động cần việc."/></RevealFrame><RevealFrame effect="up" delay={1}><ServiceCards/></RevealFrame></section><InfoContact />
-  </>;
+import {contact, services} from './data';
+import {InfoCarouselPause, ServiceCards, InfoContact} from './components';
+import './about-reference.css';
+import './info-v16.css';
+
+const staffingInquiry = {to:'/about-us#business-contact', state:{startForm:'F01'}} as const;
+
+const chapters = [
+  ['profile', 'Hồ sơ năng lực'],
+  ['history', 'Quá trình hình thành và phát triển'],
+  ['partners', 'Đối tác tiêu biểu'],
+  ['activities', 'Hoạt động tập thể'],
+  ['achievements', 'Thành tựu và dấu ấn'],
+] as const;
+
+const phases = [
+  {label:'Khởi đầu', title:'Khởi đầu từ kết nối', text:'Tiếp nhận nhu cầu tìm việc và tuyển dụng, làm rõ thông tin để hai bên có cơ sở trao đổi.', detail:'Doanh nghiệp mô tả vị trí, ca làm và nơi làm việc. Người lao động có thể hỏi về từng điều kiện trước khi quyết định.', image:'/assets/minhduc-meeting-10s.webp', alt:'Nhóm Minh Đức trao đổi trong phòng họp'},
+  {label:'Đồng hành', title:'Đồng hành từng bước', text:'Hướng dẫn người lao động tìm hiểu công việc, hồ sơ và các bước tiếp theo.', detail:'Người tư vấn cùng người tìm việc rà lại thông tin vị trí và các giấy tờ cần chuẩn bị cho buổi trao đổi.', image:'/assets/minhduc-working-60s.webp', alt:'Nhân sự Minh Đức trao đổi và ghi chép trong buổi làm việc'},
+  {label:'Mở rộng', title:'Mở rộng giải pháp', text:'Trao đổi thêm về nhân lực, tổ chức và học tập theo nhu cầu thực tế.', detail:'Khi nhu cầu thay đổi, hai bên có thể trao đổi thêm về tuyển người có tay nghề, tổ chức quy trình hoặc hình thức học phù hợp.', image:'/assets/minhduc-v16/recruitment-event.webp', alt:'Nhóm người giữa hai bảng thông tin tuyển dụng tại hội trường'},
+] as const;
+
+const values = [
+  {title:'Tầm nhìn', text:'Trở thành cầu nối tin cậy giữa doanh nghiệp và người lao động, tạo nên những kết nối công việc bền vững.'},
+  {title:'Sứ mệnh', text:'Lắng nghe nhu cầu, kết nối cơ hội và đồng hành cùng người lao động trên hành trình tìm việc.'},
+  {title:'Giá trị cốt lõi', text:'Minh bạch trong thông tin. Tận tâm trong hỗ trợ. Trách nhiệm trong từng kết nối.'},
+];
+
+const roles = [
+  {title:'Tư vấn nhân sự', text:'Nhóm tư vấn lắng nghe nhu cầu về vị trí, ca và số lượng để cùng doanh nghiệp chuẩn bị phương án nhân lực.', to:'/services', action:'Xem dịch vụ'},
+  {title:'Tư vấn và giới thiệu việc làm', text:'Người tư vấn giúp bạn đối chiếu nơi làm việc, thu nhập và lịch ca với nhu cầu của mình.', to:'/jobs', action:'Xem việc làm'},
+  {title:'Tư vấn tuyển sinh', text:'Trao đổi về hình thức học, thông tin chương trình và các giấy tờ cần chuẩn bị.', to:'/education', action:'Xem chương trình'},
+  {title:'Cung ứng nhân lực', text:'Nhóm cung ứng làm rõ số người, nơi tiếp nhận và ngày cần nhân sự cho từng đợt tuyển.', to:staffingInquiry.to, action:'Gửi nhu cầu nhân lực'},
+] as const;
+
+const milestones = [
+  {title:'Thông tin rõ ràng', text:'Làm rõ vị trí, điều kiện và nhu cầu trước khi kết nối.'},
+  {title:'Hỗ trợ gần gũi', text:'Đồng hành cùng người lao động trong quá trình tìm hiểu cơ hội.'},
+  {title:'Phối hợp cùng doanh nghiệp', text:'Trao đổi phương án nhân lực theo yêu cầu cụ thể.'},
+];
+
+const activities = [
+  {image:'team-yearend', title:'Gặp gỡ cuối năm', alt:'Tập thể Minh Đức trong buổi gặp gỡ cuối năm'},
+  {image:'yearend-gifts', title:'Trao quà trong buổi tất niên', alt:'Mọi người cùng chụp ảnh với những phần quà trong buổi gặp gỡ'},
+  {image:'culture-birthday', title:'Mừng sinh nhật cùng đồng nghiệp', alt:'Tập thể cùng nhau mừng sinh nhật'},
+  {image:'community', title:'Kết nối cộng đồng', alt:'Nhóm người cùng dụng cụ vệ sinh ngoài trời'},
+];
+
+function ChapterNav(){
+  const [open,setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const {hash} = useLocation();
+  return <nav className="about-chapters container" aria-label="Mục lục giới thiệu" onKeyDown={event=>{
+    if(event.key==='Escape' && open){setOpen(false);toggle.current?.focus();}
+  }}>
+    <button type="button" ref={toggle} aria-expanded={open} aria-controls="about-chapter-list" onClick={()=>setOpen(!open)}>Đến một mục</button>
+    <ul id="about-chapter-list" data-open={open}>
+      {chapters.map(([id,label])=><li key={id}><Link to={'/about-us#'+id} aria-current={hash==='#'+id?'location':undefined} onClick={()=>setOpen(false)}>{label}</Link></li>)}
+    </ul>
+  </nav>;
 }
 
+function HistorySection(){
+  const [phase,setPhase] = useState(0);
+  const [detail,setDetail] = useState(false);
+  const previous = useRef(0);
+  const area = useRef<HTMLElement>(null);
+  const change = (next:number) => {
+    previous.current=phase;
+    setPhase((next+phases.length)%phases.length);
+  };
+  const auto = useHomeCarousel(area,()=>change(phase+1),'.about-history-interaction',{intervalMs:7000,disabled:detail});
+  const keyboard = (event:KeyboardEvent<HTMLButtonElement>,index:number) => {
+    const targets:Record<string,number> = {ArrowRight:(index+1)%phases.length,ArrowLeft:(index+phases.length-1)%phases.length,Home:0,End:phases.length-1};
+    const next=targets[event.key];
+    if(next===undefined)return;
+    event.preventDefault();
+    change(next);
+    document.getElementById('history-tab-'+next)?.focus();
+  };
+  const position = (index:number,current:number) => ((index-current+4)%3)-1;
+  return <section id="history" className="section info-history" ref={area}>
+    <div className="container">
+      <h2>Quá trình hình thành và phát triển</h2>
+      <p className="about-intro-line">Từ việc lắng nghe nhu cầu đến đồng hành cùng người lao động và doanh nghiệp.</p>
+      <div className="about-history-interaction">
+        <div className="about-rail-header">
+          <div className="info-history-track" role="tablist" aria-label="Các giai đoạn">
+            {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={()=>change(index)}>{item.label}</button>)}
+          </div>
+          <div className="about-rail-actions">
+            <InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
+            <button type="button" className="circle-button" aria-label="Giai đoạn trước" onClick={()=>change(phase-1)}><ChevronLeft aria-hidden="true"/></button>
+            <button type="button" className="circle-button" aria-label="Giai đoạn tiếp theo" onClick={()=>change(phase+1)}><ChevronRight aria-hidden="true"/></button>
+          </div>
+        </div>
+        <RevealFrame effect="up"><div className="info-history-rail">
+          {phases.map((item,index)=>{
+            const slot=position(index,phase);
+            const active=slot===0;
+            const recycled=Math.abs(slot-position(index,previous.current))===2;
+            return <article key={item.label} className={['info-history-slide',active?'is-active':'is-side',recycled?'is-recycled':'','md-history-position-'+(slot+1)].join(' ')}
+              role={active?'tabpanel':undefined} aria-hidden={active?undefined:true} id={active?'history-panel':undefined} aria-labelledby={active?'history-tab-'+phase:undefined}>
+              <div className="md-history-image"><img src={item.image} alt={item.alt} loading="lazy" decoding="async"/></div>
+              <div className="about-history-copy"><h3>{item.title}</h3><p>{item.text}</p>
+                {active&&<button type="button" className="about-text-action" onClick={()=>setDetail(true)}>Xem chi tiết</button>}</div>
+            </article>;
+          })}
+        </div></RevealFrame>
+      </div>
+    </div>
+    {detail&&<Modal title={phases[phase].title} onClose={()=>setDetail(false)}>
+      <img className="md-history-dialog-image" src={phases[phase].image} alt={phases[phase].alt}/>
+      <p>{phases[phase].detail}</p>
+    </Modal>}
+  </section>;
+}
+
+function AboutTeam(){
+  const [selected,setSelected] = useState<(typeof roles)[number]|null>(null);
+  return <section className="section container info-team">
+    <h2>Đội ngũ Minh Đức sẵn sàng hỗ trợ</h2>
+    <div className="md-team-overview">
+      <RevealFrame effect="media"><img className="md-team-photo" src="/assets/minhduc-meeting-10s.webp" alt="Nhóm Minh Đức trao đổi trong phòng họp" width="1024" height="576" loading="lazy"/></RevealFrame>
+      <div className="info-team-grid">{roles.map(role=><button type="button" key={role.title} className="info-team-card" onClick={()=>setSelected(role)} aria-haspopup="dialog">{role.title}</button>)}</div>
+    </div>
+    {selected&&<Modal title={selected.title} onClose={()=>setSelected(null)}><p>{selected.text}</p>
+      <Link className="btn" to={selected.to} state={selected.to===staffingInquiry.to ? staffingInquiry.state : undefined} onClick={()=>setSelected(null)}>{selected.action}</Link></Modal>}
+  </section>;
+}
+
+function AboutActivities(){
+  return <section id="activities" className="section md-v16-activities"><div className="container">
+    <h2>Những kết nối tạo nên Minh Đức</h2>
+    <div className="md-v16-activities-grid">{activities.map((item,index)=>
+      <RevealFrame key={item.image} effect="media" delayMs={index*200}>
+        <figure className="md-v16-activity"><img src={'/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0?'(max-width:767px) 100vw, 78vw':'(max-width:767px) 100vw, 32vw'} alt={item.alt} loading="lazy" decoding="async"/>
+          <figcaption>{item.title}</figcaption></figure>
+      </RevealFrame>)}</div>
+  </div></section>;
+}
+
+function AboutMilestones(){
+  const area=useRef<HTMLElement>(null);
+  const track=useRef<HTMLDivElement>(null);
+  const [overflow,setOverflow]=useState(false);
+  useEffect(()=>{
+    const rail=track.current;
+    if(!rail)return;
+    const measure=()=>setOverflow(rail.scrollWidth>rail.clientWidth+1);
+    measure();
+    const observer=typeof ResizeObserver==='undefined'?undefined:new ResizeObserver(measure);
+    observer?.observe(rail);
+    window.addEventListener('resize',measure);
+    return ()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
+  },[]);
+  const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{disabled:!overflow});
+  const scroll=(direction:number)=>{
+    const rail=track.current;
+    if(!rail)return;
+    const first=rail.children[0] as HTMLElement;
+    const second=rail.children[1] as HTMLElement;
+    const end=rail.scrollWidth-rail.clientWidth;
+    const target=direction<0 && rail.scrollLeft<2?end:direction>0 && rail.scrollLeft>=end-2?0:rail.scrollLeft+direction*(second.offsetLeft-first.offsetLeft);
+    rail.scrollTo({left:target,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  };
+  return <section id="achievements" ref={area} className="section container info-documentation"><h2>Thành tựu và dấu ấn</h2>
+    <p className="about-intro-line">Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.</p>
+    <div className="about-milestone-interaction">
+      <RevealFrame effect="up"><div className="info-document-grid" ref={track} role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
+        {milestones.map(item=><article className="info-document-card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
+      </div></RevealFrame>
+      {overflow&&<div className="about-rail-actions"><InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
+        <button type="button" className="circle-button" aria-label="Mục trước" onClick={()=>scroll(-1)}><ChevronLeft aria-hidden="true"/></button>
+        <button type="button" className="circle-button" aria-label="Mục tiếp theo" onClick={()=>scroll(1)}><ChevronRight aria-hidden="true"/></button></div>}
+    </div>
+  </section>;
+}
+
+export function AboutPage(){
+  const t=useTranslation();
+  const {hash,key,state}=useLocation();
+  const [formRequestKey,setFormRequestKey]=useState<string>();
+  const navType=useNavigationType();
+  const previousKey=useRef<string|null>(null);
+  useEffect(()=>{
+    // POP restores reading position on Back/Forward. Initial deep links still focus their heading.
+    const restored=previousKey.current!==null && previousKey.current!==key && navType==='POP';
+    previousKey.current=key;
+    if(!hash||restored)return;
+    if(hash==='#business-contact' && state?.startForm==='F01' && navType!=='POP')setFormRequestKey(key);
+    const heading=document.getElementById(hash.slice(1))?.querySelector<HTMLElement>('h2');
+    if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+  },[hash,key,navType,state]);
+  const metrics=[
+    [String(services.length).padStart(2,'0'),t({vi:'Nhóm dịch vụ',en:'Service groups',zh:'服务类别',ko:'서비스 분야',ja:'サービス分野'})],
+    [String(contact.offices.length).padStart(2,'0'),t({vi:'Điểm kết nối',en:'Connection points',zh:'联系地点',ko:'연결 거점',ja:'つながりの拠点'})],
+    ['B2B',t({vi:'Hướng tới doanh nghiệp',en:'Focused on businesses',zh:'面向企业',ko:'기업을 위한 방향',ja:'企業に向けた取り組み'})],
+    ['FDI',t({vi:'Định hướng kết nối',en:'Connection focus',zh:'连接方向',ko:'연결 지향',ja:'つながりへの取り組み'})],
+  ];
+  return <div className="about-page">
+    <PageMasthead title="Về Minh Đức" eyebrow="Nhân lực là tài sản" description="Minh Đức kết nối nhà máy phía Bắc với người lao động, từ lúc làm rõ vị trí đến khi hai bên trao đổi về công việc." image="/assets/minhduc-v18/about-team.webp" imageAlt="Đội ngũ Minh Đức cầm cờ trước biển hiệu công ty">
+      <Link className="btn" {...staffingInquiry}>Gửi nhu cầu nhân lực</Link>
+      <Link className="btn btn-secondary" to="/e-brochure">Xem hồ sơ năng lực</Link>
+    </PageMasthead>
+    <ChapterNav/>
+    <section id="profile" className="section info-about-intro"><div className="container info-about-statement">
+      <div><h2>Hồ sơ năng lực</h2><Link className="about-text-action" to="/e-brochure">Đọc hồ sơ trực tuyến</Link></div>
+      <div><p className="info-lead">Minh Đức hoạt động trong lĩnh vực cung ứng nhân lực và giới thiệu việc làm, tập trung vào nhu cầu lao động phổ thông tại các nhà máy, doanh nghiệp sản xuất.</p>
+        <p>Chúng tôi hướng tới đồng hành cùng các nhà máy và doanh nghiệp sản xuất, bao gồm doanh nghiệp FDI, tại khu vực phía Bắc.</p></div>
+      <div className="info-about-values">{values.map((item,index)=><RevealFrame effect="up" delayMs={index*200} key={item.title}><article><h3>{item.title}</h3><p>{item.text}</p></article></RevealFrame>)}</div>
+    </div></section>
+    <section className="info-about-statistics" aria-label="Phạm vi hoạt động"><div className="container"><div className="info-stat-grid">
+      {metrics.map(([value,name],index)=><RevealFrame key={value} effect="up" delayMs={index*200}><article><strong>{value}</strong><span>{name}</span></article></RevealFrame>)}
+    </div></div></section>
+    <HistorySection/>
+    <section id="partners" className="section container md-about-partners"><h2>Đối tác tiêu biểu</h2>
+      <p className="about-intro-line">Các đối tác được giới thiệu trong hồ sơ thông tin Minh Đức.</p>
+      <div className="info-partner-list">{partners.map((name,index)=><RevealFrame key={name} effect="up" delayMs={index*200} contentClassName="info-partner"><PartnerLogo name={name}/></RevealFrame>)}</div>
+      <Link className="about-text-action" to="/partners">Xem danh sách đối tác</Link></section>
+    <AboutTeam/><AboutActivities/><AboutMilestones/>
+    <section className="section container about-solutions"><h2>Giải pháp nhân lực</h2><ServiceCards/></section>
+    <InfoContact id="business-contact" formRequestKey={formRequestKey}/>
+  </div>;
+}

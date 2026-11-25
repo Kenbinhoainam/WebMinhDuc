@@ -8,7 +8,7 @@ const folder = '.partners-test';
 await mkdir(folder, {recursive:true});
 await build({stdin:{contents:"export {default as PartnersStrip} from './src/PartnersStrip'; export {LocaleProvider} from './src/i18n';",resolveDir:process.cwd(),sourcefile:'partners-test.tsx',loader:'tsx'}, bundle:true, format:'esm', platform:'node', packages:'external', loader:{'.css':'empty'}, outfile:`${folder}/bundle.mjs`, logLevel:'silent'});
 const dom = new JSDOM('<div id="root"></div>', {pretendToBeVisual:true});
-for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
+for (const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver']) Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
 let observer, disconnected=false;
 globalThis.IntersectionObserver=class {
@@ -40,6 +40,11 @@ try {
   }
  }
  assert.equal(sets[0].querySelectorAll('li:not([data-repeat]) img').length,3);
+ const firstMark=sets[0].querySelector('img');
+ const firstName=firstMark.closest('li');
+ await React.act(async()=>firstMark.dispatchEvent(new Event('error',{bubbles:false})));
+ assert.equal(firstName.querySelector('img'),null,'a failed mark falls back to its name');
+ assert.equal(firstName.querySelector('.partner-logo--text').textContent,'Luxshare ICT');
  const strip=document.querySelector('.partners-strip');
  assert.equal(strip.dataset.static,'false','successful observer enables the rail');
  assert.equal(strip.dataset.visible,'false','initially paused until visibility is known');
@@ -60,6 +65,11 @@ try {
  assert.equal(document.querySelector('.partners-strip').dataset.paused,'true');
  await React.act(async()=>button.click());
  assert.equal(button.getAttribute('aria-pressed'),'false');
+ await React.act(async()=>document.querySelector('.partners-viewport').focus());assert.equal(button.getAttribute('aria-pressed'),'true','focus entry latches partner pause');
+ await React.act(async()=>document.querySelector('.partners-viewport').blur());assert.equal(button.getAttribute('aria-pressed'),'true','blur does not silently resume');
+ await React.act(async()=>button.focus());await React.act(async()=>button.click());assert.equal(button.getAttribute('aria-pressed'),'false','explicit play resumes');
+ await React.act(async()=>document.getElementById('root').setAttribute('inert',''));assert.equal(strip.dataset.visible,'false','global modal pauses partner loop');
+ await React.act(async()=>document.getElementById('root').removeAttribute('inert'));assert.equal(strip.dataset.visible,'true');
  await React.act(async()=>root.render(null));assert(disconnected,'observer cleanup');
  globalThis.IntersectionObserver=class {constructor(){throw Error('unavailable')}};
  await React.act(async()=>root.render(React.createElement(PartnersStrip)));

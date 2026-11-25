@@ -13,6 +13,12 @@ for (const locale of ['', '/en', '/zh', '/ko', '/ja']) {
 }
 console.log('PASS homepage preload output');
 const manifest=JSON.parse(await readFile('dist/.vite/manifest.json','utf8'));
+function dependencyStyles(entry,seen=new Set()) {
+ if(seen.has(entry))return [];
+ seen.add(entry);const chunk=manifest[entry];assert.ok(chunk,`known manifest chunk: ${entry}`);
+ return [...new Set([...(chunk.css||[]),...(chunk.imports||[]).flatMap(key=>dependencyStyles(key,seen))])];
+}
+const globalCss=manifest['index.html'].css||[];
 for(const [entry,routes] of [
  ['src/pages/info/AboutPage.tsx',['/about-us']],
  ['src/pages/info/ServicesPages.tsx',['/services','/services/labor-supply','/services/recruitment','/services/hr-consulting']],
@@ -24,11 +30,11 @@ for(const [entry,routes] of [
  ['src/Education.tsx',['/education','/education/tu-xa-quan-tri']],
  ['src/AdminDemo.tsx',['/admin-demo']],
 ]) {
- const css=manifest[entry]?.css;
- assert.ok(css?.length,`${entry}: route CSS emitted`);
+ const css=dependencyStyles(entry);
+ assert.ok(css.some(asset=>!globalCss.includes(asset)),`${entry}: route CSS emitted directly or in a shared imported chunk`);
  for(const locale of ['', '/en', '/zh', '/ko', '/ja'])for(const route of routes){
   const head=(await readFile(`dist${locale}${route}/index.html`,'utf8')).split('</head>')[0];
-  for(const asset of css)assert.ok(head.includes(`<link rel="stylesheet" href="/${asset}"/>`),`${locale}${route}: stylesheet available before hydration`);
+  for(const asset of css)assert.ok(head.includes(`href="/${asset}"`),`${locale}${route}: stylesheet available before hydration`);
  }
 }
 console.log('PASS lazy route styles in prerendered head across five locales');

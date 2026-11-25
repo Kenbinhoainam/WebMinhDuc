@@ -1,0 +1,284 @@
+{
+  "Không tìm thấy sự kiện": {
+    "en": "Event not found",
+    "zh": "未找到活动",
+    "ko": "행사를 찾을 수 없습니다",
+    "ja": "イベントが見つかりません"
+  },
+  "Không tìm thấy bài viết": {
+    "en": "Article not found",
+    "zh": "未找到文章",
+    "ko": "글을 찾을 수 없습니다",
+    "ja": "記事が見つかりません"
+  },
+  "Xem tất cả sự kiện": {
+    "en": "View all events",
+    "zh": "查看所有活动",
+    "ko": "전체 행사 보기",
+    "ja": "イベント一覧を見る"
+  },
+  "Bài chọn lọc": {
+    "en": "Editor's picks",
+    "zh": "精选文章",
+    "ko": "추천 글",
+    "ja": "おすすめの記事"
+  },
+  "Tiếp tục chuyển bài": {
+    "en": "Resume article rotation",
+    "zh": "继续文章轮播",
+    "ko": "글 자동 전환 재개",
+    "ja": "記事の自動切り替えを再開"
+  },
+  "Tạm dừng chuyển bài": {
+    "en": "Pause article rotation",
+    "zh": "暂停文章轮播",
+    "ko": "글 자동 전환 일시정지",
+    "ja": "記事の自動切り替えを一時停止"
+  },
+  "Bài trước": {
+    "en": "Previous article",
+    "zh": "上一篇",
+    "ko": "이전 글",
+    "ja": "前の記事"
+  },
+  "Bài sau": {
+    "en": "Next article",
+    "zh": "下一篇",
+    "ko": "다음 글",
+    "ja": "次の記事"
+  },
+  "Tin tức & cẩm nang": {
+    "en": "News & guides",
+    "zh": "资讯与指南",
+    "ko": "소식과 가이드",
+    "ja": "ニュースとガイド"
+  },
+  "Hướng dẫn chuẩn bị hồ sơ, tiếp nhận lao động và lập kế hoạch nhân lực cho nhà máy.": {
+    "en": "Guides to preparing applications, welcoming new workers and planning factory staffing.",
+    "zh": "了解如何准备求职材料、接收新员工以及规划工厂用工。",
+    "ko": "지원 서류 준비, 신규 근로자 온보딩, 공장 인력 계획을 위한 안내입니다.",
+    "ja": "応募書類の準備、新入社員の受け入れ、工場の人員計画について紹介します。"
+  },
+  "Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc": {
+    "en": "The Minh Đức team discusses documents at a table",
+    "zh": "明德团队围桌讨论资料",
+    "ko": "회의 테이블에서 서류를 함께 검토하는 민득 직원들",
+    "ja": "テーブルで資料を確認するミンドゥックのスタッフ"
+  },
+  "Danh mục bài viết": {
+    "en": "All articles",
+    "zh": "文章目录",
+    "ko": "전체 글",
+    "ja": "記事一覧"
+  },
+  "Chưa có bài trong chuyên mục này.": {
+    "en": "There are no articles in this category yet.",
+    "zh": "此栏目暂无文章。",
+    "ko": "이 분류에는 아직 글이 없습니다.",
+    "ja": "このカテゴリーにはまだ記事がありません。"
+  },
+  "Xem tất cả": {
+    "en": "Show all",
+    "zh": "显示全部",
+    "ko": "모두 보기",
+    "ja": "すべて表示"
+  },
+  "Chia sẻ": {
+    "en": "Share",
+    "zh": "分享",
+    "ko": "공유",
+    "ja": "共有"
+  },
+  "Sao chép liên kết": {
+    "en": "Copy link",
+    "zh": "复制链接",
+    "ko": "링크 복사",
+    "ja": "リンクをコピー"
+  },
+  "Đã sao chép": {
+    "en": "Link copied",
+    "zh": "链接已复制",
+    "ko": "링크를 복사했습니다",
+    "ja": "リンクをコピーしました"
+  },
+  "Chọn và sao chép liên kết": {
+    "en": "Select and copy the link",
+    "zh": "请选择并复制链接",
+    "ko": "링크를 선택해 복사하세요",
+    "ja": "リンクを選択してコピーしてください"
+  },
+  "Xem việc làm": {
+    "en": "Browse jobs",
+    "zh": "查看职位",
+    "ko": "채용 정보 보기",
+    "ja": "求人を見る"
+  },
+  "Tổng quan": {
+    "en": "Overview",
+    "zh": "概览",
+    "ko": "개요",
+    "ja": "概要"
+  },
+  "Lịch trình": {
+    "en": "Schedule",
+    "zh": "日程",
+    "ko": "일정",
+    "ja": "スケジュール"
+  },
+  "Hình ảnh": {
+    "en": "Gallery",
+    "zh": "图片",
+    "ko": "사진",
+    "ja": "写真"
+  },
+  "Sự kiện khác": {
+    "en": "Other events",
+    "zh": "其他活动",
+    "ko": "다른 행사",
+    "ja": "その他のイベント"
+  },
+  "Mốc đối chiếu lịch mẫu": {
+    "en": "Sample schedule as of",
+    "zh": "示例日程的参考日期",
+    "ko": "예시 일정 기준일",
+    "ja": "サンプル日程の基準日"
+  },
+  ". Thời gian và địa điểm chờ Minh Đức xác nhận.": {
+    "en": ". Times and locations are pending confirmation by Minh Đức.",
+    "zh": "。时间与地点有待明德确认。",
+    "ko": ". 시간과 장소는 민득의 확인을 기다리고 있습니다.",
+    "ja": "。日時と会場はミンドゥックによる確認待ちです。"
+  },
+  "Gặp gỡ người lao động, trao đổi cùng doanh nghiệp và kết nối với cộng đồng.": {
+    "en": "Meet workers, exchange ideas with employers and connect with the community.",
+    "zh": "与劳动者见面、与企业交流、与社区建立联系。",
+    "ko": "근로자와 만나고 기업 및 지역 사회와 교류합니다.",
+    "ja": "働く方や企業、地域の方々との交流を紹介します。"
+  },
+  "Mọi người đứng trên sân khấu trong một hoạt động tuyển dụng": {
+    "en": "A group stands on stage at a recruitment activity",
+    "zh": "一群人在招聘活动的舞台上合影",
+    "ko": "채용 행사 무대에 함께 선 사람들",
+    "ja": "採用関連の活動でステージに並ぶ人々"
+  },
+  "Xem ảnh hoạt động Minh Đức": {
+    "en": "See photos of Minh Đức activities",
+    "zh": "查看明德活动照片",
+    "ko": "민득 활동 사진 보기",
+    "ja": "ミンドゥックの活動写真を見る"
+  },
+  "Lịch chương trình minh họa": {
+    "en": "Sample programme schedule",
+    "zh": "示例活动日程",
+    "ko": "예시 프로그램 일정",
+    "ja": "プログラム日程のサンプル"
+  },
+  "sự kiện": {
+    "en": "events",
+    "zh": "项活动",
+    "ko": "개 행사",
+    "ja": "件のイベント"
+  },
+  "Chưa có chương trình trong nhóm này.": {
+    "en": "There are no programmes in this group.",
+    "zh": "此分组暂无活动。",
+    "ko": "이 분류에는 프로그램이 없습니다.",
+    "ja": "このグループにはプログラムがありません。"
+  },
+  "Xem lịch trình": {
+    "en": "View schedule",
+    "zh": "查看日程",
+    "ko": "일정 보기",
+    "ja": "日程を見る"
+  },
+  "Nội dung sự kiện": {
+    "en": "Event sections",
+    "zh": "活动内容",
+    "ko": "행사 내용",
+    "ja": "イベントの内容"
+  },
+  "Ngày và giờ Việt Nam": {
+    "en": "Date and time in Vietnam",
+    "zh": "越南当地日期和时间",
+    "ko": "베트남 현지 날짜와 시간",
+    "ja": "ベトナム現地の日時"
+  },
+  "Trạng thái theo lịch mẫu": {
+    "en": "Status in the sample schedule",
+    "zh": "示例日程中的状态",
+    "ko": "예시 일정에 따른 상태",
+    "ja": "サンプル日程上の状況"
+  },
+  "Địa điểm và liên hệ": {
+    "en": "Location and contact",
+    "zh": "地点与联系方式",
+    "ko": "장소 및 문의",
+    "ja": "会場とお問い合わせ"
+  },
+  "Gọi hỏi thông tin": {
+    "en": "Call for information",
+    "zh": "电话咨询",
+    "ko": "전화 문의",
+    "ja": "電話で問い合わせる"
+  },
+  "Ảnh tư liệu hoạt động": {
+    "en": "Activity photo archive",
+    "zh": "活动资料照片",
+    "ko": "활동 기록 사진",
+    "ja": "活動記録写真"
+  },
+  "Ảnh do Minh Đức cung cấp từ các hoạt động khác.": {
+    "en": "Photos supplied by Minh Đức from other activities.",
+    "zh": "照片由明德提供，拍摄于其他活动。",
+    "ko": "민득이 제공한 다른 활동의 기록 사진입니다.",
+    "ja": "ミンドゥック提供の別の活動での記録写真です。"
+  },
+  "Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời": {
+    "en": "A group poses together during an outdoor activity",
+    "zh": "人们在户外活动中合影",
+    "ko": "야외 활동 중 함께 찍은 단체 사진",
+    "ja": "屋外活動での集合写真"
+  },
+  "Kết nối cộng đồng": {
+    "en": "Community connections",
+    "zh": "社区交流",
+    "ko": "지역사회 교류",
+    "ja": "地域交流"
+  },
+  "Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm": {
+    "en": "The Minh Đức team gathers for a year-end photo",
+    "zh": "明德团队在年终聚会上合影",
+    "ko": "연말 모임에서 단체 사진을 찍은 민득 직원들",
+    "ja": "年末の集いで集合写真を撮るミンドゥックのスタッフ"
+  },
+  "Buổi gặp mặt cuối năm": {
+    "en": "Year-end gathering",
+    "zh": "年终聚会",
+    "ko": "연말 모임",
+    "ja": "年末の集い"
+  },
+  "Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời": {
+    "en": "A Minh Đức staff member holds documents outdoors",
+    "zh": "一名明德员工在户外手持资料",
+    "ko": "야외에서 자료를 든 민득 직원",
+    "ja": "屋外で資料を持つミンドゥックのスタッフ"
+  },
+  "Nhóm nhân viên Minh Đức trao đổi ngoài trời": {
+    "en": "Minh Đức staff discuss their work outdoors",
+    "zh": "明德员工在户外交流",
+    "ko": "야외에서 대화를 나누는 민득 직원들",
+    "ja": "屋外で話し合うミンドゥックのスタッフ"
+  },
+  "Đội ngũ Minh Đức ngồi họp quanh bàn": {
+    "en": "The Minh Đức team meets around a table",
+    "zh": "明德团队围桌开会",
+    "ko": "테이블에 둘러앉아 회의하는 민득 직원들",
+    "ja": "テーブルを囲んで打ち合わせるミンドゥックのスタッフ"
+  },
+  "Các bài hướng dẫn trong danh mục là nội dung biên tập mẫu.": {
+    "en": "The guides in this collection are sample editorial content.",
+    "zh": "本栏目中的指南为编辑示例内容。",
+    "ko": "이 글 목록의 가이드는 편집 예시 콘텐츠입니다.",
+    "ja": "一覧のガイドは編集コンテンツのサンプルです。"
+  }
+}

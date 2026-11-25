@@ -1,0 +1,9 @@
+Rà soát độc lập Giới thiệu, Đối tác và Hồ sơ năng lực | v18
+
+Chạy lại tests/about-anchors.mjs, tests/info-v13.mjs và tests/partners.mjs trong thư mục tạm với src, assets và catalog hiện tại. Cả ba bộ đạt. Bao gồm 5 locale × 6 neo, tiêu đề nhận focus, Back/Forward, 7s/ba tab lịch sử, giữ focus khi đóng hộp thoại, dữ liệu logo dự phòng và ba phần để in. Đọc src/pages/info/AboutPage.tsx, PartnersPage.tsx, BrochurePage.tsx, các CSS liên quan, PartnerLogo, PartnersStrip, shared Modal và useHomeCarousel.
+
+Đã đối chiếu nav và CTA, bốn vai trò có nội dung/đích riêng. Dải lịch sử có phím trái/phải, Home/End, ảnh phụ aria-hidden, nút dừng, dừng khi mở chi tiết. Dải dấu ấn kiểm tra overflow khi resize. Ảnh hoạt động giữ tỷ lệ tự nhiên và có caption. Hai alias đối tác cùng hiển thị năm đơn vị nguồn trước phần chia sẻ minh họa. Ba ảnh logo có chữ dự phòng khi lỗi, hai tên còn lại luôn hiển thị chữ. Brochure chỉ chuyển tay, vô hiệu nút ở hai biên, chỉ một live region. DOM riêng cho bản in luôn có bìa, năm dịch vụ, đối tác và liên hệ. @media print hiển thị ba phần có ngắt trang, ẩn toolbar, viewer, CTA và footer. Chưa có bản in PDF thực tế hoặc kết quả trực quan từ browser.
+
+Hai vấn đề đã báo root:
+• /about-us#business-contact. Trong cùng trang, khi F02/biên nhận cũ đang mở, chọn CTA mang nhãn “Gửi nhu cầu nhân lực” ở đầu trang hoặc trong hộp chi tiết vai trò chỉ chuyển tới tiêu đề. Form còn trạng thái cũ. Trực tiếp truy cập trang mới vẫn đúng F01. Chỉ đặt lại loại theo hành động gửi nhu cầu, tránh xóa nháp khi người dùng điều hướng mục lục khác.
+• PartnersStrip: hiện bảo vệ hover và focus trong viewport bằng CSS, nhưng rời focus tự chạy lại và thiếu xử lý kéo/chạm dành cho dải logo. Cần khóa khi nhận focus, chỉ phát lại khi người dùng yêu cầu, duy trì nút điều khiển độc lập. Đây là thành phần dùng chung ở /partners và các trang khác.

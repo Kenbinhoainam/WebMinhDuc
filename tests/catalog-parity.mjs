@@ -9,7 +9,7 @@ const bundle='.catalog-parity-test.mjs';
 try {
  await build({stdin:{contents:"export {loadLocale,lookup} from './src/i18n-runtime/catalog'; export {translate} from './src/i18n-runtime/jsx-runtime';",resolveDir:process.cwd(),sourcefile:'catalog-test.tsx'},bundle:true,platform:'node',format:'esm',outfile:bundle,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
  const {loadLocale,lookup,translate}=await import(pathToFileURL(`${process.cwd()}/${bundle}`).href);
- const names=['common','home','info','info-existing','jobs','contact-admin','education','metadata','visual'];
+ const names=['common','home','info','info-existing','jobs','contact-admin','education','metadata','visual','v18-about','v18-services','v18-jobs','v18-careers','v18-news','v18-contact'];
  const catalogs=await Promise.all(names.map(async name=>JSON.parse(await readFile(`src/i18n-catalogs/${name}.json`,'utf8'))));
  const merged=Object.assign({},...catalogs), jobs=catalogs[4];
  await Promise.all(['vi','en','zh','ko','ja'].map(loadLocale));
