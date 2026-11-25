@@ -27,7 +27,8 @@ pad=12
 box=(max(0,bounds[0]-pad),max(0,bounds[1]-pad),min(im.width,bounds[2]+pad),min(im.height,bounds[3]+pad))
 out=out.crop(box)
 out.save(root/'public/assets/minh-duc-logo-transparent.png',optimize=True)
-out.save(root/'public/assets/minh-duc-logo-transparent.webp',lossless=True,method=6)
+web=out.copy();web.thumbnail((384,384),Image.Resampling.LANCZOS)
+web.save(root/'public/assets/minh-duc-logo-transparent.webp',lossless=True,method=6)
 # Favicon uses the same original emblem pixels, not a re-created mark.
 icon=Image.fromarray(rgba,'RGBA').crop((375,110,807,542))
 icon.resize((96,96),Image.Resampling.LANCZOS).save(root/'public/assets/minh-duc-favicon-96.png',optimize=True)

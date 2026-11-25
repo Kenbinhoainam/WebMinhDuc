@@ -372,8 +372,8 @@ export function Header() {
               <img
                 src="/assets/minh-duc-logo-transparent.webp"
                 alt="Minh Đức — Nhân lực là tài sản"
-                width="1146"
-                height="825"
+                width="384"
+                height="274"
               />
             </Link>{" "}
             <nav

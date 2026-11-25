@@ -113,7 +113,7 @@ export default function HomeHero() {
           onError={onError}/>
       </div>
       <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>
-        <img className="hero-finish-logo" src="/assets/minh-duc-logo-transparent.webp" width="1146" height="825" alt="Minh Đức Vina" loading="lazy"/>
+        <img className="hero-finish-logo" src="/assets/minh-duc-logo-transparent.webp" width="384" height="274" alt="Minh Đức Vina" loading="lazy"/>
         <p className="hero-finish-slogan">{t({vi:'Nhân lực là tài sản',en:'People are our greatest asset',zh:'人才是宝贵的资产',ko:'인재는 소중한 자산입니다',ja:'人材はかけがえのない財産'})}</p>
         <p className="hero-finish-message">{t({vi:'Đồng hành cùng nhà máy và doanh nghiệp FDI miền Bắc.',en:'Supporting factories and FDI businesses in Northern Vietnam.',zh:'携手越南北部工厂与外资企业。',ko:'베트남 북부의 공장 및 외국인 투자 기업과 함께합니다.',ja:'ベトナム北部の工場・外資系企業とともに。'})}</p>
       </div>

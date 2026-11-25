@@ -13,7 +13,7 @@ export default function Footer(){
   return <footer className="site-footer reference-footer section-py">
     <div className="container">
       <div className="footer-top">
-        <Link className="footer-logo" to="/" aria-label="Minh Đức — Trang chủ"><img src="/assets/minh-duc-logo-transparent.webp" alt="Minh Đức Vina" width="1146" height="825" loading="lazy"/></Link>
+        <Link className="footer-logo" to="/" aria-label="Minh Đức — Trang chủ"><img src="/assets/minh-duc-logo-transparent.webp" alt="Minh Đức Vina" width="384" height="274" loading="lazy"/></Link>
         <FooterMenu/>
         <SocialLinks/>
       </div>
