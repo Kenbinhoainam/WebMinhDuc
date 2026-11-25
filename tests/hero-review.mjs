@@ -30,6 +30,7 @@ try {
  const css=await readFile('src/hero-media.css','utf8');
  assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain;object-position:center/,'film remains centered and uncropped');
  assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*width:100%;aspect-ratio:16\/9;min-height:0/,'all playback viewports keep native16:9 without height floor');
+ assert.ok(css.includes('.home-hero:is([data-stage="ended"],[data-stage="fallback"]) .hero-stage{aspect-ratio:auto;min-height:56.25vw}'),'the conclusion grows to fit stacked translated controls');
  const stageRule=css.match(/\.home-hero \.hero-stage\s*\{([^}]*)\}/)[1];
  assert.ok(!stageRule.includes('url(')&&!stageRule.includes('100svh'),'active stage cannot expose decorative photo or viewport-ratio bands');
  const mediaRule=css.match(/\.hero-media\s*\{([^}]*)\}/)[1];

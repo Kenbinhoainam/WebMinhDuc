@@ -46,3 +46,7 @@ Giữ chuyển cảnh hai chiều và dải tự chạy có nút dừng. Màn k�
 3. **390 × 844 và 1440 × 900, màn kết.** Để phim phát hết rồi chọn từng CTA, quay lại và thử chế độ giảm chuyển động. Ở màn kết, logo, slogan và cả hai nút nằm cùng khung. Ở chế độ giảm chuyển động, hai nút dùng được ngay. So với D-02 về nhận diện và hai lối vào.
 
 Các ca trên dùng để nghiệm thu giao diện. Chủ dự án đối chiếu cùng viewport và duyệt sự tương đồng với REF-UI-01 theo D-02.
+
+## Hiệu chỉnh sau khi đo trực tiếp trong trình duyệt
+
+Ở bản trước, Chromium đo được màn kết cao 273 px tại chiều rộng 500 px. Nhóm hai nút cao 110 px bắt đầu ngay dưới mép khung nên bị cắt hoàn toàn. Bản sửa giữ tỷ lệ phim khi đang phát và cho màn kết nở theo nội dung, kể cả khi tắt JavaScript.

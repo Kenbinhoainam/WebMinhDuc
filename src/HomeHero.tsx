@@ -159,7 +159,7 @@ export default function HomeHero() {
         </div>
        </div>
       </div>
-      <noscript><style>{'.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1;background-image:url(/assets/minhduc-v16/flagship-atrium.webp)}.hero-player-tools,.hero-entry-bar{display:none!important}'}</style></noscript>
+      <noscript><style>{'.home-hero .hero-stage{aspect-ratio:auto;min-height:56.25vw}.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1;background-image:url(/assets/minhduc-v16/flagship-atrium.webp)}.hero-player-tools,.hero-entry-bar{display:none!important}'}</style></noscript>
       <div className="hero-player-tools">
         <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={ending ? replayLabel : playing ? pauseLabel : playLabel}>
           {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{ending ? replayLabel : playing ? pauseLabel : playLabel}</span>
