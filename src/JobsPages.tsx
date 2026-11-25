@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState, type FormEvent} from 'react';
 import {Link, useLocation, useNavigate, useNavigationType, useParams, useSearchParams} from 'react-router-dom';
-import {Bookmark, CheckCircle2, ChevronLeft, ChevronRight, FileUp, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
+import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, FileUp, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
 import {company} from './company';
 import CareersSections from './CareersSections';
 import {PageMasthead} from './PageMasthead';
@@ -81,11 +81,11 @@ function SaveButton({job, labelled, afterRemove}: {job: Job; labelled?: boolean;
 function JobCard({job, origin, remember, afterRemove}: {job:Job; origin?:ListOrigin; remember?:()=>void; afterRemove?:()=>void}) {
   return <article className="job-card">
     <div className="job-card-heading"><div className="job-card-meta"><span>{job.id}</span><span className={job.status === 'closed' ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span>{job.internal && <span>Tuyển dụng nội bộ</span>}</div>
-      <h3><Link to={`/jobs/${job.slug}`} state={origin ? {jobOrigin:origin} : undefined} data-job-link={job.id} onClick={event => {if (plainClick(event)) remember?.();}}>{job.title}</Link></h3>
+      <h3><Link to={`/jobs/${job.slug}`} state={origin ? {jobOrigin:origin} : undefined} data-job-link={job.id} onClick={event => {if (plainClick(event)) remember?.();}}><span>{job.title}</span><ArrowUpRight size={17} aria-hidden="true"/></Link></h3>
       <p className="job-locality"><MapPin size={16} aria-hidden="true"/>{job.industrialPark && <>{job.industrialPark} · </>}{job.location}</p>
     </div>
     <div className="job-row-pay"><span>Thu nhập tham khảo</span><strong>{job.salary}</strong></div>
-    <div className="job-row-terms"><span>{job.type}</span>{!job.internal && <span>{job.shift} · {job.schedule}</span>}</div>
+    <div className="job-row-terms"><span>{job.type}</span>{!job.internal && (job.shift || job.schedule) && <span>{job.shift}{job.shift && job.schedule && ' · '}{job.schedule}</span>}</div>
     <SaveButton job={job} afterRemove={afterRemove}/>
   </article>;
 }
@@ -160,7 +160,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   }
   function showResults() {
     resultsRef.current?.focus({preventScroll:true});
-    resultsRef.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    resultsRef.current?.scrollIntoView({block:'start',behavior:'instant'});
   }
   function goToPage(number: number) {
     const next = new URLSearchParams(params);
@@ -216,11 +216,14 @@ export function JobsPage() {
   return <div className="jobs-directory">
     <PageMasthead title="Tìm việc làm" description="Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp."/>
     <section className="jobs-section"><div className="container"><div id="job-listings" tabIndex={-1}><JobBrowser/></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section>
-    <figure className="jobs-event-photo"><img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 767px) calc(100vw - 40px), 430px" loading="lazy"/><figcaption>Bảng tuyển dụng Minh Đức tại sự kiện</figcaption></figure>
+    <figure className="jobs-event-photo">
+      <img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1072px) calc(40.5vw - 26px), 408px" loading="lazy"/>
+      <figcaption>Bảng tuyển dụng Minh Đức tại sự kiện</figcaption>
+    </figure>
   </div>;
 }
 export function SavedJobsPage() {
-  return <><PageMasthead title="Việc làm đã lưu"><Link className="jobs-mast-link" to="/jobs#job-listings">Tất cả việc làm</Link></PageMasthead><section className="jobs-section"><div className="container"><JobBrowser savedOnly/></div></section></>;
+  return <div className="jobs-saved-directory"><PageMasthead title="Việc làm đã lưu"><Link className="jobs-mast-link" to="/jobs#job-listings">Tất cả việc làm</Link></PageMasthead><section className="jobs-section"><div className="container"><JobBrowser savedOnly/></div></section></div>;
 }
 export function CareersPage() {return <CareersSections openings={<JobBrowser internal/>}/>;}
 
@@ -337,19 +340,31 @@ export function JobDetailPage() {
     .sort((a,b) => Number(b.status === 'active')-Number(a.status === 'active') || Number(b.location === job.location)-Number(a.location === job.location)).slice(0,3);
   const closed = job.status === 'closed';
   return <section className="jobs-detail-section"><div className="container">
-    <Link className="jobs-back" to={backUrl} onClick={event => {if (origin && plainClick(event)) {event.preventDefault(); navigate(-origin.steps);}}}>{backLabel}</Link>
+    <Link className="jobs-back" to={backUrl} onClick={event => {if (origin && plainClick(event)) {event.preventDefault(); navigate(-origin.steps);}}}><ChevronLeft size={18} aria-hidden="true"/>{backLabel}</Link>
     <div className="job-detail-layout">
       <header className="job-detail-intro"><div className="job-card-meta"><span>MÃ VỊ TRÍ {job.id}</span><span className={closed ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span></div><h1>{job.title}</h1></header>
-      <aside className="job-summary"><h2>Thông tin vị trí</h2><dl>
-        <div className="job-pay"><dt>Thu nhập tham khảo</dt><dd>{job.salary}</dd></div>
-        <div><dt>Địa điểm</dt><dd>{job.location}</dd></div>
-        {job.industrialPark && <div><dt>Khu công nghiệp</dt><dd>{job.industrialPark}</dd></div>}
-        <div><dt>Hình thức</dt><dd>{job.type}</dd></div>
-        <div><dt>Ca làm việc</dt><dd>{job.shift} · {job.schedule}</dd></div>
-        <div><dt>Nhóm công việc</dt><dd>{job.category}</dd></div>
-      </dl><p className="jobs-data-note">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>
-        {closed ? <><p className="job-closed">Vị trí đã đóng, không nhận ứng tuyển.</p><Link className="jobs-quiet-button" to={job.internal ? '/careers#open-positions' : '/jobs?status=active#job-listings'}>Xem vị trí đang tuyển</Link></> : <button className="btn job-apply-button" type="button" onClick={() => setApplying(true)}>{job.internal ? 'Ứng tuyển vị trí này' : 'Ứng tuyển ngay'}</button>}
-        <SaveButton job={job} labelled/>
+      <aside className="job-summary">
+        <div className="job-summary-primary">
+          <h2>Thông tin vị trí</h2>
+          <dl><div className="job-pay"><dt>Thu nhập tham khảo</dt><dd>{job.salary}</dd></div></dl>
+          <p className="job-summary-locality"><MapPin size={16} aria-hidden="true"/><span className="sr-only">Địa điểm</span> {job.location}</p>
+        </div>
+        <div className="job-summary-actions">
+          {closed ? <>
+            <p className="job-closed">Vị trí đã đóng, không nhận ứng tuyển.</p>
+            <Link className="jobs-quiet-button" to={job.internal ? '/careers#open-positions' : '/jobs?status=active#job-listings'}>Xem vị trí đang tuyển</Link>
+          </> : <button className="btn job-apply-button" type="button" onClick={() => setApplying(true)}>
+            {job.internal ? 'Ứng tuyển vị trí này' : 'Ứng tuyển ngay'}
+          </button>}
+          <SaveButton job={job} labelled/>
+        </div>
+        <dl>
+          {job.industrialPark && <div><dt>Khu công nghiệp</dt><dd>{job.industrialPark}</dd></div>}
+          <div><dt>Hình thức</dt><dd>{job.type}</dd></div>
+          {(job.shift || job.schedule) && <div><dt>Ca làm việc</dt><dd>{job.shift}{job.shift && job.schedule && ' · '}{job.schedule}</dd></div>}
+          <div><dt>Nhóm công việc</dt><dd>{job.category}</dd></div>
+        </dl>
+        <p className="jobs-data-note">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>
       </aside>
       <div className="job-detail-body">
         <p className="job-detail-summary">{job.intro}</p><ul className="job-tags">{job.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>

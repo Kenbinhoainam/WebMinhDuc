@@ -1,8 +1,9 @@
 import {useRef} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {ChevronLeft, ChevronRight} from 'lucide-react';
+import {ArrowUpRight, ChevronLeft, ChevronRight} from 'lucide-react';
 import {SectionHeading, useContact} from '../../shared';
 import {PageMasthead} from '../../PageMasthead';
+import {responsiveImage} from '../../media';
 import {RevealFrame} from '../../motion';
 import {useTranslation} from '../../i18n';
 import {useHomeCarousel, advanceHomeRail} from '../../useHomeCarousel';
@@ -24,7 +25,13 @@ export function ServicesPage() {
         <section className="service-directory" aria-labelledby="service-directory-heading">
           <h2 id="service-directory-heading">Bạn cần giải quyết việc gì?</h2>
           <nav aria-labelledby="service-directory-heading"><ul>{services.map(service =>
-            <li key={service.slug}><Link to={`/services/${service.slug}`}><strong>{service.need}</strong><span>{service.title}</span></Link></li>)}</ul></nav>
+            <li key={service.slug}>
+              <Link to={`/services/${service.slug}`}>
+                <strong>{service.need}</strong>
+                <span>{service.title}</span>
+                <ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/>
+              </Link>
+            </li>)}</ul></nav>
         </section>
       </PageMasthead>
     </div>
@@ -40,7 +47,7 @@ export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
  const area=useRef<HTMLElement>(null), track=useRef<HTMLDivElement>(null), t=useTranslation();
  const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.info-testimonial-rail,.info-rail-controls');
  const stories=[{quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.',name:'Chị Lan Anh',role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},{quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.',name:'Anh Minh',role:'Người lao động giả định'},{quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.',name:'Chị Thu Hà',role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'}];
- const scroll=(direction:number)=>track.current?.scrollBy({left:direction*(track.current?.clientWidth||350)*.6,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+ const scroll=(direction:number, pointer:boolean)=>track.current?.scrollBy({left:direction*(track.current?.clientWidth||350)*.6,behavior:pointer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'});
  const partners = <><SectionHeading title="Đối tác doanh nghiệp"/><PartnersStrip/></>;
  return <section className="section info-service-customers" ref={area}><div className="container">
    {!logosAfter && partners}
@@ -49,9 +56,9 @@ export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
      {stories.map(story => <blockquote key={story.quote}><p>{story.quote}</p><footer><span><strong>{story.name}</strong><small>{story.role}</small></span></footer></blockquote>)}
    </div>
    <div className="info-rail-controls">
-     <button type="button" className="circle-button" aria-label="Câu chuyện trước" onClick={()=>scroll(-1)}><ChevronLeft/></button>
+     <button type="button" className="circle-button" aria-label="Câu chuyện trước" onClick={event=>scroll(-1,event.detail>0)}><ChevronLeft/></button>
      <InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-     <button type="button" className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={()=>scroll(1)}><ChevronRight/></button>
+     <button type="button" className="circle-button" aria-label="Câu chuyện tiếp theo" onClick={event=>scroll(1,event.detail>0)}><ChevronRight/></button>
    </div>
    {logosAfter && partners}
  </div></section>;
@@ -88,7 +95,7 @@ function ServiceDecision({service}: {service: Service}) {
         </div>
         <p>Nhà máy xác nhận ca và lịch nhận việc. Minh Đức trao đổi nguồn ứng viên theo từng đợt.</p>
       </div>
-      <RevealFrame effect="media"><figure><img src="/assets/minhduc-v16/recruitment-field.webp" alt="Ghi nhận hoạt động tìm nguồn tại hiện trường" loading="lazy" sizes="(min-width: 768px) 300px, 68vw"/><figcaption>Hoạt động tìm nguồn</figcaption></figure></RevealFrame>
+      <RevealFrame effect="media"><figure><img src="/assets/minhduc-v16/recruitment-field.webp" {...responsiveImage('/assets/minhduc-v16/recruitment-field.webp','(min-width: 768px) 320px, 82vw')} alt="Ghi nhận hoạt động tìm nguồn tại hiện trường" loading="lazy" decoding="async"/><figcaption>Hoạt động tìm nguồn</figcaption></figure></RevealFrame>
     </section>;
   }
   if (slug === 'labor-leasing') {

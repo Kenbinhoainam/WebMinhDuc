@@ -32,3 +32,8 @@ body:has(.md-page-masthead,.ed-reader){font-size:16px;line-height:1.65}
 }
 @media(max-width:360px){.md-page-masthead .md-masthead-shell{width:calc(100% - 32px)}.md-masthead-actions{align-items:stretch;flex-direction:column}}
 @media print{.md-page-masthead{padding:24px 0;background:white;border:0}.md-masthead-actions{display:none}.md-page-masthead h1{font-size:32px}}
+.md-page-masthead h1{font-family:var(--font-display);font-weight:680;line-height:1.16}
+.md-page-masthead .md-masthead-breadcrumb{font-family:var(--font-body)}
+@media screen and (min-width:1024px){
+ .md-page-masthead:not(.md-page-masthead--image)::after{content:"";position:absolute;right:0;top:0;bottom:0;width:40%;background:linear-gradient(to right,#f3f7fc,rgba(243,247,252,.6)),url('/assets/minhduc-v16/flagship-atrium-960.webp') center/cover;z-index:-1;pointer-events:none}
+}

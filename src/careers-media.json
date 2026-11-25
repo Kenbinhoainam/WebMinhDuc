@@ -1,5 +1,9 @@
 {
-  "banner": "/assets/minhduc-v16/team-yearend.webp",
+  "banner": "/assets/minhduc-v18/field-team.webp",
+  "rolePhotos": {
+    "MD007": "/assets/minhduc-v16/recruitment-event.webp",
+    "MD008": "/assets/minhduc-v16/recruitment-field.webp"
+  },
   "gallery": [
     {"src": "/assets/minhduc-v16/team-yearend.webp", "caption": "Ảnh tập thể trong buổi tất niên", "alt": "Nhóm chụp trước phông Minh Đức, với hàng người ngồi phía trước."},
     {"src": "/assets/minhduc-v18/field-team.webp", "caption": "Trao đổi ngoài hiện trường", "alt": "Nhóm mặc áo Minh Đức đứng trao đổi ngoài trời gần cổng nhà xưởng."},

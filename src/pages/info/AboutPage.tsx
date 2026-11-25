@@ -72,11 +72,15 @@ function ChapterNav(){
 function HistorySection(){
   const [phase,setPhase] = useState(0);
   const [detail,setDetail] = useState(false);
+  const [instant,setInstant] = useState(false);
   const previous = useRef(0);
   const area = useRef<HTMLElement>(null);
-  const change = (next:number) => {
+  const change = (next:number,instantChange=false) => {
+    const nextPhase=(next+phases.length)%phases.length;
+    if (nextPhase===phase) return;
     previous.current=phase;
-    setPhase((next+phases.length)%phases.length);
+    setInstant(instantChange);
+    setPhase(nextPhase);
   };
   const auto = useHomeCarousel(area,()=>change(phase+1),'.about-history-interaction',{intervalMs:7000,disabled:detail});
   const keyboard = (event:KeyboardEvent<HTMLButtonElement>,index:number) => {
@@ -84,7 +88,7 @@ function HistorySection(){
     const next=targets[event.key];
     if(next===undefined)return;
     event.preventDefault();
-    change(next);
+    change(next,true);
     document.getElementById('history-tab-'+next)?.focus();
   };
   const position = (index:number,current:number) => ((index-current+4)%3)-1;
@@ -95,22 +99,22 @@ function HistorySection(){
       <div className="about-history-interaction">
         <div className="about-rail-header">
           <div className="info-history-track" role="tablist" aria-label="Các giai đoạn">
-            {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={()=>change(index)}>{item.label}</button>)}
+            {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={event=>change(index,event.detail===0)}>{item.label}</button>)}
           </div>
           <div className="about-rail-actions">
             <InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-            <button type="button" className="circle-button" aria-label="Giai đoạn trước" onClick={()=>change(phase-1)}><ChevronLeft aria-hidden="true"/></button>
-            <button type="button" className="circle-button" aria-label="Giai đoạn tiếp theo" onClick={()=>change(phase+1)}><ChevronRight aria-hidden="true"/></button>
+            <button type="button" className="circle-button" aria-label="Giai đoạn trước" onClick={event=>change(phase-1,event.detail===0)}><ChevronLeft aria-hidden="true"/></button>
+            <button type="button" className="circle-button" aria-label="Giai đoạn tiếp theo" onClick={event=>change(phase+1,event.detail===0)}><ChevronRight aria-hidden="true"/></button>
           </div>
         </div>
-        <RevealFrame effect="up"><div className="info-history-rail">
+        <RevealFrame effect="up"><div className="info-history-rail" data-instant={instant || undefined}>
           {phases.map((item,index)=>{
             const slot=position(index,phase);
             const active=slot===0;
             const recycled=Math.abs(slot-position(index,previous.current))===2;
             return <article key={item.label} className={['info-history-slide',active?'is-active':'is-side',recycled?'is-recycled':'','md-history-position-'+(slot+1)].join(' ')}
               role={active?'tabpanel':undefined} aria-hidden={active?undefined:true} id={active?'history-panel':undefined} aria-labelledby={active?'history-tab-'+phase:undefined}>
-              <div className="md-history-image"><img src={item.image} alt={item.alt} loading="lazy" decoding="async"/></div>
+              <div className="md-history-image"><img src={item.image} alt={item.alt} sizes="(max-width:767px) 100vw, (max-width:1440px) 64vw, 800px" loading="lazy" decoding="async"/></div>
               <div className="about-history-copy"><h3>{item.title}</h3><p>{item.text}</p>
                 {active&&<button type="button" className="about-text-action" onClick={()=>setDetail(true)}>Xem chi tiết</button>}</div>
             </article>;
@@ -131,7 +135,7 @@ function AboutTeam(){
     <h2>Đội ngũ Minh Đức sẵn sàng hỗ trợ</h2>
     <div className="md-team-overview">
       <RevealFrame effect="media"><img className="md-team-photo" src="/assets/minhduc-meeting-10s.webp" alt="Nhóm Minh Đức trao đổi trong phòng họp" width="1024" height="576" loading="lazy"/></RevealFrame>
-      <div className="info-team-grid">{roles.map(role=><button type="button" key={role.title} className="info-team-card" onClick={()=>setSelected(role)} aria-haspopup="dialog">{role.title}</button>)}</div>
+      <div className="info-team-grid">{roles.map(role=><button type="button" key={role.title} className="info-team-card" onClick={()=>setSelected(role)} aria-haspopup="dialog">{role.title}<ChevronRight aria-hidden="true" size={20}/></button>)}</div>
     </div>
     {selected&&<Modal title={selected.title} onClose={()=>setSelected(null)}><p>{selected.text}</p>
       <Link className="btn" to={selected.to} state={selected.to===staffingInquiry.to ? staffingInquiry.state : undefined} onClick={()=>setSelected(null)}>{selected.action}</Link></Modal>}
@@ -142,8 +146,8 @@ function AboutActivities(){
   return <section id="activities" className="section md-v16-activities"><div className="container">
     <h2>Những kết nối tạo nên Minh Đức</h2>
     <div className="md-v16-activities-grid">{activities.map((item,index)=>
-      <RevealFrame key={item.image} effect="media" delayMs={index*200}>
-        <figure className="md-v16-activity"><img src={'/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0?'(max-width:767px) 100vw, 78vw':'(max-width:767px) 100vw, 32vw'} alt={item.alt} loading="lazy" decoding="async"/>
+      <RevealFrame key={item.image} effect="media" delayMs={index*80}>
+        <figure className="md-v16-activity"><img src={'/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0 || index===3?'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 55vw, 664px':'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 38vw, 470px'} alt={item.alt} loading="lazy" decoding="async"/>
           <figcaption>{item.title}</figcaption></figure>
       </RevealFrame>)}</div>
   </div></section>;
@@ -164,14 +168,16 @@ function AboutMilestones(){
     return ()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
   },[]);
   const auto=useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{disabled:!overflow});
-  const scroll=(direction:number)=>{
+  const scroll=(direction:number,fromKeyboard:boolean)=>{
     const rail=track.current;
     if(!rail)return;
     const first=rail.children[0] as HTMLElement;
     const second=rail.children[1] as HTMLElement;
     const end=rail.scrollWidth-rail.clientWidth;
-    const target=direction<0 && rail.scrollLeft<2?end:direction>0 && rail.scrollLeft>=end-2?0:rail.scrollLeft+direction*(second.offsetLeft-first.offsetLeft);
-    rail.scrollTo({left:target,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    const wraps=direction<0 ? rail.scrollLeft<2 : rail.scrollLeft>=end-2;
+    const target=wraps ? (direction<0 ? end : 0) : rail.scrollLeft+direction*(second.offsetLeft-first.offsetLeft);
+    const immediate=fromKeyboard || wraps || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    rail.scrollTo({left:target,behavior:immediate?'instant':'smooth'});
   };
   return <section id="achievements" ref={area} className="section container info-documentation"><h2>Thành tựu và dấu ấn</h2>
     <p className="about-intro-line">Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.</p>
@@ -180,8 +186,8 @@ function AboutMilestones(){
         {milestones.map(item=><article className="info-document-card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
       </div></RevealFrame>
       {overflow&&<div className="about-rail-actions"><InfoCarouselPause paused={auto.paused} toggle={auto.toggle}/>
-        <button type="button" className="circle-button" aria-label="Mục trước" onClick={()=>scroll(-1)}><ChevronLeft aria-hidden="true"/></button>
-        <button type="button" className="circle-button" aria-label="Mục tiếp theo" onClick={()=>scroll(1)}><ChevronRight aria-hidden="true"/></button></div>}
+        <button type="button" className="circle-button" aria-label="Mục trước" onClick={event=>scroll(-1,event.detail===0)}><ChevronLeft aria-hidden="true"/></button>
+        <button type="button" className="circle-button" aria-label="Mục tiếp theo" onClick={event=>scroll(1,event.detail===0)}><ChevronRight aria-hidden="true"/></button></div>}
     </div>
   </section>;
 }
@@ -217,15 +223,15 @@ export function AboutPage(){
       <div><h2>Hồ sơ năng lực</h2><Link className="about-text-action" to="/e-brochure">Đọc hồ sơ trực tuyến</Link></div>
       <div><p className="info-lead">Minh Đức hoạt động trong lĩnh vực cung ứng nhân lực và giới thiệu việc làm, tập trung vào nhu cầu lao động phổ thông tại các nhà máy, doanh nghiệp sản xuất.</p>
         <p>Chúng tôi hướng tới đồng hành cùng các nhà máy và doanh nghiệp sản xuất, bao gồm doanh nghiệp FDI, tại khu vực phía Bắc.</p></div>
-      <div className="info-about-values">{values.map((item,index)=><RevealFrame effect="up" delayMs={index*200} key={item.title}><article><h3>{item.title}</h3><p>{item.text}</p></article></RevealFrame>)}</div>
+      <div className="info-about-values">{values.map((item,index)=><RevealFrame effect="up" delayMs={index*80} key={item.title}><article><h3>{item.title}</h3><p>{item.text}</p></article></RevealFrame>)}</div>
     </div></section>
     <section className="info-about-statistics" aria-label="Phạm vi hoạt động"><div className="container"><div className="info-stat-grid">
-      {metrics.map(([value,name],index)=><RevealFrame key={value} effect="up" delayMs={index*200}><article><strong>{value}</strong><span>{name}</span></article></RevealFrame>)}
+      {metrics.map(([value,name],index)=><RevealFrame key={value} effect="up" delayMs={index*80}><article><strong>{value}</strong><span>{name}</span></article></RevealFrame>)}
     </div></div></section>
     <HistorySection/>
     <section id="partners" className="section container md-about-partners"><h2>Đối tác tiêu biểu</h2>
       <p className="about-intro-line">Các đối tác được giới thiệu trong hồ sơ thông tin Minh Đức.</p>
-      <div className="info-partner-list">{partners.map((name,index)=><RevealFrame key={name} effect="up" delayMs={index*200} contentClassName="info-partner"><PartnerLogo name={name}/></RevealFrame>)}</div>
+      <div className="info-partner-list">{partners.map((name,index)=><RevealFrame key={name} effect="up" delayMs={index*80} contentClassName="info-partner"><PartnerLogo name={name}/></RevealFrame>)}</div>
       <Link className="about-text-action" to="/partners">Xem danh sách đối tác</Link></section>
     <AboutTeam/><AboutActivities/><AboutMilestones/>
     <section className="section container about-solutions"><h2>Giải pháp nhân lực</h2><ServiceCards/></section>

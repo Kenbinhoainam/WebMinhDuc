@@ -6,6 +6,7 @@ import {createDemoSubmission} from './demo-submissions';
 import {validDemoPhone, validOptionalEmail} from './sharedformvalidation';
 import {useTranslation} from './i18n';
 import {PageMasthead} from './PageMasthead';
+import {responsiveImage} from './media';
 import {RevealFrame} from './motion';
 import './form-experience-v16.css';
 import './contact-sprint.css';
@@ -166,12 +167,12 @@ export function ContactPage() {
     requestAnimationFrame(() => formTitle.current?.focus());
   }
   return <div className="contact-page-v18">
-    <PageMasthead title="Liên hệ Minh Đức" description="Trao đổi về nhu cầu tuyển người, đặt câu hỏi hoặc tìm đường đến Minh Đức."
-      image="/assets/minhduc-v18/contact-team.webp" imageSizes="(max-width:767px) 220px,300px" imageAlt="Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa."
-      imageCaption="Hoạt động tập thể tại Minh Đức Vina">
-      <a className="btn contact-hotline" href={'tel:' + company.tel}><Phone size={19} aria-hidden="true"/><span>Hotline</span> <strong>{company.phone}</strong></a>
+    <PageMasthead title="Liên hệ Minh Đức" description="Trao đổi về nhu cầu tuyển người, đặt câu hỏi hoặc tìm đường đến Minh Đức.">
       <ModeSelector mode={mode} choose={choose}/>
-      <a className="contact-directory-link" href="#contact-offices">Tìm điểm liên hệ</a>
+      <div className="contact-quick-links">
+        <a className="contact-hotline" href={'tel:' + company.tel}><Phone size={18} aria-hidden="true"/><span>Hotline</span> <strong>{company.phone}</strong></a>
+        <a className="contact-directory-link" href="#contact-offices"><MapPin size={18} aria-hidden="true"/>Tìm điểm liên hệ</a>
+      </div>
     </PageMasthead>
     <div className="container contact-reference-layout">
       <section id="consultation" tabIndex={-1} className="contact-reference-form" aria-labelledby="contact-form-heading">
@@ -179,11 +180,15 @@ export function ContactPage() {
         <ContactForm mode={mode} lockMode/>
       </section>
       <aside className="contact-reference-info">
-        <h2>Trao đổi trực tiếp</h2><p>CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
+        <div className="contact-team">
+          <div><h2>Trao đổi trực tiếp</h2><p>CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p></div>
+          <img {...responsiveImage('/assets/minhduc-v18/contact-team.webp', '(max-width:767px) 96px, 112px')}
+            alt="Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa." loading="lazy" decoding="async"/>
+        </div>
+        <Link className="contact-method" to="/consultation"><CalendarDays aria-hidden="true"/>Chọn giờ tư vấn</Link>
         <a className="contact-method" href={company.zalo} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Zalo Minh Đức</a>
         <a className="contact-method" href={company.facebook} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Facebook Minh Đức</a>
         <a className="contact-method" href={'mailto:' + company.email}><Mail aria-hidden="true"/>{company.email}</a>
-        <Link className="contact-method" to="/consultation"><CalendarDays aria-hidden="true"/>Chọn giờ tư vấn</Link>
       </aside>
     </div>
     <section id="contact-offices" tabIndex={-1} className="contact-directory" aria-labelledby="contact-offices-heading">

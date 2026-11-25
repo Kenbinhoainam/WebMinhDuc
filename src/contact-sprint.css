@@ -12,7 +12,7 @@
   border-radius: 999px;
   background: #fff;
   color: #20478f;
-  font: 700 15px/1.35 Lato, Arial, sans-serif;
+  font: 700 15px/1.35 var(--font-display,Arial,sans-serif);
   cursor: pointer;
 }
 .form-mode button[aria-pressed="true"] { background: #20478f; color: #fff; border-color: #20478f; }
@@ -28,10 +28,15 @@
   margin: 0 0 16px;
   padding: 0;
   color: #20344e;
-  font: 700 20px/1.3 Lato, Arial, sans-serif;
+  font: 700 20px/1.3 var(--font-display,Arial,sans-serif);
 }
 .contact-fieldset + .contact-fieldset legend { padding-top: 22px; }
 .contact-fieldset .form-grid { clear: both; }
+.contact-reference-form, .consultation-card { container: contact-fields / inline-size; }
+@container contact-fields (max-width: 540px) {
+  form.contact-form .form-grid { grid-template-columns: minmax(0,1fr); }
+  form.contact-form .full-field { grid-column: auto; }
+}
 form.contact-form .form-disclaimer { margin: 0 0 24px; }
 .form-success .btn { margin: 1rem 1rem 1rem 0; }
 .form-success .text-link { display: inline-flex; align-items: center; }

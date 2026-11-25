@@ -1,33 +1,134 @@
 .consultation-page { background: #fff; color: #20344e; }
-.consultation-layout { width: min(760px,calc(100% - 48px)); margin: 0 auto; padding: clamp(38px,5vw,72px) 0; }
-.consultation-card { padding: clamp(22px,4vw,44px); background: #f1f5fa; border-radius: 18px; font-size: 16px; line-height: 1.6; }
-.consultation-card h2 { margin: 0 0 24px; font: 700 clamp(25px,2.4vw,34px)/1.18 Lato,Arial,sans-serif; color: #20478f; }
-.consultation-choose > label, .consultation-choose legend { display: block; margin: 0 0 8px; color: #263849; font-size: 15px; font-weight: 700; }
-.consultation-date { display: block; width: 100%; min-height: 48px; padding: 10px 13px; border: 1px solid #849bb2; border-radius: 8px; background: #fff; color: #20344e; font: inherit; }
+.consultation-page .consultation-layout {
+  display: grid;
+  grid-template-columns: minmax(180px,1fr) minmax(0,2fr);
+  gap: 16px clamp(48px,7vw,104px);
+  width: min(1100px,calc(100% - 64px));
+  max-width: none;
+  margin-inline: auto;
+  padding: clamp(40px,5vw,76px) 0;
+}
+.consultation-progress {
+  align-self: start;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: decimal-leading-zero;
+  font: 600 clamp(15px,1.4vw,20px)/1.5 var(--font-display,Arial,sans-serif);
+}
+.consultation-progress li {
+  color: #526579;
+  padding: 16px 4px;
+  border-bottom: 1px solid #cad4df;
+  overflow-wrap: anywhere;
+}
+.consultation-progress li::marker { font-size: .82em; font-variant-numeric: tabular-nums; }
+.consultation-progress li[aria-current="step"] {
+  color: #153960;
+  border-bottom: 3px solid currentColor;
+}
+.consultation-card {
+  min-width: 0;
+  padding: clamp(20px,3vw,40px);
+  border-top: 3px solid #214674;
+  background: #f3f6f9;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.consultation-card h2 {
+  margin: 0 0 24px;
+  font: 700 clamp(26px,2.7vw,40px)/1.16 var(--font-display,Arial,sans-serif);
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+  color: #163962;
+}
+.consultation-choose > label, .consultation-choose legend {
+  display: block;
+  margin: 0 0 8px;
+  color: #263849;
+  font-size: 16px;
+  font-weight: 650;
+}
+.consultation-date {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 13px;
+  border: 1px solid #849bb2;
+  border-radius: 4px;
+  background: #fff;
+  color: #20344e;
+  font: inherit;
+}
 .consultation-choose fieldset { min-width: 0; margin: 24px 0; padding: 0; border: 0; }
 .consultation-times { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
 .consultation-times label { position: relative; min-width: 0; cursor: pointer; }
 .consultation-times input { position: absolute; opacity: 0; }
-.consultation-times span { display: grid; place-items: center; min-height: 48px; padding: 8px; border: 1px solid #9aacc0; background: #fff; border-radius: 8px; font-weight: 700; }
-.consultation-times input:checked + span { color: #fff; background: #20478f; border-color: #20478f; }
-.consultation-card :is(input,button,h2):focus-visible, .consultation-times input:focus-visible + span { outline: 3px solid #255e9c; outline-offset: 3px; }
+.consultation-times span {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 8px 4px;
+  border: 1px solid #9aacc0;
+  background: #fff;
+  border-radius: 4px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.consultation-times input:checked + span { color: #fff; background: #1a3d69; border-color: #1a3d69; }
+.consultation-card :is(input,button,h2):focus-visible, .consultation-times input:focus-visible + span, .consultation-back:focus-visible {
+  outline: 3px solid #255e9c;
+  outline-offset: 3px;
+}
 .consultation-date[aria-invalid=true], .consultation-choose fieldset[aria-invalid=true] .consultation-times span { border-color: #9e1524; }
 .consultation-error { margin: 0 0 16px; color: #9e1524; font-weight: 700; }
-.consultation-summary { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 22px; padding-block: 8px; border-block: 1px solid #bccadd; }
+.consultation-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 22px;
+  padding-block: 8px;
+  border-block: 1px solid #b4c1cf;
+}
 .consultation-summary p { display: flex; align-items: center; gap: 8px; margin: 0; }
 .consultation-summary p svg { flex: none; }
-.consultation-summary button { display: inline-flex; align-items: center; min-height: 44px; color: #20478f; }
+.consultation-summary button, .consultation-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #20478f;
+}
+.consultation-back {
+  grid-column: 2;
+  justify-self: start;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .consultation-details[hidden] { display: none; }
+.consultation-details .contact-form { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
 .consultation-success svg { color: #237046; }
 .consultation-success .btn { margin-top: 16px; }
-.consultation-back { margin-top: 16px; }
-@media (prefers-reduced-motion:no-preference) {
-  .consultation-details:not([hidden]), .consultation-choose { animation: consultation-step-in 160ms ease-out; }
-  @keyframes consultation-step-in { from { opacity: .8; } to { opacity: 1; } }
+@media (prefers-reduced-motion:no-preference) and (hover:hover) {
+  .consultation-times span { transition: border-color 140ms ease-out, background-color 140ms ease-out; }
+  .consultation-times label:hover input:not(:checked) + span { border-color: #20478f; background: #eaf1f8; }
 }
 @media (max-width:767px) {
-  .consultation-layout { width: calc(100% - 36px); }
-  .consultation-card { padding: 24px 17px; }
+  .consultation-page .consultation-layout {
+    width: calc(100% - 40px);
+    grid-template-columns: minmax(0,1fr);
+    gap: 20px;
+  }
+  .consultation-progress { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  .consultation-progress li { padding: 8px 0 12px; }
   .consultation-times { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .consultation-choose .btn { width: 100%; }
+  .consultation-back { grid-column: 1; }
+}
+@media (forced-colors:active) {
+  .consultation-times input:checked + span { border: 3px solid Highlight; }
 }

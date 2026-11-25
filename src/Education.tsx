@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import { PageMasthead } from './PageMasthead';
 import { learningSpace, learningAlt } from './pages/info/data';
 import { RevealFrame } from './motion';
@@ -19,7 +20,7 @@ function ProgramDirectory() {
     </header>
     <div className="education-program-groups">{(['Từ xa', 'Chính quy'] as const).map(mode =>
       <section key={mode}><h3>{mode}</h3><ul>{educationPrograms.filter(program => program.mode === mode).map(program =>
-        <li key={program.slug}><Link to={`/education/${program.slug}`}><strong>{program.title}</strong><span>{program.description}</span></Link></li>)}</ul></section>)}
+        <li key={program.slug}><Link to={`/education/${program.slug}`}><strong>{program.title}</strong><span>{program.description}</span><ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/></Link></li>)}</ul></section>)}
     </div>
   </section>;
 }

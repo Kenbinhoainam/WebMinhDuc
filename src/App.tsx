@@ -1,6 +1,7 @@
 import {lazy,Suspense,useEffect,useState,useRef} from 'react';
 import {Routes,Route,Link,useLocation,useNavigationType,Navigate} from 'react-router-dom';
 import {X} from 'lucide-react';
+import {useTranslation} from './i18n';
 import {SupportTools} from './SupportTools';
 import Home from './Home';
 import Footer from './Footer';
@@ -30,7 +31,21 @@ const EducationPage=lazy(()=>import('./Education').then(m=>({default:m.Education
 const EducationDetailPage=lazy(()=>import('./Education').then(m=>({default:m.EducationDetailPage})));
 const AdminDemo=lazy(()=>import('./AdminDemo').then(m=>({default:m.AdminDemo})));
 import './sprint-navigation.css';
-function CookieNotice(){const [show,setShow]=useState(true);useEffect(()=>{try{setShow(!localStorage.getItem('minhduc.preferences'))}catch{}},[]);function dismiss(){try{localStorage.setItem('minhduc.preferences','essential-only')}catch{}setShow(false)}return show?<aside className="cookie-notice" aria-label="Thông tin lưu trữ"><div><strong>Một trải nghiệm thuận tiện hơn</strong><p>Website lưu lựa chọn và việc làm bạn đánh dấu ngay trên thiết bị. Không dùng cookie quảng cáo.</p><Link to="/privacy-policy">Tìm hiểu thêm</Link></div><button className="btn" onClick={dismiss}>Đã hiểu</button><button className="icon-button" aria-label="Đóng thông báo lưu trữ" onClick={dismiss}><X size={18}/></button></aside>:null}
+function CookieNotice() {
+  const t=useTranslation();
+  const [show,setShow]=useState(true);
+  useEffect(()=>{try{setShow(!localStorage.getItem('minhduc.preferences'))}catch{}},[]);
+  function dismiss() {
+    try{localStorage.setItem('minhduc.preferences','essential-only')}catch{}
+    setShow(false);
+  }
+  return show && <aside className="cookie-notice" aria-label={t({vi:'Thông tin lưu trữ',en:'Device storage',zh:'本机存储',ko:'기기 저장 정보',ja:'端末への保存'})}>
+    <p>{t({vi:'Việc làm bạn lưu được giữ trên thiết bị này.',en:'Your saved jobs are stored on this device.',zh:'收藏的职位保存在本设备上。',ko:'저장한 일자리는 이 기기에 보관됩니다.',ja:'保存した求人はこの端末に記録されます。'})}{' '}
+      <Link to="/privacy-policy">{t({vi:'Quyền riêng tư',en:'Privacy',zh:'隐私政策',ko:'개인정보 처리방침',ja:'プライバシー'})}</Link>
+    </p>
+    <button type="button" className="icon-button" onClick={dismiss} aria-label={t({vi:'Đóng thông báo lưu trữ',en:'Dismiss storage notice',zh:'关闭存储提示',ko:'저장 안내 닫기',ja:'保存の案内を閉じる'})}><X size={17}/></button>
+  </aside>;
+}
 const scrollPositions=new Map<string,number>();
 export function PageTransition(){
   const location=useLocation(), navigationType=useNavigationType();

@@ -1,9 +1,9 @@
 import {useEffect, useId, useRef, useState, type ReactNode} from 'react';
-import {ArrowLeft, ArrowRight, Maximize2, Pause, Play} from 'lucide-react';
+import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin, Maximize2, Pause, Play} from 'lucide-react';
 import {Link, useLocation} from 'react-router-dom';
 import {useLocale} from './i18n';
 import {lookup} from './i18n-runtime/catalog';
-import {jobs} from './jobs-data';
+import {jobs, type Job} from './jobs-data';
 import {PageMasthead} from './PageMasthead';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
@@ -12,17 +12,39 @@ import media from './careers-media.json';
 import './Careers.css';
 
 const internalJobs = jobs.filter(job => job.internal);
-const specialist = internalJobs.find(job => job.id === 'MD007')!;
-const associate = internalJobs.find(job => job.id === 'MD008')!;
+const specialist = internalJobs.find(job => job.id === 'MD007');
+const associate = internalJobs.find(job => job.id === 'MD008');
+const mastheadPhoto = media.gallery.find(photo => photo.src === media.banner);
+const roleStories = [
+  {
+    job: specialist,
+    photo: media.gallery.find(photo => photo.src === media.rolePhotos.MD007),
+    sizes: 'auto, (max-width: 640px) calc(100vw - 40px), (max-width: 1240px) 64vw, 765px',
+    text: 'Tiếp nhận nhu cầu, giải thích công việc và theo sát lịch trao đổi cùng ứng viên.',
+  },
+  {
+    job: associate,
+    photo: media.gallery.find(photo => photo.src === media.rolePhotos.MD008),
+    sizes: 'auto, (max-width: 360px) calc(100vw - 40px), (max-width: 640px) 320px, (max-width: 1240px) 32vw, 384px',
+    text: 'Chia sẻ thông tin tuyển dụng đã xác nhận và kết nối người quan tâm với đội tư vấn.',
+  },
+];
+
+function positionItems(job: Job | undefined, section: 'tasks' | 'benefits', labels: [number, string][]) {
+  if (!job) return [];
+  return labels.flatMap(([index, title]) => {
+    const text = job[section][index];
+    return text ? [{job, text, title}] : [];
+  });
+}
+
 const workItems = [
-  {title: 'Lắng nghe ứng viên', text: specialist.tasks[0], job: specialist},
-  {title: 'Theo dõi từng cuộc hẹn', text: specialist.tasks[1], job: specialist},
-  {title: 'Kết nối tại địa phương', text: associate.tasks[1], job: associate},
+  ...positionItems(specialist, 'tasks', [[0, 'Lắng nghe ứng viên'], [1, 'Theo dõi từng cuộc hẹn']]),
+  ...positionItems(associate, 'tasks', [[1, 'Kết nối tại địa phương']]),
 ];
 const benefitItems = [
-  {title: 'Hướng dẫn nghiệp vụ', text: specialist.benefits[0], job: specialist},
-  {title: 'Phát triển kỹ năng tư vấn', text: specialist.benefits[1], job: specialist},
-  {title: 'Điều kiện cộng tác', text: associate.benefits[1], job: associate},
+  ...positionItems(specialist, 'benefits', [[0, 'Hướng dẫn nghiệp vụ'], [1, 'Phát triển kỹ năng tư vấn']]),
+  ...positionItems(associate, 'benefits', [[1, 'Điều kiện cộng tác']]),
 ];
 const steps = [
   ['Chọn vị trí', 'Đọc nhiệm vụ, yêu cầu và hình thức làm việc trên trang chi tiết.'],
@@ -31,12 +53,12 @@ const steps = [
   ['Xem mã mô phỏng', 'Hồ sơ mẫu chỉ hiển thị trong phiên hiện tại. Tệp không được tải lên.'],
 ];
 const questions = [
-  {title: 'Tôi có thể ứng tuyển cộng tác viên ở đâu?', text: 'Mở vị trí Cộng tác viên tuyển dụng để xem địa bàn, nhiệm vụ và hình thức cộng tác.', link: '/jobs/' + associate.slug, label: associate.title},
+  ...(associate ? [{title: 'Tôi có thể ứng tuyển cộng tác viên ở đâu?', text: 'Mở vị trí Cộng tác viên tuyển dụng để xem địa bàn, nhiệm vụ và hình thức cộng tác.', link: '/jobs/' + associate.slug, label: associate.title}] : []),
   {title: 'Tôi cần chuẩn bị CV không?', text: 'Bạn có thể hoàn tất đơn ứng tuyển nội bộ với họ tên và số điện thoại mẫu.', link: '#cv-requirements', label: 'Xem cách ứng tuyển'},
   {title: 'Làm sao xem lại vị trí đã lưu?', text: 'Chọn biểu tượng lưu bên cạnh một vị trí. Danh sách đã lưu có trên trình duyệt và thiết bị bạn đang dùng.', link: '/saved-jobs', label: 'Việc đã lưu'},
 ];
 
-function scrollItem(track: HTMLDivElement, direction: number) {
+function scrollItem(track: HTMLDivElement, direction: number, keyboard: boolean) {
   const last = track.scrollWidth - track.clientWidth;
   if (last < 2) return;
   const children = track.children;
@@ -44,7 +66,7 @@ function scrollItem(track: HTMLDivElement, direction: number) {
   const left = direction > 0 && track.scrollLeft >= last - 2 ? 0
     : direction < 0 && track.scrollLeft <= 2 ? last
     : Math.max(0, Math.min(last, track.scrollLeft + direction * (step || track.clientWidth)));
-  track.scrollTo({left, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  track.scrollTo({left, behavior: keyboard || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
 }
 
 function CareerRail({title, id, kind, modalOpen, children}: {
@@ -80,8 +102,8 @@ function CareerRail({title, id, kind, modalOpen, children}: {
             {auto.paused ? <Play size={16} aria-hidden="true"/> : <Pause size={16} aria-hidden="true"/>}
             <span>{auto.paused ? 'Phát' : 'Tạm dừng'}</span>
           </button>
-          <button type="button" aria-controls={trackId} aria-label="Mục trước" onClick={() => track.current && scrollItem(track.current, -1)}><ArrowLeft size={18} aria-hidden="true"/></button>
-          <button type="button" aria-controls={trackId} aria-label="Mục tiếp theo" onClick={() => track.current && scrollItem(track.current, 1)}><ArrowRight size={18} aria-hidden="true"/></button>
+          <button type="button" aria-controls={trackId} aria-label="Mục trước" onClick={event => track.current && scrollItem(track.current, -1, event.detail === 0)}><ArrowLeft size={18} aria-hidden="true"/></button>
+          <button type="button" aria-controls={trackId} aria-label="Mục tiếp theo" onClick={event => track.current && scrollItem(track.current, 1, event.detail === 0)}><ArrowRight size={18} aria-hidden="true"/></button>
         </div>}
       </div>
       <div id={trackId} ref={track} className="career-track" role="region" aria-labelledby={labelId} tabIndex={overflow ? 0 : undefined}>{children}</div>
@@ -125,30 +147,35 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
     return () => document.removeEventListener('keydown', navigate);
   }, [modalOpen]);
   return <div className="careers-page">
-    <PageMasthead title="Gia nhập đội ngũ Minh Đức" description="Tìm hiểu các vị trí tư vấn, tuyển dụng và kết nối người lao động tại Minh Đức." image={media.banner} imageAlt={media.gallery[0].alt} imageCaption={media.gallery[0].caption}>
+    <PageMasthead title="Gia nhập đội ngũ Minh Đức" description="Tìm hiểu các vị trí tư vấn, tuyển dụng và kết nối người lao động tại Minh Đức." image={mastheadPhoto?.src} imageAlt={mastheadPhoto?.alt} imageCaption={mastheadPhoto?.caption}>
       <a className="btn career-primary" href="#open-positions">Xem vị trí nội bộ</a>
       <Link className="career-text-link" to="/jobs#job-listings">Tìm việc tại nhà máy</Link>
     </PageMasthead>
 
     <section className="career-openings"><div className="container" id="open-positions" tabIndex={-1}>{openings}</div></section>
 
-    <section className="career-block career-roles"><div className="container">
-      <h2>Hai cách làm nghề tuyển dụng</h2>
+    {(specialist || associate) && <section className="career-block career-roles"><div className="container">
+      <h2>{specialist && associate ? 'Hai cách làm nghề tuyển dụng' : 'Tuyển dụng nội bộ'}</h2>
       <div className="career-feature-grid">
-        {[
-          {job: specialist, photo: media.gallery[1], text: 'Tiếp nhận nhu cầu, giải thích công việc và theo sát lịch trao đổi cùng ứng viên.'},
-          {job: associate, photo: media.gallery[3], text: 'Chia sẻ thông tin tuyển dụng đã xác nhận và kết nối người quan tâm với đội tư vấn.'},
-        ].map(({job, photo, text}) => <article key={job.id} className="career-feature">
-          <RevealFrame effect="media" className="career-feature-image"><img src={photo.src} alt={photo.alt} loading="lazy" sizes="(max-width: 767px) 92vw, 48vw"/></RevealFrame>
-          <div className="career-feature-copy"><h3><CareerLink to={'/jobs/' + job.slug}>{job.title}</CareerLink></h3><p>{text}</p></div>
+        {roleStories.map(({job, photo, sizes, text}) => job && <article key={job.id} className="career-feature">
+          {photo && <RevealFrame effect="media" className="career-feature-image">
+            <img src={photo.src} sizes={sizes} alt={photo.alt} loading="lazy" decoding="async"/>
+          </RevealFrame>}
+          <div className="career-feature-copy">
+            <span className="career-job-place"><MapPin size={16} aria-hidden="true"/>{job.location}</span>
+            <h3><CareerLink to={'/jobs/' + job.slug}>{job.title}<ArrowUpRight size={23} aria-hidden="true"/></CareerLink></h3>
+            <p>{text}</p>
+          </div>
         </article>)}
       </div>
-    </div></section>
+    </div></section>}
 
-    <CareerRail kind="work" title="Công việc hằng ngày" modalOpen={modalOpen}><PositionItems items={workItems}/></CareerRail>
-    <CareerRail kind="benefits" id="position-benefits" title="Quyền lợi theo vị trí" modalOpen={modalOpen}><PositionItems items={benefitItems}/></CareerRail>
+    {workItems.length > 0 && <CareerRail kind="work" title="Công việc hằng ngày" modalOpen={modalOpen}><PositionItems items={workItems}/></CareerRail>}
+    {benefitItems.length > 0
+      ? <CareerRail kind="benefits" id="position-benefits" title="Quyền lợi theo vị trí" modalOpen={modalOpen}><PositionItems items={benefitItems}/></CareerRail>
+      : <div className="container" id="position-benefits"><CareerLink to="#open-positions">Xem vị trí nội bộ</CareerLink></div>}
 
-    <section id="cv-requirements" tabIndex={-1} className="career-block career-process"><div className="container">
+    <section id="cv-requirements" tabIndex={-1} className="career-block career-process"><div className="container career-process-layout">
       <h2>Cách ứng tuyển nội bộ</h2>
       <ol className="career-process-grid">{steps.map(([title, text], index) => <li key={title}><RevealFrame delay={index as 0|1|2|3}><article className="career-step">
         <span className="career-step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p>
@@ -160,19 +187,19 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
       {questions.map(item => <article className="career-rail-item" key={item.title}><h3>{item.title}</h3><p>{item.text}</p><CareerLink to={item.link}>{item.label}</CareerLink></article>)}
     </CareerRail>
 
-    <CareerRail kind="gallery" title="Hoạt động của Minh Đức" modalOpen={modalOpen}>
+    {media.gallery.length > 0 && <CareerRail kind="gallery" title="Hoạt động của Minh Đức" modalOpen={modalOpen}>
       {media.gallery.map((photo, index) => <figure key={photo.src} className="career-gallery-item">
         <button type="button" aria-label={translate('Xem ảnh lớn') + ' · ' + translate(photo.caption)} onClick={event => {event.currentTarget.focus({preventScroll: true}); setGalleryIndex(index);}}>
-          <img src={photo.src} alt={photo.alt} loading="lazy" sizes="(max-width: 767px) 83vw, 38vw"/>
+          <img src={photo.src} sizes="auto, (max-width: 640px) 83vw, (max-width: 850px) 70vw, 450px" alt={photo.alt} loading="lazy" decoding="async"/>
           <span aria-hidden="true"><Maximize2 size={17}/></span>
         </button>
         <figcaption>{photo.caption}</figcaption>
       </figure>)}
-    </CareerRail>
+    </CareerRail>}
 
     {galleryPhoto && galleryIndex !== null && <Modal title="Hoạt động của Minh Đức" onClose={() => setGalleryIndex(null)}>
       <figure className="career-lightbox">
-        <img src={galleryPhoto.src} alt={galleryPhoto.alt} className="career-gallery-large" sizes="(max-width: 767px) 94vw, 900px"/>
+        <img src={galleryPhoto.src} sizes="(max-width: 767px) 94vw, 900px" alt={galleryPhoto.alt} className="career-gallery-large"/>
         <figcaption aria-live="polite" aria-atomic="true"><span>{galleryIndex + 1} / {media.gallery.length}</span> {galleryPhoto.caption}</figcaption>
       </figure>
       <div className="career-gallery-controls">

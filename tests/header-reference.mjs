@@ -17,7 +17,7 @@ try {
   await loadLocale(locale);const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,null,React.createElement(Header))));
   const dom=new JSDOM(html),doc=dom.window.document,row=doc.querySelector('.header-inner');
   assert.deepEqual([...row.children].map(el=>el.className),['brand','desktop-nav','header-actions']);
-  assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-saved','language-selector','header-contact','menu-button']);
+  assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-saved','language-selector','header-find-job','header-contact','menu-button']);
   assert.match(doc.querySelector('.brand img').getAttribute('src'),/minh-duc-logo/);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);assert.equal(doc.querySelectorAll('.desktop-nav svg').length,0,'navigation has no arrow icons');assert.ok(doc.querySelector('.menu-button'));
   assert.match(doc.querySelector('.language-trigger').getAttribute('aria-label'),new RegExp(localeNames[locale]));

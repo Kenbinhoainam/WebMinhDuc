@@ -64,7 +64,12 @@ export default function ConsultationPage() {
 
   return <div className="consultation-page">
     <PageMasthead title="Chọn giờ tư vấn" description="Thử chọn thời gian trao đổi bằng dữ liệu mẫu. Trang này không tạo lịch hẹn."/>
-    <div className="container consultation-layout"><div className="consultation-card">
+    <div className="container consultation-layout">
+      <ol className="consultation-progress" aria-label="Chọn giờ tư vấn">
+        <li aria-current={stage === 'choose' || stage === 'edit' ? 'step' : undefined}>Chọn ngày và giờ</li>
+        <li aria-current={stage === 'details' ? 'step' : undefined}>Thông tin liên hệ</li>
+      </ol>
+      <div className="consultation-card">
       {stage === 'complete' ? <div className="consultation-success" role="status">
         <CheckCircle2 size={36} aria-hidden="true"/><h2 ref={receiptHeading} tabIndex={-1}>Đã hoàn tất trải nghiệm</h2>
         <p>Thời gian đã chọn: <strong>{displayDate} · {time}</strong></p>

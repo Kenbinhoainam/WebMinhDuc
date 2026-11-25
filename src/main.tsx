@@ -1,3 +1,4 @@
+import './brand-type.css';
 import './styles.css';
 import './reference-base.css';
 import React from 'react';

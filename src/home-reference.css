@@ -1,7 +1,7 @@
 @import url("/mirror/fonts.googleapis.com/roboto.css");
 /* Home-specific structures based on the reference theme; global tokens live in the shared shell. */
 .ref-home-section{padding-block:60px}
-.ref-heading{font-family:Lato,sans-serif;font-size:32px;font-weight:700;line-height:1.3;margin:0 0 32px;color:#292929}
+.ref-heading{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1.3;margin:0 0 32px;color:#292929}
 .ref-center{text-align:center}
 .ref-wide{width:calc(100% - clamp(36px,10.4vw,200px));margin-inline:auto}
 .ref-edge{position:absolute;pointer-events:none;z-index:0;object-fit:contain}
@@ -33,14 +33,14 @@
 .ref-achievement:hover .ref-achievement-bg,.ref-achievement:focus-visible .ref-achievement-bg{opacity:1}
 .ref-achievement-label{text-align:right;font-weight:700}
 .ref-achievement>div{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.ref-achievement strong{font:700 clamp(40px,3.15vw,60px)/1 Lato,sans-serif}
+.ref-achievement strong{font:700 clamp(40px,3.15vw,60px)/1 var(--font-display)}
 .ref-achievement svg{width:34px;height:34px}
 .section-home-solution{position:relative}
 .ref-rail-wrap{position:relative}
 .ref-solution{position:relative;flex:0 0 calc((100% - 48px)/3);min-width:0;min-height:232px;display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem;padding:24px;border-radius:14px;overflow:hidden;background-position:center;background-size:cover;color:#fff;scroll-snap-align:start}
 .ref-solution-icon{width:4.895833rem;height:4.895833rem;object-fit:contain}
 .ref-solution-content{display:flex;flex-direction:column;gap:24px}
-.ref-solution h3{font:700 24px/1.25 Lato,sans-serif;margin:0;overflow-wrap:anywhere}
+.ref-solution h3{font:700 24px/1.25 var(--font-display);margin:0;overflow-wrap:anywhere}
 .ref-solution h3 a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}
 .ref-solution p{margin:0;line-height:1.7}
 .ref-solution .btn{margin-top:auto;max-width:100%;white-space:normal}
@@ -74,7 +74,7 @@
 .ref-news-image{display:block;aspect-ratio:440/248;border-radius:20px;overflow:hidden}
 .ref-news-image img{width:100%;height:100%;object-fit:cover}
 .ref-news-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:#666;font-size:12px;margin-top:18px}.ref-news-meta span:nth-child(3){color:#b20400}
-.ref-news-card h3{font:700 clamp(19px,1.3vw,25px)/1.35 Lato,sans-serif;margin:12px 0 20px}
+.ref-news-card h3{font:700 clamp(19px,1.3vw,25px)/1.35 var(--font-display);margin:12px 0 20px}
 .ref-news-card h3 a{color:inherit;text-decoration:none}
 .section-home-event{position:relative;isolation:isolate;--ref-circle:100px}
 .section-home-event::before,.section-home-event::after{content:"";position:absolute;z-index:-1;width:var(--ref-circle);height:var(--ref-circle);border-radius:50%;pointer-events:none}
@@ -83,7 +83,7 @@
 .ref-event{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:#eee;border-radius:20px}
 .ref-event img{width:100%;height:100%;min-height:340px;object-fit:cover}
 .ref-event>div{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:clamp(25px,3vw,55px);text-align:right}
-.ref-event h3{font:700 clamp(24px,2vw,36px)/1.25 Lato,sans-serif;margin:14px 0}
+.ref-event h3{font:700 clamp(24px,2vw,36px)/1.25 var(--font-display);margin:14px 0}
 .ref-event p{line-height:1.7;margin:0 0 24px}
 @media(min-width:576px){.ref-achievement-frame{flex-basis:calc((100% - 36px)/2.5)}}
 @media(min-width:1024px){.ref-achievement-frame{flex-basis:calc((100% - 60px)/3.5)}}
@@ -106,7 +106,7 @@
 .ref-video-image{position:relative;display:block;width:100%;aspect-ratio:676/380;border-radius:18px;overflow:hidden}
 .ref-video-image img{width:100%;height:100%;object-fit:cover}
 .ref-video-play{position:absolute;inset:50% auto auto 50%;display:grid;place-items:center;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#e42824;color:#fff}
-.ref-video-title{font:700 clamp(18px,1.25vw,24px)/1.3 Lato,sans-serif;width:100%}
+.ref-video-title{font:700 clamp(18px,1.25vw,24px)/1.3 var(--font-display);width:100%}
 .ref-video-dialog-note{line-height:1.6;color:#555}
 .ref-video-player{display:block;width:100%;max-height:60vh;background:#111}
 @media(max-width:767px){.ref-video-grid{grid-template-columns:1fr}.ref-video-image{border-radius:14px}}

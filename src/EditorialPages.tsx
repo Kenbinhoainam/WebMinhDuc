@@ -4,6 +4,7 @@ import {ChevronDown, ChevronLeft, ChevronRight, Link2, Pause, Phone, Play, Shiel
 import {company} from './company';
 import {ButtonLink} from './shared';
 import {PageMasthead} from './PageMasthead';
+import {responsiveImage} from './media';
 import {useLocale, useTranslation, localizedPath, type Locale} from './i18n';
 import {RevealFrame} from './motion';
 import {ORIGIN} from './seo/routes';
@@ -88,12 +89,12 @@ function FeaturedNews({archive}: {archive: string}) {
   const {paused, toggle} = useHomeCarousel(area, () => advanceHomeRail(track.current), '.editorial-feature-surface,.ed-feature-bar', {intervalMs: 6000, disabled:featured.length < 2});
   const t = useTranslation();
   const slide = t({vi:'Bài viết', en:'Article', zh:'文章', ko:'글', ja:'記事'});
-  function go(next: number) {
+  function go(next: number, animate: boolean) {
     const el = track.current;
     const child = el?.children[next] as HTMLElement | undefined;
     if (!el || !child) return;
-    setIndex(next);
-    el.scrollTo({left: child.offsetLeft - (el.children[0] as HTMLElement).offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    const smooth = animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollTo({left: child.offsetLeft - (el.children[0] as HTMLElement).offsetLeft, behavior: smooth ? 'smooth' : 'instant'});
   }
   function syncIndex() {
     const el = track.current;
@@ -115,17 +116,17 @@ function FeaturedNews({archive}: {archive: string}) {
           <article className="ed-feature">
             {article.image ? <img className="ed-feature-image" src={article.image} width={1024} height={576} alt="" loading={i === 0 ? 'eager' : 'lazy'}/> :
               <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
-            <div className="ed-feature-copy"><p className="ed-meta">{article.category}</p>
+            <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
               <h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p>
             </div>
           </article>
         </div>)}
       </div>
       {featured.length > 1 && <div className="ed-rail-nav">
-        <button type="button" className="ed-control" aria-label="Bài trước" onClick={() => go((index + featured.length - 1) % featured.length)}><ChevronLeft size={20}/></button>
+        <button type="button" className="ed-control" aria-label="Bài trước" onClick={e => go((index + featured.length - 1) % featured.length, e.detail > 0)}><ChevronLeft size={20}/></button>
         <div className="editorial-feature-dots">{featured.map((entry, i) =>
-          <button type="button" key={entry.slug} aria-label={slide + ' ' + (i + 1)} aria-pressed={index === i} onClick={() => go(i)}>{i + 1}</button>)}</div>
-        <button type="button" className="ed-control" aria-label="Bài sau" onClick={() => go((index + 1) % featured.length)}><ChevronRight size={20}/></button>
+          <button type="button" key={entry.slug} aria-label={slide + ' ' + (i + 1)} aria-pressed={index === i} onClick={e => go(i, e.detail > 0)}>{i + 1}</button>)}</div>
+        <button type="button" className="ed-control" aria-label="Bài sau" onClick={e => go((index + 1) % featured.length, e.detail > 0)}><ChevronRight size={20}/></button>
       </div>}
     </div>
   </div></section>;
@@ -140,9 +141,12 @@ const photoDescriptions: Record<string, string> = {
 };
 function ArticleRow({article, archive}: {article: Article; archive: string}) {
   return <article className="ed-archive-row info-news-card">
+    {article.image && <RevealFrame effect="media" className="ed-row-photo">
+      <img className={article.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''}
+        {...(responsiveImage(article.image, '(max-width: 700px) 100px, (max-width: 970px) 44vw, (max-width: 1279px) 30vw, 390px') ?? {src:article.image, width:1024, height:576})} alt="" loading="lazy"/>
+    </RevealFrame>}
     <div className="info-news-meta ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></div>
     <div className="ed-archive-copy"><h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p></div>
-    {article.image && article.image !== newsCover && <RevealFrame effect="media" className="ed-row-photo"><img className={article.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''} src={article.image} sizes="(max-width: 650px) 80px, 160px" alt="" loading="lazy"/></RevealFrame>}
   </article>;
 }
 export function NewsPage() {
@@ -159,7 +163,9 @@ export function NewsPage() {
   }
   return <div className="ed-pages"><PageMasthead title="Tin tức & cẩm nang"
     description="Hướng dẫn chuẩn bị hồ sơ, tiếp nhận lao động và lập kế hoạch nhân lực cho nhà máy."
-    image={newsCover} imageAlt="Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc"/>
+    image={newsCover} imageAlt="Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc">
+      <Link className="btn" to={url.split('#')[0] + '#news-listings'}>Danh mục bài viết</Link>
+    </PageMasthead>
     {page === 1 && featured.length > 0 && <FeaturedNews archive={url}/>}
     <section className="info-news-listing ed-section" aria-labelledby="news-listings"><div className="ed-frame">
       <h2 ref={resultsHeading} id="news-listings" tabIndex={-1}>Danh mục bài viết</h2>
@@ -217,12 +223,17 @@ function ArticleReader({article}: {article: Article}) {
   return <div className="ed-pages ed-reader"><div className="ed-frame">
     <nav className="ed-crumbs" aria-label="Đường dẫn"><Link to="/">Trang chủ</Link><span aria-hidden="true">/</span><Link to={archive}>Tin tức</Link></nav>
     <article className="info-article ed-story">
-      <header className="ed-story-head"><p className="ed-meta">{article.category} <span aria-hidden="true">·</span> <ArticleDate date={article.date}/></p>
-        <h1>{article.title}</h1><p className="ed-lead">{article.excerpt}</p></header>
+      <header className={'ed-story-head' + (article.image ? ' ed-story-illustrated' : '')}>
+        <div className="ed-story-deck"><p className="ed-meta">{article.category} <span aria-hidden="true">·</span> <ArticleDate date={article.date}/></p>
+          <h1>{article.title}</h1><p className="ed-lead">{article.excerpt}</p></div>
+        {article.image && <div className="ed-story-photo">
+          <img className={'ed-cover' + (article.slug === 'ho-so-xin-viec' ? ' ed-cover-portrait' : '')}
+            {...(responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 40vw, 510px') ?? {src:article.image, width:1024, height:576})}
+            alt={photoDescriptions[article.image]}/>
+        </div>}
+      </header>
       <div className="ed-reader-grid"><Contents article={article} archive={archive}/>
         <div className="ed-body">
-          {article.image && <RevealFrame effect="media"><img className={'ed-cover' + (article.slug === 'ho-so-xin-viec' ? ' ed-cover-portrait' : '')}
-            src={article.image} alt={photoDescriptions[article.image]} sizes="(max-width: 899px) 90vw, 680px"/></RevealFrame>}
           {article.sections.map((section, i) => <section key={section.heading} className="ed-prose-section" aria-labelledby={'article-section-' + i}>
             <h2 id={'article-section-' + i} tabIndex={-1}>{section.heading}</h2>
             {section.paragraphs.map(p => <p key={p}>{p}</p>)}
@@ -234,7 +245,7 @@ function ArticleReader({article}: {article: Article}) {
         </div>
         <aside className="info-related-news editorial-related-aside ed-related"><h2>Có thể bạn quan tâm</h2>{related.map(item =>
           <article className="editorial-related-item" key={item.slug}>
-            {item.image && <img src={item.image} sizes="96px" alt="" loading="lazy"/>}
+            {item.image && <img src={item.image} {...responsiveImage(item.image, '74px')} alt="" loading="lazy"/>}
             <h3><Link to={'/news/' + item.slug} state={{archive}}>{item.title}</Link></h3>
           </article>)}</aside>
       </div>
@@ -319,8 +330,8 @@ export function EventPage() {
         <a className="ed-control" href={'tel:' + contact.tel}><Phone size={17}/>Gọi hỏi thông tin <span>{contact.phone}</span></a></section>
       <section aria-labelledby="gallery" className="ed-section ed-gallery"><h2 id="gallery" tabIndex={-1}>Ảnh tư liệu hoạt động</h2><p>Ảnh do Minh Đức cung cấp từ các hoạt động khác.</p>
         <div className="ed-gallery-grid">
-          <RevealFrame effect="media"><figure><img src="/assets/minhduc-v16/community.webp" alt="Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời" sizes="(max-width: 700px) 92vw, 560px" loading="lazy"/><figcaption>Kết nối cộng đồng</figcaption></figure></RevealFrame>
-          <RevealFrame effect="media" delay={1}><figure><img src="/assets/minhduc-v16/team-yearend.webp" alt="Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm" sizes="(max-width: 700px) 92vw, 560px" loading="lazy"/><figcaption>Buổi gặp mặt cuối năm</figcaption></figure></RevealFrame>
+          <RevealFrame effect="media"><figure><img src="/assets/minhduc-v16/community.webp" alt="Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời" {...responsiveImage('/assets/minhduc-v16/community.webp', '(max-width: 700px) 92vw, (max-width: 1279px) 46vw, 588px')} loading="lazy"/><figcaption>Kết nối cộng đồng</figcaption></figure></RevealFrame>
+          <RevealFrame effect="media" delay={1}><figure><img src="/assets/minhduc-v16/team-yearend.webp" alt="Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm" {...responsiveImage('/assets/minhduc-v16/team-yearend.webp', '(max-width: 700px) 92vw, (max-width: 1279px) 46vw, 588px')} loading="lazy"/><figcaption>Buổi gặp mặt cuối năm</figcaption></figure></RevealFrame>
         </div>
       </section>
       <section aria-labelledby="other-events" className="ed-section"><h2 id="other-events" tabIndex={-1}>Sự kiện khác</h2><div className="ed-event-list">{events.filter(item => item.slug !== slug).map(item => <EventLine key={item.slug} event={item}/>)}</div>

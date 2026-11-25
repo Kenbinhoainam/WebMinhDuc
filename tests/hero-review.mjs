@@ -19,6 +19,7 @@ try {
   const dom=new JSDOM(html),doc=dom.window.document,heading=doc.querySelector('h1'),video=doc.querySelector('video'),poster=doc.querySelector('.hero-poster');
   assert.equal(doc.querySelectorAll('h1').length,1);assert.ok(!heading.closest('[aria-hidden="true"]'));assert.ok(heading.textContent.trim());
   assert.deepEqual([...doc.querySelectorAll('.hero-brand-finish .hero-actions a')].map(a=>a.getAttribute('href')),[`${base||"/"}#business-contact`,`${base}/jobs`]);assert.equal(doc.querySelectorAll('.hero-actions').length,1,'one CTA group in end card');assert.equal(doc.querySelectorAll('.hero-end-card .hero-actions a').length,2,'both links belong to compact end card');assert.ok(doc.querySelector('.hero-end-card .hero-finish-logo'));
+  assert.deepEqual([...doc.querySelectorAll('.hero-entry-bar a')].map(a=>a.getAttribute('href')),[`${base}/jobs`,`${base||"/"}#business-contact`]);
   const copy=[heading.textContent,...[...doc.querySelectorAll('.hero-actions a')].map(a=>a.textContent),doc.querySelector('.hero-finish-slogan').textContent,doc.querySelector('.video-control').getAttribute('aria-label')];
   if(locale==='vi')viCopy=copy;else assert.ok(copy.every((s,i)=>s!==viCopy[i]),`${locale}: hero messages translated`);
   assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');assert.equal(video.hasAttribute('loop'),false);assert.equal(video.hasAttribute('autoplay'),false,'all playback is gated explicitly');assert.equal(video.hasAttribute('playsinline'),true);

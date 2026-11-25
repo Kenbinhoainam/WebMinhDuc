@@ -19,7 +19,7 @@
   margin: 0 0 clamp(22px, 3vw, 38px);
   max-width: 24ch;
   color: #183c73;
-  font: 700 clamp(28px, 3.3vw, 50px)/1.13 Lato, sans-serif;
+  font: 700 clamp(28px, 3.3vw, 50px)/1.13 var(--font-display, Montserrat, sans-serif);
   letter-spacing: -.025em;
 }
 .service-inline-link {
@@ -32,7 +32,16 @@
   text-decoration: underline;
   text-underline-offset: .24em;
 }
-.service-directory { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(28px,6vw,85px); align-items: start; }
+.service-directory {
+  display: grid;
+  grid-template-columns: minmax(0,4fr) minmax(0,7fr);
+  gap: clamp(28px,6vw,85px);
+  align-items: start;
+  border-top: 2px solid #20478f;
+  background: white;
+  padding: clamp(24px,3.4vw,48px);
+}
+.service-directory h2 { text-wrap: balance; }
 .service-index-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px; }
 .service-index-masthead .service-directory { width:100%; margin-top:clamp(34px,5vw,68px); }
 @media(min-width:768px) {
@@ -54,24 +63,35 @@
 .service-workflow ol { list-style: none; margin: 0; padding: 0; }
 .service-directory li { border-top: 1px solid #cbd6e1; }
 .service-directory li:last-child { border-bottom: 1px solid #cbd6e1; }
-.service-directory nav a { display: grid; justify-content:start; align-items:start; gap: .25rem; padding: clamp(14px,1.5vw,23px) 6px; min-height: 44px; text-decoration: none; color: #20478f; }
-.service-directory a strong { font: 700 clamp(20px,1.8vw,28px)/1.25 Lato, sans-serif; }
-.service-directory a span { font: 400 max(16px,1rem)/1.5 'Open Sans', sans-serif; color: #465d74; }
+.service-directory nav a { display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"need arrow" "type arrow"; justify-content:stretch; align-items:center; gap:5px 16px; padding:clamp(14px,1.5vw,23px) 2px; min-height: 44px; text-decoration: none; color: #20478f; }
+.service-directory a svg { grid-area:arrow; color:#20478f; }
+.service-directory a strong { grid-area:need; text-wrap:pretty; font: 700 clamp(20px,1.8vw,28px)/1.25 var(--font-display, Montserrat, sans-serif); }
+.service-directory a span { grid-area:type; font: 400 max(16px,1rem)/1.5 var(--font-body, system-ui, sans-serif); color: #465d74; }
 .service-directory a:is(:hover,:focus-visible) strong,
 .service-photo-panel a:is(:hover,:focus-visible) h3 { text-decoration: underline; text-underline-offset: .18em; }
 .md-ref-service-metrics,
 .service-process,
 .service-education-action { padding-block: clamp(38px,5vw,78px); background: #eef4f8; color: #183c73; }
-.md-ref-service-metrics .container > p { margin: 0 0 20px; color: #4b6274; font-size: max(14px,.92rem); }
+.md-ref-service-metrics { background:#173e7c; color:white; }
+.md-ref-service-metrics .container > p { margin: 0 0 20px; color:#dce8f7; font-size: max(14px,.92rem); }
 .md-ref-service-metrics .container > div { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
-.md-ref-service-metrics article { border-top: 1px solid #b6c9d8; padding-top: 14px; display: grid; gap: 5px; font-size: max(16px,1rem); }
-.md-ref-service-metrics strong { font: 700 clamp(40px,5vw,78px)/1.08 Lato,sans-serif; }
+.md-ref-service-metrics article { border-top:1px solid #7893bc; padding-top:clamp(14px,2vw,28px); display: grid; gap: 5px; font-size: max(16px,1rem); }
+.md-ref-service-metrics strong { font: 700 clamp(36px,4.8vw,72px)/1.1 var(--font-display, Montserrat, sans-serif); }
 .service-explore { overflow: hidden; }
 .service-photo-rail .info-service-cards { display: flex; gap: clamp(14px,2vw,26px); overflow-x: auto; padding: 4px 3px 14px; scroll-snap-type: x mandatory; }
 .service-photo-panel { flex: 0 0 calc((100% - 52px)/3); min-width: 0; scroll-snap-align: start; }
 .service-photo-panel a { display: block; text-decoration: none; }
-.service-photo-panel img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #e8eef4; border-radius: 4px; }
-.service-photo-panel h3 { margin: 17px 0 5px; color: #173f76; font: 700 clamp(20px,1.7vw,28px)/1.25 Lato,sans-serif; }
+.service-panel-photo { display:block; overflow:hidden; aspect-ratio:3/2; background:#e8eef4; }
+.service-photo-panel img { width:100%; height:100%; display:block; object-fit:cover; }
+.service-panel-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:16px 0 6px; }
+.service-panel-heading svg { align-self:flex-start; flex:none; margin-top:3px; color:#20478f; }
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .service-photo-panel img { transition:transform 300ms cubic-bezier(.2,.65,.3,1); }
+  .service-photo-panel a:hover img { transform:scale(1.035); }
+  .service-directory a svg,.service-panel-heading svg { transition:transform 180ms ease-out; }
+  .service-directory a:hover svg,.service-photo-panel a:hover svg { transform:translate(2px,-2px); }
+}
+.service-photo-panel h3 { margin:0; text-wrap:pretty; color: #173f76; font: 700 clamp(20px,1.7vw,28px)/1.25 var(--font-display, Montserrat, sans-serif); }
 .service-photo-panel p { color: #435469; margin: 0; font-size: max(16px,1rem); line-height: 1.65; }
 .service-photo-rail .info-rail-controls,
 .info-service-customers .info-rail-controls { display:flex; align-items:center; gap:12px; margin-top:20px; }
@@ -101,7 +121,7 @@
 .service-consulting-list { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .service-study-modes article,
 .service-consulting-list article { border-top:2px solid #20478f; padding-top:18px; }
-.service-decision h3 { font:700 clamp(20px,2vw,29px)/1.25 Lato,sans-serif; margin:0 0 .5em; color:#183c73; }
+.service-decision h3 { font:700 clamp(20px,2vw,29px)/1.25 var(--font-display, Montserrat, sans-serif); margin:0 0 .5em; color:#183c73; }
 .service-workflow ol,
 .service-process ol { display:grid; gap:0; grid-template-columns:repeat(5,minmax(0,1fr)); counter-reset:service-step; }
 .service-workflow ol { grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:24px; }
@@ -119,16 +139,24 @@
 .service-fees { padding-bottom:0; }
 .service-fees .info-fee-table-wrap { margin:0; }
 .md-ref-fee-highlight { max-width: 70ch; padding:20px 24px; background:#f0f4f8; border-left:4px solid #20478f; }
-.service-faq .info-faq { max-width: 850px; margin-inline:0; }
+.service-faq .info-faq { width:100%; max-width:850px; margin:0; }
+@media(min-width:960px) {
+  .service-faq,.service-fees {
+    display:grid;
+    grid-template-columns:minmax(0,4fr) minmax(0,7fr);
+    gap:clamp(36px,5vw,76px);
+    align-items:start;
+  }
+  .service-fees .md-ref-fee-highlight { margin:0; }
+}
 .service-stories-heading { margin-top: clamp(26px,5vw,70px); }
 .service-stories-heading p { text-align:center; font-size:max(14px,.95rem); color:#486078; }
 .info-service-customers .info-testimonial-rail footer small {font-size:max(14px,.875rem);}
 .service-education-action .container { display:flex; justify-content:space-between; align-items:center; gap:24px; }
 .service-education-action h2 { margin:0; }
-.info-contact-section[id] { scroll-margin-top:100px; }
 @media(max-width: 850px) {
   .service-photo-panel { flex-basis:calc((100% - 20px)/2); }
-  .service-directory { grid-template-columns:1fr; gap:0; }
+  .service-directory { grid-template-columns:minmax(0,1fr); gap:0; }
 }
 @media(max-width: 767px) {
   .service-planning,.service-responsibilities,.service-role,.service-study-modes,.service-consulting-list {grid-template-columns:minmax(0,1fr);}
@@ -137,12 +165,14 @@
   .service-workflow li,.service-process li { display:flex; align-items:baseline; gap:16px; padding:10px 0; }
   .service-workflow li::before,.service-process li::before { padding:0; }
   .md-ref-service-metrics .container > div { gap:12px; }
-  .md-ref-service-metrics strong { font-size:clamp(28px,8.4vw,46px); }
+  .md-ref-service-metrics strong { font-size:clamp(23px,6.3vw,45px); }
   .service-table-scroll { font-size:16px; }
   .service-planning .service-table-scroll table {min-width:490px;}
   .service-education-action .container { align-items:flex-start; flex-direction:column; }
 }
 @media(max-width: 575px) {
   .service-photo-panel { flex-basis:82%; }
+  .service-directory { padding:24px 16px; }
+  .md-ref-service-metrics article { overflow-wrap:anywhere; }
   .service-table-scroll th,.service-table-scroll td { padding:11px 7px; overflow-wrap:anywhere; }
 }

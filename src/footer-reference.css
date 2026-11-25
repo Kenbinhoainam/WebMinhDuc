@@ -11,7 +11,7 @@
 .reference-footer .footer-social{display:flex;align-items:center;gap:16px}
 .reference-footer .footer-social a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;font-weight:700;font-size:14px}
 .reference-footer .footer-bottom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0;margin-bottom:32px}
-.reference-footer .footer-title{font-family:'Open Sans',Arial,sans-serif;font-size:16px;font-weight:600;line-height:1.375;margin:0 0 24px;color:#fff}
+.reference-footer .footer-title{font-family:var(--font-body);font-size:16px;font-weight:600;line-height:1.375;margin:0 0 24px;color:#fff}
 .reference-footer .footer-content,.reference-footer .footer-form-wrap>p{font-size:14px;line-height:1.6}
 .reference-footer .footer-content p{margin-bottom:12px}
 .reference-footer .footer-content ul{display:flex;flex-direction:column;gap:8px}
