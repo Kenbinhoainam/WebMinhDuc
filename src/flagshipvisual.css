@@ -1,6 +1,6 @@
 /* One semantic list and one visual copy make a continuous, natively scrollable row. */
 .partners-strip { position:relative; margin-top:35px; container-type:inline-size; }
-.partners-viewport { scroll-behavior:auto; scroll-snap-type:none; overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:none; }
+.partners-viewport { position:relative; scroll-behavior:auto; scroll-snap-type:none; overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:none; }
 .partners-viewport::-webkit-scrollbar { display:none; }
 .partners-track { display:flex; width:max-content; }
 .partners-set { display:grid; flex:none; grid-auto-flow:column; grid-auto-columns:max(136px,22vw); grid-auto-columns:max(136px,22cqi); gap:16px; padding:20px 16px 20px 0; margin:0; list-style:none; }
