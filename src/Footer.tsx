@@ -1,3 +1,4 @@
+import {company} from './company';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowRight,Phone,Mail} from 'lucide-react';
@@ -5,14 +6,14 @@ import {navigation} from './navigation';
 import {Modal} from './shared';
 import './footer-reference.css';
 
-function SocialLinks({mobile=false}:{mobile?:boolean}){return <div className={`footer-social ${mobile?'footer-social-mobile':'footer-social-desktop'}`}><a href="https://www.facebook.com/md668.com.vn" target="_blank" rel="noreferrer" aria-label="Facebook Minh Đức"><img src="/mirror/www.hr2b.com/wp-content/uploads/2025/09/fb.svg" alt="" width="24" height="24" loading="lazy"/></a><a href="https://zalo.me/0329138082" target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo"><img src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/zalo.svg" alt="" width="24" height="24" loading="lazy"/></a></div>}
+function SocialLinks({mobile=false}:{mobile?:boolean}){return <div className={`footer-social ${mobile?'footer-social-mobile':'footer-social-desktop'}`}><a href={company.facebook} target="_blank" rel="noreferrer" aria-label="Facebook Minh Đức"><img src="/mirror/www.hr2b.com/wp-content/uploads/2025/09/fb.svg" alt="" width="24" height="24" loading="lazy"/></a><a href={company.zalo} target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo"><img src="/mirror/www.hr2b.com/wp-content/themes/canhcamtheme/img/zalo.svg" alt="" width="24" height="24" loading="lazy"/></a></div>}
 function FooterMenu({mobile=false}:{mobile?:boolean}){return <nav className={`footer-menu ${mobile?'footer-menu-mobile':'footer-menu-desktop'}`} aria-label="Khám phá"><ul>{[...navigation.filter((_,i)=>[1,2,3,4,5].includes(i)),["/events","Sự kiện"]].map(([to,title])=><li key={to}><Link to={to}>{title}</Link></li>)}</ul></nav>}
 export default function Footer(){
   const [email,setEmail]=useState(''),[feedback,setFeedback]=useState(''),[subscribe,setSubscribe]=useState(false);
   return <footer className="site-footer reference-footer section-py">
     <div className="container">
       <div className="footer-top">
-        <Link className="footer-logo" to="/" aria-label="Minh Đức — Trang chủ"><img src="/assets/minh-duc-logo.jpg" alt="Minh Đức Vina" width="80" height="80" loading="lazy"/></Link>
+        <Link className="footer-logo" to="/" aria-label="Minh Đức — Trang chủ"><img src="/assets/minh-duc-logo-transparent.webp" alt="Minh Đức Vina" width="1146" height="825" loading="lazy"/></Link>
         <FooterMenu/>
         <SocialLinks/>
       </div>
@@ -20,7 +21,7 @@ export default function Footer(){
       <div className="footer-bottom">
         <div className="footer-address">
           <h2 className="footer-title">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</h2>
-          <div className="footer-content"><p>Nhân lực là tài sản.</p><p>Cung ứng nhân lực · Tư vấn và giới thiệu việc làm</p><ul><li><a href="tel:0364562868"><Phone size={16}/>0364 562 868</a></li><li><a href="mailto:vieclamminhduc.vpv2@gmail.com"><Mail size={16}/>vieclamminhduc.vpv2@gmail.com</a></li><li><Link to="/contact">Vôi · Bắc Ninh · Quảng Ninh</Link></li></ul></div>
+          <div className="footer-content"><p>Nhân lực là tài sản.</p><p>Cung ứng nhân lực · Tư vấn và giới thiệu việc làm</p><ul><li><a href={`tel:${company.tel}`}><Phone size={16}/>{company.phone}</a></li><li><a href={`mailto:${company.email}`}><Mail size={16}/>{company.email}</a></li>{company.offices.map(office=><li key={office.name}><a href={office.map} target="_blank" rel="noreferrer">{office.name} · {office.address}</a></li>)}</ul></div>
         </div>
         <div className="footer-form-wrap"><h2 className="footer-title">Đăng ký trải nghiệm nhận thông tin việc làm và hoạt động.</h2><button className="btn footer-subscribe" type="button" aria-haspopup="dialog" onClick={()=>setSubscribe(true)}>Đăng ký nhận bản tin</button></div>
       </div>

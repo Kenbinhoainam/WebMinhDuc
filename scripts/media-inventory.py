@@ -3,6 +3,8 @@ from pathlib import Path
 from urllib.parse import urljoin,urlparse
 import json,re,os,sys
 P=Path(__file__).resolve().parents[1]; public=P/'public'; dist=P/'dist'; domain='https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site'; hero=json.loads((P/'src/hero-assets.json').read_text()); career=json.loads((P/'src/careers-media.json').read_text()); manifest=json.loads((P/'src/media-manifest.json').read_text()); reverse={v['src']:k for k,x in manifest.items() for v in x['variants']};reverse.update({'/assets/minh-duc-favicon-96.png':'/assets/minh-duc-logo.jpg','/assets/minh-duc-apple-touch.png':'/assets/minh-duc-logo.jpg'});
+reverse[hero['webm']]=hero['video']
+reverse.update({'/assets/minh-duc-logo-transparent.webp':'/assets/minh-duc-logo.jpg','/assets/minh-duc-logo-transparent.png':'/assets/minh-duc-logo.jpg'})
 records={}; voids={'img','source','br','hr','input','link','meta','embed','wbr','area','base','col','param','track'}
 class Parser(HTMLParser):
  def __init__(self,route,metadata_only=False):super().__init__(convert_charrefs=True);self.stack=[];self.route=route;self.metadata_only=metadata_only
@@ -35,7 +37,9 @@ for f in dist.rglob('index.html'):
  route='/' if len(rel)==1 else '/'+('/'.join(rel[:-1]));localized=bool(rel and rel[0] in ('en','zh','ko','ja','vi'));parser=Parser(route,metadata_only=localized);parser.feed(f.read_text(errors='replace'))
 # Dynamic sources and CSS asset references not present as HTML image nodes.
 add(hero['video'],'/','section-home-banner','hero-media','video động')
-add(hero['video'],'/','section-home-video','hộp thoại video của 4 thẻ xem trước','video hộp thoại')
+add(hero['webm'],'/','section-home-banner','hero-media','video WebM dự phòng')
+add(hero['video'],'/','section-home-video','hộp thoại video doanh nghiệp','video MP4 hộp thoại')
+add(hero['webm'],'/','section-home-video','hộp thoại video doanh nghiệp','video WebM hộp thoại')
 add(hero['poster'],'/','section-home-video','poster hộp thoại video','poster')
 # News pagination can reveal all six article cards even though SSR renders only page one.
 for logical in ['/mirror/www.hr2b.com/wp-content/uploads/2025/09/Co-hoi-viec-lam-scaled.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/08/staffing-logictis-1.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/10/Executive-Search-banner.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/08/khung-luong-canh-tranh.jpg','/mirror/www.hr2b.com/wp-content/uploads/2025/09/Staff-oursourcing.jpg','/mirror/www.hr2b.com/wp-content/uploads/2026/11/bao-mat-thong-tin-tien-luong.jpg']:
@@ -51,11 +55,8 @@ for css,route in [('src/Careers.css','/careers'),('src/footer-reference.css','/'
  text=(P/css).read_text() if (P/css).exists() else ''
  for url in re.findall(r'url\([\"\']?([^\"\')]+)',text):
   if re.search(r'\.(?:avif|webp|png|jpe?g|svg|gif)$',url,re.I):add(url,route,'stylesheet-reference',css,'tham chiếu CSS')
-# Map video and both poster derivatives to one logical source each.
+# Both runtime formats represent the same complete company video.
 video_key=hero['video']
-for key in ['/optimized/assets/hero-poster-1600.webp','/optimized/assets/hero-poster-960.webp']:
- if key in records:
-  v=records.pop(key);target=records.setdefault('/assets/hero-poster.jpg',{'logical_path':'/assets/hero-poster.jpg','actual_paths':set(),'uses':set(),'types':set()});target['actual_paths'].update(v['actual_paths']);target['uses'].update(v['uses']);target['types'].update(v['types'])
 # Proven original source from reference capture manifest; no source inferred from filename alone.
 provpath=Path('/workspace/reference/hr2b-live-20261116/drive-source/assets-provenance.jsonl');proven={}
 if provpath.exists():
@@ -75,12 +76,15 @@ if live_manifest.exists():
    if f.is_file():
     import hashlib
     if hashlib.sha256(f.read_bytes()).hexdigest()==entry.get('sha256'):proven[logical]=u
-proven.update({'/partners/samsung.svg':'https://github.com/simple-icons/simple-icons/blob/develop/icons/samsung.svg','/partners/foxconn.svg':'https://github.com/mcorrig4/cascade-money/blob/5de49fa24665a0d162ed0b66913a594181d3979f/app/public/logos/foxconn.svg','/partners/luxshare.webp':'https://github.com/htferretti/liberaopreto/blob/80b7f8d0c897190711099dc9822d306386a13a12/src/assets/manufactors/luxshare.png',video_key:'https://www.hr2b.com/wp-content/uploads/2025/10/hr2b-intro.mp4'})
-labels={'section-home-banner':'Ảnh nền và video hero đầu trang','section-home-about-achievement':'Các thẻ chỉ số minh họa','section-home-about':'Giới thiệu Minh Đức','section-home-solution':'Thẻ dịch vụ và giải pháp','section-home-customer':'Dải đối tác và thẻ cảm nhận minh họa','section-home-coop':'Lưới đối tác tiêu biểu','section-home-news':'Các thẻ tin tức trang chủ','section-home-event':'Thẻ sự kiện trang chủ','section-home-video':'Khu vực video minh họa','page-hero':'Ảnh nền phần đầu trang','page-banner-main':'Ảnh nền phần đầu trang','info-history':'Dòng lịch sử hình thành','info-event-overview':'Tổng quan sự kiện','info-event-location':'Thông tin địa điểm sự kiện','info-event-band':'Thư viện ảnh sự kiện','info-article-layout':'Ảnh nội dung bài viết','info-related-news':'Các bài viết liên quan','info-news-section':'Danh sách và tin nổi bật','info-news-card':'Thẻ bài viết','info-intro-grid':'Khối giới thiệu nội dung','info-about-intro':'Giới thiệu và giá trị Minh Đức','header':'Logo trong thanh điều hướng','info-service-rail':'Dải dịch vụ liên quan','info-service-why':'Lý do lựa chọn dịch vụ','info-service-customers':'Đối tượng khách hàng dịch vụ','info-event-list':'Danh sách sự kiện','info-team-grid':'Các thẻ nội bộ','career-reference-rows':'Khối giới thiệu tuyển dụng nội bộ','career-block':'Nội dung tuyển dụng nội bộ'}
+proven.update({'/assets/minh-duc-logo.jpg':'https://drive.google.com/file/d/1hGEA2GRDv3MMZrO-h8qlL21Yz05ePKxY/view?usp=sharing','/partners/samsung.svg':'https://github.com/simple-icons/simple-icons/blob/develop/icons/samsung.svg','/partners/foxconn.svg':'https://github.com/mcorrig4/cascade-money/blob/5de49fa24665a0d162ed0b66913a594181d3979f/app/public/logos/foxconn.svg','/partners/luxshare.webp':'https://github.com/htferretti/liberaopreto/blob/80b7f8d0c897190711099dc9822d306386a13a12/src/assets/manufactors/luxshare.png',video_key:'https://drive.google.com/file/d/1i4ZHg9BAApueTxur4KwU_oXxH-NqbMHu/view'})
+labels={'section-home-banner':'Ảnh nền và video hero đầu trang','section-home-about-achievement':'Các thẻ chỉ số minh họa','section-home-about':'Giới thiệu Minh Đức','section-home-solution':'Thẻ dịch vụ và giải pháp','section-home-customer':'Dải đối tác và thẻ cảm nhận minh họa','section-home-coop':'Lưới đối tác tiêu biểu','section-home-news':'Các thẻ tin tức trang chủ','section-home-event':'Thẻ sự kiện trang chủ','section-home-video':'Khu vực video doanh nghiệp','page-hero':'Ảnh nền phần đầu trang','page-banner-main':'Ảnh nền phần đầu trang','info-history':'Dòng lịch sử hình thành','info-event-overview':'Tổng quan sự kiện','info-event-location':'Thông tin địa điểm sự kiện','info-event-band':'Thư viện ảnh sự kiện','info-article-layout':'Ảnh nội dung bài viết','info-related-news':'Các bài viết liên quan','info-news-section':'Danh sách và tin nổi bật','info-news-card':'Thẻ bài viết','info-intro-grid':'Khối giới thiệu nội dung','info-about-intro':'Giới thiệu và giá trị Minh Đức','header':'Logo trong thanh điều hướng','info-service-rail':'Dải dịch vụ liên quan','info-service-why':'Lý do lựa chọn dịch vụ','info-service-customers':'Đối tượng khách hàng dịch vụ','info-event-list':'Danh sách sự kiện','info-team-grid':'Các thẻ nội bộ','career-reference-rows':'Khối giới thiệu tuyển dụng nội bộ','career-block':'Nội dung tuyển dụng nội bộ'}
 def label(pos,classes):
  if pos=='metadata-share':return 'Ảnh chia sẻ liên kết (Open Graph/Twitter)'
  if pos=='metadata-icon':return 'Biểu tượng Apple touch' if 'Apple' in classes else 'Biểu tượng trình duyệt'
+ if 'hero-finish-logo' in classes:return 'Logo ở thẻ kết sau video'
  if 'footer-social' in classes:return 'Liên kết mạng xã hội ở chân trang'
+ if 'home-b2b-offices' in pos:return 'Các địa điểm kết nối doanh nghiệp'
+ if 'info-team' in pos:return 'Đội ngũ trên trang giới thiệu'
  if 'career-gallery-dialog' in pos:return 'Hộp thoại phóng lớn ảnh tuyển dụng nội bộ'
  if 'career-introduction' in pos:return 'Giới thiệu công việc và đồng đội'
  if 'career-rail-section' in pos:return 'Quyền lợi và phát triển' if 'is-benefits' in pos else 'Không gian làm việc'
@@ -111,9 +115,9 @@ names={
  'GPNS-1.jpg':'Ảnh giải pháp nhân sự 1','GPNS-2.jpg':'Ảnh giải pháp nhân sự 2','GPNS-3.jpg':'Ảnh giải pháp nhân sự 3',
  'Lien-he.jpg':'Ảnh minh họa liên hệ','Solution-Icon-1.png':'Biểu tượng giải pháp nhân sự 1','Solution-Icon-2.png':'Biểu tượng giải pháp nhân sự 2','Solution-Icon-3.png':'Biểu tượng giải pháp nhân sự 3',
  'Staff-oursourcing.jpg':'Ảnh minh họa cung ứng nhân lực','Tin-tuc.jpg':'Ảnh minh họa tin tức','Executive-Search-banner.jpg':'Ảnh minh họa tuyển chọn nhân sự','about-banner.jpg':'Ảnh nền giới thiệu và sự kiện','bao-mat-thong-tin-tien-luong.jpg':'Ảnh minh họa an toàn thông tin',
- Path(hero['video']).name:'Video minh họa dùng chung','foxconn.svg':'Logo FOXCONN','luxshare.webp':'Logo Luxshare ICT','samsung.svg':'Logo SAMSUNG'}
+ Path(hero['video']).name:'Video giới thiệu doanh nghiệp Minh Đức','foxconn.svg':'Logo FOXCONN','luxshare.webp':'Logo Luxshare ICT','samsung.svg':'Logo SAMSUNG'}
 # Display names describe placement rather than asserting that stock photos depict Minh Đức.
-names.update({'15.png':'Họa tiết khối số liệu dịch vụ','fb.svg':'Biểu tượng Facebook','zalo.svg':'Biểu tượng Zalo'})
+names.update({'minhduc-poster-1s.webp':'Poster video giới thiệu (khung giây 1)','minhduc-meeting-10s.webp':'Ảnh trích video: buổi họp (giây 10)','minhduc-offices-20s.webp':'Ảnh trích video: hình ghép (giây 20)','minhduc-title-45s.webp':'Ảnh trích video: tên doanh nghiệp (giây 45)','minhduc-working-60s.webp':'Ảnh trích video: trao đổi công việc (giây 60)','15.png':'Họa tiết khối số liệu dịch vụ','fb.svg':'Biểu tượng Facebook','zalo.svg':'Biểu tượng Zalo'})
 names[Path(career['banner']).name]='Ảnh nền trang tuyển dụng nội bộ'
 for category,asset_label in [('features','Ảnh giới thiệu tuyển dụng nội bộ'),('workspace','Biểu tượng không gian làm việc'),('benefits','Biểu tượng quyền lợi'),('steps','Biểu tượng chuẩn bị CV'),('gallery','Ảnh thư viện tuyển dụng nội bộ')]:
  for i,path in enumerate(career[category],1):names.setdefault(Path(path).name,f'{asset_label} {i}')
@@ -131,7 +135,9 @@ def purpose(desc,logical):
   if 'chia sẻ' in desc:return 'Hình ảnh hiển thị khi chia sẻ đường dẫn lên nền tảng hỗ trợ Open Graph hoặc Twitter.'
   if 'Biểu tượng' in desc:return 'Nhận diện trang trong thẻ trình duyệt hoặc khi thêm vào màn hình chính.'
   return 'Nhận diện thương hiệu và liên kết về trang chủ.'
- if logical==video_key:return 'Video minh họa phát trong hero hoặc khi mở hộp thoại từ các thẻ xem trước.'
+ if logical==video_key:return 'Video giới thiệu doanh nghiệp đầy đủ, phát ở hero hoặc khi mở hộp thoại xem video.'
+ if n.startswith('minhduc-poster-'):return 'Ảnh tĩnh từ video nguồn hiển thị trước khi phát.'
+ if n.startswith('minhduc-') and n.endswith('s.webp'):return 'Khung hình trích từ video Minh Đức được dùng để minh họa nội dung trên trang.'
  if n=='hero-poster.jpg':return 'Ảnh tĩnh hiển thị trước khi video phát hoặc trong hộp thoại video.'
  if 'đầu trang' in desc:return 'Ảnh nền minh họa cho tiêu đề và chủ đề trang.'
  if 'lịch sử' in desc:return 'Minh họa các giai đoạn phát triển trên thanh lịch sử.'
@@ -147,11 +153,18 @@ for logical,r in sorted(records.items()):
  rows=[{'vi_tri':desc,'cong_dung':purpose(desc,logical),'cach_tai':sorted(data['methods']),'duong_dan_trang':sorted(data['routes']),'url_trang':[urljoin(domain,route) for route in sorted(data['routes'])]} for desc,data in sorted(uses.items())]
  actual=sorted(r['actual_paths']);files=[{'duong_dan':x,'url_trang':urljoin(domain,x),'kich_thuoc_byte':(public/x.lstrip('/')).stat().st_size if (public/x.lstrip('/')).is_file() else None} for x in actual]
  source=proven.get(logical);note='Ảnh minh họa, không khẳng định là hoạt động thực tế của Minh Đức.' if logical.startswith('/mirror/www.hr2b.com/wp-content/uploads/') else ''
- if logical=='/assets/hero-poster.jpg':note='Ảnh tĩnh mở đầu và poster hộp thoại; nguồn gốc cụ thể chưa được xác minh trong manifest.'
- if logical==video_key:note='Một video duy nhất dùng cho hero và cả bốn nút xem trước trong hộp thoại; bản dùng trên trang đã cắt, mã hóa lại và nối chuyển cảnh, không đồng nhất từng byte với video gốc; nội dung chỉ mang tính minh họa.'
+ if logical=='/assets/hero-poster.jpg':note='Ảnh cũ được giữ để tương thích; chỉ liệt kê khi thực tế được tham chiếu.'
+ if logical==video_key:note='Video Minh Đức đầy đủ 132,13 giây; MP4 H.264/AAC và WebM VP9/Opus là hai bản mã hóa cùng nguồn; Cả hai được khai báo cho hộp thoại; hero dùng WebM khi cần dự phòng.'
+ if logical.startswith('/assets/minhduc-') and logical.endswith('s.webp'):
+  source='https://drive.google.com/file/d/1i4ZHg9BAApueTxur4KwU_oXxH-NqbMHu/view';note='Khung hình trích từ video Minh Đức do bên đặt hàng cung cấp; thời điểm trích nằm trong tên tệp.'
  if logical=='/assets/minh-duc-about.webp':note='Ảnh minh họa tạo cho prototype; không có URL nguồn gốc bên ngoài được xác minh.'
  if logical.startswith('/partners/'):note='URL nguồn là kho bên thứ ba dùng để lấy hình, không phải xác nhận trực tiếp từ chủ sở hữu thương hiệu.'
- if logical=='/assets/minh-duc-logo.jpg':note='Logo Minh Đức được cung cấp trong tài liệu dự án; URL tệp nguồn cụ thể chưa được xác minh.'
+ if logical=='/assets/minh-duc-logo.jpg':note='Logo gốc do Minh Đức cung cấp; WebP dùng ở giao diện đã bỏ nền bằng xử lý điểm ảnh theo lựa chọn người dùng, không tạo lại bằng AI. JPG giữ cho OG; favicon PNG đã tái tạo từ dấu logo. Apple touch là tệp hiện có.'
  out.append({'ten_hien_thi':names.get(Path(logical).name,Path(logical).name),'ten_tep':Path(logical).name,'loai':'Video' if logical.endswith('.mp4') else 'Ảnh','duong_dan_logic':logical,'tep_dang_su_dung':files,'url_nguon_goc':source,'vi_tri_su_dung':rows,'ghi_chu':note})
-result={'mo_ta':'Kiểm kê ảnh và video trong source + HTML dựng sẵn v13; đường dẫn tiếng Việt, các ngôn ngữ khác dùng cùng tài nguyên. Bao gồm srcset thực tế và nguồn video nạp động; không liệt kê biến thể chỉ có trong manifest mà không được tham chiếu.','dia_chi_website':domain,'tai_nguyen':out,'ghi_chu_truy_cap':'Quyền xem Site giữ nguyên; các liên kết tài nguyên có thể yêu cầu quyền truy cập.', 'ghi_chu_khong_co_url':['Cờ chọn ngôn ngữ là hình SVG nội tuyến, không có URL ảnh riêng.','JEILTECH VINA và TACU hiển thị tên dạng chữ thay vì logo ảnh.'],'tong_so':len(out)}
-Path(sys.argv[1] if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v13.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('logical_assets',len(out),'uses',sum(len(x['vi_tri_su_dung']) for x in out));print('\n'.join(f"{x['ten_hien_thi']} {len(x['tep_dang_su_dung'])} {len(x['vi_tri_su_dung'])}" for x in out))
+# These historical files stay publicly available for existing links; they are
+# excluded from the active catalog unless observed in a rendered reference.
+active_paths={path for record in records.values() for path in record['actual_paths']}
+legacy_paths=['/optimized/hero-1280.mp4','/optimized/hero-1600-e945407f.mp4','/optimized/assets/hero-poster-960.webp','/optimized/assets/hero-poster-1600.webp','/assets/hero-poster.jpg']
+legacy=[{'duong_dan':path,'kich_thuoc_byte':(public/path.lstrip('/')).stat().st_size,'ghi_chu':'Được giữ tương thích URL; không thấy trong các tham chiếu đã kiểm tra.'} for path in legacy_paths if path not in active_paths and (public/path.lstrip('/')).is_file()]
+result={'mo_ta':'Kiểm kê ảnh và video trong source + HTML dựng sẵn v14; đường dẫn tiếng Việt, các ngôn ngữ khác dùng cùng tài nguyên. Bao gồm srcset thực tế và nguồn video nạp động; không liệt kê biến thể chỉ có trong manifest mà không được tham chiếu.','dia_chi_website':domain,'tai_nguyen':out,'ghi_chu_truy_cap':'Quyền xem Site giữ nguyên; các liên kết tài nguyên có thể yêu cầu quyền truy cập.', 'tep_cu_luu_tuong_thich':legacy, 'tep_ho_tro_khong_tham_chieu':[{'duong_dan':'/assets/minh-duc-logo-transparent.png','kich_thuoc_byte':(public/'assets/minh-duc-logo-transparent.png').stat().st_size,'ghi_chu':'Tệp PNG trung gian; không được tham chiếu khi hiển thị.'}] if (public/'assets/minh-duc-logo-transparent.png').is_file() and '/assets/minh-duc-logo-transparent.png' not in active_paths else [], 'trang_thai_logo':'Người dùng đã chọn bỏ nền bằng xử lý điểm ảnh; không dùng AI.', 'ghi_chu_khong_co_url':['Cờ chọn ngôn ngữ là hình SVG nội tuyến, không có URL ảnh riêng.','JEILTECH VINA và TACU hiển thị tên dạng chữ thay vì logo ảnh.'],'tong_so':len(out)}
+Path(sys.argv[1] if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v14.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('logical_assets',len(out),'uses',sum(len(x['vi_tri_su_dung']) for x in out));print('\n'.join(f"{x['ten_hien_thi']} {len(x['tep_dang_su_dung'])} {len(x['vi_tri_su_dung'])}" for x in out))

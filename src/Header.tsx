@@ -370,10 +370,10 @@ export function Header() {
           <div className="header-inner">
             <Link to="/" className="brand" aria-label="Minh Đức — Trang chủ">
               <img
-                src="/assets/minh-duc-logo.jpg"
+                src="/assets/minh-duc-logo-transparent.webp"
                 alt="Minh Đức — Nhân lực là tài sản"
-                width="90"
-                height="90"
+                width="1146"
+                height="825"
               />
             </Link>{" "}
             <nav
@@ -508,8 +508,8 @@ export function Header() {
                 {saved.count > 0 && <span>{saved.count}</span>}
               </Link>
               <LanguageSelector />
-              <Link to="/contact" className="header-contact">
-                Liên hệ <ArrowUpRight size={15} />
+              <Link to="/#business-contact" className="header-contact">
+                {t({vi:"Gửi nhu cầu nhân lực",en:"Request workforce",zh:"提交用工需求",ko:"인력 지원 요청",ja:"人材の相談を送る"})} <ArrowUpRight size={15} />
               </Link>
               <button
                 className="menu-button"

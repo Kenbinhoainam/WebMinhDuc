@@ -3,8 +3,8 @@ from pathlib import Path
 from urllib.parse import urljoin
 import json,sys
 P=Path(__file__).resolve().parents[1]
-source=Path(sys.argv[1]) if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v13.json'
-target=Path(sys.argv[2]) if len(sys.argv)>2 else P/'docs/flagship/media-tables-v13.json'
+source=Path(sys.argv[1]) if len(sys.argv)>1 else P/'docs/flagship/media-inventory-v14.json'
+target=Path(sys.argv[2]) if len(sys.argv)>2 else P/'docs/flagship/media-tables-v14.json'
 inventory=json.loads(source.read_text());base=inventory['dia_chi_website']
 headers={
  'catalog':['Mã','Loại','Tài nguyên','Link xem tài nguyên','Vị trí chính','Công dụng','Trang sử dụng','Link nguồn gốc','Dung lượng link xem (KB)','Số phiên bản tệp','Tên file gốc','Ghi chú'],
@@ -15,7 +15,7 @@ def representative(files,position=''):
  for needle in (['apple-touch'] if 'Apple' in position else ['favicon-96'] if 'Biểu tượng trình duyệt' in position else ['/assets/minh-duc-logo.jpg'] if 'chia sẻ liên kết' in position else []):
   match=next((f for f in files if needle in f['duong_dan']),None)
   if match:return match
- for needle in ('minh-duc-logo-192.webp','-960.webp','-480.webp'):
+ for needle in ('.mp4','minh-duc-logo-transparent.webp','minh-duc-logo-192.webp','-960.webp','-480.webp'):
   match=next((f for f in files if f['duong_dan'].endswith(needle)),None)
   if match:return match
  return files[0] if files else {'duong_dan':'','url_trang':'','kich_thuoc_byte':None}

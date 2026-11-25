@@ -1,3 +1,4 @@
+import {company} from '../company';
 
 export const ORIGIN = 'https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site';
 type Page = {path:string; title:string; description:string};
@@ -39,7 +40,7 @@ export function getPage(path:string):Page { let normalized=path.length>1?path.re
 export function seo(path:string) {
  const p=getPage(path), url=ORIGIN+p.path, title=`${p.title} | Minh Đức Vina`, image=ORIGIN+'/assets/minh-duc-logo.jpg';
  const graph:Record<string,unknown>[]=[
-  {'@type':'Organization','@id':ORIGIN+'/#organization',name:'Minh Đức Vina',url:ORIGIN+'/',logo:image},
+  {'@type':'Organization','@id':ORIGIN+'/#organization',name:'Minh Đức Vina',url:ORIGIN+'/',logo:image,telephone:company.tel,sameAs:[company.facebook,company.zalo]},
   {'@type':'WebSite','@id':ORIGIN+'/#website',name:'Minh Đức Vina',url:ORIGIN+'/',publisher:{'@id':ORIGIN+'/#organization'},inLanguage:'vi'},
   {'@type':'WebPage','@id':url+'#webpage',url,name:title,description:p.description,isPartOf:{'@id':ORIGIN+'/#website'},inLanguage:'vi'}
  ];

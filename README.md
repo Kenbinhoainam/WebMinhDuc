@@ -1,3 +1,13 @@
+## v14 — B2B Minh Đức, 25/11/2026
+
+Giữ phong cách HR2B; trang chủ hướng tới nhà máy/FDI miền Bắc với CTA “Gửi nhu cầu nhân lực”. Video gốc phát đủ 132,13 giây rồi hiện màn kết logo/slogan, không tự lặp; replay do người xem chọn. Hai CTA luôn có bên dưới khung video. Mobile giữ 16:9, không cắt hai bên.
+
+Menu v1.2: 7 nhóm, 14 mục con; bốn mục Giới thiệu trỏ đến `/about-us#profile`, `#history`, `#partners`, `#achievements`. Sáu biểu mẫu F01–F06 tuân theo trường bắt buộc mới. F04/F06 nhận tệp tùy chọn, tối đa 3 tệp, 5 MB mỗi tệp và 15 MB tổng (MB thập phân). Biên nhận và ADMIN chỉ là dữ liệu trong bộ nhớ phiên, không gửi hoặc lưu tệp thật.
+
+Thông tin liên hệ lấy từ INDEX trong `src/company.ts`. Cấu hình video trong `src/hero-assets.json`, quy trình và số đo mã hóa trong `docs/flagship/minhduc-media-v14.md`. Không nâng độ phân giải 1024×576 thành 1080p. Giữ website riêng tư và noindex.
+
+Kiểm tra trọng tâm mới: `tests/v14-forms-demo.mjs`, `tests/about-anchors.mjs`, `tests/home-b2b.mjs`, `tests/business-info.mjs`, `tests/media.mjs`, `tests/hero-review.mjs`. Kết quả dựng tĩnh/DOM không chứng minh tốc độ mạng hoặc hiển thị trên thiết bị thật.
+
 # Minh Đức Vina — Prototype 13 / Đối chiếu và tái dựng từng trang HR2B
 
 Prototype React + TypeScript theo bố cục HR2B reconstruction do người dùng cung cấp, dùng logo/thông tin Minh Đức từ MDxGenZ_Website và được đối chiếu với toàn bộ bản “MinhDucWeb - Sprint 1” đã gửi ngày 16/11/2026.

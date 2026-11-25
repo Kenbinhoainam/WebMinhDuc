@@ -9,9 +9,9 @@ export const navigation = [
 ];
 export const subnavigation: Record<string, string[][]> = {
   "/about-us": [
-    ["/e-brochure", "Hồ sơ năng lực"],
+    ["/about-us#profile", "Hồ sơ năng lực"],
     ["/about-us#history", "Quá trình hình thành và phát triển"],
-    ["/partners", "Đối tác tiêu biểu"],
+    ["/about-us#partners", "Đối tác tiêu biểu"],
     ["/about-us#achievements", "Thành tựu và dấu ấn"],
   ],
   "/services": [
@@ -38,17 +38,10 @@ export const subnavigation: Record<string, string[][]> = {
     ],
     ["/education", "Tuyển sinh"],
   ],
-  "/careers": [
-    ["/careers#open-positions", "Các vị trí đang tuyển"],
-    ["/careers#position-benefits", "Thông tin vị trí & quyền lợi"],
-    ["/careers#cv-requirements", "Yêu cầu CV"],
-    ["/careers#career-contact", "Thông tin liên hệ"],
-  ],
   "/news": [
     ["/news?category=workers#news-listings", "Thông tin về lao động"],
     ["/events", "Hoạt động của Minh Đức Vina"],
   ],
-  "/contact": [["/consultation", "Tư vấn"]],
 };
 // Parent styling follows its child destinations without claiming the parent is the current page.
 export function sectionHasChild(url: string, pathname: string) {

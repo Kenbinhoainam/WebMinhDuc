@@ -1,0 +1,20 @@
+// Recreate full-length source-derived video and stills. The supplied source stays outside public/.
+import {createHash} from 'node:crypto';
+import {readFile,rename,writeFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+const source=process.argv[2];
+if(!source) throw new Error('Usage: node scripts/generate-minhduc-media.mjs /absolute/path/to/minhduc-original.mp4');
+const expected='23183a003731fcd78321432999f101430814e51b4ca74df613157d11ceff9582';
+const hash=async path=>createHash('sha256').update(await readFile(path)).digest('hex');
+if(await hash(source)!==expected) throw new Error('Source hash does not match the approved original.');
+const ff=args=>execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...args],{stdio:'inherit'});
+const common=['-i',source,'-map','0:v:0','-map','0:a:0'];
+const mp4='public/assets/minhduc-corporate.tmp.mp4', webm='public/assets/minhduc-corporate.tmp.webm';
+ff([...common,'-c:v','libx264','-preset','slow','-crf','25','-pix_fmt','yuv420p','-threads','3','-c:a','copy','-movflags','+faststart',mp4]);
+ff([...common,'-c:v','libvpx-vp9','-b:v','0','-crf','36','-deadline','good','-cpu-used','4','-row-mt','1','-threads','3','-pix_fmt','yuv420p','-c:a','libopus','-b:a','64k',webm]);
+const mp4Path=`public/assets/minhduc-corporate-${(await hash(mp4)).slice(0,8)}.mp4`,webmPath=`public/assets/minhduc-corporate-${(await hash(webm)).slice(0,8)}.webm`;
+await rename(mp4,mp4Path);await rename(webm,webmPath);
+for(const [time,name] of [[1,'poster'],[10,'meeting'],[20,'offices'],[45,'title'],[60,'working']]) ff(['-ss',String(time),'-i',source,'-frames:v','1','-c:v','libwebp','-quality','84',`public/assets/minhduc-${name}-${time}s.webp`]);
+const config={video:mp4Path.replace(/^public/,''),poster:'/assets/minhduc-poster-1s.webp',webm:webmPath.replace(/^public/,'')};
+await writeFile('src/hero-assets.json',JSON.stringify(config,null,2)+'\n');
+console.log('Generated full-length derivatives and updated hero asset paths:',config);

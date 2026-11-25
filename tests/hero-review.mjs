@@ -3,77 +3,31 @@ import {mkdir, rm, readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
-import postcss from 'postcss';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {MemoryRouter} from 'react-router-dom';
 
-// Independent server/content and source-cascade checks, not browser layout tests.
-const temp = '.hero-review';
-await mkdir(temp, {recursive: true});
+const temp='.hero-review'; await mkdir(temp,{recursive:true});
 try {
-  await build({stdin: {contents: "export {default as Hero} from './src/HomeHero'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';", resolveDir: process.cwd(), sourcefile: 'hero-review.tsx'}, bundle: true, platform: 'node', format: 'esm', packages: 'external', loader: {'.css': 'empty'}, outfile: `${temp}/bundle.mjs`, logLevel: 'silent'});
-  const {Hero, LocaleProvider, localeBase, loadLocale} = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
-  const expected = {
-    vi: ['Giới thiệu & cung ứng nhân lực', 'Phát chuyển động', 'Khám phá giải pháp'],
-    en: ['Recruitment & workforce supply', 'Play motion', 'Explore solutions'],
-    zh: ['招聘与人力供应', '播放动态效果', '探索解决方案'],
-    ko: ['채용 및 인력 공급', '움직임 재생', '솔루션 살펴보기'],
-    ja: ['採用・人材供給', '動きを再生', 'ソリューションを見る'],
-  };
-  let vietnameseCopy;
-  for (const [locale, [brand, play, about]] of Object.entries(expected)) {
-    await loadLocale(locale);
-    const base = localeBase(locale);
-    const html = renderToStaticMarkup(React.createElement(LocaleProvider, {value: locale}, React.createElement(MemoryRouter, {basename: base || '/', initialEntries: [`${base}/`]}, React.createElement(Hero))));
-    const dom = new JSDOM(html);
-    const doc = dom.window.document;
-    assert.equal(doc.querySelectorAll('h1').length, 1, `${locale}: one real hero heading`);
-    const h1 = doc.querySelector('h1');
-    assert.ok(!h1.closest('[aria-hidden="true"]'));
-    assert.equal(h1.hasAttribute('aria-live'), false, 'rotation must not announce every cycle');
-    for (const group of [h1, doc.querySelector('.hero-description-grid')]) {
-      const layers = [...group.children];
-      assert.equal(layers.length, 3, `${locale}: all copy layers are present on first render`);
-      assert.equal(layers.filter(layer => layer.dataset.active === 'true').length, 1);
-      assert.equal(layers[0].dataset.active, 'true');
-      assert.notEqual(layers[0].getAttribute('aria-hidden'), 'true');
-      assert.ok(layers.every(layer => layer.textContent.trim().length > 0));
-      assert.ok(layers.slice(1).every(layer => layer.getAttribute('aria-hidden') === 'true'));
-    }
-    const copy = [...doc.querySelectorAll('.hero-copy .hero-slide')].map(layer => layer.textContent.trim());
-    if (locale === 'vi') vietnameseCopy = copy;
-    else assert.ok(copy.every((text, index) => text !== vietnameseCopy[index]), `${locale}: every rotating title and description is translated`);
-    assert.ok(h1.firstElementChild.textContent.startsWith(brand), `${locale}: initial accessible title is the localized first service`);
-    const links = [...doc.querySelectorAll('.hero-actions a')];
-    assert.deepEqual(links.map(link => link.getAttribute('href')), [`${base}/services/labor-supply`]);
-    assert.deepEqual(links.map(link => link.textContent.trim()), [about]);
-    assert.equal(doc.querySelector('.video-control').getAttribute('aria-label'), play);
-    assert.ok(!doc.querySelector('.hero-bottom,.hero-caption,.scroll-hint,.hero-semantic-title'));
-    const poster = doc.querySelector('.hero-poster');
-    assert.equal(poster.getAttribute('fetchpriority'), 'high');
-    assert.equal(poster.getAttribute('alt'), '');
-    assert.notEqual(poster.getAttribute('loading'), 'lazy');
-    assert.equal(doc.querySelector('video').getAttribute('src'), null, 'static HTML does not force constrained users to fetch video');
-    dom.window.close();
-  }
-  const media = postcss.parse(await readFile('src/hero-media.css', 'utf8'));
-  const declarations = selector => {
-    const result = new Map();
-    media.walkRules(rule => { if (rule.selectors.includes(selector)) rule.walkDecls(decl => result.set(decl.prop, decl.value)); });
-    return result;
-  };
-  for (const selector of ['.hero-title-grid', '.hero-description-grid']) assert.equal(declarations(selector).get('display'), 'grid', 'copy layers share a height-reserving grid');
-  assert.equal(declarations('.hero-slide').get('grid-area'), '1 / 1');
-  assert.equal(declarations('.hero-description-grid .hero-slide').get('margin'), '0', 'stacked copy does not inherit the global paragraph bottom margin');
-  assert.equal(declarations('.home-hero.section-home-banner').get('color'), '#fff', 'hero copy keeps a readable foreground over the dark video shade');
-  for (const selector of ['.hero-slide', '.hero-slide[data-active="true"]']) {
-    assert.notEqual(declarations(selector).get('display'), 'none', 'inactive translated copy must still reserve its intrinsic height');
-    assert.notEqual(declarations(selector).get('position'), 'absolute');
-  }
-  assert.notEqual(declarations('.section-home-banner .hero-content').get('position'), 'absolute', 'localized content must contribute to frame height rather than being clipped inside a fixed frame');
-  assert.equal(declarations('.section-home-banner .item-banner').get('height'), 'auto', 'reference frame may grow for translated text');
-  console.log('PASS independent hero: five localized SSR states, one accessible H1, reserved copy layers, one reference CTA, poster-first markup and content-height safeguards');
-} finally {
-  await rm(temp, {recursive: true, force: true});
-}
+ await build({stdin:{contents:"export {default as Hero} from './src/HomeHero'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'hero-review.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
+ const {Hero,LocaleProvider,localeBase,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
+ const assets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
+ let viCopy;
+ for(const locale of ['vi','en','zh','ko','ja']){
+  await loadLocale(locale);const base=localeBase(locale);
+  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{basename:base||'/',initialEntries:[`${base}/`]},React.createElement(Hero))));
+  const dom=new JSDOM(html),doc=dom.window.document,heading=doc.querySelector('h1'),video=doc.querySelector('video'),poster=doc.querySelector('.hero-poster');
+  assert.equal(doc.querySelectorAll('h1').length,1);assert.ok(!heading.closest('[aria-hidden="true"]'));assert.ok(heading.textContent.trim());
+  assert.deepEqual([...doc.querySelectorAll('.hero-actions a')].map(a=>a.getAttribute('href')),[`${base||"/"}#business-contact`,`${base}/jobs`]);
+  const copy=[heading.textContent,...[...doc.querySelectorAll('.hero-actions a')].map(a=>a.textContent),doc.querySelector('.hero-finish-slogan').textContent,doc.querySelector('.video-control').getAttribute('aria-label')];
+  if(locale==='vi')viCopy=copy;else assert.ok(copy.every((s,i)=>s!==viCopy[i]),`${locale}: hero messages translated`);
+  assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');assert.equal(video.hasAttribute('loop'),false);assert.equal(video.hasAttribute('autoplay'),false,'all playback is gated explicitly');assert.equal(video.hasAttribute('playsinline'),true);
+  assert.equal(poster.getAttribute('src'),assets.poster);assert.equal(poster.getAttribute('fetchpriority'),'high');assert.equal(poster.getAttribute('alt'),'');
+  assert.notEqual(doc.querySelector('.hero-brand-finish').getAttribute('aria-hidden'),'true','brand content is available without JavaScript');assert.ok(doc.querySelector('noscript').textContent.includes('.hero-brand-finish'));
+  dom.window.close();
+ }
+ const css=await readFile('src/hero-media.css','utf8');
+ assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain/,'film uses contain');
+ assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*aspect-ratio:16\/9/,'film frame is 16:9');
+ console.log('PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules');
+} finally {await rm(temp,{recursive:true,force:true});}

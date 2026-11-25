@@ -1,82 +1,69 @@
 import {useEffect, useRef, useState} from 'react';
-import {Pause, Play} from 'lucide-react';
+import {Pause, Play, RotateCcw, Volume2, VolumeX} from 'lucide-react';
 import {ButtonLink} from './shared';
-import './hero-media.css';
+import {useTranslation} from './i18n';
 import heroAssets from './hero-assets.json';
+import './hero-media.css';
 
-const VIDEO = heroAssets.video;
-const POSTER = heroAssets.poster;
-type Connection = {
-  saveData?: boolean;
-  effectiveType?: string;
-  addEventListener?: (type: string, listener: () => void) => void;
-  removeEventListener?: (type: string, listener: () => void) => void;
-};
+type Connection = {saveData?: boolean; effectiveType?: string; addEventListener?: (type: string, listener: () => void) => void; removeEventListener?: (type: string, listener: () => void) => void};
+type Stage = 'poster' | 'playing' | 'fallback' | 'ended';
 
 export default function HomeHero() {
-  const section = useRef<HTMLElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
-  const pausedByUser = useRef(false);
-  const manual = useRef(false);
-  const visible = useRef(false);
-  const mounted = useRef(false);
-  const playAttempt = useRef(0);
-  const mediaFailed = useRef(false);
-  const [playing, setPlaying] = useState(false);
-  const [userPaused, setUserPaused] = useState(false);
-  const [frameReady, setFrameReady] = useState(false);
-  const [eligible, setEligible] = useState(false);
-  const [inView, setInView] = useState(false);
-  const [pageVisible, setPageVisible] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [slideState, setSlideState] = useState<{index: number; previous: number | null}>({index: 0, previous: null});
-  const slide = slideState.index;
+  const t = useTranslation();
+  const section = useRef<HTMLElement>(null), video = useRef<HTMLVideoElement>(null);
+  const mounted = useRef(false), visible = useRef(false), manual = useRef(false), pausedByUser = useRef(false);
+  const finished = useRef(false), failed = useRef(false), attempt = useRef(0), fallbackTried = useRef(false);
+  const [stage, setStage] = useState<Stage>('poster');
+  const [playing, setPlaying] = useState(false), [frameReady, setFrameReady] = useState(false), [muted, setMuted] = useState(true);
+  const startPlayback = useRef<() => void>(() => {});
+  const playLabel = t({vi:'Phát video giới thiệu',en:'Play company film',zh:'播放企业介绍视频',ko:'회사 소개 영상 재생',ja:'会社紹介動画を再生'});
+  const pauseLabel = t({vi:'Tạm dừng video',en:'Pause video',zh:'暂停视频',ko:'영상 일시 정지',ja:'動画を一時停止'});
+  const replayLabel = t({vi:'Xem lại video',en:'Watch again',zh:'重新播放',ko:'다시 보기',ja:'もう一度見る'});
 
   useEffect(() => {
     const el = video.current;
     if (!el) return;
+    mounted.current = true;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = (navigator as Navigator & {connection?: Connection}).connection;
-    let timer: number | undefined;
-    mounted.current = true;
-    const allowed = () => !motion.matches && !connection?.saveData &&
-      !['slow-2g', '2g'].includes(connection?.effectiveType || '');
+    const allowed = () => !motion.matches && !connection?.saveData && !['slow-2g','2g'].includes(connection?.effectiveType || '');
     const play = () => {
-      timer = undefined;
-      if (document.hidden || !visible.current || pausedByUser.current || (!manual.current && !allowed())) return;
-      if (!el.src) el.src = VIDEO;
-      const attempt = ++playAttempt.current;
+      if (!mounted.current || finished.current || pausedByUser.current || document.hidden) return;
+      if (!el.getAttribute('src')) {
+        // MP4 is the smaller measured encode. WebM is a codec fallback, never a second parallel download.
+        el.src = el.canPlayType('video/mp4') === '' && el.canPlayType('video/webm') !== '' ? heroAssets.webm : heroAssets.video;
+      }
+      const id = ++attempt.current;
       void el.play().catch(() => {
-        if (mounted.current && attempt === playAttempt.current) { mediaFailed.current = true; setPlaying(false); setFrameReady(false); }
+        if (mounted.current && id === attempt.current && !finished.current) {
+          failed.current = true; setPlaying(false); setFrameReady(false); setStage('fallback');
+        }
       });
     };
+    startPlayback.current = play;
     const update = () => {
-      if (timer !== undefined) { window.clearTimeout(timer); timer = undefined; }
-      setEligible(allowed());
-      setPageVisible(!document.hidden);
-      if (document.hidden || !visible.current || (!manual.current && !allowed())) { el.pause(); return; }
-      if (!pausedByUser.current && (manual.current || allowed())) timer = window.setTimeout(play, 0);
+      if (!mounted.current) return;
+      if (finished.current) return;
+      if (document.hidden || !visible.current || (!manual.current && !allowed())) {
+        attempt.current++; el.pause();
+        if (!allowed()) setStage('fallback');
+        return;
+      }
+      if (!pausedByUser.current && !failed.current) play();
     };
-    let observer: IntersectionObserver | null = null;
-    let observerActive = false;
+    let observer: IntersectionObserver | null = null, observing = false;
     try {
       if (typeof IntersectionObserver !== 'undefined') {
         observer = new IntersectionObserver(entries => {
-          if (!mounted.current || !observerActive) return;
+          if (!mounted.current || !observing) return;
           visible.current = entries[0]?.isIntersecting ?? false;
-          setInView(visible.current);
           update();
-        }, {threshold: 0.1});
-        if (section.current) { observer.observe(section.current); observerActive = true; }
-      } else visible.current = false;
-    } catch {
-      observer?.disconnect();
-      observer = null;
-      visible.current = false;
-    }
+        }, {threshold: .1});
+        if (section.current) {observer.observe(section.current); observing = true;}
+      } else setStage('fallback');
+    } catch {observer?.disconnect(); observer = null; visible.current = false; setStage('fallback');}
     const preferenceChange = () => {
-      if (!allowed()) { manual.current = false; pausedByUser.current = true; setUserPaused(true); }
+      if (!allowed()) {manual.current = false; pausedByUser.current = true;}
       update();
     };
     document.addEventListener('visibilitychange', update);
@@ -84,88 +71,68 @@ export default function HomeHero() {
     connection?.addEventListener?.('change', preferenceChange);
     update();
     return () => {
-      mounted.current = false;
-      observerActive = false;
-      playAttempt.current++;
-      if (timer !== undefined) window.clearTimeout(timer);
-      observer?.disconnect();
+      mounted.current = false; observing = false; attempt.current++;
+      observer?.disconnect(); el.pause(); startPlayback.current = () => {};
       document.removeEventListener('visibilitychange', update);
       motion.removeEventListener('change', preferenceChange);
       connection?.removeEventListener?.('change', preferenceChange);
-      el.pause();
     };
   }, []);
 
-  useEffect(() => { if (!eligible) setSlideState(state => state.index === 0 ? state : {index: 0, previous: null}); }, [eligible]);
-
-  // Text has its own cadence, even when video is loading or unavailable.
-  useEffect(() => {
-    if (!eligible || !inView || !pageVisible || userPaused || hovered || focused) return;
-    const timer = window.setInterval(() => setSlideState(({index}) => ({index: (index + 1) % 3, previous: index})), 3000);
-    return () => window.clearInterval(timer);
-  }, [eligible, inView, pageVisible, userPaused, hovered, focused]);
-
-  const toggle = () => {
+  const togglePlayback = () => {
     const el = video.current;
     if (!el) return;
-    if (!pausedByUser.current && ((!el.paused && !mediaFailed.current) || (eligible && inView && pageVisible))) {
-      playAttempt.current++;
-      pausedByUser.current = true;
-      setUserPaused(true);
-      setPlaying(false);
-      setFrameReady(false);
-      el.pause();
+    if (!el.paused && !failed.current && !finished.current) {
+      pausedByUser.current = true; attempt.current++; el.pause(); setPlaying(false);
     } else {
-      pausedByUser.current = false;
-      setUserPaused(false);
-      manual.current = true;
-      if (!el.src) el.src = VIDEO;
-      const attempt = ++playAttempt.current;
-      void el.play().catch(() => {
-        if (mounted.current && attempt === playAttempt.current) { mediaFailed.current = true; setPlaying(false); setFrameReady(false); }
-      });
+      if (finished.current) {el.currentTime = 0; finished.current = false; setFrameReady(false);}
+      manual.current = true; pausedByUser.current = false; failed.current = false;
+      startPlayback.current();
     }
   };
-
-  const motionEnabled = !userPaused && (playing || (eligible && inView && pageVisible));
-
-  return <section className="home-hero section-home-banner" ref={section}
-    onMouseEnter={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setHovered(true); }} onMouseLeave={() => setHovered(false)}
-    onFocusCapture={event => setFocused(!(event.target instanceof HTMLElement && !!event.target.closest('.video-control')))}
-    onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false); }}>
-    <div className="item-banner">
-    <div className="hero-media img" aria-hidden="true">
-      <img className="hero-poster" src={POSTER} alt="" fetchPriority="high" decoding="async"/>
-      <video
-        ref={video} className={frameReady ? 'is-ready' : undefined} muted loop playsInline preload="none"
-        onPlay={() => { if (!video.current?.paused && !pausedByUser.current) { mediaFailed.current = false; setPlaying(true); } }}
-        onPlaying={() => { if (!video.current?.paused && !pausedByUser.current) { mediaFailed.current = false; setPlaying(true); setFrameReady(true); } }}
-        onWaiting={() => setFrameReady(false)}
-        onError={() => { playAttempt.current++; mediaFailed.current = true; setPlaying(false); setFrameReady(false); }}
-        onPause={() => { setPlaying(false); setFrameReady(false); }}
-      />
+  const onError = () => {
+    if (finished.current || !mounted.current) return;
+    attempt.current++; setPlaying(false); setFrameReady(false);
+    const el = video.current;
+    if (el && !fallbackTried.current && el.canPlayType('video/webm') !== '' && !el.src.endsWith('.webm')) {
+      fallbackTried.current = true; el.src = heroAssets.webm;
+      if (visible.current && !document.hidden && !pausedByUser.current) startPlayback.current();
+      else {failed.current = true; setStage('fallback');}
+    } else {failed.current = true; setStage('fallback');}
+  };
+  const ending = stage === 'ended';
+  const showBrand = ending || stage === 'fallback';
+  return <section className="home-hero section-home-banner" data-stage={stage} ref={section} aria-label={t({vi:'Minh Đức Vina — Giới thiệu doanh nghiệp',en:'Minh Đức Vina — Company introduction',zh:'Minh Đức Vina — 企业介绍',ko:'Minh Đức Vina — 회사 소개',ja:'Minh Đức Vina — 会社紹介'})}>
+    <div className="hero-stage">
+      <div className="hero-media" aria-hidden="true">
+        <img className="hero-poster" src={heroAssets.poster} width="1024" height="576" alt="" fetchPriority="high" decoding="async"/>
+        <video ref={video} className={frameReady ? 'is-ready' : undefined} muted={muted} playsInline preload="none"
+          onPlaying={() => {if (!finished.current && !pausedByUser.current && !video.current?.paused) {failed.current = false; setStage('playing'); setPlaying(true); setFrameReady(true);}}}
+          onPause={() => setPlaying(false)}
+          onEnded={() => {finished.current = true; attempt.current++; setPlaying(false); setStage('ended');}}
+          onError={onError}/>
+      </div>
+      <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>
+        <img className="hero-finish-logo" src="/assets/minh-duc-logo-transparent.webp" width="1146" height="825" alt="Minh Đức Vina" loading="lazy"/>
+        <p className="hero-finish-slogan">{t({vi:'Nhân lực là tài sản',en:'People are our greatest asset',zh:'人才是宝贵的资产',ko:'인재는 소중한 자산입니다',ja:'人材はかけがえのない財産'})}</p>
+        <p className="hero-finish-message">{t({vi:'Đồng hành cùng nhà máy và doanh nghiệp FDI miền Bắc.',en:'Supporting factories and FDI businesses in Northern Vietnam.',zh:'携手越南北部工厂与外资企业。',ko:'베트남 북부의 공장 및 외국인 투자 기업과 함께합니다.',ja:'ベトナム北部の工場・外資系企業とともに。'})}</p>
+      </div>
+      <noscript><style>{'.hero-brand-finish{opacity:1!important;visibility:visible!important}.hero-player-tools{display:none!important}'}</style></noscript>
+      <div className="hero-player-tools">
+        <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={ending ? replayLabel : playing ? pauseLabel : playLabel}>
+          {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{ending ? replayLabel : playing ? pauseLabel : playLabel}</span>
+        </button>
+        <button type="button" className="video-sound" aria-pressed={!muted} aria-label={muted ? t({vi:'Bật âm thanh',en:'Enable sound',zh:'开启声音',ko:'소리 켜기',ja:'音声をオン'}) : t({vi:'Tắt âm thanh',en:'Mute sound',zh:'关闭声音',ko:'소리 끄기',ja:'音声をオフ'})} onClick={() => setMuted(value => !value)}>{muted ? <VolumeX size={17}/> : <Volume2 size={17}/>}</button>
+      </div>
     </div>
-    <div className="hero-shade"/>
-    <div className="container hero-content wrap-content">
-      <div className="wrap-slide-banner"><div className="item-content">
-      <div className="hero-copy">
-        <h1 className="hero-title-grid">
-          <span className="hero-slide" data-position={slide === 2 ? "after" : slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Giới thiệu &amp; cung ứng nhân lực</span>
-          <span className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Cho thuê lao động</span>
-          <span className="hero-slide" data-position={slide === 0 && slideState.previous === 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Headhunt &amp; lao động tay nghề</span>
-        </h1>
-        <div className="hero-description-grid">
-          <p className="hero-slide" data-position={slide === 2 ? "after" : slide > 0 ? "before" : "current"} data-active={slide === 0} aria-hidden={slide !== 0}>Kết nối người lao động và doanh nghiệp theo nhu cầu thực tế.</p>
-          <p className="hero-slide" data-position={slide > 1 ? "before" : "after"} data-active={slide === 1} aria-hidden={slide !== 1}>Trao đổi phương án nhân lực linh hoạt cho kế hoạch vận hành.</p>
-          <p className="hero-slide" data-position={slide === 0 && slideState.previous === 2 ? "before" : "after"} data-active={slide === 2} aria-hidden={slide !== 2}>Tìm kiếm nhân sự có kinh nghiệm và kỹ năng phù hợp.</p>
+    <div className="hero-action-bar">
+      <div className="container hero-action-inner">
+        <h1 className="hero-semantic-heading">{t({vi:'Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc',en:'Workforce solutions for factories and FDI businesses in Northern Vietnam',zh:'越南北部工厂与外资企业的人力资源解决方案',ko:'베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션',ja:'ベトナム北部の工場・外資系企業向け人材ソリューション'})}</h1>
+        <div className="hero-actions">
+          <ButtonLink to="/#business-contact">{t({vi:'Gửi nhu cầu nhân lực',en:'Request workforce support',zh:'提交用工需求',ko:'인력 지원 요청',ja:'人材の相談を送る'})}</ButtonLink>
+          <ButtonLink to="/jobs" secondary>{t({vi:'Tìm việc làm',en:'Find a job',zh:'寻找工作',ko:'일자리 찾기',ja:'仕事を探す'})}</ButtonLink>
         </div>
       </div>
-      <div className="hero-actions"><ButtonLink to={['/services/labor-supply', '/services/labor-leasing', '/services/recruitment'][slide]}>Khám phá giải pháp</ButtonLink></div>
-      </div></div>
-    </div>
-    <button type="button" className="video-control" aria-label={motionEnabled ? 'Tạm dừng chuyển động' : 'Phát chuyển động'} onClick={toggle}>
-      {motionEnabled ? <Pause size={15}/> : <Play size={15}/>}<span>{motionEnabled ? 'Tạm dừng chuyển động' : 'Phát chuyển động'}</span>
-    </button>
     </div>
   </section>;
 }

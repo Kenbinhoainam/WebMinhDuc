@@ -9,7 +9,7 @@ function record(value,page){
  const src=value.replaceAll('&amp;','&').trim();
  if(!src.startsWith('/')||src.startsWith('//'))return;
  const path=decodeURI(src.split(/[?#]/)[0]);
- if(!/\.(?:avif|webp|png|jpe?g|svg|gif|mp4|woff2?|ttf|css|js)$/i.test(path))return;
+ if(!/\.(?:avif|webp|png|jpe?g|svg|gif|mp4|webm|woff2?|ttf|css|js)$/i.test(path))return;
  if(!assets.has(path))assets.set(path,new Set());
  assets.get(path).add(page);
 }
@@ -20,10 +20,11 @@ for(const file of files.filter(file=>['.html','.css'].includes(extname(file)))){
  for(const match of text.matchAll(/url\((?:&quot;|["'])?([^\s)'"&]+)(?:&quot;|["'])?\)/g))record(match[1],file);
 }
 const manifest=JSON.parse(await readFile('src/media-manifest.json','utf8'));
-for(const [source,entry] of Object.entries(manifest)){record(source,'media-manifest');for(const variant of entry.variants)record(variant.src,'media-manifest')}
+for(const [source,entry] of Object.entries(manifest)){record(source,'media-manifest (cấu hình, chưa xác nhận tải)');for(const variant of entry.variants)record(variant.src,'media-manifest (cấu hình, chưa xác nhận tải)')}
 const heroAssets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
-record(heroAssets.video,'HomeHero / illustrative video dialog');
-record(heroAssets.poster,'HomeHero / illustrative video dialog');
+record(heroAssets.video,'HomeHero / company video dialog');
+record(heroAssets.webm,'HomeHero / WebM fallback');
+record(heroAssets.poster,'HomeHero / company video dialog');
 const quote=value=>'"'+String(value).replaceAll('"','""')+'"';
 const rows=['path,live_url,bytes,used_by'];
 for(const [path,pages] of [...assets].sort(([a],[b])=>a.localeCompare(b))){

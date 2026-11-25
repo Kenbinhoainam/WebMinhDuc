@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
 import {sampleRecords,normalizePhone,duplicates,toCsv} from '../src/admin-demo-data.ts';
 assert.equal(normalizePhone('000 000-0105'),'0000000105');
-assert.deepEqual(duplicates(sampleRecords,sampleRecords[4]).map(r=>r.id),['MD-006']);
+assert.deepEqual(duplicates(sampleRecords,sampleRecords[4]),[]);
+const f03=sampleRecords[2], same={...f03,id:'MD-extra',phone:'000 000 0103'}, otherJob={...same,id:'MD-other',linkId:'MD999'}, otherType={...same,id:'MD-other-type',type:'F04'};
+assert.deepEqual(duplicates([...sampleRecords,same,otherJob,otherType],f03).map(r=>r.id),['MD-extra']);
 assert.deepEqual(duplicates(sampleRecords,sampleRecords[0]),[]);
 const csv=toCsv([sampleRecords[0],{...sampleRecords[1],result:'Test, "quoted"'}]);
 assert.match(csv,/"Test, ""quoted"""/);

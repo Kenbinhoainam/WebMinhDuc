@@ -26,7 +26,7 @@ try {
   const base=localeBase(locale);
   await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale,basename:base||'/',initialEntries:[`${base}/jobs?q=kho#details`]},React.createElement(Header)))));
   assert.equal(document.querySelectorAll('.desktop-nav-group').length,7,'requested desktop navigation remains visible in wide-screen CSS');
-  assert.equal(document.querySelectorAll('.desktop-subnav a').length,19);
+  assert.equal(document.querySelectorAll('.desktop-subnav a').length,14);
   assert.equal(document.querySelectorAll('.desktop-nav-heading button,.desktop-nav-heading svg').length,0,'desktop parent labels have no arrow controls');
   const desktopServices=document.querySelector('.desktop-nav-heading > a[data-group="/services"]');
   assert.equal(desktopServices.getAttribute('href'),`${base}/services`);
@@ -42,7 +42,7 @@ try {
   const groups=[...document.querySelectorAll('.drawer-group')];
   assert.equal(groups.length,7);
   assert.equal(groups[0].querySelector('a').textContent,{vi:'Trang chủ',en:'Home',zh:'首页',ko:'홈',ja:'ホーム'}[locale]);
-  assert.equal(document.querySelectorAll('.drawer-subnav a').length,19);
+  assert.equal(document.querySelectorAll('.drawer-subnav a').length,14);
   const services=groups[2].querySelector('button');
   assert.equal(groups[2].querySelector('a').getAttribute('href'),`${base}/services`);
   await click(services);assert.equal(services.getAttribute('aria-expanded'),'true');
@@ -79,16 +79,16 @@ try {
  }
  let paused=true,plays=0;
  Object.defineProperty(window.HTMLMediaElement.prototype,'paused',{configurable:true,get(){return paused}});
- window.HTMLMediaElement.prototype.play=function(){paused=false;plays++;this.dispatchEvent(new Event('play'));return Promise.resolve()};
+ window.HTMLMediaElement.prototype.play=function(){paused=false;plays++;this.dispatchEvent(new Event('playing'));return Promise.resolve()};
  window.HTMLMediaElement.prototype.pause=function(){paused=true;this.dispatchEvent(new Event('pause'))};
  await act(()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
  const video=document.querySelector('video');assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');
  const poster=document.querySelector('.hero-poster');assert.ok(poster,'an independent poster is present before video loading');
- assert.equal(document.querySelectorAll('.hero-poster').length,1);assert.equal(poster.getAttribute('src'),'/optimized/assets/hero-poster-1600.webp');
+ assert.equal(document.querySelectorAll('.hero-poster').length,1);assert.equal(poster.getAttribute('src'),'/assets/minhduc-poster-1s.webp');
  assert.equal(poster.getAttribute('alt'),'');assert.equal(poster.closest('.hero-media')?.getAttribute('aria-hidden'),'true');
  assert.equal(poster.getAttribute('fetchpriority'),'high');assert.notEqual(poster.getAttribute('loading'),'lazy');assert.equal(video.classList.contains('is-ready'),false);
  assert.ok(!document.querySelector('.hero-bottom,.hero-caption,.scroll-hint'),'removed hero footer content must not return');
- const control=document.querySelector('.video-control');assert.equal(control.getAttribute('aria-label'),'Phát chuyển động');assert.equal(control.tabIndex,0,'keyboard motion control remains reachable');await click(control);assert.equal(control.getAttribute('aria-label'),'Tạm dừng chuyển động');await click(control);assert.equal(control.getAttribute('aria-label'),'Phát chuyển động');
+ const control=document.querySelector('.video-control');assert.equal(control.getAttribute('aria-label'),'Phát video giới thiệu');assert.equal(control.tabIndex,0,'keyboard motion control remains reachable');await click(control);assert.equal(control.getAttribute('aria-label'),'Tạm dừng video');await click(control);assert.equal(control.getAttribute('aria-label'),'Phát video giới thiệu');
  assert.equal(paused,true);
  await act(()=>new Promise(resolve=>setTimeout(resolve,1700)));
  assert.equal(paused,true,'quick manual play then pause must cancel pending autoplay');assert.equal(plays,1);

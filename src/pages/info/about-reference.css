@@ -6,7 +6,7 @@
 .info-about-statistics .container{border-radius:24px;padding:clamp(24px,2.08333rem,40px)}
 .info-history-track{max-width:none;margin:2rem auto}.info-history-track button{gap:.20833rem}.info-history-track button i{margin-top:1.25rem}.info-history-slide img{aspect-ratio:358/291}
 .md-about-partners .info-partner-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}.md-about-partners .info-partner{min-height:6.45833rem}
-.info-team-grid{gap:1.25rem}.info-team-portrait{aspect-ratio:169/193}.info-team-dialog img{aspect-ratio:119/136}
+.md-team-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3rem,48px);align-items:center}.md-team-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}.md-team-overview .info-team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.md-team-overview .info-team-card{padding:1rem;border-bottom:1px solid #ddd}
 .info-document-grid{gap:1.04167rem}.info-document-card{border-radius:1.25rem;padding:.83333rem;gap:1.25rem}
 @media(max-width:767px){.info-about-statement>.info-about-values{grid-column:auto;margin-top:45px}.md-about-partners .info-partner-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.md-about-partners .info-partner{min-height:64px}.info-history-track{margin:25px auto}}
 /* The active history card moves between stable positions as the year rail changes. */
@@ -19,3 +19,10 @@
 .info-history-rail .info-history-slide.is-recycled{transition:none}.md-history-years{position:relative;overflow:hidden}.md-history-years:before{content:"";position:absolute;left:0;right:0;bottom:8px;border-top:1px solid #d5d5d5}.md-history-years .info-history-track{width:90%;margin-inline:5%;transition:transform .3s ease}.md-history-years .info-history-track:before{display:none}
 @media(prefers-reduced-motion:reduce){.md-history-years .info-history-track{transition:none}}
 .md-history-image{position:relative;overflow:hidden;border-radius:6px}.md-history-image img{display:block}.md-history-image span{position:absolute;left:1rem;bottom:.5rem;color:white;text-shadow:0 1px 10px #0008;font:700 clamp(40px,4rem,80px)/1 Lato,sans-serif}.md-history-dialog-image{width:100%;max-height:350px;object-fit:cover;margin:0 0 20px}
+
+/* The global 100px scroll-padding supplies header clearance; do not double it. */
+.info-about-intro[id], .info-history[id], .md-about-partners[id], .info-documentation[id] { scroll-margin-top: 0; }
+.md-profile-actions { display:flex; flex-wrap:wrap; gap:12px; }
+.md-profile-actions .btn { margin-top:12px; }
+
+@media(max-width:767px){.md-team-overview{grid-template-columns:1fr}}

@@ -1,3 +1,4 @@
+import {company} from './company';
 import {useRef,useState} from 'react';
 import {Link,useLocation,useNavigate,useParams} from 'react-router-dom';
 import {ArrowRight,ArrowUpRight,ChevronDown,ChevronLeft,ChevronRight,Clock3,CalendarDays,MapPin,ShieldCheck,Phone,Link2,Pause,Play} from 'lucide-react';
@@ -8,7 +9,7 @@ import './editorial-reference.css';
 import {useHomeCarousel,advanceHomeRail} from './useHomeCarousel';
 const uploads='/mirror/www.hr2b.com/wp-content/uploads/';
 const assets={about:`${uploads}2025/10/about-banner.jpg`,services:`${uploads}2025/09/Staff-oursourcing.jpg`,recruitment:`${uploads}2025/10/Executive-Search-banner.jpg`,news:`${uploads}2025/09/Tin-tuc.jpg`,logistics:`${uploads}2025/08/staffing-logictis-1.jpg`,salary:`${uploads}2025/08/khung-luong-canh-tranh.jpg`,privacy:`${uploads}2026/11/bao-mat-thong-tin-tien-luong.jpg`,opportunity:`${uploads}2025/09/Co-hoi-viec-lam-scaled.jpg`,contact:`${uploads}2025/09/Lien-he.jpg`};
-const contact={phone:'0364 562 868',tel:'0364562868',email:'vieclamminhduc.vpv2@gmail.com'};
+const contact=company;
 function InfoNotFound({kind}:{kind:string}){return <><PageHero title={`${kind} không tồn tại`} eyebrow="404 · Không tìm thấy"/><section className="section container info-not-found"><h2>Tiếp tục khám phá Minh Đức</h2><p>Đường dẫn có thể đã thay đổi. Bạn có thể quay lại trang chủ để tìm thông tin phù hợp.</p><ButtonLink to="/">Về trang chủ</ButtonLink></section></>}
 type ArticleSection = { heading: string; paragraphs: string[]; bullets?: string[] };
 type Article = { slug: string; title: string; category: 'Dành cho người lao động' | 'Dành cho doanh nghiệp' | 'Góc nhân sự'; image: string; date: string; excerpt: string; sections: ArticleSection[] };

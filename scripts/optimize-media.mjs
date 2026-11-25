@@ -1,11 +1,9 @@
 // Regenerate derivative assets from the unchanged source files with ffmpeg.
-import {readdir, mkdir, writeFile, readFile, rename} from 'node:fs/promises';
+import {readdir, mkdir, writeFile, readFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
-import {createHash} from 'node:crypto';
-import {join, relative, extname, basename} from 'node:path';
+import {join, relative} from 'node:path';
 const root='public/mirror/www.hr2b.com/wp-content/uploads';
 const selected=process.argv.slice(2).filter(arg=>!arg.startsWith('--'));
-const imagesOnly=process.argv.includes('--images-only');
 const files=[];
 async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const path=join(dir,entry.name);if(entry.isDirectory()) await walk(path);else if(/\.(jpe?g|png)$/i.test(path))files.push(path)}}
 if(selected.length) files.push(...selected);
@@ -26,17 +24,4 @@ for(const file of files.sort()){
  manifest['/'+relative('public',file)]={width,height,variants};
 }
 await writeFile('src/media-manifest.json',JSON.stringify(manifest,null,2)+'\n');
-if(imagesOnly) { console.log(`Updated ${files.length} selected image sources.`); process.exit(0); }
-const video='public/mirror/www.hr2b.com/wp-content/uploads/2025/10/hr2b-intro.mp4';
-// Use source 0–10.9 s, excluding the branded montage. Start at 0.7 s and
-// crossfade the last 0.7 s into the opening 0–0.7 s for a continuous loop.
-const heroFilter='[0:v]scale=1920:1080,split=2[main][head];[main]trim=start=0.7:end=10.9,setpts=PTS-STARTPTS,fps=30,settb=AVTB[a];[head]trim=start=0:end=0.7,setpts=PTS-STARTPTS,fps=30,settb=AVTB[b];[a][b]xfade=transition=fade:duration=0.7:offset=9.5,format=yuv420p[out]';
-const heroTemp='public/optimized/hero-1080.tmp.mp4';
-execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',video,'-filter_complex',heroFilter,'-map','[out]','-an','-c:v','libx264','-threads','2','-preset','slow','-crf','27','-movflags','+faststart',heroTemp]);
-const heroHash=createHash('sha256').update(await readFile(heroTemp)).digest('hex').slice(0,8);
-const heroOut=`public/optimized/hero-1080-${heroHash}.mp4`;
-await rename(heroTemp,heroOut);
-const heroAssets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
-heroAssets.video='/'+relative('public',heroOut);
-await writeFile('src/hero-assets.json',JSON.stringify(heroAssets,null,2)+'\n');
-console.log(`Generated ${Object.keys(manifest).length} image sets and ${heroOut}; updated hero-assets.json.`);
+console.log(`Updated ${files.length} image sources. Hero video is managed separately; this script does not alter hero-assets.json.`);

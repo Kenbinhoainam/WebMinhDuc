@@ -38,7 +38,8 @@ try {
       }
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
-        assert.deepEqual(sections.map(node => [...node.classList].find(value => value.startsWith('section-home-'))), ['section-home-banner','section-home-about','section-home-about-achievement','section-home-solution','section-home-customer','section-home-coop','section-home-news','section-home-event','section-home-video'], `${label}: reference homepage sequence without added FAQ/CTA`);
+        const sequence=sections.map(node => [...node.classList].find(value => value.startsWith('section-home-') || value.startsWith('home-b2b-')));
+        assert.deepEqual(sequence, ['section-home-banner','section-home-about','section-home-about-achievement','section-home-solution','section-home-customer','home-b2b-process','section-home-news','section-home-event','section-home-video','home-b2b-offices','home-b2b-contact'], `${label}: homepage buyer journey`);
         for (const section of sections.slice(1)) assert.ok(section.querySelector('[data-reveal]'), `${label}: ${section.className} includes progressive reveal coverage`);
         const frames=[...doc.querySelectorAll('[data-reveal-frame]')];
         assert.ok(frames.length > 4, 'stable frames cover more than the original About-only reveal');
@@ -49,12 +50,13 @@ try {
         assert.equal(doc.querySelectorAll('[data-reveal] [data-reveal]').length, 0, 'nested reveals must not multiply transforms or hide interactive descendants twice');
         const customers = doc.querySelector('.section-home-customer');
         assert.ok(customers.querySelector('.partners-track'), 'customer composition includes its logo rail');
-        assert.ok(customers.querySelectorAll('.ref-customer-review article').length >= 1, 'testimonial composition is separate');
-        assert.ok(!doc.querySelector('.section-home-coop .partners-track'), 'cooperation logos are a static grid');
-        assert.equal(doc.querySelectorAll('.ref-partner-grid > *').length, 5, 'authorized partner content remains');
+        assert.equal(customers.querySelectorAll('.home-b2b-need-list article').length,3, 'three buyer needs');
+        assert.equal(doc.querySelectorAll('.partners-strip').length,1, 'single partner loop');
+        assert.equal(doc.querySelectorAll('.home-b2b-steps li').length,5, 'five process steps');
+        assert.ok(doc.querySelector('#business-contact .contact-form'), 'business inquiry form');
         assert.ok(doc.querySelectorAll('.section-home-news article').length > 3, 'news rail has content beyond the three visible desktop cards');
         assert.equal(doc.querySelectorAll('.section-home-news .ref-rail-controls button').length, 2);
-        assert.equal(doc.querySelectorAll('.section-home-video button.ref-video-card').length, 4);
+        assert.equal(doc.querySelectorAll('.section-home-video button.home-b2b-video-button').length, 1);
         assert.equal(doc.querySelector('.section-home-video video'), null, 'intro movie loads only after activation');
       }
       if (name === 'AboutPage') {
@@ -76,7 +78,8 @@ try {
       if (name === 'ServicePage') {
         const recruitment = path.endsWith('/recruitment');
         const consulting = path.endsWith('/hr-consulting');
-        const selectors = ['.md-ref-fee-section','.info-faq-section',...(!recruitment?['.info-service-customers']:[]),'.info-service-rail','.info-contact-section'];
+        const admissions = path.endsWith('/college-admissions');
+        const selectors = ['.md-ref-fee-section','.info-faq-section',...(!recruitment?['.info-service-customers']:[]),'.info-service-rail',...(!admissions?['.info-contact-section']:[])];
         const nodes = selectors.map(selector=>doc.querySelector(selector));
         assert.ok(nodes.every(Boolean), `${label}: complete mapped service modules`);
         for(let i=1;i<nodes.length;i++) assert.ok(nodes[i-1].compareDocumentPosition(nodes[i]) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, `${label}: source service sequence ${selectors[i]}`);
@@ -103,7 +106,10 @@ try {
           assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
         }
         assert.equal(doc.querySelectorAll('.info-service-cards .ref-solution').length, 4, 'related services exclude the current one');
-        assert.ok(doc.querySelector('.info-contact-section form'));
+        if (admissions) {
+          for (const form of ['F05','F06']) assert.ok(doc.querySelector(`a[href="${base}/education?form=${form}#dang-ky"]`), `${label}: ${form} admissions link`);
+          assert.equal(doc.querySelector('.info-contact-section form'), null, `${label}: admissions does not use F01`);
+        } else assert.ok(doc.querySelector('.info-contact-section form'), `${label}: business service retains F01`);
       }
       if (name === 'NewsPage' && !path.includes('?')) {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');

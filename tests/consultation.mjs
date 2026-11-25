@@ -17,9 +17,9 @@ try {
  await set(document.getElementById('consultation-date'),tomorrow);await click(document.querySelector('.consultation-card .btn'));assert.match(document.querySelector('[role=alert]').textContent,/giờ/);
  await click(document.querySelector('[name=consultation-time]'));await click(document.querySelector('.consultation-card .btn'));assert.ok(document.querySelector('.contact-form'));
  await click(document.querySelectorAll('[name=consultation-time]')[1]);assert.equal(document.querySelector('.contact-form'),null,'changing time returns to selection');await click(document.querySelector('[name=consultation-time]'));await click(document.querySelector('.consultation-card .btn'));assert.ok(document.querySelector('.contact-form'));
- await set(document.querySelector('[name=name]'),'Ví dụ');await set(document.querySelector('[name=phone]'),'0912345678');await set(document.querySelector('[name=message]'),'Yêu cầu mẫu');await click(document.querySelector('[name=consent]'));
+ await set(document.querySelector('[name=name]'),'Ví dụ');await set(document.querySelector('[name=phone]'),'0912345678');await set(document.querySelector('[name=message]'),'Yêu cầu mẫu');
  await act(()=>document.querySelector('.contact-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));
- assert.match(document.querySelector('.consultation-success').textContent,/09:00/);assert.match(document.querySelector('.consultation-success').textContent,/Không có lịch hẹn thực tế/);assert.equal(requests,0);
+ assert.match(document.querySelector('.consultation-success').textContent,/09:00/);assert.match(document.querySelector('.consultation-success').textContent,/Mã mô phỏng:\s*DEMO-\d+/);assert.match(document.querySelector('.consultation-success').textContent,/Không có lịch hẹn thực tế/);assert.equal(requests,0);
  await click(document.querySelector('.consultation-success button'));assert.equal(document.getElementById('consultation-date').value,'');assert.equal(document.activeElement,document.getElementById('consultation-date')); 
  await act(()=>root.unmount());dom.window.close();console.log('PASS consultation date/time validation and local-only confirmation');
 }finally{await rm(dir,{recursive:true,force:true})}

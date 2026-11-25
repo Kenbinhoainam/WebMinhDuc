@@ -27,7 +27,7 @@ try {
   assert.equal(fallback.querySelectorAll(':scope > ul > li').length,7);
   assert.equal(fallback.querySelector('ul ul ul'),null,'exactly two menu levels');
   assert.equal(fallback.querySelectorAll('button,[hidden]').length,0,'fallback leaves have no JS disclosure dependency');
-  const leaves=[...fallback.querySelectorAll(':scope > ul > li > ul > li > a')];assert.equal(leaves.length,19);
+  const leaves=[...fallback.querySelectorAll(':scope > ul > li > ul > li > a')];assert.equal(leaves.length,14);
   const interactive=new JSDOM('<div id="root"></div>',{url:`https://example.test${base||'/'}`,pretendToBeVisual:true});
   for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','CustomEvent','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:interactive.window[key]});
   globalThis.IS_REACT_ACT_ENVIRONMENT=true;
@@ -40,7 +40,7 @@ try {
    await act(()=>interactive.window.document.querySelector('.menu-button').click());
    const drawer=interactive.window.document.querySelector('.drawer-nav');assert.ok(drawer);
    assert.equal(drawer.querySelectorAll('.drawer-group').length,7);
-   const drawerLeaves=[...drawer.querySelectorAll('.drawer-subnav a')];assert.equal(drawerLeaves.length,19);
+   const drawerLeaves=[...drawer.querySelectorAll('.drawer-subnav a')];assert.equal(drawerLeaves.length,14);
    assert.deepEqual(drawerLeaves.map(a=>a.getAttribute('href')),leaves.map(a=>a.getAttribute('href')),'drawer and no-JS fallback have identical destinations');
    assert.deepEqual(drawerLeaves.map(a=>a.textContent.trim()),leaves.map(a=>a.textContent.trim()),'drawer and fallback labels agree');
   } finally {await act(()=>interactiveRoot.unmount());interactive.window.close();}
@@ -87,5 +87,5 @@ try {
    }
   });
  }
- console.log('PASS independent sitemap: two-level no-JS fallback, nineteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions');
+ console.log('PASS independent sitemap: two-level no-JS fallback, fourteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions');
 } finally {await rm(folder,{recursive:true,force:true})}

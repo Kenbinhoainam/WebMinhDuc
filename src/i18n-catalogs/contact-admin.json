@@ -1180,5 +1180,131 @@
     "zh": "“倾听帮助我们找到合适的交流方向。”",
     "ko": "“경청은 적절한 소통 방향을 찾는 데 도움이 됩니다.”",
     "ja": "「耳を傾けることで、適切な対話の道筋が見えてきます。」"
+  },
+  "Gửi nhu cầu nhân lực": {
+    "en": "Request staff",
+    "zh": "提交用工需求",
+    "ko": "인력 요청",
+    "ja": "人材を依頼する"
+  },
+  "Mã mô phỏng:": {
+    "en": "Demo reference:",
+    "zh": "演示编号：",
+    "ko": "모의 접수 번호:",
+    "ja": "デモ受付番号："
+  },
+  "Dữ liệu mẫu chỉ giữ trong bộ nhớ phiên trang; không gửi ra ngoài. Không dùng thông tin thật.": {
+    "en": "Sample data remains only in this page session’s memory and is not sent externally. Do not use real personal information.",
+    "zh": "示例数据仅暂存在当前页面会话内存中，不会发送出去。请勿使用真实个人信息。",
+    "ko": "예시 데이터는 이 페이지 세션의 메모리에만 보관되며 외부로 전송되지 않습니다. 실제 개인정보를 사용하지 마세요.",
+    "ja": "サンプルデータはこのページのセッション中のメモリにのみ保持され、外部には送信されません。実際の個人情報は使用しないでください。"
+  },
+  "Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài.": {
+    "en": "Use sample data only. Information stays temporarily in page memory for the ADMIN demo and is not sent externally.",
+    "zh": "请仅使用示例数据。信息仅暂存于页面内存供管理演示查看，不会发送出去。",
+    "ko": "예시 데이터만 사용해 주세요. 정보는 관리자 데모 확인을 위해 페이지 메모리에 일시 보관되며 외부로 전송되지 않습니다.",
+    "ja": "サンプルデータのみを使用してください。情報は管理画面のデモ用にページのメモリへ一時保持され、外部には送信されません。"
+  },
+  "Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài. Không tải giấy tờ thật.": {
+    "en": "Use sample data only. Information stays temporarily in page memory for the ADMIN demo and is not sent externally. Do not select real documents.",
+    "zh": "请仅使用示例数据。信息仅暂存于页面内存供管理演示查看，不会发送出去。请勿选择真实证件。",
+    "ko": "예시 데이터만 사용해 주세요. 정보는 관리자 데모 확인을 위해 페이지 메모리에 일시 보관되며 외부로 전송되지 않습니다. 실제 서류를 선택하지 마세요.",
+    "ja": "サンプルデータのみを使用してください。情報は管理画面のデモ用にページのメモリへ一時保持され、外部には送信されません。実際の書類は選択しないでください。"
+  },
+  "Tối đa 3 tệp cho mỗi lần gửi.": {
+    "en": "Choose no more than 3 files per submission.",
+    "zh": "每次最多选择3个文件。",
+    "ko": "한 번에 파일을 최대 3개까지 선택할 수 있습니다.",
+    "ja": "一度に選択できるファイルは最大3件です。"
+  },
+  "Mỗi tệp tối đa 5 MB (5.000.000 byte).": {
+    "en": "Each file must be at most 5 MB (5,000,000 bytes).",
+    "zh": "每个文件不得超过5 MB（5,000,000字节）。",
+    "ko": "파일당 최대 5 MB(5,000,000바이트)입니다.",
+    "ja": "各ファイルは5 MB（5,000,000バイト）以下です。"
+  },
+  "Tổng dung lượng tệp tối đa 15 MB (15.000.000 byte).": {
+    "en": "The total file size must be at most 15 MB (15,000,000 bytes).",
+    "zh": "文件总大小不得超过15 MB（15,000,000字节）。",
+    "ko": "전체 파일은 최대 15 MB(15,000,000바이트)입니다.",
+    "ja": "ファイルの合計は15 MB（15,000,000バイト）以下です。"
+  },
+  "Chỉ chấp nhận JPG, JPEG, PNG, PDF, DOC hoặc DOCX.": {
+    "en": "Only JPG, JPEG, PNG, PDF, DOC or DOCX files are accepted.",
+    "zh": "仅接受JPG、JPEG、PNG、PDF、DOC或DOCX文件。",
+    "ko": "JPG, JPEG, PNG, PDF, DOC 또는 DOCX 파일만 허용됩니다.",
+    "ja": "JPG、JPEG、PNG、PDF、DOC、DOCXのみ選択できます。"
+  },
+  "Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX; 5 MB/tệp, tổng 15 MB. Tệp không được tải lên.": {
+    "en": "Up to 3 JPG, JPEG, PNG, PDF, DOC or DOCX files; 5 MB each, 15 MB total. Files are not uploaded.",
+    "zh": "最多3个JPG、JPEG、PNG、PDF、DOC或DOCX文件；每个5 MB，总计15 MB。文件不会上传。",
+    "ko": "JPG, JPEG, PNG, PDF, DOC 또는 DOCX 파일 최대 3개, 파일당 5 MB, 총 15 MB입니다. 파일은 업로드되지 않습니다.",
+    "ja": "JPG、JPEG、PNG、PDF、DOC、DOCXを最大3件、各5 MB、合計15 MBまで選択できます。ファイルはアップロードされません。"
+  },
+  "Email (không bắt buộc)": {
+    "en": "Email (optional)",
+    "zh": "电子邮箱（可选）",
+    "ko": "이메일 (선택)",
+    "ja": "メールアドレス（任意）"
+  },
+  "CV của bạn (không bắt buộc)": {
+    "en": "Your CV (optional)",
+    "zh": "您的简历（可选）",
+    "ko": "이력서 (선택)",
+    "ja": "履歴書（任意）"
+  },
+  "Tệp hồ sơ minh họa (không bắt buộc)": {
+    "en": "Sample application files (optional)",
+    "zh": "示例申请文件（可选）",
+    "ko": "예시 지원 서류 (선택)",
+    "ja": "サンプル応募書類（任意）"
+  },
+  "Chưa chọn": {
+    "en": "Not selected",
+    "zh": "尚未选择",
+    "ko": "선택하지 않음",
+    "ja": "未選択"
+  },
+  "Khác / Chưa rõ": {
+    "en": "Other / Not sure",
+    "zh": "其他 / 尚不确定",
+    "ko": "기타 / 미정",
+    "ja": "その他 / 未定"
+  },
+  "Vị trí ứng tuyển": {
+    "en": "Position applied for",
+    "zh": "申请职位",
+    "ko": "지원 직무",
+    "ja": "応募職種"
+  },
+  "Không tìm thấy mã mô phỏng trong phiên này.": {
+    "en": "This demo reference was not found in the current session.",
+    "zh": "当前会话中找不到该演示编号。",
+    "ko": "현재 세션에서 해당 모의 접수 번호를 찾을 수 없습니다.",
+    "ja": "このセッションに該当するデモ受付番号が見つかりません。"
+  },
+  "Vui lòng nhập ghi chú.": {
+    "en": "Please enter your notes.",
+    "zh": "请输入备注。",
+    "ko": "요청 내용을 입력해 주세요.",
+    "ja": "備考を入力してください。"
+  },
+  "ADMIN mô phỏng": {
+    "en": "ADMIN demo",
+    "zh": "管理演示",
+    "ko": "관리자 데모",
+    "ja": "管理者デモ"
+  },
+  "Ghi chú": {
+    "en": "Notes",
+    "zh": "备注",
+    "ko": "요청 내용",
+    "ja": "備考"
+  },
+  "Dùng dữ liệu giả. Hồ sơ gửi thử chỉ giữ trong bộ nhớ trang khi chuyển trang nội bộ, không tải tệp hay gửi ra ngoài. Tải lại hoặc khôi phục mẫu sẽ xóa hồ sơ gửi thử. Không có đăng nhập hay phân quyền thực.": {
+    "en": "Use sample data. Demo submissions remain only in page memory during internal navigation; files are not uploaded and data is not sent externally. Reloading or restoring samples clears demo submissions. There is no real sign-in or access control.",
+    "zh": "请使用示例数据。演示申请仅在站内切换时暂存于页面内存；文件不会上传，数据不会发送出去。刷新或恢复示例将清除演示申请。此处没有真实登录或权限控制。",
+    "ko": "예시 데이터를 사용해 주세요. 모의 접수는 사이트 내부 이동 중 페이지 메모리에만 보관되며 파일 업로드나 외부 전송은 없습니다. 새로고침하거나 예시를 복원하면 모의 접수가 삭제됩니다. 실제 로그인이나 접근 권한 관리는 없습니다.",
+    "ja": "サンプルデータを使用してください。デモの申請はサイト内の移動中、ページのメモリにのみ保持され、ファイルやデータは外部へ送信されません。再読み込みまたはサンプルの復元でデモ申請は削除されます。実際のログインやアクセス制御はありません。"
   }
 }

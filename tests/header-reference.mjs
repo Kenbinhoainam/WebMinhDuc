@@ -19,9 +19,9 @@ try {
   assert.deepEqual([...row.children].map(el=>el.className),['brand','desktop-nav','header-actions']);
   assert.deepEqual([...row.querySelector('.header-actions').children].map(el=>el.className),['header-search','header-saved','language-selector','header-contact','menu-button']);
   assert.match(doc.querySelector('.brand img').getAttribute('src'),/minh-duc-logo/);
-  assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,19);assert.equal(doc.querySelectorAll('.desktop-nav svg').length,0,'navigation has no arrow icons');assert.ok(doc.querySelector('.menu-button'));
+  assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);assert.equal(doc.querySelectorAll('.desktop-nav svg').length,0,'navigation has no arrow icons');assert.ok(doc.querySelector('.menu-button'));
   assert.match(doc.querySelector('.language-trigger').getAttribute('aria-label'),new RegExp(localeNames[locale]));
-  assert.equal(doc.querySelectorAll('.no-script-nav > ul > li').length,7);assert.equal(doc.querySelectorAll('.no-script-nav ul ul a').length,19);
+  assert.equal(doc.querySelectorAll('.no-script-nav > ul > li').length,7);assert.equal(doc.querySelectorAll('.no-script-nav ul ul a').length,14);
   dom.window.close();
  }
  const css=await readFile('src/sprint-navigation.css','utf8'), sheet=postcss.parse(css);

@@ -1,3 +1,4 @@
+import {company} from '../../company';
 export const uploads = '/mirror/www.hr2b.com/wp-content/uploads/';
 export const assets = {
   about: `${uploads}2025/10/about-banner.jpg`,
@@ -13,7 +14,7 @@ export const assets = {
   service2: `${uploads}2025/09/GPNS-2.jpg`,
   service3: `${uploads}2025/09/GPNS-3.jpg`,
 };
-export const contact = { phone: '0364 562 868', tel: '0364562868', email: 'vieclamminhduc.vpv2@gmail.com' };
+export const contact = company;
 
 export type Service = {
   slug: string; title: string; short: string; image: string; banner: string; intro: string;
