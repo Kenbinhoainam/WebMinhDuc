@@ -1,13 +1,11 @@
 import {useEffect, useId, useRef, useState, type FormEvent} from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useLocation, useSearchParams} from 'react-router-dom';
 import {CalendarDays, CheckCircle2, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
 import {company} from './company';
 import {createDemoSubmission} from './demo-submissions';
 import {validDemoPhone, validOptionalEmail} from './sharedformvalidation';
-import {useTranslation} from './i18n';
+import {useLocale, useTranslation} from './i18n';
 import {PageMasthead} from './PageMasthead';
-import {responsiveImage} from './media';
-import {RevealFrame} from './motion';
 import './form-experience-v16.css';
 import './contact-sprint.css';
 import './contact-reference.css';
@@ -32,10 +30,11 @@ const services = [
 ];
 const businessFields = ['company', 'email', 'location', 'jobrole', 'quantity', 'shift', 'needdate', 'service', 'notes'];
 
-function ModeSelector({mode, choose}: {mode: Mode; choose: (value: Mode) => void}) {
+function ModeSelector({mode, choose, generalFirst = false}: {mode: Mode; choose: (value: Mode) => void; generalFirst?: boolean}) {
+  const modes: Mode[] = generalFirst ? ['F02', 'F01'] : ['F01', 'F02'];
   return <div className="form-mode" role="group" aria-label="Loại yêu cầu">
-    <button type="button" aria-pressed={mode === 'F01'} onClick={() => choose('F01')}>Gửi nhu cầu nhân lực</button>
-    <button type="button" aria-pressed={mode === 'F02'} onClick={() => choose('F02')}>Liên hệ chung</button>
+    {modes.map(value => <button key={value} type="button" data-contact-mode={value} aria-pressed={mode === value}
+      onClick={() => choose(value)}>{value === 'F01' ? 'Gửi nhu cầu nhân lực' : 'Liên hệ chung'}</button>)}
   </div>;
 }
 
@@ -158,54 +157,73 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
   </form>;
 }
 
+// Map CIDs resolved from the three Google Maps links supplied in company.ts, 26 November 2026.
+// Keep the original directions links as a permanent fallback to the embedded map.
+const officeMapIds = ['10667900336702973064', '16104762975771422561', '1203083160994188547'] as const;
+
 export function ContactPage() {
-  const t = useTranslation();
-  const [mode, setMode] = useState<Mode>('F02');
-  const [showTeamPhoto, setShowTeamPhoto] = useState(true);
+  const t = useTranslation(), locale = useLocale();
+  const [params, setParams] = useSearchParams();
+  const mode: Mode = params.get('form') === 'F01' ? 'F01' : 'F02';
+  const [officeIndex, setOfficeIndex] = useState(0);
   const formTitle = useRef<HTMLHeadingElement>(null);
+  const office = company.offices[officeIndex];
+  const mapTitle = t({vi:'Bản đồ ' + office.name, en:'Map of ' + office.name, zh:office.name + '地图', ko:office.name + ' 지도', ja:office.name + 'の地図'});
+  const mapUrl = `https://maps.google.com/maps?cid=${officeMapIds[officeIndex]}&output=embed&hl=${locale === 'zh' ? 'zh-CN' : locale}`;
+
   function choose(value: Mode) {
-    setMode(value);
+    setParams(current => {const next = new URLSearchParams(current); next.set('form', value); return next;}, {preventScrollReset: true});
     requestAnimationFrame(() => formTitle.current?.focus());
   }
-  return <div className="contact-page-v18">
-    <PageMasthead title="Liên hệ Minh Đức" description="Trao đổi về nhu cầu tuyển người, đặt câu hỏi hoặc tìm đường đến Minh Đức.">
-      <ModeSelector mode={mode} choose={choose}/>
-      <div className="contact-quick-links">
-        <a className="contact-hotline" href={'tel:' + company.tel}><Phone size={18} aria-hidden="true"/><span>Hotline</span> <strong>{company.phone}</strong></a>
-        <a className="contact-directory-link" href="#contact-offices"><MapPin size={18} aria-hidden="true"/>Tìm điểm liên hệ</a>
-      </div>
-    </PageMasthead>
-    <div className="container contact-reference-layout">
-      <section id="consultation" tabIndex={-1} className="contact-reference-form" aria-labelledby="contact-form-heading">
-        <h2 id="contact-form-heading" ref={formTitle} tabIndex={-1}>{mode === 'F01' ? 'Nhu cầu nhân lực' : 'Liên hệ chung'}</h2>
-        <ContactForm mode={mode} lockMode/>
+  function selectOffice(index: number) {setOfficeIndex(index);}
+
+  return <div className="contact-page-v18 contact-page-reference">
+    <PageMasthead title="Liên hệ Minh Đức" description="Chúng tôi luôn sẵn sàng lắng nghe và kết nối cùng bạn."/>
+    <div className="contact-reference-surface"><div className="container contact-reference-layout">
+      <section id="contact-offices" tabIndex={-1} className="contact-reference-info" aria-labelledby="contact-offices-heading">
+        <p className="contact-company-kicker">CÔNG TY TNHH NHÂN LỰC</p>
+        <h2 id="contact-offices-heading" className="contact-company-name">MINH ĐỨC <span>VINA</span></h2>
+        <div className="contact-office-list">{company.offices.map((item, index) => <article className="contact-office" key={item.name}>
+          <MapPin size={20} aria-hidden="true"/>
+          <div><h3>{item.name}</h3><p>{item.address}</p>
+            <div className="contact-office-actions">
+              <a href="#contact-map" onClick={() => selectOffice(index)}>{t({vi:'Xem bản đồ', en:'View map', zh:'查看地图', ko:'지도 보기', ja:'地図を見る'})}</a>
+              <a href={item.map} target="_blank" rel="noreferrer">{t({vi:'Chỉ đường',en:'Directions',zh:'路线',ko:'길찾기',ja:'経路'})}</a>
+            </div>
+          </div>
+        </article>)}</div>
+        <div className="contact-direct-links">
+          <a className="contact-hotline" href={'tel:' + company.tel}><Phone size={20} aria-hidden="true"/><span><span>Hotline</span><strong>{company.phone}</strong></span></a>
+          <a className="contact-email" href={'mailto:' + company.email}><Mail size={20} aria-hidden="true"/><span><span>Email</span><strong>{company.email}</strong></span></a>
+        </div>
+        <div className="contact-social-links">
+          <a href={company.zalo} target="_blank" rel="noreferrer"><MessageCircle size={18} aria-hidden="true"/>Zalo Minh Đức</a>
+          <a href={company.facebook} target="_blank" rel="noreferrer">Facebook Minh Đức</a>
+          <Link to="/consultation"><CalendarDays size={18} aria-hidden="true"/>Chọn giờ tư vấn</Link>
+        </div>
+        <a className="contact-map-jump" href="#contact-map"><MapPin size={18} aria-hidden="true"/>Tìm điểm liên hệ</a>
       </section>
-      <aside className="contact-reference-info">
-        <h2>Trao đổi trực tiếp</h2>
-        <p className="contact-company">CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</p>
-        <Link className="contact-method" to="/consultation"><CalendarDays aria-hidden="true"/>Chọn giờ tư vấn</Link>
-        <a className="contact-method" href={company.zalo} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Zalo Minh Đức</a>
-        <a className="contact-method" href={company.facebook} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true"/>Facebook Minh Đức</a>
-        <a className="contact-method" href={'mailto:' + company.email}><Mail aria-hidden="true"/>{company.email}</a>
-        {showTeamPhoto && <figure className="contact-team">
-          <img {...responsiveImage('/assets/minhduc-v18/contact-team.webp', '(max-width:359px) 180px, (max-width:767px) 228px, 245px')}
-            alt="Năm người đứng trước biển hiệu Minh Đức Vina, người ở giữa cầm bó hoa." loading="lazy" decoding="async"
-            onError={() => setShowTeamPhoto(false)}/>
-          <figcaption>Hoạt động tập thể tại Minh Đức Vina</figcaption>
-        </figure>}
-      </aside>
-    </div>
-    <section id="contact-offices" tabIndex={-1} className="contact-directory" aria-labelledby="contact-offices-heading">
-      <div className="container contact-directory-inner">
-        <RevealFrame effect="up"><h2 id="contact-offices-heading">Tìm điểm liên hệ</h2></RevealFrame>
-        <div>{company.offices.map((office, index) => <details key={office.name} className="contact-office" open={index === 0}>
-          <summary><MapPin size={20} aria-hidden="true"/>{office.name}</summary>
-          <div><p>{office.address}</p><a href={office.map} target="_blank" rel="noreferrer">{t({
-            vi:'Chỉ đường đến ' + office.name, en:'Directions to ' + office.name, zh:'前往' + office.name + '的路线',
-            ko:office.name + ' 오시는 길', ja:office.name + 'への経路',
-          })}</a></div>
-        </details>)}</div>
-      </div>
-    </section>
+      <section id="consultation" tabIndex={-1} className="contact-reference-form" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" ref={formTitle} tabIndex={-1}>{mode === 'F01' ? 'Nhu cầu nhân lực' : 'Gửi lời nhắn đến Minh Đức'}</h2>
+        <p className="contact-form-lead">Để lại thông tin và nội dung bạn quan tâm để bắt đầu cuộc trao đổi.</p>
+        <ModeSelector mode={mode} choose={choose} generalFirst/>
+        <ContactForm mode={mode} lockMode/>
+        <Link className="contact-privacy-link" to="/privacy-policy">Chính sách bảo mật</Link>
+      </section>
+      <section id="contact-map" tabIndex={-1} className="contact-map" aria-labelledby="contact-map-heading">
+        <div className="contact-map-heading"><h2 id="contact-map-heading">Tìm điểm liên hệ</h2>
+          <div className="contact-map-tabs" role="group" aria-label={t({vi:'Chọn điểm liên hệ',en:'Choose an office',zh:'选择联系地点',ko:'연락처 선택',ja:'窓口を選ぶ'})}>
+            {company.offices.map((item,index) => <button key={item.name} type="button" aria-pressed={officeIndex === index} onClick={() => selectOffice(index)}>{item.name}</button>)}
+          </div>
+        </div>
+        <div className="contact-map-canvas">
+          <iframe key={mapUrl} title={mapTitle} src={mapUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/>
+        </div>
+        <div className="contact-map-caption"><div><strong>{office.name}</strong><p>{office.address}</p></div>
+          <a href={office.map} target="_blank" rel="noreferrer">{t({vi:'Mở chỉ đường',en:'Open directions',zh:'打开路线',ko:'길찾기 열기',ja:'経路を開く'})}</a>
+          <p className="contact-map-fallback">Nếu bản đồ không hiển thị, hãy mở chỉ đường trong Google Maps.</p>
+        </div>
+      </section>
+    </div></div>
   </div>;
 }

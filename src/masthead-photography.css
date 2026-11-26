@@ -1,0 +1,104 @@
+/* Photos keep the subject in the upper field and reserve the lower edge for type. */
+.md-page-masthead.md-photo-masthead {
+  background:#fff;
+  border:0;
+  padding:0;
+}
+.md-page-masthead.md-photo-masthead::after { content:none; }
+.md-photo-stage {
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  align-items:end;
+  min-height:clamp(300px,31vw,510px);
+  background:#173a55;
+}
+.md-photo-stage .md-masthead-figure,
+.md-photo-stage::after {
+  position:absolute;
+  inset:0;
+  z-index:-2;
+}
+.md-photo-stage .md-masthead-figure>img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:cover;
+  object-position:center 42%;
+  border-radius:0;
+}
+.md-photo-stage::after {
+  content:"";
+  z-index:-1;
+  background:linear-gradient(0deg,rgba(8,26,47,.91),rgba(8,26,47,.68) 25%,transparent 70%);
+}
+.md-photo-copy,.md-photo-meta {
+  width:min(1240px,calc(100% - clamp(32px,9vw,128px)));
+  margin-inline:auto;
+}
+.md-photo-copy { padding-block:clamp(40px,5vw,76px) clamp(28px,3vw,52px); }
+.md-photo-copy :is(h1,.md-masthead-description,.md-masthead-eyebrow) { color:#fff; }
+.md-photo-copy h1 { margin:0; max-width:30ch; }
+.md-photo-copy .md-masthead-description { margin-top:14px; }
+.md-photo-meta {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:2px 24px;
+  padding-block:8px;
+}
+.md-photo-meta .md-masthead-breadcrumb,.md-photo-meta p { margin:0; }
+.md-photo-meta p { font-size:13px; color:#506276; }
+@media (max-width:600px) {
+  .md-photo-stage { min-height:0; background:#183b56; }
+  .md-photo-stage .md-masthead-figure { position:static; }
+  .md-photo-stage .md-masthead-figure>img { height:auto; max-height:260px; object-fit:contain; }
+  .md-photo-stage::after { content:none; }
+  .md-photo-copy { padding-block:22px; }
+}
+/* Decorative images accompany text-only mastheads. The lower-resolution mobile
+   band follows the text in flow, keeping touch targets on a solid background. */
+:is(.jobs-directory,.jobs-saved-directory) {
+  --masthead-photo:url('/assets/minhduc-v16/recruitment-field-960.webp');
+  --masthead-mobile:url('/assets/minhduc-v16/recruitment-field-480.webp');
+}
+.education-pages {
+  --masthead-photo:url('/assets/minhduc-v18/learning-space-960.webp');
+  --masthead-mobile:url('/assets/minhduc-v18/learning-space-480.webp');
+}
+.contact-page-v18 {
+  --masthead-photo:url('/assets/minhduc-v18/contact-team-960.webp');
+  --masthead-mobile:url('/assets/minhduc-v18/contact-team-480.webp');
+}
+.ed-events,.ed-event {
+  --masthead-photo:url('/assets/minhduc-v18/event-hall-960.webp');
+  --masthead-mobile:url('/assets/minhduc-v18/event-hall-480.webp');
+}
+:is(.jobs-directory,.jobs-saved-directory,.education-pages,.contact-page-v18,.ed-events,.ed-event)
+.md-page-masthead:not(.md-page-masthead--image,.md-photo-masthead)::after {
+  content:"";
+  display:block;
+  pointer-events:none;
+}
+@media screen and (min-width:768px) {
+  :is(.jobs-directory,.jobs-saved-directory,.education-pages,.contact-page-v18,.ed-events,.ed-event)
+  .md-page-masthead:not(.md-page-masthead--image,.md-photo-masthead)::after {
+    position:absolute;
+    inset:0 0 0 auto;
+    width:40%;
+    z-index:-1;
+    background:linear-gradient(to right,#f3f7fc,rgba(243,247,252,.3)),var(--masthead-photo) center/cover;
+  }
+}
+@media screen and (max-width:767px) {
+  :is(.jobs-directory,.jobs-saved-directory,.education-pages,.contact-page-v18,.ed-events,.ed-event)
+  .md-page-masthead:not(.md-page-masthead--image,.md-photo-masthead)::after {
+    margin-top:24px;
+    height:clamp(130px,34vw,220px);
+    background:var(--masthead-mobile) center 42%/cover;
+  }
+  :is(.jobs-directory,.jobs-saved-directory,.education-pages,.contact-page-v18,.ed-events,.ed-event)
+  .md-page-masthead:not(.md-page-masthead--image,.md-photo-masthead) { padding-bottom:0; }
+}

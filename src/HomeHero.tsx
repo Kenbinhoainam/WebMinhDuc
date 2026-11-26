@@ -10,13 +10,13 @@ type Stage = 'poster' | 'playing' | 'paused' | 'fallback' | 'ended';
 
 export default function HomeHero() {
   const t = useTranslation();
-  const section = useRef<HTMLElement>(null), video = useRef<HTMLVideoElement>(null);
+  const player = useRef<HTMLDivElement>(null), video = useRef<HTMLVideoElement>(null);
   const mounted = useRef(false), visible = useRef(false), manual = useRef(false), pausedByUser = useRef(false);
-  const pendingEnd = useRef(false), observerAvailable = useRef(false);
-  const measureVisible = () => {
-    const box = section.current?.getBoundingClientRect();
+  const deferredCard = useRef<'paused' | 'ended' | null>(null), observerAvailable = useRef(false);
+  const measureVisible = useCallback(() => {
+    const box = player.current?.getBoundingClientRect();
     return Boolean(box && box.bottom > 0 && box.top < window.innerHeight && box.right > 0 && box.left < window.innerWidth);
-  };
+  }, []);
   const finished = useRef(false), failed = useRef(false), attempt = useRef(0), fallbackTried = useRef(false);
   const [stage, updateStage] = useState<Stage>('poster');
   const [playing, setPlaying] = useState(false), [frameReady, setFrameReady] = useState(false), [muted, setMuted] = useState(true);
@@ -31,6 +31,16 @@ export default function HomeHero() {
     }
     updateStage(next);
   }, []);
+  const pauseForChoices = useCallback((origin: 'control' | 'scroll') => {
+    const el = video.current;
+    if (!el || pausedByUser.current || finished.current || failed.current) return;
+    pausedByUser.current = true;
+    attempt.current++;
+    el.pause();
+    setPlaying(false);
+    if (origin === 'control' || measureVisible()) setStage('paused');
+    else deferredCard.current = 'paused';
+  }, [measureVisible, setStage]);
   const playLabel = t({vi:'Phát video giới thiệu',en:'Play company film',zh:'播放企业介绍视频',ko:'회사 소개 영상 재생',ja:'会社紹介動画を再生'});
   const pauseLabel = t({vi:'Tạm dừng video',en:'Pause video',zh:'暂停视频',ko:'영상 일시 정지',ja:'動画を一時停止'});
   const resumeLabel = t({vi:'Tiếp tục video',en:'Resume video',zh:'继续播放视频',ko:'영상 계속 재생',ja:'動画を再開'});
@@ -60,16 +70,15 @@ export default function HomeHero() {
     const update = () => {
       if (!mounted.current) return;
       if (!observerAvailable.current) visible.current = measureVisible();
-      if (finished.current) {
-        // A late ended event must not change page height while the reader is below the film.
-        if (pendingEnd.current && visible.current && !document.hidden) {
-          pendingEnd.current = false; setStage('ended');
-        }
-        return;
+      // Opening the taller mobile card offscreen would shift the section being read.
+      if (deferredCard.current && visible.current && !document.hidden) {
+        setStage(deferredCard.current);
+        deferredCard.current = null;
       }
+      if (finished.current) return;
       if (document.hidden || !visible.current || (!manual.current && !allowed())) {
         attempt.current++; el.pause();
-        if (!allowed()) setStage('fallback');
+        if (!manual.current && !allowed()) setStage('fallback');
         return;
       }
       if ((observerAvailable.current || manual.current) && !pausedByUser.current && !failed.current && el.paused) play();
@@ -82,7 +91,7 @@ export default function HomeHero() {
           visible.current = entries[0]?.isIntersecting ?? false;
           update();
         }, {threshold: .1});
-        if (section.current) {observer.observe(section.current); observing = true; observerAvailable.current = true;}
+        if (player.current) {observer.observe(player.current); observing = true; observerAvailable.current = true;}
       } else setStage('fallback');
     } catch {observer?.disconnect(); observer = null; observerAvailable.current = false; visible.current = false; setStage('fallback');}
     const preferenceChange = () => {
@@ -90,9 +99,20 @@ export default function HomeHero() {
       update();
     };
     document.addEventListener('visibilitychange', update);
-    // Without IO, manual playback still concludes and defers layout changes offscreen.
+    // Observe actual vertical movement for wheels, touch, keys and scrollbar drags alike.
+    // Clamping discards negative positions from elastic overscroll at the top of the page.
+    let lastScrollY = Math.max(0, window.scrollY);
+    const onScroll = () => {
+      const y = Math.max(0, window.scrollY);
+      const movingDown = y > lastScrollY;
+      lastScrollY = y;
+      if (movingDown && !document.hidden && (el.hasAttribute('src') || (observerAvailable.current && allowed()))) {
+        pauseForChoices('scroll');
+      }
+      if (!observerAvailable.current) update();
+    };
     const geometryUpdate = () => {if (!observerAvailable.current) update();};
-    window.addEventListener('scroll', geometryUpdate, {passive:true});
+    window.addEventListener('scroll', onScroll, {passive:true});
     window.addEventListener('resize', geometryUpdate);
     motion.addEventListener('change', preferenceChange);
     connection?.addEventListener?.('change', preferenceChange);
@@ -101,24 +121,21 @@ export default function HomeHero() {
       mounted.current = false; observing = false; observerAvailable.current = false; attempt.current++;
       observer?.disconnect(); el.pause(); startPlayback.current = () => {};
       document.removeEventListener('visibilitychange', update);
-      window.removeEventListener('scroll', geometryUpdate);
+      window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', geometryUpdate);
       motion.removeEventListener('change', preferenceChange);
       connection?.removeEventListener?.('change', preferenceChange);
     };
-  }, [setStage]);
+  }, [measureVisible, pauseForChoices, setStage]);
 
   const togglePlayback = () => {
     const el = video.current;
     if (!el) return;
     if (!el.paused && !failed.current && !finished.current) {
-      pausedByUser.current = true;
-      attempt.current++;
-      el.pause();
-      setPlaying(false);
-      setStage('paused');
+      pauseForChoices('control');
     } else {
-      if (finished.current) {el.currentTime = 0; finished.current = false; pendingEnd.current = false; setFrameReady(false);}
+      if (finished.current) {el.currentTime = 0; finished.current = false; setFrameReady(false);}
+      deferredCard.current = null;
       manual.current = true; pausedByUser.current = false; failed.current = false;
       startPlayback.current();
     }
@@ -139,13 +156,13 @@ export default function HomeHero() {
   useEffect(() => {
     const href = shortcutFocus.current;
     if (!showBrand || !href) return;
-    const matchingLink = [...(section.current?.querySelectorAll<HTMLAnchorElement>('.hero-actions a') ?? [])]
+    const matchingLink = [...(player.current?.querySelectorAll<HTMLAnchorElement>('.hero-actions a') ?? [])]
       .find(link => link.href === href);
     matchingLink?.focus({preventScroll:true});
     shortcutFocus.current = null;
   }, [showBrand]);
-  return <section className="home-hero section-home-banner" data-stage={stage} data-show-brand={showBrand} ref={section} aria-label={t({vi:'Minh Đức Vina — Giới thiệu doanh nghiệp',en:'Minh Đức Vina — Company introduction',zh:'Minh Đức Vina — 企业介绍',ko:'Minh Đức Vina — 회사 소개',ja:'Minh Đức Vina — 会社紹介'})}>
-    <div className="hero-stage" onClick={event => {
+  return <section className="home-hero section-home-banner" data-stage={stage} data-show-brand={showBrand} aria-label={t({vi:'Minh Đức Vina — Giới thiệu doanh nghiệp',en:'Minh Đức Vina — Company introduction',zh:'Minh Đức Vina — 企业介绍',ko:'Minh Đức Vina — 회사 소개',ja:'Minh Đức Vina — 会社紹介'})}>
+    <div ref={player} className="hero-stage" onClick={event => {
       // The surface is a pointer shortcut for the native playback button.
       if (event.target instanceof Element && !event.target.closest('a,button')) togglePlayback();
     }}>
@@ -154,7 +171,12 @@ export default function HomeHero() {
         <video ref={video} className={frameReady ? 'is-ready' : undefined} muted={muted} playsInline preload="none"
           onPlaying={() => {if (!finished.current && !pausedByUser.current && !video.current?.paused) {failed.current = false; setStage('playing'); setPlaying(true); setFrameReady(true);}}}
           onPause={() => {if (video.current?.paused) setPlaying(false);}}
-          onEnded={() => {finished.current = true; attempt.current++; setPlaying(false); pendingEnd.current = true; if (!document.hidden && (observerAvailable.current ? visible.current : measureVisible())) {pendingEnd.current = false; setStage('ended');}}}
+          onEnded={() => {
+            if (pausedByUser.current && !video.current?.ended) return;
+            finished.current = true; attempt.current++; setPlaying(false);
+            if (!document.hidden && (observerAvailable.current ? visible.current : measureVisible())) {deferredCard.current = null; setStage('ended');}
+            else deferredCard.current = 'ended';
+          }}
           onError={onError}/>
       </div>
       <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>

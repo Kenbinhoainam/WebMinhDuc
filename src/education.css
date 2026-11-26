@@ -43,3 +43,10 @@
   .education-directory,.education-program-detail,.education-form-layout { grid-template-columns:minmax(0,1fr); gap:22px; }
   .education-form-card { padding:18px; }
 }
+
+.education-mode-links { display:flex; flex-wrap:wrap; gap:4px 24px; }
+.education-pages :is(#programs,#distance-learning,#full-time-learning,#dang-ky) { scroll-margin-top:8px; }
+@media(max-width:520px){
+ .education-form-tabs { display:grid; grid-template-columns:1fr 1fr; }
+ .education-form-tabs button { padding-inline:6px; }
+}

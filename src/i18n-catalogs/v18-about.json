@@ -286,5 +286,17 @@
     "zh": "查看招聘职位",
     "ko": "모집 중인 일자리 보기",
     "ja": "募集中の求人を見る"
+  },
+  "Nhân lực cho nhà máy miền Bắc": {
+    "en": "Staffing for factories in northern Vietnam",
+    "zh": "面向越南北部工厂的人力服务",
+    "ko": "베트남 북부 공장을 위한 인력 서비스",
+    "ja": "ベトナム北部の工場向け人材サービス"
+  },
+  "Xem các dịch vụ": {
+    "en": "Explore our services",
+    "zh": "查看服务项目",
+    "ko": "서비스 살펴보기",
+    "ja": "サービス一覧を見る"
   }
 }

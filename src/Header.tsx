@@ -371,7 +371,7 @@ export function Header() {
   };
   return (
     <>
-      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`} data-home={location.pathname === "/" ? "true" : undefined}>
         <div className="header-shell">
           <div className="header-inner">
             <Link to="/" className="brand" aria-label="Minh Đức — Trang chủ">
@@ -514,12 +514,6 @@ export function Header() {
                 {saved.count > 0 && <span className="header-saved-count" aria-hidden="true">{saved.count > 99 ? '99+' : saved.count}</span>}
               </Link>
               <LanguageSelector />
-              {location.pathname === "/" && <Link to="/jobs" className="header-find-job">
-                {t({vi:"Tìm việc",en:"Find a job",zh:"找工作",ko:"일자리 찾기",ja:"仕事を探す"})}
-              </Link>}
-              <Link to="/#business-contact" className="header-contact">
-                {t({vi:"Gửi nhu cầu nhân lực",en:"Request workforce",zh:"提交用工需求",ko:"인력 지원 요청",ja:"人材の相談を送る"})} <ArrowUpRight size={15} />
-              </Link>
               <button
                 className="menu-button"
                 aria-label="Mở menu"

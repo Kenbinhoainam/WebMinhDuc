@@ -106,5 +106,35 @@
     "zh": "示例回执保留至页面重新加载；信息不会发送到外部。",
     "ko": "데모 접수증은 페이지를 새로고침할 때까지 유지되며 정보는 외부로 전송되지 않습니다.",
     "ja": "デモの受付票はページを再読み込みするまで保持され、情報が外部に送信されることはありません。"
+  },
+  "Chúng tôi luôn sẵn sàng lắng nghe và kết nối cùng bạn.": {
+    "en": "We are here to listen and connect with you.",
+    "zh": "我们随时愿意倾听并与您沟通。",
+    "ko": "언제든 여러분의 이야기를 듣고 함께하겠습니다.",
+    "ja": "皆さまのお話を伺い、つながりを大切にします。"
+  },
+  "CÔNG TY TNHH NHÂN LỰC": {
+    "en": "HUMAN RESOURCES COMPANY LIMITED",
+    "zh": "人力资源有限公司",
+    "ko": "인력 유한회사",
+    "ja": "人材有限会社"
+  },
+  "Gửi lời nhắn đến Minh Đức": {
+    "en": "Send Minh Đức a message",
+    "zh": "给 Minh Đức 留言",
+    "ko": "Minh Đức에 메시지 보내기",
+    "ja": "Minh Đứcにメッセージを送る"
+  },
+  "Để lại thông tin và nội dung bạn quan tâm để bắt đầu cuộc trao đổi.": {
+    "en": "Leave your contact details and tell us what you would like to discuss.",
+    "zh": "留下您的联系方式和关注的内容，开始与我们交流。",
+    "ko": "연락처와 궁금한 내용을 남겨 주시면 상담을 시작할 수 있습니다.",
+    "ja": "連絡先とご相談内容をお知らせください。"
+  },
+  "Nếu bản đồ không hiển thị, hãy mở chỉ đường trong Google Maps.": {
+    "en": "If the map does not appear, open directions in Google Maps.",
+    "zh": "如果地图未显示，请在 Google 地图中打开路线。",
+    "ko": "지도가 표시되지 않으면 Google 지도에서 길찾기를 여세요.",
+    "ja": "地図が表示されない場合は、Google マップで経路を開いてください。"
   }
 }

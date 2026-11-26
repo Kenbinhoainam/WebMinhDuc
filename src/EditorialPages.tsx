@@ -5,64 +5,18 @@ import {company} from './company';
 import {ButtonLink} from './shared';
 import {PageMasthead} from './PageMasthead';
 import {responsiveImage} from './media';
-import {useLocale, localizedPath, type Locale} from './i18n';
+import {useLocale, localizedPath} from './i18n';
 import {RevealFrame} from './motion';
 import {ORIGIN} from './seo/routes';
 import {useHomeCarousel, advanceHomeRail} from './useHomeCarousel';
+import {articles, categories, type Article} from './editorial-data';
+import {ArticleDate, formatEditorialDate} from './EditorialDate';
 import './editorial-reference.css';
 
 const contact = company;
 
-type ArticleSection = { heading: string; paragraphs: string[]; bullets?: string[] };
-type Article = { slug: string; title: string; category: 'Dành cho người lao động' | 'Dành cho doanh nghiệp' | 'Góc nhân sự'; image?: string; date: string; excerpt: string; sections: ArticleSection[] };
-const articles: Article[] = [
-  { slug: 'ho-so-xin-viec', title: 'Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?', category: 'Dành cho người lao động', image: '/assets/minhduc-v16/recruitment-field.webp', date: '12/11/2026', excerpt: 'Một danh sách gọn gàng giúp bạn chuẩn bị hồ sơ và hỏi đúng thông tin trước ngày phỏng vấn.', sections: [
-    { heading: 'Xác nhận yêu cầu của từng vị trí', paragraphs: ['Mỗi nhà máy có thể có quy trình và yêu cầu hồ sơ khác nhau. Trước khi chuẩn bị giấy tờ, hãy hỏi rõ vị trí ứng tuyển, địa điểm tiếp nhận và người phụ trách. Một danh sách được xác nhận giúp bạn tránh đi lại nhiều lần.'] },
-    { heading: 'Sắp xếp thông tin dễ kiểm tra', paragraphs: ['Ghi lại họ tên, số điện thoại, khu vực sinh sống, kinh nghiệm và thời gian có thể bắt đầu làm việc. Nếu chưa có kinh nghiệm, bạn vẫn có thể giới thiệu khả năng học hỏi và điều kiện làm việc mong muốn.'], bullets: ['Thông tin liên hệ còn sử dụng được.', 'Giấy tờ theo danh sách do đơn vị tiếp nhận xác nhận.', 'Bản sao khi được yêu cầu; giữ gìn giấy tờ gốc.', 'Các câu hỏi về công việc, ca làm và điều kiện nhận việc.'] },
-    { heading: 'Bảo vệ thông tin cá nhân', paragraphs: ['Chỉ gửi hồ sơ cho đầu mối đã được xác minh. Không công khai ảnh giấy tờ tùy thân trên mạng xã hội. Khi được yêu cầu cung cấp thêm dữ liệu, hãy hỏi mục đích sử dụng và cách lưu giữ.'] },
-  ] },
-  { slug: 'nhu-cau-tuyen-dung', title: 'Lập kế hoạch bổ sung lao động theo từng đợt sản xuất', category: 'Dành cho doanh nghiệp', image: '/assets/minhduc-working-60s.webp', date: '10/11/2026', excerpt: 'Làm rõ nhu cầu từ đầu giúp các bên phối hợp nhất quán trong quá trình tìm nguồn và tiếp nhận.', sections: [
-    { heading: 'Bắt đầu từ kế hoạch vận hành', paragraphs: ['Doanh nghiệp nên xác định công đoạn cần bổ sung, số lượng dự kiến và thời điểm người lao động cần sẵn sàng làm việc. Nhu cầu càng cụ thể, việc trao đổi với đơn vị hỗ trợ tuyển dụng càng hiệu quả.'] },
-    { heading: 'Thống nhất thông tin trước khi tìm nguồn', paragraphs: ['Một bản mô tả công việc ngắn, dễ hiểu có giá trị hơn các thông tin rời rạc. Nội dung nên được rà soát với bộ phận trực tiếp tiếp nhận.'], bullets: ['Địa điểm và phương án đi lại nếu có.', 'Ca làm, yêu cầu cơ bản và điều kiện làm việc.', 'Thu nhập, cách tính và các khoản cần làm rõ.', 'Đầu mối xác nhận lịch phỏng vấn, nhận việc.'] },
-    { heading: 'Theo dõi và cập nhật theo giai đoạn', paragraphs: ['Đối chiếu số lượng quan tâm, lịch phỏng vấn và số lượng dự kiến tiếp nhận để cập nhật kế hoạch. Khi lịch sản xuất thay đổi, các bên cần thông báo sớm để tránh thông tin không đồng nhất.'] },
-  ] },
-  { slug: 'chon-cong-viec-phu-hop', title: 'Những câu hỏi nên làm rõ trước khi nhận việc', category: 'Dành cho người lao động', image: '/assets/minhduc-v18/field-team.webp', date: '08/11/2026', excerpt: 'Hiểu rõ công việc, thời gian và thu nhập giúp bạn lựa chọn công việc phù hợp hơn.', sections: [
-    { heading: 'Công việc hằng ngày là gì?', paragraphs: ['Hãy hỏi về nhiệm vụ cụ thể, môi trường làm việc, yêu cầu thể lực và hướng dẫn ban đầu. Đừng ngại đề nghị giải thích lại những thuật ngữ chưa quen.'] },
-    { heading: 'Thời gian và thu nhập được tính ra sao?', paragraphs: ['Làm rõ ca làm, ngày nghỉ, chính sách làm thêm và cách xác nhận chấm công. Với thu nhập, cần phân biệt khoản cố định, phụ cấp và khoản phụ thuộc điều kiện.'], bullets: ['Thời điểm trả lương và hình thức nhận lương.', 'Điều kiện áp dụng các khoản phụ cấp.', 'Thông tin hợp đồng và bảo hiểm cần được xác nhận.', 'Đầu mối hỗ trợ khi có thắc mắc.'] },
-    { heading: 'Lưu lại các thông tin đã xác nhận', paragraphs: ['Giữ tin tuyển dụng và nội dung trao đổi cần thiết. Trước khi đi nhận việc, xác nhận địa chỉ, thời gian, giấy tờ cần mang và số điện thoại liên hệ.'] },
-  ] },
-  { slug: 'thong-tin-tuyen-dung-minh-bach', title: 'Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn', category: 'Góc nhân sự', date: '05/11/2026', excerpt: 'Sự nhất quán giữa tin tuyển dụng, tư vấn và thực tế tiếp nhận giúp giảm hiểu nhầm.', sections: [
-    { heading: 'Một nguồn thông tin thống nhất', paragraphs: ['Tin tuyển dụng nên dùng ngôn ngữ dễ hiểu và nêu các điều kiện chính. Khi nhiều đầu mối cùng tham gia, cần thống nhất nội dung được phép chia sẻ và cách cập nhật thay đổi.'] },
-    { heading: 'Trình bày đủ điều kiện', paragraphs: ['Thông tin thu nhập cần đi kèm cách tính hoặc điều kiện áp dụng. Các quyền lợi chưa được xác nhận không nên trình bày như cam kết. Điều này giúp ứng viên cân nhắc cơ hội phù hợp với nhu cầu thực tế.'] },
-    { heading: 'Dành chỗ cho phản hồi', paragraphs: ['Một kênh để ứng viên hỏi lại thông tin giúp đơn vị tuyển dụng nhận ra những điểm chưa rõ. Các câu hỏi thường gặp có thể được bổ sung vào nội dung tuyển dụng ở lần cập nhật tiếp theo.'] },
-  ] },
-  { slug: 'don-tiep-lao-dong-moi', title: 'Chuẩn bị ngày đầu làm việc cho người lao động mới', category: 'Dành cho doanh nghiệp', image: '/assets/minhduc-meeting-10s.webp', date: '02/11/2026', excerpt: 'Từ lịch hẹn đến người hướng dẫn, những chi tiết nhỏ giúp ngày đầu diễn ra thuận lợi.', sections: [
-    { heading: 'Trước ngày tiếp nhận', paragraphs: ['Gửi hướng dẫn dễ đọc về địa chỉ, cổng vào, giờ có mặt và giấy tờ cần mang. Xác nhận một đầu mối có thể liên hệ khi người lao động cần hỗ trợ.'] },
-    { heading: 'Trong ngày đầu tiên', paragraphs: ['Dành thời gian giới thiệu công việc, quy định và các hướng dẫn an toàn cần thiết. Kiểm tra người lao động đã hiểu nội dung thay vì chỉ đưa tài liệu.'], bullets: ['Giới thiệu người quản lý hoặc hướng dẫn trực tiếp.', 'Hướng dẫn khu vực làm việc và sinh hoạt.', 'Làm rõ quy trình chấm công, báo nghỉ và hỏi đáp.', 'Ghi nhận các thắc mắc phát sinh.'] },
-    { heading: 'Sau khi bắt đầu công việc', paragraphs: ['Một lần hỏi thăm ngắn giúp phát hiện khó khăn ban đầu. Thông tin phản hồi có thể hỗ trợ cải thiện quy trình tiếp nhận cho những đợt tiếp theo.'] },
-  ] },
-  { slug: 'an-toan-thong-tin-khi-tim-viec', title: 'Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến', category: 'Góc nhân sự', date: '30/10/2026', excerpt: 'Xác minh nguồn tin, bảo vệ giấy tờ và thận trọng trước những yêu cầu chưa rõ ràng.', sections: [
-    { heading: 'Kiểm tra nguồn tin', paragraphs: ['Đối chiếu tên doanh nghiệp, số liên hệ và địa điểm tuyển dụng. Khi có điều chưa rõ, hãy tìm kênh liên hệ chính thức và hỏi trực tiếp trước khi cung cấp hồ sơ.'] },
-    { heading: 'Chia sẻ vừa đủ thông tin', paragraphs: ['Ở bước tư vấn ban đầu, chỉ chia sẻ thông tin cần cho việc trao đổi công việc. Không gửi mã xác thực, mật khẩu hoặc thông tin tài khoản ngân hàng cho người tuyển dụng.'] },
-    { heading: 'Cẩn trọng với yêu cầu chuyển tiền', paragraphs: ['Nếu có yêu cầu đóng phí hoặc chuyển tiền, hãy làm rõ đơn vị nhận, mục đích, căn cứ và chứng từ. Dừng trao đổi khi gặp dấu hiệu đáng ngờ và xác minh qua một kênh độc lập.'] },
-  ] },
-];
-
-const categories = [
-  ['all', 'Tất cả'], ['workers', 'Dành cho người lao động'],
-  ['employers', 'Dành cho doanh nghiệp'], ['hr', 'Góc nhân sự'],
-] as const;
 const featured = articles.filter(article => ['don-tiep-lao-dong-moi', 'an-toan-thong-tin-khi-tim-viec'].includes(article.slug));
 
-function formatDate(date: string, locale: Locale) {
-  return new Intl.DateTimeFormat(locale === 'vi' ? 'vi-VN' : locale, {
-    day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC',
-  }).format(new Date(date + 'T00:00:00Z'));
-}
-function ArticleDate({date}: {date: string}) {
-  const iso = date.split('/').reverse().join('-');
-  return <time dateTime={iso}>{formatDate(iso, useLocale())}</time>;
-}
 function NotFoundEditorial({event = false}: {event?: boolean}) {
   return <PageMasthead title={event ? 'Không tìm thấy sự kiện' : 'Không tìm thấy bài viết'}>
     <Link className="btn" to={event ? '/events' : '/news'}>{event ? 'Xem tất cả sự kiện' : 'Trở về tất cả bài viết'}</Link>
@@ -98,14 +52,16 @@ function FeaturedNews({archive}: {archive: string}) {
     <div ref={track} className="editorial-feature-track" data-auto-rail role="region" aria-labelledby="featured-news-heading"
       tabIndex={0} onScroll={syncIndex}>
       {featured.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
-        <article className="ed-feature">
-          {article.image ? <div className="ed-feature-media"><img className="ed-feature-image"
-            {...responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 48vw, 612px')} src={article.image}
-            alt="" decoding="async" loading={i === 0 ? 'eager' : 'lazy'}/></div> :
-            <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
-          <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
-            <h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p>
-          </div>
+        <article>
+          <Link className="ed-feature" to={'/news/' + article.slug} state={{archive}} aria-labelledby={'featured-' + article.slug}>
+            {article.image ? <div className="ed-feature-media"><img className="ed-feature-image"
+              {...responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 48vw, 612px')} src={article.image}
+              alt="" decoding="async" loading={i === 0 ? 'eager' : 'lazy'}/></div> :
+              <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
+            <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
+              <h2 id={'featured-' + article.slug}>{article.title}</h2><p>{article.excerpt}</p>
+            </div>
+          </Link>
         </article>
       </div>)}
     </div>
@@ -121,12 +77,14 @@ const photoDescriptions: Record<string, string> = {
 };
 function ArticleRow({article, archive}: {article: Article; archive: string}) {
   return <article className="ed-archive-row info-news-card">
-    {article.image && <RevealFrame effect="media" className="ed-row-photo">
-      <img className={article.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''}
-        {...(responsiveImage(article.image, '(max-width: 700px) 100px, (max-width: 970px) 44vw, (max-width: 1279px) 30vw, 390px') ?? {src:article.image, width:1024, height:576})} alt="" loading="lazy"/>
-    </RevealFrame>}
-    <div className="info-news-meta ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></div>
-    <div className="ed-archive-copy"><h2><Link to={'/news/' + article.slug} state={{archive}}>{article.title}</Link></h2><p>{article.excerpt}</p></div>
+    <Link className="ed-archive-link" to={'/news/' + article.slug} state={{archive}} aria-labelledby={'archive-' + article.slug}>
+      {article.image && <RevealFrame effect="media" className="ed-row-photo">
+        <img className={article.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''}
+          {...(responsiveImage(article.image, '(max-width: 700px) 100px, (max-width: 970px) 44vw, (max-width: 1279px) 30vw, 390px') ?? {src:article.image, width:1024, height:576})} alt="" loading="lazy"/>
+      </RevealFrame>}
+      <div className="info-news-meta ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></div>
+      <div className="ed-archive-copy"><h2 id={'archive-' + article.slug}>{article.title}</h2><p>{article.excerpt}</p></div>
+    </Link>
   </article>;
 }
 export function NewsPage() {
@@ -141,10 +99,11 @@ export function NewsPage() {
     update({page: next === 1 ? null : String(next)});
     resultsHeading.current?.focus();
   }
-  return <div className="ed-pages"><PageMasthead title="Tin tức & cẩm nang"
+  return <div className="ed-pages ed-news"><PageMasthead title="Tin tức & cẩm nang"
     description="Hướng dẫn chuẩn bị hồ sơ, tiếp nhận lao động và lập kế hoạch nhân lực cho nhà máy."
     image={newsCover} imageAlt="Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc">
       <Link className="btn" to={url.split('#')[0] + '#news-listings'}>Danh mục bài viết</Link>
+      <Link className="ed-directory-link" to="/events">Hoạt động của Minh Đức Vina</Link>
     </PageMasthead>
     {page === 1 && featured.length > 0 && <FeaturedNews archive={url}/>}
     <section className="info-news-listing ed-section" aria-labelledby="news-listings"><div className="ed-frame">
@@ -225,8 +184,10 @@ function ArticleReader({article}: {article: Article}) {
         </div>
         <aside className="info-related-news editorial-related-aside ed-related"><h2>Có thể bạn quan tâm</h2>{related.map(item =>
           <article className="editorial-related-item" key={item.slug}>
-            {item.image && <img {...responsiveImage(item.image, '74px')} src={item.image} className={item.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''} alt="" loading="lazy"/>}
-            <h3><Link to={'/news/' + item.slug} state={{archive}}>{item.title}</Link></h3>
+            <Link to={'/news/' + item.slug} state={{archive}}>
+              {item.image && <img {...responsiveImage(item.image, '74px')} src={item.image} className={item.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''} alt="" loading="lazy"/>}
+              <h3>{item.title}</h3>
+            </Link>
           </article>)}</aside>
       </div>
     </article>
@@ -254,14 +215,14 @@ function eventStatus(event: EventData) {
   return event.date >= sampleDate ? 'upcoming' : 'past';
 }
 function SampleDate() {
-  return <p className="ed-note">Mốc đối chiếu lịch mẫu <time dateTime={sampleDate}>{formatDate(sampleDate, useLocale())}</time>. Thời gian và địa điểm chờ Minh Đức xác nhận.</p>;
+  return <p className="ed-note">Mốc đối chiếu lịch mẫu <time dateTime={sampleDate}>{formatEditorialDate(sampleDate, useLocale())}</time>. Thời gian và địa điểm chờ Minh Đức xác nhận.</p>;
 }
 function EventLine({event}: {event: EventData}) {
   const locale = useLocale();
   return <article className="ed-event-line">
     <time className="ed-calendar" dateTime={event.date}>
       <b aria-hidden="true">{event.date.slice(-2)}</b>
-      <span>{formatDate(event.date, locale)}</span>
+      <span>{formatEditorialDate(event.date, locale)}</span>
     </time>
     <div><p className="ed-meta">{event.tag}</p><h3><Link to={'/events/' + event.slug}>{event.title}</Link></h3>
       <p className="ed-event-details"><span>{event.time} UTC+7</span><span>{event.location}</span></p></div>
@@ -272,10 +233,11 @@ export function EventsPage() {
   const {params, update} = useListingQuery();
   const selected = statuses.find(([key]) => key === params.get('status')) ?? statuses[0];
   const filtered = events.filter(event => selected[0] === 'all' || selected[0] === eventStatus(event));
-  return <div className="ed-pages"><PageMasthead title="Hoạt động của Minh Đức Vina"
+  return <div className="ed-pages ed-events"><PageMasthead title="Hoạt động của Minh Đức Vina"
     description="Gặp gỡ người lao động, trao đổi cùng doanh nghiệp và kết nối với cộng đồng."
     image="/assets/minhduc-v16/recruitment-event.webp" imageAlt="Mọi người đứng trên sân khấu trong một hoạt động tuyển dụng">
     <Link className="btn" to="/about-us#activities">Xem ảnh hoạt động Minh Đức</Link>
+    <Link className="ed-directory-link" to="/news">Tin tức & cẩm nang</Link>
   </PageMasthead>
     <section className="ed-section"><div className="ed-frame"><h2>Lịch chương trình minh họa</h2><SampleDate/>
       <div className="info-tabs ed-filters" role="group" aria-label="Lọc sự kiện">{statuses.map(([key, label]) =>
@@ -296,7 +258,7 @@ export function EventPage() {
   </PageMasthead>
     <div className="ed-frame">
       <section aria-labelledby="overview" className="ed-section ed-event-overview"><div><h2 id="overview" tabIndex={-1}>Tổng quan</h2><SampleDate/></div>
-        <dl className="ed-facts"><div><dt>Ngày và giờ Việt Nam</dt><dd><time dateTime={event.date}>{formatDate(event.date, locale)}</time> · {event.time} UTC+7</dd></div>
+        <dl className="ed-facts"><div><dt>Ngày và giờ Việt Nam</dt><dd><time dateTime={event.date}>{formatEditorialDate(event.date, locale)}</time> · {event.time} UTC+7</dd></div>
           <div><dt>Địa điểm</dt><dd>{event.location}</dd></div>
           <div><dt>Trạng thái theo lịch mẫu</dt><dd>{eventStatus(event) === 'upcoming' ? 'Sắp diễn ra' : 'Đã diễn ra'}</dd></div></dl>
       </section>

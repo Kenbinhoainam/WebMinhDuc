@@ -16,11 +16,27 @@ try {
  globalThis.IS_REACT_ACT_ENVIRONMENT=true;
  const root=createRoot(document.getElementById('root'));let consulted=0;
  await act(async()=>root.render(React.createElement(LocaleProvider,{value:'en'},React.createElement(MemoryRouter,null,React.createElement(SupportTools,{onConsultation:()=>consulted++})))));
- const trigger=document.querySelector('.support-launcher');assert.equal(document.querySelectorAll('.support-tools > button').length,1);assert.equal(trigger.getAttribute('aria-label'),'Open support');
- await act(async()=>trigger.click());assert.equal(trigger.getAttribute('aria-expanded'),'true');assert.equal(document.querySelectorAll('.support-panel a').length,3);assert.equal(document.querySelectorAll('.support-panel button').length,2);assert.equal(document.activeElement,document.querySelector('.support-panel a'),'opening places keyboard focus on first action');
+ const trigger=document.querySelector('.support-launcher');assert.equal(document.querySelectorAll('.support-tools > button:not([hidden])').length,1);assert.equal(trigger.getAttribute('aria-label'),'Open support');
+ await act(async()=>trigger.click());assert.equal(trigger.getAttribute('aria-expanded'),'true');assert.equal(document.querySelectorAll('.support-panel a').length,3);assert.equal(document.querySelectorAll('.support-panel button').length,1);assert.equal(document.activeElement,document.querySelector('.support-panel a'),'opening places keyboard focus on first action');
  await act(async()=>{document.querySelector('.support-panel a').focus();document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));});assert.equal(trigger.getAttribute('aria-expanded'),'false');assert.equal(document.activeElement,trigger);
  await act(async()=>trigger.click());await act(async()=>document.getElementById('outside').dispatchEvent(new Event('pointerdown',{bubbles:true})));assert.equal(trigger.getAttribute('aria-expanded'),'false');
  await act(async()=>trigger.click());await act(async()=>document.dispatchEvent(new CustomEvent('header-overlay-open',{detail:{owner:'navigation'}})));assert.equal(trigger.getAttribute('aria-expanded'),'false');
  await act(async()=>trigger.click());await act(async()=>document.querySelector('.support-panel button').click());assert.equal(consulted,1);assert.equal(document.activeElement,trigger);
+ const backToTop=document.querySelector('.scroll-to-top');
+ assert.ok(backToTop.hidden,'hidden at the top');
+ Object.defineProperty(document.documentElement,'scrollHeight',{configurable:true,value:1800});
+ Object.defineProperty(window,'innerHeight',{configurable:true,value:800});
+ const scroll=async y=>{
+   Object.defineProperty(window,'scrollY',{configurable:true,value:y});
+   window.dispatchEvent(new Event('scroll'));
+   await new Promise(resolve=>window.requestAnimationFrame(resolve));
+ };
+ await scroll(500);
+ assert.ok(!backToTop.hidden);assert.equal(backToTop.style.getPropertyValue('--scroll-remaining'),'50');
+ await scroll(1000);assert.equal(backToTop.style.getPropertyValue('--scroll-remaining'),'0','ring closes at the end');
+ let scrollCommand;
+ window.matchMedia=()=>({matches:true});window.scrollTo=options=>{scrollCommand=options;};
+ backToTop.click();assert.deepEqual(scrollCommand,{top:0,behavior:'instant'});
+ await scroll(0);assert.ok(backToTop.hidden);
  await act(async()=>root.unmount());dom.window.close();console.log('PASS support launcher interactions');
 } finally {await rm(temp,{recursive:true,force:true});}

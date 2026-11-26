@@ -36,11 +36,13 @@ try {
  const search = document.querySelector('.jobs-filters');
  assert.equal(search.compareDocumentPosition(document.querySelector('.jobs-result-bar h2')), window.Node.DOCUMENT_POSITION_FOLLOWING);
  await act(() => document.querySelector('.jobs-event-photo img').dispatchEvent(new window.Event('error')));
- assert.equal(document.querySelector('.jobs-event-photo'),null);
+ assert.ok(document.querySelector('.jobs-event-photo img:not([srcset])'),'a failed derivative retries the original');
+ await act(() => document.querySelector('.jobs-event-photo img').dispatchEvent(new window.Event('error')));
+ assert.ok(!document.querySelector('.jobs-event-photo'));
  assert.ok(search.isConnected && document.querySelector('[data-job-link]'),'a missing photograph must preserve search and open jobs');
  await render('/careers',CareersPage);assert.match(document.querySelector('.jobs-grid').textContent,/Chuyên viên tuyển dụng/);assert.doesNotMatch(document.querySelector('.jobs-grid').textContent,/đóng gói thời vụ/i);
  localStorage.setItem('minhduc.saved-jobs.v1',JSON.stringify(['MD006','MD007']));await render('/saved-jobs',SavedJobsPage);assert.equal(document.querySelectorAll('.job-card').length,2);
- await render('/jobs/ky-thuat-bao-tri-bac-ninh',JobDetailPage);assert.match(document.body.textContent,/Vị trí đã đóng/);assert.equal(document.querySelector('.job-apply-button'),null);assert.ok(document.querySelector('.job-description-block'));
+ await render('/jobs/ky-thuat-bao-tri-bac-ninh',JobDetailPage);assert.match(document.body.textContent,/Vị trí đã đóng/);assert.equal(document.querySelector('.job-apply-button,.job-mobile-apply'),null);assert.ok(document.querySelector('.job-description-block'));
  await render('/jobs/chuyen-vien-tuyen-dung-bac-ninh',JobDetailPage);await click(document.querySelector('.job-apply-button'));assert.match(document.querySelector('.application-job').textContent,/MD007/);assert.equal(document.querySelector('[name=position]').required,true);assert.equal(document.querySelector('[name=cv]').required,false);
  await change('[name=email]','missing-domain');
  await submit();
@@ -114,5 +116,39 @@ try {
  await click(document.querySelector('.jobs-back'));
  await act(async()=>{await new Promise(resolve=>requestAnimationFrame(resolve));});
  assert.equal(document.activeElement,document.querySelector('.jobs-empty a'),'last removal on detail returns to the empty-state CTA');
+ // Simulate the available mobile reading area as the inline CTA and footer pass its edges.
+ const desktopMedia = window.matchMedia;
+ window.matchMedia = query => ({...desktopMedia(query), matches:query === '(max-width:767px)'});
+ await render('/jobs/dong-goi-thoi-vu-bac-giang',JobDetailPage);
+ const sticky = document.querySelector('.job-mobile-apply');
+ const inline = document.querySelector('.job-apply-button');
+ const section = document.querySelector('.jobs-detail-section');
+ let actionBottom = 240;
+ let sectionBottom = window.innerHeight + 800;
+ inline.getBoundingClientRect = () => ({bottom:actionBottom});
+ section.getBoundingClientRect = () => ({bottom:sectionBottom});
+ const scroll = () => act(async () => {
+   window.dispatchEvent(new Event('scroll'));
+   await new Promise(resolve => requestAnimationFrame(resolve));
+ });
+ await scroll(); assert.equal(sticky.hidden,true);
+ actionBottom = -1;
+ await scroll(); assert.equal(sticky.hidden,false);
+ const keyboardInput = document.createElement('input');
+ document.body.append(keyboardInput);
+ keyboardInput.focus();
+ await scroll(); assert.equal(sticky.hidden,true);
+ keyboardInput.blur(); keyboardInput.remove();
+ await scroll(); assert.equal(sticky.hidden,false);
+ await click(sticky.querySelector('button'));
+ assert.ok(document.querySelector('.application-form')); assert.equal(sticky.hidden,true);
+ await click(document.querySelector('.modal-heading button'));
+ await scroll(); assert.equal(sticky.hidden,false);
+ assert.equal(document.activeElement,sticky.querySelector('button'));
+ sectionBottom = window.innerHeight - 1;
+ await scroll(); assert.equal(sticky.hidden,true);
+ actionBottom = 80; sectionBottom = window.innerHeight + 800;
+ await scroll(); assert.equal(sticky.hidden,true);
+ window.matchMedia = desktopMedia;
  await act(async()=>root.unmount());dom.window.close();console.log('PASS Sprint 1 filters, audiences, closed vacancy and application flows');
 } finally {await rm(localBundle,{force:true});await rm(bundle,{force:true});}

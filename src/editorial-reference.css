@@ -23,6 +23,7 @@
 .ed-pages .ed-control:hover { background:#e5edf6; }
 .editorial-feature-track { position:relative; display:flex; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; }
 .editorial-feature-slide { flex:0 0 100%; min-width:0; scroll-snap-align:start; }
+.editorial-feature-slide > article { height:100%; }
 .ed-feature {
   display:grid; grid-template-columns:minmax(0,1.04fr) minmax(0,1fr); min-height:100%;
   background:#112f56; color:white; overflow:hidden; border-radius:4px;
@@ -38,11 +39,10 @@
 .ed-feature-copy .ed-meta time { font-variant-numeric:tabular-nums; }
 .ed-feature .ed-feature-copy h2 { font-size:clamp(26px,2.9vw,43px); line-height:1.17; margin:0; }
 .ed-feature-copy p:last-child { margin:18px 0 0; max-width:48ch; color:#e0e9f4; }
-.ed-feature-copy h2 a, .ed-archive-copy h2 a, .ed-related h3 a, .ed-event-line h3 a { color:inherit; text-decoration:none; }
-.ed-feature .ed-feature-copy h2, .ed-feature-copy h2 a:hover { color:#fff; }
-.ed-feature .ed-feature-copy a:focus-visible { outline-color:white; }
-.ed-feature-copy h2 a, .ed-related h3 a { display:inline-flex; align-items:center; min-height:44px; min-width:44px; }
-.ed-feature-copy h2 a:hover, .ed-archive-copy h2 a:hover, .ed-related h3 a:hover, .ed-event-line h3 a:hover { text-decoration:underline; text-underline-offset:.16em; text-decoration-thickness:1px; }
+.ed-feature, .ed-archive-link, .ed-related .editorial-related-item a, .ed-event-line h3 a { color:inherit; text-decoration:none; }
+.ed-feature .ed-feature-copy h2 { color:#fff; }
+.ed-pages .ed-feature:focus-visible { outline-color:white; outline-offset:-5px; }
+.ed-feature:hover h2, .ed-archive-link:hover h2, .ed-related a:hover h3, .ed-event-line h3 a:hover { text-decoration:underline; text-underline-offset:.16em; text-decoration-thickness:1px; }
 .ed-pages .ed-pagination button[aria-current] { background:var(--ed-blue); color:white; border-color:var(--ed-blue); }
 .ed-pages .ed-filters { display:flex; justify-content:flex-start; flex-wrap:wrap; margin:18px 0; gap:6px 24px; }
 .ed-pages .ed-filters button { min-width:44px; min-height:44px; padding:7px 2px; font:700 16px/1.4 var(--font-display, sans-serif); color:var(--ed-muted); background:transparent; border:0; border-radius:0; border-bottom:3px solid transparent; }
@@ -50,9 +50,9 @@
 .ed-pages .ed-result { margin:12px 0 16px; text-align:left; }
 .ed-pages .ed-archive { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr)); gap:clamp(24px,2.5vw,42px); }
 .ed-archive .ed-archive-row {
-  position:relative; display:flex; flex-direction:column; align-items:stretch; min-width:0;
-  gap:0; padding:0 0 22px; border-bottom:1px solid var(--ed-line);
+  min-width:0; padding:0 0 22px; border-bottom:1px solid var(--ed-line);
 }
+.ed-archive-link { display:flex; flex-direction:column; min-height:100%; }
 .ed-archive .ed-archive-row .ed-meta { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin:0 0 10px; font-size:13px; }
 .ed-archive .ed-meta time { font-variant-numeric:tabular-nums; }
 .ed-archive .ed-meta span { color:var(--ed-blue); font-weight:700; }
@@ -62,7 +62,7 @@
 .ed-row-photo img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
 .ed-row-photo .ed-portrait { object-fit:cover; object-position:50% 39%; }
 .ed-archive-row:not(:has(.ed-row-photo)) { border-top:3px solid var(--ed-blue); padding-top:18px; }
-.ed-archive-copy h2 a::after, .ed-event-line h3 a::after { content:''; position:absolute; inset:0; }
+.ed-event-line h3 a::after { content:''; position:absolute; inset:0; }
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
   .ed-row-photo img:not(.ed-portrait) { transition:transform 260ms cubic-bezier(.2,.65,.3,1); }
   .ed-archive-row:hover .ed-row-photo img:not(.ed-portrait) { transform:scale(1.025); }
@@ -98,7 +98,8 @@
 .ed-toc.info-toc a { display:inline-flex; align-items:center; min-height:44px; color:var(--ed-blue); }
 .ed-related { grid-area:related; align-self:start; background:transparent; }
 .ed-related h2 { font-size:22px; margin:0 0 10px; }
-.ed-related .editorial-related-item { display:flex; align-items:center; gap:12px; padding:14px 0; border-block-start:1px solid var(--ed-line); }
+.ed-related .editorial-related-item { padding:14px 0; border-block-start:1px solid var(--ed-line); }
+.ed-related .editorial-related-item a { display:flex; align-items:center; gap:12px; min-height:44px; }
 .ed-related img { flex:none; width:74px; height:56px; object-fit:cover; border-radius:3px; }
 .ed-related img.ed-portrait { width:54px; height:72px; object-fit:contain; }
 .ed-related h3 { margin:0; line-height:1.35; font-size:18px; }
@@ -149,7 +150,7 @@
   .ed-feature-checklist { aspect-ratio:16/9; height:auto; min-height:140px; }
   .ed-section { padding-block:44px; }
   .ed-pages .ed-archive { grid-template-columns:minmax(0,1fr); gap:20px; }
-  .ed-archive .ed-archive-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 12px; }
+  .ed-archive .ed-archive-link { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 12px; }
   .ed-archive .ed-archive-row .ed-meta { grid-column:1/-1; grid-row:1; margin:0 0 8px; }
   .ed-archive-row .ed-archive-copy { grid-column:1/-1; grid-row:2; }
   .ed-archive-row:has(.ed-row-photo) .ed-archive-copy { grid-column:1; }
@@ -176,3 +177,29 @@
 .info-policy :is(h1,h2) { font-family:var(--font-display, sans-serif); }
 .info-policy>h1 { border-bottom:1px solid #becddd; padding-bottom:20px; margin-bottom:30px; }
 .info-policy-body { max-width:72ch; }
+
+/* Keep the same editorial divisions across the News and Activities indexes. */
+.ed-directory-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ed-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.ed-news .ed-feature-band {
+  background: #f1f5f8;
+  border-block: 1px solid var(--ed-line);
+}
+
+.ed-news .ed-section > .ed-frame > h2,
+.ed-events .ed-section > .ed-frame > h2 {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ed-line);
+  color: var(--ed-ink);
+}
+
+.ed-news .ed-filters,
+.ed-events .ed-filters { border-bottom: 1px solid var(--ed-line); }

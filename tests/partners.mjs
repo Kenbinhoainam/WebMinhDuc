@@ -44,7 +44,7 @@ try {
  assert.equal(rail.querySelectorAll('ul:not([aria-hidden]) li').length,5);
  assert.deepEqual([...set.children].map(li=>li.textContent),['Luxshare ICT','FOXCONN','SAMSUNG','JEILTECH VINA','TACU']);
  assert.equal(rail.querySelector('button'),null);
- assert.equal(set.querySelectorAll('img').length,3);
+ assert.equal(set.querySelectorAll('img').length,5);
  for(const image of set.querySelectorAll('img')) {
   assert.equal(image.alt,'');
   const src=image.getAttribute('src');
@@ -65,6 +65,15 @@ try {
  rail.dispatchEvent(new Event('pointerleave'));assert.equal(frames.size,1);
  rail.dispatchEvent(new Event('pointerdown'));assert.equal(frames.size,0);
  window.dispatchEvent(new Event('pointerup'));assert.equal(frames.size,1);
+ const pointer=(type,x,id=7)=>Object.assign(new Event(type,{bubbles:true}),{pointerId:id,clientX:x,button:0,isPrimary:true});
+ rail.scrollLeft=10;
+ rail.dispatchEvent(pointer('pointerdown',20));
+ rail.dispatchEvent(pointer('pointermove',50));
+ assert.equal(rail.scrollLeft,940,'drag right crosses the beginning');
+ rail.dispatchEvent(pointer('pointermove',-20));
+ assert.equal(rail.scrollLeft,50,'drag left crosses the end');
+ window.dispatchEvent(pointer('pointerup',-20));
+ assert.equal(rail.dataset.dragging,undefined);
  rail.scrollLeft=954;advance(16);for(let i=0;i<72;i++)advance(32);
  assert.ok(rail.scrollLeft<50,'rotation wraps within the identical copy with no reverse traversal');
  await act(()=>document.getElementById('root').setAttribute('inert',''));assert.equal(frames.size,0);

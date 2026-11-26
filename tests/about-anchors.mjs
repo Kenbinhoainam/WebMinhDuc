@@ -25,7 +25,7 @@ try {
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.deepEqual([...doc.querySelectorAll('.about-chapters a')].map(a=>a.hash),['#profile','#history','#partners','#activities','#achievements']);
   assert.ok(doc.querySelector('.md-masthead-figure img[src^="/assets/minhduc-v18/about-team"]'),'masthead uses the genuine team photo');
-  assert.ok(doc.querySelector(`.md-masthead-actions a[href="${base}/about-us#business-contact"]`),'staffing CTA reaches the form on this page');
+  assert.ok(doc.querySelector(`.about-profile-actions a[href="${base}/about-us#business-contact"]`),'staffing CTA reaches the form on this page');
   assert.equal(doc.querySelectorAll('#activities img[src^="/assets/minhduc-v16/"]').length,4);
   assert.ok([...doc.querySelectorAll('#history [role=tab]')].every(tab=>tab.textContent.trim() && !/^\d+$/.test(tab.textContent.trim())),'phases have readable names');
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
@@ -35,17 +35,14 @@ try {
   assert.match(teamPhoto.getAttribute('srcset'), /480w.*960w.*1600w/,'documentary role image serves phone and desktop variants');
   assert.equal(doc.querySelectorAll('.info-team-grid button').length,4,'four accessible role details');
   assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>img.getAttribute('src').startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
-  const labels=[...doc.querySelectorAll('#profile .field-cover .field-stat > span')].map(node=>node.textContent.trim());
+  const labels=[...doc.querySelectorAll('#profile .about-scope-item > span')].map(node=>node.textContent.trim());
   assert.equal(labels.length,4);if(locale==='vi')vietnameseLabels=labels;else assert.ok(labels.every((label,index)=>label!==vietnameseLabels[index]),`${locale}: all scope labels translated`);
-  const cover=doc.querySelector('#profile .field-cover');
-  assert.ok(cover.querySelector('h2#about-profile-title') && cover.querySelector('.field-metrics[role=group][aria-label]'));
-  assert.deepEqual([...cover.querySelectorAll('.field-stat strong')].map(node=>node.textContent),['05','03','B2B','FDI']);
-  assert.equal(doc.querySelectorAll('.about-profile .field-metrics').length,1);
-  assert.equal(doc.querySelector('.info-about-statistics'),null,'scope facts appear only inside the cover');
-  assert.notEqual(cover.querySelector('img').getAttribute('src'),doc.querySelector('.md-page-masthead img').getAttribute('src'),'cover and masthead have distinct subjects');
-  assert.equal(cover.querySelector('.field-cta').getAttribute('href'),base+'/services','profile leads to localized services');
-  assert.ok(doc.querySelector(`.md-masthead-actions a[href="${base}/about-us#profile"]`),'masthead links directly to the profile chapter');
-  assert.ok(doc.querySelector('#profile .field-cover + .info-about-values'),'three value statements directly follow the cover');
+  const profile=doc.getElementById('profile');
+  assert.ok(profile.querySelector('h2#about-profile-title') && profile.querySelector('.about-scope[role=group][aria-label]'));
+  assert.deepEqual([...profile.querySelectorAll('.about-scope-item strong')].map(node=>node.textContent),['05','03','B2B','FDI']);
+  assert.ok(profile.querySelector(`a[href="${base}/services"]`),'profile leads to localized services');
+  assert.ok(doc.querySelector(`.about-chapters a[href="${base}/about-us#profile"]`),'chapter navigation points to the profile');
+  assert.ok(profile.querySelector('.about-profile-intro + .info-about-values + .about-scope'),'intro, values and operational figures follow the source order');
   assert.ok(doc.querySelector(`#partners a[href="${base}/partners"]`),'existing partners page remains accessible');
   for(const id of ids.filter(id=>id!=='business-contact'))assert.doesNotMatch(doc.getElementById(id).textContent,/mô phỏng|nhân vật giả định|giải thưởng đã được xác nhận/i,`${locale}: no repeated demo disclaimer`);
   assert.equal(languageSwitchUrl(`${base}/about-us`,'?source=menu','#partners','ja'),'/ja/about-us?source=menu#partners');
@@ -80,10 +77,10 @@ try {
   const typeValue=(name,value)=>{
    const input=formSection.querySelector(`[name="${name}"]`);input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}));
   };
-  const primary=document.querySelector('.md-masthead-actions a[href$="#business-contact"]');
+  const primary=document.querySelector('.about-profile-actions a[href$="#business-contact"]');
   await chooseF02();await act(()=>typeValue('name','Draft before staffing CTA'));
   await act(()=>primary.click());await tick();
-  assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true','masthead intentionally starts F01 after F02');
+  assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true','profile CTA intentionally starts F01 after F02');
   assert.equal(formSection.querySelector('[name=name]').value,'','new F01 starts blank');
   assert.equal(document.activeElement,formSection.querySelector('h2'),'form heading keeps focus across form restart');
   await chooseF02();assert.equal(formSection.querySelector('[name=name]').value,'Draft before staffing CTA','an intentionally fresh F01 leaves the separate F02 draft intact');

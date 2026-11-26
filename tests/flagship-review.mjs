@@ -102,8 +102,8 @@ try {
  const rules=postcss.parse(css);let mobileMenu=false,desktopNavigation=false,desktopMenuHidden=false,compactHeight=false;
  rules.walkDecls('scroll-padding-top',decl=>assert.notEqual(decl.value,'145px','obsolete two-row offset must not survive'));
  rules.walkRules(rule=>{
-  if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='5rem')compactHeight=true});
-  if(rule.selectors.includes('.site-header .menu-button')&&rule.parent.type!=='atrule')rule.walkDecls('display',decl=>{if(decl.value==='flex')mobileMenu=true});
+  if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='80px')compactHeight=true});
+  if(rule.selectors.some(selector=>selector.includes('.menu-button')&&selector.startsWith('.site-header :is('))&&rule.parent.type!=='atrule')rule.walkDecls('display',decl=>{if(decl.value==='flex')mobileMenu=true});
  });
  rules.walkAtRules('media',media=>{if(/min-width:\s*1280px/.test(media.params))media.walkRules(rule=>{
   if(rule.selectors.includes('.desktop-nav'))rule.walkDecls('display',decl=>{if(decl.value==='block')desktopNavigation=true});

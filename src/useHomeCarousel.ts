@@ -7,7 +7,7 @@ export function useHomeCarousel(
   container: RefObject<HTMLElement | null>,
   advance: Advance,
   interactionSelector = '[data-auto-rail]',
-  {intervalMs = 6000, disabled = false}: {intervalMs?: number; disabled?: boolean} = {},
+  {intervalMs = 6000, disabled = false, paused = false}: {intervalMs?: number; disabled?: boolean; paused?: boolean} = {},
 ) {
   const advanceRef = useRef(advance);
   advanceRef.current = advance;
@@ -35,7 +35,7 @@ export function useHomeCarousel(
     }
     function schedule() {
       stop();
-      if (!alive || !visible || pressed || focused || hovered.size || document.hidden || motion.matches || root?.hasAttribute('inert')) return;
+      if (paused || !alive || !visible || pressed || focused || hovered.size || document.hidden || motion.matches || root?.hasAttribute('inert')) return;
       timer = window.setInterval(() => {
         if (!alive) return;
         cancelSlide?.();
@@ -117,7 +117,7 @@ export function useHomeCarousel(
       document.removeEventListener('visibilitychange', schedule);
       motion.removeEventListener('change', schedule);
     };
-  }, [container, interactionSelector, intervalMs, disabled]);
+  }, [container, interactionSelector, intervalMs, disabled, paused]);
 }
 
 /** Static rows need neither an extra tab stop nor an autoplay timer. */
@@ -143,7 +143,7 @@ export function useScrollableRail(rail: RefObject<HTMLElement | null>) {
   return overflow;
 }
 
-function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
+export function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
   const start = rail.scrollLeft;
   const max = rail.scrollWidth - rail.clientWidth;
   const cards = Array.from(rail.children) as HTMLElement[];

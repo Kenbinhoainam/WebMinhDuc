@@ -138,3 +138,6 @@
   .career-gallery { --career-photo-height: clamp(116px, calc((100vw - 68px) / 2.15), 210px); }
   .career-track > * { flex-basis: 84%; }
 }
+
+#career-contact { display:flex; flex-wrap:wrap; align-items:center; gap:4px 20px; }
+#career-contact > a { display:inline-flex; align-items:center; min-height:44px; color:#20478f; font-weight:700; }

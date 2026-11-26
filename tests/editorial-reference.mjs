@@ -61,6 +61,18 @@ try {
   assert.ok(prerender('/news/absent').querySelector('a[href="/news"]'));
   assert.equal(prerender('/news?category=bad&page=25').querySelectorAll('.ed-archive-row').length,3);
   assert.equal(prerender('/news?page=-5').querySelectorAll('.editorial-feature-slide').length,2);
+  const news = prerender('/news');
+  const clickableCards = [...news.querySelectorAll('.editorial-feature-slide article, .ed-archive-row'),
+    ...prerender('/news/ho-so-xin-viec').querySelectorAll('.editorial-related-item')];
+  for (const card of clickableCards) {
+    const links = card.querySelectorAll('a[href^="/news/"]');
+    assert.equal(links.length,1,'each story exposes one focusable link');
+    const link = links[0];
+    assert.ok(link.contains(card.querySelector('h2,h3')),'headline sits inside the article link');
+    const photo = card.querySelector('img');
+    if (photo) assert.equal(photo.closest('a'),link,'thumbnail opens the same article as its headline');
+  }
+
   for (const category of ['workers','employers','hr']) assert.equal(prerender('/news?category=' + category).querySelectorAll('.ed-archive-row').length,2);
 
   const dom = new JSDOM('<div id="root"></div>',{url:'https://example.com/news',pretendToBeVisual:true});
@@ -87,7 +99,7 @@ try {
   assert.equal(slides[0].querySelector('img').getAttribute('loading'),'eager');
   assert.ok(slides[1].querySelector('.ed-feature-checklist'));
   const archiveHrefs = [...document.querySelectorAll('.ed-archive a')].map(a => a.getAttribute('href'));
-  assert.ok(slides.every(slide => !archiveHrefs.includes(slide.querySelector('h2 a').getAttribute('href'))));
+  assert.ok(slides.every(slide => !archiveHrefs.includes(slide.querySelector('a.ed-feature').getAttribute('href'))));
   slides.forEach((slide,i) => Object.defineProperty(slide,'offsetLeft',{value:80 + i * 400}));
   await act(() => observer([{isIntersecting:true}]));
   assert.equal(typeof timer,'function');
@@ -124,7 +136,7 @@ try {
   await click(filter);
   assert.equal(location.search,'?category=employers');
   assert.equal(document.querySelectorAll('.ed-archive-row').length,2);
-  await click(document.querySelector('.ed-archive a'));
+  await click(document.querySelector('.ed-archive a img'));
   Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async() => {throw new dom.window.DOMException('Denied','NotAllowedError');}}});
   const copy = document.querySelector('.ed-share button');
   await click(copy);
@@ -134,7 +146,7 @@ try {
   await click(document.querySelector('.ed-actions a:not(.btn)'));
   assert.equal(location.search,'?category=employers');
   for (const [from, start] of [
-    ['/news?category=workers#news-listings','.editorial-feature-slide:not([inert]) h2 a'],
+    ['/news?category=workers#news-listings','.editorial-feature-slide:not([inert]) a.ed-feature'],
     ['/news?page=2#news-listings','.ed-archive a'],
   ]) {
     await act(() => navigate(from));

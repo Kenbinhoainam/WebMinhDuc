@@ -10,31 +10,28 @@ import {useHomeCarousel, advanceHomeRail} from '../../useHomeCarousel';
 import {subnavigation} from '../../navigation';
 import PartnersStrip from '../../PartnersStrip';
 import {campusAlt, consultingTopics, industrialCampus, services, type Service} from './data';
-import {ServiceCards, InfoContact, FAQ} from './components';
+import {ServiceCards} from '../../ServiceShowcase';
+import {InfoContact, FAQ} from './components';
 import './services-reference.css';
 
 export function ServicesPage() {
   const openContact = useContact();
   return <>
-    <div className="service-index-masthead">
-      <PageMasthead eyebrow="Dịch vụ" title="Giải pháp nhân lực cho nhà máy và doanh nghiệp" description="Từ tuyển người theo ca đến tổ chức lại quy trình, chọn dịch vụ theo công việc bạn đang cần giải quyết." image={industrialCampus} imageAlt={campusAlt} imageCaption={campusAlt}>
+    <PageMasthead variant="photo" title="Giải pháp nhân sự" image={industrialCampus} imageAlt={campusAlt} imageCaption={campusAlt}/>
+    <section className="section container service-directory" aria-labelledby="service-directory-heading">
+      <RevealFrame effect="left">
+        <h2 id="service-directory-heading">Giải pháp nhân lực cho nhà máy và doanh nghiệp</h2>
+        <p>Từ tuyển người theo ca đến tổ chức lại quy trình, chọn dịch vụ theo công việc bạn đang cần giải quyết.</p>
         <div className="service-index-actions">
           <button className="btn" type="button" onClick={() => openContact(services[0].title)}>Gửi nhu cầu nhân lực</button>
           <Link className="service-inline-link" to="/jobs">Tôi đang tìm việc</Link>
         </div>
-        <section className="service-directory" aria-labelledby="service-directory-heading">
-          <h2 id="service-directory-heading">Bạn cần giải quyết việc gì?</h2>
-          <nav aria-labelledby="service-directory-heading"><ul>{services.map(service =>
-            <li key={service.slug}>
-              <Link to={`/services/${service.slug}`}>
-                <strong>{service.need}</strong>
-                <span>{service.title}</span>
-                <ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/>
-              </Link>
-            </li>)}</ul></nav>
-        </section>
-      </PageMasthead>
-    </div>
+      </RevealFrame>
+      <nav aria-label="Danh sách giải pháp"><ul>{services.map(service =>
+        <li key={service.slug}><Link to={`/services/${service.slug}`}>
+          <strong>{service.need}</strong><span>{service.title}</span><ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/>
+        </Link></li>)}</ul></nav>
+    </section>
     <section className="md-ref-service-metrics"><div className="container">
       <p>Số liệu mô phỏng cho giao diện</p>
       <div>{[['1.200+','Kết nối việc làm'],['80+','Nhu cầu doanh nghiệp'],['15+','Khu vực kết nối']].map(([value,label], i) =>
@@ -82,7 +79,7 @@ function ServiceDecision({service}: {service: Service}) {
   const slug = service.slug;
   if (slug === 'labor-supply') {
     return <section className="section container service-decision md-ref-service-highlights service-planning" data-service-layout="labor-supply">
-      <div className="service-decision-copy"><h2>Kế hoạch bổ sung theo đợt</h2><p>{service.intro}</p>
+      <div className="service-decision-copy"><h2>Kế hoạch bổ sung theo đợt</h2>
         <div className="service-table-scroll" tabIndex={0} role="region" aria-label="Ví dụ kế hoạch tiếp nhận">
           <table><caption>Ví dụ kế hoạch tiếp nhận</caption><thead><tr>{['Đợt','Địa điểm','Ca làm việc','Số lượng','Ngày cần người'].map(label=><th scope="col" key={label}>{label}</th>)}</tr></thead>
             <tbody><tr><th scope="row">A</th><td>Bắc Ninh</td><td>Ngày</td><td>12</td><td>02/03</td></tr><tr><th scope="row">B</th><td>Bắc Ninh</td><td>Đêm</td><td>8</td><td>09/03</td></tr></tbody>
@@ -100,7 +97,7 @@ function ServiceDecision({service}: {service: Service}) {
       ['Điều kiện triển khai','Các bên cần xác minh ngành nghề, điều kiện pháp lý và trách nhiệm trước khi ký kết.'],
     ];
     return <section className="section container service-decision md-ref-service-highlights service-responsibilities" data-service-layout="labor-leasing">
-      <div><h2>Thống nhất trách nhiệm trước khi triển khai</h2><p>{service.intro}</p></div>
+      <div><h2>Thống nhất trách nhiệm trước khi triển khai</h2></div>
       <dl>{responsibilities.map(([term,description])=><div key={term}><dt>{term}</dt><dd>{description}</dd></div>)}</dl>
     </section>;
   }
@@ -150,13 +147,18 @@ export function ServicePage() {
   const education = slug === 'college-admissions';
   const consulting = slug === 'hr-consulting';
   return <div className="service-detail" key={service.slug}>
-    <PageMasthead eyebrow="Dịch vụ" title={service.title} description={service.prompt} image={service.image} imageAlt={service.alt} imageCaption={slug === 'labor-supply' ? undefined : service.alt}>
+    <PageMasthead variant="photo" title={service.title} image={service.image} imageAlt={service.alt}
+      imageCaption={service.image===industrialCampus || education ? service.alt : undefined}/>
+    <section className="section container service-overview">
+      <RevealFrame effect="left"><h2>{service.prompt}</h2></RevealFrame>
+      <div><p>{service.intro}</p><div className="service-overview-actions">
       {education ? <><Link className="btn" to="/education?form=F05#dang-ky">Tư vấn tuyển sinh</Link><Link className="service-inline-link" to="/education?form=F06#dang-ky">Nộp hồ sơ tuyển sinh</Link></> :
         <button className="btn" type="button" onClick={()=>openContact(service.title)}>Gửi nhu cầu nhân lực</button>}
       {slug === 'labor-supply' && <Link className="service-inline-link" to={subnavigation['/jobs'][0][0]}>Xem việc phổ thông</Link>}
       {slug === 'recruitment' && <Link className="service-inline-link" to={subnavigation['/jobs'][1][0]}>Xem việc tay nghề</Link>}
-    </PageMasthead>
-    {consulting ? <section className="section container service-workflow"><h2>Quy trình cần rà soát</h2><p>{service.intro}</p>
+      </div></div>
+    </section>
+    {consulting ? <section className="section container service-workflow"><h2>Quy trình cần rà soát</h2>
       <ol>{['Tiếp nhận nhu cầu','Phân công','Theo dõi phản hồi'].map(step=><li key={step}>{step}</li>)}</ol>
     </section> : <ServiceDecision service={service}/>}
     <section className="service-process"><div className="container"><h2>Quy trình phối hợp</h2>

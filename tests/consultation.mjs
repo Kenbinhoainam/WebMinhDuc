@@ -94,31 +94,63 @@ try {
 
   await render(ContactPage,'/contact#consultation');
   assert.equal(document.querySelectorAll('h1').length,1);
-  assert.equal(get('.form-mode button:last-child').getAttribute('aria-pressed'),'true');
-  assert.ok(get('#consultation').compareDocumentPosition(get('.contact-reference-info')) & Node.DOCUMENT_POSITION_FOLLOWING,'mobile reads form before other channels');
-  const appointmentLink = get('.contact-method[href="/consultation"]');
-  const teamPhoto = get('.contact-team img');
-  assert.ok(appointmentLink.compareDocumentPosition(teamPhoto) & Node.DOCUMENT_POSITION_FOLLOWING,'channels precede the documentary photo');
-  await act(() => teamPhoto.dispatchEvent(new Event('error')));
-  assert.equal(document.querySelector('.contact-team'),null,'a failed image leaves no empty portrait or caption');
-  assert.ok(appointmentLink.isConnected && get('.contact-hotline').href.startsWith('tel:'));
+  assert.equal(get('[data-contact-mode="F02"]').getAttribute('aria-pressed'),'true');
+  assert.equal(get('.form-mode button:first-child').dataset.contactMode,'F02','general contact is the primary tab');
+  assert.ok(get('.contact-reference-info').compareDocumentPosition(get('#consultation')) & Node.DOCUMENT_POSITION_FOLLOWING,'mobile reads contact details before the form');
+  assert.ok(get('#consultation').compareDocumentPosition(get('#contact-map')) & Node.DOCUMENT_POSITION_FOLLOWING,'mobile reaches the map after the form');
+  assert.ok(get('.contact-social-links a[href="/consultation"]') && get('.contact-hotline').href.startsWith('tel:'));
+  assert.equal(document.querySelectorAll('.contact-office-actions a[href^="https://maps.app.goo.gl/"]').length,3,'all supplied directions are available without the embed');
+  assert.match(get('.contact-map iframe').src,/cid=10667900336702973064/);
+  await click('.contact-map-tabs button:nth-child(2)');
+  assert.match(get('.contact-map iframe').src,/cid=16104762975771422561/);
+  assert.match(get('.contact-map-caption a').href,/2hj5gqjuaLS4t6hk8/);
+  assert.ok(get('.contact-map-fallback').textContent.includes('Google Maps'),'fallback instructions are always visible because cross-origin iframe failures are not observable');
+  assert.ok(get('.contact-map-caption a').href.includes('2hj5gqjuaLS4t6hk8'),'directions are available independently of the iframe');
+  await click('.contact-office:nth-child(3) a[href="#contact-map"]');
+  assert.match(get('.contact-map iframe').src,/cid=1203083160994188547/,'choosing another office loads the correct map');
+  assert.equal(get('.contact-map-tabs button:nth-child(3)').getAttribute('aria-pressed'),'true');
+  await submit();
+  await waitForFocus();
+  assert.equal(document.activeElement,get('[name=name]'),'general validation focuses the first invalid field');
+  assert.equal(document.querySelectorAll('[aria-invalid=true]').length,2,'general contact requires name and phone only');
   await write('[name=message]','Nháp liên hệ');
-  await click('.form-mode button:first-child');
+  await click('[data-contact-mode="F01"]');
   await waitForFocus();
   assert.equal(document.activeElement,get('#contact-form-heading'));
   assert.ok(get('[name=location]').required);
   await write('[name=location]','Bắc Ninh');
-  await click('.form-mode button:last-child');
+  await click('[data-contact-mode="F02"]');
   assert.equal(get('[name=message]').value,'Nháp liên hệ');
   assert.equal(document.querySelector('[name=location]'),null);
-  await click('.form-mode button:first-child');
+  await click('[data-contact-mode="F01"]');
   assert.equal(get('[name=location]').value,'Bắc Ninh');
   assert.equal(document.querySelectorAll('.contact-office').length,3);
-  for (const id of ['consultation', 'contact-offices']) {
+  for (const id of ['consultation', 'contact-offices','contact-map']) {
     const target = get('#' + id);
     assert.equal(target.tabIndex,-1);
     assert.ok(document.getElementById(target.getAttribute('aria-labelledby')));
   }
+
+  await render(ContactPage,'/contact?form=F01#consultation');
+  assert.equal(get('[data-contact-mode="F01"]').getAttribute('aria-pressed'),'true','enterprise deep link opens F01');
+  assert.ok(get('[name=location]').required && get('[name=notes]').required);
+  await write('[name=name]','Doanh nghiệp mẫu');
+  await write('[name=phone]','0912345678');
+  await write('[name=location]','Bắc Ninh');
+  await write('[name=notes]','Cần tư vấn tuyển dụng');
+  await submit(2);
+  assert.equal(getDemoSubmissions().length,2,'repeated enterprise submit creates one record');
+  assert.equal(getDemoSubmissions().at(-1).type,'F01');
+  assert.equal(document.activeElement,get('.form-success h3'));
+
+  await render(ContactPage,'/contact?form=F02');
+  await write('[name=name]','Người hỏi mẫu');
+  await write('[name=phone]','0912345678');
+  await submit(2);
+  assert.equal(getDemoSubmissions().length,3,'general submit with optional fields empty creates one record');
+  assert.equal(getDemoSubmissions().at(-1).type,'F02');
+  assert.equal(getDemoSubmissions().at(-1).fields.email,'');
+  assert.equal(getDemoSubmissions().at(-1).fields.message,'');
 
   const renderEmbedded = entryKey => act(() => root.render(React.createElement(MemoryRouter,{key:'embedded'},
     React.createElement(ContactForm,{initialService:'Cho thuê lao động', businessEntryKey:entryKey}))));
@@ -140,7 +172,7 @@ try {
   assert.equal(requests,0);
   await act(() => root.unmount());
   dom.window.close();
-  console.log('PASS contact entry points, separate drafts, local date rollover, locked F02, focus and single local receipt');
+  console.log('PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts');
 } finally {
   globalThis.Date = originalDate;
   globalThis.fetch = originalFetch;

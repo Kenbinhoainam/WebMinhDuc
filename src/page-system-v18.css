@@ -1,7 +1,7 @@
 /* A readable editorial scale for the six v18 page families, independent of viewport-rem legacy rules. */
 html:has(.md-page-masthead,.ed-reader){font-size:16px}
 body:has(.md-page-masthead,.ed-reader){font-size:16px;line-height:1.65}
-.md-page-masthead{position:relative;padding:128px 0 64px;background:#f3f7fc;color:#193961;isolation:isolate;border-bottom:1px solid #dce6f1}
+.md-page-masthead{position:relative;padding:40px 0 64px;background:#f3f7fc;color:#193961;isolation:isolate;border-bottom:1px solid #dce6f1}
 .md-page-masthead .md-masthead-shell{width:min(1240px,calc(100% - 64px));max-width:none;padding:0}
 .md-masthead-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:32px;font-size:14px;line-height:1.5;color:#4a6078}
 .md-masthead-breadcrumb a{display:inline-flex;align-items:center;min-height:44px;color:#20478f;text-decoration:underline;text-underline-offset:4px}
@@ -19,7 +19,7 @@ body:has(.md-page-masthead,.ed-reader){font-size:16px;line-height:1.65}
 .md-masthead-figure>img{width:100%;height:auto;max-height:480px;object-fit:contain;border-radius:4px}
 .md-masthead-figure figcaption{font-size:14px;line-height:1.55;color:#4a6078;margin-top:12px}
 @media(max-width:767px){
- .md-page-masthead{padding:96px 0 36px}
+ .md-page-masthead{padding:24px 0 36px}
  .md-page-masthead .md-masthead-shell{width:calc(100% - 40px)}
  .md-masthead-breadcrumb{margin-bottom:20px;font-size:14px}
  .md-masthead-grid{grid-template-columns:minmax(0,1fr);gap:28px}

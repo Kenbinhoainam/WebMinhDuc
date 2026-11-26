@@ -21,7 +21,9 @@
 .home-hero .hero-actions .btn-secondary{color:#20478f;border-color:#20478f;background:#ffffffc9}
 .home-hero .hero-actions .btn-secondary:hover{color:white;border-color:#20478f;background:#20478f}
 .home-hero .hero-semantic-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.home-hero .hero-player-tools{position:absolute;left:max(24px,env(safe-area-inset-left));bottom:20px;z-index:2;display:flex;align-items:center;gap:8px}
+.home-hero .hero-player-tools{position:absolute;right:max(24px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:2;display:flex;align-items:center;gap:8px}
+/* Leave a lane for the 48px fixed support launcher where the player meets the viewport edge. */
+body:has(.support-launcher) .home-hero .hero-player-tools{right:calc(max(16px,env(safe-area-inset-right)) + 56px)}
 .home-hero .hero-player-tools button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;border:1px solid #ffffff70;border-radius:999px;background:#152b49e6;color:#fff;padding:10px 14px;font-size:14px;cursor:pointer}
 .home-hero .video-sound{padding:10px!important}
 .home-hero .video-control span{position:absolute;overflow:hidden;width:1px;height:1px;clip-path:inset(50%);white-space:nowrap}
@@ -45,7 +47,7 @@
  .home-hero .hero-finish-message{font-size:16px}
  .home-hero .hero-actions{width:min(100%,370px);gap:10px;margin-top:6px}
  .home-hero .hero-actions .btn{width:100%;font-size:14px;min-height:50px;padding:13px 16px}
- .home-hero .hero-player-tools{bottom:12px;left:max(12px,env(safe-area-inset-left))}
+ .home-hero .hero-player-tools{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
  .home-hero .hero-brand-finish.is-visible::before{background-image:url('/assets/minhduc-v16/flagship-atrium-960.webp')}
 }
 @media(forced-colors:active){.home-hero .hero-brand-finish,.home-hero .hero-end-card{background:Canvas;color:CanvasText}.home-hero .hero-player-tools button{background:Canvas;color:CanvasText;border-color:CanvasText}}

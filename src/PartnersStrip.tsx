@@ -68,8 +68,30 @@ export default function PartnersStrip() {
     const preferences = () => {setStaticList(motion.matches); update();};
     const enter = (event: PointerEvent) => {if (event.pointerType !== 'touch') {hovered = true; update();}};
     const leave = () => {hovered = false; update();};
-    const down = () => {held = true; pointerFocusUntil = Infinity; update();};
-    const release = () => {if (held) {held = false; pointerFocusUntil = releaseAt = performance.now() + 450; update();}};
+    let drag: {id: number; x: number; start: number} | undefined;
+    const down = (event: PointerEvent) => {
+      if (motion.matches || event.isPrimary === false || event.button > 0) return;
+      held = true;
+      pointerFocusUntil = Infinity;
+      measure();
+      drag = {id: event.pointerId, x: event.clientX, start: rail.scrollLeft};
+      rail.setPointerCapture?.(event.pointerId);
+      update();
+    };
+    const move = (event: PointerEvent) => {
+      if (!drag || drag.id !== event.pointerId || !cycle) return;
+      const distance = drag.x - event.clientX;
+      if (Math.abs(distance) > 3) rail.dataset.dragging = 'true';
+      rail.scrollLeft = ((drag.start + distance) % cycle + cycle) % cycle;
+    };
+    const release = (event: PointerEvent) => {
+      if (!drag || drag.id !== event.pointerId) return;
+      drag = undefined;
+      delete rail.dataset.dragging;
+      held = false;
+      pointerFocusUntil = releaseAt = performance.now() + 450;
+      update();
+    };
     const focusIn = () => {focused = performance.now() >= pointerFocusUntil; update();};
     const focusOut = () => {focused = false; update();};
     const keyDown = () => {focused = true; update();};
@@ -81,6 +103,8 @@ export default function PartnersStrip() {
     rail.addEventListener('pointerenter', enter);
     rail.addEventListener('pointerleave', leave);
     rail.addEventListener('pointerdown', down);
+    rail.addEventListener('pointermove', move);
+    rail.addEventListener('lostpointercapture', release);
     window.addEventListener('pointerup', release);
     window.addEventListener('pointercancel', release);
     rail.addEventListener('focusin', focusIn);
@@ -99,6 +123,8 @@ export default function PartnersStrip() {
       rail.removeEventListener('pointerenter', enter);
       rail.removeEventListener('pointerleave', leave);
       rail.removeEventListener('pointerdown', down);
+      rail.removeEventListener('pointermove', move);
+      rail.removeEventListener('lostpointercapture', release);
       window.removeEventListener('pointerup', release);
       window.removeEventListener('pointercancel', release);
       rail.removeEventListener('focusin', focusIn);

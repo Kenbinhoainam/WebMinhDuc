@@ -38,9 +38,9 @@ try {
       }
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
-        const sequence=sections.map(node => [...node.classList].find(value => value.startsWith('section-home-') || value.startsWith('home-b2b-') || value.startsWith('home-v16-')));
-        assert.deepEqual(sequence, ['section-home-banner','section-home-about','home-v16-needs','section-home-solution','home-v16-process','home-v16-people','home-b2b-contact','home-b2b-offices','section-home-news'], `${label}: homepage buyer journey`);
-        for (const section of sections.slice(1)) assert.ok(section.querySelector('[data-reveal]'), `${label}: ${section.className} includes progressive reveal coverage`);
+        const sequence=sections.map(section=>section.classList[0]);
+        assert.deepEqual(sequence,['home-hero','section-home-about','section-home-solution','section-home-partners','home-b2b-contact','home-editorial','home-films'],label);
+        for (const section of sections.slice(1,5)) assert.ok(section.querySelector('[data-reveal]'), section.className);
         const frames=[...doc.querySelectorAll('[data-reveal-frame]')];
         assert.ok(frames.length > 4, 'stable frames cover the journey');
         for (const frame of frames) {
@@ -48,26 +48,28 @@ try {
           assert.ok(frame.firstElementChild.classList.contains('motion-content'));
         }
         assert.equal(doc.querySelectorAll('[data-reveal] [data-reveal]').length, 0, 'nested reveals must not multiply transforms or hide interactive descendants twice');
-        assert.equal(doc.querySelectorAll('.home-v16-need').length,3, 'three buyer needs');
-        assert.equal(doc.querySelectorAll('.home-v16-need button').length,3, 'each need can initiate an inquiry');
-        assert.equal(doc.querySelectorAll('.partners-strip').length,1, 'single partner loop');
-        assert.ok(doc.querySelector('.home-v16-process .partners-track'), 'partner rail belongs to process evidence');
-        assert.equal(doc.querySelectorAll('.home-v16-steps > li').length,5, 'five process steps');
-        assert.ok(doc.querySelector('#business-contact .contact-form'), 'business inquiry form');
-        assert.equal(doc.querySelectorAll('.section-home-news article').length,3, 'news rail has three unique articles');
-        assert.equal(new Set([...doc.querySelectorAll('.section-home-news article h3 a')].map(a=>a.getAttribute('href'))).size,3, 'news destinations are distinct');
-        assert.ok(doc.querySelector('.section-home-news [data-auto-rail][role="region"]'));
-        assert.equal(doc.querySelector('.ref-carousel-pause,.ref-rail-controls button'),null,'reading strips have no playback controls');
-        assert.equal(doc.querySelectorAll('video').length,1, 'one company hero video');
-        assert.equal(doc.querySelectorAll('.home-b2b-video-button,.section-home-event,.ref-testimonial-card').length,0, 'no duplicate intro or invented event/testimonial section');
-        assert.equal(doc.querySelectorAll('.home-v16-people img[src^="/assets/minhduc-v16/"]').length,2, 'people section uses two real activity images');
-        assert.ok(doc.querySelector('.home-v16-people a[href$="/about-us#activities"]'), 'people section links to activities');
+        assert.equal(doc.querySelectorAll('.service-gallery-card').length,5);
+        assert.ok(doc.querySelector('.section-home-partners .partners-track'));
+        assert.equal(doc.querySelectorAll('.partners-strip').length,1);
+        assert.ok(doc.querySelector('#business-contact .contact-form'));
+        assert.ok(doc.querySelector('.home-editorial-lead a h3'));
+        const illustrated = [...doc.querySelectorAll('.home-editorial-layout img')];
+        assert.equal(illustrated.length, 2);
+        for (const photo of illustrated) {
+          const link = photo.closest('a');
+          assert.ok(link?.getAttribute('href').startsWith(base + '/news/'), 'each home thumbnail opens its article');
+          assert.ok(doc.getElementById(link.getAttribute('aria-labelledby')).textContent.trim(), 'article link is named by its headline');
+          assert.equal(link.closest('article,li').querySelectorAll('a[href]').length,1,'photo and headline share one tab stop');
+        }
+        assert.equal(doc.querySelectorAll('.home-editorial-list').length,3);
+        assert.ok(doc.querySelector('.home-film-feature .home-film-poster'));
+        assert.equal(doc.querySelectorAll('video').length,1,'gallery video loads only when requested');
       }
       if (name === 'AboutPage') {
         assert.equal(doc.querySelectorAll('.info-about-values article').length, 3);
-        assert.ok(doc.querySelector('#profile .field-cover + .info-about-values'), 'three values have a row below the company profile cover');
+        assert.ok(doc.querySelector('#profile .about-profile-intro + .info-about-values'), 'three values have a row below the company profile cover');
         assert.equal(doc.querySelectorAll('button.info-team-card').length, 4, 'sample profiles expose actual dialog triggers');
-        assert.equal(doc.querySelectorAll('#profile .field-metrics .field-stat').length, 4);
+        assert.equal(doc.querySelectorAll('#profile .about-scope-item').length, 4);
         assert.equal(doc.querySelector('.info-about-values [role="tablist"],.info-value-tabs'), null, 'source simultaneous values replace custom value tabs');
         assert.equal(doc.querySelectorAll('#history [role="tab"]').length, 3, 'history phases retain a distinct synchronized selector');
         assert.equal(doc.querySelectorAll('#history [role="tabpanel"]').length, 1);
@@ -77,28 +79,28 @@ try {
       if (name === 'ServicesPage') {
         assert.equal(doc.querySelector('[role="tablist"]'), null);
         const direct = [...doc.querySelectorAll('.service-directory nav a')].map(link => link.getAttribute('href'));
-        const panels = [...doc.querySelectorAll('.info-service-cards article > a')].map(link => link.getAttribute('href'));
+        const panels = [...doc.querySelectorAll('.service-gallery-track article > a')].map(link => link.getAttribute('href'));
         assert.equal(new Set(direct).size, 5, 'all five decisions have direct links without rail navigation');
         const directory=doc.querySelector('.service-directory');
-        const heroPhoto=doc.querySelector('.service-index-masthead .md-masthead-figure');
-        assert.ok(directory.compareDocumentPosition(heroPhoto) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'mobile reading order puts all five choices before the campus photo');
+        const heroPhoto=doc.querySelector('.md-photo-masthead .md-masthead-figure');
+        assert.ok(heroPhoto.compareDocumentPosition(directory) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'five choices immediately follow the visual masthead');
         assert.deepEqual(panels, direct, 'directory and autoplay rail lead to the same five services');
-        assert.ok(doc.querySelector('.info-service-cards[data-auto-rail][tabindex="0"]'), 'the service rail stays keyboard reachable without controls');
-        assert.equal(doc.querySelector('.info-service-rail button'), null);
-        assert.equal(panels.length, doc.querySelectorAll('.service-panel-photo img[width][height]').length, 'card photos reserve their native dimensions');
+        assert.ok(doc.querySelector('.service-gallery-track[data-auto-rail][tabindex="0"]'), 'the service rail stays keyboard reachable alongside its side controls');
+        assert.equal(doc.querySelectorAll('.service-gallery-controls button[aria-controls]').length,2);
+        assert.equal(panels.length, doc.querySelectorAll('.service-gallery-card img[width][height]').length, 'card photos reserve their native dimensions');
       }
       if (name === 'ServicePage') {
         const recruitment = path.endsWith('/recruitment');
         const consulting = path.endsWith('/hr-consulting');
         const admissions = path.endsWith('/college-admissions');
-        const selectors = ['.md-ref-fee-section','.info-faq-section',...(!recruitment?['.info-service-customers']:[]),'.info-service-rail',...(!admissions?['.info-contact-section']:[])];
+        const selectors = ['.md-ref-fee-section','.info-faq-section',...(!recruitment?['.info-service-customers']:[]),'.service-gallery',...(!admissions?['.info-contact-section']:[])];
         const nodes = selectors.map(selector=>doc.querySelector(selector));
         assert.ok(nodes.every(Boolean), `${label}: complete mapped service modules`);
         for(let i=1;i<nodes.length;i++) assert.ok(nodes[i-1].compareDocumentPosition(nodes[i]) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING, `${label}: source service sequence ${selectors[i]}`);
         const slug = path.split('/').at(-1);
-        const masthead = doc.querySelector('.md-masthead-grid');
-        assert.ok(masthead.firstElementChild.querySelector('h1'), 'service title and primary action precede the masthead photo');
-        assert.ok(masthead.querySelector('img[alt]') && masthead.querySelector('.md-masthead-actions'));
+        const masthead = doc.querySelector('.md-photo-masthead');
+        assert.ok(masthead.querySelector('h1') && masthead.querySelector('img[alt]'));
+        assert.ok(doc.querySelector('.service-overview-actions :is(a,button)'), 'opening service overview offers the relevant action');
         const highlights = doc.querySelector(`[data-service-layout="${slug}"]`);
         const decisions = {
           'labor-supply': ['tbody tr',2], 'labor-leasing':['dl dt',3],
@@ -123,7 +125,7 @@ try {
           assert.ok(doc.querySelector('.info-testimonial-rail[tabindex="0"][role="region"]'));
           assert.equal(doc.querySelectorAll('.info-testimonial-rail blockquote').length, 3);
         }
-        const related=[...doc.querySelectorAll('.info-service-cards article a')].map(link=>link.getAttribute('href'));
+        const related=[...doc.querySelectorAll('.service-gallery-track article a')].map(link=>link.getAttribute('href'));
         assert.equal(new Set(related).size, 4);
         assert.ok(!related.includes(base + path),'related services exclude the current one');
         if (admissions) {
@@ -154,7 +156,7 @@ try {
         const featureSlides=doc.querySelectorAll('.editorial-feature-slide');
         assert.ok(featureSlides.length>1,'feature is a real rail of unique articles');
         assert.equal(doc.querySelector('.info-featured-news button'),null,'automatic stories have no control bar');
-        assert.equal(new Set([...featureSlides].map(node=>node.querySelector('h2 a').getAttribute('href'))).size,featureSlides.length);
+        assert.equal(new Set([...featureSlides].map(node=>node.querySelector('a.ed-feature').getAttribute('href'))).size,featureSlides.length);
         assert.ok(doc.querySelector('.editorial-feature-track[tabindex="0"][role="region"]'));
         assert.equal(doc.querySelectorAll('.editorial-feature-slide img[loading="eager"]').length,1,'offscreen feature images do not all fetch eagerly');
         assert.ok(doc.querySelectorAll('.info-news-grid article').length > 1, 'regular article listing remains separate');
@@ -211,25 +213,18 @@ try {
       if (name === 'ContactPage') {
         assert.ok(doc.querySelector('.contact-page-v18 .md-page-masthead h1'));
         assert.equal(doc.querySelectorAll('.contact-office').length, 3);
-        assert.equal(doc.querySelectorAll('details.contact-office > summary').length, 3);
+        assert.equal(doc.querySelectorAll('article.contact-office').length, 3);
+        assert.ok(doc.querySelector('#contact-map iframe[title]'),'the map is labelled and accompanies the persistent office directions');
         assert.ok(doc.querySelector('form.contact-form'));
         assert.ok(doc.getElementById('consultation'));
       }
       dom.window.close();
     }
   }
-  const css = postcss.parse(await readFile('src/home-reference.css', 'utf8'));
-  let rail = false, grid = false;
-  css.walkRules('.ref-news-grid', rule => rule.walkDecls('overflow-x', decl => {if (decl.value === 'auto') rail = true;}));
-  css.walkRules('.ref-partner-grid', rule => rule.walkDecls('display', decl => {if (decl.value === 'grid') grid = true;}));
-  assert.ok(rail && grid, 'news rail and static partner-grid source rules are present');
-  const homeV16=postcss.parse(await readFile('src/home-flagship-v16.css','utf8'));
-  let desktopNewsWidth=false,mobileNewsWidth=false;
-  homeV16.walkRules('.home-v16-news .ref-news-card', rule=>rule.walkDecls('flex-basis', decl=>{
-    if(rule.parent.type==='root' && /\/2\.5/.test(decl.value)) desktopNewsWidth=true;
-    if(rule.parent.type==='atrule' && rule.parent.params.includes('767px') && decl.value==='86%') mobileNewsWidth=true;
-  }));
-  assert.ok(desktopNewsWidth && mobileNewsWidth, 'news rail keeps overflow for autoplay on desktop and mobile');
+  const gallery = postcss.parse(await readFile('src/service-showcase.css','utf8'));
+  const responsiveWidths=[];
+  gallery.walkRules('.service-gallery-track',rule=>rule.walkDecls('grid-auto-columns',decl=>responsiveWidths.push(decl.value)));
+  assert.deepEqual(responsiveWidths,['calc((100% - 2 * var(--card-gap)) / 3)','calc((100% - var(--card-gap)) / 2)','100%'],'three desktop services, two on a tablet, one on a phone');
   const serviceCss=postcss.parse(await readFile('src/pages/info/services-reference.css','utf8'));
   serviceCss.walkRules(rule=>{
     for(const selector of rule.selectors){

@@ -24,17 +24,19 @@ try{
    return React.createElement(ContactContext.Provider,{value:value=>{requestedService=value}},React.createElement(ServicePage));
  }
  await act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:['/services/labor-supply']},React.createElement(Routes,null,React.createElement(Route,{path:'/services/:slug',element:React.createElement(VisitService)})))));
- const serviceRail = document.querySelector('.info-service-cards');
+ const serviceRail = document.querySelector('.service-gallery-track');
  const storyRail = document.querySelector('.info-testimonial-rail');
  const rails = [serviceRail, storyRail];
- assert.equal(document.querySelector('.info-service-rail button,.info-rail-controls,.info-carousel-pause'), null);
- const ownObservers = observers.filter(observer => rails.includes(observer.target));
+ const controls = [...document.querySelectorAll('.service-gallery-controls button')];
+ assert.deepEqual(controls.map(button=>button.getAttribute('aria-controls')),[serviceRail.id,serviceRail.id]);
+ const observedSurface = rail => rail===serviceRail ? rail.closest('.service-gallery') : rail;
+ const ownObservers = observers.filter(observer => rails.some(rail=>observedSurface(rail)===observer.target));
  assert.equal(ownObservers.length, 2, 'visibility is observed at each track');
  assert.equal(timers.size, 0, 'no rail advances before it is visible');
  for (const rail of rails) {
    assert.ok(rail.matches('[data-auto-rail][role="region"][tabindex="0"][aria-label]'));
    Object.defineProperties(rail, {clientWidth:{value:390},scrollWidth:{value:1170}});
-   await act(() => ownObservers.find(observer => observer.target === rail).cb([{target:rail,isIntersecting:true,intersectionRatio:1}]));
+   await act(() => ownObservers.find(observer => observer.target === observedSurface(rail)).cb([{target:rail,isIntersecting:true,intersectionRatio:1}]));
  }
  assert.deepEqual([...timers.values()], [6000, 6000]);
  await act(() => serviceRail.focus());
@@ -48,6 +50,24 @@ try{
  await act(() => {reducedMotion.matches=true;reducedMotion.dispatchEvent(new Event('change'));});
  assert.equal(timers.size, 0, 'reduced motion stops both tracks immediately');
 
+ const offsets=[];
+ serviceRail.scrollTo=({left,behavior})=>{offsets.push([left,behavior]);serviceRail.scrollLeft=left;};
+ for (const [i,child] of [...serviceRail.children].entries()) Object.defineProperty(child,'offsetLeft',{value:i*390});
+ await act(()=>controls[1].click());await act(()=>controls[0].click());await act(()=>controls[0].click());
+ assert.deepEqual(offsets,[[390,'instant'],[0,'instant'],[780,'instant']],'side controls step one card and wrap without motion when reduced');
+ const gallery=serviceRail.closest('.service-gallery');
+ const reportGalleryVisible=()=>observers.findLast(observer=>observer.target===gallery).cb([{isIntersecting:true}]);
+ await act(()=>{reducedMotion.matches=false;reducedMotion.dispatchEvent(new Event('change'));});
+ const touch=new Event('pointerdown',{bubbles:true});Object.defineProperty(touch,'pointerType',{value:'touch'});
+ await act(()=>serviceRail.dispatchEvent(touch));
+ await act(()=>window.dispatchEvent(new Event('pointerup')));
+ await act(reportGalleryVisible);
+ assert.equal(gallery.dataset.userPaused,'true');
+ assert.equal(timers.size,1,'touch leaves service rotation paused after the gesture ends');
+ const rotation=gallery.querySelector('.service-gallery-rotation');
+ assert.equal(rotation.getAttribute('aria-label'),'Phát chuyển động');
+ await act(()=>rotation.click());await act(reportGalleryVisible);
+ assert.equal(timers.size,2,'the reader can explicitly resume rotation');
  const cases=[
    ['labor-supply','Giới thiệu & cung ứng nhân lực'],
    ['labor-leasing','Cho thuê lao động'],
@@ -57,7 +77,7 @@ try{
  for(const [slug,expectedService] of cases) {
    const path='/services/'+slug;
    await act(()=>navigate(path));
-   await act(()=>document.querySelector('.md-masthead-actions button').click());
+   await act(()=>document.querySelector('.service-overview-actions button').click());
    assert.equal(requestedService,expectedService,'masthead inquiry opens with this service');
    const form=document.querySelector('#business-contact form');
    assert.ok(form,'navigation clears the previous service receipt');

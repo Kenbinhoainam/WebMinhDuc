@@ -167,7 +167,7 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
       <ol className="career-process-grid">{steps.map(([title, text], index) => <li key={title}><RevealFrame delay={index as 0|1|2|3}><article className="career-step">
         <span className="career-step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p>
       </article></RevealFrame></li>)}</ol>
-      <div id="career-contact"><Link className="career-text-link" to="/contact#consultation">Trao đổi với Minh Đức</Link></div>
+      <div id="career-contact"><CareerLink to="#open-positions">Xem vị trí nội bộ</CareerLink><Link className="career-text-link" to="/contact#consultation">Trao đổi với Minh Đức</Link></div>
     </div></section>
 
     <CareerRail kind="questions" title="Câu hỏi về ứng tuyển nội bộ" modalOpen={modalOpen}>

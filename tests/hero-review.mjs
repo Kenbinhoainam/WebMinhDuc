@@ -34,6 +34,12 @@ try {
  const {window}=layoutDom, hero=window.document.querySelector('.home-hero'), box=hero.querySelector('.hero-stage');
  assert.equal(window.getComputedStyle(box).aspectRatio,'auto','branded layout grows to fit stacked translated controls');
  assert.equal(window.getComputedStyle(hero.querySelector('.hero-brand-finish')).position,'relative','visible conclusion contributes intrinsic height');
+ const rules=[...window.document.styleSheets[0].cssRules];
+ const mobileRules=rules.find(rule=>rule.conditionText==='(max-width: 767px)').cssRules;
+ for(const scope of [rules,[...mobileRules]]){
+  const controls=scope.find(rule=>rule.selectorText==='.home-hero .hero-player-tools');
+  assert.ok(controls.style.right && controls.style.bottom && !controls.style.left,'playback and sound occupy the lower right on desktop and mobile');
+ }
  window.close();
  const stageRule=css.match(/\.home-hero \.hero-stage\s*\{([^}]*)\}/)[1];
  assert.ok(!stageRule.includes('url(')&&!stageRule.includes('100svh'),'active stage cannot expose decorative photo or viewport-ratio bands');
