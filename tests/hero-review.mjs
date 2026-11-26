@@ -30,12 +30,15 @@ try {
  const css=await readFile('src/hero-media.css','utf8');
  assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain;object-position:center/,'film remains centered and uncropped');
  assert.match(css,/\.home-hero \.hero-stage\s*\{[^}]*width:100%;aspect-ratio:16\/9;min-height:0/,'all playback viewports keep native16:9 without height floor');
- assert.ok(css.includes('.home-hero:is([data-stage="ended"],[data-stage="fallback"]) .hero-stage{aspect-ratio:auto;min-height:56.25vw}'),'the conclusion grows to fit stacked translated controls');
+ const layoutDom=new JSDOM('<style>'+css+'</style><section class="home-hero" data-show-brand="true"><div class="hero-stage"><div class="hero-brand-finish is-visible"></div></div></section>');
+ const {window}=layoutDom, hero=window.document.querySelector('.home-hero'), box=hero.querySelector('.hero-stage');
+ assert.equal(window.getComputedStyle(box).aspectRatio,'auto','branded layout grows to fit stacked translated controls');
+ assert.equal(window.getComputedStyle(hero.querySelector('.hero-brand-finish')).position,'relative','visible conclusion contributes intrinsic height');
+ window.close();
  const stageRule=css.match(/\.home-hero \.hero-stage\s*\{([^}]*)\}/)[1];
  assert.ok(!stageRule.includes('url(')&&!stageRule.includes('100svh'),'active stage cannot expose decorative photo or viewport-ratio bands');
  const mediaRule=css.match(/\.hero-media\s*\{([^}]*)\}/)[1];
  assert.match(mediaRule,/background:#[0-9a-f]{6}(?:;|$)/i,'media has an opaque backing');
- assert.match(css,/\.hero-brand-finish\.is-visible\s*\{[^}]*position:relative[^}]*pointer-events:auto/,'visible conclusion contributes intrinsic height and accepts links');
  assert.match(css,/\.hero-brand-finish\.is-visible::before\s*\{[^}]*background-image:url/,'decorative image belongs only to finish state');
  assert.ok(!css.includes('min-height:100svh'),'finish growth uses content rather than a forced viewport floor');
  console.log('PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules');

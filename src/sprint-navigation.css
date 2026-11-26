@@ -120,10 +120,10 @@ body:not(:has(.page-banner-main, .section-home-banner, .ed-reader)) .site-header
 }
 
 /* On the bright end frame, keep the header transparent and use dark text. */
-body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled) { color:#20343e; }
-body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled) .desktop-nav-heading > a { text-shadow:none; }
-body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled) :is(.header-search,.header-saved,.menu-button,.language-trigger) { background:rgba(255,255,255,.78); color:#20343e; }
-body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header:not(.is-scrolled) :is(a,button):focus-visible { outline-color:#a32130; }
+body:has(.home-hero[data-show-brand="true"]) .site-header:not(.is-scrolled) { color:#20343e; }
+body:has(.home-hero[data-show-brand="true"]) .site-header:not(.is-scrolled) .desktop-nav-heading > a { text-shadow:none; }
+body:has(.home-hero[data-show-brand="true"]) .site-header:not(.is-scrolled) :is(.header-search,.header-saved,.menu-button,.language-trigger) { background:rgba(255,255,255,.78); color:#20343e; }
+body:has(.home-hero[data-show-brand="true"]) .site-header:not(.is-scrolled) :is(a,button):focus-visible { outline-color:#a32130; }
 
 /* The v18 editorial mastheads are light; keep transparent navigation legible. */
 body:has(.md-page-masthead,.ed-reader) .site-header:not(.is-scrolled){color:#20478f;background:transparent}
@@ -136,7 +136,7 @@ body:has(.md-page-masthead,.ed-reader) .site-header:not(.is-scrolled) :is(a,butt
 @media(min-width:1280px) {
   .site-header .header-find-job {display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 15px;border:1px solid #fff9;border-radius:999px;background:#18355ae6;color:#fff;font-size:14px;font-weight:600;line-height:1.2}
   .site-header .header-find-job:hover {background:#214b80}
-  .site-header.is-scrolled .header-find-job,body:has(.home-hero:is([data-stage="ended"],[data-stage="fallback"])) .site-header .header-find-job {color:#193d6d;background:white;border-color:#8ca2bd}
+  .site-header.is-scrolled .header-find-job,body:has(.home-hero[data-show-brand="true"]) .site-header .header-find-job {color:#193d6d;background:white;border-color:#8ca2bd}
 }
 @media(max-width:1279px) {
   body:has(.hero-entry-bar) .site-header:not(.is-scrolled) .header-contact {display:none}

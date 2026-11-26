@@ -88,7 +88,7 @@ try {
  assert.equal(poster.getAttribute('alt'),'');assert.equal(poster.closest('.hero-media')?.getAttribute('aria-hidden'),'true');
  assert.equal(poster.getAttribute('fetchpriority'),'high');assert.notEqual(poster.getAttribute('loading'),'lazy');assert.equal(video.classList.contains('is-ready'),false);
  assert.ok(!document.querySelector('.hero-bottom,.hero-caption,.scroll-hint'),'removed hero footer content must not return');
- const control=document.querySelector('.video-control');assert.equal(control.getAttribute('aria-label'),'Phát video giới thiệu');assert.equal(control.tabIndex,0,'keyboard motion control remains reachable');await click(control);assert.equal(control.getAttribute('aria-label'),'Tạm dừng video');await click(control);assert.equal(control.getAttribute('aria-label'),'Phát video giới thiệu');
+ const control=document.querySelector('.video-control');assert.equal(control.getAttribute('aria-label'),'Phát video giới thiệu');assert.equal(control.tabIndex,0,'keyboard motion control remains reachable');await click(control);assert.equal(control.getAttribute('aria-label'),'Tạm dừng video');await click(control);assert.equal(control.getAttribute('aria-label'),'Tiếp tục video');
  assert.equal(paused,true);
  await act(()=>new Promise(resolve=>setTimeout(resolve,1700)));
  assert.equal(paused,true,'quick manual play then pause must cancel pending autoplay');assert.equal(plays,1);

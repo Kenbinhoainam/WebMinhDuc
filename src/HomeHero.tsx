@@ -6,7 +6,7 @@ import heroAssets from './hero-assets.json';
 import './hero-media.css';
 
 type Connection = {saveData?: boolean; effectiveType?: string; addEventListener?: (type: string, listener: () => void) => void; removeEventListener?: (type: string, listener: () => void) => void};
-type Stage = 'poster' | 'playing' | 'fallback' | 'ended';
+type Stage = 'poster' | 'playing' | 'paused' | 'fallback' | 'ended';
 
 export default function HomeHero() {
   const t = useTranslation();
@@ -25,7 +25,7 @@ export default function HomeHero() {
   const contactLabel = t({vi:'Gửi nhu cầu nhân lực',en:'Request workforce support',zh:'提交用工需求',ko:'인력 지원 요청',ja:'人材の相談を送る'});
   const shortcutFocus = useRef<string | null>(null);
   const setStage = useCallback((next: Stage) => {
-    if (next === 'ended' || next === 'fallback') {
+    if (next === 'ended' || next === 'fallback' || next === 'paused') {
       const active = document.activeElement;
       shortcutFocus.current = active?.closest<HTMLAnchorElement>('.hero-entry-bar a')?.href ?? null;
     }
@@ -33,6 +33,7 @@ export default function HomeHero() {
   }, []);
   const playLabel = t({vi:'Phát video giới thiệu',en:'Play company film',zh:'播放企业介绍视频',ko:'회사 소개 영상 재생',ja:'会社紹介動画を再生'});
   const pauseLabel = t({vi:'Tạm dừng video',en:'Pause video',zh:'暂停视频',ko:'영상 일시 정지',ja:'動画を一時停止'});
+  const resumeLabel = t({vi:'Tiếp tục video',en:'Resume video',zh:'继续播放视频',ko:'영상 계속 재생',ja:'動画を再開'});
   const replayLabel = t({vi:'Xem lại video',en:'Watch again',zh:'重新播放',ko:'다시 보기',ja:'もう一度見る'});
 
   useEffect(() => {
@@ -111,7 +112,11 @@ export default function HomeHero() {
     const el = video.current;
     if (!el) return;
     if (!el.paused && !failed.current && !finished.current) {
-      pausedByUser.current = true; attempt.current++; el.pause(); setPlaying(false);
+      pausedByUser.current = true;
+      attempt.current++;
+      el.pause();
+      setPlaying(false);
+      setStage('paused');
     } else {
       if (finished.current) {el.currentTime = 0; finished.current = false; pendingEnd.current = false; setFrameReady(false);}
       manual.current = true; pausedByUser.current = false; failed.current = false;
@@ -129,7 +134,8 @@ export default function HomeHero() {
     } else {failed.current = true; setStage('fallback');}
   };
   const ending = stage === 'ended';
-  const showBrand = ending || stage === 'fallback';
+  const showBrand = ending || stage === 'paused' || stage === 'fallback';
+  const playbackLabel = ending ? replayLabel : stage === 'paused' ? resumeLabel : playing ? pauseLabel : playLabel;
   useEffect(() => {
     const href = shortcutFocus.current;
     if (!showBrand || !href) return;
@@ -138,13 +144,16 @@ export default function HomeHero() {
     matchingLink?.focus({preventScroll:true});
     shortcutFocus.current = null;
   }, [showBrand]);
-  return <section className="home-hero section-home-banner" data-stage={stage} ref={section} aria-label={t({vi:'Minh Đức Vina — Giới thiệu doanh nghiệp',en:'Minh Đức Vina — Company introduction',zh:'Minh Đức Vina — 企业介绍',ko:'Minh Đức Vina — 회사 소개',ja:'Minh Đức Vina — 会社紹介'})}>
-    <div className="hero-stage">
+  return <section className="home-hero section-home-banner" data-stage={stage} data-show-brand={showBrand} ref={section} aria-label={t({vi:'Minh Đức Vina — Giới thiệu doanh nghiệp',en:'Minh Đức Vina — Company introduction',zh:'Minh Đức Vina — 企业介绍',ko:'Minh Đức Vina — 회사 소개',ja:'Minh Đức Vina — 会社紹介'})}>
+    <div className="hero-stage" onClick={event => {
+      // The surface is a pointer shortcut for the native playback button.
+      if (event.target instanceof Element && !event.target.closest('a,button')) togglePlayback();
+    }}>
       <div className="hero-media" aria-hidden="true">
         <img className="hero-poster" src={heroAssets.poster} width="1024" height="576" alt="" fetchPriority="high" decoding="async"/>
         <video ref={video} className={frameReady ? 'is-ready' : undefined} muted={muted} playsInline preload="none"
           onPlaying={() => {if (!finished.current && !pausedByUser.current && !video.current?.paused) {failed.current = false; setStage('playing'); setPlaying(true); setFrameReady(true);}}}
-          onPause={() => setPlaying(false)}
+          onPause={() => {if (video.current?.paused) setPlaying(false);}}
           onEnded={() => {finished.current = true; attempt.current++; setPlaying(false); pendingEnd.current = true; if (!document.hidden && (observerAvailable.current ? visible.current : measureVisible())) {pendingEnd.current = false; setStage('ended');}}}
           onError={onError}/>
       </div>
@@ -161,8 +170,8 @@ export default function HomeHero() {
       </div>
       <noscript><style>{'.home-hero .hero-stage{aspect-ratio:auto;min-height:56.25vw}.home-hero .hero-brand-finish{position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1;background-image:url(/assets/minhduc-v16/flagship-atrium.webp)}.hero-player-tools,.hero-entry-bar{display:none!important}'}</style></noscript>
       <div className="hero-player-tools">
-        <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={ending ? replayLabel : playing ? pauseLabel : playLabel}>
-          {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{ending ? replayLabel : playing ? pauseLabel : playLabel}</span>
+        <button type="button" className={`video-control${!playing ? ' is-idle' : ''}`} onClick={togglePlayback} aria-label={playbackLabel}>
+          {ending ? <RotateCcw size={17}/> : playing ? <Pause size={17}/> : <Play size={17}/>}<span>{playbackLabel}</span>
         </button>
         <button type="button" className="video-sound" aria-pressed={!muted} aria-label={muted ? t({vi:'Bật âm thanh',en:'Enable sound',zh:'开启声音',ko:'소리 켜기',ja:'音声をオン'}) : t({vi:'Tắt âm thanh',en:'Mute sound',zh:'关闭声音',ko:'소리 끄기',ja:'音声をオフ'})} onClick={() => setMuted(value => !value)}>{muted ? <VolumeX size={17}/> : <Volume2 size={17}/>}</button>
       </div>
