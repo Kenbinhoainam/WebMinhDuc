@@ -32,11 +32,10 @@ export const pages:Page[] = [
  page('/admin-demo','Không gian quản trị mẫu','Trải nghiệm phân loại, phân công và xử lý hồ sơ cùng quản lý nội dung bằng dữ liệu giả định.'),
  page('/contact','Liên hệ Minh Đức','Xem thông tin liên hệ và gửi yêu cầu tư vấn minh họa tới Minh Đức Vina.'),
  page('/consultation','Đặt lịch tư vấn','Chọn ngày và khung giờ để trải nghiệm quy trình đặt lịch tư vấn minh họa cùng Minh Đức Vina.'),
- page('/e-brochure','Hồ sơ giới thiệu','Xem hồ sơ giới thiệu trực tuyến về Minh Đức và các giải pháp nhân lực.'),
  page('/privacy-policy','Chính sách bảo mật','Tìm hiểu cách bản prototype xử lý thông tin và lưu lựa chọn trên thiết bị.'),
  page('/terms-of-use','Điều khoản sử dụng','Tìm hiểu điều khoản sử dụng và phạm vi nội dung minh họa của website.')
 ];
-export function getPage(path:string):Page { let normalized=path.length>1?path.replace(/\/+$/,''):path; normalized=({'/testimonials':'/partners','/job-seekers':'/jobs','/vi':'/'} as Record<string,string>)[normalized] || normalized; return pages.find(p=>p.path===normalized) || page(normalized,'Không tìm thấy trang','Trang bạn tìm kiếm không có trong bản minh họa Minh Đức Vina.'); }
+export function getPage(path:string):Page { let normalized=path.length>1?path.replace(/\/+$/,''):path; normalized=({'/e-brochure':'/about-us','/testimonials':'/partners','/job-seekers':'/jobs','/vi':'/'} as Record<string,string>)[normalized] || normalized; return pages.find(p=>p.path===normalized) || page(normalized,'Không tìm thấy trang','Trang bạn tìm kiếm không có trong bản minh họa Minh Đức Vina.'); }
 export function seo(path:string) {
  const p=getPage(path), url=ORIGIN+p.path, title=`${p.title} | Minh Đức Vina`, image=ORIGIN+'/assets/minh-duc-logo.jpg';
  const graph:Record<string,unknown>[]=[

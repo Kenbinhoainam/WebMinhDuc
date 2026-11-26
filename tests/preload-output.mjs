@@ -23,7 +23,6 @@ for(const [entry,routes] of [
  ['src/pages/info/AboutPage.tsx',['/about-us']],
  ['src/pages/info/ServicesPages.tsx',['/services','/services/labor-supply','/services/recruitment','/services/hr-consulting']],
  ['src/pages/info/PartnersPage.tsx',['/partners']],
- ['src/pages/info/BrochurePage.tsx',['/e-brochure']],
  ['src/EditorialPages.tsx',['/news','/news/ho-so-xin-viec','/events','/events/ngay-hoi-ket-noi-viec-lam','/privacy-policy','/terms-of-use']],
  ['src/JobsPages.tsx',['/careers','/jobs','/saved-jobs','/jobs/cong-nhan-lap-rap-bac-ninh']],
  ['src/Consultation.tsx',['/consultation']],

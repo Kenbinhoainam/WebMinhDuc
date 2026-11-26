@@ -19,7 +19,7 @@ try {
   const cover=doc.querySelector('#about');
   assert.ok(cover.querySelector('img.field-portrait[alt=""]'), 'decorative field photo sits behind the cover');
   assert.equal(cover.querySelector('.field-intro').dataset.reveal,'up');
-  assert.equal(cover.querySelector('.field-cta').getAttribute('href'),'/e-brochure');
+  assert.equal(cover.querySelector('.field-cta').getAttribute('href'),'/about-us#profile');
   assert.equal(cover.querySelector('.field-metrics[data-auto-rail]'),null,'all four figures are in reading order');
   const metrics=[...doc.querySelectorAll('.field-stat-frame')];assert.equal(metrics.length,4);
   assert.deepEqual(metrics.map(x=>x.getAttribute('data-reveal-delay-ms')),['90','150','210','270']);

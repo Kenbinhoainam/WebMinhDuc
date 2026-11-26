@@ -8,7 +8,6 @@ const styledRoutes=[
  [/^\/about-us$/,'src/pages/info/AboutPage.tsx'],
  [/^\/services(?:\/|$)/,'src/pages/info/ServicesPages.tsx'],
  [/^\/partners$/,'src/pages/info/PartnersPage.tsx'],
- [/^\/e-brochure$/,'src/pages/info/BrochurePage.tsx'],
  [/^\/(?:news(?:\/|$)|events(?:\/|$)|privacy-policy$|terms-of-use$)/,'src/EditorialPages.tsx'],
  [/^\/(?:jobs(?:\/|$)|saved-jobs$|careers$)/,'src/JobsPages.tsx'],
  [/^\/education(?:\/|$)/,'src/Education.tsx'],
@@ -61,6 +60,19 @@ for(const page of pages) for(const locale of locales){
 }
 for(const locale of locales) {
  const base=locale==='vi'?'':`/${locale}`;
+ // Old shared profile links also work when the browser has JavaScript disabled.
+ const about=localizedSeo('/about-us',locale);
+ const target=localizedPath('/about-us',locale)+'#profile';
+ const redirectDir=join('dist',base+'/e-brochure');
+ await mkdir(redirectDir,{recursive:true});
+ await writeFile(join(redirectDir,'index.html'),`<!doctype html>
+<html lang="${languageTags[locale]}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0;url=${escape(target)}">
+<meta name="robots" content="noindex,nofollow">
+<title>${escape(about.title)}</title><link rel="canonical" href="${escape(about.url)}">
+</head><body><main><a href="${escape(target)}">${escape(about.title)}</a></main></body></html>`);
+
  for(const [alias,target] of [['/testimonials','/partners'],['/job-seekers','/jobs']]) {
   const dir=join('dist',base+alias);await mkdir(dir,{recursive:true});
   await writeFile(join(dir,'index.html'),await readFile(join('dist',base+target,'index.html')));

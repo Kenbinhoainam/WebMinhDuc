@@ -74,8 +74,7 @@
 .field-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 26px;
+  justify-content: center;
   min-height: 48px;
   max-width: 100%;
   padding: 12px 20px;
@@ -86,7 +85,6 @@
   font: 650 16px/1.45 var(--font-display);
   text-decoration: none;
 }
-.field-cta svg { flex-shrink: 0; }
 .field-cta:hover { background: #104585; color: white; }
 .field-cta:focus-visible { outline: 3px solid white; outline-offset: 4px; }
 .field-metrics {
@@ -124,7 +122,6 @@
   .field-intro h2 { font-size: clamp(28px, 7.9vw, 48px); }
   .field-lead { max-width: 23ch; font-size: clamp(19px, 5.1vw, 26px); }
   .field-description { padding-inline-start: 12px; }
-  .field-cta { gap: 16px; min-height: 48px; }
   .field-metrics { margin-top: 30px; }
   .field-stat-frame { flex-basis: 50%; }
   .field-stat-frame:nth-child(odd) { padding-inline: 0 8px; border: 0; }
@@ -132,8 +129,7 @@
   .field-stat strong { font-size: clamp(30px, 7.8vw, 40px); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .field-cta, .field-cta svg { transition: background-color .18s ease-out, transform .18s ease-out; }
-  .field-cta:hover svg { transform: translateX(3px); }
+  .field-cta { transition: background-color .18s ease-out; }
 }
 @media (forced-colors: active) {
   .field-cover { border: 1px solid CanvasText; }

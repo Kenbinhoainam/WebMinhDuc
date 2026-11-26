@@ -59,3 +59,7 @@ Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho nh�
 - Giữ reveal hai chiều và tất cả rail tự chạy. Chuyển cảnh nổi bật nhưng stagger tối đa 300 ms, có pause nhìn thấy, bảo vệ focus/reduced-motion/ngoài viewport.
 - Sáu form giữ nguyên trường, validation, quy tắc tệp và biên nhận trong bộ nhớ phiên; chỉ cải thiện trình bày/focus. Một launcher hỗ trợ duy nhất.
 - Ảnh AI là không gian ý niệm, không phải cơ sở thật của Minh Đức. Nguồn ảnh và audit lưu trong docs/flagship; không tự ghi lên bảng nguồn bên ngoài.
+
+## Quyết định v24 — 26/11/2026
+
+- Hồ sơ năng lực nằm tại `/about-us#profile`. Menu Giới thiệu và nút trên trang chủ dẫn tới mục này. Người đọc có thể xem dịch vụ ngay từ mục hồ sơ. Địa chỉ trình đọc ba trang trước đây chuyển về đúng mục theo ngôn ngữ của liên kết.

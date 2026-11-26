@@ -33,7 +33,9 @@ const metrics = [
 function About() {
  const t=useTranslation();
  return <section id="about" aria-labelledby="field-title" className="section-home-about field-section">
-   <CompanyProfileCover headingId="field-title">
+   <CompanyProfileCover headingId="field-title" to="/about-us#profile"
+     actionLabel={t({vi:'Xem hồ sơ năng lực',en:'View company profile',zh:'查看公司简介',ko:'회사 소개서 보기',ja:'会社案内を見る'})}
+     description={t({vi:'Minh Đức kết nối nhà máy FDI với lao động phổ thông và nhân sự có tay nghề theo từng vị trí, ca làm và kế hoạch sản xuất.',en:'Minh Đức connects FDI factories with production workers and skilled staff for each role, shift and production schedule.',zh:'Minh Đức 根据外资工厂的岗位、班次和生产计划，对接普工与熟练技术人员。',ko:'Minh Đức는 외국인 투자 공장의 직무, 근무조와 생산 일정에 맞춰 생산직과 숙련 인력을 연결합니다.',ja:'Minh Đứcは外資系工場の職種・シフト・生産計画に合わせて、作業員や熟練人材を紹介します。'})}>
        <div className="field-metrics section-home-about-achievement" role="group" aria-label={t({vi:'Các chỉ số kết nối',en:'Connection figures',zh:'连接数据',ko:'연결 지표',ja:'つながりの指標'})}>
          {metrics.map((m,i)=><RevealFrame className="field-stat-frame" key={m.label} delayMs={([300,500,700,900] as const)[i]}>
            <div className="field-stat"><strong><AnimatedNumber value={m.number} suffix={m.suffix}/></strong><span>{m.label}</span></div>

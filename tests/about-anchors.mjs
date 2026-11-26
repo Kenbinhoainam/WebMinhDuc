@@ -12,7 +12,7 @@ try {
  await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage'; export {Header} from './src/Header'; export {PageTransition} from './src/App'; export {LocaleProvider,localeBase,languageSwitchUrl} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'about-anchors-test.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
  const {AboutPage,Header,PageTransition,LocaleProvider,localeBase,languageSwitchUrl,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
  const ids=['profile','history','partners','activities','achievements','business-contact'];
- const menuIds=['history','partners','achievements'];let vietnameseLabels;
+ const menuIds=['profile','history','partners','achievements'];let vietnameseLabels;
  for(const locale of ['vi','en','zh','ko','ja']){
   await loadLocale(locale);const base=localeBase(locale);
   const html=renderToStaticMarkup(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{basename:base||'/',initialEntries:[`${base}/about-us#profile`]},React.createElement(React.Fragment,null,React.createElement(Header),React.createElement(AboutPage)))));
@@ -21,7 +21,7 @@ try {
    const nodes=doc.querySelectorAll(`[id="${id}"]`);assert.equal(nodes.length,1,`${locale}: unique ${id}`);assert.ok(nodes[0].querySelector('h2'),`${locale}: ${id} has a section heading`);
    if(menuIds.includes(id))assert.ok(doc.querySelector(`.desktop-subnav a[href="${base}/about-us#${id}"]`),`${locale}: menu reaches ${id}`);
   }
-  assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/e-brochure`,`${locale}: profile menu opens brochure`);
+  assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/about-us#profile`,`${locale}: profile menu opens the profile chapter`);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.deepEqual([...doc.querySelectorAll('.about-chapters a')].map(a=>a.hash),['#profile','#history','#partners','#activities','#achievements']);
   assert.ok(doc.querySelector('.md-masthead-figure img[src^="/assets/minhduc-v18/about-team"]'),'masthead uses the genuine team photo');
@@ -43,7 +43,8 @@ try {
   assert.equal(doc.querySelectorAll('.about-profile .field-metrics').length,1);
   assert.equal(doc.querySelector('.info-about-statistics'),null,'scope facts appear only inside the cover');
   assert.notEqual(cover.querySelector('img').getAttribute('src'),doc.querySelector('.md-page-masthead img').getAttribute('src'),'cover and masthead have distinct subjects');
-  assert.equal(cover.querySelectorAll(`a[href="${base}/e-brochure"]`).length,1,'one localized brochure action inside the cover');
+  assert.equal(cover.querySelector('.field-cta').getAttribute('href'),base+'/services','profile leads to localized services');
+  assert.ok(doc.querySelector(`.md-masthead-actions a[href="${base}/about-us#profile"]`),'masthead links directly to the profile chapter');
   assert.ok(doc.querySelector('#profile .field-cover + .info-about-values'),'three value statements directly follow the cover');
   assert.ok(doc.querySelector(`#partners a[href="${base}/partners"]`),'existing partners page remains accessible');
   for(const id of ids.filter(id=>id!=='business-contact'))assert.doesNotMatch(doc.getElementById(id).textContent,/mô phỏng|nhân vật giả định|giải thưởng đã được xác nhận/i,`${locale}: no repeated demo disclaimer`);

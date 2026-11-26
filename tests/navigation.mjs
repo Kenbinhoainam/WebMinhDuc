@@ -18,7 +18,7 @@ try {
  const pause=ms=>act(async()=>new Promise(resolve=>setTimeout(resolve,ms)));
  for(const locale of Object.keys(labels)){
   await render(locale);const row=document.querySelector('.header-inner');assert.deepEqual([...row.children].map(el=>el.className),['brand','desktop-nav','header-actions']);
-  const groups=[...document.querySelectorAll('.desktop-nav-group')];assert.equal(groups.length,7);assert.equal(groups[0].querySelector('a').textContent,labels[locale]);assert.equal(groups[1].querySelector('.desktop-subnav a').getAttribute('href'),'/e-brochure');assert.deepEqual(groups.map(g=>g.querySelectorAll('.desktop-subnav a').length),[0,4,5,3,0,2,0]);
+  const groups=[...document.querySelectorAll('.desktop-nav-group')];assert.equal(groups.length,7);assert.equal(groups[0].querySelector('a').textContent,labels[locale]);assert.equal(groups[1].querySelector('.desktop-subnav a').getAttribute('href'),'/about-us#profile');assert.deepEqual(groups.map(g=>g.querySelectorAll('.desktop-subnav a').length),[0,4,5,3,0,2,0]);
   assert.equal(document.querySelectorAll('.desktop-nav-heading button').length,0);const parents=[...document.querySelectorAll('.desktop-nav-heading a[data-group]')];assert.equal(parents.length,4);
   const first=parents[0],panel=document.getElementById(first.getAttribute('aria-controls'));await act(()=>first.focus());assert.equal(first.getAttribute('aria-expanded'),'true');
   await act(()=>document.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));assert.equal(panel.hidden,true);assert.equal(document.activeElement,first);

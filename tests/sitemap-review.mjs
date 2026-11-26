@@ -27,7 +27,7 @@ try {
   assert.equal(fallback.querySelectorAll(':scope > ul > li').length,7);
   assert.equal(fallback.querySelector('ul ul ul'),null,'exactly two menu levels');
   assert.equal(fallback.querySelectorAll('button,[hidden]').length,0,'fallback leaves have no JS disclosure dependency');
-  const leaves=[...fallback.querySelectorAll(':scope > ul > li > ul > li > a')];assert.equal(leaves.length,14);assert.equal(leaves[0].getAttribute('href'),`${base}/e-brochure`,'profile opens the brochure directly');
+  const leaves=[...fallback.querySelectorAll(':scope > ul > li > ul > li > a')];assert.equal(leaves.length,14);assert.equal(leaves[0].getAttribute('href'),`${base}/about-us#profile`,'profile opens the About chapter directly');
   const interactive=new JSDOM('<div id="root"></div>',{url:`https://example.test${base||'/'}`,pretendToBeVisual:true});
   for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','CustomEvent','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:interactive.window[key]});
   globalThis.IS_REACT_ACT_ENVIRONMENT=true;

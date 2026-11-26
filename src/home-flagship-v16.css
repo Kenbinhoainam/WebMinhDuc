@@ -1,5 +1,4 @@
-/* v16: generous editorial layout, brand blue, real people and decisive hierarchy.
-   The four v13 achievement cards and the brochure retain their existing design. */
+/* v16: generous editorial layout, brand blue, real people and decisive hierarchy. */
 .ref-home-section{padding-block:clamp(64px,7.4vw,124px)}
 .ref-home-section .container{width:min(1320px,calc(100% - 64px));max-width:none;padding-inline:0}
 .ref-home-section .ref-heading{font-size:clamp(30px,3.2vw,50px);letter-spacing:-.025em;line-height:1.16;text-wrap:balance;color:#163e77}

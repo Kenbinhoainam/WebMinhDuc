@@ -239,11 +239,13 @@ export function AboutPage(){
   return <div className="about-page">
     <PageMasthead title="Về Minh Đức" eyebrow="Nhân lực là tài sản" description="Minh Đức kết nối nhà máy phía Bắc với người lao động, từ lúc làm rõ vị trí đến khi hai bên trao đổi về công việc." image="/assets/minhduc-v18/about-team.webp" imageAlt="Đội ngũ Minh Đức cầm cờ trước biển hiệu công ty">
       <Link className="btn" {...staffingInquiry}>Gửi nhu cầu nhân lực</Link>
-      <Link className="btn btn-secondary" to="/e-brochure">Xem hồ sơ năng lực</Link>
+      <Link className="btn btn-secondary" to="/about-us#profile">Xem hồ sơ năng lực</Link>
     </PageMasthead>
     <ChapterNav/>
     <section id="profile" className="field-section about-profile" aria-labelledby="about-profile-title">
-      <CompanyProfileCover headingId="about-profile-title">
+      <CompanyProfileCover headingId="about-profile-title" to="/services"
+        actionLabel={t({vi:'Xem các dịch vụ',en:'Explore our services',zh:'查看服务项目',ko:'서비스 살펴보기',ja:'サービス一覧を見る'})}
+        description={t({vi:'Từ các điểm kết nối tại Bắc Ninh và Quảng Ninh, Minh Đức cùng nhà máy làm rõ vị trí, ca làm và kỹ năng cần tuyển để tìm người phù hợp.',en:'From our locations in Bắc Ninh and Quảng Ninh, we work with factories to identify roles, shifts and skills before matching workers to the job.',zh:'通过北宁和广宁的服务网点，明德与工厂明确岗位、班次和技能要求，再匹配合适的员工。',ko:'민득은 박닌과 꽝닌의 거점을 통해 공장과 함께 직무, 교대 시간, 필요한 기술을 확인한 뒤 적합한 인력을 연결합니다.',ja:'ミンドゥックはバクニンとクアンニンの拠点を通じて、工場とともに職種、シフト、必要な技能を確認し、仕事に合う人材を紹介します。'})}>
         <div className="field-metrics" role="group" aria-label="Phạm vi hoạt động">
           {metrics.map(([value,name],index)=><RevealFrame className="field-stat-frame" key={name} effect="up" delayMs={index*80}>
             <div className="field-stat"><strong>{value}</strong><span>{name}</span></div>

@@ -4,7 +4,7 @@ import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
 const file=process.cwd()+'/.info-v13-test.mjs';
-await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage';export {ServicePage,ServicesPage} from './src/pages/info/ServicesPages';export {PartnersPage} from './src/pages/info/PartnersPage';export {BrochurePage} from './src/pages/info/BrochurePage';export {LocaleProvider} from './src/i18n';export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'info-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:file,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage';export {ServicePage,ServicesPage} from './src/pages/info/ServicesPages';export {PartnersPage} from './src/pages/info/PartnersPage';",resolveDir:process.cwd(),sourcefile:'info-entry.tsx'},bundle:true,platform:'node',format:'esm',outfile:file,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
 try {
  const dom=new JSDOM('<div id="root"></div>',{url:'https://example.test/',pretendToBeVisual:true});
  for(const key of ['window','document','navigator','HTMLElement','Element','Node','Event','MutationObserver','localStorage','requestAnimationFrame','cancelAnimationFrame'])Object.defineProperty(globalThis,key,{configurable:true,writable:true,value:dom.window[key]});
@@ -19,39 +19,6 @@ try {
  const partnerList=document.querySelector('.partners-strip'),stories=document.querySelector('.info-testimonial-rail');
  assert.ok(partnerList.compareDocumentPosition(stories) & Node.DOCUMENT_POSITION_FOLLOWING,'partner names precede illustrative stories');
  assert.ok(document.querySelector('.partners-actions a[href="/jobs"]'));
- const {renderToStaticMarkup}=await import('react-dom/server');
- const readLabels={vi:'Xem các dịch vụ',en:'Explore our services',zh:'查看服务项目',ko:'서비스 살펴보기',ja:'サービス一覧を見る'};
- for(const [locale,label] of Object.entries(readLabels)) {
-  await pages.loadLocale(locale);
-  const html=renderToStaticMarkup(React.createElement(pages.LocaleProvider,{value:locale},React.createElement(pages.BrochurePage)));
-  const fixture=new JSDOM(html);const doc=fixture.window.document;
-  assert.equal(doc.querySelector('.md-brochure-read').textContent.trim(),label,locale+' localized cover action');
-  assert.ok(doc.querySelector('.md-brochure-page picture source[media="(max-width:639px)"]').getAttribute('srcset').includes('contact-team-480.webp'));
-  assert.ok(doc.querySelector('.md-brochure-page picture img').src.includes('about-team.webp'));
-  assert.equal(doc.querySelector('.md-brochure-print button'),null,'paper has no inactive call to action');
-  fixture.window.close();
- }
- await render('/e-brochure',pages.BrochurePage);
- let controls=document.querySelectorAll('.md-brochure-controls button');
- assert.equal(controls[0].disabled,true);
- const visibleCover=document.querySelector('.md-brochure-viewer .md-brochure-cover');
- // Responsive candidates and the original can all fail. Branding and chapter access must survive.
- for(let failure=0;failure<4&&visibleCover.querySelector('img');failure++){
-  await act(()=>visibleCover.querySelector('img').dispatchEvent(new Event('error')));
- }
- assert.equal(visibleCover.querySelector('picture'),null,'failed portrait and landscape are removed instead of exposing a broken image');
- assert.ok(visibleCover.querySelector('h2').textContent);
- await act(()=>document.querySelector('.md-brochure-read').click());
- assert.equal(document.activeElement,document.querySelector('.md-brochure-page h2'),'read action focuses the beginning of page two');
- assert.match(document.querySelector('.md-brochure-page').textContent,/Giải pháp/);
- await act(()=>controls[0].click());assert.ok(document.querySelector('.md-brochure-page .md-brochure-cover'));
- await act(()=>controls[1].click());assert.match(document.querySelector('.md-brochure-controls').textContent,/2 \/ 3/);assert.equal(document.querySelectorAll('.md-brochure [aria-live]').length,1,'one spoken page announcement');
- assert.equal(document.querySelectorAll('.md-brochure-print > div').length,3,'all three pages present for print from the second page');
- const printed=document.querySelector('.md-brochure-print').textContent;
- assert.match(printed,/Giải pháp của chúng tôi/);assert.match(printed,/SAMSUNG/);
- let printCalls=0;window.print=()=>{printCalls++;};
- await act(()=>document.querySelector('.md-brochure-toolbar button').click());assert.equal(printCalls,1);
- await act(()=>controls[1].click());assert.equal(controls[1].disabled,true);
  // Exercise rotation without waiting six real seconds. Visibility is supplied only to history.
  const intervals=new Map(), observers=new Map();let timerId=0;
  const motionListeners=new Set();

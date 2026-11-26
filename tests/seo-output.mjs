@@ -4,10 +4,19 @@ import {join} from 'node:path';
 const origin='https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site';
 const sitemap=await readFile('dist/sitemap.xml','utf8');
 const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
-assert.equal(urls.length,205,'expected 41 primary routes in 5 languages');
+assert.equal(urls.length,200,'expected 40 primary routes in 5 languages');
+assert.ok(urls.every(url=>!url.includes('/e-brochure')), 'retired reader is absent from sitemap');
+for(const base of ['', '/en', '/zh', '/ko', '/ja']) {
+ const old=await readFile(`dist${base}/e-brochure/index.html`,'utf8');
+ const target=base+'/about-us#profile';
+ assert.ok(old.includes(`content="0;url=${target}"`) && old.includes(`href="${target}"`),'old bookmarks reach localized profile without JavaScript');
+ assert.ok(old.includes(`rel="canonical" href="${origin}${base}/about-us"`));
+ assert.doesNotMatch(old,/md-brochure|window\.print|<script/i);
+}
 const titles=new Set(),descriptions=new Set();
 for(const url of urls){
  const path=new URL(url).pathname,html=await readFile(join('dist',path,'index.html'),'utf8');
+ assert.doesNotMatch(html,/href="[^"]*\/e-brochure(?:[?#/"][^"]*)?/i,`${path}: no links to retired reader`);
  const title=html.match(/<title>(.*?)<\/title>/)?.[1],description=html.match(/<meta name="description" content="([^"]*)"/)?.[1];
  assert.ok(title&&description,`${path}: metadata`);assert.ok(!titles.has(title),`${path}: duplicate title`);assert.ok(!descriptions.has(description),`${path}: duplicate description`);titles.add(title);descriptions.add(description);
  assert.ok(html.includes(`rel="canonical" href="${url}"`),`${path}: canonical`);

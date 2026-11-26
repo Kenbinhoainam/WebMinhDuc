@@ -2,5 +2,4 @@
 export {AboutPage} from './pages/info/AboutPage';
 export {ServicesPage,ServicePage} from './pages/info/ServicesPages';
 export {PartnersPage} from './pages/info/PartnersPage';
-export {BrochurePage} from './pages/info/BrochurePage';
 export {NewsPage,ArticlePage,EventsPage,EventPage,PolicyPage} from './EditorialPages';

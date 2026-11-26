@@ -521,71 +521,11 @@
     "ko": "연결 과정 전반의 지원",
     "ja": "つながりのプロセスを通じた支援"
   },
-  "Hồ sơ giới thiệu": {
-    "en": "Company profile",
-    "zh": "公司简介",
-    "ko": "회사 소개서",
-    "ja": "会社案内"
-  },
-  "Minh Đức · Nhân lực là tài sản": {
-    "en": "Minh Đức · People are our greatest asset",
-    "zh": "Minh Đức · 人才是宝贵资产",
-    "ko": "Minh Đức · 사람이 자산입니다",
-    "ja": "Minh Đức · 人材は財産です"
-  },
-  "Bản giới thiệu trực tuyến": {
-    "en": "Online company profile",
-    "zh": "在线公司简介",
-    "ko": "온라인 회사 소개서",
-    "ja": "オンライン会社案内"
-  },
-  "In / lưu PDF": {
-    "en": "Print / save PDF",
-    "zh": "打印 / 保存PDF",
-    "ko": "인쇄 / PDF 저장",
-    "ja": "印刷 / PDF保存"
-  },
-  "Kết nối nhân lực.": {
-    "en": "Connecting people.",
-    "zh": "连接人才。",
-    "ko": "인력을 연결합니다.",
-    "ja": "人材をつなぐ。"
-  },
-  "Mở rộng cơ hội.": {
-    "en": "Expanding opportunities.",
-    "zh": "拓展机遇。",
-    "ko": "기회를 넓힙니다.",
-    "ja": "機会を広げる。"
-  },
-  "Minh Đức kết nối doanh nghiệp và người lao động trong lĩnh vực cung ứng nhân lực, giới thiệu việc làm, với trọng tâm là lao động phổ thông tại nhà máy và doanh nghiệp sản xuất.": {
-    "en": "Minh Đức connects businesses and workers through workforce supply and job placement, focusing on general labor in factories and manufacturing businesses.",
-    "zh": "Minh Đức 通过人力供应和就业介绍连接企业与劳动者，重点服务工厂及制造企业的普工需求。",
-    "ko": "Minh Đức는 인력 공급과 취업 알선을 통해 기업과 근로자를 연결하며 공장 및 제조기업의 일반 근로자에 중점을 둡니다.",
-    "ja": "Minh Đứcは人材供給と職業紹介を通じて企業と働く人をつなぎ、工場や製造企業の一般作業員を中心に支援します。"
-  },
-  "Giải pháp của chúng tôi": {
-    "en": "Our solutions",
-    "zh": "我们的解决方案",
-    "ko": "솔루션 소개",
-    "ja": "私たちのソリューション"
-  },
-  "Đối tác được giới thiệu": {
-    "en": "Featured partners",
-    "zh": "展示的合作伙伴",
-    "ko": "소개된 파트너",
-    "ja": "掲載パートナー"
-  },
   "Bắt đầu một cuộc trao đổi": {
     "en": "Start a conversation",
     "zh": "开启交流",
     "ko": "상담 시작하기",
     "ja": "相談を始める"
-  },
-  "Bản giới thiệu phục vụ duyệt prototype. Hình ảnh minh họa được sử dụng từ bản giao diện tham chiếu; nội dung chi tiết sẽ được hoàn thiện trước khi phát hành chính thức.": {
-    "en": "This profile is for prototype review. Illustrative images come from the reference design; detailed content will be finalized before official release.",
-    "zh": "本简介用于原型审阅。示意图片来自参考界面；详细内容将在正式发布前完善。",
-    "ko": "프로토타입 검토용 소개서입니다. 예시 이미지는 참고 디자인에서 가져왔으며 상세 내용은 공식 공개 전에 완성됩니다.",
-    "ja": "プロトタイプ確認用の会社案内です。画像は参考デザインから使用しており、詳細内容は正式公開前に完成させます。"
   },
   "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?": {
     "en": "Preparing a factory job application: where to start?",
