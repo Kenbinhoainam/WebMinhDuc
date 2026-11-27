@@ -1,32 +1,12 @@
 import {createContext, useContext, useEffect, useId, useRef, useState} from 'react';
 import {useLocation} from 'react-router-dom';
 import {LocalFlag} from './LocalFlag';
+import {locales, languageTags, languageSwitchUrl, type Locale} from './i18n-runtime/paths';
 import './locale-selector.css';
 
-export const locales = ['vi', 'en', 'zh', 'ko', 'ja'] as const;
-export type Locale = typeof locales[number];
+export {locales, languageTags, languageSwitchUrl, localeFromPath, localeBase, stripLocale, localizedPath, type Locale} from './i18n-runtime/paths';
 export const localeNames: Record<Locale, string> = {vi: 'Tiếng Việt', en: 'English', zh: '简体中文', ko: '한국어', ja: '日本語'};
 const localeCodes: Record<Locale, string> = {vi: 'VI', en: 'EN', zh: 'ZH', ko: 'KO', ja: 'JA'};
-export const languageTags: Record<Locale, string> = {vi: 'vi', en: 'en', zh: 'zh-Hans', ko: 'ko', ja: 'ja'};
-
-/** Vietnamese remains at the original URLs; other languages use a prefix. */
-export function localeFromPath(pathname: string): Locale {
- const segment = pathname.split('/')[1];
- return locales.includes(segment as Locale) && segment !== 'vi' ? segment as Locale : 'vi';
-}
-export function localeBase(locale: Locale): string { return locale === 'vi' ? '' : `/${locale}`; }
-export function stripLocale(pathname: string): string {
- if (/^\/vi\/?$/.test(pathname)) return '/';
- const locale = localeFromPath(pathname);
- return locale === 'vi' ? pathname : pathname.slice(localeBase(locale).length) || '/';
-}
-export function localizedPath(pathname: string, locale: Locale): string {
- const path = stripLocale(pathname);
- return `${localeBase(locale)}${path === '/' && locale !== 'vi' ? '' : path}` || '/';
-}
-export function languageSwitchUrl(pathname:string, search:string, hash:string, locale:Locale):string {
- return localizedPath(pathname,locale)+search+hash;
-}
 const LocaleContext = createContext<Locale>('vi');
 export const LocaleProvider = LocaleContext.Provider;
 export const useLocale = () => useContext(LocaleContext);

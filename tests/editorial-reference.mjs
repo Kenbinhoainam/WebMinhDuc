@@ -62,15 +62,26 @@ try {
   assert.equal(prerender('/news?category=bad&page=25').querySelectorAll('.ed-archive-row').length,3);
   assert.equal(prerender('/news?page=-5').querySelectorAll('.editorial-feature-slide').length,2);
   const news = prerender('/news');
+  const portraitCover = prerender('/news/ho-so-xin-viec').querySelector('img.ed-cover-portrait');
+  assert.match(portraitCover.alt,/Nhân viên Minh Đức/,'article cover has descriptive text and explicit portrait framing');
+  assert.equal(prerender('/news/an-toan-thong-tin-khi-tim-viec').querySelector('.ed-story-photo'),null,'text-only article does not gain an invented image');
   const clickableCards = [...news.querySelectorAll('.editorial-feature-slide article, .ed-archive-row'),
     ...prerender('/news/ho-so-xin-viec').querySelectorAll('.editorial-related-item')];
   for (const card of clickableCards) {
     const links = card.querySelectorAll('a[href^="/news/"]');
     assert.equal(links.length,1,'each story exposes one focusable link');
     const link = links[0];
-    assert.ok(link.contains(card.querySelector('h2,h3')),'headline sits inside the article link');
+    const heading = card.querySelector('h2,h3');
+    assert.ok(link.contains(heading),'headline sits inside the article link');
+    assert.equal(link.ownerDocument.getElementById(link.getAttribute('aria-labelledby')),heading,'link name comes from its headline');
+    const date = card.querySelector('time');
+    if (date) assert.match(date.dateTime,/^\d{4}-\d{2}-\d{2}$/,'metadata renders an ISO date');
     const photo = card.querySelector('img');
-    if (photo) assert.equal(photo.closest('a'),link,'thumbnail opens the same article as its headline');
+    if (photo) {
+      assert.equal(photo.closest('a'),link,'thumbnail opens the same article as its headline');
+      assert.equal(photo.alt,'','article name is announced once when the thumbnail is decorative');
+      assert.ok(photo.width > 0 && photo.height > 0 && photo.srcset,'thumbnail retains its intrinsic size and candidates');
+    }
   }
 
   for (const category of ['workers','employers','hr']) assert.equal(prerender('/news?category=' + category).querySelectorAll('.ed-archive-row').length,2);

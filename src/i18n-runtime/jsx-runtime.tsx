@@ -1,21 +1,11 @@
 import {jsx as reactJsx, jsxs as reactJsxs, Fragment} from 'react/jsx-runtime';
-import {useLocale, type Locale} from '../i18n';
+import {useLocale} from '../i18n';
 import {Link, NavLink} from 'react-router-dom';
-import {lookup} from './catalog';
+import {translate} from './catalog';
+export {translate} from './catalog';
 import {useEffect, useImperativeHandle, useRef, useState, type ComponentPropsWithRef, type SyntheticEvent} from 'react';
 import {originalImageSource, responsiveImage} from '../media';
 
-export function translate(value: unknown, locale: Locale): unknown {
- if (locale === 'vi') return value;
- if (typeof value === 'string') {
-  const direct=lookup(locale,value);
-  if(direct) return direct;
-  const trimmed=value.trim(), translated=lookup(locale,trimmed);
-  return translated ? value.replace(trimmed,translated) : value;
- }
- if (Array.isArray(value)) return value.map(item => translate(item, locale));
- return value;
-}
 const translatedAttrs = ['aria-label', 'aria-description', 'placeholder', 'title', 'alt'];
 function RecoverableImage({properties, original}: {properties:ComponentPropsWithRef<'img'>; original:string}) {
  const [retryOriginal, setRetryOriginal] = useState(false);

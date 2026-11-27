@@ -68,6 +68,36 @@ try{
  assert.equal(rotation.getAttribute('aria-label'),'Phát chuyển động');
  await act(()=>rotation.click());await act(reportGalleryVisible);
  assert.equal(timers.size,2,'the reader can explicitly resume rotation');
+ function pointer(target,type,{x,y,pointerType='mouse'}) {
+   const event=new window.MouseEvent(type,{bubbles:true,cancelable:true,clientX:x,clientY:y,button:0,buttons:type==='pointerup'?0:1});
+   Object.defineProperties(event,{pointerId:{value:3},pointerType:{value:pointerType},isPrimary:{value:true}});
+   target.dispatchEvent(event);
+   return event;
+ }
+ const firstCard=serviceRail.querySelector('a');
+ serviceRail.scrollLeft=0;
+ await act(()=>pointer(firstCard,'pointerdown',{x:340,y:50}));
+ await act(()=>pointer(firstCard,'pointermove',{x:337,y:54}));
+ assert.equal(serviceRail.dataset.dragging,undefined,'a small movement is still a click');
+ await act(()=>pointer(firstCard,'pointermove',{x:140,y:55}));
+ assert.equal(serviceRail.scrollLeft,200,'mouse grab moves the actual scroller by the drag distance');
+ assert.equal(serviceRail.dataset.dragging,'true');
+ await act(()=>pointer(serviceRail,'pointerup',{x:140,y:55}));
+ assert.equal(serviceRail.dataset.dragging,undefined,'scroll snapping is restored after release');
+ let hit=false;
+ firstCard.addEventListener('click',()=>{hit=true;},{once:true});
+ await act(()=>firstCard.dispatchEvent(new window.MouseEvent('click',{bubbles:true,cancelable:true,detail:1})));
+ assert.equal(hit,false,'the click following a drag never opens its card');
+ await act(()=>pointer(firstCard,'pointerdown',{x:200,y:55,pointerType:'touch'}));
+ const vertical=pointer(firstCard,'pointermove',{x:202,y:120,pointerType:'touch'});
+ assert.equal(vertical.defaultPrevented,false,'vertical touch swipes stay native');
+ assert.equal(serviceRail.scrollLeft,200);
+ await act(()=>pointer(firstCard,'pointerup',{x:202,y:120,pointerType:'touch'}));
+ await act(()=>pointer(firstCard,'pointerdown',{x:202,y:120,pointerType:'touch'}));
+ await act(()=>pointer(firstCard,'pointerup',{x:202,y:120,pointerType:'touch'}));
+ await act(()=>firstCard.dispatchEvent(new window.MouseEvent('click',{bubbles:true,cancelable:true,detail:1,button:0})));
+ assert.ok(hit,'a single tap opens the card on a touch device');
+ assert.equal(document.querySelector('h1').textContent,'Cho thuê lao động');
  const cases=[
    ['labor-supply','Giới thiệu & cung ứng nhân lực'],
    ['labor-leasing','Cho thuê lao động'],

@@ -55,12 +55,15 @@ if(!mode){
    document.head.append(style);
    await observe(true);await fire('playing');
    assert.equal(play.tabIndex,0,'keyboard users can activate the visible playback control');
+   assert.equal(window.getComputedStyle(brand).display,'none','the hidden end-card links sit outside the tab order');
+   assert.ok(sound.compareDocumentPosition(brand) & Node.DOCUMENT_POSITION_FOLLOWING,'keyboard traversal reaches the choices after the two player controls');
    video.currentTime=37.5;
    await click(video);
    assert.equal(paused,true);
    assert.equal(stage.dataset.stage,'paused');
    assert.equal(play.getAttribute('aria-label'),'Tiếp tục video');
    assert.ok(brand.classList.contains('is-visible'),'manual pause displays the branded choice screen');
+   assert.equal(window.getComputedStyle(brand).display,'grid');
    assert.equal(window.getComputedStyle(stage.querySelector('.hero-stage')).aspectRatio,'auto','the paused layout grows to fit both choices');
    assert.equal(stage.querySelector('.hero-entry-bar'),null,'the paused card is the only hero CTA group');
    assert.equal(video.currentTime,37.5);
@@ -106,10 +109,12 @@ if(!mode){
    await act(async()=>window.dispatchEvent(new Event('wheel')));
    await scrollToY(-5);await scrollToY(0);
    assert.equal(paused,false,'wheel intent, overscroll bounce and zero movement leave playback alone');
+   if(mode==='scroll')await act(async()=>stage.querySelector('.hero-entry-bar a').focus());
    if(mode==='scroll-away')await observe(false);
    await scrollToY(mode==='scroll'?1:900);
    assert.equal(paused,true,'the first downward movement pauses the film');
    assert.equal(stage.dataset.stage,mode==='scroll'?'paused':'playing','a jump below the film defers changing offscreen layout');
+   if(mode==='scroll')assert.equal(document.activeElement,brand.querySelector('.hero-actions a'),'the matching CTA retains focus when playback pauses on scroll');
    await observe(false);hidden=true;await act(async()=>document.dispatchEvent(new Event('visibilitychange')));
    await scrollToY(0);await observe(true);hidden=false;
    await act(async()=>document.dispatchEvent(new Event('visibilitychange')));

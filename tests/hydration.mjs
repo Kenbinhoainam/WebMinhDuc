@@ -35,13 +35,15 @@ if(!process.argv.includes('--case')) {
  window.HTMLMediaElement.prototype.play=()=>Promise.resolve();window.HTMLMediaElement.prototype.pause=()=>{};
  window.scrollTo=()=>{};window.HTMLElement.prototype.scrollIntoView=()=>{};
  window.localStorage.setItem('minhduc.saved-jobs.v1',JSON.stringify(['MD001','MD003']));
- window.localStorage.setItem('minhduc.preferences','essential-only');
+ assert.equal(window.document.querySelector('.cookie-notice'),null,'pre-rendered page omits the storage notice');
  const errors=[]; const original=console.error;console.error=(...args)=>{errors.push(args.map(String).join(' '));original(...args)};
  const initialHeading=window.document.querySelector('h1');assert.ok(initialHeading);
  await import(pathToFileURL(`${process.cwd()}/${temp}/client.mjs`).href);
  await new Promise(resolve=>setTimeout(resolve,800));
  assert.equal(errors.length,0,`React errors: ${errors.join('\n')}`);
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
+ assert.equal(window.document.querySelector('.cookie-notice'),null,'first visit omits the storage notice');
+ assert.ok(window.document.querySelector('footer a[href$="/privacy-policy"]'),'privacy policy remains accessible from the footer');
  assert.match(window.document.title,/Minh Đức Vina/);
  const locale=/^\/(en|zh|ko|ja)(?:\/|$)/.exec(path)?.[1]||'vi';
  assert.equal(window.document.querySelector('.language-trigger')?.getAttribute('data-locale'),locale);

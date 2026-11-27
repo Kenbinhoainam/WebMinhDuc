@@ -18,7 +18,8 @@ import { Modal } from "./shared";
 import { jobs } from "./jobs-data";
 import { useSavedJobs } from "./saved-jobs";
 import { LanguageSelector, useLocale, useTranslation } from "./i18n";
-import { translate } from "./i18n-runtime/jsx-runtime";
+import { translate } from "./i18n-runtime/catalog";
+import { articles, articleHref } from "./editorial-data";
 import { navigation, subnavigation, sectionHasChild } from "./navigation";
 
 const isInternalJobRoute = (pathname:string) => jobs.some(job => job.internal && pathname.replace(/\/+$/,'') === `/jobs/${job.slug}`);
@@ -32,28 +33,9 @@ const searchItems = [
   ...Object.values(subnavigation)
     .flat()
     .map(([url, title]) => ({ url, title, category: "Khám phá" })),
-  ...[
-    ["ho-so-xin-viec", "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?"],
-    [
-      "nhu-cau-tuyen-dung",
-      "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất",
-    ],
-    ["chon-cong-viec-phu-hop", "Những câu hỏi nên làm rõ trước khi nhận việc"],
-    [
-      "thong-tin-tuyen-dung-minh-bach",
-      "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn",
-    ],
-    [
-      "don-tiep-lao-dong-moi",
-      "Chuẩn bị ngày đầu làm việc cho người lao động mới",
-    ],
-    [
-      "an-toan-thong-tin-khi-tim-viec",
-      "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến",
-    ],
-  ].map(([slug, title]) => ({
-    url: `/news/${slug}`,
-    title,
+  ...articles.map(article => ({
+    url: articleHref(article.slug),
+    title: article.title,
     category: "Cẩm nang",
   })),
   ...jobs.map((job) => ({

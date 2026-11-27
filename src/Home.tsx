@@ -44,7 +44,7 @@ function About() {
 function Solutions() {
   return <section className="section-home-solution" aria-labelledby="home-services-title">
     <div className="home-content-width">
-      <RevealFrame effect="zoom"><h2 className="home-heading" id="home-services-title">Giải pháp nhân sự</h2></RevealFrame>
+      <RevealFrame effect="zoom"><h2 className="home-heading" id="home-services-title">Giải pháp nhân lực toàn diện</h2></RevealFrame>
       <ServiceCards/>
       <Link to="/services" className="home-index-link">Xem tất cả dịch vụ <ArrowRight aria-hidden="true" size={18}/></Link>
     </div>

@@ -5,17 +5,17 @@ import {company} from './company';
 import {ButtonLink} from './shared';
 import {PageMasthead} from './PageMasthead';
 import {responsiveImage} from './media';
-import {useLocale, localizedPath} from './i18n';
+import {useLocale, localizedPath, type Locale} from './i18n';
 import {RevealFrame} from './motion';
 import {ORIGIN} from './seo/routes';
 import {useHomeCarousel, advanceHomeRail} from './useHomeCarousel';
-import {articles, categories, type Article} from './editorial-data';
+import {articleHref, articles, categories, featuredArticles, leadArticle, type Article} from './editorial-data';
+import {EditorialImage} from './EditorialCard';
+import {RoutedEditorialCard} from './RoutedEditorialCard';
 import {ArticleDate, formatEditorialDate} from './EditorialDate';
 import './editorial-reference.css';
 
 const contact = company;
-
-const featured = articles.filter(article => ['don-tiep-lao-dong-moi', 'an-toan-thong-tin-khi-tim-viec'].includes(article.slug));
 
 function NotFoundEditorial({event = false}: {event?: boolean}) {
   return <PageMasthead title={event ? 'Không tìm thấy sự kiện' : 'Không tìm thấy bài viết'}>
@@ -36,7 +36,7 @@ function useListingQuery() {
   return {params, update, url:location.pathname + location.search + location.hash};
 }
 
-function FeaturedNews({archive}: {archive: string}) {
+function FeaturedNews({archive, locale}: {archive: string; locale: Locale}) {
   const track = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   useHomeCarousel(track, () => advanceHomeRail(track.current));
@@ -51,43 +51,16 @@ function FeaturedNews({archive}: {archive: string}) {
     <h2 className="ed-feature-heading" id="featured-news-heading">Bài chọn lọc</h2>
     <div ref={track} className="editorial-feature-track" data-auto-rail role="region" aria-labelledby="featured-news-heading"
       tabIndex={0} onScroll={syncIndex}>
-      {featured.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
-        <article>
-          <Link className="ed-feature" to={'/news/' + article.slug} state={{archive}} aria-labelledby={'featured-' + article.slug}>
-            {article.image ? <div className="ed-feature-media"><img className="ed-feature-image"
-              {...responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 48vw, 612px')} src={article.image}
-              alt="" decoding="async" loading={i === 0 ? 'eager' : 'lazy'}/></div> :
-              <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>}
-            <div className="ed-feature-copy"><p className="ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></p>
-              <h2 id={'featured-' + article.slug}>{article.title}</h2><p>{article.excerpt}</p>
-            </div>
-          </Link>
-        </article>
+      {featuredArticles.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
+        <RoutedEditorialCard article={article} href={articleHref(article.slug)} locale={locale} variant="featured" archive={archive}
+          eagerImage={i === 0}/>
       </div>)}
     </div>
   </div></section>;
 }
 
-const newsCover = '/assets/minhduc-working-60s.webp';
-const photoDescriptions: Record<string, string> = {
-  '/assets/minhduc-v16/recruitment-field.webp': 'Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời',
-  '/assets/minhduc-v18/field-team.webp': 'Nhóm nhân viên Minh Đức trao đổi ngoài trời',
-  '/assets/minhduc-meeting-10s.webp': 'Đội ngũ Minh Đức ngồi họp quanh bàn',
-  [newsCover]: 'Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc',
-};
-function ArticleRow({article, archive}: {article: Article; archive: string}) {
-  return <article className="ed-archive-row info-news-card">
-    <Link className="ed-archive-link" to={'/news/' + article.slug} state={{archive}} aria-labelledby={'archive-' + article.slug}>
-      {article.image && <RevealFrame effect="media" className="ed-row-photo">
-        <img className={article.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''}
-          {...(responsiveImage(article.image, '(max-width: 700px) 100px, (max-width: 970px) 44vw, (max-width: 1279px) 30vw, 390px') ?? {src:article.image, width:1024, height:576})} alt="" loading="lazy"/>
-      </RevealFrame>}
-      <div className="info-news-meta ed-meta"><ArticleDate date={article.date}/><span>{article.category}</span></div>
-      <div className="ed-archive-copy"><h2 id={'archive-' + article.slug}>{article.title}</h2><p>{article.excerpt}</p></div>
-    </Link>
-  </article>;
-}
 export function NewsPage() {
+  const locale = useLocale();
   const {params, update, url} = useListingQuery();
   const resultsHeading = useRef<HTMLHeadingElement>(null);
   const selected = categories.find(([key]) => key === params.get('category')) ?? categories[0];
@@ -101,17 +74,17 @@ export function NewsPage() {
   }
   return <div className="ed-pages ed-news"><PageMasthead title="Tin tức & cẩm nang"
     description="Hướng dẫn chuẩn bị hồ sơ, tiếp nhận lao động và lập kế hoạch nhân lực cho nhà máy."
-    image={newsCover} imageAlt="Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc">
+    image={leadArticle.image?.src} imageAlt={leadArticle.image?.alt}>
       <Link className="btn" to={url.split('#')[0] + '#news-listings'}>Danh mục bài viết</Link>
       <Link className="ed-directory-link" to="/events">Hoạt động của Minh Đức Vina</Link>
     </PageMasthead>
-    {page === 1 && featured.length > 0 && <FeaturedNews archive={url}/>}
+    {page === 1 && featuredArticles.length > 0 && <FeaturedNews archive={url} locale={locale}/>}
     <section className="info-news-listing ed-section" aria-labelledby="news-listings"><div className="ed-frame">
       <h2 ref={resultsHeading} id="news-listings" tabIndex={-1}>Danh mục bài viết</h2>
       <div className="info-tabs ed-filters" role="group" aria-label="Chuyên mục tin tức">{categories.map(([key, label]) =>
         <button type="button" key={key} aria-pressed={selected[0] === key} onClick={() => update({category: key === 'all' ? null : key, page: null})}>{label}</button>)}</div>
       <p className="info-result-count ed-result" aria-live="polite">{filtered.length} bài viết · Trang {page}/{totalPages}</p>
-      <div className="info-news-grid ed-archive">{filtered.slice((page - 1) * 3, page * 3).map(article => <ArticleRow article={article} archive={url} key={article.slug}/>)}</div>
+      <div className="info-news-grid ed-archive">{filtered.slice((page - 1) * 3, page * 3).map(article => <RoutedEditorialCard key={article.slug} article={article} href={articleHref(article.slug)} locale={locale} variant="archive" archive={url}/>)}</div>
       {filtered.length === 0 && <p>Chưa có bài trong chuyên mục này. <button className="ed-control" onClick={() => update({category:null, page:null})}>Xem tất cả</button></p>}
       {totalPages > 1 && <nav className="info-pagination ed-pagination" aria-label="Phân trang tin tức">
         <button type="button" aria-label="Trang trước" disabled={page === 1} onClick={() => changePage(page - 1)}><ChevronLeft size={18}/></button>
@@ -163,12 +136,12 @@ function ArticleReader({article}: {article: Article}) {
     <nav className="ed-crumbs" aria-label="Đường dẫn"><Link to="/">Trang chủ</Link><span aria-hidden="true">/</span><Link to={archive}>Tin tức</Link></nav>
     <article className="info-article ed-story">
       <header className={'ed-story-head' + (article.image ? ' ed-story-illustrated' : '')}>
-        <div className="ed-story-deck"><p className="ed-meta">{article.category} <span aria-hidden="true">·</span> <ArticleDate date={article.date}/></p>
+        <div className="ed-story-deck"><p className="ed-meta">{article.category} <span aria-hidden="true">·</span> <ArticleDate date={article.date} locale={locale}/></p>
           <h1>{article.title}</h1><p className="ed-lead">{article.excerpt}</p></div>
         {article.image && <div className="ed-story-photo">
-          <img className={'ed-cover' + (article.slug === 'ho-so-xin-viec' ? ' ed-cover-portrait' : '')}
-            {...(responsiveImage(article.image, '(max-width: 700px) 92vw, (max-width: 1279px) 40vw, 510px') ?? {src:article.image, width:1024, height:576})}
-            alt={photoDescriptions[article.image]}/>
+          <EditorialImage image={article.image} loading="eager"
+            className={'ed-cover' + (article.image.orientation === 'portrait' ? ' ed-cover-portrait' : '')}
+            sizes="(max-width: 700px) 92vw, (max-width: 1279px) 40vw, 510px"/>
         </div>}
       </header>
       <div className="ed-reader-grid"><Contents article={article} archive={archive}/>
@@ -180,15 +153,10 @@ function ArticleReader({article}: {article: Article}) {
           </section>)}
           <div className="ed-actions"><Link className="btn" to={employer ? '/#business-contact' : '/jobs'}>{employer ? 'Gửi nhu cầu nhân lực' : 'Xem việc làm'}</Link>
             <Link to={archive}>Trở về tất cả bài viết</Link></div>
-          <ArticleShare url={ORIGIN + localizedPath('/news/' + article.slug, locale)}/>
+          <ArticleShare url={ORIGIN + localizedPath(articleHref(article.slug), locale)}/>
         </div>
         <aside className="info-related-news editorial-related-aside ed-related"><h2>Có thể bạn quan tâm</h2>{related.map(item =>
-          <article className="editorial-related-item" key={item.slug}>
-            <Link to={'/news/' + item.slug} state={{archive}}>
-              {item.image && <img {...responsiveImage(item.image, '74px')} src={item.image} className={item.slug === 'ho-so-xin-viec' ? 'ed-portrait' : ''} alt="" loading="lazy"/>}
-              <h3>{item.title}</h3>
-            </Link>
-          </article>)}</aside>
+          <RoutedEditorialCard key={item.slug} article={item} href={articleHref(item.slug)} locale={locale} variant="related" archive={archive}/>)}</aside>
       </div>
     </article>
   </div></div>;

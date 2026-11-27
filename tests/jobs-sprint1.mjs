@@ -33,6 +33,14 @@ try {
  await render('/jobs?'+combo,JobsPage);assert.equal(document.querySelectorAll('.job-card').length,1);assert.match(document.querySelector('.job-card').textContent,/đóng gói thời vụ/i);assert.equal(document.querySelector('#jobs-shift').value,'Đêm');
  await render('/jobs',JobsPage);assert.doesNotMatch(document.querySelector('.jobs-grid').textContent,/Chuyên viên tuyển dụng/);
  assert.ok(document.querySelector('.md-masthead-actions a[href="/saved-jobs"]'));
+ const bookmark = document.querySelector('[data-job-save]');
+ assert.equal(bookmark.getAttribute('aria-pressed'),'false');
+ await click(bookmark);
+ assert.equal(bookmark.getAttribute('aria-pressed'),'true');
+ assert.match(bookmark.getAttribute('aria-label'),/^Bỏ lưu /);
+ await click(bookmark);
+ assert.equal(bookmark.getAttribute('aria-pressed'),'false');
+ assert.match(bookmark.getAttribute('aria-label'),/^Lưu /);
  const search = document.querySelector('.jobs-filters');
  assert.equal(search.compareDocumentPosition(document.querySelector('.jobs-result-bar h2')), window.Node.DOCUMENT_POSITION_FOLLOWING);
  await act(() => document.querySelector('.jobs-event-photo img').dispatchEvent(new window.Event('error')));

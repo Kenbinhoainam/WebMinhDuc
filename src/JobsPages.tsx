@@ -8,7 +8,7 @@ import {PageMasthead} from './PageMasthead';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
 import {useLocale, type Locale} from './i18n';
-import {translate} from './i18n-runtime/jsx-runtime';
+import {translate} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {useSavedJobs} from './saved-jobs';
 import {createDemoSubmission} from './demo-submissions';

@@ -40,6 +40,7 @@ if(!process.argv.includes('--case')){
   if(['observer','observer-observe'].includes(mode)){
    if(callback)await observe(true);assert.equal(video.getAttribute('src'),null,'observer failure remains static despite stale callback');assert.equal(stage.dataset.stage,'fallback');await click();assert.equal(plays,1,'manual play remains possible');
   }else if(['reduced','data','slow'].includes(mode)){
+   assert.equal(stage.dataset.decorativeImages,mode==='reduced'?'true':'false','data-saving mode skips architecture even when the end card is visible');
    await observe(true);assert.equal(plays,0);assert.equal(video.getAttribute('src'),null);assert.equal(stage.dataset.stage,'fallback');await click();assert.equal(plays,1,'explicit manual playback bypasses initial preference');
   }else if(mode==='blocked'){
    await observe(true);assert.equal(plays,1);assert.equal(stage.dataset.stage,'fallback');assert.ok(brand.classList.contains('is-visible'));assert(!video.classList.contains('is-ready'));

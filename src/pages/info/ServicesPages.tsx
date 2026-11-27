@@ -1,6 +1,5 @@
 import {useRef} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {ArrowUpRight} from 'lucide-react';
 import {SectionHeading, useContact} from '../../shared';
 import {PageMasthead} from '../../PageMasthead';
 import {responsiveImage} from '../../media';
@@ -10,7 +9,7 @@ import {useHomeCarousel, advanceHomeRail} from '../../useHomeCarousel';
 import {subnavigation} from '../../navigation';
 import PartnersStrip from '../../PartnersStrip';
 import {campusAlt, consultingTopics, industrialCampus, services, type Service} from './data';
-import {ServiceCards} from '../../ServiceShowcase';
+import {ServiceCards, ServiceDirectory} from '../../ServiceShowcase';
 import {InfoContact, FAQ} from './components';
 import './services-reference.css';
 
@@ -27,17 +26,13 @@ export function ServicesPage() {
           <Link className="service-inline-link" to="/jobs">Tôi đang tìm việc</Link>
         </div>
       </RevealFrame>
-      <nav aria-label="Danh sách giải pháp"><ul>{services.map(service =>
-        <li key={service.slug}><Link to={`/services/${service.slug}`}>
-          <strong>{service.need}</strong><span>{service.title}</span><ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/>
-        </Link></li>)}</ul></nav>
+      <ServiceDirectory/>
     </section>
     <section className="md-ref-service-metrics"><div className="container">
       <p>Số liệu mô phỏng cho giao diện</p>
       <div>{[['1.200+','Kết nối việc làm'],['80+','Nhu cầu doanh nghiệp'],['15+','Khu vực kết nối']].map(([value,label], i) =>
         <RevealFrame key={label} delay={i as 0|1|2}><article><strong>{value}</strong><span>{label}</span></article></RevealFrame>)}</div>
     </div></section>
-    <section className="section container service-explore"><h2>Khám phá giải pháp</h2><ServiceCards/></section>
   </>;
 }
 export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
@@ -85,14 +80,14 @@ function ServiceDecision({service}: {service: Service}) {
             <tbody><tr><th scope="row">A</th><td>Bắc Ninh</td><td>Ngày</td><td>12</td><td>02/03</td></tr><tr><th scope="row">B</th><td>Bắc Ninh</td><td>Đêm</td><td>8</td><td>09/03</td></tr></tbody>
           </table>
         </div>
-        <p>Nhà máy xác nhận ca và lịch nhận việc. Minh Đức trao đổi nguồn ứng viên theo từng đợt.</p>
+        <p>{service.card.detail}</p>
       </div>
       <RevealFrame effect="media"><figure><img src="/assets/minhduc-v16/recruitment-field.webp" {...responsiveImage('/assets/minhduc-v16/recruitment-field.webp','(min-width: 768px) 320px, 82vw')} alt="Ghi nhận hoạt động tìm nguồn tại hiện trường" loading="lazy" decoding="async"/><figcaption>Hoạt động tìm nguồn</figcaption></figure></RevealFrame>
     </section>;
   }
   if (slug === 'labor-leasing') {
     const responsibilities = [
-      ['Thời hạn','Xác định khoảng thời gian và số người cần cho từng ca.'],
+      ['Thời hạn',service.card.detail],
       ['Đầu mối phối hợp','Thống nhất người tiếp nhận tại nơi làm việc và người xử lý thay đổi ca.'],
       ['Điều kiện triển khai','Các bên cần xác minh ngành nghề, điều kiện pháp lý và trách nhiệm trước khi ký kết.'],
     ];
@@ -114,7 +109,7 @@ function ServiceDecision({service}: {service: Service}) {
   if (slug === 'college-admissions') {
     return <section className="section container service-decision md-ref-service-highlights service-study" data-service-layout="college-admissions">
       <h2>So sánh hình thức học</h2><div className="service-study-modes">
-        <article><h3>Từ xa</h3><p>Hỏi trường về lịch học trực tuyến, thời gian tự học và địa điểm thi.</p></article>
+        <article><h3>Từ xa</h3><p>{service.card.detail}</p></article>
         <article><h3>Chính quy</h3><p>Hỏi trường về lịch học tại lớp, yêu cầu có mặt và điều kiện thực hành.</p></article>
       </div>
       <Link className="service-inline-link" to="/education">Khám phá chương trình tuyển sinh</Link>
@@ -129,7 +124,7 @@ function ServiceFees({service}: {service: Service}) {
   const education = service.slug === 'college-admissions';
   const headings = education ? ['Hạng mục','Nơi xác nhận','Thông tin cần xác nhận'] : ['Hạng mục','Căn cứ tính phí','Điểm cần thống nhất'];
   return <section className="section container md-ref-fee-section service-fees"><h2>{education ? 'Chi phí cần xác nhận với trường' : 'Cơ cấu chi phí tham khảo'}</h2>
-    {service.slug === 'recruitment' ? <p className="md-ref-fee-highlight">Phạm vi tìm kiếm, tiêu chí kỹ năng và các bước đánh giá là cơ sở trao đổi phí tuyển chọn.</p> :
+    {service.slug === 'recruitment' ? <p className="md-ref-fee-highlight">{service.card.detail}</p> :
       <div className="info-fee-table-wrap service-table-scroll" role="region" aria-label={education ? 'Chi phí cần xác nhận với trường' : 'Cơ cấu chi phí tham khảo'} tabIndex={0}>
         <table className="info-fee-table"><caption>{education ? 'Thông tin cần xác nhận' : 'Các yếu tố để trao đổi chi phí'}</caption>
           <thead><tr>{headings.map(heading=><th scope="col" key={heading}>{heading}</th>)}</tr></thead>

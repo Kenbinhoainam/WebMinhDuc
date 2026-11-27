@@ -21,6 +21,7 @@ try {
   for (const locale of ['vi', 'en', 'zh', 'ko', 'ja']) {
     await loadLocale(locale);
     const base = localeBase(locale);
+    let homeServiceCards;
     for (const [path, pattern, name] of cases) {
       const html = renderToStaticMarkup(React.createElement(LocaleProvider, {value: locale}, React.createElement(MemoryRouter, {basename: base || '/', initialEntries: [`${base}${path}`]}, React.createElement(Routes, null, React.createElement(Route, {path: pattern, element: React.createElement(components[name])})))));
       const dom = new JSDOM(`<main>${html}</main>`);
@@ -35,6 +36,23 @@ try {
       for (const node of doc.querySelectorAll('a[href],form[action],script[src],iframe[src]')) {
         const url = node.getAttribute('href') || node.getAttribute('action') || node.getAttribute('src') || '';
         assert.doesNotMatch(url, /^(?:https?:)?\/\/(?:www\.)?hr2b\.com|^(?:mailto:)[^\s]*@hr2b\.com/i, `${label}: reference presentation must not restore HR2B service endpoints`);
+      }
+      const serviceCards = [...doc.querySelectorAll('.service-gallery-card')].map(card => {
+        const link = card.querySelector('a');
+        const [heading,action] = link.getAttribute('aria-labelledby').split(' ').map(id=>doc.getElementById(id));
+        assert.equal(action,card.querySelector('.service-card-cta'),'the visible CTA belongs to the accessible link name');
+        assert.equal(heading,card.querySelector('h3'),'single card link is named by its service');
+        assert.equal(card.querySelectorAll('a').length,1,'a whole card is one tab stop');
+        const details=link.getAttribute('aria-describedby').split(' ').map(id=>doc.getElementById(id)?.textContent);
+        assert.ok(details.length===2 && details.every(Boolean),'summary and expanded detail are accessible');
+        return {href:link.getAttribute('href'),title:heading.textContent,details,
+          photo:card.querySelector('.service-card-photo[width][height]').getAttribute('src'),
+          icon:card.querySelector('.service-card-icon').className,
+          action:card.querySelector('.service-card-cta').textContent.trim()};
+      });
+      if (name==='Home') homeServiceCards=serviceCards;
+      if (name==='ServicesPage' || name==='AboutPage' || name==='ServicePage') {
+        assert.deepEqual(serviceCards,homeServiceCards.filter(card=>card.href!==base+path),label+' matches the homepage service cards');
       }
       if (name === 'Home') {
         const sections = [...doc.querySelector('main').children].filter(node => node.tagName === 'SECTION');
@@ -78,16 +96,11 @@ try {
       }
       if (name === 'ServicesPage') {
         assert.equal(doc.querySelector('[role="tablist"]'), null);
-        const direct = [...doc.querySelectorAll('.service-directory nav a')].map(link => link.getAttribute('href'));
-        const panels = [...doc.querySelectorAll('.service-gallery-track article > a')].map(link => link.getAttribute('href'));
-        assert.equal(new Set(direct).size, 5, 'all five decisions have direct links without rail navigation');
         const directory=doc.querySelector('.service-directory');
-        const heroPhoto=doc.querySelector('.md-photo-masthead .md-masthead-figure');
-        assert.ok(heroPhoto.compareDocumentPosition(directory) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'five choices immediately follow the visual masthead');
-        assert.deepEqual(panels, direct, 'directory and autoplay rail lead to the same five services');
-        assert.ok(doc.querySelector('.service-gallery-track[data-auto-rail][tabindex="0"]'), 'the service rail stays keyboard reachable alongside its side controls');
-        assert.equal(doc.querySelectorAll('.service-gallery-controls button[aria-controls]').length,2);
-        assert.equal(panels.length, doc.querySelectorAll('.service-gallery-card img[width][height]').length, 'card photos reserve their native dimensions');
+        assert.equal(directory.querySelectorAll('nav.service-card-grid article > a').length,5,'all services visible in the directory grid');
+        assert.equal(doc.querySelector('.service-gallery-track'),null,'the directory has one set of cards');
+        assert.ok(doc.querySelector('.md-photo-masthead .md-masthead-figure').compareDocumentPosition(directory) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'service grid follows the masthead');
+        assert.ok(directory.querySelector('.service-index-actions button') && directory.querySelector('a[href="'+base+'/jobs"]'));
       }
       if (name === 'ServicePage') {
         const recruitment = path.endsWith('/recruitment');
@@ -225,6 +238,17 @@ try {
   const responsiveWidths=[];
   gallery.walkRules('.service-gallery-track',rule=>rule.walkDecls('grid-auto-columns',decl=>responsiveWidths.push(decl.value)));
   assert.deepEqual(responsiveWidths,['calc((100% - 2 * var(--card-gap)) / 3)','calc((100% - var(--card-gap)) / 2)','100%'],'three desktop services, two on a tablet, one on a phone');
+  let narrowCardsUseContentHeight=false;
+  gallery.walkAtRules('media',rule=>{
+    if (rule.params!=='(max-width:350px)') return;
+    rule.walkRules('.service-gallery-card > a',card=>card.walkDecls('aspect-ratio',decl=>{
+      narrowCardsUseContentHeight ||= decl.value==='auto';
+    }));
+  });
+  assert.ok(narrowCardsUseContentHeight,'at 320px the card height follows its text and CTA');
+  gallery.walkRules('.service-gallery-card > a',rule=>rule.walkDecls(decl=>{
+    assert.ok(!['height','max-height','block-size','max-block-size','overflow'].includes(decl.prop),'content can grow, only the photo is cropped');
+  }));
   const serviceCss=postcss.parse(await readFile('src/pages/info/services-reference.css','utf8'));
   serviceCss.walkRules(rule=>{
     for(const selector of rule.selectors){

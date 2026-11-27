@@ -1,48 +1,29 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight, Play} from 'lucide-react';
-import {useTranslation, type Locale} from './i18n';
-import {articles, categories, type Article} from './editorial-data';
-import {ArticleDate} from './EditorialDate';
+import {useLocale, useTranslation, type Locale} from './i18n';
+import {articleHref, articles, categories, leadArticle} from './editorial-data';
+import {RoutedEditorialCard} from './RoutedEditorialCard';
 import {responsiveImage} from './media';
 import heroAssets from './hero-assets.json';
 import './home-editorial.css';
 
-const lead = articles.find(article => article.slug === 'nhu-cau-tuyen-dung') ?? articles[0];
-const [workers, employers, hr] = categories.slice(1);
+const [, workers, employers, hr] = categories;
+type StoryCategory = typeof workers | typeof employers | typeof hr;
 
-function NewsList({category, illustrated = false}: {category: typeof workers; illustrated?: boolean}) {
+function NewsList({category, locale, illustrated = false}: {category: StoryCategory; locale: Locale; illustrated?: boolean}) {
   const [key, label] = category;
   return <section className="home-editorial-list">
     <h3><Link to={'/news?category=' + key + '#news-listings'}>{label}<ArrowUpRight size={15} aria-hidden="true"/></Link></h3>
-    <ul>{articles.filter(article => article.category === label && article !== lead).map((article, index) =>
-      <li key={article.slug}>
-        <Link to={'/news/' + article.slug} aria-labelledby={'home-story-' + article.slug}>
-          {illustrated && index === 0 && article.image && <img src={article.image}
-            {...responsiveImage(article.image, '(max-width:720px) 90vw, (max-width:959px) 43vw, 280px')}
-            alt="" loading="lazy" decoding="async"/>}
-          <ArticleDate date={article.date}/><span id={'home-story-' + article.slug}>{article.title}</span>
-        </Link>
-      </li>
+    <ul>{articles.filter(article => article.category === label && article !== leadArticle).map((article, index) =>
+      <RoutedEditorialCard key={article.slug} article={article} href={articleHref(article.slug)} locale={locale} variant="homeList"
+        showImage={illustrated && index === 0}/>
     )}</ul>
   </section>;
 }
 
-function LeadStory({article}: {article: Article}) {
-  return <article className="home-editorial-lead">
-    <Link className="home-editorial-lead-link" to={'/news/' + article.slug} aria-labelledby="home-editorial-lead-title">
-      {article.image && <img src={article.image} {...responsiveImage(article.image, '(max-width:959px) 92vw, 540px')}
-        alt="" loading="lazy" decoding="async"/>}
-      <div className="home-editorial-lead-copy">
-        <p className="home-editorial-meta"><span>{article.category}</span><ArticleDate date={article.date}/></p>
-        <h3 id="home-editorial-lead-title">{article.title}</h3>
-        <p>{article.excerpt}</p>
-      </div>
-    </Link>
-  </article>;
-}
-
 export function HomeNews() {
+  const locale = useLocale();
   const t = useTranslation();
   return <section className="home-editorial" aria-labelledby="home-editorial-heading">
     <div className="container home-editorial-shell">
@@ -51,9 +32,9 @@ export function HomeNews() {
         <Link to="/news">{t({vi:'Xem tất cả bài viết',en:'All articles',zh:'查看全部文章',ko:'모든 글 보기',ja:'記事一覧'})}<ArrowUpRight size={18} aria-hidden="true"/></Link>
       </header>
       <div className="home-editorial-layout">
-        <LeadStory article={lead}/>
-        <div className="home-editorial-left"><NewsList category={workers} illustrated/></div>
-        <div className="home-editorial-right"><NewsList category={employers}/><NewsList category={hr}/></div>
+        <RoutedEditorialCard article={leadArticle} href={articleHref(leadArticle.slug)} locale={locale} variant="homeLead"/>
+        <div className="home-editorial-left"><NewsList category={workers} locale={locale} illustrated/></div>
+        <div className="home-editorial-right"><NewsList category={employers} locale={locale}/><NewsList category={hr} locale={locale}/></div>
       </div>
       <Link className="home-editorial-activities" to="/events">Hoạt động của Minh Đức Vina<ArrowUpRight size={17} aria-hidden="true"/></Link>
     </div>

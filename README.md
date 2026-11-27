@@ -101,6 +101,12 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 - `src/seo/`, `entry-server.tsx`, `scripts/prerender.mjs`: metadata và xuất HTML tĩnh; không dùng dịch DOM sau hydration.
 - `motion.tsx`/`motion.css` và CSS theo trang: animation, responsive, reduced-motion.
 
+### Chuẩn bị chuyển sang Next.js
+
+Prototype hiện chạy Vite và React Router. Khi chuyển sang App Router, có thể lấy đường dẫn tĩnh từ `pages` trong `src/seo/routes.ts` và `localizedPath` trong `src/i18n-runtime/paths.ts`. Phần metadata trên server gọi `await loadLocale(locale)` trước `localizedSeo(path, locale)` để nhận tiêu đề, mô tả, canonical, hreflang và JSON-LD theo ngôn ngữ. Các hàm này chạy được trong Node.
+
+Trang chủ và danh mục dùng chung dữ liệu và thẻ dịch vụ. Nơi hiển thị chỉ quyết định dùng dải kéo hay lưới. Với tin tức, `EditorialCard` nhận URL và ngôn ngữ qua props. `RoutedEditorialCard` phụ trách điều hướng của prototype và khôi phục bộ lọc. Khi thay router, cần kiểm tra lại đường quay về danh sách, neo biểu mẫu và các liên kết đã chia sẻ. Phần phát phim, kéo thẻ và lưu việc trên thiết bị cần chạy ở phía trình duyệt.
+
 ## Kiểm thử
 
 Các kiểm tra gồm TypeScript/build, lưu việc và file CV, các luồng ứng tuyển/bộ lọc/tin đóng, validation biểu mẫu, quản trị mẫu, SEO 205 route, hydration đa ngôn ngữ và đánh giá độc lập. Kết quả Sprint 1 ở `docs/sprint-1/validation.md`; kết quả mới nhất ở `docs/flagship/v16-implementation.txt`.
