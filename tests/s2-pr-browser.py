@@ -126,6 +126,20 @@ def geometry(page, width, capture):
         h1:document.querySelector('main h1')?.textContent,drawer:visible('.menu-button'),nav:visible('.desktop-nav'),
         headerHeight:h.getBoundingClientRect().height,offenders};
     }""")
+    if facts["scroll"]>facts["client"]+1 and width==320:
+        facts["overflowDiagnostics"]=page.evaluate("""() => {
+          const root=document.documentElement, note={};
+          for (const sel of ['.admin-table-wrap','.admin-table-wrap th','.admin-table-wrap table','.admin-queues','.admin-side','.admin-demo','.site-header','.site-footer']) {
+            const node=document.querySelector(sel); if (!node) continue;
+            const css=node.getAttribute('style'); const values={};
+            for(const [key,value] of [['position','relative'],['display','none']]) {
+              node.style.setProperty(key,value,'important'); values[key]=root.scrollWidth;
+              if(css===null)node.removeAttribute('style');else node.setAttribute('style',css);
+            }
+            note[sel]=values;
+          }
+          return note;
+        }""")
     assert facts["inner"]==width and facts["scroll"]<=facts["client"]+1, facts
     assert facts["h1"] and facts["headerHeight"]>0, facts
     assert facts["drawer"] == (width<1280) and facts["nav"] == (width>=1280), facts
