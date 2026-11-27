@@ -9,7 +9,7 @@ export async function runFlows({check,temp,locales}){
   await build({stdin:{contents:`export {JobsPage, JobDetailPage, SavedJobsPage, jobs} from './src/JobsPages';
     export {EducationDetailPage,educationPrograms} from './src/Education';
     export {EventsPage,EventPage,NewsPage} from './src/EditorialPages';
-    export {company} from './src/company';export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale} from './src/i18n-runtime/catalog';
+    export {ServiceDirectory} from './src/ServiceShowcase';export {FAQ} from './src/pages/info/components';export {services} from './src/pages/info/data';export {company} from './src/company';export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale,translate} from './src/i18n-runtime/catalog';
     export {getDemoSubmissions,resetDemoSubmissions} from './src/demo-submissions';`,
     resolveDir:process.cwd(),sourcefile:'s2-qa-flows.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',outfile:file,loader:{'.css':'empty'},logLevel:'silent'});
   const dom=new JSDOM('<div id="root"></div>',{url:'https://example.test/WebMinhDuc/',pretendToBeVisual:true});
@@ -40,6 +40,26 @@ export async function runFlows({check,temp,locales}){
   try{
     for(const locale of locales){
       const shared='component interaction';
+      await open(locale,'/services','/services',app.ServiceDirectory);
+      await check('service.image-fallback',['P03-F3'],shared,locale,'All five service tiles retain their exact title and destination when their photo fails or recovers',async()=>{
+        const cards=[...d.querySelectorAll('.service-gallery-card')];assert.equal(cards.length,5);const results=[];
+        for(const [i,card] of cards.entries()){
+          const image=card.querySelector('img'),link=card.querySelector('a'),title=card.querySelector('h3'),service=app.services[i];
+          await act(()=>image.dispatchEvent(new w.Event('error')));assert.equal(image.hidden,true);assert.equal(title.textContent,String(app.translate(service.title,locale)));assert.ok(link.pathname.endsWith('/services/'+service.slug));
+          await act(()=>image.dispatchEvent(new w.Event('load')));assert.equal(image.hidden,false);results.push({title:title.textContent,href:link.pathname});
+        }
+        return results;
+      },'Synthetic image error and load, text and destinations verified. Decode, bandwidth and visual size require separate observations.');
+      for(const [i,service] of app.services.entries()){
+        const id='P0'+(4+i);
+        await open(locale,'/services/'+service.slug,'/services/:slug',()=>h(app.FAQ,{questions:service.questions}));
+        await check(id+'.faq',[id+'-C3','MO03-1'],shared,locale,'All three real FAQ prompts control their own answer, synchronizing expanded/inert/hidden. Rapid batched toggles leave exactly one active and preserve button focus',async()=>{
+          const buttons=[...d.querySelectorAll('.info-faq button')];assert.equal(buttons.length,3);
+          function verify(active){buttons.forEach((b,n)=>{const p=d.getElementById(b.getAttribute('aria-controls'));assert.equal(b.getAttribute('aria-expanded'),String(n===active));assert.equal(p.getAttribute('aria-hidden'),String(n!==active));assert.equal(p.hasAttribute('inert'),n!==active);assert.equal(p.textContent,String(app.translate(service.questions[n][1],locale)));});}
+          verify(0);for(const n of [1,2,0]){await click(buttons[n]);verify(n);assert.equal(d.activeElement,buttons[n]);}
+          await act(()=>{for(const n of [1,2,1]){buttons[n].focus();buttons[n].click();}});verify(1);assert.equal(d.activeElement,buttons[1]);await click(buttons[1]);verify(-1);return {service:service.slug,count:3,rapidSequence:[1,2,1],allClosed:true};
+        },'Component semantics and pointer-click focus tested. Geometry and native keyboard navigation through adjacent sections require a browser.');
+      }
       await open(locale,'/jobs','/jobs',app.Header);
       await check('header.drawer',['T18'],shared,locale,'Opening mobile drawer, expanding one group, and two Escape presses restore subgroup and launcher focus in order',async()=>{
         const launcher=d.querySelector('.menu-button');await click(launcher);
@@ -86,7 +106,7 @@ export async function runFlows({check,temp,locales}){
           for(const [i,button] of buttons.entries()){
             await click(button);const src=new URL(d.querySelector('#contact-map iframe').src),office=app.company.offices[i];
             assert.equal(src.searchParams.get('cid'),cids[i]);assert.equal(src.searchParams.get('hl'),locale==='zh'?'zh-CN':locale);
-            assert.equal(d.querySelector('.contact-map-caption strong').textContent,office.name);assert.equal(d.querySelector('.contact-map-caption div p').textContent,office.address);
+            assert.equal(d.querySelector('.contact-map-caption strong').textContent,String(app.translate(office.name,locale)));assert.equal(d.querySelector('.contact-map-caption div p').textContent,String(app.translate(office.address,locale)));
             assert.equal(d.querySelector('.contact-map-caption a').href,office.map);
           }
         }

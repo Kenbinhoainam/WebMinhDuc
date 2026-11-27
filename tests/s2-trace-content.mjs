@@ -7,6 +7,7 @@ import {existsSync, readFileSync, writeFileSync} from 'node:fs';
 import {join, resolve} from 'node:path';
 import {build} from 'esbuild';
 import {JSDOM} from 'jsdom';
+import {adaptHostingPaths} from '../scripts/hosting-profile.mjs';
 
 const root = 'docs/sdd/SEL-2026.11.27-v1.0.0';
 const output = process.argv[2] ?? root + '/execution/trace-content.json';
@@ -80,8 +81,8 @@ for (const locale of locales) {
       const expected = localizedSeo(route,locale);
       assert.equal(doc.title,expected.title);
       assert.equal(doc.querySelector('[name=description]').content,expected.description);
-      assert.equal(canonical.href,expected.url);
-      return expected.title+'; '+expected.url;
+      assert.equal(canonical.href,adaptHostingPaths(expected.url));
+      return expected.title+'; '+canonical.href;
     }
     if (number >= 10 && number <= 17) {
       const job = jobs[number-10];
@@ -159,7 +160,9 @@ for (const locale of locales) {
       function relatedDestinationLinks() {
         assertCopy('Tin tức','.ed-crumbs a');
         assertCopy('Trở về tất cả bài viết','.ed-actions a');
-        assert.equal(href(doc.querySelector('.ed-actions a:not(.btn)')),loc('/news'));
+        const archiveLink=new URL(doc.querySelector('.ed-actions a:not(.btn)').getAttribute('href'),canonical);
+        assert.equal(archiveLink.pathname,loc('/news'));
+        assert.ok(!archiveLink.hash || archiveLink.hash==='#news-listings');
         const current = new URL(canonical);
         const related = [...doc.querySelectorAll('.ed-related a')], latest = [...doc.querySelectorAll('.ed-reader-latest a')];
         assert.ok(related.length>=2 && latest.length>=1);
