@@ -13,8 +13,8 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          git merge-base --is-ancestor 88e2b61596eab5952f183a81b3030da760696c9c HEAD
-          git diff --exit-code 88e2b61596eab5952f183a81b3030da760696c9c HEAD -- . ':(exclude).github/**'
+          git merge-base --is-ancestor c25a398a424880651cfc375760401aadc0c006d1 HEAD
+          git diff --exit-code c25a398a424880651cfc375760401aadc0c006d1 HEAD -- . ':(exclude).github/**'
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -28,6 +28,26 @@ jobs:
         run: |
           set -o pipefail
           npm run test:hero 2>&1 | tee "$RUNNER_TEMP/hero-suite.log"
+      - name: Verify established Pages regression commands
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/regression"
+          failed=0
+          for target in test test:sprint test:catalog test:seo test:hydration test:review test:header test:reference test:sitemap test:flagship audit:i18n; do
+            if npm run "$target" >"$RUNNER_TEMP/regression/${target//:/-}.log" 2>&1; then
+              echo "$target PASS" | tee -a "$RUNNER_TEMP/regression/summary.log"
+            else
+              echo "$target FAIL" | tee -a "$RUNNER_TEMP/regression/summary.log"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: packaged-regression-logs
+          path: ${{ runner.temp }}/regression/
       - uses: actions/upload-artifact@v4
         if: always()
         with:
