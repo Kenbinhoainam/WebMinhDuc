@@ -50,7 +50,3 @@
  .education-form-tabs { display:grid; grid-template-columns:1fr 1fr; }
  .education-form-tabs button { padding-inline:6px; }
 }
-.education-files{list-style:none;padding:0;margin:12px 0}
-.education-files li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 16px;border-block-end:1px solid var(--md-rule);padding-block:4px}
-.education-files li span{min-width:0;overflow-wrap:anywhere}
-.education-files button{min-height:44px;border:0;background:transparent;color:var(--md-blue);text-decoration:underline}

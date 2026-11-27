@@ -138,8 +138,6 @@ html:has(.jobs-detail-section),body:has(.jobs-detail-section){font-size:16px}
 .application-note{margin:12px 0 22px}
 .application-field label{display:block;margin-bottom:7px}
 .application-field label span,.application-error{color:#9b1927}
-.application-upload{display:grid;gap:10px;border-radius:8px}
-.application-upload>span{overflow-wrap:anywhere}
 .application-submit{justify-content:center;width:100%}
 .application-required{margin:12px 0 0}
 .application-success{display:grid;justify-items:start;gap:12px}
