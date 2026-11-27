@@ -95,14 +95,23 @@ try {
   const faq=get('.service-faq button');
   assert.equal(faq.getAttribute('aria-expanded'),'true');await act(()=>faq.click());
   assert.equal(faq.getAttribute('aria-expanded'),'false');
-  assert.equal(document.getElementById(faq.getAttribute('aria-controls')).hidden,true);
+  const answer=document.getElementById(faq.getAttribute('aria-controls'));
+  assert.equal(answer.getAttribute('aria-hidden'),'true');assert.ok(answer.hasAttribute('inert'));
+  const faqButtons=[...document.querySelectorAll('.service-faq button')];
+  await act(()=>{faqButtons[1].click();faqButtons[2].click();});
+  assert.deepEqual(faqButtons.map(button=>button.getAttribute('aria-expanded')),['false','false','true']);
+  assert.equal(document.querySelectorAll('.service-faq-answer:not([inert])').length,1);
+  await act(()=>{faqButtons[2].click();faqButtons[2].click();});
+  assert.equal(faqButtons[2].getAttribute('aria-expanded'),'true','A rapid reversal returns to the open state');
  }
  await render(mod.ServicesPage);
  assert.deepEqual([...document.querySelectorAll('.service-card-grid .service-gallery-card a')].map(a=>a.getAttribute('href')),mod.services.map(s=>'/services/'+s.slug));
  assert.ok(get('a[href="/jobs"]'));
  await render(mod.ServiceCards);
- const gallery=get('.service-gallery'),image=get('.service-card-photo');
+ const gallery=get('.service-gallery');let image=get('.service-card-photo');
  assert.ok(get('.service-gallery-toolbar .service-gallery-rotation'));
+ await act(()=>image.dispatchEvent(new Event('error')));
+ image=get('.service-card-photo');
  await act(()=>image.dispatchEvent(new Event('error')));
  assert.equal(image.hidden,true);assert.ok(get('.service-card-title').textContent);assert.ok(get('.service-gallery-card a').href);
  await act(()=>image.dispatchEvent(new Event('load')));assert.equal(image.hidden,false);

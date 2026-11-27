@@ -8,16 +8,16 @@ import collections
 import csv
 import hashlib
 import json
-import re
 import subprocess
 from pathlib import Path
 
 ROOT = Path("docs/sdd/SEL-2026.11.27-v1.0.0")
 EXEC = ROOT / "execution"
 DATA = ROOT / "data"
-FIELDNAMES = ["source_file", "component", "route_or_scope", "selected_detail",
-              "frozen_check", "applicability", "next_owner", "next_check", "verification_scope"]
 OPT_INS = {
+    "MI07-3": "Fixture riêng cho lỗi xử lý ở server chưa được chọn. Các lỗi validation của luồng demo vẫn kiểm được.",
+    "CS-B05-4": "Chưa duyệt mở rộng sắp xếp việc làm. Cần chỉ rõ tập giá trị, quy tắc và mặc định.",
+    "T22": "Toast lưu việc cũ đã được yêu cầu gỡ. Xác nhận vị trí thông tin thay thế hoặc thay đổi phạm vi trước khi tái tạo toast.",
     "MI02-4": "Undo việc đã bỏ lưu cần quyết định opt-in riêng.",
     "CS-C11-2": "Phụ thuộc Undo của MI02-4, cần quyết định opt-in.",
     "MI03-4": "Sắp xếp thu nhập mới cần quy tắc thu nhập và phê duyệt riêng.",
@@ -40,7 +40,7 @@ OPT_INS = {
     "F12": "Tiếp nhận và xử lý tệp thật ngoài phạm vi. Validation metadata mock được kiểm riêng.",
     "P38-F2": "Ghi giờ hẹn vào hồ sơ ADMIN là thay đổi payload có điều kiện; cần quyết định riêng.",
 }
-WAVES = ["b2b.csv", "b2c.csv", "other-pages.csv", "shared.csv"]
+WAVES = ["b2b.csv", "b2c.csv", "other-pages.csv", "shared.csv", "p41.csv"]
 CHECKS = ["Tiêu chí hoàn thành", "Cách kiểm tra", "Ghi chú cần phân biệt"]
 DETAIL = ["Chi tiết để chọn", "Đề xuất cụ thể", "Các tiểu tiết", "Tên phần hoặc trạng thái"]
 
@@ -126,6 +126,26 @@ def read_owners(selected):
     return owners
 
 
+def missing_check(code, choice, fields):
+    """Describe the unmet full acceptance; device and UAT blocks apply only where required."""
+    family = code.split("-")[-1][0] if code.startswith("P") else code[0]
+    check = first(fields, CHECKS)
+    subject = first(fields, DETAIL)
+    page = fields.get("Trang", fields.get("Trang / thành phần áp dụng",""))
+    detail = f"{page} · {subject}".strip(" ·")
+    if code in {"D03","D11","CS-D05-1"}:
+        return "Device QA", "Cần thiết bị iOS Safari / Android Chrome hoặc dịch vụ thiết bị đã cấp quyền, bàn phím hệ thống và phép xoay màn hình.", True
+    if code in {"A10","B06","CS-A07-1","CS-B01-1","P03-E1","P04-E1","P05-E1","P06-E1","P07-E1","P08-E1","P31-E1"}:
+        return "PO / UX research", "Điều phối người dùng thử ngoài nhóm thực thi. Thu nhận câu trả lời và đối chiếu tiêu chí: " + check, True
+    if family in {"A","D"} or code.startswith(("CS-A","CS-D")):
+        return "Browser QA", "Đo hoặc so sánh build bằng trình duyệt ở viewport/zoom và trạng thái cụ thể: " + detail + " · " + check, False
+    if code.startswith(("MI","MO","MS")):
+        return "Motion QA", ("Thực hiện trigger " + fields.get("Kích hoạt","") + "; lặp/hủy: "
+                            + fields.get("Khi thao tác liên tiếp / bị ngắt","") + "; giảm chuyển động: "
+                            + fields.get("Giảm chuyển động","") + "; đối chiếu: " + check), False
+    return "Functional QA", detail + " · " + check, False
+
+
 def build_matrix(sha):
     template, selection, pages = checked_selection()
     outcomes, owners = read_evidence(sha), read_owners(selection)
@@ -145,6 +165,8 @@ def build_matrix(sha):
             verification_scope="No evidence for the full row on this build.",
             observed_behavior="", evidence="", target_sha=sha,
         )
+        next_owner, next_check, missing_environment = missing_check(code, choice, f)
+        row.update(next_owner=next_owner,next_check=next_check)
         if code == "ROW625-P01-A-UNRESOLVED":
             row.update(implementation_status="Blocked",test_status="Blocked",next_owner="Project Owner",
                        blocker="B625 có nguyên văn Chọn. Cần xác minh mã nguồn trước khi nghiệm thu.",
@@ -161,8 +183,10 @@ def build_matrix(sha):
                 observations.append(first(entry, ["actual","observed_behavior","notes","detail"]) or status)
                 refs.append(filename+" → "+code+(" · "+evidence if evidence else ""))
             # Accept a worker's final evidence only when it explicitly identifies the verified build.
-            if status == "Completed" and evidence and first(entry,["target_sha","build_sha","sha"]) == sha:
+            if status in ("Completed","Pass") and evidence and first(entry,["target_sha","build_sha","sha"]) == sha:
                 full_owner = True
+            if status in ("Partial","Not Run","Incomplete") and entry.get("remaining"):
+                row["next_check"]=entry["remaining"]
             if status == "Blocked":
                 row.update(implementation_status="Blocked",test_status="Blocked",
                            blocker=first(entry,["blocker","reason","remaining"]) or evidence,
@@ -174,7 +198,8 @@ def build_matrix(sha):
             passed = full_owner or any(r["scope"]=="full" and r["test"]=="Pass" for r in local_evidence)
             failed = [r for r in local_evidence if r["test"]=="Fail"]
             if failed:
-                row.update(implementation_status="Incomplete",test_status="Fail",
+                unresolved = row["implementation_status"] == "Blocked"
+                row.update(implementation_status="Blocked" if unresolved else "Incomplete",test_status="Fail",
                            verification_scope="See failed predicate and actual values in the linked report.")
             elif passed and row["implementation_status"] != "Blocked":
                 row.update(implementation_status="Completed",test_status="Pass",next_owner="",next_check="",
@@ -182,6 +207,8 @@ def build_matrix(sha):
             elif not passed and row["implementation_status"] != "Blocked":
                 row["verification_scope"]="Partial predicate only; full acceptance pending."
                 row["next_check"]=" | ".join(r["remaining"] for r in local_evidence if r["remaining"]) or row["frozen_check"]
+        if missing_environment and row["implementation_status"] == "Incomplete" and row["test_status"] != "Fail":
+            row.update(implementation_status="Blocked",test_status="Blocked",blocker=next_check,next_owner=next_owner)
         if code in OPT_INS:
             gate = OPT_INS[code]
             row.update(implementation_status="Blocked",test_status="Blocked",blocker=gate,

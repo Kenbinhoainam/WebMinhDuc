@@ -9,7 +9,7 @@ export async function runFlows({check,temp,locales}){
   await build({stdin:{contents:`export {JobsPage, JobDetailPage, SavedJobsPage, jobs} from './src/JobsPages';
     export {EducationDetailPage,educationPrograms} from './src/Education';
     export {EventsPage,EventPage,NewsPage} from './src/EditorialPages';
-    export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale} from './src/i18n-runtime/catalog';
+    export {company} from './src/company';export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale} from './src/i18n-runtime/catalog';
     export {getDemoSubmissions,resetDemoSubmissions} from './src/demo-submissions';`,
     resolveDir:process.cwd(),sourcefile:'s2-qa-flows.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',outfile:file,loader:{'.css':'empty'},logLevel:'silent'});
   const dom=new JSDOM('<div id="root"></div>',{url:'https://example.test/WebMinhDuc/',pretendToBeVisual:true});
@@ -18,13 +18,14 @@ export async function runFlows({check,temp,locales}){
   w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
   globalThis.IS_REACT_ACT_ENVIRONMENT=true;
   const {act,createElement:h}=await import('react'),{createRoot}=await import('react-dom/client');
-  const {MemoryRouter,Route,Routes}=await import('react-router-dom');
+  const {MemoryRouter,Route,Routes,useLocation}=await import('react-router-dom');
   const app=await import(pathToFileURL(resolve(file)));await Promise.all(locales.map(app.loadLocale));
   const root=createRoot(d.querySelector('#root'));let iteration=0;
-  const origin='/WebMinhDuc';
+  const origin='/WebMinhDuc';let currentLocation;
+  function LocationProbe(){currentLocation=useLocation();return null;}
   async function open(locale,url,pattern,Component){
     const basename=origin+(locale==='vi'?'':'/'+locale);
-    await act(()=>root.render(h(app.LocaleProvider,{value:locale},h(MemoryRouter,{key:++iteration,basename,initialEntries:[basename+url]},h(Routes,null,h(Route,{path:pattern,element:h(Component)}))))));
+    await act(()=>root.render(h(app.LocaleProvider,{value:locale},h(MemoryRouter,{key:++iteration,basename,initialEntries:[basename+url]},h(LocationProbe),h(Routes,null,h(Route,{path:pattern,element:h(Component)}))))));
   }
   async function click(element){assert.ok(element,'Missing click target');await act(()=>{element.focus();element.click();});}
   async function frame(){await act(async()=>new Promise(resolve=>w.requestAnimationFrame(()=>w.requestAnimationFrame(resolve))));}
@@ -53,6 +54,13 @@ export async function runFlows({check,temp,locales}){
         function entries(){return [...new Set([...d.querySelectorAll('.ed-archive a')].map(a=>a.pathname.split('/').pop()))];}
         assert.deepEqual(entries(),expected.slice(0,3));const second=[...d.querySelectorAll('.ed-pagination button')].find(b=>b.textContent.trim()==='2');await click(second);assert.deepEqual(entries(),expected.slice(3,6));assert.equal(d.activeElement,d.getElementById('news-listings'));return {firstPage:expected.slice(0,3),secondPage:entries()};
       });
+      await check('news.pager',['P20-C1','P20-C2'],shared,locale,'Worker page 2 disables next, changing category resets page and preserves fragment; paging focuses listing and sets boundaries',async()=>{
+        const controls=()=>[...d.querySelectorAll('.ed-pagination button')];
+        assert.equal(d.activeElement,d.getElementById('news-listings'));assert.equal(controls().at(-1).disabled,true);assert.equal(controls()[0].disabled,false);
+        await click(d.querySelectorAll('.ed-filters button')[0]);assert.equal(currentLocation.hash,'#news-listings');assert.equal(new URLSearchParams(currentLocation.search).get('page'),null);assert.equal(controls()[0].disabled,true);
+        await click(controls().at(-1));assert.equal(d.activeElement,d.getElementById('news-listings'));assert.equal(controls()[0].disabled,false);
+        return {initialPage:2,categoryChangeResets:true,hash:currentLocation.hash,paginationFocus:true};
+      });
       await open(locale,'/jobs?status=active#job-listings','/jobs',app.LanguageSelector);
       await check('language.context',['T19'],shared,locale,'Each of the five language targets preserves the same page, filter and fragment',async()=>{
         await click(d.querySelector('.language-trigger'));
@@ -61,6 +69,29 @@ export async function runFlows({check,temp,locales}){
         assert.equal(links.filter(a=>a.getAttribute('aria-current')==='true').length,1);
         return links.map(a=>a.pathname+a.search+a.hash);
       });
+      await open(locale,'/contact?form=F02#consultation','/contact',app.ContactPage);
+      await check('contact.switch',['P37-C1'],shared,locale,'Both mode selections update form query and heading, and focus that heading',async()=>{
+        const headings={};
+        for(const type of ['F01','F02']){
+          const button=d.querySelector('[data-contact-mode='+type+']');await click(button);await frame();
+          assert.equal(new URLSearchParams(currentLocation.search).get('form'),type);assert.equal(button.getAttribute('aria-pressed'),'true');
+          const heading=d.querySelector('#contact-form-heading');assert.equal(d.activeElement,heading);headings[type]=heading.textContent;
+        }
+        assert.notEqual(headings.F01,headings.F02);return headings;
+      });
+      await check('contact.map',['P37-C3'],shared,locale,'Every office action and tab selects its exact map CID, caption, address, locale hint and supplied directions link',async()=>{
+        const cids=['10667900336702973064','16104762975771422561','1203083160994188547'];
+        for(const trigger of ['.contact-office-actions a:first-child','.contact-map-tabs button']){
+          const buttons=[...d.querySelectorAll(trigger)];assert.equal(buttons.length,3);
+          for(const [i,button] of buttons.entries()){
+            await click(button);const src=new URL(d.querySelector('#contact-map iframe').src),office=app.company.offices[i];
+            assert.equal(src.searchParams.get('cid'),cids[i]);assert.equal(src.searchParams.get('hl'),locale==='zh'?'zh-CN':locale);
+            assert.equal(d.querySelector('.contact-map-caption strong').textContent,office.name);assert.equal(d.querySelector('.contact-map-caption div p').textContent,office.address);
+            assert.equal(d.querySelector('.contact-map-caption a').href,office.map);
+          }
+        }
+        return {offices:app.company.offices.map(o=>o.name),cids};
+      });
       app.resetDemoSubmissions();
       for(const record of app.sampleRecords){
         await open(locale,'/admin-demo?type='+record.type+'&id='+record.id,'/admin-demo',app.AdminDemo);
@@ -68,6 +99,15 @@ export async function runFlows({check,temp,locales}){
           const table=d.querySelectorAll('tbody tr');assert.equal(table.length,1);assert.ok(table[0].textContent.includes(record.id));assert.ok(d.querySelector('[role=dialog]').textContent.includes(record.id));return {type:record.type,id:record.id,rows:1};
         });
       }
+      await open(locale,'/admin-demo?type=F04&id=MD-004','/admin-demo',app.AdminDemo);
+      await check('admin.edit',['P36-C2'],shared,locale,'Deep-linked receipt edits its owner, status and result; closing returns to a filtered queue and reopening preserves values',async()=>{
+        const [owner,status]=d.querySelectorAll('.admin-detail select'),field=d.querySelector('.admin-detail textarea');
+        const nextOwner=[...owner.options].find(o=>o.value!==owner.value).value,nextStatus=[...status.options].find(o=>o.value!==status.value).value;
+        await act(()=>{owner.value=nextOwner;owner.dispatchEvent(new w.Event('change',{bubbles:true}));status.value=nextStatus;status.dispatchEvent(new w.Event('change',{bubbles:true}));Object.getOwnPropertyDescriptor(w.HTMLTextAreaElement.prototype,'value').set.call(field,'QA DEMO');field.dispatchEvent(new w.Event('input',{bubbles:true}));});
+        await act(()=>d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));
+        assert.equal(d.querySelector('[role=dialog]'),null);assert.equal(currentLocation.search,'?type=F04');await click(d.querySelector('tbody button'));
+        const selects=d.querySelectorAll('.admin-detail select');assert.equal(selects[0].value,nextOwner);assert.equal(selects[1].value,nextStatus);assert.equal(d.querySelector('.admin-detail textarea').value,'QA DEMO');return {id:'MD-004',owner:nextOwner,status:nextStatus,result:'QA DEMO'};
+      });
       await open(locale,'/admin-demo','/admin-demo',app.AdminDemo);
       await check('admin.cms',['T17'],shared,locale,'CMS opens and returns to queue within the same admin component',async()=>{
         const [queue,cms]=d.querySelectorAll('.admin-side button[aria-controls="admin-panel"]');await click(cms);assert.ok(d.querySelector('.admin-cms'));assert.equal(cms.getAttribute('aria-pressed'),'true');await click(queue);assert.ok(d.querySelector('tbody'));assert.equal(queue.getAttribute('aria-pressed'),'true');return {cmsOpened:true,queueRestored:true};
