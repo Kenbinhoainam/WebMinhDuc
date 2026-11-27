@@ -6,7 +6,7 @@ import './partners-reference.css';
 
 export function PartnersPage(){
   return <div className="md-partners-grid">
-    <PageMasthead title="Đối tác & kết nối" description="Các đơn vị được nêu trong hồ sơ thông tin Minh Đức." image="/assets/minhduc-v18/industrial-campus.webp" imageAlt=""/>
+    <PageMasthead title="Đối tác & kết nối" description="Các đơn vị được nêu trong hồ sơ thông tin Minh Đức." image="/WebMinhDuc/assets/minhduc-v18/industrial-campus.webp" imageAlt=""/>
     {partners.length ? <ServiceCustomers/> : <p className="container partners-empty">Liên hệ Minh Đức để hỏi thêm về mạng lưới đối tác.</p>}
     <section className="section partners-contact"><div className="container partners-contact-layout">
       <div><h2>Bắt đầu một cuộc trao đổi</h2>

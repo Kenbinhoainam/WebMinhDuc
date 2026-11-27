@@ -1,8 +1,8 @@
 import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
 import {Link, useLocation, useNavigationType} from 'react-router-dom';
-import {ChevronRight} from 'lucide-react';
+import {ArrowRight, ChevronRight, Compass, Handshake, Telescope} from 'lucide-react';
 import {PageMasthead} from '../../PageMasthead';
-import {CompanyProfileCover} from '../../CompanyProfileCover';
+import {ServiceCards} from '../../ServiceShowcase';
 import {Modal} from '../../shared';
 import {useTranslation} from '../../i18n';
 import {RevealFrame} from '../../motion';
@@ -10,7 +10,7 @@ import {advanceHomeRail, useHomeCarousel} from '../../useHomeCarousel';
 import {partners} from '../../partners';
 import PartnerLogo from '../../PartnerLogo';
 import {contact, services} from './data';
-import {ServiceCards, InfoContact} from './components';
+import {InfoContact} from './components';
 import './about-reference.css';
 import './info-v16.css';
 
@@ -25,15 +25,15 @@ const chapters = [
 ] as const;
 
 const phases = [
-  {label:'Khởi đầu', title:'Khởi đầu từ kết nối', text:'Tiếp nhận nhu cầu tìm việc và tuyển dụng, làm rõ thông tin để hai bên có cơ sở trao đổi.', detail:'Doanh nghiệp mô tả vị trí, ca làm và nơi làm việc. Người lao động có thể hỏi về từng điều kiện trước khi quyết định.', image:'/assets/minhduc-meeting-10s.webp', alt:'Nhóm Minh Đức trao đổi trong phòng họp'},
-  {label:'Đồng hành', title:'Đồng hành từng bước', text:'Hướng dẫn người lao động tìm hiểu công việc, hồ sơ và các bước tiếp theo.', detail:'Người tư vấn cùng người tìm việc rà lại thông tin vị trí và các giấy tờ cần chuẩn bị cho buổi trao đổi.', image:'/assets/minhduc-working-60s.webp', alt:'Nhân sự Minh Đức trao đổi và ghi chép trong buổi làm việc'},
-  {label:'Mở rộng', title:'Mở rộng giải pháp', text:'Trao đổi thêm về nhân lực, tổ chức và học tập theo nhu cầu thực tế.', detail:'Khi nhu cầu thay đổi, hai bên có thể trao đổi thêm về tuyển người có tay nghề, tổ chức quy trình hoặc hình thức học phù hợp.', image:'/assets/minhduc-v16/recruitment-event.webp', alt:'Nhóm người giữa hai bảng thông tin tuyển dụng tại hội trường'},
+  {label:'Khởi đầu', title:'Khởi đầu từ kết nối', text:'Tiếp nhận nhu cầu tìm việc và tuyển dụng, làm rõ thông tin để hai bên có cơ sở trao đổi.', detail:'Doanh nghiệp mô tả vị trí, ca làm và nơi làm việc. Người lao động có thể hỏi về từng điều kiện trước khi quyết định.', image:'/WebMinhDuc/assets/minhduc-meeting-10s.webp', alt:'Nhóm Minh Đức trao đổi trong phòng họp'},
+  {label:'Đồng hành', title:'Đồng hành từng bước', text:'Hướng dẫn người lao động tìm hiểu công việc, hồ sơ và các bước tiếp theo.', detail:'Người tư vấn cùng người tìm việc rà lại thông tin vị trí và các giấy tờ cần chuẩn bị cho buổi trao đổi.', image:'/WebMinhDuc/assets/minhduc-working-60s.webp', alt:'Nhân sự Minh Đức trao đổi và ghi chép trong buổi làm việc'},
+  {label:'Mở rộng', title:'Mở rộng giải pháp', text:'Trao đổi thêm về nhân lực, tổ chức và học tập theo nhu cầu thực tế.', detail:'Khi nhu cầu thay đổi, hai bên có thể trao đổi thêm về tuyển người có tay nghề, tổ chức quy trình hoặc hình thức học phù hợp.', image:'/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp', alt:'Nhóm người giữa hai bảng thông tin tuyển dụng tại hội trường'},
 ] as const;
 
 const values = [
-  {title:'Tầm nhìn', text:'Trở thành cầu nối tin cậy giữa doanh nghiệp và người lao động, tạo nên những kết nối công việc bền vững.'},
-  {title:'Sứ mệnh', text:'Lắng nghe nhu cầu, kết nối cơ hội và đồng hành cùng người lao động trên hành trình tìm việc.'},
-  {title:'Giá trị cốt lõi', text:'Minh bạch trong thông tin. Tận tâm trong hỗ trợ. Trách nhiệm trong từng kết nối.'},
+  {icon:Telescope, title:'Tầm nhìn', text:'Trở thành cầu nối tin cậy giữa doanh nghiệp và người lao động, tạo nên những kết nối công việc bền vững.'},
+  {icon:Compass, title:'Sứ mệnh', text:'Lắng nghe nhu cầu, kết nối cơ hội và đồng hành cùng người lao động trên hành trình tìm việc.'},
+  {icon:Handshake, title:'Giá trị cốt lõi', text:'Minh bạch trong thông tin. Tận tâm trong hỗ trợ. Trách nhiệm trong từng kết nối.'},
 ];
 
 const roles = [
@@ -170,7 +170,7 @@ function AboutTeam(){
   return <section className="section container info-team">
     <h2>Đội ngũ Minh Đức sẵn sàng hỗ trợ</h2>
     <div className="md-team-overview">
-      <RevealFrame effect="media"><img className="md-team-photo" src="/assets/minhduc-v18/field-team.webp" alt="Nhóm nhân viên Minh Đức trao đổi ngoài trời" sizes="(max-width:767px) calc(100vw - 40px), (max-width:1280px) 45vw, 580px" loading="lazy" decoding="async"/></RevealFrame>
+      <RevealFrame effect="media"><img className="md-team-photo" src="/WebMinhDuc/assets/minhduc-v18/field-team.webp" alt="Nhóm nhân viên Minh Đức trao đổi ngoài trời" sizes="(max-width:767px) calc(100vw - 40px), (max-width:1280px) 45vw, 580px" loading="lazy" decoding="async"/></RevealFrame>
       <div className="info-team-grid">{roles.map(role=><button type="button" key={role.title} className="info-team-card" onClick={()=>setSelected(role)} aria-haspopup="dialog">{role.title}<ChevronRight aria-hidden="true" size={20}/></button>)}</div>
     </div>
     {selected&&<Modal title={selected.title} onClose={()=>setSelected(null)}><p>{selected.text}</p>
@@ -183,7 +183,7 @@ function AboutActivities(){
     <h2>Những kết nối tạo nên Minh Đức</h2>
     <div className="md-v16-activities-grid">{activities.map((item,index)=>
       <RevealFrame key={item.image} effect="media" delayMs={index*80}>
-        <figure className="md-v16-activity"><img src={'/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0 || index===3?'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 55vw, 664px':'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 38vw, 470px'} alt={item.alt} loading="lazy" decoding="async"/>
+        <figure className="md-v16-activity"><img src={'/WebMinhDuc/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0 || index===3?'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 55vw, 664px':'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 38vw, 470px'} alt={item.alt} loading="lazy" decoding="async"/>
           <figcaption>{item.title}</figcaption></figure>
       </RevealFrame>)}</div>
   </div></section>;
@@ -237,24 +237,30 @@ export function AboutPage(){
     ['FDI',t({vi:'Định hướng kết nối',en:'Connection focus',zh:'连接方向',ko:'연결 지향',ja:'つながりへの取り組み'})],
   ];
   return <div className="about-page">
-    <PageMasthead title="Về Minh Đức" eyebrow="Nhân lực là tài sản" description="Minh Đức kết nối nhà máy phía Bắc với người lao động, từ lúc làm rõ vị trí đến khi hai bên trao đổi về công việc." image="/assets/minhduc-v18/about-team.webp" imageAlt="Đội ngũ Minh Đức cầm cờ trước biển hiệu công ty">
-      <Link className="btn" {...staffingInquiry}>Gửi nhu cầu nhân lực</Link>
-      <Link className="btn btn-secondary" to="/about-us#profile">Xem hồ sơ năng lực</Link>
-    </PageMasthead>
+    <PageMasthead variant="photo" title="Về Minh Đức" image="/WebMinhDuc/assets/minhduc-v18/about-team.webp" imageAlt="Đội ngũ Minh Đức cầm cờ trước biển hiệu công ty"/>
     <ChapterNav/>
-    <section id="profile" className="field-section about-profile" aria-labelledby="about-profile-title">
-      <CompanyProfileCover headingId="about-profile-title" to="/services"
-        actionLabel={t({vi:'Xem các dịch vụ',en:'Explore our services',zh:'查看服务项目',ko:'서비스 살펴보기',ja:'サービス一覧を見る'})}
-        description={t({vi:'Từ các điểm kết nối tại Bắc Ninh và Quảng Ninh, Minh Đức cùng nhà máy làm rõ vị trí, ca làm và kỹ năng cần tuyển để tìm người phù hợp.',en:'From our locations in Bắc Ninh and Quảng Ninh, we work with factories to identify roles, shifts and skills before matching workers to the job.',zh:'通过北宁和广宁的服务网点，明德与工厂明确岗位、班次和技能要求，再匹配合适的员工。',ko:'민득은 박닌과 꽝닌의 거점을 통해 공장과 함께 직무, 교대 시간, 필요한 기술을 확인한 뒤 적합한 인력을 연결합니다.',ja:'ミンドゥックはバクニンとクアンニンの拠点を通じて、工場とともに職種、シフト、必要な技能を確認し、仕事に合う人材を紹介します。'})}>
-        <div className="field-metrics" role="group" aria-label="Phạm vi hoạt động">
-          {metrics.map(([value,name],index)=><RevealFrame className="field-stat-frame" key={name} effect="up" delayMs={index*80}>
-            <div className="field-stat"><strong>{value}</strong><span>{name}</span></div>
-          </RevealFrame>)}
-        </div>
-      </CompanyProfileCover>
+    <section id="profile" className="section container about-profile" aria-labelledby="about-profile-title">
+      <div className="about-profile-intro">
+        <RevealFrame effect="left">
+          <h2 id="about-profile-title">Hồ sơ năng lực</h2>
+          <p className="about-profile-lead">Nhân lực cho nhà máy miền Bắc</p>
+        </RevealFrame>
+        <RevealFrame effect="right">
+          <p>{t({vi:'Từ các điểm kết nối tại Bắc Ninh và Quảng Ninh, Minh Đức cùng nhà máy làm rõ vị trí, ca làm và kỹ năng cần tuyển để tìm người phù hợp.',en:'From our locations in Bắc Ninh and Quảng Ninh, we work with factories to identify roles, shifts and skills before matching workers to the job.',zh:'通过北宁和广宁的服务网点，明德与工厂明确岗位、班次和技能要求，再匹配合适的员工。',ko:'민득은 박닌과 꽝닌의 거점을 통해 공장과 함께 직무, 교대 시간, 필요한 기술을 확인한 뒤 적합한 인력을 연결합니다.',ja:'ミンドゥックはバクニンとクアンニンの拠点を通じて、工場とともに職種、シフト、必要な技能を確認し、仕事に合う人材を紹介します。'})}</p>
+          <div className="about-profile-actions">
+            <Link className="btn" {...staffingInquiry}>Gửi nhu cầu nhân lực</Link>
+            <Link className="about-text-action" to="/services">Xem các dịch vụ <ArrowRight size={18} aria-hidden="true"/></Link>
+          </div>
+        </RevealFrame>
+      </div>
       <div className="info-about-values">
-        {values.map((item,index)=><RevealFrame effect="up" delayMs={index*80} key={item.title}>
-          <article><h3>{item.title}</h3><p>{item.text}</p></article>
+        {values.map(({icon:Icon,title,text},index)=><RevealFrame effect="up" delayMs={index*80} key={title}>
+          <article><Icon size={36} strokeWidth={1.4} aria-hidden="true"/><h3>{title}</h3><p>{text}</p></article>
+        </RevealFrame>)}
+      </div>
+      <div className="about-scope" role="group" aria-label="Phạm vi hoạt động">
+        {metrics.map(([value,name],index)=><RevealFrame key={name} delayMs={index*80}>
+          <div className="about-scope-item"><strong>{value}</strong><span>{name}</span></div>
         </RevealFrame>)}
       </div>
     </section>

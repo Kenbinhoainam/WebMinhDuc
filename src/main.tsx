@@ -1,4 +1,5 @@
 import './brand-type.css';
+import './brand-colors.css';
 import './styles.css';
 import './reference-base.css';
 import React from 'react';
@@ -10,7 +11,12 @@ import {LocaleProvider,localeFromPath,localeBase} from './i18n';
 import './flagshipvisual.css';
 import {loadLocale} from './i18n-runtime/catalog';
 const root=document.getElementById('root')!;
-const locale=localeFromPath(location.pathname);
+const siteBase='/WebMinhDuc';
+// Pages serves directory URLs. The SSR router uses slashless paths for localized links.
+if (location.pathname.startsWith(siteBase+'/') && location.pathname !== siteBase+'/' && location.pathname.endsWith('/')) {
+  window.history.replaceState(window.history.state, '', location.pathname.replace(/\/+$/, '') + location.search + location.hash);
+}
+const locale=localeFromPath(location.pathname.slice(siteBase.length) || '/');
 async function start() {
  try { await loadLocale(locale); }
  catch {
@@ -21,7 +27,7 @@ async function start() {
   const button=document.createElement('button');button.type='button';button.textContent={vi:'Tải lại',en:'Reload',zh:'重新加载',ko:'새로고침',ja:'再読み込み'}[locale];button.onclick=()=>location.reload();notice.appendChild(button);
   document.body.prepend(notice);return;
  }
- const app=<React.StrictMode><LocaleProvider value={locale}><BrowserRouter basename={localeBase(locale)}><RouteMetadata/><App/></BrowserRouter></LocaleProvider></React.StrictMode>;
+ const app=<React.StrictMode><LocaleProvider value={locale}><BrowserRouter basename={siteBase + (localeBase(locale) || '/')}><RouteMetadata/><App/></BrowserRouter></LocaleProvider></React.StrictMode>;
  const canonical=document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
  const sameRoute=canonical && new URL(canonical.href).pathname.replace(/\/$/,'')===location.pathname.replace(/\/$/,'');
  if(root.hasChildNodes() && sameRoute && !location.search) hydrateRoot(root,app);

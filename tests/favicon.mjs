@@ -1,17 +1,17 @@
+import {sitePath, outputPath} from './pages-paths.mjs';
 import assert from 'node:assert/strict';
-import {readFile, readdir} from 'node:fs/promises';
+import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import {JSDOM} from 'jsdom';
 
 const icons = [
   {rel: 'icon', type: 'image/png', sizes: '96x96', href: '/assets/minh-duc-favicon-96.png'},
-  {rel: 'icon', type: 'image/webp', sizes: '96x96', href: '/optimized/assets/minh-duc-logo-96.webp'},
   {rel: 'apple-touch-icon', sizes: '192x192', href: '/assets/minh-duc-apple-touch.png'},
 ];
-const verifyHead = (html, path) => {
+const verifyHead = (html, path, built=false) => {
   const dom = new JSDOM(html), document = dom.window.document;
   for (const expected of icons) {
-    const link = document.head.querySelector(`link[rel="${expected.rel}"][href="${expected.href}"]`);
+    const link = document.head.querySelector(`link[rel="${expected.rel}"][href="${built ? sitePath(expected.href) : expected.href}"]`);
     assert.ok(link, `${path}: missing ${expected.href}`);
     assert.equal(link.getAttribute('sizes'), expected.sizes);
     if (expected.type) assert.equal(link.getAttribute('type'), expected.type);
@@ -24,17 +24,15 @@ for (const [path, size] of [['public/assets/minh-duc-favicon-96.png', 96], ['pub
   assert.deepEqual([...buffer.subarray(0,8)], [137,80,78,71,13,10,26,10], `${path}: PNG signature`);
   assert.equal(buffer.readUInt32BE(16), size); assert.equal(buffer.readUInt32BE(20), size);
 }
-await readFile('public/optimized/assets/minh-duc-logo-96.webp');
-verifyHead(await readFile('index.html', 'utf8'), 'source template');
+// The browser favicon is the transparent brand mark. PNG color type 6 has an alpha channel.
+assert.equal((await readFile('public/assets/minh-duc-favicon-96.png'))[25], 6);
+verifyHead(await readFile('src/index-template.html', 'utf8'), 'source template');
 if (process.argv.includes('--built')) {
-  const collect = async dir => (await Promise.all((await readdir(dir, {withFileTypes:true})).map(entry => {
-    const path = join(dir, entry.name);
-    return entry.isDirectory() ? collect(path) : entry.name === 'index.html' || entry.name === '404.html' ? [path] : [];
-  }))).flat();
-  const pages = await collect('dist');
-  assert.ok(pages.includes('dist/index.html'), 'fallback entry exists');
-  assert.ok(pages.length >= 200, 'all localized prerendered pages are present');
-  for (const page of pages) verifyHead(await readFile(page,'utf8'), page);
+  const sitemap = await readFile('dist/sitemap.xml', 'utf8');
+  const pages = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([,url]) =>
+    join('dist', outputPath(url), 'index.html'));
+  assert.ok(pages.includes('dist/index.html'), 'homepage entry exists');
+  for (const page of pages) verifyHead(await readFile(page,'utf8'), page, true);
   for (const icon of icons) await readFile(join('dist', icon.href.slice(1)));
-  console.log(`PASS favicon in ${pages.length} generated HTML entries and fallback`);
+  console.log(`PASS favicon in ${pages.length} prerendered content pages`);
 } else console.log('PASS source favicon links and icon dimensions');

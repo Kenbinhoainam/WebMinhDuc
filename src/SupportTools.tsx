@@ -1,9 +1,52 @@
 import {useEffect, useRef, useState} from 'react';
-import {ArrowUp, MessageCircle, Phone, X} from 'lucide-react';
+import {ChevronUp, MessageCircle, Phone, X} from 'lucide-react';
 import {useLocation} from 'react-router-dom';
 import {useTranslation} from './i18n';
 import {company} from './company';
 import './SupportTools.css';
+
+function ScrollToTop({label, routeKey}: {label:string; routeKey:string}) {
+  const button = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const control = button.current;
+    if (!control) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const page = document.scrollingElement ?? document.documentElement;
+      const distance = page.scrollHeight - (document.documentElement.clientHeight || window.innerHeight);
+      const ratio = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+      const atTop = ratio === 0;
+      if (atTop && document.activeElement === control) {
+        document.querySelector<HTMLElement>('.site-header .brand')?.focus({preventScroll:true});
+      }
+      control.hidden = atTop;
+      control.style.setProperty('--scroll-remaining', String(100 * (1 - ratio)));
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    const resize = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(schedule);
+    resize?.observe(document.body);
+    window.addEventListener('scroll', schedule, {passive:true});
+    window.addEventListener('resize', schedule);
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      resize?.disconnect();
+      window.cancelAnimationFrame(frame);
+    };
+  }, [routeKey]);
+  return <button type="button" ref={button} className="scroll-to-top" hidden aria-label={label} title={label}
+    onClick={() => window.scrollTo({top:0, behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'})}>
+    <svg className="scroll-ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+      <circle className="scroll-ring-track" cx="24" cy="24" r="20.5"/>
+      <circle className="scroll-ring-value" cx="24" cy="24" r="20.5" pathLength="100"/>
+    </svg>
+    <ChevronUp size={22} strokeWidth={2.5} aria-hidden="true"/>
+  </button>;
+}
 
 export function SupportTools({onConsultation}: {onConsultation: () => void}) {
   const [open, setOpen] = useState(false);
@@ -50,8 +93,9 @@ export function SupportTools({onConsultation}: {onConsultation: () => void}) {
       <a href={company.zalo} target="_blank" rel="noreferrer"><b aria-hidden="true">Z</b><span>{label.zalo}</span></a>
       <a href={company.facebook} target="_blank" rel="noreferrer"><b aria-hidden="true">f</b><span>{label.facebook}</span></a>
       <button type="button" onClick={() => {setOpen(false); launcher.current?.focus(); onConsultation();}}><MessageCircle size={19}/><span>{label.consultation}</span></button>
-      <button type="button" onClick={() => {setOpen(false); window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}); launcher.current?.focus();}}><ArrowUp size={19}/><span>{label.top}</span></button>
+
     </div>}
+    <ScrollToTop label={label.top} routeKey={location.key}/>
     <button ref={launcher} type="button" className="support-launcher" aria-label={open?label.close:label.open} aria-expanded={open} aria-controls="support-panel" onClick={() => {if (!open) document.dispatchEvent(new window.CustomEvent('header-overlay-open',{detail:{owner:'support'}})); setOpen(!open);}}>{open?<X size={21}/>:<MessageCircle size={21}/>}</button>
   </div>;
 }

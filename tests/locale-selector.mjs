@@ -1,3 +1,4 @@
+import {sitePath} from './pages-paths.mjs';
 import {build} from 'esbuild';
 import {mkdir,rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
@@ -24,7 +25,7 @@ try {
  assert.equal(openedBy,'language');
  assert.equal(trigger.getAttribute('aria-expanded'),'true');
  const links=[...document.querySelectorAll('.language-panel a')];
- assert.equal(links.length,5); assert.equal(links[1].getAttribute('href'),'/en/jobs?q=kho#details');
+ assert.equal(links.length,5); assert.equal(links[1].getAttribute('href'),sitePath('/en/jobs?q=kho#details'));
  assert.equal(links[3].getAttribute('aria-current'),'true');
  await act(async()=>{links[0].focus(); document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));});
  assert.equal(trigger.getAttribute('aria-expanded'),'false'); assert.equal(document.activeElement,trigger);

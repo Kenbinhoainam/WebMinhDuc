@@ -3,7 +3,7 @@ import {createPortal} from 'react-dom';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight, X, ArrowRight, Info} from 'lucide-react';
 
-export const MEDIA='/mirror/www.hr2b.com/wp-content/uploads/';
+export const MEDIA='/WebMinhDuc/mirror/www.hr2b.com/wp-content/uploads/';
 export const ContactContext=createContext<(service?:string)=>void>(()=>{});
 export const useContact=()=>useContext(ContactContext);
 export function ButtonLink({to,children,secondary=false}:{to:string;children:ReactNode;secondary?:boolean}){return <Link to={to} className={`btn ${secondary?'btn-secondary':''}`}>{children}<ArrowUpRight size={18}/></Link>}

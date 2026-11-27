@@ -1,19 +1,19 @@
 /* Layout tokens transcribed from HR2B's captured canhcamtheme/main.min.css.
    Keep the reference's viewport-relative desktop rem scale and local fonts. */
-:root{font-size:17px;line-height:1.5;--red:#e42824;--red-dark:#b20400;--ink:#292929;--paper:#f6f6f6;--flagship-ink:#292929;--flagship-red:#e42824;--flagship-line:#efefef}
-body{font-family:var(--font-body);font-size:16px;color:#333;line-height:1.5}
+:root{font-size:17px;line-height:1.5;--red:var(--md-red);--red-dark:var(--md-red-hover);--ink:var(--md-ink);--paper:var(--md-surface-soft);--flagship-ink:var(--md-ink);--flagship-red:var(--md-red);--flagship-line:var(--md-rule)}
+body{font-family:var(--font-body);font-size:16px;color:var(--md-ink);line-height:1.5}
 h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:0;line-height:1.25}
 .container{width:100%;max-width:none;margin-inline:auto;padding-inline:15px}
 .wide{width:100%;max-width:none;margin-inline:auto;padding-inline:15px}
 .section,.section-py{padding-block:60px}
 .section-py-min{padding-block:40px}
-.section h2,.section-heading h2{color:#292929;letter-spacing:0;line-height:1.25;font-size:32px}
+.section h2,.section-heading h2{color:var(--md-ink);letter-spacing:0;line-height:1.25;font-size:32px}
 .section-heading{margin-bottom:40px;text-align:center}
 .section-heading p{max-width:780px;margin:16px auto 0;font-size:16px}
 .btn{gap:12px;min-height:44px;padding:9px 24px;border-radius:9999px;font-size:16px;line-height:1.4;font-weight:600}
 .btn:hover{transform:none}
-.btn-secondary{border-color:#e42824;color:#e42824}
-.btn-secondary:hover{background:#b20400;border-color:#b20400;color:white}
+.btn-secondary{border-color:var(--md-red);color:var(--md-red)}
+.btn-secondary:hover{background:var(--md-red-hover);border-color:var(--md-red-hover);color:white}
 .section .eyebrow{letter-spacing:.08em}
 .page-hero.page-banner-main{position:relative;display:grid;align-items:end;min-height:320px;padding:0;background:#333;color:white;isolation:isolate}
 .page-banner-main>.img{position:absolute;inset:0;z-index:-2}

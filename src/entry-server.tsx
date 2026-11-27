@@ -7,11 +7,11 @@ import {LocaleProvider,localeFromPath,localeBase} from './i18n';
 import {loadLocale} from './i18n-runtime/catalog';
 export {loadLocale} from './i18n-runtime/catalog';
 export {pages,seo} from './seo/routes';
-export {localizedSeo} from './seo/RouteMetadata';
-export {locales,languageTags,localizedPath} from './i18n';
+export {localizedSeo} from './seo/metadata';
+export {locales,languageTags,localizedPath} from './i18n-runtime/paths';
 export async function render(url:string):Promise<string>{
  const locale=localeFromPath(new URL(url,'https://example.com').pathname);
  await loadLocale(locale);
- const {prelude}=await prerenderToNodeStream(<React.StrictMode><LocaleProvider value={locale}><StaticRouter basename={localeBase(locale)} location={url}><RouteMetadata/><App/></StaticRouter></LocaleProvider></React.StrictMode>);
+ const {prelude}=await prerenderToNodeStream(<React.StrictMode><LocaleProvider value={locale}><StaticRouter basename={'/WebMinhDuc' + (localeBase(locale) || '/')} location={'/WebMinhDuc' + url}><RouteMetadata/><App/></StaticRouter></LocaleProvider></React.StrictMode>);
  let body=''; for await(const chunk of prelude) body+=chunk.toString(); return body;
 }

@@ -1,3 +1,4 @@
+import {siteUrl, sitePath} from './pages-paths.mjs';
 import {build} from 'esbuild';
 import {readFile,rm,mkdir} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
@@ -26,7 +27,7 @@ if(!process.argv.includes('--case')) {
 } else {
  const route=process.argv[process.argv.indexOf('--case')+1],path=route.split('?')[0];
  const html=await readFile(`dist${path==='/'?'':path}/index.html`,'utf8');
- const dom=new JSDOM(html,{url:`https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site${route}`,pretendToBeVisual:true});
+ const dom=new JSDOM(html,{url:`${siteUrl}${route}`,pretendToBeVisual:true});
  const {window}=dom;
  // jsdom does not initialize the live muted state from the markup as browsers do.
  window.document.querySelectorAll('video[muted]').forEach(video=>{video.muted=true});
@@ -35,18 +36,20 @@ if(!process.argv.includes('--case')) {
  window.HTMLMediaElement.prototype.play=()=>Promise.resolve();window.HTMLMediaElement.prototype.pause=()=>{};
  window.scrollTo=()=>{};window.HTMLElement.prototype.scrollIntoView=()=>{};
  window.localStorage.setItem('minhduc.saved-jobs.v1',JSON.stringify(['MD001','MD003']));
- window.localStorage.setItem('minhduc.preferences','essential-only');
+ assert.equal(window.document.querySelector('.cookie-notice'),null,'pre-rendered page omits the storage notice');
  const errors=[]; const original=console.error;console.error=(...args)=>{errors.push(args.map(String).join(' '));original(...args)};
  const initialHeading=window.document.querySelector('h1');assert.ok(initialHeading);
  await import(pathToFileURL(`${process.cwd()}/${temp}/client.mjs`).href);
  await new Promise(resolve=>setTimeout(resolve,800));
  assert.equal(errors.length,0,`React errors: ${errors.join('\n')}`);
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
+ assert.equal(window.document.querySelector('.cookie-notice'),null,'first visit omits the storage notice');
+ assert.ok(window.document.querySelector('footer a[href$="/privacy-policy"]'),'privacy policy remains accessible from the footer');
  assert.match(window.document.title,/Minh Đức Vina/);
  const locale=/^\/(en|zh|ko|ja)(?:\/|$)/.exec(path)?.[1]||'vi';
  assert.equal(window.document.querySelector('.language-trigger')?.getAttribute('data-locale'),locale);
  assert.equal(window.document.documentElement.lang,locale==='zh'?'zh-Hans':locale);
- if(locale!=='vi') assert.ok(window.document.querySelector('.brand')?.getAttribute('href')?.startsWith('/'+locale));
+ if(locale!=='vi') assert.ok(window.document.querySelector('.brand')?.getAttribute('href')?.startsWith(sitePath('/'+locale)));
  assert.match(window.document.querySelector('.header-saved')?.getAttribute('aria-label')||'',/2/);
  if(!route.includes('?') && path!=='/testimonials') assert.equal(window.document.querySelector('h1'),initialHeading,'pre-rendered heading was replaced');
  if(path==='/saved-jobs') {assert.equal(window.document.querySelectorAll('.job-card').length,2);assert.match(window.document.querySelector('.jobs-result-bar')?.textContent||'',/2/);}

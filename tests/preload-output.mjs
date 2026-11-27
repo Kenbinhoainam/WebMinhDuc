@@ -1,3 +1,4 @@
+import {siteBase} from './pages-paths.mjs';
 import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const {poster:posterUrl}=JSON.parse(await readFile('src/hero-assets.json','utf8'));
@@ -33,7 +34,7 @@ for(const [entry,routes] of [
  assert.ok(css.some(asset=>!globalCss.includes(asset)),`${entry}: route CSS emitted directly or in a shared imported chunk`);
  for(const locale of ['', '/en', '/zh', '/ko', '/ja'])for(const route of routes){
   const head=(await readFile(`dist${locale}${route}/index.html`,'utf8')).split('</head>')[0];
-  for(const asset of css)assert.ok(head.includes(`href="/${asset}"`),`${locale}${route}: stylesheet available before hydration`);
+  for(const asset of css)assert.ok(head.includes(`href="${siteBase}/${asset}"`),`${locale}${route}: stylesheet available before hydration`);
  }
 }
 console.log('PASS lazy route styles in prerendered head across five locales');

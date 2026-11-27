@@ -1,20 +1,20 @@
 {
-  "banner": "/assets/minhduc-v18/field-team.webp",
+  "banner": "/WebMinhDuc/assets/minhduc-v18/field-team.webp",
   "rolePhotos": {
-    "MD007": "/assets/minhduc-v16/recruitment-event.webp",
-    "MD008": "/assets/minhduc-v16/recruitment-field.webp"
+    "MD007": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp",
+    "MD008": "/WebMinhDuc/assets/minhduc-v16/recruitment-field.webp"
   },
   "gallery": [
-    {"src": "/assets/minhduc-v16/team-yearend.webp", "caption": "Ảnh tập thể trong buổi tất niên", "alt": "Nhóm chụp trước phông Minh Đức, với hàng người ngồi phía trước."},
-    {"src": "/assets/minhduc-v18/field-team.webp", "caption": "Trao đổi ngoài hiện trường", "alt": "Nhóm mặc áo Minh Đức đứng trao đổi ngoài trời gần cổng nhà xưởng."},
-    {"src": "/assets/minhduc-v16/culture-birthday.webp", "caption": "Mừng sinh nhật cùng nhau", "alt": "Cả nhóm đứng quanh chiếc bánh sinh nhật, một số người giơ tay hình trái tim."},
-    {"src": "/assets/minhduc-v18/contact-team.webp", "caption": "Khoảnh khắc bên đồng đội", "alt": "Năm người chụp cùng bó hoa trước biển hiệu Minh Đức."},
-    {"src": "/assets/minhduc-v16/recruitment-event.webp", "caption": "Gặp gỡ tại hội trường", "alt": "Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng."},
-    {"src": "/assets/minhduc-v16/yearend-gifts.webp", "caption": "Trao quà trong buổi tất niên", "alt": "Một nhóm cầm quà trước phông sự kiện, phía trước có các hộp quà."},
-    {"src": "/assets/minhduc-v16/community.webp", "caption": "Một buổi hoạt động cộng đồng", "alt": "Nhóm cầm chổi và dụng cụ đứng trên sân trước một tòa nhà."},
-    {"src": "/assets/minhduc-v18/birthday-gifts.webp", "caption": "Những món quà sinh nhật", "alt": "Nhóm chụp ảnh cùng những túi quà sau bàn tiệc sinh nhật."},
-    {"src": "/assets/minhduc-v16/recruitment-field.webp", "caption": "Hồ sơ tại hiện trường", "alt": "Một người mặc áo Minh Đức cầm bìa hồ sơ bên đường."},
-    {"src": "/assets/minhduc-v18/red-gifts.webp", "caption": "Trao túi quà", "alt": "Những người tham dự cầm túi quà màu đỏ trước tòa nhà."},
-    {"src": "/assets/minhduc-v18/event-hall.webp", "caption": "Bên trong buổi gặp gỡ", "alt": "Nhìn từ cuối hội trường, các hàng ghế hướng về người trình bày."}
+    {"src": "/WebMinhDuc/assets/minhduc-v16/team-yearend.webp", "caption": "Ảnh tập thể trong buổi tất niên", "alt": "Nhóm chụp trước phông Minh Đức, với hàng người ngồi phía trước."},
+    {"src": "/WebMinhDuc/assets/minhduc-v18/field-team.webp", "caption": "Trao đổi ngoài hiện trường", "alt": "Nhóm mặc áo Minh Đức đứng trao đổi ngoài trời gần cổng nhà xưởng."},
+    {"src": "/WebMinhDuc/assets/minhduc-v16/culture-birthday.webp", "caption": "Mừng sinh nhật cùng nhau", "alt": "Cả nhóm đứng quanh chiếc bánh sinh nhật, một số người giơ tay hình trái tim."},
+    {"src": "/WebMinhDuc/assets/minhduc-v18/contact-team.webp", "caption": "Khoảnh khắc bên đồng đội", "alt": "Năm người chụp cùng bó hoa trước biển hiệu Minh Đức."},
+    {"src": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp", "caption": "Gặp gỡ tại hội trường", "alt": "Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng."},
+    {"src": "/WebMinhDuc/assets/minhduc-v16/yearend-gifts.webp", "caption": "Trao quà trong buổi tất niên", "alt": "Một nhóm cầm quà trước phông sự kiện, phía trước có các hộp quà."},
+    {"src": "/WebMinhDuc/assets/minhduc-v16/community.webp", "caption": "Một buổi hoạt động cộng đồng", "alt": "Nhóm cầm chổi và dụng cụ đứng trên sân trước một tòa nhà."},
+    {"src": "/WebMinhDuc/assets/minhduc-v18/birthday-gifts.webp", "caption": "Những món quà sinh nhật", "alt": "Nhóm chụp ảnh cùng những túi quà sau bàn tiệc sinh nhật."},
+    {"src": "/WebMinhDuc/assets/minhduc-v16/recruitment-field.webp", "caption": "Hồ sơ tại hiện trường", "alt": "Một người mặc áo Minh Đức cầm bìa hồ sơ bên đường."},
+    {"src": "/WebMinhDuc/assets/minhduc-v18/red-gifts.webp", "caption": "Trao túi quà", "alt": "Những người tham dự cầm túi quà màu đỏ trước tòa nhà."},
+    {"src": "/WebMinhDuc/assets/minhduc-v18/event-hall.webp", "caption": "Bên trong buổi gặp gỡ", "alt": "Nhìn từ cuối hội trường, các hàng ghế hướng về người trình bày."}
   ]
 }

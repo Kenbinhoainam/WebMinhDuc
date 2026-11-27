@@ -7,7 +7,7 @@
 .md-partners-grid .info-service-customers { background:white; padding-block:clamp(48px,6vw,96px); }
 .md-partners-grid .info-service-customers .section-heading h2,
 .partners-contact h2 {
-  color:#20478f;
+  color:var(--md-blue);
   font:700 clamp(30px,3.35vw,48px)/1.18 var(--font-display,Montserrat,sans-serif);
   letter-spacing:-.035em;
   text-wrap:balance;
@@ -21,7 +21,7 @@
 .md-partners-grid .info-content-note { font-size:16px; line-height:1.6; }
 .partners-contact {
   padding-block:clamp(44px,6vw,92px);
-  background:#eef3f6;
+  background:var(--md-surface-blue);
   border-top:1px solid #c6d5e6;
 }
 .partners-contact-layout {
@@ -34,7 +34,7 @@
 .partners-contact-layout>div:first-child { flex:2 1 330px; }
 .partners-contact h2 { margin:0 0 12px; }
 .partners-contact p,.partners-empty {
-  color:#40596d;
+  color:var(--md-muted);
   max-width:55ch;
   font-size:max(16px,1rem);
   line-height:1.65;
@@ -47,4 +47,4 @@
   flex-wrap:wrap;
   gap:10px 20px;
 }
-.partners-secondary { display:inline-flex; align-items:center; min-height:44px; color:#20478f; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.partners-secondary { display:inline-flex; align-items:center; min-height:44px; color:var(--md-blue); font-weight:700; text-decoration:underline; text-underline-offset:4px; }

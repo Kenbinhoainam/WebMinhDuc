@@ -7,19 +7,20 @@ import { RevealFrame } from './motion';
 import './education.css';
 import { createDemoSubmission } from './demo-submissions';
 import { FILE_ACCEPT,validateDemoFiles,validDemoPhone,validOptionalEmail } from './sharedformvalidation';
+import { educationPrograms } from './education-data';
+export { educationPrograms } from './education-data';
 
-export const educationPrograms = [
-  { slug: 'tu-xa-quan-tri', title: 'Quản trị kinh doanh', mode: 'Từ xa', description: 'Tìm hiểu kiến thức nền tảng về quản trị và vận hành kinh doanh.', detail: 'Hình thức học từ xa phù hợp với người muốn chủ động sắp xếp thời gian học. Nội dung, thời lượng và điều kiện tuyển sinh cần được xác nhận với đơn vị đào tạo.' },
-  { slug: 'chinh-quy-cong-nghe', title: 'Công nghệ kỹ thuật chính quy', mode: 'Chính quy', description: 'Khám phá kiến thức nền tảng về công nghệ và ứng dụng.', detail: 'Hình thức chính quy dành cho người quan tâm đến môi trường học tập tập trung. Lịch học, điều kiện và nội dung cụ thể cần được xác nhận với đơn vị đào tạo.' },
-  { slug: 'tu-xa-ke-toan', title: 'Kế toán', mode: 'Từ xa', description: 'Tìm hiểu kiến thức cơ bản về kế toán và nghiệp vụ doanh nghiệp.', detail: 'Chương trình minh họa hình thức học từ xa. Người học cần xác nhận chương trình, điều kiện và chi phí trước khi quyết định đăng ký.' },
-] as const;
 function ProgramDirectory() {
-  return <section id="programs" className="section container education-directory">
+  return <section id="programs" tabIndex={-1} className="section container education-directory">
     <header><h2>Chương trình theo hình thức học</h2>
       <p>Các chương trình dưới đây là dữ liệu giả định để trải nghiệm giao diện, chưa đại diện cho trường hoặc đợt tuyển sinh có thật. Điều kiện, học phí và văn bằng cần được xác nhận trước khi đăng ký.</p>
+      <nav className="education-mode-links" aria-label="Chương trình theo hình thức học">
+        <a className="education-link" href="#distance-learning">Từ xa</a>
+        <a className="education-link" href="#full-time-learning">Chính quy</a>
+      </nav>
     </header>
     <div className="education-program-groups">{(['Từ xa', 'Chính quy'] as const).map(mode =>
-      <section key={mode}><h3>{mode}</h3><ul>{educationPrograms.filter(program => program.mode === mode).map(program =>
+      <section key={mode} id={mode === 'Từ xa' ? 'distance-learning' : 'full-time-learning'} tabIndex={-1}><h3>{mode}</h3><ul>{educationPrograms.filter(program => program.mode === mode).map(program =>
         <li key={program.slug}><Link to={`/education/${program.slug}`}><strong>{program.title}</strong><span>{program.description}</span><ArrowUpRight size={22} strokeWidth={1.6} aria-hidden="true"/></Link></li>)}</ul></section>)}
     </div>
   </section>;

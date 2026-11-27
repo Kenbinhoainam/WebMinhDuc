@@ -1,4 +1,4 @@
-import type {Locale} from '../i18n';
+import type {Locale} from './paths';
 
 type Dictionary = Record<string, string>;
 type Catalog = {merged: Dictionary; jobs: Dictionary};
@@ -17,4 +17,18 @@ export function loadLocale(locale: Locale): Promise<void> {
 }
 export function lookup(locale: Locale, key: string, kind: keyof Catalog = 'merged'): string | undefined {
  return catalogs[locale]?.[kind][key];
+}
+
+export function translate(value: string, locale: Locale): string;
+export function translate(value: unknown, locale: Locale): unknown;
+export function translate(value: unknown, locale: Locale): unknown {
+  if (locale === 'vi') return value;
+  if (typeof value === 'string') {
+    const direct = lookup(locale, value);
+    if (direct) return direct;
+    const trimmed = value.trim();
+    const translated = lookup(locale, trimmed);
+    return translated ? value.replace(trimmed, translated) : value;
+  }
+  return Array.isArray(value) ? value.map(item => translate(item, locale)) : value;
 }

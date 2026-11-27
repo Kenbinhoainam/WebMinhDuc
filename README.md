@@ -1,3 +1,7 @@
+## Bản GitHub Pages
+
+Chạy `npm ci` rồi `npm run pages:prepare` tại thư mục gốc của nhánh prototype để dựng lại trang tại `/WebMinhDuc/` và cập nhật tệp tĩnh phục vụ từ nhánh. `npm run build` chỉ tạo `dist/`. Vite đọc mẫu `src/index-template.html`; `index.html` ở gốc là trang chủ đã kết xuất. Danh sách tệp tĩnh nằm trong `.pages-output.json`.
+
 ## Bản v18 — triển khai sáu nhóm trang
 
 Giới thiệu, Dịch vụ/Tuyển sinh, Việc làm, Tuyển dụng nội bộ, Tin tức/Sự kiện và Liên hệ/Tư vấn đã triển khai theo phương án v17. Hệ đầu trang sáng/xanh, bố cục riêng cho từng hành trình, 11 ảnh thật trong tuyển dụng nội bộ và hai ảnh AI không gian ý niệm. [Bàn giao và kiểm tra v18](docs/flagship/v18/IMPLEMENTATION.txt).
@@ -100,6 +104,12 @@ Logo, hotline, Zalo/Facebook và năm đối tác lấy từ bảng nguồn. Ả
 - `i18n.tsx`, `i18n-runtime/`, `i18n-catalogs/`: locale theo URL và bản dịch. JSX runtime dịch nội dung/nhãn hiển thị, giữ nguyên IDs, URL, form values và dữ liệu người dùng nhập. Chuỗi động dùng `useTranslation`.
 - `src/seo/`, `entry-server.tsx`, `scripts/prerender.mjs`: metadata và xuất HTML tĩnh; không dùng dịch DOM sau hydration.
 - `motion.tsx`/`motion.css` và CSS theo trang: animation, responsive, reduced-motion.
+
+### Chuẩn bị chuyển sang Next.js
+
+Prototype hiện chạy Vite và React Router. Khi chuyển sang App Router, có thể lấy đường dẫn tĩnh từ `pages` trong `src/seo/routes.ts` và `localizedPath` trong `src/i18n-runtime/paths.ts`. Phần metadata trên server gọi `await loadLocale(locale)` trước `localizedSeo(path, locale)` để nhận tiêu đề, mô tả, canonical, hreflang và JSON-LD theo ngôn ngữ. Các hàm này chạy được trong Node.
+
+Trang chủ và danh mục dùng chung dữ liệu và thẻ dịch vụ. Nơi hiển thị chỉ quyết định dùng dải kéo hay lưới. Với tin tức, `EditorialCard` nhận URL và ngôn ngữ qua props. `RoutedEditorialCard` phụ trách điều hướng của prototype và khôi phục bộ lọc. Khi thay router, cần kiểm tra lại đường quay về danh sách, neo biểu mẫu và các liên kết đã chia sẻ. Phần phát phim, kéo thẻ và lưu việc trên thiết bị cần chạy ở phía trình duyệt.
 
 ## Kiểm thử
 

@@ -1,3 +1,4 @@
+import {sitePath, outputPath} from './pages-paths.mjs';
 import {build} from 'esbuild';
 import {mkdir, rm, readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
@@ -52,7 +53,7 @@ try {
   assert.equal(trigger.getAttribute('aria-expanded'),'true');
   const languages=[...document.querySelectorAll('.language-panel a')];
   assert.equal(languages.length,5);
-  assert.deepEqual(languages.map(a=>a.getAttribute('href')),['/jobs?q=kho#details','/en/jobs?q=kho#details','/zh/jobs?q=kho#details','/ko/jobs?q=kho#details','/ja/jobs?q=kho#details']);
+  assert.deepEqual(languages.map(a=>a.getAttribute('href')),['/jobs?q=kho#details','/en/jobs?q=kho#details','/zh/jobs?q=kho#details','/ko/jobs?q=kho#details','/ja/jobs?q=kho#details'].map(sitePath));
   assert.equal(languages.filter(a=>a.hasAttribute('aria-current')).length,1);
   await openMenu();
   assert.equal(trigger.getAttribute('aria-expanded'),'false','navigation opening closes language');
@@ -84,7 +85,7 @@ try {
  await act(()=>root.render(React.createElement(MemoryRouter,null,React.createElement(Hero))));
  const video=document.querySelector('video');assert.equal(video.getAttribute('src'),null);assert.equal(video.getAttribute('preload'),'none');
  const poster=document.querySelector('.hero-poster');assert.ok(poster,'an independent poster is present before video loading');
- assert.equal(document.querySelectorAll('.hero-poster').length,1);assert.equal(poster.getAttribute('src'),'/assets/minhduc-poster-1s.webp');
+ assert.equal(document.querySelectorAll('.hero-poster').length,1);assert.equal(poster.getAttribute('src'),sitePath('/assets/minhduc-poster-1s.webp'));
  assert.equal(poster.getAttribute('alt'),'');assert.equal(poster.closest('.hero-media')?.getAttribute('aria-hidden'),'true');
  assert.equal(poster.getAttribute('fetchpriority'),'high');assert.notEqual(poster.getAttribute('loading'),'lazy');assert.equal(video.classList.contains('is-ready'),false);
  assert.ok(!document.querySelector('.hero-bottom,.hero-caption,.scroll-hint'),'removed hero footer content must not return');
@@ -97,13 +98,13 @@ try {
  const builtDocument=new window.DOMParser().parseFromString(builtHtml,'text/html');
  assert.ok([...builtDocument.querySelectorAll('link[rel="preload"][as="image"]')].some(link=>link.getAttribute('href')===poster.getAttribute('src')),'poster markup uses the same URL as the homepage preload');
  const cssPath=builtDocument.querySelector('link[rel="stylesheet"]')?.getAttribute('href');
- assert.ok(cssPath?.startsWith('/assets/'),'compiled entry stylesheet exists');
- const css=await readFile(`dist${cssPath}`,'utf8');
+ assert.ok(cssPath?.startsWith(sitePath('/assets/')),'compiled entry stylesheet exists');
+ const css=await readFile(`dist${outputPath(cssPath)}`,'utf8');
  const rules=postcss.parse(css);let mobileMenu=false,desktopNavigation=false,desktopMenuHidden=false,compactHeight=false;
  rules.walkDecls('scroll-padding-top',decl=>assert.notEqual(decl.value,'145px','obsolete two-row offset must not survive'));
  rules.walkRules(rule=>{
-  if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='5rem')compactHeight=true});
-  if(rule.selectors.includes('.site-header .menu-button')&&rule.parent.type!=='atrule')rule.walkDecls('display',decl=>{if(decl.value==='flex')mobileMenu=true});
+  if(rule.selectors.includes('.site-header .header-inner'))rule.walkDecls('height',decl=>{if(decl.value==='80px')compactHeight=true});
+  if(rule.selectors.some(selector=>selector.includes('.menu-button')&&selector.startsWith('.site-header :is('))&&rule.parent.type!=='atrule')rule.walkDecls('display',decl=>{if(decl.value==='flex')mobileMenu=true});
  });
  rules.walkAtRules('media',media=>{if(/min-width:\s*1280px/.test(media.params))media.walkRules(rule=>{
   if(rule.selectors.includes('.desktop-nav'))rule.walkDecls('display',decl=>{if(decl.value==='block')desktopNavigation=true});

@@ -7,7 +7,7 @@ export function useHomeCarousel(
   container: RefObject<HTMLElement | null>,
   advance: Advance,
   interactionSelector = '[data-auto-rail]',
-  {intervalMs = 6000, disabled = false}: {intervalMs?: number; disabled?: boolean} = {},
+  {intervalMs = 6000, disabled = false, paused = false}: {intervalMs?: number; disabled?: boolean; paused?: boolean} = {},
 ) {
   const advanceRef = useRef(advance);
   advanceRef.current = advance;
@@ -35,7 +35,7 @@ export function useHomeCarousel(
     }
     function schedule() {
       stop();
-      if (!alive || !visible || pressed || focused || hovered.size || document.hidden || motion.matches || root?.hasAttribute('inert')) return;
+      if (paused || !alive || !visible || pressed || focused || hovered.size || document.hidden || motion.matches || root?.hasAttribute('inert')) return;
       timer = window.setInterval(() => {
         if (!alive) return;
         cancelSlide?.();
@@ -117,7 +117,7 @@ export function useHomeCarousel(
       document.removeEventListener('visibilitychange', schedule);
       motion.removeEventListener('change', schedule);
     };
-  }, [container, interactionSelector, intervalMs, disabled]);
+  }, [container, interactionSelector, intervalMs, disabled, paused]);
 }
 
 /** Static rows need neither an extra tab stop nor an autoplay timer. */
@@ -143,7 +143,7 @@ export function useScrollableRail(rail: RefObject<HTMLElement | null>) {
   return overflow;
 }
 
-function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
+export function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
   const start = rail.scrollLeft;
   const max = rail.scrollWidth - rail.clientWidth;
   const cards = Array.from(rail.children) as HTMLElement[];
@@ -156,13 +156,18 @@ function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
 
 // Reverse at either end so a long strip never sweeps back through every card.
 const reverseRail = new WeakSet<HTMLElement>();
-export function advanceHomeRail(rail: HTMLElement | null) {
+export function advanceHomeRail(rail: HTMLElement | null, durationMs = 500) {
   if (!rail || rail.scrollWidth <= rail.clientWidth + 1) return;
   const start = rail.scrollLeft;
   const max = rail.scrollWidth - rail.clientWidth;
   if (start >= max - 2) reverseRail.add(rail);
   if (start <= 2) reverseRail.delete(rail);
-  const target = adjacentRailOffset(rail, reverseRail.has(rail));
+  return slideRailTo(rail, adjacentRailOffset(rail, reverseRail.has(rail)), durationMs);
+}
+
+/** Animate a measured native-scroll offset. The returned cancellation restores scroll snapping. */
+export function slideRailTo(rail: HTMLElement, target: number, durationMs: number) {
+  const start = rail.scrollLeft;
   const started = performance.now();
   const previousSnap = rail.style.scrollSnapType;
   rail.style.scrollSnapType = 'none';
@@ -176,7 +181,7 @@ export function advanceHomeRail(rail: HTMLElement | null) {
   const tick = (now: number) => {
     if (!alive) return;
     if (!rail.isConnected) { finish(); return; }
-    const progress = Math.min(1, Math.max(0, (now - started) / 500));
+    const progress = Math.min(1, Math.max(0, (now - started) / durationMs));
     rail.scrollLeft = start + (target - start) * (1 - (1 - progress) ** 3);
     if (progress < 1) frame = requestAnimationFrame(tick);
     else finish();

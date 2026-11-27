@@ -1,3 +1,4 @@
+import {sitePath, outputPath} from './pages-paths.mjs';
 import assert from 'node:assert/strict';
 import {access, mkdtemp, readFile, rm} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
@@ -9,7 +10,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 const manifest = JSON.parse(await readFile('src/media-manifest.json', 'utf8'));
 for (const [original, {variants}] of Object.entries(manifest)) {
-  for (const src of [original, ...variants.map(variant => variant.src)]) await access('public' + src);
+  for (const src of [original, ...variants.map(variant => variant.src)]) await access('public' + outputPath(src));
 }
 
 const temp = await mkdtemp(process.cwd() + '/.image-fallback-test-');
@@ -23,10 +24,10 @@ try {
     loader:{'.css':'empty'}, outfile:temp + '/bundle.mjs', logLevel:'silent',
   });
   const {PageMasthead, jsx} = await import(pathToFileURL(temp + '/bundle.mjs').href);
-  const original = '/assets/hero-poster.jpg';
+  const original = sitePath('/assets/hero-poster.jpg');
   const group = manifest[original];
   const variant = group.variants[0].src;
-  const campus = '/assets/minhduc-v18/industrial-campus.webp';
+  const campus = sitePath('/assets/minhduc-v18/industrial-campus.webp');
   const heading = 'Dịch vụ nhân lực';
   const alt = 'Quang cảnh khu công nghiệp';
   const masthead = image => createElement(MemoryRouter, null, createElement(PageMasthead, {

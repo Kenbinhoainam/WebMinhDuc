@@ -2,12 +2,13 @@ import {useEffect, useRef, useState, type FormEvent} from 'react';
 import {Link, useLocation, useNavigate, useNavigationType, useParams, useSearchParams} from 'react-router-dom';
 import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, FileUp, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
 import {company} from './company';
+import {subnavigation} from './navigation';
 import CareersSections from './CareersSections';
 import {PageMasthead} from './PageMasthead';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
 import {useLocale, type Locale} from './i18n';
-import {translate} from './i18n-runtime/jsx-runtime';
+import {translate} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {useSavedJobs} from './saved-jobs';
 import {createDemoSubmission} from './demo-submissions';
@@ -18,7 +19,7 @@ export type {Job} from './jobs-data';
 export {useSavedJobs} from './saved-jobs';
 
 const PAGE_SIZE = 6;
-const EVENT_IMAGE = '/assets/minhduc-v16/recruitment-event.webp';
+const EVENT_IMAGE = '/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp';
 const EVENT_ALT = 'Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng.';
 const WORKERS = jobs.filter(job => !job.internal);
 const TEAM = jobs.filter(job => job.internal);
@@ -225,6 +226,9 @@ export function JobsPage() {
   const [photoFailed, setPhotoFailed] = useState(false);
   return <div className="jobs-directory">
     <PageMasthead title="Tìm việc làm" description="Chọn khu công nghiệp, ca làm và mức tay nghề phù hợp."><SavedJobsLink/></PageMasthead>
+    <nav className="container jobs-audience-links" aria-label="Việc làm">
+      {subnavigation['/jobs'].map(([to,label]) => <Link key={to} to={to}>{label}<ArrowUpRight size={16} aria-hidden="true"/></Link>)}
+    </nav>
     <section className="jobs-section"><div className="container"><div id="job-listings" tabIndex={-1}><JobBrowser/></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section>
     {!photoFailed && <figure className="jobs-event-photo">
       <img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1072px) calc(40.5vw - 26px), 408px" loading="lazy" onError={() => setPhotoFailed(true)}/>
@@ -344,6 +348,54 @@ export function JobDetailPage() {
   const {slug} = useParams();
   const job = jobs.find(item => item.slug === slug);
   const [applying,setApplying] = useState(false);
+  const inlineApply = useRef<HTMLButtonElement>(null);
+  const mobileApply = useRef<HTMLButtonElement>(null);
+  const fromMobileBar = useRef(false);
+  const detail = useRef<HTMLElement>(null);
+  const [pastAction,setPastAction] = useState(false);
+  useEffect(() => {
+    const action = inlineApply.current;
+    const page = detail.current;
+    if (!action || !page) return;
+    const mobile = window.matchMedia('(max-width:767px)');
+    const viewport = window.visualViewport;
+    const header = document.querySelector('.site-header');
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      if (!mobile.matches) {
+        setPastAction(false);
+        return;
+      }
+      const headerBottom = Math.max(0,header?.getBoundingClientRect().bottom ?? 0);
+      const editing = document.activeElement?.matches('input,textarea,select,[contenteditable="true"]');
+      const keyboardOpen = viewport && window.innerHeight - viewport.height > 120;
+      setPastAction(Boolean(!editing && !keyboardOpen &&
+        action.getBoundingClientRect().bottom <= headerBottom &&
+        page.getBoundingClientRect().bottom > window.innerHeight));
+    };
+    function update() {
+      if (!frame) frame = requestAnimationFrame(measure);
+    }
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(update);
+    observer?.observe(page);
+    if (header) observer?.observe(header);
+    window.addEventListener('scroll',update,{passive:true});
+    window.addEventListener('resize',update);
+    viewport?.addEventListener('resize',update);
+    document.addEventListener('focusin',update);
+    document.addEventListener('focusout',update);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer?.disconnect();
+      window.removeEventListener('scroll',update);
+      window.removeEventListener('resize',update);
+      viewport?.removeEventListener('resize',update);
+      document.removeEventListener('focusin',update);
+      document.removeEventListener('focusout',update);
+    };
+  },[slug]);
   const navigate = useNavigate();
   const location = useLocation();
   const origin = readOrigin(location.state);
@@ -355,7 +407,7 @@ export function JobDetailPage() {
   const related = jobs.filter(item => item !== job && !!item.internal === !!job.internal)
     .sort((a,b) => Number(b.status === 'active')-Number(a.status === 'active') || Number(b.location === job.location)-Number(a.location === job.location)).slice(0,3);
   const closed = job.status === 'closed';
-  return <section className="jobs-detail-section"><div className="container">
+  return <section ref={detail} className="jobs-detail-section"><div className="container">
     <Link className="jobs-back" to={backUrl} onClick={event => {if (origin && plainClick(event)) {event.preventDefault(); navigate(-origin.steps);}}}><ChevronLeft size={18} aria-hidden="true"/>{backLabel}</Link>
     <div className="job-detail-layout">
       <header className="job-detail-intro"><div className="job-card-meta"><span>MÃ VỊ TRÍ {job.id}</span><span className={closed ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span></div><h1>{job.title}</h1></header>
@@ -363,13 +415,14 @@ export function JobDetailPage() {
         <div className="job-summary-primary">
           <h2>Thông tin vị trí</h2>
           <dl><div className="job-pay"><dt>Thu nhập tham khảo</dt><dd>{job.salary}</dd></div></dl>
+          {(job.shift || job.schedule) && <p className="job-summary-shift"><strong>Ca làm việc</strong> {job.shift}{job.shift && job.schedule && ' · '}{job.schedule}</p>}
           <p className="job-summary-locality"><MapPin size={16} aria-hidden="true"/><span className="sr-only">Địa điểm</span> {job.location}</p>
         </div>
         <div className="job-summary-actions">
           {closed ? <>
             <p className="job-closed">Vị trí đã đóng, không nhận ứng tuyển.</p>
             <Link className="jobs-quiet-button" to={job.internal ? '/careers#open-positions' : '/jobs?status=active#job-listings'}>Xem vị trí đang tuyển</Link>
-          </> : <button className="btn job-apply-button" type="button" onClick={() => setApplying(true)}>
+          </> : <button ref={inlineApply} className="btn job-apply-button" aria-haspopup="dialog" type="button" onClick={() => setApplying(true)}>
             {job.internal ? 'Ứng tuyển vị trí này' : 'Ứng tuyển ngay'}
           </button>}
           <SaveButton job={job} labelled/>
@@ -377,7 +430,6 @@ export function JobDetailPage() {
         <dl>
           {job.industrialPark && <div><dt>Khu công nghiệp</dt><dd>{job.industrialPark}</dd></div>}
           <div><dt>Hình thức</dt><dd>{job.type}</dd></div>
-          {(job.shift || job.schedule) && <div><dt>Ca làm việc</dt><dd>{job.shift}{job.shift && job.schedule && ' · '}{job.schedule}</dd></div>}
           <div><dt>Nhóm công việc</dt><dd>{job.category}</dd></div>
         </dl>
         <p className="jobs-data-note">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>
@@ -390,5 +442,23 @@ export function JobDetailPage() {
       </div>
     </div>
     {related.length > 0 && <section className="jobs-related"><h2>Có thể bạn quan tâm</h2><div className="jobs-grid">{related.map(item => <JobCard key={item.id} job={item} origin={origin && {...origin,steps:origin.steps+1}}/>)}</div></section>}
-  </div>{applying && !closed && <ApplicationDialog job={job} onClose={() => setApplying(false)}/>}</section>;
+  </div>
+    {!closed && <div className="job-mobile-apply" hidden={!pastAction || applying}>
+      <button ref={mobileApply} className="btn" type="button" aria-haspopup="dialog" onClick={event => {
+        fromMobileBar.current = true;
+        event.currentTarget.focus({preventScroll:true});
+        setApplying(true);
+      }}>{job.internal ? 'Ứng tuyển vị trí này' : 'Ứng tuyển ngay'}</button>
+    </div>}
+    {applying && !closed && <ApplicationDialog job={job} onClose={() => {
+      setApplying(false);
+      if (fromMobileBar.current) {
+        fromMobileBar.current = false;
+        requestAnimationFrame(() => {
+          const button = mobileApply.current;
+          if (button && !button.parentElement?.hidden) button.focus({preventScroll:true});
+          else inlineApply.current?.focus();
+        });
+      }
+    }}/>}</section>;
 }

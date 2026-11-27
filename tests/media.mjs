@@ -1,3 +1,4 @@
+import {outputPath} from './pages-paths.mjs';
 import {build} from 'esbuild';
 import {mkdir,rm,readFile,access} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
@@ -9,7 +10,7 @@ if(!process.argv.includes('--case')){
  await mkdir(temp,{recursive:true});
  try{
   await build({entryPoints:['src/HomeHero.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/hero.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
-  const assets=JSON.parse(await readFile('src/hero-assets.json','utf8'));for(const path of Object.values(assets))await access('public'+path);
+  const assets=JSON.parse(await readFile('src/hero-assets.json','utf8'));for(const path of Object.values(assets))await access('public'+outputPath(path));
   for(const mode of ['desktop','mobile','reduced','data','slow','blocked','race','endrace','preference','observer','observer-observe','error','error-offscreen','error-paused','webm']){
    const result=spawnSync(process.execPath,[process.argv[1],'--case',mode],{encoding:'utf8',timeout:10000});assert.equal(result.status,0,`${mode}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }
@@ -40,6 +41,7 @@ if(!process.argv.includes('--case')){
   if(['observer','observer-observe'].includes(mode)){
    if(callback)await observe(true);assert.equal(video.getAttribute('src'),null,'observer failure remains static despite stale callback');assert.equal(stage.dataset.stage,'fallback');await click();assert.equal(plays,1,'manual play remains possible');
   }else if(['reduced','data','slow'].includes(mode)){
+   assert.equal(stage.dataset.decorativeImages,mode==='reduced'?'true':'false','data-saving mode skips architecture even when the end card is visible');
    await observe(true);assert.equal(plays,0);assert.equal(video.getAttribute('src'),null);assert.equal(stage.dataset.stage,'fallback');await click();assert.equal(plays,1,'explicit manual playback bypasses initial preference');
   }else if(mode==='blocked'){
    await observe(true);assert.equal(plays,1);assert.equal(stage.dataset.stage,'fallback');assert.ok(brand.classList.contains('is-visible'));assert(!video.classList.contains('is-ready'));
