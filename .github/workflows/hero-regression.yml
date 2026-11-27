@@ -13,8 +13,8 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          git merge-base --is-ancestor c83bd9001cf2629dfb1934515fcf1c05ae553910 HEAD
-          git diff --exit-code c83bd9001cf2629dfb1934515fcf1c05ae553910 HEAD -- . ':(exclude).github/**'
+          git merge-base --is-ancestor 66b76036469f07b35bc3cb188dc6b61d40fdda32 HEAD
+          git diff --exit-code 66b76036469f07b35bc3cb188dc6b61d40fdda32 HEAD -- . ':(exclude).github/**'
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
