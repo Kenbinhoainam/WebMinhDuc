@@ -119,7 +119,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   const [draft,setDraft] = useState<string|null>(null);
   const browserRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLParagraphElement>(null);
-  const nextFocus = useRef<string | null>(null);
+  const nextFocus = useRef<{id:string; index:number; control:'save'|'link'; fromStorage:boolean} | null>(null);
   const restoredEntry = useRef<string | null>(null);
   const fields = internal ? TEAM_FIELDS : FACTORY_FIELDS;
   const audience = audienceFor(internal,savedOnly);
@@ -142,11 +142,36 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
     setDraft(null);
   },[location.key]);
   useEffect(() => {
-    if (nextFocus.current === null) return;
-    const next = browserRef.current?.querySelector<HTMLElement>(`[data-job-save="${nextFocus.current}"]`) || browserRef.current?.querySelector<HTMLElement>('.jobs-empty a, .jobs-empty button') || resultsRef.current;
-    next?.focus();
+    if (!savedOnly) return;
+    // Capture focus while the old card still exists, before the saved store
+    // notifies React and Chromium moves focus to BODY on removal.
+    const rememberFocusedCard = () => {
+      const list = browserRef.current;
+      const control = document.activeElement?.closest<HTMLElement>('[data-job-save], [data-job-link]');
+      nextFocus.current = null;
+      if (!list || !control || !list.contains(control)) return;
+      const card = control.closest('.job-card');
+      if (!card) return;
+      const index = Array.from(list.querySelectorAll('.job-card')).indexOf(card);
+      const id = control.dataset.jobSave || control.dataset.jobLink;
+      if (index >= 0 && id) {
+        nextFocus.current = {id, index:start + index, control:control.dataset.jobSave ? 'save' : 'link', fromStorage:true};
+      }
+    };
+    window.addEventListener('storage',rememberFocusedCard,true);
+    return () => window.removeEventListener('storage',rememberFocusedCard,true);
+  },[savedOnly,start]);
+  useEffect(() => {
+    const pending = nextFocus.current;
     nextFocus.current = null;
-  }, [savedIds]);
+    if (!pending || savedIds.includes(pending.id)) return;
+    if (pending.fromStorage && document.activeElement && document.activeElement !== document.body) return;
+    const list = browserRef.current;
+    const controls = list?.querySelectorAll<HTMLElement>(pending.control === 'link' ? '[data-job-link]' : '[data-job-save]');
+    const index = Math.min(Math.max(0,pending.index-start),(controls?.length ?? 0)-1);
+    const target = controls?.[index] || list?.querySelector<HTMLElement>('.jobs-empty a, .jobs-empty button') || resultsRef.current;
+    target?.focus();
+  },[savedIds,start]);
   useEffect(() => {
     if (!clientReady || navigationType !== 'POP' || lastOpened?.entryKey !== location.key || restoredEntry.current === location.key) return;
     const id = lastOpened.jobId;
@@ -256,7 +281,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
       {!internal && !savedOnly && <h2>Cơ hội việc làm dành cho bạn</h2>}
       <p tabIndex={-1} ref={resultsRef} role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {String(translate('cho',locale))} “{query}”</>}</p>
     </div>
-    {filtered.length ? <div className="jobs-grid">{filtered.slice(start,start+PAGE_SIZE).map((job,index) => <JobCard key={job.id} job={job} origin={origin} remember={() => {lastOpened = {entryKey:location.key, jobId:job.id};}} afterRemove={savedOnly ? () => {nextFocus.current = filtered[start+index+1]?.id || filtered[start+index-1]?.id || '';} : undefined}/> )}</div>
+    {filtered.length ? <div className="jobs-grid">{filtered.slice(start,start+PAGE_SIZE).map((job,index) => <JobCard key={job.id} job={job} origin={origin} remember={() => {lastOpened = {entryKey:location.key, jobId:job.id};}} afterRemove={savedOnly ? () => {nextFocus.current = {id:job.id, index:start+index, control:'save', fromStorage:false};} : undefined}/> )}</div>
       : <EmptyJobs saved={isEmptySaved} teamClosed={internal && !TEAM.some(job => job.status === 'active') && !query && activeFields.length === 0} onReset={reset} onClosed={() => updateFilter('status','closed')}/>}
     {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={page === 1} aria-label="Trang trước" onClick={() => goToPage(page-1)}><ChevronLeft size={18}/></button>{Array.from({length:totalPages},(_,i)=>i+1).map(number => <button type="button" key={number} aria-label={`${translate('Trang',locale)} ${number}`} aria-current={number === page ? 'page' : undefined} onClick={() => goToPage(number)}>{number}</button>)}<button type="button" aria-label="Trang sau" disabled={page === totalPages} onClick={() => goToPage(page+1)}><ChevronRight size={18}/></button></nav>}
     {!isEmptySaved && <p className="jobs-data-note">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>}

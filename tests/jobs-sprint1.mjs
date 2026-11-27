@@ -62,7 +62,9 @@ try {
  await change('[name=phone]','09');
  assert.ok(document.querySelector('#apply-phone-error'),'an incomplete correction keeps the error visible');
  await change('[name=phone]','0912345678');
- assert.ok(document.querySelector('#apply-phone-error'),'required fields revalidate on resubmission');
+ assert.equal(document.querySelector('#apply-phone-error'),null,'correcting a field after submit clears only its own error');
+ assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'false');
+ assert.ok(document.querySelector('#apply-name-error'),'an untouched required field keeps its error');
  await submit();
  assert.equal(document.querySelector('#apply-phone-error'),null);
  assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'false');
