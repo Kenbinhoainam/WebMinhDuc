@@ -113,6 +113,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   const locale = useLocale();
   const {savedIds,count,isTemporary,ready:clientReady} = useSavedJobs();
   const [advanced,setAdvanced] = useState(false);
+  const publicFilters = !internal && !savedOnly;
   const composing = useRef(false);
   const confirmingComposition = useRef(false);
   const [draft,setDraft] = useState<string|null>(null);
@@ -230,7 +231,10 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
         <button type="button" className="jobs-quiet-button" aria-expanded={advanced} aria-controls="jobs-more-filters" onClick={() => setAdvanced(!advanced)}><SlidersHorizontal size={17} aria-hidden="true"/>Bộ lọc khác {activeCount > 0 && <span>({activeCount})</span>}</button>
         <button className="btn jobs-search-button" type="submit">Xem kết quả</button>
       </div>
-      <div id="jobs-more-filters" className="jobs-filter-more" hidden={!advanced}>{fields.map(filterSelect)}</div>
+      <div id="jobs-more-filters" className="jobs-filter-disclosure" data-public-filters={publicFilters || undefined}
+        aria-hidden={!advanced} inert={!advanced} hidden={!publicFilters && !advanced}>
+        <div className="jobs-filter-clip"><div className="jobs-filter-more">{fields.map(filterSelect)}</div></div>
+      </div>
       {(query || activeFields.length > 0) && <div className="jobs-filter-selection">
         {[...(query ? ['q'] as const : []), ...activeFields].map(key => {
           const raw = params.get(key) || '';

@@ -54,7 +54,7 @@
   scroll-snap-align:center;
   opacity:1;
   animation:none;
-  transition:opacity 260ms ease;
+  transition:opacity var(--motion-t2) var(--motion-ease);
 }
 .about-page .info-history-slide.is-side { opacity:.48; }
 .about-page .info-history-slide.is-side .about-history-copy { visibility:hidden; }
@@ -113,3 +113,9 @@
   .about-page .about-rail-pause{display:none}
   .about-page .about-milestone-interaction .info-document-grid{display:grid;grid-auto-flow:row;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));overflow:visible}
 }
+
+@media(prefers-reduced-motion:no-preference){
+  .about-page .info-history-track [role=tab]{transition:background-color var(--motion-t1) var(--motion-ease),color var(--motion-t1) var(--motion-ease)}
+  .about-page .info-history-slide.is-active .about-history-copy{animation:history-copy-enter var(--motion-t2) var(--motion-ease)}
+}
+@keyframes history-copy-enter{from{opacity:0}to{opacity:1}}
