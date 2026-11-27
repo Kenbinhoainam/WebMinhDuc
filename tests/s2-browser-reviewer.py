@@ -130,17 +130,23 @@ def navigation(page):
     frame.wait_for_url("**/education**")
     expect(page.locator(".direct")).to_have_attribute("href",path("/education"))
     replaced=page.url
-    # Make the next history entry a top-level page so Back has a top-level
-    # DOM event to await even when the preceding viewer has iframe history.
-    page.goto(path("/contact"),wait_until="domcontentloaded")
-    page.go_back(wait_until="domcontentloaded")
-    assert page.url == replaced, page.url
-    expect(page.locator("#page")).to_have_value("/education")
-    expect(page.locator("[data-width='1440']")).to_have_attribute("aria-pressed","true")
-    back = page.url
-    page.go_forward(wait_until="domcontentloaded")
-    assert page.url.rstrip("/") == path("/contact").rstrip("/"),page.url
-    return {"retained_child":in_frame,"direct_popup":in_frame,"changed_page":replaced,"history_back":back,"history_forward":page.url}
+    # Verify top-level history independently from child-initiated history.
+    history=page.context.new_page()
+    try:
+        history.goto(path("/contact"),wait_until="domcontentloaded")
+        history.goto(replaced,wait_until="domcontentloaded")
+        get_frame(history)
+        history.go_back(wait_until="commit")
+        history.wait_for_url(path("/contact"))
+        back=history.url
+        history.go_forward(wait_until="domcontentloaded")
+        history.wait_for_url(replaced)
+        expect(history.locator("#page")).to_have_value("/education")
+        expect(history.locator("[data-width='1440']")).to_have_attribute("aria-pressed","true")
+        return {"retained_child":in_frame,"direct_popup":in_frame,"changed_page":replaced,
+                "history_back":back,"history_forward":history.url}
+    finally:
+        history.close()
 
 
 def run(browser):
