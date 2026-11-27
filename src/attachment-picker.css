@@ -4,6 +4,7 @@
 .attachment-choose:focus-within { outline:3px solid var(--md-focus); outline-offset:2px; }
 .attachment-choose:has([aria-invalid="true"]) { border-color:var(--md-red); }
 .attachment-field .attachment-choose input[type="file"] { position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0; opacity:0; cursor:pointer; }
+.attachment-replace-help { display:block; margin-top:4px; }
 .attachment-files { list-style:none; padding:0; margin:12px 0 0; }
 .attachment-files li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 12px; border-block-end:1px solid var(--md-rule); padding-block:4px; }
 .attachment-name { flex:1 1 12ch; min-width:0; overflow-wrap:anywhere; }
