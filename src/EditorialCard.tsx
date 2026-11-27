@@ -1,6 +1,6 @@
 import {useId, type ReactNode} from 'react';
 import type {Locale} from './i18n';
-import type {Article, EditorialImageData} from './editorial-data';
+import type {ArticleSummary, EditorialImageData} from './editorial-data';
 import {ArticleDate} from './EditorialDate';
 import {responsiveImage} from './media';
 
@@ -59,14 +59,16 @@ export function EditorialImage({image, sizes, className, loading = 'lazy', decor
 const staticArchivePhoto = (photo: ReactNode) => <div className="ed-row-photo">{photo}</div>;
 const nativeLink = ({children, ...props}: ArticleLinkProps) => <a {...props}>{children}</a>;
 
-export function EditorialCard({article, href, locale, variant, showImage = true, eagerImage = false,
+export function EditorialCard({article, href, locale, variant, showImage = true, eagerImage = false, imageSizes, checklist,
   renderLink = nativeLink, renderArchivePhoto = staticArchivePhoto}: {
-  article: Article;
+  article: ArticleSummary;
   href: string;
   locale: Locale;
   variant: Variant;
   showImage?: boolean;
   eagerImage?: boolean;
+  imageSizes?: string;
+  checklist?: readonly string[];
   renderLink?: (props: ArticleLinkProps) => ReactNode;
   renderArchivePhoto?: (photo: ReactNode) => ReactNode;
 }) {
@@ -77,12 +79,12 @@ export function EditorialCard({article, href, locale, variant, showImage = true,
   const date = <ArticleDate date={article.date} locale={locale}/>;
   const imageClass = 'imageClass' in layout ? layout.imageClass : undefined;
   const portraitClass = 'portraitClass' in layout ? layout.portraitClass : undefined;
-  const photo = showImage && article.image && <EditorialImage image={article.image} sizes={sizes} decorative
+  const photo = showImage && article.image && <EditorialImage image={article.image} sizes={imageSizes ?? sizes} decorative
     className={article.image.orientation === 'portrait' ? portraitClass ?? imageClass : imageClass}
     loading={eagerImage ? 'eager' : 'lazy'}/>;
   let children: ReactNode;
 
-  if (variant === 'homeList') children = <>{photo}{date}{title}</>;
+  if (variant === 'homeList') children = <>{photo}{title}{date}</>;
   else if (variant === 'related') children = <>{photo}{title}</>;
   else if (variant === 'archive') children = <>
     {photo && renderArchivePhoto(photo)}
@@ -93,7 +95,7 @@ export function EditorialCard({article, href, locale, variant, showImage = true,
     const {copyClass, metaClass} = layouts[variant];
     const media = variant === 'homeLead' ? photo :
       photo ? <div className="ed-feature-media">{photo}</div> :
-      <div className="ed-feature-checklist"><ul>{article.sections.map(section => <li key={section.heading}>{section.heading}</li>)}</ul></div>;
+      checklist?.length ? <div className="ed-feature-checklist"><ul>{checklist.map(heading => <li key={heading}>{heading}</li>)}</ul></div> : null;
     children = <>
       {media}
       <div className={copyClass}>

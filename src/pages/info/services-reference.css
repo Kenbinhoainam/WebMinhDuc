@@ -20,7 +20,7 @@
 .service-education-action h2 {
   margin: 0 0 clamp(22px, 3vw, 38px);
   max-width: 24ch;
-  color: #233741;
+  color: var(--md-ink);
   font: 700 clamp(28px, 3.3vw, 50px)/1.13 var(--font-display, Montserrat, sans-serif);
   letter-spacing: -.025em;
 }
@@ -28,7 +28,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: #20478f;
+  color: var(--md-blue);
   font-size: max(16px, 1rem);
   font-weight: 700;
   text-decoration: underline;
@@ -42,24 +42,24 @@
 .service-overview {display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:clamp(28px,6vw,90px);align-items:start;}
 .service-overview-actions {display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:20px;}
 .service-index-actions {margin-top:24px;}
-.service-directory > [data-reveal-frame] p,.service-overview p {margin:0;color:#43515b;font-size:clamp(16px,1.2vw,20px);line-height:1.65;}
+.service-directory > [data-reveal-frame] p,.service-overview p {margin:0;color:var(--md-muted);font-size:clamp(16px,1.2vw,20px);line-height:1.65;}
 .service-detail .service-overview {border-bottom:1px solid #d6dcdc;}
 @media(max-width:699px){.service-overview {grid-template-columns:1fr;gap:12px;}.service-overview h2 {margin-bottom:0;}}
 .service-process ol,
 .service-workflow ol { list-style: none; margin: 0; padding: 0; }
 .md-ref-service-metrics,
 .service-process,
-.service-education-action { padding-block: clamp(38px,5vw,78px); background: #eef4f8; color: #233741; }
-.md-ref-service-metrics { background:#173e7c; color:white; }
-.md-ref-service-metrics .container > p { margin: 0 0 20px; color:#dce8f7; font-size: max(14px,.92rem); }
+.service-education-action { padding-block: clamp(38px,5vw,78px); background: var(--md-surface-soft); color: var(--md-ink); }
+.md-ref-service-metrics { background:var(--md-surface-blue); color:var(--md-blue); }
+.md-ref-service-metrics .container > p { margin: 0 0 20px; color:var(--md-muted); font-size: max(14px,.92rem); }
 .md-ref-service-metrics .container > div { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
-.md-ref-service-metrics article { border-top:1px solid #7893bc; padding-top:clamp(14px,2vw,28px); display: grid; gap: 5px; font-size: max(16px,1rem); }
+.md-ref-service-metrics article { border-top:1px solid var(--md-rule); padding-top:clamp(14px,2vw,28px); display: grid; gap: 5px; font-size: max(16px,1rem); }
 .md-ref-service-metrics strong { font: 700 clamp(36px,4.8vw,72px)/1.1 var(--font-display, Montserrat, sans-serif); }
 .service-explore h2 {margin-inline:auto;text-align:center;}
 .service-explore .service-gallery,.about-solutions .service-gallery {margin-inline:6px;}
 @media(min-width:640px) and (max-width:1023px){.service-explore .service-gallery,.about-solutions .service-gallery {margin-inline:12px;}}
 .info-service-customers .info-testimonial-rail {padding:4px;}
-.info-testimonial-rail:focus-visible {outline:2px solid #20478f;outline-offset:-2px;}
+.info-testimonial-rail:focus-visible {outline:2px solid var(--md-blue);outline-offset:-2px;}
 .service-decision p,
 .service-workflow p,
 .service-fees p,
@@ -76,14 +76,14 @@
 .service-decision dl > div { border-top:1px solid #bccddd; padding:17px 0; }
 .service-decision dt { color:#214577; font-weight:700; }
 .service-decision dd { margin:5px 0 0; }
-.service-role dl { padding: 10px clamp(18px,3vw,40px); border-left:4px solid #20478f; background:#edf3f7; }
+.service-role dl { padding: 10px clamp(18px,3vw,40px); border-left:4px solid var(--md-blue); background:#edf3f7; }
 .service-role dl > div:first-child { border:0; }
 .service-study-modes,
 .service-consulting-list { display:grid; gap:clamp(18px,4vw,60px); margin: 14px 0; }
 .service-study-modes { grid-template-columns:1fr 1fr; }
 .service-consulting-list { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .service-study-modes article,
-.service-consulting-list article { border-top:2px solid #20478f; padding-top:18px; }
+.service-consulting-list article { border-top:2px solid var(--md-blue); padding-top:18px; }
 .service-decision h3 { font:700 clamp(20px,2vw,29px)/1.25 var(--font-display, Montserrat, sans-serif); margin:0 0 .5em; color:#183c73; }
 .service-workflow ol,
 .service-process ol { display:grid; gap:0; grid-template-columns:repeat(5,minmax(0,1fr)); counter-reset:service-step; }
@@ -97,11 +97,11 @@
 .service-table-scroll caption { padding:0 0 12px; font-size:max(16px,1rem); text-align:left; font-weight:700; color:#455a70; }
 .service-table-scroll th,
 .service-table-scroll td { padding:14px clamp(9px,2vw,24px); border:0; border-bottom:1px solid #cbd8e2; vertical-align:top; white-space:normal; }
-.service-table-scroll thead { background:#20478f; color:white; }
+.service-table-scroll thead { background:var(--md-blue); color:white; }
 .service-table-scroll tbody th { color:#1c3e65; width:auto; }
 .service-fees { padding-bottom:0; }
 .service-fees .info-fee-table-wrap { margin:0; }
-.md-ref-fee-highlight { max-width: 70ch; padding:20px 24px; background:#f0f4f8; border-left:4px solid #20478f; }
+.md-ref-fee-highlight { max-width: 70ch; padding:20px 24px; background:#f0f4f8; border-left:4px solid var(--md-blue); }
 .service-faq .info-faq { width:100%; max-width:850px; margin:0; }
 @media(min-width:960px) {
   .service-faq,.service-fees {

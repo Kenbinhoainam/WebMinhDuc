@@ -1,4 +1,4 @@
-.consultation-page { background: #fff; color: #20344e; }
+.consultation-page { background: #fff; color: var(--md-ink); }
 .consultation-page .consultation-layout {
   display: grid;
   grid-template-columns: minmax(180px,1fr) minmax(0,2fr);
@@ -59,7 +59,7 @@
   border: 1px solid #849bb2;
   border-radius: 4px;
   background: #fff;
-  color: #20344e;
+  color: var(--md-ink);
   font: inherit;
 }
 .consultation-choose fieldset { min-width: 0; margin: 24px 0; padding: 0; border: 0; }
@@ -111,7 +111,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: #20478f;
+  color: var(--md-blue);
 }
 .consultation-back {
   grid-column: 2;
@@ -126,7 +126,7 @@
 .consultation-success .btn { margin-top: 16px; }
 @media (prefers-reduced-motion:no-preference) and (hover:hover) {
   .consultation-times span { transition: border-color 140ms ease-out, background-color 140ms ease-out; }
-  .consultation-times label:hover input:not(:checked) + span { border-color: #20478f; background: #eaf1f8; }
+  .consultation-times label:hover input:not(:checked) + span { border-color: var(--md-blue); background: #eaf1f8; }
 }
 @media (max-width:767px) {
   .consultation-page .consultation-layout {

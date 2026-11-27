@@ -41,7 +41,7 @@ for(const page of pages) for(const locale of locales){
   if(!html.includes(`href="${href}"`))html=html.replace('</head>',`<link rel="stylesheet" href="${escape(href)}"/>`+'</head>');
  }
  const set=(key,value)=>{html=html.replace(new RegExp(`(<meta (?:name|property)="${key}" content=")[^"]*("\\s*\\/?>)`),(_,a,b)=>a+escape(value)+b)};
- set('description',s.description);for(const [k,v] of Object.entries({'og:title':s.title,'og:description':s.description,'og:url':s.url,'og:image':s.image,'twitter:title':s.title,'twitter:description':s.description,'twitter:image':s.image}))set(k,v);
+ set('description',s.description);for(const [k,v] of Object.entries(s.socialTags))set(k,v);
  html=html.replace(/(<link rel="canonical" href=")[^"]*("\s*\/?>)/,(_,a,b)=>a+escape(s.url)+b).replace(/(<script type="application\/ld\+json" id="structured-data">).*?(<\/script>)/,(_,a,b)=>a+JSON.stringify(s.json).replaceAll('<','\\u003c')+b);
  html=html.replace('<html lang="vi">',`<html lang="${languageTags[locale]}">`);
  const alternates = s.alternates.map(({hrefLang, href}) =>

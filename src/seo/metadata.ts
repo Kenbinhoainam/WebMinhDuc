@@ -1,4 +1,5 @@
 import {seo, ORIGIN} from './routes';
+import {articleHref, articles} from '../editorial-data';
 import {languageTags, locales, localizedPath, type Locale} from '../i18n-runtime/paths';
 import {translate} from '../i18n-runtime/catalog';
 
@@ -21,6 +22,8 @@ export function localizedSeo(path:string, locale:Locale) {
  const originalTitle=source.title.replace(/ \| Minh Đức Vina$/, '');
  const title=translate(originalTitle,locale)+' | Minh Đức Vina';
  const description=translate(source.description,locale);
+ const article = canonicalPath.startsWith('/news/') ? articles.find(item => articleHref(item.slug) === canonicalPath) : undefined;
+ const image = article?.image ? new URL(article.image.src, ORIGIN).href : source.image;
  const json=localize(source.json) as typeof source.json;
  for(const node of json['@graph']) {
   if(node['@type']==='WebPage') Object.assign(node,{'@id':url+'#webpage',url,name:title,description,inLanguage:languageTags[locale]});
@@ -29,5 +32,17 @@ export function localizedSeo(path:string, locale:Locale) {
    if(typeof item.item==='string' && item.item.startsWith(ORIGIN)) item.item=ORIGIN+localizedPath(new URL(item.item).pathname,locale);
   }
  }
- return {...source,url,title,description,json,alternates};
+ if (article) {
+  json['@graph'].push({
+   '@type':'Article', '@id':url+'#article', mainEntityOfPage:{'@id':url+'#webpage'},
+   headline:translate(article.title,locale), description:translate(article.excerpt,locale),
+   articleSection:translate(article.category,locale), datePublished:article.date, inLanguage:languageTags[locale],
+   publisher:{'@id':ORIGIN+'/#organization'}, ...(article.image && {image}),
+  });
+ }
+ const socialTags = {
+  'og:type':article ? 'article' : 'website', 'og:title':title, 'og:description':description, 'og:url':url, 'og:image':image,
+  'twitter:card':article?.image ? 'summary_large_image' : 'summary', 'twitter:title':title, 'twitter:description':description, 'twitter:image':image,
+ };
+ return {...source,url,title,description,image,json,alternates,socialTags};
 }

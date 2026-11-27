@@ -50,7 +50,7 @@
   padding-block:8px;
 }
 .md-photo-meta .md-masthead-breadcrumb,.md-photo-meta p { margin:0; }
-.md-photo-meta p { font-size:13px; color:#506276; }
+.md-photo-meta p { font-size:13px; color:var(--md-muted); }
 @media (max-width:600px) {
   .md-photo-stage { min-height:0; background:#183b56; }
   .md-photo-stage .md-masthead-figure { position:static; }
@@ -89,7 +89,7 @@
     inset:0 0 0 auto;
     width:40%;
     z-index:-1;
-    background:linear-gradient(to right,#f3f7fc,rgba(243,247,252,.3)),var(--masthead-photo) center/cover;
+    background:linear-gradient(to right,var(--md-surface-soft),rgba(243,247,252,.3)),var(--masthead-photo) center/cover;
   }
 }
 @media screen and (max-width:767px) {

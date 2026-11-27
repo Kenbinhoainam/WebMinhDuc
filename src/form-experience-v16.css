@@ -1,19 +1,19 @@
 /* Shared presentation for F01–F06. Field definitions and submission remain in their components. */
 form.contact-form, form.application-form, section.education-form-section .education-form-card,
-section.consultation-page .consultation-card{font-size:16px;line-height:1.6;color:#292929}
+section.consultation-page .consultation-card{font-size:16px;line-height:1.6;color:var(--md-ink)}
 form.contact-form .form-intro, form.contact-form .form-disclaimer,
 form.application-form .application-note, form.application-form .application-required,
-section.education-form-section .education-form-card form>p{font-size:16px;line-height:1.65;color:#4f5963}
+section.education-form-section .education-form-card form>p{font-size:16px;line-height:1.65;color:var(--md-muted)}
 form.contact-form .form-grid{gap:20px 18px}
 form.contact-form .form-grid label, form.application-form .application-field label,
 section.education-form-section .education-form-card form label,
-section.consultation-page .consultation-card label, section.consultation-page .consultation-card legend{font-size:14px;font-weight:700;line-height:1.45;color:#263849}
+section.consultation-page .consultation-card label, section.consultation-page .consultation-card legend{font-size:14px;font-weight:700;line-height:1.45;color:var(--md-ink)}
 form.contact-form .form-grid input, form.contact-form .form-grid select, form.contact-form .form-grid textarea,
 form.application-form .application-field input:not([type=file]), form.application-form .application-field select,
 section.education-form-section .education-form-card form input:not([type=file]),
 section.education-form-section .education-form-card form select,
 section.education-form-section .education-form-card form textarea,
-section.consultation-page .consultation-card input[type=date]{display:block;width:100%;min-width:0;min-height:48px;height:auto;padding:11px 13px;border:1px solid #9aaab8;border-radius:8px;background:#fff;color:#1e2b36;font:inherit;font-size:16px;line-height:1.4}
+section.consultation-page .consultation-card input[type=date]{display:block;width:100%;min-width:0;min-height:48px;height:auto;padding:11px 13px;border:1px solid var(--md-control-border);border-radius:8px;background:#fff;color:var(--md-ink);font:inherit;font-size:16px;line-height:1.4}
 form.contact-form .form-grid input, form.contact-form .form-grid select, form.contact-form .form-grid textarea{margin-top:8px}
 form.contact-form .form-grid textarea, section.education-form-section .education-form-card form textarea{min-height:108px;resize:vertical}
 form.contact-form .form-grid :is(input,select,textarea):focus-visible,
@@ -21,7 +21,7 @@ form.application-form .application-field :is(input,select):focus-visible,
 section.education-form-section .education-form-card form :is(input,select,textarea):focus-visible,
 section.consultation-page .consultation-card :is(input,button):focus-visible,
 form.contact-form :is(button,a):focus-visible, form.application-form :is(button,a):focus-visible,
-section.education-form-section .education-form-card :is(button,a):focus-visible{outline:3px solid #1f5c9a;outline-offset:3px}
+section.education-form-section .education-form-card :is(button,a):focus-visible{outline:3px solid var(--md-focus);outline-offset:3px}
 form.contact-form .form-grid [aria-invalid=true],form.application-form .application-field [aria-invalid=true],
 section.education-form-section .education-form-card form [aria-invalid=true],
 section.consultation-page .consultation-card [aria-invalid=true]{border-color:#aa1524;box-shadow:0 0 0 1px #aa1524}
@@ -36,12 +36,12 @@ form.application-form .application-field{margin-bottom:20px}
 form.application-form .application-field .application-upload{padding:20px 16px;border:1px dashed #7c91a2;background:#f7fafc;color:#354d60;gap:10px}
 form.application-form .application-field .application-upload.has-error{border-color:#aa1524}
 form.application-form .application-field .application-upload input[type=file],
-section.education-form-section .education-form-card form input[type=file]{display:block;width:100%;min-width:0;max-width:100%;min-height:48px;padding:8px;border:1px solid #9aaab8;border-radius:8px;background:#fff;color:#263849;font-size:14px;line-height:1.4}
+section.education-form-section .education-form-card form input[type=file]{display:block;width:100%;min-width:0;max-width:100%;min-height:48px;padding:8px;border:1px solid var(--md-control-border);border-radius:8px;background:#fff;color:var(--md-ink);font-size:14px;line-height:1.4}
 form.application-form .application-field .application-upload input[type=file]::file-selector-button,
 section.education-form-section .education-form-card form input[type=file]::file-selector-button{min-height:36px;margin-right:10px;padding:7px 12px;border:1px solid #788f9f;border-radius:6px;background:#f4f7fa;color:#243c4e;font:inherit;font-weight:600;cursor:pointer}
 form.application-form .application-field .application-upload>span,
 form.application-form .application-field>small,
-section.education-form-section .education-form-card form>small{font-size:14px;line-height:1.55;color:#4f5963;overflow-wrap:anywhere}
+section.education-form-section .education-form-card form>small{font-size:14px;line-height:1.55;color:var(--md-muted);overflow-wrap:anywhere}
 form.contact-form .form-disclaimer{margin-top:18px}
 .form-success[role=status], .education-form-card .education-success[role=status],
 .application-success, .consultation-card .consultation-success[role=status]{padding:clamp(20px,4vw,32px);border:1px solid #cbded5;border-radius:14px;background:#f6fbf8;color:#233e31;line-height:1.6}
@@ -53,4 +53,4 @@ form.contact-form .form-disclaimer{margin-top:18px}
 .form-success[role=status] :is(h3,a,button):focus-visible,
 .education-form-card .education-success[role=status] :is(h3,a,button):focus-visible,
 .application-success :is(h3,a,button):focus-visible,
-.consultation-card .consultation-success[role=status] :is(h2,a,button):focus-visible{outline:3px solid #1f5c9a;outline-offset:3px}
+.consultation-card .consultation-success[role=status] :is(h2,a,button):focus-visible{outline:3px solid var(--md-focus);outline-offset:3px}

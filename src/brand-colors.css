@@ -1,0 +1,15 @@
+/* BRAND-01. The blue and red are sampled from the supplied Minh Đức logo. */
+:root {
+  --md-surface: #ffffff;
+  --md-surface-blue: #eaf4ff;
+  --md-surface-soft: #f6faff;
+  --md-ink: #183653;
+  --md-muted: #486178;
+  --md-blue: #1b489d;
+  --md-blue-hover: #143a7b;
+  --md-red: #bd1e2d;
+  --md-red-hover: #971827;
+  --md-rule: #c6d9ec;
+  --md-control-border: #758ba1;
+  --md-focus: #075fb9;
+}

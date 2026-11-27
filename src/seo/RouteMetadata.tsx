@@ -9,7 +9,7 @@ export function RouteMetadata(){
  useEffect(()=>{const s=localizedSeo(pathname,locale); document.title=s.title; document.documentElement.lang=languageTags[locale];
   const set=(selector:string,attr:string,value:string)=>{const node=document.head.querySelector(selector); if(node)node.setAttribute(attr,value)};
   set('meta[name="description"]','content',s.description); set('link[rel="canonical"]','href',s.url);
-  for(const [key,value] of Object.entries({'og:title':s.title,'og:description':s.description,'og:url':s.url,'og:image':s.image,'twitter:title':s.title,'twitter:description':s.description,'twitter:image':s.image})) set(`meta[property="${key}"],meta[name="${key}"]`,'content',value);
+  for(const [key,value] of Object.entries(s.socialTags)) set(`meta[property="${key}"],meta[name="${key}"]`,'content',value);
   for (const {hrefLang, href} of s.alternates) {
     let link = document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hrefLang}"]`);
     if (!link) {

@@ -8,20 +8,20 @@
 .form-mode button {
   min-height: 44px;
   padding: 10px 18px;
-  border: 1px solid #9fb0c9;
+  border: 1px solid var(--md-control-border);
   border-radius: 999px;
   background: #fff;
-  color: #20478f;
+  color: var(--md-blue);
   font: 700 15px/1.35 var(--font-display,Arial,sans-serif);
   cursor: pointer;
 }
-.form-mode button[aria-pressed="true"] { background: #20478f; color: #fff; border-color: #20478f; }
+.form-mode button[aria-pressed="true"] { background: var(--md-blue); color: #fff; border-color: var(--md-blue); }
 .info-contact-section .contact-form-switchable { max-width: 900px; margin-inline: auto; }
 .contact-form-switchable:has(> .form-success) > .form-mode { display: none; }
-.form-mode button:hover { border-color: #20478f; }
-.form-mode button:focus-visible { outline: 3px solid #255e9c; outline-offset: 3px; }
+.form-mode button:hover { border-color: var(--md-blue); }
+.form-mode button:focus-visible { outline: 3px solid var(--md-focus); outline-offset: 3px; }
 .contact-fieldset { min-width: 0; border: 0; margin: 0; padding: 0; }
-.contact-fieldset + .contact-fieldset { margin-top: 28px; border-top: 1px solid #d9e1eb; }
+.contact-fieldset + .contact-fieldset { margin-top: 28px; border-top: 1px solid var(--md-rule); }
 .contact-fieldset legend {
   float: left;
   width: 100%;

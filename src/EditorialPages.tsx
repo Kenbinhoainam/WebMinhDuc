@@ -5,11 +5,12 @@ import {company} from './company';
 import {ButtonLink} from './shared';
 import {PageMasthead} from './PageMasthead';
 import {responsiveImage} from './media';
-import {useLocale, localizedPath, type Locale} from './i18n';
+import {useLocale, useTranslation, localizedPath, type Locale} from './i18n';
 import {RevealFrame} from './motion';
 import {ORIGIN} from './seo/routes';
 import {useHomeCarousel, advanceHomeRail} from './useHomeCarousel';
-import {articleHref, articles, categories, featuredArticles, leadArticle, type Article} from './editorial-data';
+import {articleHref, articles, categories, featuredArticles, leadArticle, type Article, type ArticleSummary, type ArticleTable, type EditorialImageData} from './editorial-data';
+import {getArticle} from './editorial-content';
 import {EditorialImage} from './EditorialCard';
 import {RoutedEditorialCard} from './RoutedEditorialCard';
 import {ArticleDate, formatEditorialDate} from './EditorialDate';
@@ -53,7 +54,7 @@ function FeaturedNews({archive, locale}: {archive: string; locale: Locale}) {
       tabIndex={0} onScroll={syncIndex}>
       {featuredArticles.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
         <RoutedEditorialCard article={article} href={articleHref(article.slug)} locale={locale} variant="featured" archive={archive}
-          eagerImage={i === 0}/>
+          eagerImage={i === 0} checklist={article.image ? undefined : getArticle(article.slug)?.sections.map(section => section.heading)}/>
       </div>)}
     </div>
   </div></section>;
@@ -114,56 +115,111 @@ function ArticleShare({url}: {url: string}) {
 }
 function Contents({article, archive}: {article: Article; archive: string}) {
   const {pathname, search} = useLocation();
-  const [open, setOpen] = useState(true);
-  useEffect(() => {
-    const query = window.matchMedia('(min-width: 900px)');
-    const change = () => setOpen(query.matches);
-    change(); query.addEventListener('change', change);
-    return () => query.removeEventListener('change', change);
-  }, []);
   return <nav className="info-toc ed-toc" aria-label="Nội dung bài viết">
-    <button type="button" aria-controls="article-toc" aria-expanded={open} onClick={() => setOpen(!open)}>Nội dung bài viết <ChevronDown size={18}/></button>
-    <ol id="article-toc" hidden={!open}>{article.sections.map((section, i) => <li key={section.heading}><Link to={{pathname, search, hash:'#article-section-' + i}} state={{archive}}>{section.heading}</Link></li>)}</ol>
+    <details>
+      <summary>Nội dung bài viết <ChevronDown size={18} aria-hidden="true"/></summary>
+      <ol id="article-toc">{article.sections.map((section, i) => <li key={section.heading}>
+        <Link to={{pathname, search, hash:'#article-section-' + i}} state={{archive}}>{section.heading}</Link>
+      </li>)}</ol>
+    </details>
   </nav>;
 }
+function ArticlePhoto({image, cover = false}: {image: EditorialImageData & {caption?: string}; cover?: boolean}) {
+  const portrait = image.orientation === 'portrait';
+  return <figure className={cover ? 'ed-story-photo' : 'ed-inline-photo'}>
+    <EditorialImage image={image} loading={cover ? 'eager' : 'lazy'}
+      className={portrait ? 'ed-cover ed-cover-portrait' : 'ed-cover'}
+      sizes="(max-width: 899px) calc(100vw - 36px), (max-width: 1279px) 63vw, 750px"/>
+    {image.caption && <figcaption>{image.caption}</figcaption>}
+  </figure>;
+}
+
+function ReaderTable({table}: {table: ArticleTable}) {
+  return <table className="ed-reader-table">
+    <caption>{table.caption}</caption>
+    <thead><tr>{table.headers.map(header => <th key={header} scope="col">{header}</th>)}</tr></thead>
+    <tbody>{table.rows.map(([label, detail]) => <tr key={label}>
+      <th scope="row">{label}</th><td>{detail}</td>
+    </tr>)}</tbody>
+  </table>;
+}
+
+function ReaderSection({section, index}: {section: Article['sections'][number]; index: number}) {
+  const id = 'article-section-' + index;
+  const List = section.ordered ? 'ol' : 'ul';
+  return <section className="ed-prose-section" aria-labelledby={id}>
+    <h2 id={id} tabIndex={-1}><span aria-hidden="true">{index + 1}.</span> {section.heading}</h2>
+    {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+    {section.table && <ReaderTable table={section.table}/>}
+    {section.bullets && <List>{section.bullets.map(item => <li key={item}>{item}</li>)}</List>}
+    {section.images?.map(image => <ArticlePhoto key={image.src} image={image}/>)}
+  </section>;
+}
+
+function ReaderLinks({items, locale, archive, imageSizes}: {items: ArticleSummary[]; locale: Locale; archive: string; imageSizes?: string}) {
+  return items.map(item =>
+    <RoutedEditorialCard key={item.slug} article={item} href={articleHref(item.slug)} locale={locale} variant="related" archive={archive}
+      imageSizes={imageSizes}/>
+  );
+}
+
 function ArticleReader({article}: {article: Article}) {
   const locale = useLocale();
+  const t = useTranslation();
   const {state} = useLocation();
   const archive = typeof state?.archive === 'string' && /^\/news\/?(?:[?#]|$)/.test(state.archive) ? state.archive : '/news';
+  const category = categories.find(([, label]) => label === article.category);
   const employer = article.category === 'Dành cho doanh nghiệp' || article.slug === 'thong-tin-tuyen-dung-minh-bach';
-  const related = articles.filter(a => a.slug !== article.slug).sort((a, b) => Number(b.category === article.category) - Number(a.category === article.category)).slice(0, 2);
+  const reading = articles.filter(item => item.slug !== article.slug).sort((a, b) => b.date.localeCompare(a.date));
+  const newest = reading.slice(0, 3);
+  const sidebar = reading.slice(newest.length);
+  const sameCategory = sidebar.filter(item => item.category === article.category).slice(0, 2);
+  const recommended = sidebar.filter(item => item.category !== article.category).slice(0, 2);
   return <div className="ed-pages ed-reader"><div className="ed-frame">
     <nav className="ed-crumbs" aria-label="Đường dẫn"><Link to="/">Trang chủ</Link><span aria-hidden="true">/</span><Link to={archive}>Tin tức</Link></nav>
     <article className="info-article ed-story">
-      <header className={'ed-story-head' + (article.image ? ' ed-story-illustrated' : '')}>
-        <div className="ed-story-deck"><p className="ed-meta">{article.category} <span aria-hidden="true">·</span> <ArticleDate date={article.date} locale={locale}/></p>
-          <h1>{article.title}</h1><p className="ed-lead">{article.excerpt}</p></div>
-        {article.image && <div className="ed-story-photo">
-          <EditorialImage image={article.image} loading="eager"
-            className={'ed-cover' + (article.image.orientation === 'portrait' ? ' ed-cover-portrait' : '')}
-            sizes="(max-width: 700px) 92vw, (max-width: 1279px) 40vw, 510px"/>
-        </div>}
-      </header>
-      <div className="ed-reader-grid"><Contents article={article} archive={archive}/>
-        <div className="ed-body">
-          {article.sections.map((section, i) => <section key={section.heading} className="ed-prose-section" aria-labelledby={'article-section-' + i}>
-            <h2 id={'article-section-' + i} tabIndex={-1}>{section.heading}</h2>
-            {section.paragraphs.map(p => <p key={p}>{p}</p>)}
-            {section.bullets && <ul>{section.bullets.map(item => <li key={item}>{item}</li>)}</ul>}
-          </section>)}
-          <div className="ed-actions"><Link className="btn" to={employer ? '/#business-contact' : '/jobs'}>{employer ? 'Gửi nhu cầu nhân lực' : 'Xem việc làm'}</Link>
-            <Link to={archive}>Trở về tất cả bài viết</Link></div>
-          <ArticleShare url={ORIGIN + localizedPath(articleHref(article.slug), locale)}/>
+      <div className="ed-reader-grid">
+        <div className="ed-reading-column">
+          <header className="ed-story-head">
+            <h1>{article.title}</h1>
+            <p className="ed-story-meta ed-meta">
+              {category ? <Link to={'/news?category=' + category[0] + '#news-listings'}>{article.category}</Link> : <span>{article.category}</span>}
+              <ArticleDate date={article.date} locale={locale}/>
+            </p>
+            <ArticleShare url={ORIGIN + localizedPath(articleHref(article.slug), locale)}/>
+            <p className="ed-lead">{article.excerpt}</p>
+          </header>
+          <Contents article={article} archive={archive}/>
+          {article.image && <ArticlePhoto image={article.image} cover/>}
+          <div className="ed-body">
+            {article.sections.map((section, i) => <ReaderSection key={section.heading} section={section} index={i}/>)}
+            <div className="ed-actions"><Link className="btn" to={employer ? '/#business-contact' : '/jobs'}>{employer ? 'Gửi nhu cầu nhân lực' : 'Xem việc làm'}</Link>
+              <Link to={archive}>Trở về tất cả bài viết</Link></div>
+          </div>
         </div>
-        <aside className="info-related-news editorial-related-aside ed-related"><h2>Có thể bạn quan tâm</h2>{related.map(item =>
-          <RoutedEditorialCard key={item.slug} article={item} href={articleHref(item.slug)} locale={locale} variant="related" archive={archive}/>)}</aside>
+        {(sameCategory.length > 0 || recommended.length > 0) && <aside className="info-related-news editorial-related-aside ed-related">
+          {sameCategory.length > 0 && <section className="ed-related-group" aria-labelledby="same-category-title">
+            <h2 id="same-category-title">{t({vi:'Cùng chuyên mục',en:'In this category',zh:'同类文章',ko:'같은 카테고리',ja:'同じカテゴリー'})}</h2>
+            <ReaderLinks items={sameCategory} locale={locale} archive={archive}/>
+          </section>}
+          {recommended.length > 0 && <section className="ed-related-group" aria-labelledby="recommended-title">
+            <h2 id="recommended-title">Có thể bạn quan tâm</h2>
+            <ReaderLinks items={recommended} locale={locale} archive={archive}/>
+          </section>}
+        </aside>}
       </div>
     </article>
+    {newest.length > 0 && <section className="ed-reader-latest" aria-labelledby="reader-latest-title">
+      <h2 id="reader-latest-title">{t({vi:'Bài viết mới',en:'Latest articles',zh:'最新文章',ko:'최신 글',ja:'新着記事'})}</h2>
+      <div className="ed-reader-latest-grid">
+        <ReaderLinks items={newest} locale={locale} archive={archive} imageSizes="(max-width: 700px) 24vw, (max-width: 1279px) 31vw, 390px"/>
+      </div>
+    </section>}
   </div></div>;
 }
 export function ArticlePage() {
   const {slug} = useParams();
-  const article = articles.find(item => item.slug === slug);
+  const article = slug ? getArticle(slug) : undefined;
   return article ? <ArticleReader key={article.slug} article={article}/> : <NotFoundEditorial/>;
 }
 type EventData = { slug: string; title: string; tag: string; date: string; time: string; location: string; summary: string; agenda: [string, string][] };

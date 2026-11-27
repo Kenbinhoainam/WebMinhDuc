@@ -280,5 +280,1037 @@
     "zh": "本栏目中的指南为编辑示例内容。",
     "ko": "이 글 목록의 가이드는 편집 예시 콘텐츠입니다.",
     "ja": "一覧のガイドは編集コンテンツのサンプルです。"
+  },
+  "Đội ngũ Minh Đức cùng trao đổi quanh bàn họp": {
+    "en": "The Minh Đức team discussing work around a meeting table",
+    "zh": "明德团队围坐在会议桌旁讨论工作",
+    "ko": "회의 테이블에서 의견을 나누는 민득(Minh Đức) 팀",
+    "ja": "会議テーブルを囲んで話し合うMinh Đứcのスタッフ"
+  },
+  "Hình ảnh trao đổi công việc của đội ngũ Minh Đức.": {
+    "en": "A work discussion among members of the Minh Đức team.",
+    "zh": "明德团队讨论工作的现场画面。",
+    "ko": "업무를 논의하는 민득 팀의 모습.",
+    "ja": "業務について意見を交わすMinh Đứcのスタッフ。"
+  },
+  "Các nhân viên Minh Đức trao đổi tại một điểm làm việc ngoài trời": {
+    "en": "Minh Đức staff talking at an outdoor work location",
+    "zh": "几位明德员工在一处户外工作点交谈",
+    "ko": "야외 작업 현장에서 의견을 나누는 민득 직원들",
+    "ja": "屋外の作業現場で打ち合わせをするMinh Đứcのスタッフ"
+  },
+  "Ghi nhận hoạt động của đội ngũ Minh Đức tại hiện trường.": {
+    "en": "A view of the Minh Đức team working in the field.",
+    "zh": "明德团队现场工作纪实。",
+    "ko": "현장에서 활동하는 민득 팀의 모습.",
+    "ja": "現場で活動するMinh Đứcのスタッフの様子。"
+  },
+  "Nhân viên Minh Đức xem tài liệu cùng nhau tại bàn làm việc": {
+    "en": "Minh Đức staff reviewing documents together at a desk",
+    "zh": "明德员工在办公桌旁一起查看资料",
+    "ko": "업무 테이블에서 자료를 함께 검토하는 민득 직원들",
+    "ja": "デスクで一緒に資料を確認するMinh Đứcのスタッフ"
+  },
+  "Tài liệu là điểm bắt đầu để các bên cùng kiểm tra thông tin.": {
+    "en": "Documents provide a starting point for checking information together.",
+    "zh": "各方可以对照资料，逐项核实信息。",
+    "ko": "자료를 바탕으로 관계자들이 함께 정보를 확인합니다.",
+    "ja": "関係者が情報を照合する際は、まず資料を一緒に確認します。"
+  },
+  "Phối cảnh minh họa phòng học sáng với bàn ghế và cửa kính": {
+    "en": "An illustrative visualization of a bright learning room with desks and windows",
+    "zh": "教学空间示意图，明亮的教室里摆放着桌椅，一侧设有玻璃门窗",
+    "ko": "책상과 의자, 유리창이 있는 밝은 교실의 예시 이미지",
+    "ja": "机と椅子を備えた、ガラス扉のある明るい教室のイメージ図"
+  },
+  "Phối cảnh không gian học tập mang tính minh họa, không phải cơ sở đào tạo được xác nhận.": {
+    "en": "An illustrative learning-space visualization, not a verified training facility.",
+    "zh": "此图用于展示教学空间的设计构想，尚未确认为实际培训场地。",
+    "ko": "학습 공간을 보여 주는 예시 이미지입니다. 확인된 교육 시설을 촬영한 사진이 아닙니다.",
+    "ja": "学習スペースを表現したイメージ図です。特定の教育施設を紹介するものではありません。"
+  },
+  "Đọc tin tuyển dụng: tách rõ thu nhập, phụ cấp và ca làm": {
+    "en": "Reading a job advert: distinguish pay, allowances and shifts",
+    "zh": "看懂招聘信息：分清工资、津贴和班次",
+    "ko": "채용 공고 읽는 법: 급여·수당·근무조 구분하기",
+    "ja": "求人情報の読み方：収入の内訳、手当、勤務シフトを確かめる"
+  },
+  "Biến một con số thu nhập hấp dẫn thành những câu hỏi có thể kiểm chứng trước khi chọn việc.": {
+    "en": "Turn an attractive earnings figure into questions you can verify before choosing a job.",
+    "zh": "选工作前，把看上去很有吸引力的收入数字拆开，问清每一项是怎么算出来的。",
+    "ko": "눈에 띄는 급여 숫자를 그대로 받아들이기 전에, 일자리를 선택하는 데 필요한 질문으로 바꿔 보세요.",
+    "ja": "魅力的な収入額が書かれていたら、仕事を選ぶ前に、どの条件でその金額になるのかを具体的に確認しましょう。"
+  },
+  "Đừng chỉ nhìn vào con số lớn nhất": {
+    "en": "Look beyond the largest figure",
+    "zh": "先弄清最高收入是怎么算的",
+    "ko": "가장 큰 숫자만 보지 마세요",
+    "ja": "最も大きな金額だけで判断しない"
+  },
+  "Một mức “thu nhập đến…” có thể gộp lương cơ bản, phụ cấp và tiền làm thêm. Hãy hỏi phần nào ổn định, phần nào phụ thuộc số ngày công hoặc điều kiện cụ thể. Hai tin có tổng thu nhập giống nhau vẫn có thể đòi hỏi thời gian làm việc rất khác nhau.": {
+    "en": "An “up to” earnings figure may combine base pay, allowances and overtime. Ask which parts are fixed and which depend on attendance or specific conditions. Two adverts with the same total can involve very different working hours.",
+    "zh": "招聘信息中的“收入最高可达……”可能包含基本工资、津贴和加班费。可以问清哪些收入比较稳定，哪些取决于出勤天数或其他条件。两份工作给出的总收入即使相同，需要投入的工作时间也可能相差很大。",
+    "ko": "‘최대 ○○’로 표시된 소득에 기본급, 수당, 연장근로수당이 모두 포함되어 있을 수 있습니다. 어떤 항목이 고정인지, 어떤 항목이 근무일수나 일정한 조건에 따라 달라지는지 물어보세요. 총액이 같은 공고라도 실제 필요한 근무시간은 크게 다를 수 있습니다.",
+    "ja": "「収入は最大○○」という金額には、基本給、手当、残業代が含まれることがあります。毎月安定して支払われる部分と、出勤日数や条件によって変わる部分を確認しましょう。同じ総収入を示す求人でも、必要な労働時間は大きく異なる場合があります。"
+  },
+  "Khoản cố định được tính theo tháng, ngày hay giờ?": {
+    "en": "Is the fixed component calculated monthly, daily or hourly?",
+    "zh": "固定工资按月、按天还是按小时计算？",
+    "ko": "고정 급여는 월급, 일급, 시급 중 어떤 기준으로 계산하나요?",
+    "ja": "固定給は月額、日額、時間額のどれで計算されますか。"
+  },
+  "Phụ cấp áp dụng từ ngày nào và có điều kiện gì?": {
+    "en": "When does each allowance start, and what conditions apply?",
+    "zh": "津贴从哪一天开始算？领取需要满足什么条件？",
+    "ko": "수당은 언제부터 지급되며 어떤 조건을 충족해야 하나요?",
+    "ja": "手当はいつから支給され、どのような条件がありますか。"
+  },
+  "Con số được nêu đã trừ những khoản nào, nếu có?": {
+    "en": "Which deductions, if any, are already reflected in the stated figure?",
+    "zh": "这个数字已经扣除了哪些款项？还是尚未扣除？",
+    "ko": "공고에 적힌 금액에서 이미 공제된 항목이 있나요?",
+    "ja": "表示額からすでに差し引かれている項目があれば、その内訳は何ですか。"
+  },
+  "So sánh bằng cùng một lịch làm việc": {
+    "en": "Compare offers using the same work schedule",
+    "zh": "按同样的工作时间比较两份工作",
+    "ko": "근무 일정도 같은 항목으로 비교하세요",
+    "ja": "同じ勤務条件で比べる"
+  },
+  "Hãy ghi hai cơ hội lên cùng một bảng: giờ bắt đầu, giờ kết thúc, số ngày làm, thời gian đi lại và các khoản đã xác nhận. Ví dụ, một công việc gần nhà với giờ giấc phù hợp có thể đáp ứng nhu cầu của bạn tốt hơn mức thu nhập cao hơn nhưng phụ thuộc nhiều vào làm thêm. Đây là cách cân nhắc, không phải dự đoán số tiền bạn sẽ nhận.": {
+    "en": "Put both opportunities in the same table: start and finish times, working days, travel time and confirmed pay components. A nearby job with suitable hours may meet your needs better than a higher figure that relies heavily on overtime. This is a comparison method, not a prediction of your earnings.",
+    "zh": "把两份工作的上下班时间、工作天数、通勤时间和已确认的收入项目列在同一张表里。例如，一份离家近、班次合适的工作，可能比一份主要靠加班才能拿到高收入的工作更适合你。这张表可以帮助你做选择，实际能拿多少钱仍要以具体情况为准。",
+    "ko": "두 일자리의 시작·종료 시각, 근무일수, 통근시간, 확인된 급여 항목을 한 표에 적어 보세요. 예를 들어 연장근로에 많이 의존하는 고소득 일자리보다 집에서 가깝고 시간이 맞는 일자리가 본인에게 더 잘 맞을 수 있습니다. 이 비교는 선택을 돕는 방법이며 실제 수령액을 예측하는 계산은 아닙니다.",
+    "ja": "二つの求人について、始業・終業時刻、勤務日数、通勤時間、確認済みの支給項目を一つの表にまとめましょう。例えば、残業を多くしなければ高い収入を得られない仕事より、自宅に近く勤務時間の合う仕事のほうが、自分の希望に沿うこともあります。この表は選択肢を比べるためのもので、実際の支給額を予測するものではありません。"
+  },
+  "Ghi riêng thông tin đã xác nhận và điều còn chờ trả lời.": {
+    "en": "Separate confirmed details from questions still awaiting an answer.",
+    "zh": "把已经确认的信息和待答复的问题分开记。",
+    "ko": "확인된 내용과 아직 답을 받지 못한 내용을 따로 적으세요.",
+    "ja": "確認できたことと、まだ回答を待っていることを分けて記録しましょう。"
+  },
+  "Hỏi cách thông báo khi đổi ca hoặc thay đổi lịch.": {
+    "en": "Ask how shift changes or schedule updates are communicated.",
+    "zh": "问清调班或排班有变动时会怎样通知你。",
+    "ko": "근무조나 근무 일정이 변경되면 어떻게 안내하는지 물어보세요.",
+    "ja": "シフトや勤務予定が変わったときの連絡方法を確認しましょう。"
+  },
+  "Xin một ví dụ có đủ giả định": {
+    "en": "Ask for an example with clear assumptions",
+    "zh": "请对方举例，并说明计算条件",
+    "ko": "전제 조건이 명확한 계산 예시를 요청하세요",
+    "ja": "前提条件を明示した計算例を頼む"
+  },
+  "Bạn có thể hỏi: “Nếu tôi làm đủ lịch bình thường và không làm thêm, cách tính sẽ như thế nào?”. Sau đó đề nghị chỉ rõ các khoản trong ví dụ và lưu lại câu trả lời. Nếu người tư vấn chưa có dữ liệu, hãy hẹn thời điểm xác nhận thay vì tự điền con số còn thiếu.": {
+    "en": "You can ask: “If I complete the normal schedule without overtime, how would pay be calculated?” Ask the adviser to identify each component in the example and keep the answer. If the details are unavailable, agree when they will be confirmed rather than filling in missing amounts yourself.",
+    "zh": "你可以问：“如果我按正常排班全勤，不加班，工资会怎么算？”然后请对方列出例子中的各项金额，并记下答复。如果招聘人员暂时没有数据，就约定什么时候再确认，保留空缺，不要自己估填。",
+    "ko": "“정해진 근무 일정을 모두 채우고 연장근로를 하지 않으면 급여를 어떻게 계산하나요?”라고 물어보세요. 예시에 포함된 항목을 각각 설명해 달라고 하고 답변을 기록하세요. 상담 담당자가 아직 자료를 확인하지 못했다면 숫자를 추정하기보다 언제 확인할 수 있는지 정해 두세요.",
+    "ja": "「通常のシフトをすべて勤務し、残業をしなかった場合、給与はどう計算されますか」と尋ねてみましょう。その例に含まれる項目を一つずつ説明してもらい、回答を記録します。担当者がまだ数字を把握していない場合は、自分で金額を補わず、いつ確認できるかを取り決めましょう。"
+  },
+  "Phỏng vấn nhà máy lần đầu: chuẩn bị câu trả lời từ trải nghiệm thật": {
+    "en": "Your first factory interview: prepare answers from real experience",
+    "zh": "第一次参加工厂面试：用亲身经历准备回答",
+    "ko": "첫 공장 면접, 실제 경험으로 답변 준비하기",
+    "ja": "初めての工場面接：自分の経験から答えを準備する"
+  },
+  "Không cần một bài giới thiệu cầu kỳ. Điều cần thiết là thông tin rõ, ví dụ thật và câu hỏi đúng.": {
+    "en": "You do not need an elaborate introduction. Clear information, honest examples and useful questions matter more.",
+    "zh": "自我介绍可以很朴实。重要的是说清自己的情况，举真实的例子，把想了解的问题问明白。",
+    "ko": "화려한 자기소개를 준비할 필요는 없습니다. 필요한 것은 명확한 정보, 실제 사례, 적절한 질문입니다.",
+    "ja": "凝った自己紹介は必要ありません。大切なのは、分かりやすく伝えること、実際の経験を挙げること、知りたい点を質問することです。"
+  },
+  "Chuẩn bị lời giới thiệu trong một phút": {
+    "en": "Prepare a one-minute introduction",
+    "zh": "准备一分钟的自我介绍",
+    "ko": "1분 자기소개를 준비하세요",
+    "ja": "1分で話せる自己紹介を準備する"
+  },
+  "Giới thiệu ngắn về khu vực bạn sống, công việc đã làm và thời điểm có thể bắt đầu. Nếu chưa từng làm ở nhà máy, hãy nói rõ điều đó. Một ví dụ về việc tuân thủ giờ giấc, làm theo hướng dẫn hoặc phối hợp với người khác có ích hơn việc nhận mình có kỹ năng chưa từng sử dụng.": {
+    "en": "Briefly explain where you live, the work you have done and when you can start. If you have never worked in a factory, say so. A real example of being punctual, following instructions or working with others is more useful than claiming skills you have never used.",
+    "zh": "简单说说你住在哪一带、做过什么工作、什么时候可以上班。如果没在工厂工作过，可以直接说明。与其说自己掌握了从未用过的技能，不如举个守时、按要求做事或与人合作的真实例子。",
+    "ko": "사는 지역, 해 본 일, 근무를 시작할 수 있는 시기를 짧게 소개하세요. 공장에서 일해 본 적이 없다면 솔직하게 말하세요. 써 본 적 없는 기술이 있다고 말하는 것보다 시간을 지켰거나, 지시대로 일했거나, 다른 사람과 협업했던 사례가 더 도움이 됩니다.",
+    "ja": "住んでいる地域、これまでの仕事、勤務を始められる時期を簡潔に伝えます。工場で働くのが初めてなら、そのことを率直に話しましょう。使ったことのない技能を「できる」と言うよりも、時間を守った経験、指示どおりに作業した経験、誰かと協力した経験を具体的に語るほうが伝わります。"
+  },
+  "Dùng một tình huống cụ thể để trả lời": {
+    "en": "Answer with one specific situation",
+    "zh": "用一件具体的事回答问题",
+    "ko": "구체적인 상황을 들어 답하세요",
+    "ja": "具体的な場面を挙げて答える"
+  },
+  "Với câu hỏi “Bạn xử lý việc chưa biết thế nào?”, bạn có thể kể theo ba phần: việc được giao, cách hỏi hoặc kiểm tra, và kết quả. Không cần biến câu chuyện thành thành tích lớn. Người phỏng vấn cần hiểu bạn nhận hướng dẫn và phản hồi ra sao.": {
+    "en": "For a question such as “How do you handle an unfamiliar task?”, explain three things: what you were asked to do, how you asked for help or checked your work, and the result. It does not need to be a major achievement. The interviewer wants to understand how you respond to guidance and feedback.",
+    "zh": "遇到“碰到不会做的事，你会怎么处理？”这样的问题，可以分三步回答：当时接到什么任务，你怎样请教或核实，最后结果如何。普通的小事就可以。面试人员想了解的是，你怎样听取指导，又怎样作出回应。",
+    "ko": "“모르는 일을 맡으면 어떻게 하나요?”라는 질문에는 맡았던 일, 질문하거나 확인한 방법, 그 결과를 차례로 이야기해 보세요. 큰 성과를 내세울 필요는 없습니다. 면접관은 안내를 어떻게 이해하고 대응하는지 알고 싶어 합니다.",
+    "ja": "「分からない仕事を任されたらどうしますか」と聞かれたら、任された仕事、どう質問・確認したか、その結果、という三つに分けて話せます。大きな成果に見せる必要はありません。面接担当者が知りたいのは、あなたが指示をどう受け止め、どう対応したかです。"
+  },
+  "Chỉ kể việc bạn thực sự tham gia.": {
+    "en": "Describe only situations you actually took part in.",
+    "zh": "只说自己真正参与过的事。",
+    "ko": "실제로 참여한 일만 이야기하세요.",
+    "ja": "自分が実際に関わったことを話しましょう。"
+  },
+  "Nói rõ phần bạn làm và phần đồng đội hỗ trợ.": {
+    "en": "Distinguish your contribution from the help provided by others.",
+    "zh": "说清哪些事情是你做的，哪些得到了同事的帮助。",
+    "ko": "본인이 한 일과 동료가 도와준 일을 구분해 말하세요.",
+    "ja": "自分が担当した部分と、仲間に助けてもらった部分を分けて伝えましょう。"
+  },
+  "Nếu chưa hiểu câu hỏi, xin giải thích lại trước khi trả lời.": {
+    "en": "If a question is unclear, ask for clarification before answering.",
+    "zh": "没听懂问题时，可以请对方再解释一下，然后回答。",
+    "ko": "질문을 이해하지 못했다면 답하기 전에 다시 설명해 달라고 하세요.",
+    "ja": "質問の意味が分からなければ、答える前に説明をお願いしましょう。"
+  },
+  "Kết thúc bằng việc xác nhận bước tiếp theo": {
+    "en": "Finish by confirming the next step",
+    "zh": "离开前，确认下一步安排",
+    "ko": "마지막에는 다음 단계를 확인하세요",
+    "ja": "最後に次の手順を確認する"
+  },
+  "Hỏi cách nhận kết quả, đầu mối liên hệ và giấy tờ chỉ cần bổ sung khi được yêu cầu. Trước khi rời buổi trao đổi, nhắc lại lịch hoặc việc bạn cần làm tiếp theo. Nếu có bài kiểm tra tay nghề, hãy hỏi nội dung và hướng dẫn an toàn trước khi bắt đầu; không vận hành thiết bị chưa được hướng dẫn.": {
+    "en": "Ask how results will be communicated, whom to contact and which documents should be supplied only when requested. Before leaving, repeat the next appointment or action you need to take. If there is a skills test, ask about the task and safety instructions first; do not operate equipment without guidance.",
+    "zh": "问清会通过什么方式通知结果、由谁联系，以及哪些材料只需在收到通知后补交。面试结束前，复述一下下次约定的时间或自己接下来要做什么。如果有技能测试，先问清测试内容和安全要求。没有接受操作指导的设备不要动手操作。",
+    "ko": "결과를 받는 방법, 문의할 담당자, 요청이 있을 때만 추가로 제출할 서류를 확인하세요. 면접을 마치기 전에 다음 일정이나 해야 할 일을 다시 확인하세요. 기능 평가가 있다면 시작 전에 평가 내용과 안전 수칙을 물어보세요. 사용법을 안내받지 않은 장비는 조작하지 마세요.",
+    "ja": "結果の連絡方法、問い合わせ先、求められたときに追加で提出する書類を確認しましょう。面接を終える前に、次の予定や自分が行うことを復唱します。技能試験がある場合は、開始前に内容と安全上の注意を聞き、操作方法の説明を受けていない設備は使わないでください。"
+  },
+  "Trước ngày nhận việc: một danh sách để bớt cập rập": {
+    "en": "Before your first day: a checklist for a calmer start",
+    "zh": "入职前一天：用一张清单从容报到",
+    "ko": "첫 출근 전, 당황하지 않도록 확인할 목록",
+    "ja": "初出勤の前に：慌てずに当日を迎えるチェックリスト"
+  },
+  "Xác nhận đúng cổng vào, lịch hẹn và người liên hệ để tập trung vào việc làm quen công việc mới.": {
+    "en": "Confirm the correct entrance, appointment and contact person so you can focus on settling into the job.",
+    "zh": "提前确认入口、报到时间和联系人，到岗后就能专心熟悉新工作。",
+    "ko": "출입구, 약속 시간, 연락할 사람을 미리 확인해 새 일에 적응하는 데 집중하세요.",
+    "ja": "入口、集合日時、連絡先を前もって確かめて、新しい仕事に慣れることに集中しましょう。"
+  },
+  "Kiểm tra lại lịch hẹn bằng thông tin đầy đủ": {
+    "en": "Check the appointment details in full",
+    "zh": "把报到的时间和地点核对清楚",
+    "ko": "첫 출근에 필요한 정보를 빠짐없이 확인하세요",
+    "ja": "集合の日時と場所を具体的に確認する"
+  },
+  "Tên nhà máy hoặc tên khu công nghiệp chưa đủ để tìm đúng nơi tiếp nhận. Hỏi rõ địa chỉ, cổng vào, điểm tập trung và số điện thoại có thể liên hệ lúc đến. Nếu đi xe đưa đón, cần xác nhận điểm đón, giờ có mặt và cách xử lý khi lỡ chuyến.": {
+    "en": "A factory name or industrial park name may not be enough to find the reception point. Ask for the address, entrance, meeting point and a phone number you can call on arrival. If using arranged transport, confirm the pickup point, arrival time and what to do if you miss it.",
+    "zh": "只知道工厂或工业园的名称，未必能找到报到地点。请问清详细地址、从哪个门进、在哪里集合，以及到场时能打通的联系电话。如果要坐班车，还要确认上车点、到站等车的时间，以及错过班车后该怎么做。",
+    "ko": "공장이나 산업단지 이름만으로는 정확한 집결 장소를 찾기 어렵습니다. 주소, 출입구, 집결 장소, 도착했을 때 연락할 전화번호를 확인하세요. 통근버스를 이용한다면 탑승 장소, 도착 시간, 버스를 놓쳤을 때 어떻게 해야 하는지도 물어보세요.",
+    "ja": "工場名や工業団地名だけでは、受付場所にたどり着けないことがあります。住所、入場する門、集合場所、到着時につながる電話番号を確認しましょう。送迎バスを利用する場合は、乗車場所、集合時刻、乗り遅れた場合の対応も聞いておきます。"
+  },
+  "Lưu địa chỉ và số liên hệ để xem được khi mạng yếu.": {
+    "en": "Save the address and contact number so they remain accessible with a weak connection.",
+    "zh": "把地址和联系电话保存在手机上，信号不好时也能查看。",
+    "ko": "인터넷 연결이 불안정해도 볼 수 있도록 주소와 연락처를 저장하세요.",
+    "ja": "電波が弱い場所でも見られるように、住所と連絡先を保存しておきましょう。"
+  },
+  "Ước tính thời gian đi lại và thêm khoảng dự phòng.": {
+    "en": "Estimate travel time and allow a buffer.",
+    "zh": "估算路上需要的时间，再留一点余量。",
+    "ko": "이동에 걸리는 시간을 예상하고 여유 시간을 두세요.",
+    "ja": "移動時間を見積もり、少し余裕を持たせましょう。"
+  },
+  "Báo sớm nếu bạn không thể đến đúng lịch.": {
+    "en": "Let the contact know early if you cannot arrive as arranged.",
+    "zh": "如果不能按约定时间到达，请尽早告知。",
+    "ko": "약속 시간에 맞춰 도착하기 어렵다면 일찍 알리세요.",
+    "ja": "予定どおりに到着できない場合は、早めに連絡しましょう。"
+  },
+  "Chuẩn bị theo danh sách đã được xác nhận": {
+    "en": "Pack according to the confirmed list",
+    "zh": "按已确认的清单准备物品",
+    "ko": "확인받은 목록에 따라 준비하세요",
+    "ja": "確認済みの持ち物リストに沿って準備する"
+  },
+  "Xếp giấy tờ cần mang vào một túi riêng; không tự nộp bản gốc nếu chưa hiểu mục đích và quy trình nhận lại. Hỏi trước về trang phục, đồ dùng cá nhân và những vật không được mang vào khu vực làm việc. Không cần mua thêm thiết bị bảo hộ khi chưa có hướng dẫn cụ thể từ đơn vị tiếp nhận.": {
+    "en": "Keep required documents in a separate folder. Do not hand over originals without understanding why they are needed and how they will be returned. Ask about clothing, personal items and anything prohibited in the work area. There is no need to buy protective equipment before receiving specific instructions from the receiving organization.",
+    "zh": "把要带的证件和材料单独装好。交出原件之前，先问清用途和取回流程。提前了解着装要求、需要自带的物品，以及哪些东西不能带进工作区。在接收单位给出明确指引前，不必自行添购防护装备。",
+    "ko": "가져갈 서류는 별도의 가방에 챙기세요. 사용 목적과 반환 절차를 모른 채 원본을 제출하지 마세요. 복장, 개인 소지품, 작업 구역 반입 금지 물품을 미리 물어보세요. 입사 안내를 담당하는 부서에서 구체적인 안내를 받기 전에는 보호구를 따로 살 필요가 없습니다.",
+    "ja": "必要書類は一つの袋にまとめましょう。原本を提出する際は、用途と返却手順を先に確認してください。服装、持参する私物、作業場所に持ち込めない物も事前に尋ねましょう。受け入れ先から具体的な指示があるまでは、保護具を買い足す必要はありません。"
+  },
+  "Ghi lại điều cần hỏi trong ngày đầu": {
+    "en": "Write down questions for the first day",
+    "zh": "记下第一天要问的问题",
+    "ko": "첫날 물어볼 내용을 적어 두세요",
+    "ja": "初日に聞きたいことをメモする"
+  },
+  "Ngày đầu có nhiều thông tin mới, nên bạn có thể bỏ sót tên người hướng dẫn hoặc cách báo nghỉ. Một ghi chú ngắn giúp bạn hỏi lại đúng việc. Sau buổi hướng dẫn, nhắc lại bằng lời của mình cách chấm công, nơi cần có mặt và người hỗ trợ khi chưa rõ nhiệm vụ.": {
+    "en": "The first day brings a lot of new information, and it is easy to miss the name of a supervisor or the absence-reporting process. A short note helps you ask focused follow-up questions. After orientation, repeat in your own words how to record attendance, where to report and whom to ask when a task is unclear.",
+    "zh": "第一天要接收的信息很多，容易忘记指导人员的姓名，或该怎样请假。事先写张便条，方便有针对性地再问一次。听完入职说明后，试着用自己的话复述怎样打卡、到哪里集合，以及任务不清楚时找谁协助。",
+    "ko": "첫날은 새로운 정보가 많아 안내 담당자의 이름이나 결근을 알리는 방법을 놓치기 쉽습니다. 짧게 메모해 두면 나중에 필요한 내용만 정확히 확인할 수 있습니다. 안내를 마친 뒤에는 출퇴근 기록 방법, 집결 장소, 업무를 잘 모를 때 누구에게 물어볼지를 자신의 말로 다시 확인하세요.",
+    "ja": "初日は覚えることが多く、指導担当者の名前や欠勤の連絡方法を聞き逃すことがあります。簡単なメモがあれば、必要な点を聞き直せます。説明の後に、勤怠の記録方法、出勤時に行く場所、作業内容が分からないときの相談先を、自分の言葉で確認しましょう。"
+  },
+  "Đối chiếu chấm công và bảng lương: bắt đầu từ dữ liệu nào?": {
+    "en": "Checking attendance and a payslip: where to start",
+    "zh": "核对考勤和工资单，从哪些数据看起？",
+    "ko": "근태 기록과 급여명세서 대조하기: 무엇부터 확인할까요?",
+    "ja": "勤怠記録と給与明細：どの項目から照合する？"
+  },
+  "Ghi chép theo ngày giúp bạn đặt câu hỏi rõ ràng khi số liệu công hoặc khoản thanh toán chưa khớp.": {
+    "en": "Daily notes help you ask clear questions when attendance figures or payment items do not match.",
+    "zh": "每天做一点记录，遇到工时或工资金额对不上时，就能说清楚需要核查哪一项。",
+    "ko": "날짜별로 기록해 두면 근태 내역이나 지급액이 맞지 않을 때 구체적으로 질문할 수 있습니다.",
+    "ja": "勤務の記録を毎日残しておくと、出勤時間や支給額に食い違いがあるとき、確認したい点を具体的に伝えられます。"
+  },
+  "Giữ một bản ghi đơn giản của riêng bạn": {
+    "en": "Keep a simple personal record",
+    "zh": "给自己留一份简单的出勤记录",
+    "ko": "본인의 근무 내역을 간단히 기록하세요",
+    "ja": "自分用の簡単な勤務記録をつける"
+  },
+  "Bạn có thể ghi ngày làm, ca được phân công, giờ vào ra và lần đổi lịch đã được xác nhận. Mục đích là có căn cứ trao đổi khi cần, không thay thế hệ thống chấm công của doanh nghiệp. Không chụp màn hình hoặc tài liệu chứa thông tin của đồng nghiệp nếu bạn không được phép.": {
+    "en": "Record the date, assigned shift, arrival and departure times, and any confirmed schedule changes. This provides a basis for discussion; it does not replace the employer’s attendance system. Do not photograph screens or documents containing colleagues’ information without permission.",
+    "zh": "你可以记下工作日期、排定的班次、上下班时间和已经确认的调班情况，方便有疑问时沟通。个人记录不能替代企业的考勤系统。未经允许，请勿拍摄含有同事信息的屏幕或文件。",
+    "ko": "근무일, 배정된 근무조, 출퇴근 시각, 승인된 일정 변경 내역을 적어 두세요. 이는 필요할 때 확인할 근거를 남기는 일이므로 회사의 근태 관리 시스템을 대체하지 않습니다. 허락 없이 동료의 정보가 담긴 화면이나 문서를 촬영하지 마세요.",
+    "ja": "勤務日、割り当てられたシフト、出退勤時刻、確定した予定変更を記録しておきましょう。この記録は必要なときの問い合わせに使うもので、会社の勤怠管理に代わるものではありません。許可なく、同僚の情報を含む画面や書類を撮影しないでください。"
+  },
+  "Đối chiếu từng phần thay vì chỉ nhìn tổng tiền": {
+    "en": "Compare each component, not just the total",
+    "zh": "把工资项目一项项核对",
+    "ko": "총액에 앞서 항목별로 대조하세요",
+    "ja": "総額だけでなく項目ごとに照合する"
+  },
+  "Bắt đầu bằng kỳ tính lương và số ngày hoặc giờ được ghi nhận, sau đó xem các khoản cố định, khoản theo điều kiện và khoản khấu trừ được thể hiện. Một khác biệt có thể xuất phát từ ngày chốt công hoặc thay đổi lịch chưa cập nhật. Hãy kiểm tra nguyên nhân trước khi kết luận.": {
+    "en": "Start with the pay period and recorded days or hours, then review fixed components, conditional payments and listed deductions. A difference may relate to the attendance cutoff or a schedule change that has not yet been updated. Check the reason before drawing a conclusion.",
+    "zh": "先看工资单对应的计薪周期，以及计入的天数或小时数，再核对固定收入、满足特定条件才有的收入和列明的扣款。差异可能来自考勤截止日期，也可能是调班尚未更新。先查清原因，再作判断。",
+    "ko": "먼저 급여 산정 기간과 반영된 근무일수 또는 시간을 확인하세요. 그다음 고정 지급 항목, 조건에 따른 지급 항목, 명시된 공제 항목을 확인하세요. 근태 마감일이나 아직 반영되지 않은 일정 변경 때문에 차이가 날 수 있으므로 결론을 내리기 전에 원인부터 확인하세요.",
+    "ja": "まず給与の対象期間と記録された勤務日数・時間を確認します。次に、固定の支給額、条件に応じて支払われる項目、控除の明細を見ましょう。勤怠の締め日や、まだ反映されていないシフト変更が差額の理由かもしれません。判断する前に原因を確認してください。"
+  },
+  "Kỳ trên bảng lương có trùng khoảng thời gian bạn đang tính không?": {
+    "en": "Does the payslip cover the same period you are checking?",
+    "zh": "工资单上的计薪周期，与你自己计算的时间段一致吗？",
+    "ko": "급여명세서의 기간이 본인이 확인하는 기간과 일치하나요?",
+    "ja": "給与明細の対象期間は、自分が集計した期間と一致していますか。"
+  },
+  "Ca đổi, ngày nghỉ hoặc giờ bổ sung đã được cập nhật chưa?": {
+    "en": "Have shift changes, leave days or additional hours been updated?",
+    "zh": "调班、休息日或增加的工时都更新了吗？",
+    "ko": "근무조 변경, 휴무일, 추가 근무시간이 모두 반영되었나요?",
+    "ja": "シフト変更、休暇、追加の勤務時間は反映されていますか。"
+  },
+  "Khoản chưa rõ cần được giải thích bằng căn cứ nào?": {
+    "en": "What supporting information explains an unclear item?",
+    "zh": "对于看不明白的项目，可以依据哪些记录来说明？",
+    "ko": "불명확한 항목은 어떤 근거로 설명할 수 있나요?",
+    "ja": "不明な項目は、どの記録や規定に基づくものですか。"
+  },
+  "Gửi câu hỏi ngắn và có thể kiểm tra": {
+    "en": "Send a short, verifiable question",
+    "zh": "用一句能核查的话说明疑问",
+    "ko": "짧고 확인 가능한 질문을 보내세요",
+    "ja": "調べて回答できるよう、質問は具体的かつ簡潔に"
+  },
+  "Thay vì nhắn “lương bị thiếu”, hãy nêu kỳ lương, ngày cần kiểm tra và số liệu bạn đang đối chiếu. Ví dụ: “Xin kiểm tra ca ngày 12; bản ghi của tôi có thay đổi ca đã xác nhận nhưng chưa thấy ở kỳ này”. Gửi qua đầu mối được hướng dẫn, hỏi thời gian phản hồi và lưu lại nội dung trao đổi.": {
+    "en": "Instead of writing “my pay is short”, identify the pay period, the date to check and the figures you are comparing. For example: “Please check the shift on the 12th; I have a confirmed shift change that does not appear in this period.” Use the designated contact, ask when to expect a response and keep a record of the exchange.",
+    "zh": "发现工资似乎少了，可以直接说明计薪周期、需要核查的日期，以及手头哪条记录对不上。例如：“麻烦查一下12日的班次。我的记录里有一次已经确认的调班，但这期工资单上还没看到。”通过指定联系人提出疑问，问清预计答复时间，并保留沟通记录。",
+    "ko": "“급여가 적게 들어왔어요”라고만 쓰기보다 급여 산정 기간, 확인할 날짜, 대조 중인 내용을 밝히세요. 예를 들어 “12일 근무 내역을 확인해 주세요. 제 기록에는 근무조 변경이 승인되었는데 이번 급여 기간에는 반영되지 않은 것 같습니다”라고 쓸 수 있습니다. 안내받은 담당자에게 질문을 보내고 언제 답변을 받을 수 있는지 확인한 뒤 대화 내용을 보관하세요.",
+    "ja": "「給与が足りません」とだけ伝えるより、対象期間、確認してほしい日、自分が照合している記録を示しましょう。例えば「12日のシフトをご確認いただけますか。私の記録では変更が確定していますが、今回の明細に反映されていないようです」と伝えます。指定された窓口に送り、回答時期を尋ね、やり取りを残しておきましょう。"
+  },
+  "Một bản yêu cầu nhân lực đủ rõ để bắt đầu tìm nguồn": {
+    "en": "A staffing brief clear enough to start sourcing",
+    "zh": "怎样写一份能让招聘人员着手找人的用工需求单",
+    "ko": "후보자 모집을 시작할 수 있는 인력 요청서 작성법",
+    "ja": "候補者探しを始めるための人員要請書の作り方"
+  },
+  "Gói nhu cầu vào một bản ngắn, có người xác nhận và cách cập nhật, thay vì nhiều tin nhắn rời rạc.": {
+    "en": "Bring requirements into a short brief with an approver and an update process, instead of scattered messages.",
+    "zh": "把分散在多条消息里的用工需求整理成一份简明的说明，写清由谁确认、发生变化时怎样更新。",
+    "ko": "요청 내용을 여러 메시지로 나누기보다, 확인 담당자와 변경 방법을 명시한 짧은 문서 하나로 정리하세요.",
+    "ja": "要望は複数のメッセージに分散させず、確認担当者と更新方法を明記した短い文書にまとめましょう。"
+  },
+  "Viết theo vị trí và thời điểm tiếp nhận": {
+    "en": "Describe the role and the intake date",
+    "zh": "按岗位和到岗批次写明需求",
+    "ko": "직무와 인력 배치 시점을 기준으로 작성하세요",
+    "ja": "職種と受け入れ時期を明示する"
+  },
+  "“Cần thêm người” chưa cho biết công đoạn nào đang thiếu hoặc khi nào có thể tiếp nhận. Một bản yêu cầu nên chỉ rõ vị trí, nhiệm vụ chính, địa điểm, số lượng dự kiến và lịch nhận theo đợt. Nếu số lượng còn thay đổi, ghi khoảng dự kiến và thời điểm chốt thay vì coi đó là con số đã duyệt.": {
+    "en": "“We need more people” does not identify the understaffed process or when new workers can be received. A brief should state the role, main tasks, location, expected headcount and intake schedule. If numbers are still changing, record an estimated range and a decision date rather than presenting them as approved.",
+    "zh": "只说“需要加人”，还看不出哪个工序缺人，也不知道什么时候可以安排到岗。需求单应列明岗位、主要任务、工作地点、预计人数和各批次到岗时间。如果人数还会变动，就写清预计范围和最终确认的时间，不要把估算写成已批准的人数。",
+    "ko": "“인원이 더 필요합니다”라는 말만으로는 어느 공정에 인력이 필요한지, 언제 새 인력을 받을 수 있는지 알기 어렵습니다. 요청서에는 직무, 주요 업무, 근무지, 예상 인원, 차수별 배치 일정을 명시하세요. 인원이 아직 바뀔 수 있다면 확정된 숫자처럼 쓰지 말고 예상 범위와 확정 시점을 기록하세요.",
+    "ja": "「増員したい」という一言だけでは、人手の足りない工程も受け入れ時期も分かりません。職種、主な業務、勤務地、予定人数、受け入れ回ごとの日程を記載しましょう。人数が変わる可能性がある場合は、承認済みの数字として扱わず、見込みの範囲と確定予定日を示します。"
+  },
+  "Tách yêu cầu bắt buộc khỏi điều có thể đào tạo": {
+    "en": "Separate essential requirements from trainable skills",
+    "zh": "区分入职必备条件和可入职后培训的技能",
+    "ko": "필수 요건과 교육 가능한 항목을 구분하세요",
+    "ja": "必須条件と入社後に習得できることを分ける"
+  },
+  "Bộ phận vận hành và nhân sự nên cùng rà lại tiêu chí. Một kỹ năng có thể hướng dẫn trong thời gian đầu không nên được mô tả như kinh nghiệm bắt buộc nếu thực tế không cần. Ngược lại, điều kiện liên quan an toàn hoặc năng lực thực hiện nhiệm vụ cần được diễn đạt cụ thể và kiểm tra theo quy trình phù hợp.": {
+    "en": "Operations and HR should review criteria together. A skill that can be taught during onboarding should not be presented as mandatory prior experience when it is not required. Conversely, safety-related conditions or capabilities needed for the task should be clearly described and checked through an appropriate process.",
+    "zh": "运营和人事部门应一起核对用人标准。如果一项技能可以在刚入职时教会，岗位实际也不要求有相关经验，就不必把它列为经验门槛。涉及安全或独立完成任务的能力，则应写明具体要求，并按相应流程核实。",
+    "ko": "현장 운영 부서와 인사팀이 기준을 함께 검토하세요. 입사 초기에 교육할 수 있는 기술을 꼭 필요하지도 않은 필수 경력처럼 적지 마세요. 반대로 안전이나 업무 수행 능력에 직접 관련된 요건은 구체적으로 설명하고 적절한 절차에 따라 확인하세요.",
+    "ja": "現場部門と人事部門で条件を一緒に見直しましょう。初期研修で習得できる技能について、実務上必要がなければ経験を必須条件にしないようにします。一方、安全に関わる条件や業務遂行に必要な能力は具体的に記し、適切な手順で確認しましょう。"
+  },
+  "Nhiệm vụ thực tế và điều kiện tại nơi làm việc.": {
+    "en": "Actual duties and workplace conditions.",
+    "zh": "岗位的实际任务和现场工作条件。",
+    "ko": "실제로 수행할 업무와 근무 환경.",
+    "ja": "実際に担当する業務と現場の作業条件。"
+  },
+  "Lịch ca, cách thông báo thay đổi và người xác nhận.": {
+    "en": "Shift pattern, change-notification process and approver.",
+    "zh": "班次安排、有变动时的通知方式，以及由谁确认。",
+    "ko": "근무조 일정, 변경 안내 방법, 확인 담당자.",
+    "ja": "勤務シフト、変更時の連絡方法、確認担当者。"
+  },
+  "Cơ cấu thu nhập đã được duyệt để tư vấn.": {
+    "en": "The pay structure approved for communication.",
+    "zh": "已经批准、可以向求职者说明的薪酬构成。",
+    "ko": "안내에 사용할 수 있도록 승인된 급여 구성.",
+    "ja": "候補者への説明用に承認された給与・手当の内訳。"
+  },
+  "Các tiêu chí có thể điều chỉnh và thẩm quyền quyết định.": {
+    "en": "Which criteria can change and who can authorize the change.",
+    "zh": "哪些要求可以调整，由谁决定。",
+    "ko": "조정할 수 있는 기준과 최종 결정 권한.",
+    "ja": "調整可能な条件と、変更を決定する権限を持つ人。"
+  },
+  "Gắn phiên bản cho mọi thay đổi": {
+    "en": "Version every change",
+    "zh": "每次修改都注明版本",
+    "ko": "변경할 때마다 문서 버전을 표시하세요",
+    "ja": "変更のたびに版を更新する"
+  },
+  "Ghi ngày cập nhật và một đầu mối duyệt nội dung. Khi đổi ca hoặc lịch nhận, gửi lại bản thay thế có đánh dấu phần đổi và xác nhận các đầu mối đã nhận. Ứng viên đã được tư vấn theo bản trước cần được thông báo những điểm ảnh hưởng đến lựa chọn của họ.": {
+    "en": "Record the update date and identify one content approver. When a shift or intake date changes, issue a replacement brief with changes highlighted and confirm that relevant contacts received it. Applicants advised under the previous version should be told about changes that affect their decision.",
+    "zh": "记录更新日期，并指定一名内容审核人。班次或到岗时间有变化时，重新发出替代版本，标出修改之处，确认各方联系人均已收到。对于已经按旧版本了解过岗位的求职者，要告知哪些变动可能影响他们的决定。",
+    "ko": "변경일과 내용을 승인하는 담당자 한 명을 명시하세요. 근무조나 배치 일정이 달라지면 변경 부분을 표시한 새 문서를 보내고 관련 담당자가 받았는지 확인하세요. 이전 문서를 기준으로 안내받은 지원자에게는 선택에 영향을 줄 수 있는 변경 사항을 알려 주세요.",
+    "ja": "更新日と承認窓口となる担当者を記載します。シフトや受け入れ日程が変わったら、変更箇所が分かる最新版を送り、各窓口が受け取ったことを確認しましょう。旧版の条件で説明を受けた候補者には、判断に影響する変更点を知らせます。"
+  },
+  "Theo dõi tuyển dụng theo từng bước: nhìn đúng điểm đang tắc": {
+    "en": "Track each recruitment step to identify the real bottleneck",
+    "zh": "分环节跟踪招聘，找准卡在哪一步",
+    "ko": "채용을 단계별로 추적해 어디에서 막히는지 확인하기",
+    "ja": "採用の進捗管理：どの段階で滞っているかを見極める"
+  },
+  "Tách người quan tâm, lịch hẹn và người đến thực tế để tránh đánh giá chiến dịch chỉ bằng một tổng số.": {
+    "en": "Distinguish enquiries, appointments and actual arrivals instead of judging a campaign by a single total.",
+    "zh": "把有意向的人数、约定到场的人数和实际到场的人数分开统计，才能看清一次招聘活动的情况。",
+    "ko": "관심을 보인 사람, 일정이 확정된 사람, 실제로 방문한 사람을 구분하면 하나의 합계만으로 모집 성과를 판단하는 일을 피할 수 있습니다.",
+    "ja": "問い合わせ、面談予約、実際の来場を分けて集計し、総数だけで募集活動を評価しないようにしましょう。"
+  },
+  "Thống nhất một định nghĩa trước khi đếm": {
+    "en": "Agree on definitions before counting",
+    "zh": "先统一统计口径，再开始计数",
+    "ko": "집계에 앞서 단계의 정의를 통일하세요",
+    "ja": "集計の前に各段階の定義をそろえる"
+  },
+  "Một lượt để lại số điện thoại không đồng nghĩa với một ứng viên đã xác nhận lịch. Hãy định nghĩa rõ các bước: quan tâm, đã liên hệ, phù hợp để trao đổi, có lịch hẹn, đã đến và đã tiếp nhận. Mỗi người cần một mã theo dõi nội bộ để tránh đếm trùng khi đến từ nhiều kênh.": {
+    "en": "A submitted phone number is not the same as a confirmed appointment. Define the stages clearly: enquiry, contacted, suitable for discussion, appointment booked, arrived and received. Use an internal tracking ID for each person to avoid counting someone twice across channels.",
+    "zh": "留下电话号码的人不一定已经确认了到场时间。可以依次定义各环节：表达意向、取得联系、符合初步沟通条件、已约时间、实际到场、完成接收。每人使用一个内部跟踪编号，避免同一个人通过多个渠道求职时被重复统计。",
+    "ko": "전화번호를 남겼다고 해서 지원자가 일정을 확정한 것은 아닙니다. 관심 표시, 연락 완료, 상담 가능, 일정 확정, 방문 완료, 배치 완료의 기준을 명확히 정하세요. 여러 경로로 유입된 지원자를 중복 집계하지 않도록 개인별 내부 관리 번호를 사용하세요.",
+    "ja": "電話番号の登録だけでは、面談の予約が確定したことにはなりません。「関心あり」「連絡済み」「面談対象」「予約済み」「来場済み」「受け入れ済み」の各段階を定義しましょう。複数の募集経路を利用した人を二重に数えないよう、一人ひとりに社内管理用の番号を割り当てます。"
+  },
+  "Dùng ví dụ để kiểm tra cách đọc tỷ lệ": {
+    "en": "Use an example to check how ratios are interpreted",
+    "zh": "用一个例子读懂到场率",
+    "ko": "예시로 비율을 읽는 방법을 확인하세요",
+    "ja": "例を使って比率の読み方を確かめる"
+  },
+  "Trong ví dụ giả định, 40 lịch hẹn dẫn đến 28 người đến, tức tỷ lệ đến theo lịch là 70%. Con số này chỉ có ý nghĩa khi cùng một khoảng thời gian và cùng quy tắc ghi nhận. Không nên lấy người đến của tuần này chia cho lịch hẹn của tuần khác, hoặc coi một tỷ lệ mẫu là cam kết kết quả.": {
+    "en": "In a hypothetical example, 40 appointments lead to 28 arrivals: an appointment-attendance rate of 70%. This is meaningful only when the period and recording rules match. Do not divide this week’s arrivals by another week’s appointments, or treat an illustrative ratio as a results guarantee.",
+    "zh": "假设有40人约定到场，其中28人实际到场，那么按约到场率就是70%。只有统计时段和记录规则一致，这一比例才有意义。不能用本周的到场人数除以另一周的预约人数，也不能把示例中的比例当成对招聘结果的承诺。",
+    "ko": "가상의 예로 약속 40건 중 28명이 방문했다면 방문율은 70%입니다. 이 수치는 집계 기간과 집계 기준이 같을 때만 의미가 있습니다. 이번 주 방문자 수를 다른 주의 약속 건수로 나누거나 예시 비율을 달성해야 할 결과로 보아서는 안 됩니다.",
+    "ja": "仮に、予約40件に対して28人が来場した場合、予約者の来場率は70%です。この数値は、対象期間と記録ルールがそろって初めて意味を持ちます。今週の来場者数を別の週の予約件数で割ったり、例示した割合を成果の保証として扱ったりしないでください。"
+  },
+  "Ghi nguồn, ngày hẹn và trạng thái cập nhật gần nhất.": {
+    "en": "Record the source, appointment date and latest status.",
+    "zh": "记录求职来源渠道、预约日期和最近更新的状态。",
+    "ko": "유입 경로, 약속 날짜, 가장 최근에 갱신된 상태를 적으세요.",
+    "ja": "募集経路、予約日、直近の対応状況を記録します。"
+  },
+  "Phân biệt chưa đến, xin đổi lịch và đã từ chối.": {
+    "en": "Distinguish a missed appointment, a rescheduling request and a withdrawal.",
+    "zh": "分清未到场、申请改期和已明确婉拒。",
+    "ko": "미방문, 일정 변경 요청, 거절을 구분하세요.",
+    "ja": "来場していない人、日程変更の希望、辞退を区別します。"
+  },
+  "Theo dõi lý do được ứng viên chia sẻ; không tự suy đoán.": {
+    "en": "Record reasons applicants actually provide rather than assumptions.",
+    "zh": "只记录求职者本人说明的原因，不自行推测。",
+    "ko": "지원자가 직접 설명한 이유를 기록하고 추측은 피하세요.",
+    "ja": "理由は本人が話してくれた内容を記録し、推測で補わないようにします。"
+  },
+  "Chọn một thay đổi nhỏ rồi đo lại": {
+    "en": "Make one focused change and review it",
+    "zh": "先做一项小调整，再看数据",
+    "ko": "작은 변경을 한 가지 적용하고 다시 측정하세요",
+    "ja": "小さな改善を一つ試して再度測る"
+  },
+  "Nếu nhiều người đã có lịch nhưng không tìm được cổng vào, cải thiện chỉ dẫn có thể hữu ích hơn tăng ngân sách tìm nguồn. Nếu nhiều người từ chối sau tư vấn, hãy rà lại nội dung tin với thông tin thực tế. Ghi ngày áp dụng thay đổi và so sánh các nhóm có điều kiện tương đồng trước khi kết luận.": {
+    "en": "If many booked applicants cannot find the entrance, clearer directions may help more than increasing sourcing spend. If many withdraw after speaking with an adviser, compare the advert with the actual job details. Record when a change was introduced and compare groups with similar conditions before drawing conclusions.",
+    "zh": "如果许多人约好了却找不到入口，完善到场指引可能比增加招聘渠道预算更有效。如果许多人在了解岗位后婉拒，则应核对招聘信息与实际情况是否一致。记下调整开始的日期，比较条件相近的两组情况，再下结论。",
+    "ko": "일정을 확정했는데도 출입구를 못 찾아 방문하지 못한 사람이 많다면 모집 예산을 늘리는 것보다 찾아오는 길을 개선하는 편이 효과적일 수 있습니다. 상담 후 거절하는 사람이 많다면 공고 내용과 실제 조건이 일치하는지 살펴보세요. 변경 적용일을 기록하고 비슷한 조건의 집단을 비교한 뒤 판단하세요.",
+    "ja": "予約済みなのに入口が分からず来場できない人が多い場合は、募集予算を増やすよりも道案内を改善するほうが効果的かもしれません。説明後の辞退が多い場合は、求人内容と実際の条件を照合します。変更の実施日を記録し、条件の近いグループを比較してから効果を判断しましょう。"
+  },
+  "Bàn giao từ tuyển dụng sang sản xuất: ai xác nhận điều gì?": {
+    "en": "From recruitment to production: who confirms what?",
+    "zh": "从招聘到生产现场：交接时各方确认什么？",
+    "ko": "채용팀에서 생산팀으로 인계할 때 누가 무엇을 확인하나요?",
+    "ja": "採用担当から製造現場への引き継ぎ：誰が何を確認する？"
+  },
+  "Một lần bàn giao có cấu trúc giúp thông tin ứng viên và yêu cầu công việc không bị đứt đoạn.": {
+    "en": "A structured handover keeps applicant information and job requirements connected.",
+    "zh": "有条理地交接，能让求职者的信息和岗位的实际要求顺畅地从招聘人员传到生产现场。",
+    "ko": "정해진 방식으로 인계하면 지원자 정보와 현장의 요구 사항이 중간에 누락되는 일을 줄일 수 있습니다.",
+    "ja": "手順に沿って引き継ぐことで、候補者に関する情報と業務上の要件が現場に確実に伝わります。"
+  },
+  "Thống nhất đầu vào trước ngày tiếp nhận": {
+    "en": "Agree on handover inputs before the intake day",
+    "zh": "到岗前核对接收安排",
+    "ko": "인력 배치일 전에 전달할 내용을 합의하세요",
+    "ja": "受け入れ日までに必要な情報をそろえる"
+  },
+  "Nhân sự, tuyển dụng và người phụ trách tiếp nhận cần cùng biết lịch dự kiến, vị trí, người hướng dẫn và các nội dung còn chờ xác nhận. Chỉ chuyển thông tin cần cho bước tiếp theo; không chia sẻ hồ sơ cá nhân rộng hơn phạm vi cần thiết. Một danh sách ngắn với trạng thái rõ ràng thường dễ sử dụng hơn nhiều tệp không có phiên bản.": {
+    "en": "HR, recruitment and the receiving supervisor need a shared view of the expected schedule, role, guide and outstanding items. Transfer only information needed for the next step; do not circulate personal files beyond what is necessary. A short list with clear statuses is often more usable than multiple unversioned files.",
+    "zh": "人事、招聘和现场接收负责人都应清楚预计到岗时间、岗位、指导人员，以及还有哪些事项待确认。只交接下一步必需的信息，个人资料的分享范围也应以工作所需为限。与其传递多个分不清版本的文件，不如用一张简表写清每项进展。",
+    "ko": "인사팀, 채용팀, 현장 담당자는 예정 일정, 직무, 교육 담당자, 확인을 기다리는 사항을 함께 파악해야 합니다. 다음 단계에 필요한 정보만 넘기고 개인정보가 담긴 서류를 필요한 범위 밖에 공유하지 마세요. 상태가 명확한 짧은 목록이 버전 표시가 없는 여러 파일보다 쓰기 쉽습니다.",
+    "ja": "人事、採用担当、現場の受け入れ担当者の間で、予定日、配属先の職務、指導担当者、確認待ちの事項を共有します。次の段階に必要な情報だけを引き継ぎ、個人の応募書類を必要以上に広く共有しないでください。状態が明記された短い一覧のほうが、どれが最新版か分からない複数のファイルより使いやすいものです。"
+  },
+  "Phân công một người cho mỗi điểm xác nhận": {
+    "en": "Assign an owner to each confirmation",
+    "zh": "每项确认工作都指定负责人",
+    "ko": "확인할 항목마다 담당자를 한 명 정하세요",
+    "ja": "確認事項ごとに担当者を一人決める"
+  },
+  "Người tư vấn không nên tự xác nhận thay cho bộ phận tiếp nhận về ca hoặc vị trí còn trống. Mỗi điểm cần có người phụ trách và cách báo lại. Nếu kế hoạch thay đổi, cập nhật cả danh sách tiếp nhận lẫn thông tin đã gửi cho ứng viên.": {
+    "en": "An adviser should not confirm shifts or vacancies on behalf of the receiving team without authorization. Each confirmation needs an owner and a reporting method. When plans change, update both the intake list and the information already sent to applicants.",
+    "zh": "招聘顾问不宜代现场接收部门确认班次或岗位空缺。每项安排都应明确由谁确认、怎样反馈。计划一旦改变，要同步更新接收名单和已经发给求职者的信息。",
+    "ko": "상담 담당자는 비어 있는 직무나 배정할 근무조를 현장 부서 대신 확정해서는 안 됩니다. 항목마다 확인 담당자와 결과를 알리는 방법을 정하세요. 계획이 달라지면 현장 배치 명단과 지원자에게 보낸 안내를 함께 갱신하세요.",
+    "ja": "説明を担当する人が、受け入れ部門に代わってシフトや空きポストを確約しないようにします。各項目に担当者と報告方法を決めましょう。予定が変わったら、受け入れリストと候補者にすでに伝えた情報の両方を更新します。"
+  },
+  "Tuyển dụng xác nhận ứng viên đã nhận đủ hướng dẫn.": {
+    "en": "Recruitment confirms that the applicant has received the instructions.",
+    "zh": "招聘人员确认求职者已收到完整指引。",
+    "ko": "채용팀은 지원자가 필요한 안내를 모두 받았는지 확인합니다.",
+    "ja": "採用担当者は、必要な案内がすべて候補者に届いたことを確認します。"
+  },
+  "Bộ phận tiếp nhận xác nhận lịch, địa điểm và người đón.": {
+    "en": "The receiving team confirms the time, location and contact person.",
+    "zh": "接收部门确认时间、地点和现场接待人员。",
+    "ko": "현장 부서는 일정, 장소, 현장에서 맞이할 담당자를 확인합니다.",
+    "ja": "受け入れ部門は、日時、場所、出迎える担当者を確認します。"
+  },
+  "Người hướng dẫn xác nhận bước làm quen công việc.": {
+    "en": "The designated guide confirms the job-introduction step.",
+    "zh": "指导人员确认熟悉岗位的具体安排。",
+    "ko": "교육 담당자는 업무 적응을 돕는 첫 절차를 확인합니다.",
+    "ja": "指導担当者は、仕事に慣れるための最初の手順を確認します。"
+  },
+  "Đầu mối nhân sự tiếp nhận vấn đề chưa giải quyết.": {
+    "en": "The HR contact takes ownership of unresolved issues.",
+    "zh": "尚未解决的问题交给人事对接人跟进。",
+    "ko": "인사 담당자는 아직 해결되지 않은 문제를 접수합니다.",
+    "ja": "未解決の事項は人事の窓口が引き受けます。"
+  },
+  "Khép vòng bàn giao bằng phản hồi": {
+    "en": "Close the handover loop with feedback",
+    "zh": "交接后，用反馈核实进度",
+    "ko": "진행 결과를 확인해 인계를 마무리하세요",
+    "ja": "受け入れ後の報告で引き継ぎを完了する"
+  },
+  "Sau buổi tiếp nhận, đối chiếu ai đã đến, ai đổi lịch và vấn đề nào cần theo dõi. Tránh dùng một trạng thái “xong” cho tất cả trường hợp. Một ghi chú như “đã đến, chờ xác nhận lịch hướng dẫn” giúp ca sau hiểu đúng việc còn lại và tránh phải hỏi lại ứng viên.": {
+    "en": "After intake, reconcile arrivals, rescheduled appointments and issues requiring follow-up. Avoid using a single “done” status for every case. A note such as “arrived, awaiting orientation time” helps the next shift understand what remains and prevents repeated questions to the applicant.",
+    "zh": "接收结束后，核对谁已到场、谁改了时间，还有哪些事需要跟进。不要把所有情况都笼统标为“完成”。写下“已到场，等待确认岗前指导时间”，下一班的同事就知道还要做什么，也不用再向求职者反复询问。",
+    "ko": "배치일이 지나면 누가 방문했고 누가 일정을 바꿨는지, 어떤 문제를 계속 확인해야 하는지 점검하세요. 모든 사례를 ‘완료’로 처리하지 마세요. ‘방문 완료, 교육 일정 확인 대기’처럼 기록하면 다음 근무조가 남은 일을 파악하고 지원자에게 같은 내용을 다시 묻지 않아도 됩니다.",
+    "ja": "受け入れ後は、誰が来場したか、誰が日程を変えたか、どんな点を引き続き確認する必要があるかを照合します。すべてを一律に「完了」と記録するのは避けましょう。「来場済み、初回説明の日程を確認中」のように記せば、次のシフトの担当者にも残っている作業が伝わり、候補者に同じことを尋ねずに済みます。"
+  },
+  "Phản hồi ứng viên rõ ràng khi kết quả chưa có hoặc lịch thay đổi": {
+    "en": "Clear applicant updates when results are pending or plans change",
+    "zh": "结果待定或时间变更时，怎样向求职者说清进展",
+    "ko": "결과가 나오지 않았거나 일정이 바뀌었을 때 지원자에게 명확히 안내하기",
+    "ja": "結果待ちや日程変更の際、候補者にどう伝えるか"
+  },
+  "Một tin nhắn ngắn vẫn có thể nêu đủ tình trạng, bước tiếp theo và mốc cập nhật, mà không hứa thay người quyết định.": {
+    "en": "A short message can explain the status, next step and next update without making promises on behalf of a decision-maker.",
+    "zh": "一条简短的消息也能交代现状、下一步和再次通知的时间，同时避免代决策者作出承诺。",
+    "ko": "짧은 메시지에도 현재 상황, 다음 단계, 다시 안내할 시점을 담을 수 있습니다. 최종 결정권자를 대신해 결과를 약속할 필요는 없습니다.",
+    "ja": "短いメッセージでも、現在の状況、次の手順、次回連絡の時期は伝えられます。決定権を持つ人に代わって約束する必要はありません。"
+  },
+  "Phân biệt đã nhận thông tin với đã có kết quả": {
+    "en": "Distinguish receipt from a decision",
+    "zh": "区分“已收到资料”和“已有结果”",
+    "ko": "서류 접수와 결과 확정을 구분하세요",
+    "ja": "応募書類の受領と選考結果を区別する"
+  },
+  "Thông báo đã nhận hồ sơ chỉ xác nhận bước tiếp nhận, không phải thông báo trúng tuyển. Khi chưa có quyết định, hãy nói đúng trạng thái và việc đang chờ. Cách viết rõ ràng giúp ứng viên chủ động kế hoạch của mình thay vì hiểu nhầm một lời cảm ơn là cam kết nhận việc.": {
+    "en": "Acknowledging an application confirms receipt, not selection. If a decision is pending, state the actual status and what remains outstanding. Clear wording lets applicants plan for themselves rather than mistake a thank-you message for an offer.",
+    "zh": "告知“已收到申请材料”，只是确认收件，并不表示已经录用。尚未作出决定时，应说明目前进展，以及还有哪一步待确认。这样求职者才能安排自己的计划，也不会把一句感谢误解为录用承诺。",
+    "ko": "서류를 받았다는 안내는 접수 사실만 확인하는 것이며 합격 통보가 아닙니다. 아직 결정되지 않았다면 현재 상태와 무엇을 기다리고 있는지 정확히 말하세요. 이렇게 안내하면 지원자는 감사 인사를 채용 약속으로 오해하지 않고 스스로 계획을 세울 수 있습니다.",
+    "ja": "応募書類の受領連絡は、書類を受け取ったことを知らせるものです。採用決定を意味するわけではありません。まだ決まっていない場合は、現在の状況と何の確認を待っているのかをそのまま伝えましょう。お礼の言葉を採用の確約と誤解させない書き方なら、候補者も自分の予定を立てやすくなります。"
+  },
+  "Dùng ba phần cho một tin nhắn cập nhật": {
+    "en": "Use three parts in an update",
+    "zh": "用三部分写清一条进度通知",
+    "ko": "업데이트 메시지는 세 부분으로 쓰세요",
+    "ja": "進捗連絡を三つの要素で組み立てる"
+  },
+  "Một cấu trúc có thể dùng là: tình trạng hiện tại, hành động tiếp theo và mốc cập nhật. Ví dụ: “Thông tin của bạn đã được tiếp nhận; chúng tôi đang chờ bộ phận phụ trách xác nhận lịch. Chúng tôi sẽ cập nhật lại vào mốc đã thống nhất, kể cả khi lịch chưa chốt”. Chỉ ghi mốc mà đội phụ trách có thể thực hiện.": {
+    "en": "A useful structure is: current status, next action and next update. For example: “Your information has been received. We are waiting for the responsible team to confirm the schedule. We will update you at the agreed time, even if the schedule is still pending.” Only state an update time the team can meet.",
+    "zh": "可以按当前状态、下一步行动和下次反馈时间来写。例如：“我们已收到您的资料，目前正在等待负责部门确认时间安排。我们会在约定时间再向您反馈，即使届时安排还未最终确定。”只写团队确实能做到的反馈时间。",
+    "ko": "현재 상황, 다음 조치, 다시 안내할 시점을 차례로 담을 수 있습니다. 예를 들어 “지원 정보가 접수되었습니다. 현재 담당 부서의 일정 확인을 기다리고 있습니다. 일정이 확정되지 않더라도 약속한 시점에 다시 안내드리겠습니다”라고 쓸 수 있습니다. 담당 팀이 실제로 지킬 수 있는 시점만 안내하세요.",
+    "ja": "「現在の状況」「次の手順」「次回連絡の時期」の順でまとめられます。例えば「ご登録の情報を受け付けました。現在、担当部門に日程を確認しています。確定していない場合も、お約束した時期に改めてご連絡します」と伝えます。連絡時期には、担当チームが実際に対応できる日時を記載しましょう。"
+  },
+  "Nêu vị trí hoặc lịch hẹn đang được trao đổi.": {
+    "en": "Identify the role or appointment being discussed.",
+    "zh": "写明双方正在沟通的岗位或预约安排。",
+    "ko": "논의 중인 직무나 약속 일정을 적으세요.",
+    "ja": "対象の職種や面談予定を明示しましょう。"
+  },
+  "Chỉ rõ ứng viên có cần làm gì ngay lúc này không.": {
+    "en": "State whether the applicant needs to do anything now.",
+    "zh": "告知求职者现在是否需要采取行动。",
+    "ko": "지원자가 지금 해야 할 일이 있는지 명확히 알리세요.",
+    "ja": "候補者が今すぐ行う必要のあることがあるかどうかを伝えましょう。"
+  },
+  "Để lại kênh phản hồi khi ứng viên muốn đổi hoặc hủy lịch.": {
+    "en": "Provide a reply channel for changing or cancelling an appointment.",
+    "zh": "留下反馈渠道，方便求职者申请改期或取消预约。",
+    "ko": "일정을 변경하거나 취소하려는 지원자가 연락할 수 있는 방법을 안내하세요.",
+    "ja": "日程の変更やキャンセルを希望する場合の連絡先を添えましょう。"
+  },
+  "Đóng trao đổi một cách tôn trọng": {
+    "en": "Close the conversation respectfully",
+    "zh": "礼貌地结束沟通",
+    "ko": "서로를 존중하는 말로 대화를 마무리하세요",
+    "ja": "相手の意向を尊重してやり取りを終える"
+  },
+  "Khi một vị trí không còn phù hợp hoặc lịch không thể tiếp tục, thông báo ngắn gọn và tránh nhận xét thiếu căn cứ về ứng viên. Nếu đề xuất cơ hội khác, hãy hỏi họ có muốn nhận thêm thông tin không. Ghi nhận lựa chọn đó để tránh tiếp tục liên hệ trái mong muốn.": {
+    "en": "If a role is no longer suitable or an appointment cannot proceed, explain briefly without making unsupported judgments about the applicant. If suggesting another opportunity, ask whether they would like more information. Record their preference to avoid further contact against their wishes.",
+    "zh": "如果岗位已不再合适，或原定时间无法继续安排，请简要说明情况，避免对求职者作出缺乏依据的评价。如果想推荐其他机会，先询问对方是否愿意进一步了解。记下对方的选择，以免继续发送其不希望收到的联系消息。",
+    "ko": "직무가 더 이상 맞지 않거나 일정 진행이 어렵다면 간결하게 알리고 지원자에 대해 근거 없는 평가를 덧붙이지 마세요. 다른 일자리를 제안하려면 추가 안내를 받고 싶은지 먼저 물어보세요. 원치 않는 연락이 이어지지 않도록 지원자의 선택을 기록하세요.",
+    "ja": "職種が候補者に合わなくなった場合や日程の調整を続けられない場合は、本人について根拠のない評価を加えず、手短に知らせましょう。別の仕事を紹介したいときは、追加の案内を希望するかを尋ねます。その意向を記録し、望まない連絡を続けないようにしましょう。"
+  },
+  "Bắt đầu từ chỗ thiếu trong vận hành": {
+    "en": "Start with the operational gap",
+    "zh": "从生产现场的用工缺口入手",
+    "ko": "운영 현장에서 인력이 부족한 곳부터 파악하세요",
+    "ja": "まず、現場のどこに人手が足りないかを確認する"
+  },
+  "Một kế hoạch bổ sung lao động nên bắt đầu bằng câu hỏi: công đoạn nào cần người, vào thời điểm nào và để thực hiện nhiệm vụ gì? Tổng số tuyển chưa phản ánh đủ nhu cầu nếu người đến không đúng ca hoặc chưa thể vào công đoạn cần hỗ trợ. Vì vậy, nhân sự và vận hành cần cùng xác nhận đầu bài trước khi mở rộng tìm nguồn.": {
+    "en": "A staffing plan should begin with three questions: which process needs people, when, and for which tasks? A recruitment total alone does not describe the need if arrivals cannot work the required shift or are not ready for the relevant process. HR and operations should therefore agree on the brief before expanding sourcing.",
+    "zh": "制订增员计划，先要问清哪个工序缺人、什么时候需要到岗、要完成什么任务。即使招够了总人数，如果班次对不上，或者新人还不能进入需要支援的工序，实际缺口仍未补上。因此，扩大招聘渠道前，应由人事和运营部门共同确认用工需求。",
+    "ko": "인력 보충 계획은 ‘어느 공정에, 언제, 어떤 업무를 맡을 사람이 필요한가?’라는 질문에서 시작하세요. 배치된 인력이 필요한 근무조에 들어가지 못하거나 지원이 필요한 공정에서 일할 수 없다면, 총 채용 인원만으로는 수요를 파악하기 어렵습니다. 후보자 모집을 확대하기 전에 인사팀과 현장 운영팀이 요구 사항을 함께 확인하세요.",
+    "ja": "増員計画は「どの工程で、いつ、どの仕事を担う人が必要か」という問いから始めましょう。採用人数が目標に達しても、必要なシフトに入れなかったり、人手不足の工程に配属できなかったりすれば、現場の需要は満たせません。候補者探しを広げる前に、人事と現場が一緒に要件を確認することが大切です。"
+  },
+  "Tách nhu cầu thay thế người nghỉ khỏi nhu cầu tăng theo kế hoạch sản xuất. Với phần còn phụ thuộc đơn hàng, ghi rõ giả định và ngày rà soát. Một khoảng dự kiến được giải thích rõ tốt hơn một con số chắc chắn trên giấy nhưng chưa có người xác nhận.": {
+    "en": "Separate replacement needs from increases linked to production plans. For demand that still depends on orders, record the assumptions and review date. A clearly explained range is more useful than a firm-looking number with no confirmed owner.",
+    "zh": "把人员离岗后需要补位的人数，与生产计划增加带来的新增需求分开。对于仍取决于订单的部分，写清估算依据和复核日期。与其在纸上写下一个尚无人确认的确切数字，不如给出有依据的预计范围。",
+    "ko": "결원을 대체할 인력과 생산 계획에 따라 추가로 필요한 인력을 구분하세요. 주문량에 따라 달라지는 부분은 산정 전제와 재검토 날짜를 적으세요. 담당자가 확인하지 않은 확정 수치보다 근거를 설명할 수 있는 예상 범위가 더 유용합니다.",
+    "ja": "退職者などの欠員補充と、生産計画に伴う増員を分けます。受注次第で変わる部分には、前提条件と見直し日を明記しましょう。誰も確認していない数字を確定値として書くより、見込み人数の幅とその根拠を示すほうが役立ちます。"
+  },
+  "Vị trí và công đoạn cần bổ sung.": {
+    "en": "The roles and processes requiring additional people.",
+    "zh": "需要补充人手的岗位和工序。",
+    "ko": "보충이 필요한 직무와 공정.",
+    "ja": "人員を補う職種と工程。"
+  },
+  "Số lượng theo từng ca, từng đợt tiếp nhận.": {
+    "en": "Headcount by shift and intake.",
+    "zh": "每个班次、每批报到需要的人数。",
+    "ko": "근무조별·배치 차수별 예상 인원.",
+    "ja": "シフト別・受け入れ回別の必要人数。"
+  },
+  "Người duyệt nhu cầu và mốc rà soát tiếp theo.": {
+    "en": "The approver and the next review date.",
+    "zh": "需求审批人和下次复核时间。",
+    "ko": "인력 수요를 승인할 담당자와 다음 검토 시점.",
+    "ja": "人員要請の承認者と次回の見直し時期。"
+  },
+  "Lập lịch theo khả năng tiếp nhận thực tế": {
+    "en": "Schedule against actual intake capacity",
+    "zh": "按实际接收能力安排报到时间",
+    "ko": "현장에서 실제로 받을 수 있는 인원에 맞춰 일정을 잡으세요",
+    "ja": "実際に受け入れられる人数に合わせて日程を組む"
+  },
+  "Ngày cần người làm việc và ngày có thể tiếp nhận hồ sơ không nhất thiết là một. Hãy đi ngược từ mốc vận hành để dành thời gian cho trao đổi, xác nhận lịch, thủ tục và hướng dẫn ban đầu. Đồng thời kiểm tra khả năng tiếp nhận của bảo vệ, nhân sự, người hướng dẫn và bộ phận phân ca.": {
+    "en": "The date workers are needed on the job is not necessarily the date applications can be received. Work backwards from the operational start to allow time for discussions, appointment confirmation, administration and initial guidance. Also check the intake capacity of security, HR, guides and shift planners.",
+    "zh": "需要人员正式上岗的日期，和可以开始接收申请材料的日期，未必是同一天。从生产需要的时间往前推，为沟通、确认安排、办理手续和岗前指导留足时间。同时核实安保、人事、指导人员和排班部门各自能接待多少人。",
+    "ko": "인력이 근무를 시작해야 하는 날짜와 지원 서류를 접수할 수 있는 날짜가 반드시 같지는 않습니다. 현장 투입일을 기준으로 역산해 상담, 일정 확인, 서류 절차, 초기 안내에 필요한 시간을 확보하세요. 경비팀, 인사팀, 교육 담당자, 근무조 배정 부서가 어느 정도 인원을 받을 수 있는지도 확인하세요.",
+    "ja": "人手が必要になる日と、応募書類を受け付けられる日は必ずしも同じではありません。稼働予定日から逆算し、候補者とのやり取り、日程確認、手続き、初回説明に必要な時間を確保しましょう。あわせて、警備、人事、指導担当、シフト編成の各部門が対応できる人数も確認します。"
+  },
+  "Nếu đội hướng dẫn chỉ có thể hỗ trợ một nhóm trong một buổi, việc mời tất cả ứng viên đến cùng lúc có thể tạo thời gian chờ. Chia đợt theo khả năng phục vụ đã xác nhận và thông báo rõ cho từng người. Không dùng số lượng đến đông làm thước đo duy nhất cho một buổi tiếp nhận.": {
+    "en": "If the orientation team can support only one group per session, inviting everyone at once may create waiting time. Split arrivals according to confirmed capacity and tell each person clearly. A large turnout should not be the only measure of an intake session.",
+    "zh": "如果指导团队一次只能带一组人，把所有求职者约在同一时间，可能会让大家在现场等候。应按已确认的接待能力分批安排，并把时间告诉每个人。评估接待是否顺利时，不能只看到场人数多不多。",
+    "ko": "교육팀이 한 번에 한 그룹만 안내할 수 있다면 지원자를 모두 같은 시각에 부를 경우 대기 시간이 길어질 수 있습니다. 확인된 수용 인원에 맞춰 여러 차수로 나누고 각 지원자에게 시간을 명확히 알리세요. 방문 인원만으로 당일 안내의 성과를 판단하지 마세요.",
+    "ja": "指導担当が一度に一組しか受け持てない場合、候補者全員を同時刻に呼ぶと待ち時間が生じます。確認済みの受け入れ体制に合わせて数回に分け、それぞれに集合時間を明確に伝えましょう。来場者数の多さだけで、受け入れがうまくいったかを判断しないことが大切です。"
+  },
+  "Dùng một bản yêu cầu chung cho mọi đầu mối": {
+    "en": "Use one brief across all contacts",
+    "zh": "让所有对接人使用同一份用工需求单",
+    "ko": "모든 담당자가 하나의 인력 요청서를 쓰세요",
+    "ja": "すべての担当窓口で同じ人員要請書を使う"
+  },
+  "Mỗi bên tham gia cần nhận cùng một phiên bản về vị trí, ca làm, địa điểm và cơ cấu thu nhập được phép tư vấn. Các điều kiện chưa xác nhận phải được đánh dấu để không trở thành lời hứa trong tin nhắn cho ứng viên. Một bảng ngắn có tên người chịu trách nhiệm thường dễ cập nhật hơn nhiều bản mô tả gửi rời rạc.": {
+    "en": "Everyone involved should receive the same version of the role, shifts, location and pay structure approved for communication. Unconfirmed conditions must be marked so they do not become promises in messages to applicants. A short table with a named owner is usually easier to maintain than multiple disconnected descriptions.",
+    "zh": "各方拿到的岗位、班次、地点以及可向求职者说明的薪酬构成，应来自同一版本。把尚未确认的条件标出来，以免有人在给求职者发消息时把它当成承诺。一张注明负责人的简表，通常比零散发出的多份岗位说明更容易更新。",
+    "ko": "모든 담당자가 직무, 근무조, 근무지, 안내 가능한 급여 구성에 관해 같은 버전의 문서를 받아야 합니다. 확인되지 않은 조건은 지원자에게 보내는 메시지에서 약속이 되지 않도록 별도로 표시하세요. 담당자 이름을 적은 짧은 표가 따로 보낸 여러 직무 설명서보다 수정하기 쉽습니다.",
+    "ja": "職種、勤務シフト、勤務地、候補者に説明できる給与の内訳は、関係者全員が同じ版で確認します。未確定の条件には印を付け、候補者への連絡で確約として伝わらないようにしましょう。説明文を別々に配るより、担当者名を添えた短い一覧のほうが更新しやすくなります。"
+  },
+  "Mục đã xác nhận: có thể dùng khi tư vấn.": {
+    "en": "Confirmed item: available for applicant discussions.",
+    "zh": "已确认：可以在向求职者介绍岗位时使用。",
+    "ko": "확인 완료: 지원자 안내에 사용해도 됩니다.",
+    "ja": "確認済みの項目は、候補者への説明に使えます。"
+  },
+  "Mục đang chờ: ghi người xác nhận và thời hạn cập nhật.": {
+    "en": "Pending item: name the approver and the update deadline.",
+    "zh": "待确认：注明由谁核实，以及最迟何时更新。",
+    "ko": "확인 대기: 확인 담당자와 갱신 기한을 기록하세요.",
+    "ja": "確認待ちの項目には、確認担当者と更新期限を記します。"
+  },
+  "Mục thay đổi: nêu phiên bản mới thay cho phiên bản nào.": {
+    "en": "Changed item: identify the version being replaced.",
+    "zh": "有变更：注明新版本替代的是哪一版。",
+    "ko": "변경 사항: 새 버전이 어떤 버전을 대신하는지 명시하세요.",
+    "ja": "変更した項目には、新しい版がどの版に代わるかを示します。"
+  },
+  "Các thành viên Minh Đức họp và cùng xem tài liệu": {
+    "en": "Minh Đức team members meeting and reviewing documents",
+    "zh": "明德团队在会上一起查看资料",
+    "ko": "회의에서 업무 자료를 함께 검토하는 민득(Minh Đức) 팀원들",
+    "ja": "打ち合わせで一緒に資料を確認するMinh Đứcのスタッフ"
+  },
+  "Một đầu bài chung giúp các đầu mối kiểm tra cùng thông tin trước khi tìm nguồn. Ảnh hoạt động đội ngũ Minh Đức.": {
+    "en": "A shared brief helps contacts check the same information before sourcing. Photograph of the Minh Đức team at work.",
+    "zh": "共用一份需求说明，各方就能在招人前核对同一套信息。图为明德团队的工作现场。",
+    "ko": "공통 요청서가 있으면 모집에 앞서 담당자들이 같은 정보를 확인할 수 있습니다. 민득 팀의 업무 모습입니다.",
+    "ja": "共通の要請書があれば、候補者探しを始める前に各窓口で同じ情報を確認できます。写真はMinh Đứcのスタッフが打ち合わせをしている様子です。"
+  },
+  "Phân biệt nhu cầu, lịch hẹn và dự kiến đến": {
+    "en": "Distinguish demand, appointments and expected arrivals",
+    "zh": "分清用工需求、已约人数和预计到场情况",
+    "ko": "인력 수요, 확정 일정, 예상 방문 인원을 구분하세요",
+    "ja": "必要人数、予約数、来場見込みを区別する"
+  },
+  "Ba con số này phục vụ ba câu hỏi khác nhau: nhà máy cần bao nhiêu người, đã có bao nhiêu lịch xác nhận và dự kiến ai sẽ đến trong từng đợt. Không cộng người chỉ mới để lại thông tin vào nhóm đã xác nhận. Nếu cần dự báo số người đến, dùng dữ liệu phù hợp cùng kỳ, ghi giả định và cập nhật khi có phản hồi mới.": {
+    "en": "These figures answer different questions: how many people the factory needs, how many appointments are confirmed, and who is expected in each intake. Do not count initial enquiries as confirmed appointments. If estimating arrivals, use relevant comparable data, record assumptions and update the estimate when new information arrives.",
+    "zh": "这三项数字分别回答不同的问题：工厂需要多少人，已经敲定了多少个预约，每批预计有哪些人到场。只留下联系方式的人不能算进已确认名单。需要预估到场人数时，应选取同期可比的数据，写明假设，并根据新反馈及时调整。",
+    "ko": "세 숫자는 각각 다른 질문에 답합니다. 공장에 몇 명이 필요한지, 몇 건의 일정이 확정되었는지, 차수별로 누가 방문할 것으로 예상되는지입니다. 연락처만 남긴 사람을 일정 확정 인원에 포함하지 마세요. 방문 인원을 예상해야 한다면 같은 기간에 해당하는 자료를 사용하고, 산정 전제를 기록한 뒤 새 정보가 들어오면 갱신하세요.",
+    "ja": "この三つの数字は、それぞれ「工場に何人必要か」「何件の予約が確定したか」「各回に誰が来る見込みか」を示します。連絡先を登録しただけの人を予約確定者に含めないでください。来場者数を予測する場合は、対象期間に対応するデータを使い、前提を記録し、新しい返答が届いたら見込みを更新します。"
+  },
+  "Một ứng viên chỉ có một mã theo dõi trong cùng kế hoạch.": {
+    "en": "Use one tracking ID per applicant within the plan.",
+    "zh": "在同一项招聘计划中，每名求职者只用一个跟踪编号。",
+    "ko": "한 모집 계획 안에서 지원자마다 관리 번호를 하나씩 부여하세요.",
+    "ja": "同じ採用計画内では、一人の候補者に一つの管理番号を割り当てます。"
+  },
+  "Tách lịch đổi, lịch hủy và trường hợp chưa liên hệ được.": {
+    "en": "Separate rescheduled, cancelled and not-yet-reached cases.",
+    "zh": "把改期、取消和暂时联系不上的情况分开记录。",
+    "ko": "일정 변경, 취소, 아직 연락이 닿지 않은 경우를 구분하세요.",
+    "ja": "日程変更、キャンセル、連絡が取れていない状態を分けて扱います。"
+  },
+  "Chỉ ghi lý do ứng viên thực sự cung cấp.": {
+    "en": "Record only reasons the applicant actually provides.",
+    "zh": "只记录求职者本人说明的原因。",
+    "ko": "지원자가 직접 알려 준 이유만 기록하세요.",
+    "ja": "理由は候補者本人が伝えた内容だけを記録します。"
+  },
+  "Rà ngắn mỗi ngày, xử lý đúng điểm nghẽn": {
+    "en": "Review briefly each day and address the bottleneck",
+    "zh": "每天简短核对，及时处理卡住的环节",
+    "ko": "매일 짧게 점검하고 병목부터 해결하세요",
+    "ja": "毎日短く振り返り、滞っている工程に対処する"
+  },
+  "Một lần cập nhật ngắn nên trả lời: số liệu nào thay đổi, nguyên nhân đã biết là gì và ai cần hành động tiếp theo. Nếu ứng viên không tìm được cổng vào, sửa chỉ dẫn; nếu ca làm chưa rõ, xác nhận với vận hành; nếu đội tiếp nhận quá tải, điều chỉnh lịch. Tăng tìm nguồn trước khi hiểu nguyên nhân có thể chỉ đưa thêm người vào một bước đang tắc.": {
+    "en": "A brief daily review should answer: what changed, what reason is known, and who acts next? If applicants cannot find the entrance, improve directions. If shifts are unclear, confirm with operations. If intake is overloaded, adjust the schedule. Expanding sourcing before understanding the cause may simply send more people into a blocked step.",
+    "zh": "每次更新时说清三件事：哪些数字变了，已知原因是什么，接下来由谁处理。求职者找不到入口，就完善路线指引；班次不明确，就找运营部门核实；现场接待不过来，就调整预约安排。原因还没弄清便加大招聘力度，可能只会让更多人堵在同一个环节。",
+    "ko": "짧은 점검에서는 어떤 지표가 바뀌었는지, 확인된 원인이 무엇인지, 누가 다음 조치를 해야 하는지 정리하세요. 지원자가 출입구를 찾지 못했다면 길 안내를 고치고, 근무조가 불명확하다면 현장 운영팀과 확인하세요. 안내 담당자가 처리할 수 있는 인원을 초과했다면 일정을 조정하세요. 원인을 파악하기 전에 모집을 확대하면 이미 막힌 단계에 지원자만 더 늘어날 수 있습니다.",
+    "ja": "日々の進捗確認では、どの数字が変わったか、分かっている原因は何か、次に誰が対応するかを共有します。入口が分かりにくければ道案内を直し、シフトが不明確なら現場に確認し、受け入れ担当が対応しきれなければ日程を調整します。原因を把握する前に募集を広げても、滞っている工程に人がさらに集中するだけかもしれません。"
+  },
+  "Đối chiếu số liệu đến một giờ chốt thống nhất.": {
+    "en": "Reconcile figures using an agreed cutoff time.",
+    "zh": "约定统一的统计截止时间，再核对各方数据。",
+    "ko": "모두가 합의한 기준 시각까지의 수치를 대조하세요.",
+    "ja": "共通の締め時刻を決め、その時点までの数字を照合します。"
+  },
+  "Giao một người phụ trách cho từng việc còn mở.": {
+    "en": "Assign an owner to every open action.",
+    "zh": "每件待办事项都明确一名负责人。",
+    "ko": "마무리되지 않은 일마다 담당자를 한 명씩 지정하세요.",
+    "ja": "未対応の項目には、それぞれ担当者を一人決めます。"
+  },
+  "Ghi mốc cập nhật để người khác không phải hỏi lại.": {
+    "en": "Record the next update time so others do not need to chase.",
+    "zh": "记下下次更新时间，方便其他人直接查阅。",
+    "ko": "다른 사람이 다시 묻지 않도록 다음 갱신 시점을 적으세요.",
+    "ja": "ほかの担当者が聞き直さずに済むよう、次の更新時期を記載します。"
+  },
+  "Kết thúc đợt bằng những điều có thể tái sử dụng": {
+    "en": "Finish with lessons that can be reused",
+    "zh": "每批结束后，为下一批留下一份可用的记录",
+    "ko": "모집 차수를 마치면 다음에도 쓸 수 있는 내용을 남기세요",
+    "ja": "各回の終わりに、次回に生かせる情報を残す"
+  },
+  "Sau mỗi đợt, lưu lại bản yêu cầu cuối, các thay đổi quan trọng và những câu hỏi ứng viên thường gặp. Phân biệt vấn đề do thông tin, lịch tiếp nhận và điều kiện công việc để chọn cách cải thiện phù hợp. Mục tiêu là lần phối hợp tiếp theo rõ ràng hơn, không phải biến một kết quả riêng lẻ thành cam kết cho mọi đợt tuyển.": {
+    "en": "After each intake, keep the final brief, significant changes and frequently asked applicant questions. Separate issues caused by information, intake scheduling and job conditions so that improvements address the right cause. The aim is a clearer next collaboration, not turning one result into a promise for every recruitment round.",
+    "zh": "每批招聘结束后，保存最终版需求单、重要变更和求职者常问的问题。把信息不清、接待安排和工作条件引起的问题分开，才能选对改进办法。记录的目的是让下次配合更顺畅，一次招聘的结果并不能作为以后每一批的承诺。",
+    "ko": "각 차수가 끝나면 최종 요청서, 주요 변경 사항, 지원자가 자주 묻는 질문을 보관하세요. 문제를 정보, 배치 일정, 근무 조건으로 구분해야 알맞은 개선 방법을 고를 수 있습니다. 목표는 다음 협업을 더 명확하게 하는 것입니다. 한 차수의 결과를 모든 모집의 성과로 약속해서는 안 됩니다.",
+    "ja": "受け入れのたびに、最終版の要請書、重要な変更、候補者からよく寄せられた質問を保存します。課題の原因が案内内容、受け入れ日程、勤務条件のどこにあるかを分け、それに合う改善策を選びましょう。目的は次回の連携を円滑にすることです。特定の回の実績を今後のすべての採用成果の保証にしないでください。"
+  },
+  "Nhóm Minh Đức cùng đối chiếu tài liệu công việc": {
+    "en": "A Minh Đức group cross-checking work documents",
+    "zh": "明德团队一起核对工作资料",
+    "ko": "업무 자료를 함께 대조하는 민득 팀",
+    "ja": "仕事の資料を一緒に照合するMinh Đứcのスタッフ"
+  },
+  "Ghi lại việc đã xác nhận và việc còn mở giúp lần bàn giao sau liền mạch hơn.": {
+    "en": "Recording confirmed and outstanding items makes the next handover easier to follow.",
+    "zh": "把已确认的事项和待办事项分别记下，下次交接就更顺畅。",
+    "ko": "확인한 내용과 남은 일을 함께 기록해 두면 다음 담당자에게 더 원활하게 인계할 수 있습니다.",
+    "ja": "確認済みの事項と対応が残っている事項を書き分けると、次の引き継ぎがスムーズになります。"
+  },
+  "Kiểm tra lần cuối trước khi gửi hồ sơ": {
+    "en": "Make a final check before sending an application",
+    "zh": "发送申请材料前再核对一遍",
+    "ko": "지원서를 보내기 전에 최종 확인하기",
+    "ja": "応募書類を送る前の最終チェック"
+  },
+  "Trước khi gửi, mở lại tệp hoặc ảnh để kiểm tra độ rõ, thông tin liên hệ và tên vị trí. Chỉ gửi những giấy tờ được yêu cầu cho đúng giai đoạn. Nếu chưa chắc có cần một tài liệu hay không, hỏi đầu mối tiếp nhận trước khi bổ sung.": {
+    "en": "Before sending, reopen the file or image to check readability, contact details and the role name. Send only documents required for the current stage. If unsure whether a document is needed, ask the receiving contact before adding it.",
+    "zh": "发送前重新打开文件或照片，确认内容清晰、联系方式正确、岗位名称无误。只提交当前阶段要求的材料。拿不准某份文件是否需要时，先向接收材料的联系人确认，再决定是否补交。",
+    "ko": "제출 전에 파일이나 사진을 다시 열어 내용을 또렷하게 읽을 수 있는지, 연락처와 지원 직무가 맞는지 확인하세요. 현재 단계에서 요청받은 서류만 보내세요. 특정 서류가 필요한지 확실하지 않다면 추가로 보내기 전에 접수 담당자에게 물어보세요.",
+    "ja": "送信前にファイルや画像を開き直し、文字がはっきり読めるか、連絡先と応募職種名が正しいかを確認します。その段階で求められている書類だけを送りましょう。必要かどうか分からない資料があれば、追加する前に受付窓口に尋ねてください。"
+  },
+  "Xác nhận đúng người nhận và kênh tiếp nhận chính thức.": {
+    "en": "Confirm the recipient and the official submission channel.",
+    "zh": "核实收件人和官方接收渠道。",
+    "ko": "받는 사람과 공식 접수 경로가 맞는지 확인하세요.",
+    "ja": "宛先と、正式な提出窓口・提出方法を確認しましょう。"
+  },
+  "Kiểm tra số điện thoại để nhà tuyển dụng có thể gọi lại.": {
+    "en": "Check the phone number so the recruiter can reach you.",
+    "zh": "核对电话号码，确保招聘人员可以回电。",
+    "ko": "채용 담당자가 연락할 수 있도록 전화번호를 확인하세요.",
+    "ja": "採用担当者から折り返し連絡が届くよう、電話番号を確認しましょう。"
+  },
+  "Đặt tên tệp dễ nhận biết, tránh thông tin cá nhân không cần thiết.": {
+    "en": "Use an identifiable filename without unnecessary personal information.",
+    "zh": "文件名应便于识别，避免写入不必要的个人信息。",
+    "ko": "파일 이름은 알아보기 쉽게 정하고 불필요한 개인정보는 넣지 마세요.",
+    "ja": "ファイルには分かりやすい名前を付け、不要な個人情報は含めないようにしましょう。"
+  },
+  "Hỏi bước tiếp theo và lưu thông tin đã gửi để đối chiếu.": {
+    "en": "Ask about the next step and keep a record of what was sent.",
+    "zh": "问清下一步安排，保留已发送的信息以便核对。",
+    "ko": "다음 단계를 물어보고 보낸 정보를 나중에 대조할 수 있도록 보관하세요.",
+    "ja": "次の手順を尋ね、後で照合できるように送信内容を保存しておきましょう。"
+  },
+  "Những dịp gặp nhau của người Minh Đức": {
+    "en": "When the Minh Đức team gets together",
+    "zh": "Minh Đức 团队相聚的时刻",
+    "ko": "Minh Đức 동료들이 함께하는 순간",
+    "ja": "Minh Đức の仲間が集うひととき"
+  },
+  "Một chiếc bánh sinh nhật, những hộp quà cuối năm và một buổi cầm chổi ngoài sân. Bộ ảnh tư liệu ghi lại ba dịp đồng nghiệp Minh Đức Vina ở bên nhau.": {
+    "en": "A birthday cake, year-end gifts and brooms in a courtyard. These photographs capture three occasions that brought Minh Đức Vina colleagues together.",
+    "zh": "一块生日蛋糕、年末的礼盒，还有院子里的扫帚。这组照片记录了 Minh Đức Vina 同事们相聚的三个场景。",
+    "ko": "생일 케이크와 송년 선물, 마당의 빗자루. 세 장면을 담은 사진으로 Minh Đức Vina 동료들이 함께한 시간을 돌아봅니다.",
+    "ja": "誕生日のケーキ、年末の贈り物、庭先のほうき。記録写真から、Minh Đức Vina の仲間が集まった三つの場面を振り返ります。"
+  },
+  "Khoảnh khắc chụp ảnh chung trong buổi tất niên của Minh Đức Vina.": {
+    "en": "The Minh Đức Vina team gathers for a photograph at its year-end party.",
+    "zh": "Minh Đức Vina 团队在年末聚会上合影留念。",
+    "ko": "송년회에서 한자리에 모인 Minh Đức Vina 동료들.",
+    "ja": "Minh Đức Vina の年末の集いで撮った一枚。"
+  },
+  "Một chiếc bánh để cùng mừng sinh nhật": {
+    "en": "Sharing a birthday cake",
+    "zh": "一起分享生日蛋糕",
+    "ko": "생일 케이크 앞에 모이다",
+    "ja": "ケーキを囲んで誕生日を祝う"
+  },
+  "Ở buổi sinh nhật, mọi người đứng sát lại phía sau chiếc bàn nhỏ bày bánh và hoa quả. Một vài đồng nghiệp giơ tay làm hình trái tim. Bức hình chụp cùng những túi quà ghi lại một khoảnh khắc khác của buổi gặp ngay trong căn phòng quen thuộc.": {
+    "en": "At the birthday gathering, colleagues draw close behind a small table set with cake and fruit. A few make hearts with their hands. Another picture, with gift bags in hand, catches a second moment in the same room.",
+    "zh": "生日会上，大家在摆着蛋糕和水果的小桌旁靠拢，几位同事举手比出爱心。另一张手提礼袋的照片，留下了同一间屋子里的另一个瞬间。",
+    "ko": "생일 모임에서는 케이크와 과일을 놓은 작은 탁자 뒤로 동료들이 바짝 모였습니다. 손으로 하트를 만든 사람도 있습니다. 같은 방에서 선물 가방을 들고 찍은 또 한 장의 사진에는 모임의 다른 순간이 담겼습니다.",
+    "ja": "誕生日の集まりでは、ケーキと果物の並ぶ小さなテーブルの後ろに皆が寄り合い、手でハートを作る人の姿もあります。同じ部屋で手提げの贈り物を持って撮った一枚には、その日の別の表情が残っています。"
+  },
+  "Đồng nghiệp đứng cạnh nhau với những túi quà giấy bên bàn sinh nhật.": {
+    "en": "Colleagues hold paper gift bags beside the birthday table.",
+    "zh": "同事们手提纸质礼袋，站在生日餐桌旁。",
+    "ko": "생일상 곁에서 종이 선물 가방을 들고 선 동료들.",
+    "ja": "誕生日のテーブルを囲み、紙の手提げ袋を持って並ぶ仲間たち。"
+  },
+  "Những túi quà trong buổi sinh nhật cùng đồng nghiệp.": {
+    "en": "Gift bags at the team birthday gathering.",
+    "zh": "同事生日会上的礼袋。",
+    "ko": "동료들과 함께한 생일 모임의 선물 가방.",
+    "ja": "仲間と祝った誕生日の贈り物。"
+  },
+  "Trên sân khấu buổi tất niên": {
+    "en": "On the year-end stage",
+    "zh": "年末聚会的舞台上",
+    "ko": "송년회 무대에서",
+    "ja": "年末の集いのステージで"
+  },
+  "Nhóm người cầm quà trên sân khấu, phía trước có nhiều hộp quà màu đỏ.": {
+    "en": "People hold gifts on stage, with red boxes arranged in front of them.",
+    "zh": "大家在舞台上手持礼物，前面摆着红色礼盒。",
+    "ko": "선물을 든 사람들 앞으로 붉은 상자가 놓인 무대.",
+    "ja": "舞台で贈り物を手にした人々の前に赤い箱が並ぶ。"
+  },
+  "Trao quà trong buổi tất niên.": {
+    "en": "A moment from the year-end gift presentation.",
+    "zh": "年末聚会的赠礼环节。",
+    "ko": "송년회에서 선물을 나누는 모습.",
+    "ja": "年末の集いでの贈り物の場面。"
+  },
+  "Một buổi cùng làm việc ngoài sân": {
+    "en": "Working together in the courtyard",
+    "zh": "在院子里一起劳动",
+    "ko": "마당에서 함께한 작업",
+    "ja": "庭先での共同作業"
+  },
+  "Bức ảnh cuối được chụp ngoài trời. Trước dãy nhà và sườn núi, người trong nhóm vẫn cầm chổi, hót rác và dụng cụ khi đứng vào hàng chụp hình. Bộ ảnh khép lại ở một hoạt động thường ngày, khác với khung cảnh bàn tiệc trong hai phần trước.": {
+    "en": "The last photograph takes us outdoors. In front of a low building and a hillside, the group lines up, still holding brooms, dustpans and other tools. The photo essay closes on a shared everyday task after the two celebrations.",
+    "zh": "最后一张照片转到户外。在房屋和山坡前，大家排好队，手里还拿着扫帚、簸箕等工具。两次聚会之后，这组照片以一次共同劳动的日常场景收尾。",
+    "ko": "마지막 사진은 야외에서 찍었습니다. 뒤로는 낮은 건물과 산비탈이 보이고, 한 줄로 모인 사람들의 손에는 아직 빗자루와 쓰레받기 같은 도구가 들려 있습니다. 두 번의 축하 모임에 이어 일상의 일을 함께하는 장면으로 사진 이야기가 끝납니다.",
+    "ja": "最後の一枚は屋外です。建物と山の斜面を背に、皆がほうきやちり取りなどの道具を手にしたまま並んでいます。二つのお祝いの場面に続き、日々の共同作業を写した写真で締めくくります。"
+  },
+  "Cả nhóm cầm dụng cụ vệ sinh trước tòa nhà, phía sau là sườn núi.": {
+    "en": "The group holds cleaning tools outside a building with a hillside behind it.",
+    "zh": "一行人拿着清洁工具站在屋前，后方是山坡。",
+    "ko": "산비탈이 보이는 건물 앞에서 청소 도구를 든 사람들.",
+    "ja": "背後に山が見える建物の前で清掃用具を持つ人々。"
+  },
+  "Ảnh tư liệu hoạt động cộng đồng của Minh Đức Vina.": {
+    "en": "From Minh Đức Vina’s community activity photo archive.",
+    "zh": "来自 Minh Đức Vina 的社区活动影像资料。",
+    "ko": "Minh Đức Vina의 지역사회 활동 자료 사진.",
+    "ja": "Minh Đức Vina の地域活動の記録から。"
+  },
+  "Thông tin nên đặt cạnh nhau khi so sánh việc làm": {
+    "en": "What to compare side by side when choosing a job",
+    "zh": "比较工作机会时宜并列查看的信息",
+    "ko": "일자리를 비교할 때 나란히 살펴볼 정보",
+    "ja": "仕事を比較するときに並べて確認したい情報"
+  },
+  "Thông tin cần xác minh": {
+    "en": "What to verify",
+    "zh": "需要核实的信息",
+    "ko": "확인할 정보",
+    "ja": "確認する情報"
+  },
+  "Tình huống và câu hỏi": {
+    "en": "Scenario and question",
+    "zh": "情境与提问",
+    "ko": "상황과 질문",
+    "ja": "場面と質問"
+  },
+  "Ca làm và thời gian đi lại": {
+    "en": "Shift and commute",
+    "zh": "班次和通勤时间",
+    "ko": "근무조와 통근시간",
+    "ja": "勤務シフトと通勤時間"
+  },
+  "Khi hai nơi có cùng giờ bắt đầu, hỏi rõ giờ kết thúc và tính thời gian đi lại đến từng nơi.": {
+    "en": "If the two jobs start at the same time, ask when each shift ends and work out the commute to each site.",
+    "zh": "如果两份工作的上班时间相同，请问清各自的下班时间，并计算前往各工作地点所需的时间。",
+    "ko": "두 곳의 출근 시간이 같다면 각각 퇴근 시간을 물어보고 통근에 걸리는 시간을 계산하세요.",
+    "ja": "始業時刻が同じなら、それぞれの終業時刻を確認し、各職場までの通勤時間を見積もりましょう。"
+  },
+  "Khoản cố định và phụ cấp": {
+    "en": "Fixed pay and allowances",
+    "zh": "固定收入和津贴",
+    "ko": "고정 급여와 수당",
+    "ja": "固定給と手当"
+  },
+  "Nếu tin chỉ nêu tổng thu nhập, hỏi khoản nào cố định và phụ cấp nào phụ thuộc số ngày công.": {
+    "en": "If the posting only gives total earnings, ask what is fixed and which allowances depend on days worked.",
+    "zh": "如果招聘信息只列出总收入，请问清哪些是固定收入，哪些津贴取决于实际出勤天数。",
+    "ko": "공고에 총액만 적혀 있다면 어떤 항목이 고정이고 어떤 수당이 실제 근무일수에 따라 달라지는지 물어보세요.",
+    "ja": "求人票に総収入しか載っていない場合は、固定の項目と、出勤日数によって変わる手当を確認しましょう。"
+  },
+  "Giờ làm thêm": {
+    "en": "Overtime",
+    "zh": "加班时间",
+    "ko": "연장근로 시간",
+    "ja": "残業時間"
+  },
+  "Nếu một tin tính cả giờ làm thêm, xin ví dụ chỉ tính theo lịch bình thường để dễ so sánh.": {
+    "en": "If one posting includes overtime, ask for an example based on regular hours so the jobs are easier to compare.",
+    "zh": "如果其中一则招聘信息把加班算在内，请对方提供一个只按正常工时计算的例子，方便比较。",
+    "ko": "한 공고에 연장근로가 포함되어 있다면, 정규 근무시간만 기준으로 한 계산 예시를 요청해 비교하세요.",
+    "ja": "残業を含む求人がある場合は、通常の勤務時間だけで計算した例を示してもらうと比較しやすくなります。"
+  },
+  "Ví dụ giả định về tỷ lệ có mặt theo lịch hẹn": {
+    "en": "Hypothetical example of an appointment attendance rate",
+    "zh": "按预约到场率的假设示例",
+    "ko": "예약 대비 방문율 가상 예시",
+    "ja": "予約に対する来訪率の仮定例"
+  },
+  "Chỉ số": {
+    "en": "Metric",
+    "zh": "指标",
+    "ko": "지표",
+    "ja": "指標"
+  },
+  "Cách đọc": {
+    "en": "How to read it",
+    "zh": "解读方法",
+    "ko": "해석",
+    "ja": "読み方"
+  },
+  "Lịch hẹn đã xác nhận": {
+    "en": "Confirmed appointments",
+    "zh": "已确认的预约",
+    "ko": "확정된 예약",
+    "ja": "確定した予約"
+  },
+  "40 lịch trong cùng kỳ.": {
+    "en": "40 appointments in the same period.",
+    "zh": "同一统计期间有 40 个预约。",
+    "ko": "같은 집계 기간에 예약 40건.",
+    "ja": "同じ集計期間内に40件の予約。"
+  },
+  "Đã ghi nhận có mặt": {
+    "en": "Recorded as present",
+    "zh": "已记录到场",
+    "ko": "방문 확인",
+    "ja": "来訪を確認済み"
+  },
+  "28 người đã đến theo lịch.": {
+    "en": "28 people attended as scheduled.",
+    "zh": "28 人按预约到场。",
+    "ko": "28명이 예약 일정에 맞춰 방문했습니다.",
+    "ja": "28人が予約どおりに来訪しました。"
+  },
+  "Tỷ lệ có mặt": {
+    "en": "Attendance rate",
+    "zh": "到场率",
+    "ko": "방문율",
+    "ja": "来訪率"
+  },
+  "28 ÷ 40 = 70%.": {
+    "en": "28 ÷ 40 = 70%.",
+    "zh": "28 ÷ 40 = 70%。",
+    "ko": "28 ÷ 40 = 70%.",
+    "ja": "28 ÷ 40 = 70%。"
+  },
+  "Chưa ghi nhận có mặt": {
+    "en": "Not yet recorded as present",
+    "zh": "尚无到场记录",
+    "ko": "아직 방문 미확인",
+    "ja": "来訪記録なし"
+  },
+  "12 người chưa được ghi nhận có mặt. Số này không cho biết họ đã từ chối, đổi lịch hay bỏ việc.": {
+    "en": "12 people have no attendance record. This does not tell you whether they declined, rescheduled or left the job.",
+    "zh": "有 12 人尚无到场记录。这一数字不能说明他们是否拒绝、改约或离职。",
+    "ko": "12명은 아직 방문 기록이 없습니다. 이 숫자만으로는 이들이 거절했는지, 일정을 변경했는지, 일을 그만두었는지 알 수 없습니다.",
+    "ja": "12人の来訪は記録されていません。この数字だけでは、辞退したのか、日程を変更したのか、仕事を辞めたのかは分かりません。"
+  },
+  "Tập thể Minh Đức Vina chụp ảnh trước phông sân khấu tiệc tất niên.": {
+    "en": "Minh Đức Vina colleagues pose in front of the stage at their year-end gathering.",
+    "zh": "Minh Đức Vina 的同事们在年末聚会的舞台前合影。",
+    "ko": "송년회 무대 앞에서 함께 사진을 찍은 Minh Đức Vina 동료들.",
+    "ja": "年末の集いで、ステージを背に集合写真を撮る Minh Đức Vina の仲間たち。"
+  },
+  "Từ chỗ chụp ảnh chung có thể thấy cả căn phòng và phông sân khấu phía sau các đồng nghiệp. Đến phần trao quà, góc máy gần hơn cho thấy từng chiếc hộp và túi giấy. Hai góc nhìn của buổi tất niên ghi lại cả tập thể lẫn những người nhận quà.": {
+    "en": "The wide group portrait shows the room and the stage backdrop behind the team. A closer view during the gift presentation picks out individual boxes and paper bags. Together the two pictures capture the whole team and the colleagues receiving gifts.",
+    "zh": "集体照用远景拍下了整个房间，也能看到同事们身后的舞台背景。到了赠礼环节，近景则拍清了一个个礼盒和纸袋。两张照片分别留下了团队全貌和接过礼物的同事。",
+    "ko": "단체 사진에는 동료들이 모인 공간과 뒤편 무대 배경이 함께 담겼습니다. 선물을 건네는 장면은 더 가까이서 찍어 상자와 종이 가방 하나하나가 보입니다. 두 사진에서 팀 전체와 선물을 받은 동료들의 모습을 각각 볼 수 있습니다.",
+    "ja": "集合写真には、仲間たちの後ろにある舞台と会場の様子が広く写っています。贈り物を手渡す場面を近くから捉えた一枚では、箱や紙袋の一つひとつまで見えます。同じ集いを二つの距離から写し、チーム全体と贈り物を受け取った人たちの姿を残しています。"
   }
 }

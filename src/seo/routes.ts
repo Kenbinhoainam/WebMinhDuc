@@ -1,6 +1,7 @@
 import {company} from '../company';
 import {jobs} from '../jobs-data';
 import {educationPrograms} from '../education-data';
+import {articles, articleHref} from '../editorial-data';
 
 export const ORIGIN = 'https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site';
 type Page = {path:string; title:string; description:string};
@@ -23,9 +24,7 @@ export const pages:Page[] = [
  page('/saved-jobs','Việc làm đã lưu','Xem các vị trí bạn đã đánh dấu trên thiết bị và tiếp tục tìm hiểu cơ hội việc làm.'),
  page('/careers','Gia nhập Minh Đức','Khám phá môi trường làm việc và các cơ hội nội bộ minh họa tại Minh Đức.'),
  page('/news','Tin tức và cẩm nang','Đọc những gợi ý về tìm việc, tuyển dụng và nhân sự dành cho người lao động và doanh nghiệp.'),
- ...[
- ['ho-so-xin-viec','Chuẩn bị hồ sơ xin việc tại nhà máy'],['nhu-cau-tuyen-dung','Lập kế hoạch bổ sung lao động'],['chon-cong-viec-phu-hop','Những câu hỏi trước khi nhận việc'],['thong-tin-tuyen-dung-minh-bach','Thông tin tuyển dụng rõ ràng'],['don-tiep-lao-dong-moi','Chuẩn bị ngày đầu làm việc'],['an-toan-thong-tin-khi-tim-viec','An toàn thông tin khi tìm việc']
- ].map(([slug,title])=>page('/news/'+slug,title,`Cẩm nang Minh Đức: ${title.toLowerCase()} với những gợi ý thực tế cho hành trình việc làm.`)),
+ ...articles.map(article=>page(articleHref(article.slug),article.seo?.title ?? article.title,article.seo?.description ?? article.excerpt)),
  page('/events','Sự kiện','Khám phá các chương trình kết nối việc làm và trao đổi nhân lực minh họa của Minh Đức.'),
  ...[['ngay-hoi-ket-noi-viec-lam','Ngày hội kết nối việc làm'],['toa-dam-ke-hoach-nhan-luc','Trao đổi kế hoạch nhân lực'],['hanh-trang-tim-viec','Hành trang tìm việc']].map(([slug,title])=>page('/events/'+slug,title,`Tìm hiểu nội dung chương trình minh họa ${title.toLowerCase()} cùng Minh Đức.`)),
  page('/partners','Đối tác','Tìm hiểu về kết nối và định hướng đồng hành cùng đối tác của Minh Đức.'),

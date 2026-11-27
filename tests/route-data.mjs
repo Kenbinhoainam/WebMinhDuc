@@ -10,6 +10,7 @@ const bundle = await build({
       export {pages, ORIGIN} from './src/seo/routes';
       export {jobs} from './src/jobs-data';
       export {educationPrograms} from './src/education-data';
+      export {articles, articleHref} from './src/editorial-data';
       export {localizedSeo} from './src/seo/metadata';
       export {loadLocale} from './src/i18n-runtime/catalog';
     `,
@@ -19,14 +20,16 @@ const bundle = await build({
 });
 for (const input of Object.keys(bundle.metafile.inputs)) {
   assert.doesNotMatch(input, /(?:node_modules|\.tsx$|\.css$)/, `data must not import UI: ${input}`);
+  assert.doesNotMatch(input, /editorial-content/, `metadata must not import article bodies: ${input}`);
 }
-const {pages, ORIGIN, jobs, educationPrograms, localizedSeo, loadLocale} = await import('data:text/javascript;base64,' + Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+const {pages, ORIGIN, jobs, educationPrograms, articles, articleHref, localizedSeo, loadLocale} = await import('data:text/javascript;base64,' + Buffer.from(bundle.outputFiles[0].text).toString('base64'));
 const expectedPaths = [
   ...jobs.map(job => '/jobs/' + job.slug),
+  ...articles.map(article => articleHref(article.slug)),
   ...educationPrograms.map(program => '/education/' + program.slug),
 ];
-const dynamicPages = pages.filter(page => /^\/(jobs|education)\//.test(page.path));
-assert.deepEqual(dynamicPages.map(page => page.path), expectedPaths, 'every finite job/program has exactly one metadata route');
+const dynamicPages = pages.filter(page => /^\/(jobs|news|education)\//.test(page.path));
+assert.deepEqual(dynamicPages.map(page => page.path), expectedPaths, 'every finite job/article/program has exactly one metadata route');
 assert.equal(new Set(pages.map(page => page.path)).size, pages.length, 'no duplicate metadata URLs');
 
 await Promise.all(['en','zh'].map(loadLocale));
@@ -50,4 +53,4 @@ for (const locale of ['en', 'zh', 'ko', 'ja']) {
     assert.ok(merged[page.description], `${locale}: translated metadata description for ${page.path}`);
   }
 }
-console.log(`PASS ${dynamicPages.length} finite job/program routes, unique URLs, existing translated metadata keys and UI-free SSR data imports`);
+console.log(`PASS ${dynamicPages.length} finite job/article/program routes, unique URLs, translated metadata and body/UI-free SSR data imports`);

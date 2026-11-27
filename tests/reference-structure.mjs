@@ -18,6 +18,7 @@ try {
   const components = await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
   const {LocaleProvider, localeBase, loadLocale, jobs} = components;
   const cases = [['/', '/', 'Home'], ['/about-us', '/about-us', 'AboutPage'], ['/services', '/services', 'ServicesPage'], ...['labor-supply','labor-leasing','recruitment','college-admissions','hr-consulting'].map(slug=>[`/services/${slug}`, '/services/:slug', 'ServicePage']), ['/education','/education','EducationPage'], ...components.educationPrograms.map(program=>[`/education/${program.slug}`,'/education/:slug','EducationDetailPage']), ['/news', '/news', 'NewsPage'], ['/news?page=2', '/news', 'NewsPage'], ['/news/ho-so-xin-viec', '/news/:slug', 'ArticlePage'], ['/events/ngay-hoi-ket-noi-viec-lam', '/events/:slug', 'EventPage'], ['/jobs', '/jobs', 'JobsPage'], ['/careers', '/careers', 'CareersPage'], [`/jobs/${jobs[0].slug}`, '/jobs/:slug', 'JobDetailPage'], ['/contact', '/contact', 'ContactPage'], ['/consultation', '/consultation', 'ConsultationPage']];
+  let vietnameseHomeHeadlines;
   for (const locale of ['vi', 'en', 'zh', 'ko', 'ja']) {
     await loadLocale(locale);
     const base = localeBase(locale);
@@ -70,16 +71,35 @@ try {
         assert.ok(doc.querySelector('.section-home-partners .partners-track'));
         assert.equal(doc.querySelectorAll('.partners-strip').length,1);
         assert.ok(doc.querySelector('#business-contact .contact-form'));
-        assert.ok(doc.querySelector('.home-editorial-lead a h3'));
-        const illustrated = [...doc.querySelectorAll('.home-editorial-layout img')];
-        assert.equal(illustrated.length, 2);
-        for (const photo of illustrated) {
-          const link = photo.closest('a');
-          assert.ok(link?.getAttribute('href').startsWith(base + '/news/'), 'each home thumbnail opens its article');
-          assert.ok(doc.getElementById(link.getAttribute('aria-labelledby')).textContent.trim(), 'article link is named by its headline');
-          assert.equal(link.closest('article,li').querySelectorAll('a[href]').length,1,'photo and headline share one tab stop');
+        const news=doc.querySelector('.home-editorial-layout');
+        const lead=news.querySelector(':scope > .home-editorial-lead a');
+        const desks=[...news.querySelectorAll('.home-editorial-desks > .home-editorial-list')];
+        assert.ok(lead.querySelector('h3') && lead.querySelector('img'), 'photo and headline open the lead');
+        assert.deepEqual(desks.map(desk=>desk.querySelector('h3 a').getAttribute('href')),['workers','employers','hr'].map(category=>base+'/news?category='+category+'#news-listings'));
+        const destinations=[lead.getAttribute('href')];
+        for (const desk of desks) {
+          const links=[...desk.querySelectorAll('li a')];
+          assert.equal(links.length,2,'each of the three topics pairs an illustrated story with another headline');
+          for (const link of links) {
+            const headline=doc.getElementById(link.getAttribute('aria-labelledby'));
+            const date=link.querySelector('time[datetime]');
+            assert.ok(headline.compareDocumentPosition(date) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'headline comes before its publication date');
+            destinations.push(link.getAttribute('href'));
+          }
         }
-        assert.equal(doc.querySelectorAll('.home-editorial-list').length,3);
+        assert.equal(new Set(destinations).size,7,'lead plus two distinct stories for each topic');
+        const titles=[...news.querySelectorAll('a[aria-labelledby]')].map(link=>doc.getElementById(link.getAttribute('aria-labelledby')).textContent.trim());
+        if (locale==='vi') vietnameseHomeHeadlines=titles;
+        else assert.ok(titles.every((title,index)=>title && title!==vietnameseHomeHeadlines[index]),label+' all home headlines are localized');
+        const illustrated=[...news.querySelectorAll('img')];
+        assert.equal(illustrated.length,4,'lead and all three topics display their own article image');
+        assert.equal(new Set(illustrated.map(photo=>photo.getAttribute('src'))).size,illustrated.length,'each picture has a distinct story');
+        for (const photo of illustrated) {
+          const link=photo.closest('a');
+          assert.ok(link?.getAttribute('href').startsWith(base+'/news/'));
+          assert.ok(doc.getElementById(link.getAttribute('aria-labelledby')).textContent.trim());
+          assert.equal(link.closest('article,li').querySelectorAll('a[href]').length,1);
+        }
         assert.ok(doc.querySelector('.home-film-feature .home-film-poster'));
         assert.equal(doc.querySelectorAll('video').length,1,'gallery video loads only when requested');
       }
