@@ -1,9 +1,12 @@
-import {useId, useRef, useState, type PointerEvent} from 'react';
+import {useEffect, useId, useRef, useState, type CSSProperties, type PointerEvent} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight, ChevronLeft, ChevronRight, GraduationCap, Network, Pause, Play} from 'lucide-react';
 import {services, type Service} from './pages/info/data';
-import {adjacentRailOffset, advanceHomeRail, useHomeCarousel} from './useHomeCarousel';
+import {adjacentRailOffset, advanceHomeRail, slideRailTo, useHomeCarousel} from './useHomeCarousel';
 import './service-showcase.css';
+
+const serviceSlideMs = 375;
+const serviceMotionStyle = {'--service-slide-time': serviceSlideMs + 'ms'} as CSSProperties;
 
 function ServiceCard({service}: {service: Service}) {
   const id = useId();
@@ -31,7 +34,7 @@ function ServiceCard({service}: {service: Service}) {
 }
 
 export function ServiceDirectory() {
-  return <nav className="service-card-grid" aria-label="Danh sách giải pháp">
+  return <nav className="service-card-grid" style={serviceMotionStyle} aria-label="Danh sách giải pháp">
     {services.map(service=><ServiceCard key={service.slug} service={service}/>)}
   </nav>;
 }
@@ -45,20 +48,48 @@ export function ServiceCards({exclude}: {exclude?: string}) {
   const grab = useRef<Grab | null>(null);
   const suppressClick = useRef(false);
   const [paused,setPaused] = useState(false);
-  useHomeCarousel(frame, () => advanceHomeRail(rail.current), '.service-gallery', {paused});
+  const cancelSlide = useRef<(() => void) | undefined>(undefined);
+  function interruptSlide() {
+    cancelSlide.current?.();
+    cancelSlide.current = undefined;
+  }
 
-  const move = (backwards: boolean) => {
+  function move(backwards: boolean) {
     const track = rail.current;
-    if (!track) return;
+    if (!track || track.scrollWidth <= track.clientWidth + 1) return;
+    interruptSlide();
     const max = track.scrollWidth - track.clientWidth;
-    const wrap = backwards ? track.scrollLeft < 2 : track.scrollLeft >= max - 2;
-    const left = wrap ? (backwards ? max : 0) : adjacentRailOffset(track, backwards);
-    const smooth = !wrap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    track.scrollTo({left, behavior: smooth ? 'smooth' : 'instant'});
-  };
+    const wrap = backwards ? track.scrollLeft <= 2 : track.scrollLeft >= max - 2;
+    const target = wrap ? (backwards ? max : 0) : adjacentRailOffset(track,backwards);
+    if (wrap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      track.scrollTo({left:target, behavior:'instant'});
+    } else {
+      cancelSlide.current = slideRailTo(track,target,serviceSlideMs);
+    }
+  }
+
+  useHomeCarousel(frame, () => {
+    interruptSlide();
+    cancelSlide.current = advanceHomeRail(rail.current,serviceSlideMs);
+    return cancelSlide.current;
+  }, '.service-gallery', {intervalMs:4500, paused});
+  useEffect(()=>{
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const hidden = () => {if (document.hidden) interruptSlide();};
+    preference.addEventListener('change',interruptSlide);
+    document.addEventListener('visibilitychange',hidden);
+    window.addEventListener('resize',interruptSlide);
+    return ()=>{
+      preference.removeEventListener('change',interruptSlide);
+      document.removeEventListener('visibilitychange',hidden);
+      window.removeEventListener('resize',interruptSlide);
+      interruptSlide();
+    };
+  },[exclude]);
 
   function startGrab(event: PointerEvent<HTMLDivElement>) {
     if (event.isPrimary === false) return;
+    interruptSlide();
     suppressClick.current = false;
     if (event.pointerType === 'touch' || event.pointerType === 'pen') {
       setPaused(true);
@@ -102,8 +133,10 @@ export function ServiceCards({exclude}: {exclude?: string}) {
     }
   }
 
-  return <div ref={frame} className="service-gallery" data-user-paused={paused}>
+  return <div ref={frame} className="service-gallery" style={serviceMotionStyle} data-user-paused={paused}>
     <div className="service-gallery-track" id={id} ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Danh sách giải pháp"
+      onPointerEnter={event=>{if (event.pointerType !== 'touch') interruptSlide();}}
+      onWheel={interruptSlide} onKeyDownCapture={interruptSlide} onFocusCapture={interruptSlide}
       onPointerDown={startGrab} onPointerMove={drag} onPointerUp={endGrab} onPointerCancel={endGrab} onLostPointerCapture={endGrab}
       onPointerLeave={event=>{if (!grab.current?.dragging) endGrab(event);}}
       onClickCapture={event=>{
@@ -114,10 +147,10 @@ export function ServiceCards({exclude}: {exclude?: string}) {
           suppressClick.current = false;
         }
       }}>
-      {services.filter(service => service.slug !== exclude).map(service=><ServiceCard key={service.slug} service={service}/>)}
+      {services.filter(service=>service.slug!==exclude).map(service=><ServiceCard key={service.slug} service={service}/>)}
     </div>
     <button className="service-gallery-rotation" type="button" aria-controls={id}
-      aria-label={paused?'Phát chuyển động':'Tạm dừng chuyển động'} onClick={()=>setPaused(!paused)}>
+      aria-label={paused?'Phát chuyển động':'Tạm dừng chuyển động'} onClick={()=>{interruptSlide();setPaused(!paused);}}>
       {paused?<Play size={17} aria-hidden="true"/>:<Pause size={17} aria-hidden="true"/>}
     </button>
     <div className="service-gallery-controls">

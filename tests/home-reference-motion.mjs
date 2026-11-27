@@ -21,9 +21,9 @@ try {
   assert.equal(intro.querySelector('.home-introduction-copy').dataset.reveal,'left');
   assert.equal(intro.querySelector('.home-team-portrait').dataset.reveal,'right');
   assert.equal(intro.querySelector('.home-about-action').getAttribute('href'),'/about-us#profile');
-  const metrics=[...intro.querySelectorAll('.home-figures > [data-reveal]')];
-  assert.deepEqual(metrics.map(x=>x.getAttribute('data-reveal-delay-ms')),['90','150','210','270']);
-  assert.ok(metrics.every(x=>x.querySelector('.motion-content > .home-figure')));
+  const metrics=[...intro.querySelectorAll('.home-figures[data-count-group] > .home-figure')];
+  assert.equal(metrics.length,4);
+  assert.ok(metrics.every(x=>!x.hasAttribute('data-reveal') && x.querySelector('[data-count-to]')),'one shared counter timeline keeps every metric legible without individual reveal delays');
   assert.equal(doc.querySelector('.section-home-solution h2').closest('[data-reveal]').dataset.reveal,'zoom');
   assert.equal(doc.querySelectorAll('.partners-strip').length,1);
   const titles=[...doc.querySelectorAll('.service-gallery-card h3')].map(node=>node.textContent.trim());

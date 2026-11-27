@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import {ArrowRight, ArrowUpRight} from 'lucide-react';
 import {company} from './company';
-import {AnimatedNumber, RevealFrame} from './motion';
+import {AnimatedNumber, AnimatedNumberGroup, RevealFrame} from './motion';
 import PartnersStrip from './PartnersStrip';
 import {useTranslation} from './i18n';
 import {ContactForm} from './Contact';
@@ -32,11 +32,11 @@ function About() {
           <img src="/assets/minhduc-v16/recruitment-field.webp" sizes="(max-width: 639px) 72vw, (max-width: 1023px) 36vw, 460px" alt="Nhân viên Minh Đức cầm hồ sơ tuyển dụng tại hiện trường" loading="lazy" decoding="async"/>
         </RevealFrame>
       </div>
-      <div className="home-figures" role="group" aria-label="Các chỉ số kết nối">
-        {metrics.map((metric,index)=><RevealFrame key={metric.label} delayMs={300 + index * 200}>
-          <div className="home-figure"><strong><AnimatedNumber value={metric.number} suffix={metric.suffix}/></strong><span>{metric.label}</span></div>
-        </RevealFrame>)}
-      </div>
+      <AnimatedNumberGroup className="home-figures" aria-label="Các chỉ số kết nối">
+        {metrics.map(metric=><div className="home-figure" key={metric.label}>
+          <strong><AnimatedNumber value={metric.number} suffix={metric.suffix}/></strong><span>{metric.label}</span>
+        </div>)}
+      </AnimatedNumberGroup>
     </div>
   </section>;
 }
@@ -72,7 +72,7 @@ function BusinessContact() {
   });
   return <section id="business-contact" tabIndex={-1} aria-labelledby="business-heading" className="home-b2b-contact">
     <div className="home-content-width home-b2b-contact-layout">
-      <RevealFrame effect="left">
+      <RevealFrame effect="left" className="home-b2b-intro">
         <h2 id="business-heading" className="home-heading">Gửi nhu cầu nhân lực</h2>
         <p>{description}</p>
         <a className="home-b2b-phone" href={`tel:${company.tel}`}>{company.phone} <ArrowUpRight size={20} aria-hidden="true"/></a>

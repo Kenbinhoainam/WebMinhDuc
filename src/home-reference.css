@@ -20,7 +20,7 @@
 .home-team-portrait .motion-content,.home-team-portrait img {display:block;width:100%;height:100%;}
 .home-team-portrait img {object-fit:cover;object-position:50% 38%;}
 .home-figures {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(36px,4.8vw,78px);padding-top:clamp(22px,2.4vw,38px);border-top:1px solid var(--md-rule);}
-.home-figures>[data-reveal-frame]+[data-reveal-frame] {border-inline-start:1px solid var(--md-rule);padding-inline-start:clamp(15px,3vw,48px);}
+.home-figures>.home-figure+.home-figure {border-inline-start:1px solid var(--md-rule);padding-inline-start:clamp(15px,3vw,48px);}
 .home-figure {display:grid;gap:7px;}
 .home-figure strong {font:700 clamp(32px,3.35vw,58px)/1.1 var(--font-display,sans-serif);letter-spacing:-.04em;color:var(--md-blue);font-variant-numeric:tabular-nums;}
 .home-figure>span {color:var(--md-muted);font:500 clamp(15px,1.06vw,18px)/1.45 var(--font-body,sans-serif);}
@@ -36,6 +36,10 @@
 .home-b2b-contact-layout p {color:var(--md-muted);font-size:16px;line-height:1.68;}
 .home-b2b-phone {margin-top:12px;font-size:clamp(19px,1.8vw,29px);}
 .home-b2b-form {padding:clamp(20px,2.8vw,42px);background:var(--md-surface-soft);border-radius:16px;}
+/* Keep the v25 intro alongside the form only when the viewport has room to read it. */
+@media(min-width:1024px) and (min-height:700px){
+  .home-b2b-intro {position:sticky;top:130px;}
+}
 @media(min-width:640px) and (max-width:1023px){
   .home-content-width {width:calc(100% - 64px);}
   .home-introduction {grid-template-columns:1.35fr 1fr;gap:28px;}
@@ -48,7 +52,7 @@
   .home-introduction,.home-b2b-contact-layout {grid-template-columns:minmax(0,1fr);gap:30px;}
   .home-team-portrait {width:min(72vw,300px);}
   .home-figures {grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0;}
-  .home-figures>[data-reveal-frame]:nth-child(odd) {padding-inline-start:0;border-inline-start:0;}
-  .home-figures>[data-reveal-frame]:nth-child(even) {padding-inline-start:16px;}
+  .home-figures>.home-figure:nth-child(odd) {padding-inline-start:0;border-inline-start:0;}
+  .home-figures>.home-figure:nth-child(even) {padding-inline-start:16px;}
   .home-b2b-form {padding:20px 14px;}
 }

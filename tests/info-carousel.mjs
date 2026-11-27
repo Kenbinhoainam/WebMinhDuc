@@ -14,9 +14,15 @@ try{
  window.matchMedia = query => query.includes('reduced-motion') ? reducedMotion : {matches:false,addEventListener(){},removeEventListener(){}};
  const observers=[];globalThis.IntersectionObserver=class{constructor(cb){this.cb=cb;observers.push(this)}observe(el){this.target=el}disconnect(){}};
  const timers = new Map();
+ const callbacks = new Map();
  let nextTimer = 0;
- window.setInterval = (callback, delay) => {timers.set(++nextTimer, delay);return nextTimer;};
- window.clearInterval = id => timers.delete(id);
+ window.setInterval = (callback, delay) => {
+   const id=++nextTimer;
+   timers.set(id,delay);
+   callbacks.set(id,callback);
+   return id;
+ };
+ window.clearInterval = id => {timers.delete(id);callbacks.delete(id);};
  const React=await import('react');const {act}=React;const {createRoot}=await import('react-dom/client');const {MemoryRouter,Routes,Route,useNavigate}=await import('react-router-dom');const {ServicePage,ContactContext,getDemoSubmissions}=await import(pathToFileURL(bundle).href);const root=createRoot(document.getElementById('root'));
  let navigate,requestedService;
  function VisitService(){
@@ -35,10 +41,78 @@ try{
  assert.equal(timers.size, 0, 'no rail advances before it is visible');
  for (const rail of rails) {
    assert.ok(rail.matches('[data-auto-rail][role="region"][tabindex="0"][aria-label]'));
-   Object.defineProperties(rail, {clientWidth:{value:390},scrollWidth:{value:1170}});
+   Object.defineProperties(rail, {clientWidth:{value:780},scrollWidth:{value:rail.children.length*390}});
    await act(() => ownObservers.find(observer => observer.target === observedSurface(rail)).cb([{target:rail,isIntersecting:true,intersectionRatio:1}]));
  }
- assert.deepEqual([...timers.values()], [6000, 6000]);
+ assert.deepEqual([...timers.values()], [4500, 6000], 'only services use the faster reading interval');
+ for (const child of serviceRail.children) {
+   Object.defineProperty(child,'offsetLeft',{get:()=>[...serviceRail.children].indexOf(child)*390});
+ }
+ const offsets=[];
+ serviceRail.scrollTo=({left,behavior})=>{offsets.push([left,behavior]);serviceRail.scrollLeft=left;};
+ const links = [...serviceRail.querySelectorAll('a')];
+ const leading = () => serviceRail.children[Math.round(serviceRail.scrollLeft/390)].querySelector('a');
+ const gallery=serviceRail.closest('.service-gallery');
+ assert.equal(gallery.style.getPropertyValue('--service-slide-time'),'375ms');
+ const tickService = () => callbacks.get([...timers].find(([,delay])=>delay===4500)[0])();
+ const frames = new Map();
+ let time=1000, nextFrame=0;
+ const clock=Object.getOwnPropertyDescriptor(performance,'now');
+ Object.defineProperty(performance,'now',{configurable:true,value:()=>time});
+ const raf=globalThis.requestAnimationFrame, caf=globalThis.cancelAnimationFrame;
+ globalThis.requestAnimationFrame=callback=>{frames.set(++nextFrame,callback);return nextFrame;};
+ globalThis.cancelAnimationFrame=id=>frames.delete(id);
+ function advanceTime(ms) {
+   time+=ms;
+   const next=[...frames.values()];
+   frames.clear();
+   for(const fn of next) fn(time);
+ }
+ try {
+   const step = async (start,end,trigger) => {
+     await act(trigger);
+     assert.equal(serviceRail.scrollLeft,start,'the step begins from the current reading position');
+     assert.equal(frames.size,1);
+     advanceTime(187.5);
+     assert.equal(serviceRail.scrollLeft,start+(end-start)*.875,'auto, buttons and wrap share cubic ease-out');
+     advanceTime(187.5);
+     assert.equal(serviceRail.scrollLeft,end,'the slide finishes at 375 ms');
+     assert.equal(frames.size,0);
+     assert.equal(serviceRail.style.scrollSnapType,'');
+   };
+   await step(0,390,tickService);
+   await step(390,780,()=>controls[1].click());
+   assert.equal(leading(),links[2]);
+   await step(780,390,tickService);
+   assert.equal(leading(),links[1],'auto reverses one card at the end of the track');
+   await step(390,0,tickService);
+   await step(0,390,tickService);
+   await step(390,0,()=>controls[0].click());
+   assert.equal(leading(),links[0]);
+   await act(()=>controls[0].click());
+   await act(()=>controls[1].click());
+   assert.deepEqual(offsets,[[780,'instant'],[0,'instant']],'wrapping never sweeps across all services');
+   assert.equal(frames.size,0);
+   assert.deepEqual([...serviceRail.querySelectorAll('a')],links,'wrap keeps every original link in reading order');
+   await act(tickService);
+   advanceTime(100);
+   await act(()=>gallery.dispatchEvent(new Event('pointerenter')));
+   const stopped=serviceRail.scrollLeft;
+   advanceTime(500);
+   assert.equal(serviceRail.scrollLeft,stopped,'reading on hover interrupts an in-flight slide');
+   await act(()=>gallery.dispatchEvent(new Event('pointerleave')));
+   await act(()=>controls[1].click());
+   advanceTime(70);
+   await act(()=>controls[0].click());
+   assert.equal(frames.size,1,'a rapid direction change supersedes the previous frame');
+   advanceTime(375);
+   assert.equal(serviceRail.scrollLeft,0);
+ } finally {
+   if(clock) Object.defineProperty(performance,'now',clock);
+   else delete performance.now;
+   globalThis.requestAnimationFrame=raf;
+   globalThis.cancelAnimationFrame=caf;
+ }
  await act(() => serviceRail.focus());
  assert.equal(timers.size, 1, 'reading one track pauses only that track');
  await act(() => serviceRail.blur());
@@ -50,12 +124,11 @@ try{
  await act(() => {reducedMotion.matches=true;reducedMotion.dispatchEvent(new Event('change'));});
  assert.equal(timers.size, 0, 'reduced motion stops both tracks immediately');
 
- const offsets=[];
- serviceRail.scrollTo=({left,behavior})=>{offsets.push([left,behavior]);serviceRail.scrollLeft=left;};
- for (const [i,child] of [...serviceRail.children].entries()) Object.defineProperty(child,'offsetLeft',{value:i*390});
+ offsets.length=0;
  await act(()=>controls[1].click());await act(()=>controls[0].click());await act(()=>controls[0].click());
- assert.deepEqual(offsets,[[390,'instant'],[0,'instant'],[780,'instant']],'side controls step one card and wrap without motion when reduced');
- const gallery=serviceRail.closest('.service-gallery');
+ assert.deepEqual(offsets,[[390,'instant'],[0,'instant'],[780,'instant']],'normal steps and wrap respect reduced motion');
+ assert.equal(leading(),links[2],'the previous button returns to the last group');
+
  const reportGalleryVisible=()=>observers.findLast(observer=>observer.target===gallery).cb([{isIntersecting:true}]);
  await act(()=>{reducedMotion.matches=false;reducedMotion.dispatchEvent(new Event('change'));});
  const touch=new Event('pointerdown',{bubbles:true});Object.defineProperty(touch,'pointerType',{value:'touch'});
@@ -74,7 +147,7 @@ try{
    target.dispatchEvent(event);
    return event;
  }
- const firstCard=serviceRail.querySelector('a');
+ const firstCard=links[0];
  serviceRail.scrollLeft=0;
  await act(()=>pointer(firstCard,'pointerdown',{x:340,y:50}));
  await act(()=>pointer(firstCard,'pointermove',{x:337,y:54}));

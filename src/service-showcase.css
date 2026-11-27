@@ -1,5 +1,7 @@
 .service-gallery, .service-card-grid {
   --card-gap: clamp(14px,1.5vw,24px);
+  /* Linear time coordinates give the same cubic ease-out as slideRailTo. */
+  --service-slide-ease: cubic-bezier(.33333333,1,.66666667,1);
   min-width: 0;
   text-align: start;
 }
@@ -122,8 +124,8 @@
 @media(max-width:639px){.service-gallery-rotation {inset-inline:0 auto;bottom:0;}}
 @media(prefers-reduced-motion:reduce){.service-gallery-rotation {display:none;}}
 @media (hover:hover) and (pointer:fine) {
-  .service-gallery-track,.service-gallery-track .service-gallery-card > a {cursor:grab;user-select:none;}
-  .service-gallery-track[data-dragging=true],.service-gallery-track[data-dragging=true] .service-gallery-card > a {cursor:grabbing;}
+  .service-gallery-track,.service-gallery-track .service-gallery-card > a {cursor:grab;}
+  .service-gallery-track[data-dragging=true],.service-gallery-track[data-dragging=true] .service-gallery-card > a {cursor:grabbing;user-select:none;}
   .service-gallery-track:not([data-dragging=true]) .service-card-cta {cursor:pointer;}
   .service-gallery-card .service-card-detail {opacity:0;}
   .service-gallery-card a:is(:hover,:focus) .service-card-detail {opacity:1;}
@@ -132,7 +134,7 @@
   .service-gallery-card .service-card-detail {opacity:1;}
 }
 @media (hover:hover) and (prefers-reduced-motion:no-preference) {
-  .service-card-detail {transition:opacity .23s ease-out;}
-  .service-card-photo {transition:transform .45s ease-out;}
+  .service-card-detail {transition:opacity var(--service-slide-time) var(--service-slide-ease);}
+  .service-card-photo {transition:transform var(--service-slide-time) var(--service-slide-ease);}
   .service-gallery-card a:is(:hover,:focus) .service-card-photo {transform:scale(1.035);}
 }

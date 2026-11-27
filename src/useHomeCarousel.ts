@@ -156,13 +156,18 @@ export function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
 
 // Reverse at either end so a long strip never sweeps back through every card.
 const reverseRail = new WeakSet<HTMLElement>();
-export function advanceHomeRail(rail: HTMLElement | null) {
+export function advanceHomeRail(rail: HTMLElement | null, durationMs = 500) {
   if (!rail || rail.scrollWidth <= rail.clientWidth + 1) return;
   const start = rail.scrollLeft;
   const max = rail.scrollWidth - rail.clientWidth;
   if (start >= max - 2) reverseRail.add(rail);
   if (start <= 2) reverseRail.delete(rail);
-  const target = adjacentRailOffset(rail, reverseRail.has(rail));
+  return slideRailTo(rail, adjacentRailOffset(rail, reverseRail.has(rail)), durationMs);
+}
+
+/** Animate a measured native-scroll offset. The returned cancellation restores scroll snapping. */
+export function slideRailTo(rail: HTMLElement, target: number, durationMs: number) {
+  const start = rail.scrollLeft;
   const started = performance.now();
   const previousSnap = rail.style.scrollSnapType;
   rail.style.scrollSnapType = 'none';
@@ -176,7 +181,7 @@ export function advanceHomeRail(rail: HTMLElement | null) {
   const tick = (now: number) => {
     if (!alive) return;
     if (!rail.isConnected) { finish(); return; }
-    const progress = Math.min(1, Math.max(0, (now - started) / 500));
+    const progress = Math.min(1, Math.max(0, (now - started) / durationMs));
     rail.scrollLeft = start + (target - start) * (1 - (1 - progress) ** 3);
     if (progress < 1) frame = requestAnimationFrame(tick);
     else finish();

@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState, type CSSProperties, type ReactNode} from 'react';
+import {createContext, useContext, useEffect, useRef, useState, type CSSProperties, type ReactNode} from 'react';
 import {useLocation} from 'react-router-dom';
 import './motion.css';
 
@@ -169,52 +169,134 @@ export function MotionController() {
   return null;
 }
 
-/** The final value is always present for assistive technology and without JavaScript. */
-export function AnimatedNumber({value, suffix = '', duration = 1100}: {value: number; suffix?: string; duration?: number}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(value);
+const numberProgress = createContext(1);
+const numberFormatter = new Intl.NumberFormat('vi-VN');
+
+/** One stable block, one clock: a new pass begins only after the whole block leaves. */
+export function AnimatedNumberGroup({children, className, duration = 1100, 'aria-label': label}: {
+  children: ReactNode;
+  className?: string;
+  duration?: number;
+  'aria-label': string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  // Server-rendered and unenhanced content always contains the final values.
+  const [progress, setProgress] = useState(1);
   useEffect(() => {
-    setDisplay(value);
+    setProgress(1);
     const element = ref.current;
-    if (!element || !Number.isFinite(value) || typeof IntersectionObserver === 'undefined' || !window.matchMedia) return;
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (preference.matches) return;
-    let frame = 0, elapsed = 0, last = 0, active = false, complete = false;
-    const total = Math.max(1, duration);
-    const tick = (now: number) => {
-      if (!active || complete) return;
-      if (last) elapsed += now - last;
-      last = now;
-      const progress = Math.min(elapsed / total, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(value * eased));
-      if (progress < 1) frame = requestAnimationFrame(tick);
-      else { complete = true; observer?.disconnect(); }
-    };
-    const update = (visible: boolean) => {
-      active = visible && !document.hidden && !preference.matches && !complete;
-      cancelAnimationFrame(frame);
-      last = 0;
-      if (preference.matches) { complete = true; setDisplay(value); observer?.disconnect(); }
-      else if (active) frame = requestAnimationFrame(tick);
-    };
-    let intersecting = false;
-    let observer: IntersectionObserver | undefined;
+    if (!element || typeof IntersectionObserver === 'undefined' || !window.matchMedia || typeof requestAnimationFrame === 'undefined' || typeof cancelAnimationFrame === 'undefined') return;
+    let preference: MediaQueryList;
     try {
-      observer = new IntersectionObserver(entries => {
-        intersecting = entries.some(entry => entry.isIntersecting);
-        update(intersecting);
-      }, {threshold: 0.1});
-      observer.observe(element);
+      preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!preference || typeof preference.addEventListener !== 'function' || typeof preference.removeEventListener !== 'function') return;
+    } catch { return; }
+    const total = Number.isFinite(duration) ? Math.max(1, duration) : 1100;
+    const edge = 8;
+    let frame = 0, generation = 0, elapsed = 0;
+    let last: number | null = null;
+    let disposed = false, armed = true, running = false;
+    let entrance: IntersectionObserver | undefined, exit: IntersectionObserver | undefined;
+    const outside = (bounds: DOMRectReadOnly) => bounds.bottom <= -edge || bounds.top >= window.innerHeight + edge;
+    const inside = (bounds: DOMRectReadOnly) => bounds.bottom > edge && bounds.top < window.innerHeight - edge && bounds.right > 0 && bounds.left < window.innerWidth;
+    const stop = () => {
+      generation++;
+      cancelAnimationFrame(frame);
+      frame = 0;
+      last = null;
+    };
+    const resume = () => {
+      if (disposed || frame || !running || document.hidden || preference.matches) return;
+      const currentGeneration = generation;
+      const tick = (now: number) => {
+        if (disposed || generation !== currentGeneration || !running || document.hidden || preference.matches) return;
+        frame = 0;
+        if (last !== null) elapsed += Math.max(0, now - last);
+        last = now;
+        const position = Math.min(elapsed / total, 1);
+        setProgress(position === 1 ? 1 : Math.min(1 - Number.EPSILON, 1 - Math.pow(1 - position, 3)));
+        if (position < 1) frame = requestAnimationFrame(tick);
+        else running = false;
+      };
+      frame = requestAnimationFrame(tick);
+    };
+    const rearm = () => {
+      if (armed || disposed) return;
+      stop();
+      armed = true;
+      running = false;
+      elapsed = 0;
+      setProgress(preference.matches ? 1 : 0);
+    };
+    const enter = () => {
+      if (!armed || disposed) return;
+      armed = false;
+      elapsed = 0;
+      running = !preference.matches;
+      setProgress(preference.matches ? 1 : 0);
+      resume();
+    };
+    const visibility = () => {
+      if (disposed) return;
+      if (document.hidden) { stop(); return; }
+      const bounds = element.getBoundingClientRect();
+      if (outside(bounds)) rearm();
+      else if (inside(bounds)) enter();
+      resume();
+    };
+    const preferenceChange = () => {
+      if (disposed) return;
+      stop();
+      running = false;
+      elapsed = 0;
+      // Changing the preference must not reset a block the reader can still see.
+      armed = outside(element.getBoundingClientRect());
+      setProgress(preference.matches || !armed ? 1 : 0);
+    };
+    try {
+      // Separate inner/outer boundaries absorb tiny edge crossings. Neither
+      // individual cards nor the mobile second row can restart this clock.
+      entrance = new IntersectionObserver(entries => {
+        if (disposed) return;
+        for (const entry of entries) if (entry.isIntersecting) enter();
+      }, {threshold: 0, rootMargin: `-${edge}px 0px -${edge}px 0px`});
+      exit = new IntersectionObserver(entries => {
+        if (disposed) return;
+        for (const entry of entries) if (!entry.isIntersecting && outside(entry.boundingClientRect)) rearm();
+      }, {threshold: 0, rootMargin: `${edge}px 0px ${edge}px 0px`});
+      entrance.observe(element);
+      exit.observe(element);
     } catch {
-      observer?.disconnect();
+      disposed = true;
+      stop();
+      entrance?.disconnect();
+      exit?.disconnect();
+      setProgress(1);
       return;
     }
-    const visibility = () => update(intersecting);
     document.addEventListener('visibilitychange', visibility);
-    preference.addEventListener('change', visibility);
-    return () => { cancelAnimationFrame(frame); observer?.disconnect(); document.removeEventListener('visibilitychange', visibility); preference.removeEventListener('change', visibility); };
-  }, [value, duration]);
-  const format = (number: number) => new Intl.NumberFormat('vi-VN').format(number) + suffix;
-  return <span ref={ref} data-count-to={value}><span className="motion-sr-only">{format(value)}</span><span aria-hidden="true">{format(display)}</span></span>;
+    preference.addEventListener('change', preferenceChange);
+    // Arm offscreen content before its first observer delivery; initially
+    // visible content starts together instead of showing four independent runs.
+    if (inside(element.getBoundingClientRect())) enter();
+    else if (!preference.matches) setProgress(0);
+    return () => {
+      disposed = true;
+      stop();
+      entrance?.disconnect();
+      exit?.disconnect();
+      document.removeEventListener('visibilitychange', visibility);
+      preference.removeEventListener('change', preferenceChange);
+    };
+  }, [duration]);
+  return <numberProgress.Provider value={progress}><div ref={ref} className={className} role="group" aria-label={label} data-count-group="">{children}</div></numberProgress.Provider>;
+}
+
+/** The final value stays available to assistive technology throughout the run. */
+export function AnimatedNumber({value, suffix = ''}: {value: number; suffix?: string}) {
+  const progress = useContext(numberProgress);
+  // Truncation keeps all four final integers reserved for the shared last frame.
+  const display = progress >= 1 ? value : Math.trunc(value * progress);
+  const format = (number: number) => numberFormatter.format(number) + suffix;
+  return <span data-count-to={value}><span className="motion-sr-only">{format(value)}</span><span aria-hidden="true">{format(display)}</span></span>;
 }
