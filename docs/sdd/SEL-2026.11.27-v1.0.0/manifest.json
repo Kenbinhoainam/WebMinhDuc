@@ -1,0 +1,56 @@
+{
+  "version": "SEL-2026.11.27-v1.0.0",
+  "sdd_version": "MDU-SDD-v1.0.0",
+  "plan_version": "MDU-PLAN-v1.0.0",
+  "snapshot_local": "2026-11-27T17:20:00+07:00",
+  "approval_event": "2026-11-27",
+  "source_workbook_id": "1u6JuI6X3t_wpgrxia16DXbCHzIRn0KbG_KymygTbGEg",
+  "source_modified_utc": "2026-11-27T09:59:16.358Z",
+  "source_ranges": {
+    "Chọn từng trang": "A7:L922",
+    "Chuyên sâu A-E": "A7:M195",
+    "Micro & Motion": "A7:Q95",
+    "Tiêu chí A-F": "A7:I97",
+    "Neo và trạng thái": "A7:H37",
+    "Trang và URL": "A7:M48",
+    "Đề xuất theo trang": "A7:K253",
+    "Nguồn và phạm vi": "A7:D62",
+    "Hướng dẫn": "A1:Z17 and A18:D60"
+  },
+  "counts": {
+    "selected_total": 1257,
+    "selected_valid_ids": 1256,
+    "source_id_anomaly": 1,
+    "page_selected": 907,
+    "cs_selected": 157,
+    "micro_motion_selected": 88,
+    "common_selected": 75,
+    "states_selected": 30,
+    "page_not_selected": 8,
+    "cs_not_selected": 30,
+    "common_deferred": 15,
+    "cs_undecided": 1
+  },
+  "baseline": {
+    "repo": "Kenbinhoainam/WebMinhDuc",
+    "default_branch": "prototype",
+    "base_commit": "08e2da46106b51537b871aea3880fc94b25da935",
+    "target_reference": "https://minhduc-sprint1-ui-review.kenbinhoainam.chatgpt.site/",
+    "sheet_site_commit": "bc0610e208b35d7b2e65c7a4fc3819a3d5a00b91",
+    "site_sha_verified_in_repo": false,
+    "reviewer_p41_source_verified": false
+  },
+  "interpretation": "selected source status is preserved; PO now authorizes eligible scope, while invalid ID, conflict gates, conditional features and production exclusions remain",
+  "frozen_data_files": [
+    "data/selections-pages-P01-P10.jsonl",
+    "data/selections-pages-P11-P20.jsonl",
+    "data/selections-pages-P21-P30.jsonl",
+    "data/selections-pages-P31-P41.jsonl",
+    "data/selections-cs-all-statuses.jsonl",
+    "data/selections-motion-all-statuses.jsonl",
+    "data/selections-common-all-statuses.jsonl",
+    "data/selections-states-all-statuses.jsonl",
+    "data/pages-and-urls.jsonl",
+    "data/dx-proposals-reference-only.jsonl"
+  ]
+}
