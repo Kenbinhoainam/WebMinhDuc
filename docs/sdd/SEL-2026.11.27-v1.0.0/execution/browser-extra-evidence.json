@@ -1,0 +1,1037 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "report_sha256": "e5cdab207bd0d1fda23137d4bba3826ed9f558f60445f40b5d4d43a1b22239a6",
+  "report_path": "browser/keyboard-zoom/browser-results.json",
+  "checks": 120,
+  "choices": [
+    {
+      "choice_id": "P04-D1",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Ví dụ kế hoạch tiếp nhận",
+            "caption": "Ví dụ kế hoạch tiếp nhận",
+            "headers": [
+              "Đợt",
+              "Địa điểm",
+              "Ca làm việc",
+              "Số lượng",
+              "Ngày cần người"
+            ],
+            "firstPx": 32,
+            "max": 130,
+            "width": 360,
+            "documentWidth": 390,
+            "rightmost": 130
+          },
+          {
+            "name": "Cơ cấu chi phí tham khảo",
+            "caption": "Các yếu tố để trao đổi chi phí",
+            "headers": [
+              "Hạng mục",
+              "Căn cứ tính phí",
+              "Điểm cần thống nhất"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 360,
+            "documentWidth": 390
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/9",
+      "case_indices": [
+        9,
+        21,
+        33,
+        45,
+        57,
+        69,
+        81,
+        93,
+        105,
+        117
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P05-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Cơ cấu chi phí tham khảo",
+            "caption": "Các yếu tố để trao đổi chi phí",
+            "headers": [
+              "Hạng mục",
+              "Căn cứ tính phí",
+              "Điểm cần thống nhất"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 360,
+            "documentWidth": 390
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/10",
+      "case_indices": [
+        10,
+        22,
+        34,
+        46,
+        58,
+        70,
+        82,
+        94,
+        106,
+        118
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P07-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Chi phí cần xác nhận với trường",
+            "caption": "Thông tin cần xác nhận",
+            "headers": [
+              "Hạng mục",
+              "Nơi xác nhận",
+              "Thông tin cần xác nhận"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 360,
+            "documentWidth": 390
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/11",
+      "case_indices": [
+        11,
+        23,
+        35,
+        47,
+        59,
+        71,
+        83,
+        95,
+        107,
+        119
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P21-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.859375,
+            "bottom": 156.890625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 100.421875,
+            "bottom": 157.453125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.328125,
+            "bottom": 128.84375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-3",
+            "active": "article-section-3",
+            "heading": "H2",
+            "top": 100.375,
+            "bottom": 157.40625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P22-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.984375,
+            "bottom": 157.015625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.671875,
+            "bottom": 156.703125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.171875,
+            "bottom": 157.203125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-3",
+            "active": "article-section-3",
+            "heading": "H2",
+            "top": 100.078125,
+            "bottom": 157.109375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-4",
+            "active": "article-section-4",
+            "heading": "H2",
+            "top": 99.890625,
+            "bottom": 156.921875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-5",
+            "active": "article-section-5",
+            "heading": "H2",
+            "top": 99.609375,
+            "bottom": 156.640625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/1",
+      "case_indices": [
+        1,
+        13,
+        25,
+        37,
+        49,
+        61,
+        73,
+        85,
+        97,
+        109
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P23-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 100.15625,
+            "bottom": 128.671875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 100.296875,
+            "bottom": 157.328125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.390625,
+            "bottom": 157.421875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/2",
+      "case_indices": [
+        2,
+        14,
+        26,
+        38,
+        50,
+        62,
+        74,
+        86,
+        98,
+        110
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P24-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.734375,
+            "bottom": 156.765625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 100.390625,
+            "bottom": 128.90625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.4375,
+            "bottom": 128.953125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/3",
+      "case_indices": [
+        3,
+        15,
+        27,
+        39,
+        51,
+        63,
+        75,
+        87,
+        99,
+        111
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P25-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.546875,
+            "bottom": 128.0625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.6875,
+            "bottom": 128.203125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.171875,
+            "bottom": 128.6875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/4",
+      "case_indices": [
+        4,
+        16,
+        28,
+        40,
+        52,
+        64,
+        76,
+        88,
+        100,
+        112
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P26-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.734375,
+            "bottom": 128.25,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.875,
+            "bottom": 128.390625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.015625,
+            "bottom": 157.046875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/5",
+      "case_indices": [
+        5,
+        17,
+        29,
+        41,
+        53,
+        65,
+        77,
+        89,
+        101,
+        113
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.375,
+            "bottom": 134.875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 100.265625,
+            "bottom": 134.765625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 100.140625,
+            "bottom": 134.640625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.03125,
+            "bottom": 134.53125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100,
+            "bottom": 134.5,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-11-28T08:30:00+07:00",
+            "description": "Đón tiếp và ghi nhận nhu cầu tìm việc",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T09:00:00+07:00",
+            "description": "Chia sẻ thông tin về công việc tại nhà máy",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T10:00:00+07:00",
+            "description": "Tư vấn cách chuẩn bị hồ sơ",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T11:00:00+07:00",
+            "description": "Hỏi đáp và hướng dẫn bước tiếp theo",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/6",
+      "case_indices": [
+        6,
+        18,
+        30,
+        42,
+        54,
+        66,
+        78,
+        90,
+        102,
+        114
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.484375,
+            "bottom": 134.984375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 100.375,
+            "bottom": 134.875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 100.25,
+            "bottom": 134.75,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.140625,
+            "bottom": 134.640625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100.109375,
+            "bottom": 134.609375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:00:00+07:00",
+            "description": "Giới thiệu nội dung trao đổi",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:15:00+07:00",
+            "description": "Làm rõ nhu cầu và thông tin tuyển dụng",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:45:00+07:00",
+            "description": "Phối hợp tiếp nhận theo từng đợt",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T15:15:00+07:00",
+            "description": "Thảo luận các tình huống thực tế",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/7",
+      "case_indices": [
+        7,
+        19,
+        31,
+        43,
+        55,
+        67,
+        79,
+        91,
+        103,
+        115
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.484375,
+            "bottom": 134.984375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 100.375,
+            "bottom": 134.875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 100.40625,
+            "bottom": 134.90625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.296875,
+            "bottom": 134.796875,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100.265625,
+            "bottom": 134.765625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 390,
+            "documentWidth": 390,
+            "width": 354,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-11-08T09:00:00+07:00",
+            "description": "Chuẩn bị thông tin và hồ sơ",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-08T09:30:00+07:00",
+            "description": "Những điều cần hỏi trước khi nhận việc",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-08T10:00:00+07:00",
+            "description": "Bảo vệ thông tin cá nhân khi ứng tuyển",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        390,
+        900
+      ],
+      "evidence_ref": "browser/keyboard-zoom/browser-results.json#/checks/8",
+      "case_indices": [
+        8,
+        20,
+        32,
+        44,
+        56,
+        68,
+        80,
+        92,
+        104,
+        116
+      ],
+      "remaining": ""
+    }
+  ]
+}

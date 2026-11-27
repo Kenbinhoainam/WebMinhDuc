@@ -1,0 +1,14 @@
+{
+  "build_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "dist_tree_sha256": "429a3989859c8ed4b473773ffeb99c95e7bac4123a41182fce5d27134aa52ba7",
+  "tested_utc": "2026-11-27T13:59:08+00:00",
+  "choices": [
+    {
+      "choice_id": "MI06-3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "actual": "10/10 VI route-width journeys with rapid mode keys, errors, focus, headings, fields, drafts and real browser history.",
+      "remaining": ""
+    }
+  ]
+}

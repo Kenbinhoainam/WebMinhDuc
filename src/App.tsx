@@ -31,27 +31,57 @@ import './sprint-navigation.css';
 const scrollPositions=new Map<string,number>();
 export function PageTransition(){
   const location=useLocation(), navigationType=useNavigationType();
-  const previous=useRef<{pathname:string;hash:string}|null>(null);
+  const previous=useRef<{pathname:string;hash:string;search:string}|null>(null);
   useEffect(()=>{const original=window.history.scrollRestoration;window.history.scrollRestoration='manual';return()=>{window.history.scrollRestoration=original}},[]);
   useEffect(()=>{
-    const {key,hash,pathname}=location;
+    const {key,hash,pathname,search}=location;
     const prior=previous.current;
     const pathChanged=prior!==null&&prior.pathname!==pathname;
-    let frame=0, attempts=0;
+    const queryEdit = prior?.pathname === pathname && prior.hash === hash && prior.search !== search;
+    let frame=0, observer:MutationObserver|undefined;
+    const cancelAnchor = () => { cancelAnimationFrame(frame); observer?.disconnect(); };
     if(navigationType==='POP'&&prior!==null&&scrollPositions.has(key)){
       window.scrollTo({top:scrollPositions.get(key),behavior:'instant'});
-    }else if(hash){
-      const findAnchor=()=>{let target:HTMLElement|null=null;try{target=document.getElementById(decodeURIComponent(hash.slice(1)))}catch{}if(target){target.scrollIntoView();if(navigationType==='PUSH'&&target.hasAttribute('tabindex'))target.focus({preventScroll:true});}else if(attempts++<30)frame=requestAnimationFrame(findAnchor)};
-      frame=requestAnimationFrame(findAnchor);
+    }else if(hash && !queryEdit){
+      let id:string;
+      try { id=decodeURIComponent(hash.slice(1)); } catch { id=hash.slice(1); }
+      const findAnchor=()=>{
+        const target=document.getElementById(id);
+        if (!target) return false;
+        observer?.disconnect();
+        target.scrollIntoView();
+        if(navigationType==='PUSH' && !target.contains(document.activeElement)){
+          // Sections and headings can receive fragment focus without becoming a Tab stop.
+          if(target.tabIndex < 0 && !target.hasAttribute('tabindex')) target.tabIndex = -1;
+          target.focus({preventScroll:true});
+        }
+        return true;
+      };
+      frame=requestAnimationFrame(()=>{
+        if(!findAnchor() && typeof MutationObserver !== 'undefined') {
+          observer=new MutationObserver(findAnchor);
+          observer.observe(document.getElementById('main') ?? document.body,{childList:true,subtree:true});
+        }
+      });
+      window.addEventListener('wheel',cancelAnchor,{passive:true,once:true});
+      window.addEventListener('pointerdown',cancelAnchor,{passive:true,once:true});
+      window.addEventListener('keydown',cancelAnchor,{once:true});
     }else if(pathChanged){
       if(navigationType==='POP')window.scrollTo({top:scrollPositions.get(key)??0,behavior:'instant'});
       else{window.scrollTo({top:0,behavior:'instant'});frame=requestAnimationFrame(()=>document.querySelector<HTMLElement>('main')?.focus({preventScroll:true}))}
     }
-    previous.current={pathname,hash};
+    previous.current={pathname,hash,search};
     const savePosition=()=>scrollPositions.set(key,window.scrollY);
     window.addEventListener('scroll',savePosition,{passive:true});
-    return()=>{cancelAnimationFrame(frame);savePosition();window.removeEventListener('scroll',savePosition)};
-  },[location.key,location.pathname,location.hash,navigationType]);
+    return()=>{
+      cancelAnchor();
+      savePosition();
+      window.removeEventListener('scroll',savePosition);
+      window.removeEventListener('wheel',cancelAnchor);
+      window.removeEventListener('pointerdown',cancelAnchor);
+      window.removeEventListener('keydown',cancelAnchor);
+    };
+  },[location.key,location.pathname,location.hash,location.search,navigationType]);
   return null;
 }
 export default function App(){const [contact,setContact]=useState<string|null>(null);const location=useLocation();useEffect(()=>setContact(null),[location.pathname]);return <ContactContext.Provider value={(service)=>setContact(service||'Cung ứng nhân lực')}><a className="skip-link" href="#main">Bỏ qua đến nội dung</a><Header/><MotionController/><PageTransition/><main id="main" tabIndex={-1}><Suspense fallback={<div className="section route-loading" role="status">Đang tải nội dung…</div>}><Routes><Route path="/" element={<Home/>}/><Route path="/about-us" element={<AboutPage/>}/><Route path="/services" element={<ServicesPage/>}/><Route path="/services/:slug" element={<ServicePage/>}/><Route path="/jobs" element={<JobsPage/>}/><Route path="/jobs/:slug" element={<JobDetailPage/>}/><Route path="/saved-jobs" element={<SavedJobsPage/>}/><Route path="/careers" element={<CareersPage/>}/><Route path="/education" element={<EducationPage/>}/><Route path="/education/:slug" element={<EducationDetailPage/>}/><Route path="/admin-demo" element={<AdminDemo/>}/><Route path="/news" element={<NewsPage/>}/><Route path="/news/:slug" element={<ArticlePage/>}/><Route path="/events" element={<EventsPage/>}/><Route path="/events/:slug" element={<EventPage/>}/><Route path="/partners" element={<PartnersPage/>}/><Route path="/testimonials" element={<PartnersPage/>}/><Route path="/contact" element={<ContactPage/>}/><Route path="/consultation" element={<ConsultationPage/>}/><Route path="/e-brochure" element={<Navigate to="/about-us#profile" replace/>}/><Route path="/privacy-policy" element={<PolicyPage kind="privacy"/>}/><Route path="/terms-of-use" element={<PolicyPage kind="terms"/>}/><Route path="/job-seekers" element={<Navigate to={{pathname:"/jobs",search:location.search,hash:location.hash}} replace/>}/><Route path="/vi" element={<Navigate to="/" replace/>}/><Route path="*" element={<NotFound/>}/></Routes></Suspense></main><Footer/><SupportTools onConsultation={()=>setContact('Cung ứng nhân lực')}/>{contact!==null&&<Modal title="Yêu cầu tư vấn" onClose={()=>setContact(null)}><ContactForm initialService={contact} onNavigate={()=>setContact(null)}/></Modal>}</ContactContext.Provider>}

@@ -1,0 +1,20 @@
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+Application source extracted via git archive 88e2b61596eab5952f183a81b3030da760696c9c
+Isolated checkout: /tmp/minhduc-w1-88e-v2geslox
+QA-only overlays (SHA256): {}
+Linux x86_64, Node v24.22.1; deterministic JSDOM / CSS / SSR / mocked media. No real browser, device, network-performance or screenshot claim.
+
+2026-11-27T13:43:14.084242+00:00  python tests/s2-shared-palette.py
+PASS S2-COLOR ink #183653 / surface #ffffff = 12.42:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface #ffffff = 6.45:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface-blue #eaf4ff = 5.80:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red #bd1e2d = 6.20:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red-hover #971827 = 8.48:1 (opaque source colors)
+PASS S2-COLOR blue #1b489d / surface-blue #eaf4ff = 7.67:1 (opaque source colors)
+PASS S2-COLOR blue-hover #143a7b / surface-blue #eaf4ff = 9.83:1 (opaque source colors)
+PASS S2-COLOR focus #075fb9 / surface #ffffff = 6.28:1 (opaque source colors)
+PASS S2-COLOR control-border #758ba1 / surface #ffffff = 3.52:1 (opaque source colors)
+PASS S2-FONT inter shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+PASS S2-FONT roboto shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+
+exit 0

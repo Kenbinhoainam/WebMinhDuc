@@ -1,0 +1,11 @@
+PASS independent hero lifecycle manual
+PASS independent hero lifecycle scroll
+PASS independent hero lifecycle scroll-away
+PASS independent hero lifecycle scroll-before-start
+PASS independent hero lifecycle pending
+PASS independent hero lifecycle hidden
+PASS independent hero lifecycle noio
+PASS independent hero lifecycle noio-offscreen
+PASS independent hero lifecycle observe-failure
+PASS independent hero lifecycle reduced
+PASS independent hero lifecycle blocked

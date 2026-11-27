@@ -1,0 +1,33 @@
+2026-11-27T13:12:18.052624+00:00 | 416ea37bfc7b4f6dcd619996408b00f4b2fc6c2a | npm run test:review
+
+> minhduc-prototype@1.0.0 test:review
+> node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs && node tests/jobs-headline-locales.mjs
+
+PASS reviewer: optional form fields, invalid upload, jobs query, single ADMIN type, navigation and dialog cleanup
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'false' !== 'true'
+
+    at file:///workspace/sprint2-implementation/tests/reviewer-locales.mjs:26:526
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'false',
+  expected: 'true',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 1

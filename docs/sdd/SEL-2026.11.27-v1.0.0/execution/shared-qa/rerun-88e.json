@@ -1,0 +1,111 @@
+{
+  "target_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "checkout": "/tmp/minhduc-w1-88e-v2geslox",
+  "qa_overlays_sha256": {},
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/s2-shared.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:02.045139+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/header-reference.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:37.224953+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/header-hover-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:54.213705+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/navigation.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:40:13.136231+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/motion.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:40:44.293861+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/motion-repeat-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:40:56.800248+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-metric-replay.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:07.729149+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-reference-motion.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:27.994723+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sitemap-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:54.553262+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/support-tools.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:42:23.232318+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-carousel.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:42:44.757436+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/locale-selector.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:43:00.434997+00:00"
+    },
+    {
+      "command": [
+        "python",
+        "tests/s2-shared-palette.py"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:43:14.084242+00:00"
+    }
+  ]
+}

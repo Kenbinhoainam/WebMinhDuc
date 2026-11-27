@@ -1,0 +1,19 @@
+
+> minhduc-prototype@1.0.0 test:sprint
+> node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs && node tests/consultation.mjs
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: required fields revalidate on resubmission
+    at file:///home/runner/work/WebMinhDuc/WebMinhDuc/tests/jobs-sprint1.mjs:65:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.3

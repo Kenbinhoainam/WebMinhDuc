@@ -1,0 +1,127 @@
+{
+  "source": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_sha256": "fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1",
+  "browser": "156.0.8078.79",
+  "cases": [
+    {
+      "width": 390,
+      "invalid_query_jobs": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD006"
+      ],
+      "return_states": [
+        {
+          "id": "MD001",
+          "href": "/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+          "before_y": 344,
+          "restore_y": 344
+        },
+        {
+          "id": "MD002",
+          "href": "/WebMinhDuc/jobs/kiem-tra-chat-luong-bac-giang",
+          "before_y": 344,
+          "restore_y": 344
+        }
+      ],
+      "mixed_saved_salaries": {
+        "MD001": "8–11 triệu/tháng",
+        "MD002": "9–12 triệu/tháng",
+        "MD003": "8–10 triệu/tháng",
+        "MD004": "9–13 triệu/tháng",
+        "MD005": "11–15 triệu/tháng",
+        "MD006": "7–9 triệu/tháng",
+        "MD007": "9–14 triệu/tháng",
+        "MD008": "Trao đổi khi tư vấn"
+      },
+      "status_tags": {
+        "MD001": "MD001\nĐang tuyển",
+        "MD002": "MD002\nĐang tuyển",
+        "MD003": "MD003\nĐang tuyển",
+        "MD004": "MD004\nĐang tuyển",
+        "MD005": "MD005\nĐã đóng",
+        "MD006": "MD006\nĐang tuyển",
+        "MD007": "MD007\nĐang tuyển\nTuyển dụng nội bộ",
+        "MD008": "MD008\nĐang tuyển\nTuyển dụng nội bộ"
+      },
+      "saved_back_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?page=2",
+      "saved_list_scroll": [
+        764,
+        764
+      ],
+      "cross_tab_focus": {
+        "tag": "BODY",
+        "job": null,
+        "label": null,
+        "url": "/WebMinhDuc/saved-jobs?page=2"
+      },
+      "cross_tab": "MD007 removed on the job in tab 2; tab 1 showed six remaining jobs and no pager",
+      "last_removal_focus": "jobs-empty a",
+      "empty_cta": "Tất cả việc làm",
+      "paginator": "six and two rows",
+      "status": "Pass"
+    },
+    {
+      "width": 1440,
+      "invalid_query_jobs": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD006"
+      ],
+      "return_states": [
+        {
+          "id": "MD001",
+          "href": "/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+          "before_y": 446,
+          "restore_y": 446
+        },
+        {
+          "id": "MD002",
+          "href": "/WebMinhDuc/jobs/kiem-tra-chat-luong-bac-giang",
+          "before_y": 446,
+          "restore_y": 446
+        }
+      ],
+      "mixed_saved_salaries": {
+        "MD001": "8–11 triệu/tháng",
+        "MD002": "9–12 triệu/tháng",
+        "MD003": "8–10 triệu/tháng",
+        "MD004": "9–13 triệu/tháng",
+        "MD005": "11–15 triệu/tháng",
+        "MD006": "7–9 triệu/tháng",
+        "MD007": "9–14 triệu/tháng",
+        "MD008": "Trao đổi khi tư vấn"
+      },
+      "status_tags": {
+        "MD001": "MD001\nĐang tuyển",
+        "MD002": "MD002\nĐang tuyển",
+        "MD003": "MD003\nĐang tuyển",
+        "MD004": "MD004\nĐang tuyển",
+        "MD005": "MD005\nĐã đóng",
+        "MD006": "MD006\nĐang tuyển",
+        "MD007": "MD007\nĐang tuyển\nTuyển dụng nội bộ",
+        "MD008": "MD008\nĐang tuyển\nTuyển dụng nội bộ"
+      },
+      "saved_back_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?page=2",
+      "saved_list_scroll": [
+        597,
+        597
+      ],
+      "cross_tab_focus": {
+        "tag": "BODY",
+        "job": null,
+        "label": null,
+        "url": "/WebMinhDuc/saved-jobs?page=2"
+      },
+      "cross_tab": "MD007 removed on the job in tab 2; tab 1 showed six remaining jobs and no pager",
+      "last_removal_focus": "jobs-empty a",
+      "empty_cta": "Tất cả việc làm",
+      "paginator": "six and two rows",
+      "status": "Pass"
+    }
+  ]
+}

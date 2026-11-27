@@ -1,4 +1,5 @@
 import {build} from 'esbuild';
+import {sitePath, outputPath} from './pages-paths.mjs';
 import {mkdir,rm,readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
@@ -9,8 +10,8 @@ import {MemoryRouter,useNavigate} from 'react-router-dom';
 
 const temp='.about-anchors';await mkdir(temp,{recursive:true});
 try {
- await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage'; export {Header} from './src/Header'; export {PageTransition} from './src/App'; export {LocaleProvider,localeBase,languageSwitchUrl} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'about-anchors-test.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
- const {AboutPage,Header,PageTransition,LocaleProvider,localeBase,languageSwitchUrl,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
+ await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage'; export {Header} from './src/Header'; export {PageTransition} from './src/App'; export {LocaleProvider,localeBase,languageSwitchUrl} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog'; export {originalImageSource} from './src/media';",resolveDir:process.cwd(),sourcefile:'about-anchors-test.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
+ const {AboutPage,Header,PageTransition,LocaleProvider,localeBase,languageSwitchUrl,loadLocale,originalImageSource}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
  const ids=['profile','history','partners','activities','achievements','business-contact'];
  const menuIds=['profile','history','partners','achievements'];let vietnameseLabels;
  for(const locale of ['vi','en','zh','ko','ja']){
@@ -24,17 +25,17 @@ try {
   assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/about-us#profile`,`${locale}: profile menu opens the profile chapter`);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.deepEqual([...doc.querySelectorAll('.about-chapters a')].map(a=>a.hash),['#profile','#history','#partners','#activities','#achievements']);
-  assert.ok(doc.querySelector('.md-masthead-figure img[src^="/assets/minhduc-v18/about-team"]'),'masthead uses the genuine team photo');
+  assert.ok(doc.querySelector(`.md-masthead-figure img[src^="${sitePath('/assets/minhduc-v18/about-team')}"]`),'masthead uses the genuine team photo');
   assert.ok(doc.querySelector(`.about-profile-actions a[href="${base}/about-us#business-contact"]`),'staffing CTA reaches the form on this page');
-  assert.equal(doc.querySelectorAll('#activities img[src^="/assets/minhduc-v16/"]').length,4);
+  assert.equal(doc.querySelectorAll(`#activities img[src^="${sitePath('/assets/minhduc-v16/')}"]`).length,4);
   assert.ok([...doc.querySelectorAll('#history [role=tab]')].every(tab=>tab.textContent.trim() && !/^\d+$/.test(tab.textContent.trim())),'phases have readable names');
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
   assert.equal(doc.querySelectorAll('.md-team-overview img').length,1,'one genuine group image accompanies the role list');
   const teamPhoto=doc.querySelector('.md-team-photo');
-  assert.equal(teamPhoto.getAttribute('src'),'/assets/minhduc-v18/field-team.webp');
+  assert.equal(outputPath(originalImageSource(teamPhoto.getAttribute('src'))),'/assets/minhduc-v18/field-team.webp');
   assert.match(teamPhoto.getAttribute('srcset'), /480w.*960w.*1600w/,'documentary role image serves phone and desktop variants');
   assert.equal(doc.querySelectorAll('.info-team-grid button').length,4,'four accessible role details');
-  assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>img.getAttribute('src').startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
+  assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>outputPath(img.getAttribute('src')).startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
   const labels=[...doc.querySelectorAll('#profile .about-scope-item > span')].map(node=>node.textContent.trim());
   assert.equal(labels.length,4);if(locale==='vi')vietnameseLabels=labels;else assert.ok(labels.every((label,index)=>label!==vietnameseLabels[index]),`${locale}: all scope labels translated`);
   const profile=doc.getElementById('profile');
@@ -65,7 +66,7 @@ try {
    const base=localeBase(locale);seen=[];
    await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale+id,basename:base||'/',initialEntries:[`${base}/about-us#${id}`]},React.createElement(Harness)))));await tick();
    assert.ok(seen.includes(id),`${locale}: direct hash scrolls to ${id}`);
-   assert.equal(document.activeElement,document.getElementById(id).querySelector('h2'),`${locale}: direct hash focuses its heading`);
+   assert.ok(document.activeElement===document.getElementById(id).querySelector('h2'),`${locale}: direct hash focuses its heading (got ${document.activeElement?.tagName}#${document.activeElement?.id})`);
   }
   seen=[];await act(()=>root.render(React.createElement(LocaleProvider,{value:'en'},React.createElement(MemoryRouter,{key:'history',basename:'/en',initialEntries:['/en/about-us#profile']},React.createElement(Harness)))));await tick();
   y=250;window.dispatchEvent(new Event('scroll'));await act(()=>navigate('/about-us#history'));await tick();assert.equal(y,400);
@@ -82,7 +83,7 @@ try {
   await act(()=>primary.click());await tick();
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true','profile CTA intentionally starts F01 after F02');
   assert.equal(formSection.querySelector('[name=name]').value,'','new F01 starts blank');
-  assert.equal(document.activeElement,formSection.querySelector('h2'),'form heading keeps focus across form restart');
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus across form restart');
   await chooseF02();assert.equal(formSection.querySelector('[name=name]').value,'Draft before staffing CTA','an intentionally fresh F01 leaves the separate F02 draft intact');
   await act(()=>typeValue('name','Draft to preserve'));
   await act(()=>navigate('/about-us#history'));await tick();await act(()=>navigate(-1));await tick();
@@ -97,7 +98,7 @@ try {
   assert.equal(formSection.querySelector('.form-success'),null,'fourth role action dismisses a previous receipt');
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true');
   assert.equal(formSection.querySelector('[name=name]').value,'');
-  assert.equal(document.activeElement,formSection.querySelector('h2'));
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus');
   await act(()=>typeValue('name','Second same-hash request'));await act(()=>primary.click());await tick();
   assert.equal(formSection.querySelector('[name=name]').value,'Second same-hash request','acting on the same URL keeps unfinished F01 work editable');
   await act(()=>{typeValue('phone','0901234567');typeValue('location','Sample workplace');typeValue('notes','Sample staffing request');});
@@ -107,7 +108,7 @@ try {
   assert.equal(formSection.querySelector('.form-success'),null,'the same-hash staffing action reopens an editable F01 after its own receipt');
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true');
   assert.equal(formSection.querySelector('[name=name]').value,'','completed F01 starts a blank request');
-  assert.equal(document.activeElement,formSection.querySelector('h2'));
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus');
  } finally {await act(()=>root.unmount());dom.window.close();}
  console.log('PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance');
 } finally {await rm(temp,{recursive:true,force:true});}

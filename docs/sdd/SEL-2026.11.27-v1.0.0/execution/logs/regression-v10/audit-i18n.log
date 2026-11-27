@@ -1,0 +1,1178 @@
+
+> minhduc-prototype@1.0.0 audit:i18n
+> node scripts/audit-i18n.mjs
+
+{
+  "locale": "en",
+  "unique": 92,
+  "findings": [
+    {
+      "text": "Minh Đức Vina activities",
+      "count": 157,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Discover Minh Đức",
+      "count": 102,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — Home",
+      "count": 102,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Quảng Ninh",
+      "count": 64,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Đông Mai Industrial Park",
+      "count": 56,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Nếnh Ward, Bắc Ninh City",
+      "count": 53,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Rùa Vàng",
+      "count": 53,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Lạng Giang, Bắc Ninh",
+      "count": 52,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina",
+      "count": 52,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức on Facebook",
+      "count": 52,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Tiếng Việt",
+      "count": 51,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC VINA HUMAN RESOURCES COMPANY LIMITED",
+      "count": 51,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina.",
+      "count": 51,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — People are an asset",
+      "count": 51,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Bắc Ninh",
+      "count": 18,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "When the Minh Đức team gets together",
+      "count": 17,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Bắc Giang",
+      "count": 14,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "Thái Nguyên",
+      "count": 10,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Tân Hưng",
+      "count": 10,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "The factory confirms shifts and start dates. Minh Đức discusses sourcing for each round.",
+      "count": 8,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "KCN Yên Phong",
+      "count": 7,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Sông Công",
+      "count": 7,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "Ms Thu Hà",
+      "count": 6,
+      "example": "dist/en/partners/index.html"
+    },
+    {
+      "text": "Minh Đức job connection day",
+      "count": 5,
+      "example": "dist/en/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "Contact Minh Đức",
+      "count": 4,
+      "example": "dist/en/contact/index.html"
+    },
+    {
+      "text": ". Times and locations are pending confirmation by Minh Đức.",
+      "count": 4,
+      "example": "dist/en/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "Yên Phong Industrial Park",
+      "count": 4,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "Tân Hưng Industrial Park",
+      "count": 4,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Đông Mai",
+      "count": 4,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "A view of the Minh Đức team working in the field.",
+      "count": 4,
+      "example": "dist/en/news/chon-cong-viec-phu-hop/index.html"
+    },
+    {
+      "text": "Minh Đức staff discuss their work outdoors",
+      "count": 3,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Photos supplied by Minh Đức from other activities.",
+      "count": 3,
+      "example": "dist/en/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "The Minh Đức team gathers for a year-end photo",
+      "count": 3,
+      "example": "dist/en/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "Sông Công Industrial Park",
+      "count": 3,
+      "example": "dist/en/job-seekers/index.html"
+    },
+    {
+      "text": "A work discussion among members of the Minh Đức team.",
+      "count": 3,
+      "example": "dist/en/news/ban-giao-giua-tuyen-dung-va-san-xuat/index.html"
+    },
+    {
+      "text": "Minh Đức staff reviewing documents together at a desk",
+      "count": 3,
+      "example": "dist/en/news/doc-thong-tin-thu-nhap-va-ca-lam/index.html"
+    },
+    {
+      "text": "About Minh Đức",
+      "count": 2,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC",
+      "count": 2,
+      "example": "dist/en/admin-demo/index.html"
+    },
+    {
+      "text": "Join the Minh Đức team",
+      "count": 2,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "A group in Minh Đức shirts talks outside near a factory entrance.",
+      "count": 2,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "A person wearing a Minh Đức shirt holds a document folder by the roadside.",
+      "count": 2,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Minh Đức Vina company film",
+      "count": 2,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "The Minh Đức team discussing work around a meeting table",
+      "count": 2,
+      "example": "dist/en/news/ban-giao-giua-tuyen-dung-va-san-xuat/index.html"
+    },
+    {
+      "text": "Minh Đức staff talking at an outdoor work location",
+      "count": 2,
+      "example": "dist/en/news/chuan-bi-truoc-ngay-nhan-viec/index.html"
+    },
+    {
+      "text": "The Minh Đức team meets around a table",
+      "count": 2,
+      "example": "dist/en/news/don-tiep-lao-dong-moi/index.html"
+    },
+    {
+      "text": "A birthday cake, year-end gifts and brooms in a courtyard. These photographs capture three occasions that brought Minh Đức Vina colleagues together.",
+      "count": 2,
+      "example": "dist/en/news/index.html"
+    },
+    {
+      "text": "The Minh Đức team discusses documents at a table",
+      "count": 2,
+      "example": "dist/en/news/index.html"
+    },
+    {
+      "text": "Organisations listed in the Minh Đức company profile.",
+      "count": 2,
+      "example": "dist/en/partners/index.html"
+    },
+    {
+      "text": "This content describes the scope of the prototype experience and must be reviewed by Minh Đức before the official website launches.",
+      "count": 2,
+      "example": "dist/en/privacy-policy/index.html"
+    },
+    {
+      "text": "From our locations in Bắc Ninh and Quảng Ninh, we work with factories to identify roles, shifts and skills before matching workers to the job.",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Partners featured in Minh Đức’s company information.",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "The Minh Đức team is ready to help",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "The connections that make Minh Đức",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "The Minh Đức team holding flags outside the company sign",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "The Minh Đức team talking in a meeting room",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức staff talking and taking notes during a meeting",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "The Minh Đức team at a year-end gathering",
+      "count": 1,
+      "example": "dist/en/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC / DEMO ADMIN",
+      "count": 1,
+      "example": "dist/en/admin-demo/index.html"
+    },
+    {
+      "text": "Explore roles in advising, recruiting and connecting workers at Minh Đức.",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Opportunities at Minh Đức",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Talk with Minh Đức",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Minh Đức in pictures",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "A group poses in front of the Minh Đức backdrop with the front row seated.",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Five people pose with a bouquet beneath the Minh Đức sign.",
+      "count": 1,
+      "example": "dist/en/careers/index.html"
+    },
+    {
+      "text": "Minh Đức on Zalo",
+      "count": 1,
+      "example": "dist/en/contact/index.html"
+    },
+    {
+      "text": "Send Minh Đức a message",
+      "count": 1,
+      "example": "dist/en/contact/index.html"
+    },
+    {
+      "text": "About Minh Đức | Minh Đức Vina",
+      "count": 1,
+      "example": "dist/en/e-brochure/index.html"
+    },
+    {
+      "text": "See photos of Minh Đức activities",
+      "count": 1,
+      "example": "dist/en/events/index.html"
+    },
+    {
+      "text": "About Minh Đức Vina",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Minh Đức connects factories in northern Vietnam with workers, from clarifying the role to bringing both sides together to discuss the job.",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Tell us the roles, headcount and location you need. Minh Đức is ready to discuss an approach with you.",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Meet Minh Đức Vina through scenes of its team, offices and gatherings with workers.",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Minh Đức Vina — Company introduction",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "A Minh Đức team member holding recruitment materials on site",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Play video – Minh Đức Vina company film",
+      "count": 1,
+      "example": "dist/en/index.html"
+    },
+    {
+      "text": "Help Minh Đức connect workers with suitable opportunities. This example internal position demonstrates the prototype recruitment process.",
+      "count": 1,
+      "example": "dist/en/jobs/chuyen-vien-tuyen-dung-bac-ninh/index.html"
+    },
+    {
+      "text": "A Minh Đức staff member holds documents outdoors",
+      "count": 1,
+      "example": "dist/en/news/ho-so-xin-viec/index.html"
+    },
+    {
+      "text": "A shared brief helps contacts check the same information before sourcing. Photograph of the Minh Đức team at work.",
+      "count": 1,
+      "example": "dist/en/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "Minh Đức team members meeting and reviewing documents",
+      "count": 1,
+      "example": "dist/en/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "A Minh Đức group cross-checking work documents",
+      "count": 1,
+      "example": "dist/en/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "The Minh Đức Vina team gathers for a photograph at its year-end party.",
+      "count": 1,
+      "example": "dist/en/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "From Minh Đức Vina’s community activity photo archive.",
+      "count": 1,
+      "example": "dist/en/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "Minh Đức Vina colleagues pose in front of the stage at their year-end gathering.",
+      "count": 1,
+      "example": "dist/en/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "Forms may ask for your name, phone number, email, hiring or job-seeking needs and CV. In this prototype, submission is simulated in the browser; data is not sent to Minh Đức’s intake system.",
+      "count": 1,
+      "example": "dist/en/privacy-policy/index.html"
+    },
+    {
+      "text": "If you have questions, contact Minh Đức using the details below. Requests about actual data must be verified through an official contact channel.",
+      "count": 1,
+      "example": "dist/en/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đức shares admissions information and helps learners understand study formats, requirements and application preparation.",
+      "count": 1,
+      "example": "dist/en/services/college-admissions/index.html"
+    },
+    {
+      "text": "Minh Đức discusses organizational setup, workflows and operational software needs with businesses.",
+      "count": 1,
+      "example": "dist/en/services/hr-consulting/index.html"
+    },
+    {
+      "text": "Minh Đức receives hiring requirements, sources candidates and introduces workers suited to the role and business conditions.",
+      "count": 1,
+      "example": "dist/en/services/labor-supply/index.html"
+    },
+    {
+      "text": "Minh Đức helps find candidates based on role, experience and skills, from skilled workers to specialist hires.",
+      "count": 1,
+      "example": "dist/en/services/recruitment/index.html"
+    },
+    {
+      "text": "Work discussion from the Minh Đức company film",
+      "count": 1,
+      "example": "dist/en/services/recruitment/index.html"
+    },
+    {
+      "text": "Using the Minh Đức website",
+      "count": 1,
+      "example": "dist/en/terms-of-use/index.html"
+    },
+    {
+      "text": "Confirm recruitment conditions, pay, service fees and the scope of cooperation directly with Minh Đức or the recruiting organization before making a decision.",
+      "count": 1,
+      "example": "dist/en/terms-of-use/index.html"
+    }
+  ]
+}
+{
+  "locale": "zh",
+  "unique": 40,
+  "findings": [
+    {
+      "text": "了解 Minh Đức",
+      "count": 102,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — 首页",
+      "count": 102,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "北宁市 Nếnh 坊",
+      "count": 53,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Rùa Vàng",
+      "count": 53,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "北宁省 Lạng Giang",
+      "count": 52,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina",
+      "count": 52,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức 的 Facebook",
+      "count": 52,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Tiếng Việt",
+      "count": 51,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC VINA 人力资源有限责任公司",
+      "count": 51,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina.",
+      "count": 51,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — 人力是资产",
+      "count": 51,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức 团队相聚的时刻",
+      "count": 17,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "KCN Tân Hưng",
+      "count": 10,
+      "example": "dist/zh/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Yên Phong",
+      "count": 7,
+      "example": "dist/zh/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Sông Công",
+      "count": 7,
+      "example": "dist/zh/job-seekers/index.html"
+    },
+    {
+      "text": "Thu Hà 女士",
+      "count": 6,
+      "example": "dist/zh/partners/index.html"
+    },
+    {
+      "text": "Minh Đức 就业对接日",
+      "count": 5,
+      "example": "dist/zh/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "KCN Đông Mai",
+      "count": 4,
+      "example": "dist/zh/job-seekers/index.html"
+    },
+    {
+      "text": "MINH ĐỨC",
+      "count": 2,
+      "example": "dist/zh/admin-demo/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 企业介绍影片",
+      "count": 2,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "一块生日蛋糕、年末的礼盒，还有院子里的扫帚。这组照片记录了 Minh Đức Vina 同事们相聚的三个场景。",
+      "count": 2,
+      "example": "dist/zh/news/index.html"
+    },
+    {
+      "text": "此内容说明原型体验范围，须由 Minh Đức 在网站正式发布前审阅。",
+      "count": 2,
+      "example": "dist/zh/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đức 公司资料中介绍的合作伙伴。",
+      "count": 1,
+      "example": "dist/zh/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC / 管理演示",
+      "count": 1,
+      "example": "dist/zh/admin-demo/index.html"
+    },
+    {
+      "text": "与 Minh Đức 交流",
+      "count": 1,
+      "example": "dist/zh/careers/index.html"
+    },
+    {
+      "text": "Minh Đức 的 Zalo",
+      "count": 1,
+      "example": "dist/zh/contact/index.html"
+    },
+    {
+      "text": "给 Minh Đức 留言",
+      "count": 1,
+      "example": "dist/zh/contact/index.html"
+    },
+    {
+      "text": "关于明德 | Minh Đức Vina",
+      "count": 1,
+      "example": "dist/zh/e-brochure/index.html"
+    },
+    {
+      "text": "关于 Minh Đức Vina",
+      "count": 1,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "请告诉我们您需要的岗位、人数和地点。Minh Đức 愿与您共同探讨合适的方案。",
+      "count": 1,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "通过团队、办公室以及与劳动者见面的画面，了解 Minh Đức Vina。",
+      "count": 1,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "Minh Đức Vina — 企业介绍",
+      "count": 1,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "播放视频 – Minh Đức Vina 企业介绍影片",
+      "count": 1,
+      "example": "dist/zh/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 团队在年末聚会上合影留念。",
+      "count": 1,
+      "example": "dist/zh/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "来自 Minh Đức Vina 的社区活动影像资料。",
+      "count": 1,
+      "example": "dist/zh/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 的同事们在年末聚会的舞台前合影。",
+      "count": 1,
+      "example": "dist/zh/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "表单可能要求填写姓名、电话、邮箱、招聘或求职需求及简历。在此原型中，提交操作仅在浏览器内模拟；数据不会发送到 Minh Đức 的接收系统。",
+      "count": 1,
+      "example": "dist/zh/privacy-policy/index.html"
+    },
+    {
+      "text": "如有疑问，请通过以下信息联系 Minh Đức。涉及真实数据的请求须通过官方联系渠道核实。",
+      "count": 1,
+      "example": "dist/zh/privacy-policy/index.html"
+    },
+    {
+      "text": "使用 Minh Đức 网站",
+      "count": 1,
+      "example": "dist/zh/terms-of-use/index.html"
+    },
+    {
+      "text": "作出决定前，请直接向 Minh Đức 或招聘单位确认招聘条件、收入、服务费用及合作范围。",
+      "count": 1,
+      "example": "dist/zh/terms-of-use/index.html"
+    }
+  ]
+}
+{
+  "locale": "ko",
+  "unique": 46,
+  "findings": [
+    {
+      "text": "Minh Đức 알아보기",
+      "count": 102,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — 홈",
+      "count": 102,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "박닌시 Nếnh동",
+      "count": 53,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Rùa Vàng",
+      "count": 53,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "박닌성 Lạng Giang",
+      "count": 52,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina",
+      "count": 52,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức 페이스북",
+      "count": 52,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Tiếng Việt",
+      "count": 51,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC VINA 인력 유한회사",
+      "count": 51,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina.",
+      "count": 51,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — 인력은 자산입니다",
+      "count": 51,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức 동료들이 함께하는 순간",
+      "count": 17,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "KCN Tân Hưng",
+      "count": 10,
+      "example": "dist/ko/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Yên Phong",
+      "count": 7,
+      "example": "dist/ko/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Sông Công",
+      "count": 7,
+      "example": "dist/ko/job-seekers/index.html"
+    },
+    {
+      "text": "Thu Hà 님",
+      "count": 6,
+      "example": "dist/ko/partners/index.html"
+    },
+    {
+      "text": "Minh Đức 일자리 연결의 날",
+      "count": 5,
+      "example": "dist/ko/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "KCN Đông Mai",
+      "count": 4,
+      "example": "dist/ko/job-seekers/index.html"
+    },
+    {
+      "text": "MINH ĐỨC",
+      "count": 2,
+      "example": "dist/ko/admin-demo/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 회사 소개 영상",
+      "count": 2,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "회의 테이블에서 의견을 나누는 민득(Minh Đức) 팀",
+      "count": 2,
+      "example": "dist/ko/news/ban-giao-giua-tuyen-dung-va-san-xuat/index.html"
+    },
+    {
+      "text": "생일 케이크와 송년 선물, 마당의 빗자루. 세 장면을 담은 사진으로 Minh Đức Vina 동료들이 함께한 시간을 돌아봅니다.",
+      "count": 2,
+      "example": "dist/ko/news/index.html"
+    },
+    {
+      "text": "프로토타입 체험 범위를 설명하는 내용으로 공식 웹사이트 공개 전에 Minh Đức의 검토가 필요합니다.",
+      "count": 2,
+      "example": "dist/ko/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đức 회사 자료에 소개된 파트너입니다.",
+      "count": 1,
+      "example": "dist/ko/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC / 관리자 데모",
+      "count": 1,
+      "example": "dist/ko/admin-demo/index.html"
+    },
+    {
+      "text": "Minh Đức와 상담",
+      "count": 1,
+      "example": "dist/ko/careers/index.html"
+    },
+    {
+      "text": "Minh Đức Zalo",
+      "count": 1,
+      "example": "dist/ko/contact/index.html"
+    },
+    {
+      "text": "Minh Đức에 메시지 보내기",
+      "count": 1,
+      "example": "dist/ko/contact/index.html"
+    },
+    {
+      "text": "민득 소개 | Minh Đức Vina",
+      "count": 1,
+      "example": "dist/ko/e-brochure/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 소개",
+      "count": 1,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "필요한 직무, 인원과 지역을 알려주세요. Minh Đức가 적합한 방안을 함께 논의합니다.",
+      "count": 1,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "팀과 사무실, 근로자들과의 만남을 통해 Minh Đức Vina를 소개합니다.",
+      "count": 1,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "Minh Đức Vina — 회사 소개",
+      "count": 1,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "영상 재생 – Minh Đức Vina 회사 소개 영상",
+      "count": 1,
+      "example": "dist/ko/index.html"
+    },
+    {
+      "text": "회의에서 업무 자료를 함께 검토하는 민득(Minh Đức) 팀원들",
+      "count": 1,
+      "example": "dist/ko/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "송년회에서 한자리에 모인 Minh Đức Vina 동료들.",
+      "count": 1,
+      "example": "dist/ko/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "Minh Đức Vina의 지역사회 활동 자료 사진.",
+      "count": 1,
+      "example": "dist/ko/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "송년회 무대 앞에서 함께 사진을 찍은 Minh Đức Vina 동료들.",
+      "count": 1,
+      "example": "dist/ko/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "양식에서 이름, 전화번호, 이메일, 채용·구직 수요, 이력서를 요청할 수 있습니다. 프로토타입에서는 브라우저에서 제출을 모의 실행하며 데이터가 Minh Đức 접수 시스템으로 전송되지 않습니다.",
+      "count": 1,
+      "example": "dist/ko/privacy-policy/index.html"
+    },
+    {
+      "text": "문의 사항은 아래 연락처로 Minh Đức에 연락하세요. 실제 데이터에 관한 요청은 공식 연락 창구에서 확인해야 합니다.",
+      "count": 1,
+      "example": "dist/ko/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đức는 입학 정보를 소개하고 학습 방식, 요건 및 서류 준비를 안내합니다.",
+      "count": 1,
+      "example": "dist/ko/services/college-admissions/index.html"
+    },
+    {
+      "text": "Minh Đức는 기업과 조직 구축, 업무 프로세스 및 운영 소프트웨어 요구를 논의합니다.",
+      "count": 1,
+      "example": "dist/ko/services/hr-consulting/index.html"
+    },
+    {
+      "text": "Minh Đức는 채용 요구를 접수하고 인력을 발굴하여 업무와 기업 조건에 맞는 근로자를 소개합니다.",
+      "count": 1,
+      "example": "dist/ko/services/labor-supply/index.html"
+    },
+    {
+      "text": "Minh Đức는 숙련 인력부터 전문 채용까지 직무, 경력 및 기술 요건에 맞는 후보자 검색을 지원합니다.",
+      "count": 1,
+      "example": "dist/ko/services/recruitment/index.html"
+    },
+    {
+      "text": "Minh Đức 웹사이트 이용",
+      "count": 1,
+      "example": "dist/ko/terms-of-use/index.html"
+    },
+    {
+      "text": "결정하기 전에 채용 조건, 급여, 서비스 비용, 협력 범위를 Minh Đức 또는 채용 기관에 직접 확인하세요.",
+      "count": 1,
+      "example": "dist/ko/terms-of-use/index.html"
+    }
+  ]
+}
+{
+  "locale": "ja",
+  "unique": 52,
+  "findings": [
+    {
+      "text": "Minh Đứcを知る",
+      "count": 102,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — ホーム",
+      "count": 102,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "バクニン市Nếnh街区",
+      "count": 53,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Rùa Vàng",
+      "count": 53,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "バクニン省Lạng Giang",
+      "count": 52,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina",
+      "count": 52,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh ĐứcのFacebook",
+      "count": 52,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Tiếng Việt",
+      "count": 51,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC VINA人材有限会社",
+      "count": 51,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức Vina.",
+      "count": 51,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức — 人材は財産",
+      "count": 51,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "Minh Đức の仲間が集うひととき",
+      "count": 17,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "KCN Tân Hưng",
+      "count": 10,
+      "example": "dist/ja/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Yên Phong",
+      "count": 7,
+      "example": "dist/ja/job-seekers/index.html"
+    },
+    {
+      "text": "KCN Sông Công",
+      "count": 7,
+      "example": "dist/ja/job-seekers/index.html"
+    },
+    {
+      "text": "Thu Hàさん",
+      "count": 6,
+      "example": "dist/ja/partners/index.html"
+    },
+    {
+      "text": "Minh Đức就職交流デー",
+      "count": 5,
+      "example": "dist/ja/events/hanh-trang-tim-viec/index.html"
+    },
+    {
+      "text": "KCN Đông Mai",
+      "count": 4,
+      "example": "dist/ja/job-seekers/index.html"
+    },
+    {
+      "text": "現場で活動するMinh Đứcのスタッフの様子。",
+      "count": 4,
+      "example": "dist/ja/news/chon-cong-viec-phu-hop/index.html"
+    },
+    {
+      "text": "業務について意見を交わすMinh Đứcのスタッフ。",
+      "count": 3,
+      "example": "dist/ja/news/ban-giao-giua-tuyen-dung-va-san-xuat/index.html"
+    },
+    {
+      "text": "デスクで一緒に資料を確認するMinh Đứcのスタッフ",
+      "count": 3,
+      "example": "dist/ja/news/doc-thong-tin-thu-nhap-va-ca-lam/index.html"
+    },
+    {
+      "text": "MINH ĐỨC",
+      "count": 2,
+      "example": "dist/ja/admin-demo/index.html"
+    },
+    {
+      "text": "Minh Đức Vina 会社紹介映像",
+      "count": 2,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "会議テーブルを囲んで話し合うMinh Đứcのスタッフ",
+      "count": 2,
+      "example": "dist/ja/news/ban-giao-giua-tuyen-dung-va-san-xuat/index.html"
+    },
+    {
+      "text": "屋外の作業現場で打ち合わせをするMinh Đứcのスタッフ",
+      "count": 2,
+      "example": "dist/ja/news/chuan-bi-truoc-ngay-nhan-viec/index.html"
+    },
+    {
+      "text": "誕生日のケーキ、年末の贈り物、庭先のほうき。記録写真から、Minh Đức Vina の仲間が集まった三つの場面を振り返ります。",
+      "count": 2,
+      "example": "dist/ja/news/index.html"
+    },
+    {
+      "text": "プロトタイプの体験範囲を説明する内容であり、正式サイトの公開前にMinh Đứcによる確認が必要です。",
+      "count": 2,
+      "example": "dist/ja/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đứcの会社資料に掲載されているパートナーです。",
+      "count": 1,
+      "example": "dist/ja/about-us/index.html"
+    },
+    {
+      "text": "MINH ĐỨC / 管理デモ",
+      "count": 1,
+      "example": "dist/ja/admin-demo/index.html"
+    },
+    {
+      "text": "Minh Đứcに相談",
+      "count": 1,
+      "example": "dist/ja/careers/index.html"
+    },
+    {
+      "text": "Minh ĐứcのZalo",
+      "count": 1,
+      "example": "dist/ja/contact/index.html"
+    },
+    {
+      "text": "Minh Đứcにメッセージを送る",
+      "count": 1,
+      "example": "dist/ja/contact/index.html"
+    },
+    {
+      "text": "ミンドゥックについて | Minh Đức Vina",
+      "count": 1,
+      "example": "dist/ja/e-brochure/index.html"
+    },
+    {
+      "text": "Minh Đức Vinaについて",
+      "count": 1,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "必要な職種、人数、勤務地をお知らせください。Minh Đứcが適切な方法を一緒に検討します。",
+      "count": 1,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "社員やオフィスの様子、働く方々との交流を通して、Minh Đức Vina を紹介します。",
+      "count": 1,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "Minh Đức Vina — 会社紹介",
+      "count": 1,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "動画を再生 – Minh Đức Vina 会社紹介映像",
+      "count": 1,
+      "example": "dist/ja/index.html"
+    },
+    {
+      "text": "共通の要請書があれば、候補者探しを始める前に各窓口で同じ情報を確認できます。写真はMinh Đứcのスタッフが打ち合わせをしている様子です。",
+      "count": 1,
+      "example": "dist/ja/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "打ち合わせで一緒に資料を確認するMinh Đứcのスタッフ",
+      "count": 1,
+      "example": "dist/ja/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "仕事の資料を一緒に照合するMinh Đứcのスタッフ",
+      "count": 1,
+      "example": "dist/ja/news/nhu-cau-tuyen-dung/index.html"
+    },
+    {
+      "text": "Minh Đức Vina の年末の集いで撮った一枚。",
+      "count": 1,
+      "example": "dist/ja/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "Minh Đức Vina の地域活動の記録から。",
+      "count": 1,
+      "example": "dist/ja/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "年末の集いで、ステージを背に集合写真を撮る Minh Đức Vina の仲間たち。",
+      "count": 1,
+      "example": "dist/ja/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc/index.html"
+    },
+    {
+      "text": "フォームでは氏名、電話番号、メール、採用・求職の希望、履歴書を求める場合があります。このプロトタイプでは送信をブラウザー内で模擬するだけで、データはMinh Đứcの受付システムに送られません。",
+      "count": 1,
+      "example": "dist/ja/privacy-policy/index.html"
+    },
+    {
+      "text": "ご質問は下記の連絡先からMinh Đứcにお問い合わせください。実際のデータに関する依頼は公式窓口での確認が必要です。",
+      "count": 1,
+      "example": "dist/ja/privacy-policy/index.html"
+    },
+    {
+      "text": "Minh Đứcは入学情報を紹介し、学習形式、条件、書類準備の確認を支援します。",
+      "count": 1,
+      "example": "dist/ja/services/college-admissions/index.html"
+    },
+    {
+      "text": "Minh Đứcは企業と組織構築、業務フロー、運営ソフトのニーズを話し合います。",
+      "count": 1,
+      "example": "dist/ja/services/hr-consulting/index.html"
+    },
+    {
+      "text": "Minh Đứcは採用ニーズを受け、人材を探し、業務と企業条件に合う働き手を紹介します。",
+      "count": 1,
+      "example": "dist/ja/services/labor-supply/index.html"
+    },
+    {
+      "text": "Minh Đứcは技能人材から専門職まで、職務、経験、技能に応じた候補者探しを支援します。",
+      "count": 1,
+      "example": "dist/ja/services/recruitment/index.html"
+    },
+    {
+      "text": "Minh Đứcウェブサイトの利用",
+      "count": 1,
+      "example": "dist/ja/terms-of-use/index.html"
+    },
+    {
+      "text": "判断する前に、採用条件、給与、サービス料金、協力範囲をMinh Đứcまたは採用元に直接ご確認ください。",
+      "count": 1,
+      "example": "dist/ja/terms-of-use/index.html"
+    }
+  ]
+}

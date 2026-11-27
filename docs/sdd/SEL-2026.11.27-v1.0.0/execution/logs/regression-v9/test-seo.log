@@ -1,0 +1,8 @@
+
+> minhduc-prototype@1.0.0 test:seo
+> node tests/route-data.mjs && node tests/seo-output.mjs && node tests/preload-output.mjs
+
+PASS 26 finite job/article/program routes, unique URLs, translated metadata and body/UI-free SSR data imports
+SEO output audit passed: 245 pages
+PASS homepage preload output
+PASS lazy route styles in prerendered head across five locales

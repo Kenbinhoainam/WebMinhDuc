@@ -1,0 +1,5 @@
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+command=node tests/s2-other-pages.mjs
+tested_at=2026-11-27T13:38:21Z
+PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales
+exit=0

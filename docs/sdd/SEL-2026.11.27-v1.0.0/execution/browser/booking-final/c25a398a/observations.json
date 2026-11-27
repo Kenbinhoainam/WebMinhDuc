@@ -1,0 +1,2402 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_tree_sha256": "ba241ff9afedbfa57572d293d0a7352d493b0a33e03fd712f509e11f0ead9c91",
+  "tested_utc": "2026-11-27T13:57:35+00:00",
+  "observations": [
+    {
+      "locale": "vi",
+      "width": 390,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.",
+            "invalid": "true",
+            "step": "Chọn ngày và giờ"
+          },
+          {
+            "focus": true,
+            "error": "Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.",
+            "invalid": "true",
+            "step": "Chọn ngày và giờ"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "30 tháng 11, 2026",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 38,
+          "scroll_after": 38,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                649.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                649.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                613.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                613.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                669.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                669.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                610.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                703.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "Đã hoàn tất trải nghiệm\n\nThời gian đã chọn: 1 tháng 12, 2026 · 15:30\n\nMã mô phỏng: DEMO-0001\n\nKhông có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.\n\nChọn thời gian khác"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.",
+            "invalid": "true",
+            "step": "Chọn ngày và giờ"
+          },
+          {
+            "focus": true,
+            "error": "Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.",
+            "invalid": "true",
+            "step": "Chọn ngày và giờ"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "30 tháng 11, 2026",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 119,
+          "scroll_after": 119,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                512.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                512.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                568.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                568.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                516.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                516.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                572.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                572.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                513.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                606.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "Đã hoàn tất trải nghiệm\n\nThời gian đã chọn: 1 tháng 12, 2026 · 15:30\n\nMã mô phỏng: DEMO-0001\n\nKhông có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.\n\nChọn thời gian khác"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "Choose today or a future date.",
+            "invalid": "true",
+            "step": "Choose a date and time"
+          },
+          {
+            "focus": true,
+            "error": "Choose today or a future date.",
+            "invalid": "true",
+            "step": "Choose a date and time"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "November 30, 2026",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 97,
+          "scroll_after": 97,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                594.53125,
+                151,
+                48
+              ],
+              [
+                199,
+                594.53125,
+                151,
+                48
+              ],
+              [
+                40,
+                650.53125,
+                151,
+                48
+              ],
+              [
+                199,
+                650.53125,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                554.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                554.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                610.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                610.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                551.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                551.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                551.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                551.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                644.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                644.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                644.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                644.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "Demo completed\n\nSelected time: December 1, 2026 · 15:30\n\nDemo reference: DEMO-0001\n\nNo appointment was booked. The sample receipt is available until you reload the page.\n\nChoose another time"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "Choose today or a future date.",
+            "invalid": "true",
+            "step": "Choose a date and time"
+          },
+          {
+            "focus": true,
+            "error": "Choose today or a future date.",
+            "invalid": "true",
+            "step": "Choose a date and time"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "November 30, 2026",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 119,
+          "scroll_after": 119,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                572.53125,
+                151,
+                48
+              ],
+              [
+                199,
+                572.53125,
+                151,
+                48
+              ],
+              [
+                40,
+                628.53125,
+                151,
+                48
+              ],
+              [
+                199,
+                628.53125,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                532.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                532.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                588.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                588.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                529.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                529.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                529.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                529.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                622.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                622.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                622.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                622.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "Demo completed\n\nSelected time: December 1, 2026 · 15:30\n\nDemo reference: DEMO-0001\n\nNo appointment was booked. The sample receipt is available until you reload the page.\n\nChoose another time"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "请选择今天或未来日期。",
+            "invalid": "true",
+            "step": "选择日期和时间"
+          },
+          {
+            "focus": true,
+            "error": "请选择今天或未来日期。",
+            "invalid": "true",
+            "step": "选择日期和时间"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026年11月30日",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 38,
+          "scroll_after": 38,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                649.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                649.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                585.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                585.984375,
+                336.5,
+                48
+              ],
+              [
+                43,
+                641.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                641.984375,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                580.3125,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                672.625,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "已完成演示\n\n已选时间： 2026年12月1日 · 15:30\n\n演示编号： DEMO-0001\n\n未创建实际预约。刷新页面前可查看示例回执。\n\n选择其他时间"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "请选择今天或未来日期。",
+            "invalid": "true",
+            "step": "选择日期和时间"
+          },
+          {
+            "focus": true,
+            "error": "请选择今天或未来日期。",
+            "invalid": "true",
+            "step": "选择日期和时间"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026年11月30日",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 88,
+          "scroll_after": 88,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                543.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                543.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                599.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                599.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                535.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                535.984375,
+                336.5,
+                48
+              ],
+              [
+                43,
+                591.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                591.984375,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                530.3125,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                622.625,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "已完成演示\n\n已选时间： 2026年12月1日 · 15:30\n\n演示编号： DEMO-0001\n\n未创建实际预约。刷新页面前可查看示例回执。\n\n选择其他时间"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "ko",
+      "width": 390,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "오늘 또는 이후 날짜를 선택하세요.",
+            "invalid": "true",
+            "step": "날짜와 시간 선택"
+          },
+          {
+            "focus": true,
+            "error": "오늘 또는 이후 날짜를 선택하세요.",
+            "invalid": "true",
+            "step": "날짜와 시간 선택"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026년 11월 30일",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 38,
+          "scroll_after": 38,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                649.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                649.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                585.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                585.984375,
+                336.5,
+                48
+              ],
+              [
+                43,
+                641.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                641.984375,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                580.3125,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                580.3125,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                672.625,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                672.625,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "체험 완료\n\n선택한 시간: 2026년 12월 1일 · 15:30\n\n모의 접수 번호: DEMO-0001\n\n실제 예약은 생성되지 않았습니다. 페이지를 새로 고칠 때까지 예시 접수 내역을 확인할 수 있습니다.\n\n다른 시간 선택"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "ko",
+      "width": 1440,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "오늘 또는 이후 날짜를 선택하세요.",
+            "invalid": "true",
+            "step": "날짜와 시간 선택"
+          },
+          {
+            "focus": true,
+            "error": "오늘 또는 이후 날짜를 선택하세요.",
+            "invalid": "true",
+            "step": "날짜와 시간 선택"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026년 11월 30일",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 88,
+          "scroll_after": 88,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                543.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                543.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                599.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                599.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                535.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                535.984375,
+                336.5,
+                48
+              ],
+              [
+                43,
+                591.984375,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                591.984375,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                530.3125,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                530.3125,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                622.625,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                622.625,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "체험 완료\n\n선택한 시간: 2026년 12월 1일 · 15:30\n\n모의 접수 번호: DEMO-0001\n\n실제 예약은 생성되지 않았습니다. 페이지를 새로 고칠 때까지 예시 접수 내역을 확인할 수 있습니다.\n\n다른 시간 선택"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "ja",
+      "width": 390,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "今日以降の日付を選択してください。",
+            "invalid": "true",
+            "step": "日時を選択"
+          },
+          {
+            "focus": true,
+            "error": "今日以降の日付を選択してください。",
+            "invalid": "true",
+            "step": "日時を選択"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026年11月30日",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 38,
+          "scroll_after": 38,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                593.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                649.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                649.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                613.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                613.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                669.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                669.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                610.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                610.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                703.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                703.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "デモが完了しました\n\n選択した日時： 2026年12月1日 · 15:30\n\nデモ受付番号： DEMO-0001\n\n実際の予約は作成されていません。サンプルの受付票はページを再読み込みするまで確認できます。\n\n別の時間を選ぶ"
+        },
+        "next_id": "DEMO-0002"
+      }
+    },
+    {
+      "locale": "ja",
+      "width": 1440,
+      "checks": {
+        "invalid_date": true,
+        "native_partial": true,
+        "live_date": false,
+        "missing_slot": true,
+        "slot_geometry": true,
+        "slots": true,
+        "native_selection": true,
+        "slot_summary": false,
+        "stable_tiles": true,
+        "missing_slot_before_progress": true,
+        "details_focus": true,
+        "edit_focus": true,
+        "draft": true,
+        "pre_receipt": true,
+        "success": true,
+        "reset": true,
+        "clean_form": true,
+        "sequence": true
+      },
+      "actual": {
+        "date_errors": [
+          {
+            "focus": true,
+            "error": "今日以降の日付を選択してください。",
+            "invalid": "true",
+            "step": "日時を選択"
+          },
+          {
+            "focus": true,
+            "error": "今日以降の日付を選択してください。",
+            "invalid": "true",
+            "step": "日時を選択"
+          }
+        ],
+        "native_partial": [
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ],
+          [
+            [
+              "Month Month",
+              1
+            ],
+            [
+              "Day Day",
+              0
+            ],
+            [
+              "Year Year",
+              0
+            ]
+          ]
+        ],
+        "date_summary": {
+          "expected": "2026年11月30日",
+          "actual": {
+            "summary": "",
+            "selected": []
+          },
+          "scroll_before": 119,
+          "scroll_after": 119,
+          "focused": true
+        },
+        "grids": {
+          "390": {
+            "rows": 2,
+            "tiles": [
+              [
+                40,
+                512.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                512.921875,
+                151,
+                48
+              ],
+              [
+                40,
+                568.921875,
+                151,
+                48
+              ],
+              [
+                199,
+                568.921875,
+                151,
+                48
+              ]
+            ]
+          },
+          "767": {
+            "rows": 2,
+            "tiles": [
+              [
+                43,
+                516.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                516.171875,
+                336.5,
+                48
+              ],
+              [
+                43,
+                572.171875,
+                336.5,
+                48
+              ],
+              [
+                387.5,
+                572.171875,
+                336.5,
+                48
+              ]
+            ]
+          },
+          "768": {
+            "rows": 1,
+            "tiles": [
+              [
+                325.53125,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                424.390625,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                523.25,
+                513.90625,
+                90.859375,
+                48
+              ],
+              [
+                622.109375,
+                513.90625,
+                90.859375,
+                48
+              ]
+            ]
+          },
+          "1440": {
+            "rows": 1,
+            "tiles": [
+              [
+                643.859375,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                792.390625,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                940.921875,
+                606.21875,
+                140.53125,
+                48
+              ],
+              [
+                1089.453125,
+                606.21875,
+                140.546875,
+                48
+              ]
+            ]
+          }
+        },
+        "slots": {
+          "normal": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "right": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "left": {
+            "summary": "",
+            "selected": [
+              "10:30"
+            ]
+          },
+          "reduced": {
+            "summary": "",
+            "selected": [
+              "14:00"
+            ]
+          },
+          "marker": {
+            "content": "\"\"",
+            "border": "2px"
+          },
+          "focus_outline": "3px",
+          "transition": {
+            "duration": "0.14s, 0.14s",
+            "properties": "border-color, background-color"
+          },
+          "reduced_transition": "1e-05s"
+        },
+        "receipt": {
+          "id": "DEMO-0001",
+          "text": "デモが完了しました\n\n選択した日時： 2026年12月1日 · 15:30\n\nデモ受付番号： DEMO-0001\n\n実際の予約は作成されていません。サンプルの受付票はページを再読み込みするまで確認できます。\n\n別の時間を選ぶ"
+        },
+        "next_id": "DEMO-0002"
+      }
+    }
+  ],
+  "chromium": "156.0.8078.79",
+  "missing": [],
+  "page_errors": [],
+  "external_requests_blocked": [],
+  "limits": "Hermetic desktop Chromium, native date keyboard segments, radio keys and viewport emulation. No physical OS calendar popup, screen reader, or external appointment."
+}

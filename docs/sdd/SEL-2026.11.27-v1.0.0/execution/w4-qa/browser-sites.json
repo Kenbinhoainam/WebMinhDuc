@@ -1,0 +1,928 @@
+{
+  "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "harness_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_tree_sha256": "27643043bf335a11d3a575a65c7113e512d5caa6cd0a34d5348ac125892823f8",
+  "mount": "/",
+  "chromium": "156.0.8078.79",
+  "limits": {
+    "P20-B2": "Featured rail stays global on page one. This does not approve a scope change.",
+    "P20-B4": "Checks both distinct destinations and all category controls; no external user test.",
+    "P20-C2": "Keyboard, page boundary and filter→page→article→archive covered. No physical swipe.",
+    "P31-E3": "Direct keyboard journey from Partners to Jobs. No independent user interview.",
+    "P31-F3": "Both routes were loaded separately, with matching rendered heading and metadata.",
+    "P31-D1": "320/820/1440/1920px across five locales. No physical device or browser zoom.",
+    "P31-B3": "Keyboard CTA goes to the focused staffing section with F01 selected. No independent reader study.",
+    "P31-A2": "Names, source paths, decoded images and failure fixture. No new brand verification or viewport image comparison.",
+    "P31-F2": "Checks all three placements and deliberate logo network failure. No offscreen CPU or network profiling."
+  },
+  "missing": [],
+  "page_errors": [],
+  "checks": [
+    {
+      "test": "news-category-page-reader",
+      "choice_ids": [
+        "P20-B2",
+        "P20-B4",
+        "P20-C2"
+      ],
+      "locale": "vi",
+      "viewport_width": 820,
+      "route": "/news",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "filtered_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news?category=workers&page=2",
+        "first_page_articles": {
+          "category=workers": [
+            "/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/news/phong-van-nha-may-lan-dau",
+            "/news/chuan-bi-truoc-ngay-nhan-viec"
+          ],
+          "category=employers": [
+            "/news/ban-yeu-cau-nhan-luc-cho-nha-may",
+            "/news/theo-doi-pheu-tuyen-dung",
+            "/news/nhu-cau-tuyen-dung"
+          ],
+          "category=hr": [
+            "/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/news/ban-giao-giua-tuyen-dung-va-san-xuat",
+            "/news/phan-hoi-ung-vien-ro-rang"
+          ],
+          "": [
+            "/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/news/phong-van-nha-may-lan-dau"
+          ]
+        },
+        "same_featured": [
+          "/news/don-tiep-lao-dong-moi",
+          "/news/an-toan-thong-tin-khi-tim-viec"
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-alias-and-worker-link",
+      "choice_ids": [
+        "P31-E3",
+        "P31-F3"
+      ],
+      "locale": "vi",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "metadata": {
+          "/partners": {
+            "title": "Đối tác | Minh Đức Vina",
+            "heading": "Đối tác & kết nối",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners",
+            "meta[name=description]": "Tìm hiểu về kết nối và định hướng đồng hành cùng đối tác của Minh Đức.",
+            "meta[name=robots]": "noindex,nofollow"
+          },
+          "/testimonials": {
+            "title": "Đối tác | Minh Đức Vina",
+            "heading": "Đối tác & kết nối",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners",
+            "meta[name=description]": "Tìm hiểu về kết nối và định hướng đồng hành cùng đối tác của Minh Đức.",
+            "meta[name=robots]": "noindex,nofollow"
+          }
+        },
+        "worker_link": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-responsive-and-workforce-link",
+      "choice_ids": [
+        "P31-D1",
+        "P31-B3"
+      ],
+      "locale": "vi",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "viewport_checks": {
+          "320": {
+            "viewport": 320,
+            "document": 320,
+            "ctas": [
+              [
+                20,
+                221.03125,
+                44
+              ],
+              [
+                20,
+                170.484375,
+                44
+              ]
+            ]
+          },
+          "820": {
+            "viewport": 820,
+            "document": 820,
+            "ctas": [
+              [
+                484.703125,
+                685.734375,
+                44
+              ],
+              [
+                484.703125,
+                635.1875,
+                44
+              ]
+            ]
+          },
+          "1440": {
+            "viewport": 1440,
+            "document": 1440,
+            "ctas": [
+              [
+                872.671875,
+                1064.265625,
+                44
+              ],
+              [
+                1084.265625,
+                1234.75,
+                44
+              ]
+            ]
+          },
+          "1920": {
+            "viewport": 1920,
+            "document": 1920,
+            "ctas": [
+              [
+                1120.671875,
+                1312.265625,
+                44
+              ],
+              [
+                1332.265625,
+                1482.75,
+                44
+              ]
+            ]
+          }
+        },
+        "workforce_destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/about-us#business-contact"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "news-category-page-reader",
+      "choice_ids": [
+        "P20-B2",
+        "P20-B4",
+        "P20-C2"
+      ],
+      "locale": "en",
+      "viewport_width": 820,
+      "route": "/news",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "filtered_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/news?category=workers&page=2",
+        "first_page_articles": {
+          "category=workers": [
+            "/en/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/en/news/phong-van-nha-may-lan-dau",
+            "/en/news/chuan-bi-truoc-ngay-nhan-viec"
+          ],
+          "category=employers": [
+            "/en/news/ban-yeu-cau-nhan-luc-cho-nha-may",
+            "/en/news/theo-doi-pheu-tuyen-dung",
+            "/en/news/nhu-cau-tuyen-dung"
+          ],
+          "category=hr": [
+            "/en/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/en/news/ban-giao-giua-tuyen-dung-va-san-xuat",
+            "/en/news/phan-hoi-ung-vien-ro-rang"
+          ],
+          "": [
+            "/en/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/en/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/en/news/phong-van-nha-may-lan-dau"
+          ]
+        },
+        "same_featured": [
+          "/en/news/don-tiep-lao-dong-moi",
+          "/en/news/an-toan-thong-tin-khi-tim-viec"
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-alias-and-worker-link",
+      "choice_ids": [
+        "P31-E3",
+        "P31-F3"
+      ],
+      "locale": "en",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "metadata": {
+          "/partners": {
+            "title": "Partners | Minh Đức Vina",
+            "heading": "Partners & connections",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/partners",
+            "meta[name=description]": "Learn about Minh Đức’s connections and approach to working with partners.",
+            "meta[name=robots]": "noindex,nofollow"
+          },
+          "/testimonials": {
+            "title": "Partners | Minh Đức Vina",
+            "heading": "Partners & connections",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/partners",
+            "meta[name=description]": "Learn about Minh Đức’s connections and approach to working with partners.",
+            "meta[name=robots]": "noindex,nofollow"
+          }
+        },
+        "worker_link": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/jobs"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-responsive-and-workforce-link",
+      "choice_ids": [
+        "P31-D1",
+        "P31-B3"
+      ],
+      "locale": "en",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "viewport_checks": {
+          "320": {
+            "viewport": 320,
+            "document": 320,
+            "ctas": [
+              [
+                20,
+                166.5,
+                44
+              ],
+              [
+                20,
+                165.03125,
+                44
+              ]
+            ]
+          },
+          "820": {
+            "viewport": 820,
+            "document": 820,
+            "ctas": [
+              [
+                484.703125,
+                631.203125,
+                44
+              ],
+              [
+                484.703125,
+                629.734375,
+                44
+              ]
+            ]
+          },
+          "1440": {
+            "viewport": 1440,
+            "document": 1440,
+            "ctas": [
+              [
+                872.671875,
+                1013.140625,
+                44
+              ],
+              [
+                1033.140625,
+                1178.171875,
+                44
+              ]
+            ]
+          },
+          "1920": {
+            "viewport": 1920,
+            "document": 1920,
+            "ctas": [
+              [
+                1120.671875,
+                1261.140625,
+                44
+              ],
+              [
+                1281.140625,
+                1426.171875,
+                44
+              ]
+            ]
+          }
+        },
+        "workforce_destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/about-us#business-contact"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "news-category-page-reader",
+      "choice_ids": [
+        "P20-B2",
+        "P20-B4",
+        "P20-C2"
+      ],
+      "locale": "zh",
+      "viewport_width": 820,
+      "route": "/news",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "filtered_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/news?category=workers&page=2",
+        "first_page_articles": {
+          "category=workers": [
+            "/zh/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/zh/news/phong-van-nha-may-lan-dau",
+            "/zh/news/chuan-bi-truoc-ngay-nhan-viec"
+          ],
+          "category=employers": [
+            "/zh/news/ban-yeu-cau-nhan-luc-cho-nha-may",
+            "/zh/news/theo-doi-pheu-tuyen-dung",
+            "/zh/news/nhu-cau-tuyen-dung"
+          ],
+          "category=hr": [
+            "/zh/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/zh/news/ban-giao-giua-tuyen-dung-va-san-xuat",
+            "/zh/news/phan-hoi-ung-vien-ro-rang"
+          ],
+          "": [
+            "/zh/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/zh/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/zh/news/phong-van-nha-may-lan-dau"
+          ]
+        },
+        "same_featured": [
+          "/zh/news/don-tiep-lao-dong-moi",
+          "/zh/news/an-toan-thong-tin-khi-tim-viec"
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-alias-and-worker-link",
+      "choice_ids": [
+        "P31-E3",
+        "P31-F3"
+      ],
+      "locale": "zh",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "metadata": {
+          "/partners": {
+            "title": "合作伙伴 | Minh Đức Vina",
+            "heading": "伙伴与合作",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/partners",
+            "meta[name=description]": "了解明德的合作网络及与伙伴协作的方向。",
+            "meta[name=robots]": "noindex,nofollow"
+          },
+          "/testimonials": {
+            "title": "合作伙伴 | Minh Đức Vina",
+            "heading": "伙伴与合作",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/partners",
+            "meta[name=description]": "了解明德的合作网络及与伙伴协作的方向。",
+            "meta[name=robots]": "noindex,nofollow"
+          }
+        },
+        "worker_link": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/jobs"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-responsive-and-workforce-link",
+      "choice_ids": [
+        "P31-D1",
+        "P31-B3"
+      ],
+      "locale": "zh",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "viewport_checks": {
+          "320": {
+            "viewport": 320,
+            "document": 320,
+            "ctas": [
+              [
+                20,
+                166.015625,
+                44
+              ],
+              [
+                186.015625,
+                282.03125,
+                44
+              ]
+            ]
+          },
+          "820": {
+            "viewport": 820,
+            "document": 820,
+            "ctas": [
+              [
+                484.703125,
+                630.71875,
+                44
+              ],
+              [
+                650.71875,
+                746.734375,
+                44
+              ]
+            ]
+          },
+          "1440": {
+            "viewport": 1440,
+            "document": 1440,
+            "ctas": [
+              [
+                872.671875,
+                1012.6875,
+                44
+              ],
+              [
+                1032.6875,
+                1128.703125,
+                44
+              ]
+            ]
+          },
+          "1920": {
+            "viewport": 1920,
+            "document": 1920,
+            "ctas": [
+              [
+                1120.671875,
+                1260.6875,
+                44
+              ],
+              [
+                1280.6875,
+                1376.703125,
+                44
+              ]
+            ]
+          }
+        },
+        "workforce_destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/about-us#business-contact"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "news-category-page-reader",
+      "choice_ids": [
+        "P20-B2",
+        "P20-B4",
+        "P20-C2"
+      ],
+      "locale": "ko",
+      "viewport_width": 820,
+      "route": "/news",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "filtered_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/news?category=workers&page=2",
+        "first_page_articles": {
+          "category=workers": [
+            "/ko/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/ko/news/phong-van-nha-may-lan-dau",
+            "/ko/news/chuan-bi-truoc-ngay-nhan-viec"
+          ],
+          "category=employers": [
+            "/ko/news/ban-yeu-cau-nhan-luc-cho-nha-may",
+            "/ko/news/theo-doi-pheu-tuyen-dung",
+            "/ko/news/nhu-cau-tuyen-dung"
+          ],
+          "category=hr": [
+            "/ko/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/ko/news/ban-giao-giua-tuyen-dung-va-san-xuat",
+            "/ko/news/phan-hoi-ung-vien-ro-rang"
+          ],
+          "": [
+            "/ko/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/ko/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/ko/news/phong-van-nha-may-lan-dau"
+          ]
+        },
+        "same_featured": [
+          "/ko/news/don-tiep-lao-dong-moi",
+          "/ko/news/an-toan-thong-tin-khi-tim-viec"
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-alias-and-worker-link",
+      "choice_ids": [
+        "P31-E3",
+        "P31-F3"
+      ],
+      "locale": "ko",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "metadata": {
+          "/partners": {
+            "title": "파트너 | Minh Đức Vina",
+            "heading": "파트너 및 협력",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/partners",
+            "meta[name=description]": "민득의 파트너 네트워크와 협력 방향을 알아보세요.",
+            "meta[name=robots]": "noindex,nofollow"
+          },
+          "/testimonials": {
+            "title": "파트너 | Minh Đức Vina",
+            "heading": "파트너 및 협력",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/partners",
+            "meta[name=description]": "민득의 파트너 네트워크와 협력 방향을 알아보세요.",
+            "meta[name=robots]": "noindex,nofollow"
+          }
+        },
+        "worker_link": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/jobs"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-responsive-and-workforce-link",
+      "choice_ids": [
+        "P31-D1",
+        "P31-B3"
+      ],
+      "locale": "ko",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "viewport_checks": {
+          "320": {
+            "viewport": 320,
+            "document": 320,
+            "ctas": [
+              [
+                20,
+                132.859375,
+                44
+              ],
+              [
+                152.859375,
+                297.28125,
+                44
+              ]
+            ]
+          },
+          "820": {
+            "viewport": 820,
+            "document": 820,
+            "ctas": [
+              [
+                484.703125,
+                597.5625,
+                44
+              ],
+              [
+                617.5625,
+                761.984375,
+                44
+              ]
+            ]
+          },
+          "1440": {
+            "viewport": 1440,
+            "document": 1440,
+            "ctas": [
+              [
+                872.671875,
+                981.609375,
+                44
+              ],
+              [
+                1001.609375,
+                1146.03125,
+                44
+              ]
+            ]
+          },
+          "1920": {
+            "viewport": 1920,
+            "document": 1920,
+            "ctas": [
+              [
+                1120.671875,
+                1229.609375,
+                44
+              ],
+              [
+                1249.609375,
+                1394.03125,
+                44
+              ]
+            ]
+          }
+        },
+        "workforce_destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/about-us#business-contact"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "news-category-page-reader",
+      "choice_ids": [
+        "P20-B2",
+        "P20-B4",
+        "P20-C2"
+      ],
+      "locale": "ja",
+      "viewport_width": 820,
+      "route": "/news",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "filtered_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/news?category=workers&page=2",
+        "first_page_articles": {
+          "category=workers": [
+            "/ja/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/ja/news/phong-van-nha-may-lan-dau",
+            "/ja/news/chuan-bi-truoc-ngay-nhan-viec"
+          ],
+          "category=employers": [
+            "/ja/news/ban-yeu-cau-nhan-luc-cho-nha-may",
+            "/ja/news/theo-doi-pheu-tuyen-dung",
+            "/ja/news/nhu-cau-tuyen-dung"
+          ],
+          "category=hr": [
+            "/ja/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/ja/news/ban-giao-giua-tuyen-dung-va-san-xuat",
+            "/ja/news/phan-hoi-ung-vien-ro-rang"
+          ],
+          "": [
+            "/ja/news/doc-thong-tin-thu-nhap-va-ca-lam",
+            "/ja/news/nhung-dip-gap-nhau-cua-nguoi-minh-duc",
+            "/ja/news/phong-van-nha-may-lan-dau"
+          ]
+        },
+        "same_featured": [
+          "/ja/news/don-tiep-lao-dong-moi",
+          "/ja/news/an-toan-thong-tin-khi-tim-viec"
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-alias-and-worker-link",
+      "choice_ids": [
+        "P31-E3",
+        "P31-F3"
+      ],
+      "locale": "ja",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "metadata": {
+          "/partners": {
+            "title": "パートナー | Minh Đức Vina",
+            "heading": "パートナーとつながり",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/partners",
+            "meta[name=description]": "ミンドゥックのパートナーとのつながりと協力方針をご紹介します。",
+            "meta[name=robots]": "noindex,nofollow"
+          },
+          "/testimonials": {
+            "title": "パートナー | Minh Đức Vina",
+            "heading": "パートナーとつながり",
+            "link[rel=canonical]": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/partners",
+            "meta[name=description]": "ミンドゥックのパートナーとのつながりと協力方針をご紹介します。",
+            "meta[name=robots]": "noindex,nofollow"
+          }
+        },
+        "worker_link": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/jobs"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-responsive-and-workforce-link",
+      "choice_ids": [
+        "P31-D1",
+        "P31-B3"
+      ],
+      "locale": "ja",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "viewport_checks": {
+          "320": {
+            "viewport": 320,
+            "document": 320,
+            "ctas": [
+              [
+                20,
+                182.015625,
+                44
+              ],
+              [
+                20,
+                164.015625,
+                44
+              ]
+            ]
+          },
+          "820": {
+            "viewport": 820,
+            "document": 820,
+            "ctas": [
+              [
+                484.703125,
+                646.71875,
+                44
+              ],
+              [
+                484.703125,
+                628.71875,
+                44
+              ]
+            ]
+          },
+          "1440": {
+            "viewport": 1440,
+            "document": 1440,
+            "ctas": [
+              [
+                872.671875,
+                1027.6875,
+                44
+              ],
+              [
+                1047.6875,
+                1191.703125,
+                44
+              ]
+            ]
+          },
+          "1920": {
+            "viewport": 1920,
+            "document": 1920,
+            "ctas": [
+              [
+                1120.671875,
+                1275.6875,
+                44
+              ],
+              [
+                1295.6875,
+                1439.703125,
+                44
+              ]
+            ]
+          }
+        },
+        "workforce_destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/about-us#business-contact"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-approved-logos",
+      "choice_ids": [
+        "P31-A2",
+        "P31-F2"
+      ],
+      "locale": "vi",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "/partners": [
+          [
+            "luxshare.svg",
+            "",
+            200
+          ],
+          [
+            "foxconn.svg",
+            "",
+            160
+          ],
+          [
+            "samsung.svg",
+            "",
+            143
+          ],
+          [
+            "glovitech.webp",
+            "",
+            272
+          ],
+          [
+            "tacu.webp",
+            "",
+            162
+          ]
+        ],
+        "/": [
+          [
+            "luxshare.svg",
+            "",
+            200
+          ],
+          [
+            "foxconn.svg",
+            "",
+            160
+          ],
+          [
+            "samsung.svg",
+            "",
+            143
+          ],
+          [
+            "glovitech.webp",
+            "",
+            272
+          ],
+          [
+            "tacu.webp",
+            "",
+            162
+          ]
+        ],
+        "/about-us": [
+          [
+            "luxshare.svg",
+            "",
+            200
+          ],
+          [
+            "foxconn.svg",
+            "",
+            160
+          ],
+          [
+            "samsung.svg",
+            "",
+            143
+          ],
+          [
+            "glovitech.webp",
+            "",
+            272
+          ],
+          [
+            "tacu.webp",
+            "",
+            162
+          ]
+        ]
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "partner-text-fallback",
+      "choice_ids": [
+        "P31-A2",
+        "P31-F2"
+      ],
+      "locale": "vi",
+      "viewport_width": 820,
+      "route": "/partners",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "coverage": "scoped assertion",
+      "actual": {
+        "visible_fallback": [
+          "Luxshare ICT",
+          "FOXCONN",
+          "SAMSUNG",
+          "JEILTECH VINA",
+          "TACU"
+        ],
+        "screenshot": "screenshots/partner-name-fallback.png"
+      },
+      "status": "Pass"
+    }
+  ],
+  "runner_sha256": "b9a3ed51695b047bd0e7437a686ae980e1f2e6c2740f8043bb14b2d4a3d83384",
+  "site_sha": "b9b58c4da406a91e43e94e2ad98a0f73327a47ab"
+}

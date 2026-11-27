@@ -1,0 +1,413 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_tree_sha256": "fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1",
+  "browser": "Chromium 156.0.8078.79",
+  "checks": [
+    {
+      "name": "external focused button at page boundary",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "history_scroll": [
+        484,
+        484
+      ],
+      "restored_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\"[data-job-save=MD006]\")\n    12 \u00d7 locator resolved to <button type=\"button\" aria-pressed=\"true\" data-job-save=\"MD006\" title="
+    },
+    {
+      "name": "external focused title, following sibling",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-link=MD003]",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\"[data-job-link=MD003]\")\n    13 \u00d7 locator resolved to <a data-discover=\"true\" data-job-link=\"MD003\" href=\"/WebMinhDuc/jobs/n"
+    },
+    {
+      "name": "external change, focus on filter",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "#jobs-query",
+      "actual_focus": {
+        "tag": "INPUT",
+        "save": null,
+        "link": null,
+        "id": "jobs-query",
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on another card",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD004]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD004",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external last remaining card",
+      "width": 390,
+      "before_ids": [
+        "MD001"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\".jobs-empty a\")\n    13 \u00d7 locator resolved to <a class=\"btn\" data-discover=\"true\" href=\"/WebMinhDuc/jobs#job-listings\">Kh\u00e1m "
+    },
+    {
+      "name": "local removal, previous page",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "local final saved record",
+      "width": 390,
+      "before_ids": [
+        "MD008"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    },
+    {
+      "name": "external focused button at page boundary",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "history_scroll": [
+        0,
+        0
+      ],
+      "restored_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\"[data-job-save=MD006]\")\n    11 \u00d7 locator resolved to <button type=\"button\" aria-pressed=\"true\" data-job-save=\"MD006\" title="
+    },
+    {
+      "name": "external focused title, following sibling",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-link=MD003]",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\"[data-job-link=MD003]\")\n    13 \u00d7 locator resolved to <a data-discover=\"true\" data-job-link=\"MD003\" href=\"/WebMinhDuc/jobs/n"
+    },
+    {
+      "name": "external change, focus on filter",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "#jobs-query",
+      "actual_focus": {
+        "tag": "INPUT",
+        "save": null,
+        "link": null,
+        "id": "jobs-query",
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on another card",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD004]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD004",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external last remaining card",
+      "width": 1440,
+      "before_ids": [
+        "MD001"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Fail",
+      "error": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1200ms\n  - waiting for locator(\".jobs-empty a\")\n    12 \u00d7 locator resolved to <a class=\"btn\" data-discover=\"true\" href=\"/WebMinhDuc/jobs#job-listings\">Kh\u00e1m "
+    },
+    {
+      "name": "local removal, previous page",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "local final saved record",
+      "width": 1440,
+      "before_ids": [
+        "MD008"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    }
+  ]
+}

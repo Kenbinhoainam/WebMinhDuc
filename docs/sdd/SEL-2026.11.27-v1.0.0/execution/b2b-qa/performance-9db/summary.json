@@ -1,0 +1,667 @@
+{
+  "build_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "dist_tree_sha256": "429a3989859c8ed4b473773ffeb99c95e7bac4123a41182fce5d27134aa52ba7",
+  "measurement_count": 24,
+  "fallback_checks": [
+    {
+      "device": "desktop",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "Pass",
+      "labels": [
+        {
+          "name": "Luxshare ICT",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "FOXCONN",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "SAMSUNG",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "JEILTECH VINA",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "TACU",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        }
+      ],
+      "deliberately_aborted": [
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/foxconn.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/glovitech.webp",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/luxshare.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/samsung.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/tacu.webp"
+      ]
+    },
+    {
+      "device": "mobile",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "Pass",
+      "labels": [
+        {
+          "name": "Luxshare ICT",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "FOXCONN",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "SAMSUNG",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "JEILTECH VINA",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        },
+        {
+          "name": "TACU",
+          "images": 0,
+          "visible": "visible",
+          "box": true
+        }
+      ],
+      "deliberately_aborted": [
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/foxconn.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/glovitech.webp",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/luxshare.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/samsung.svg",
+        "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners/tacu.webp"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "fresh_context",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 428,
+        "min": 300,
+        "max": 728
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.000737,
+        "min": 0.000376,
+        "max": 0.000737
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": 626.414,
+        "min": 456.923,
+        "max": 1156.581
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.6,
+        "min": 15.3,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 23,
+        "min": 23,
+        "max": 23
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 22196322,
+        "min": 22196322,
+        "max": 22196322
+      },
+      "native_end_cls": {
+        "n": 3,
+        "median": 0.001814,
+        "min": 0.000736,
+        "max": 0.001814
+      },
+      "click_to_second_raf_ms": {
+        "n": 3,
+        "median": 21.3,
+        "min": 20.5,
+        "max": 27.0
+      }
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "repeat_same_context_no_http_cache",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 144,
+        "min": 124,
+        "max": 220
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.000737,
+        "min": 0.000737,
+        "max": 0.000737
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": -693.472,
+        "min": -1568.884,
+        "max": -487.871
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.7,
+        "min": 16.65,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 23,
+        "min": 23,
+        "max": 23
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 22196322,
+        "min": 22196322,
+        "max": 22196322
+      },
+      "native_end_cls": {
+        "n": 3,
+        "median": 0.000736,
+        "min": 0.000736,
+        "max": 0.000736
+      },
+      "click_to_second_raf_ms": {
+        "n": 3,
+        "median": 25.1,
+        "min": 21.3,
+        "max": 25.2
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "fresh_context",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 252,
+        "min": 244,
+        "max": 252
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.00444,
+        "min": 0.00444,
+        "max": 0.00444
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": 482.8,
+        "min": 471.627,
+        "max": 491.123
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.65,
+        "min": 16.65,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 22074404,
+        "min": 22074404,
+        "max": 22074404
+      },
+      "native_end_cls": {
+        "n": 3,
+        "median": 0.1146,
+        "min": 0.1146,
+        "max": 0.1146
+      },
+      "click_to_second_raf_ms": {
+        "n": 3,
+        "median": 22.1,
+        "min": 22.0,
+        "max": 27.7
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "repeat_same_context_no_http_cache",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 156,
+        "min": 132,
+        "max": 248
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.00444,
+        "min": 0.00444,
+        "max": 0.00444
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": -444.186,
+        "min": -460.262,
+        "max": -406.766
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.7,
+        "min": 16.6,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 22074404,
+        "min": 22074404,
+        "max": 22074404
+      },
+      "native_end_cls": {
+        "n": 3,
+        "median": 0.1146,
+        "min": 0.1146,
+        "max": 0.1146
+      },
+      "click_to_second_raf_ms": {
+        "n": 3,
+        "median": 23.6,
+        "min": 22.7,
+        "max": 26.8
+      }
+    },
+    {
+      "route": "/partners",
+      "device": "desktop",
+      "condition": "fresh_context",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 268,
+        "min": 260,
+        "max": 356
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.002435,
+        "min": 0.002435,
+        "max": 0.002435
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": 473.751,
+        "min": 371.452,
+        "max": 652.92
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.6,
+        "min": 16.6,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 895659,
+        "min": 895659,
+        "max": 895659
+      },
+      "visible_task_ms": {
+        "n": 3,
+        "median": 85.303,
+        "min": 77.832,
+        "max": 116.698
+      },
+      "offscreen_task_ms": {
+        "n": 3,
+        "median": 6.955,
+        "min": 5.997,
+        "max": 10.549
+      },
+      "visible_script_ms": {
+        "n": 3,
+        "median": 21.162,
+        "min": 13.099,
+        "max": 23.538
+      },
+      "offscreen_script_ms": {
+        "n": 3,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "visible_scroll_delta": {
+        "n": 3,
+        "median": 44,
+        "min": 44,
+        "max": 45
+      },
+      "offscreen_scroll_delta": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "phase_new_requests": 0
+    },
+    {
+      "route": "/partners",
+      "device": "desktop",
+      "condition": "repeat_same_context_no_http_cache",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 172,
+        "min": 108,
+        "max": 244
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0.002435,
+        "min": 0.002422,
+        "max": 0.003852
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": -379.115,
+        "min": -636.679,
+        "max": -253.444
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.7,
+        "min": 16.65,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 895659,
+        "min": 895659,
+        "max": 895659
+      },
+      "visible_task_ms": {
+        "n": 3,
+        "median": 83.977,
+        "min": 71.249,
+        "max": 103.228
+      },
+      "offscreen_task_ms": {
+        "n": 3,
+        "median": 5.767,
+        "min": 4.17,
+        "max": 12.296
+      },
+      "visible_script_ms": {
+        "n": 3,
+        "median": 15.796,
+        "min": 13.904,
+        "max": 17.922
+      },
+      "offscreen_script_ms": {
+        "n": 3,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "visible_scroll_delta": {
+        "n": 3,
+        "median": 44,
+        "min": 44,
+        "max": 45
+      },
+      "offscreen_scroll_delta": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "phase_new_requests": 0
+    },
+    {
+      "route": "/partners",
+      "device": "mobile",
+      "condition": "fresh_context",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 220,
+        "min": 172,
+        "max": 248
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0.010366
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": 563.441,
+        "min": 439.097,
+        "max": 744.278
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.65,
+        "min": 16.6,
+        "max": 16.65
+      },
+      "response_count": {
+        "n": 3,
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 836291,
+        "min": 836291,
+        "max": 836291
+      },
+      "visible_task_ms": {
+        "n": 3,
+        "median": 78.897,
+        "min": 48.985,
+        "max": 209.493
+      },
+      "offscreen_task_ms": {
+        "n": 3,
+        "median": 5.799,
+        "min": 3.486,
+        "max": 8.688
+      },
+      "visible_script_ms": {
+        "n": 3,
+        "median": 20.479,
+        "min": 8.987,
+        "max": 68.21
+      },
+      "offscreen_script_ms": {
+        "n": 3,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "visible_scroll_delta": {
+        "n": 3,
+        "median": 45,
+        "min": 45,
+        "max": 45
+      },
+      "offscreen_scroll_delta": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "phase_new_requests": 0
+    },
+    {
+      "route": "/partners",
+      "device": "mobile",
+      "condition": "repeat_same_context_no_http_cache",
+      "runs": 3,
+      "lcp_ms": {
+        "n": 3,
+        "median": 192,
+        "min": 132,
+        "max": 240
+      },
+      "initial_cls": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "mainthread_load_ms": {
+        "n": 3,
+        "median": -465.675,
+        "min": -774.338,
+        "max": -377.826
+      },
+      "raf_interval_ms": {
+        "n": 3,
+        "median": 16.7,
+        "min": 16.6,
+        "max": 16.7
+      },
+      "response_count": {
+        "n": 3,
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "resource_encoded_bytes": {
+        "n": 3,
+        "median": 836291,
+        "min": 836291,
+        "max": 836291
+      },
+      "visible_task_ms": {
+        "n": 3,
+        "median": 72.734,
+        "min": 49.737,
+        "max": 95.895
+      },
+      "offscreen_task_ms": {
+        "n": 3,
+        "median": 11.198,
+        "min": 3.667,
+        "max": 21.685
+      },
+      "visible_script_ms": {
+        "n": 3,
+        "median": 16.728,
+        "min": 10.733,
+        "max": 24.001
+      },
+      "offscreen_script_ms": {
+        "n": 3,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "visible_scroll_delta": {
+        "n": 3,
+        "median": 45,
+        "min": 44,
+        "max": 46
+      },
+      "offscreen_scroll_delta": {
+        "n": 3,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "phase_new_requests": 0
+    }
+  ],
+  "mobile_native_end_cls": {
+    "n": 6,
+    "median": 0.1146,
+    "min": 0.1146,
+    "max": 0.1146
+  },
+  "desktop_native_end_cls": {
+    "n": 6,
+    "median": 0.000736,
+    "min": 0.000736,
+    "max": 0.001814
+  },
+  "mobile_hero_height_before": {
+    "n": 6,
+    "median": 508.21875,
+    "min": 508.21875,
+    "max": 508.21875
+  },
+  "mobile_hero_height_after": {
+    "n": 6,
+    "median": 449.375,
+    "min": 449.375,
+    "max": 449.375
+  },
+  "missing_packaged": [],
+  "js_errors": [],
+  "console_warnings_errors": [],
+  "media_errors": [],
+  "network_error_summary": {
+    "net::ERR_ABORTED (canceled)": 12
+  },
+  "network_error_note": "12 canceled net::ERR_ABORTED media requests observed during intentional pause/resume/seek. No uncanceled failure or media error event."
+}

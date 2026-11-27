@@ -1,0 +1,78 @@
+{
+  "target_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "checkout": "/tmp/minhduc-w2-4231-e3ria6fs",
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/s2-b2b-flows.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:33.851276+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/info-carousel.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:38.433340+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/business-info.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:43.988218+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-b2b.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:50.953775+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/consultation.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:55.662995+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:00.605778+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-responsive.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:03.668312+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-lifecycle.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:03.926988+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-video-gallery.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:31.557735+00:00"
+    }
+  ]
+}

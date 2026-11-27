@@ -1,0 +1,9 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "candidate_base": "c83bd9001cf2629dfb1934515fcf1c05ae553910",
+  "candidate_and_committed_jobspages_sha256": "199aed0f02d61d0805c7bc3467fb07944626d33a9a22eec3dc19c7e28a111f0f",
+  "candidate_and_clean_pages_dist_sha256": "8c30aaa642ad276bd4fbc26b79c06221063aaab532f39c5e569b53e794b041b0",
+  "html_files": 264,
+  "built_utc": "2026-11-27T14:10:28.748172+00:00",
+  "profile": "Production Pages build /WebMinhDuc from git archive; npm run build with installed locked dependencies. Candidate and release output matched byte-for-byte across the complete dist tree."
+}

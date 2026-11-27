@@ -1,0 +1,42 @@
+{
+  "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "harness_sha": "2f4b1fd6986bf43da2385c7a69243e936ef4f06b",
+  "dist_tree_sha256": "27643043bf335a11d3a575a65c7113e512d5caa6cd0a34d5348ac125892823f8",
+  "axe_expected": "4.10.3",
+  "wcag_tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "artifacts": "Offline Chromium. Main document only; external embedded pages excluded. Reduced motion enabled.",
+  "limits": "Automated WCAG rules plus a bounded initial keyboard journey. Screen-reader announcements, unopened states and physical devices require separate checks.",
+  "axe_sha256": "880970c081707360e64f34cea25ff91892f5bc95675b0776925b9709dd8a68bb",
+  "recorded_utc": "2026-11-27T13:40:20+00:00",
+  "chromium": "140.0.7339.16",
+  "expected_checks": 160,
+  "locales": [
+    "ko"
+  ],
+  "widths": [
+    390,
+    1440
+  ],
+  "recorded_checks": 160,
+  "counts": {
+    "Pass": 160,
+    "Fail": 0,
+    "Blocked": 0
+  },
+  "blocked_external": [
+    [
+      "maps.google.com",
+      "document"
+    ]
+  ],
+  "missing_packaged_paths": [],
+  "page_errors": [],
+  "observations_file": "a11y-observations.jsonl",
+  "initial_viewport_screenshots": []
+}

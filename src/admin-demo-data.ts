@@ -10,4 +10,12 @@ export const sampleRecords:DemoRecord[]=[
 ];
 export const normalizePhone=(phone:string)=>phone.replace(/\D/g,'');
 export const duplicates=(records:DemoRecord[],record:DemoRecord)=>records.filter(r=>record.type==='F03'&&r.type==='F03'&&r.id!==record.id&&r.linkId===record.linkId&&normalizePhone(r.phone)===normalizePhone(record.phone));
-export function toCsv(records:DemoRecord[]){const cols:(keyof DemoRecord)[]=['id','type','name','phone','source','owner','status','result','linkId','received','detail'];return '\ufeff'+[cols.join(','),...records.map(r=>cols.map(c=>'"'+String(r[c]).replace(/"/g,'""')+'"').join(','))].join('\r\n')}
+export function toCsv(records: DemoRecord[]) {
+ const columns: (keyof DemoRecord)[] = ['id','type','name','phone','source','owner','status','result','linkId','received','detail'];
+ const escapeCell = (value: unknown) => {
+  const text = String(value ?? '');
+  const safeText = /^(?:[\t\r\n]|\s*[=+@\-])/.test(text) ? "'" + text : text;
+  return '"' + safeText.replace(/"/g,'""') + '"';
+ };
+ return '\ufeff' + [columns.join(','), ...records.map(record => columns.map(column => escapeCell(record[column])).join(','))].join('\r\n');
+}

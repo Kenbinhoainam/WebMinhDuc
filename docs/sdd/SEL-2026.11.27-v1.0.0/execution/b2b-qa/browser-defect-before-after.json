@@ -1,0 +1,41 @@
+{
+  "defect_id": "W2-P37-MAP-NAME",
+  "priority": "P2",
+  "choice_id": "P37-D3",
+  "source": "src/Contact.tsx:177",
+  "before_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "after_sha": "d67c9914a17c3cedb4dcd76e397189e833ab9a4d",
+  "before_dist": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "after_dist": "071e0f83f0c78545ef52126323e809a997aef23335826e4b5c7c16beec354c4c",
+  "before_result": "583/615Pass;32locale-title failures",
+  "after_result": "Latest d67 recheck:615/615Pass;0missing resources;0JavaScript errors",
+  "steps": [
+    "Open /{locale}/contact for en/zh/ko/ja",
+    "Scroll to office selector and select Đông Mai",
+    "Compare iframe accessible title with visible office caption"
+  ],
+  "actual_before": [
+    "('KCN Đông Mai 지도', '동마이 산업단지')",
+    "('KCN Đông Maiの地図', 'ドンマイ工業団地')",
+    "('KCN Đông Mai地图', '东梅工业园')",
+    "('Map of KCN Đông Mai', 'Đông Mai Industrial Park')"
+  ],
+  "expected": "Selected office name uses same locale in iframe accessible title and visible caption.",
+  "affected_viewports": [
+    "320x740",
+    "390x844",
+    "430x932",
+    "768x1024",
+    "1024x768",
+    "1280x800",
+    "1440x900",
+    "1920x1080"
+  ],
+  "fix": "Translate office.name through the active catalog before composing the language-specific map title.",
+  "before_evidence": "b2b-qa/browser-88e-before/browser-results.json",
+  "after_evidence": "b2b-qa/browser-final/browser-results.json",
+  "acceptance": "All40Contact cases (5locales×8viewports) pass title/caption matching for all3offices, permanent fallback/directions and F01/F02 return assertions.",
+  "limits": "Title text failure only; downstream checks after the mismatch were not run in32before cases, not assigned as independent layout defects. External map loading remains intentionally blocked.",
+  "initial_fix_verified_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "initial_fix_evidence": "b2b-qa/browser-c25-verified/browser-results.json"
+}

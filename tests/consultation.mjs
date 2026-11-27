@@ -51,11 +51,17 @@ try {
   assert.match(get('[role=alert]').textContent,/ngày/);
   assert.equal(document.activeElement,get('#consultation-date'));
   await write('#consultation-date','2030-11-24');
+  const localizedDate = new Intl.DateTimeFormat('vi',{day:'numeric',month:'long',year:'numeric'}).format(clock);
+  assert.equal(get('.consultation-choose [role=status] strong').textContent,localizedDate);
   await click('.consultation-choose .btn');
   await waitForFocus();
   assert.match(get('[role=alert]').textContent,/giờ/);
   assert.equal(document.activeElement,get('[name=consultation-time]'));
-  await click('[name=consultation-time][value="09:00"]');
+  for (const slot of ['10:30','14:00','09:00']) {
+    await click('[name=consultation-time][value="' + slot + '"]');
+    assert.equal(get('.consultation-choose [role=status] strong').textContent,localizedDate + ' · ' + slot);
+    assert.equal(document.querySelectorAll('[name=consultation-time]:checked').length,1);
+  }
   await click('.consultation-choose .btn');
   assert.equal(document.querySelector('.form-mode'),null,'scheduling locks F02');
   assert.equal(document.activeElement,get('.consultation-details h2'));

@@ -1,0 +1,102 @@
+{
+  "target_sha": "49259ccec3d3a6f6fe1d77ba5e692a3fe5cd046d",
+  "checkout": "/tmp/minhduc-w2-492-g0vwnvnp",
+  "qa_overlays_sha256": {
+    "tests/s2-w2-extra-flows.mjs": "8ea78c4d05ac328b2c17e4a65ee4552eab0b700029f28b8660f290c6163b362c",
+    "tests/s2-w2-extra-hero.mjs": "de09217da949fccd4025f2a0de42b51698e068e662c0647f58db22104a0fa95b"
+  },
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/s2-b2b-flows.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:18.507873+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/info-carousel.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:22.647457+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/business-info.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:34.185094+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-b2b.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:38.658746+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/consultation.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:43.348659+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:48.329396+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-responsive.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:52.820048+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-lifecycle.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:15:54.262031+00:00",
+      "initial_exit": 1,
+      "retry_exit": 0,
+      "retry_UTC": "2026-11-27T13:18:00.991229+00:00",
+      "retry_log": "hero-lifecycle-retry-492.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-video-gallery.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:16:30.493679+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/s2-w2-extra-flows.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:16:43.821706+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/s2-w2-extra-hero.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:17:28.960751+00:00"
+    }
+  ]
+}

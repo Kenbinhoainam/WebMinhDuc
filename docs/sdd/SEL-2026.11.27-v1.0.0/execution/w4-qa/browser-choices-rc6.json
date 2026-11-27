@@ -1,0 +1,126 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "site_sha": "814828c92ccafba27b4f5c3f7394f9665c2724c7",
+  "choices": [
+    {
+      "choice_id": "B08",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Six long-form articles × five locales × 390/1440 CSS px. Single H1 describes the topic; excerpt is distinct, date and category present; each body has at least three readable headings and 70ch is respected. Inspected VI heading text against article themes.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json",
+      "remaining": "Semantic evaluation of translated copy and headings on routes outside P21–P26."
+    },
+    {
+      "choice_id": "CS-B06-3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Six audience-scoped article CTA journeys × five locales, including focused F01 landings and return to the article hash. Events index links to Activities and News; programs open F05/F06 on the matching admission page.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json · docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-program-context-rc6.json",
+      "remaining": "P03, P07, P20, P28–P30 and CTA adjacency to the intended paragraph across selected pages still need direct review."
+    },
+    {
+      "choice_id": "P21-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the jobs page in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P21-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/0",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P22-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the focused Home F01 staffing form in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P22-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/1",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P23-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the jobs page in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/2",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P23-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/2",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P24-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the focused Home F01 staffing form in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/3",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P24-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/3",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P25-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the focused Home F01 staffing form in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/4",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P25-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/4",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P26-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard activates the intended contextual CTA to the jobs page in all five locales; Back restores the named article and same section hash.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/5",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P26-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "H1 is larger than 17px body text, the excerpt differs, category and time are visible, body does not exceed measured 70ch or overflow the viewport; mobile sidebar follows main prose.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/5",
+      "remaining": "Deliberate failed article-image load and human visual review of title/excerpt and CTA composition."
+    },
+    {
+      "choice_id": "P24-E2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The HR-category article activates the business CTA and lands on the focused Home F01 staffing form, across all five locales.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-reader-context-rc6.json#/checks/3",
+      "remaining": ""
+    }
+  ]
+}

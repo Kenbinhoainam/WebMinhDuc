@@ -1,0 +1,85 @@
+{
+  "target_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "runtime_defects_found": [],
+  "method": "Actual App React integration in JSDOM; mocked media; no real browser or device claim",
+  "qa_overlay_hashes": {
+    "tests/s2-w2-extra-flows.mjs": "8ea78c4d05ac328b2c17e4a65ee4552eab0b700029f28b8660f290c6163b362c",
+    "tests/s2-w2-extra-hero.mjs": "de09217da949fccd4025f2a0de42b51698e068e662c0647f58db22104a0fa95b"
+  },
+  "coverage": [
+    {
+      "ID": "P01-F1",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "P08-F4",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-flows.log",
+      "remaining": "Functional App journey gap closed by extra-flows. Real browser keyboard/touch and focus/scroll geometry remain; no claim of retaining unsent drafts across route unmounts."
+    },
+    {
+      "ID": "P01-B2",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "P01-C1",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "P01-C3",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-flows.log",
+      "remaining": "Functional App journey gap closed by extra-flows. Real browser keyboard/touch and focus/scroll geometry remain; no claim of retaining unsent drafts across route unmounts."
+    },
+    {
+      "ID": "P08-C1",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-flows.log",
+      "remaining": "Functional App journey gap closed by extra-flows. Real browser keyboard/touch and focus/scroll geometry remain; no claim of retaining unsent drafts across route unmounts."
+    },
+    {
+      "ID": "P08-C2",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-flows.log",
+      "remaining": "Functional App journey gap closed by extra-flows. Real browser keyboard/touch and focus/scroll geometry remain; no claim of retaining unsent drafts across route unmounts."
+    },
+    {
+      "ID": "P08-C4",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-flows.log",
+      "remaining": "Functional App journey gap closed by extra-flows. Real browser keyboard/touch and focus/scroll geometry remain; no claim of retaining unsent drafts across route unmounts."
+    },
+    {
+      "ID": "MO08-1",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "MO08-3",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "MO08-4",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    },
+    {
+      "ID": "CS-C11-4",
+      "functional_subset": "Pass",
+      "evidence": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/b2b-qa/extra-hero.log",
+      "remaining": "Codec/terminal-error/stale-event functional subset passed. Actual decoder, blocked network, resource bytes, browser layout and real-device controls remain. Optional end decoration unchanged; CS-C11-4 map dependency keeps separate verification."
+    }
+  ],
+  "common_form_scope": "F01 extra plus existing F02; F03/F04/F05/F06 need their delegated current-pin logs.",
+  "status_policy": "Functional subset Pass only; overall Incomplete status retained until remaining browser/AT/network/user-trial requirements have their own proof."
+}

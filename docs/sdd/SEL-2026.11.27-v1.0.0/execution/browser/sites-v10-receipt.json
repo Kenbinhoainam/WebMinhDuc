@@ -1,0 +1,15 @@
+{
+  "project_id": "appgprj_6b0977a9d68c8191abad13d792f6f2f6",
+  "version": 10,
+  "app_commit": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "site_commit": "e7724563abeae86d283029bb38ec18ce442c98be",
+  "version_id": "appgprj_6b0977a9d68c8191abad13d792f6f2f6~appgver_adcc2d93123081918af989b82e460802",
+  "deployment_id": "appgprj_6b0977a9d68c8191abad13d792f6f2f6~appgdep_a3cad483c628819193fe8731ea374cf8",
+  "status": "succeeded",
+  "time_utc": "2026-11-27T14:12:16.571416+00:00",
+  "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site",
+  "audience": "owner-only",
+  "archive_sha256_local_gzip": "d14c222681bd55a80c9b0056cfa1c98eb3263c1a5a73f6b92b204bb38439d34c",
+  "archive_sha256_native_tar": "sha256:8606ab52068f6d5a8bd24ba09481962ead84fb5c6564dc9223e8b80a79c936f6",
+  "screenshot": "sites-v10.jpg"
+}

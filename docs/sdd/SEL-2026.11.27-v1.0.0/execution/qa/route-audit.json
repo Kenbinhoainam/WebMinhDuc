@@ -1,0 +1,2639 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_tree_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "source_tree_sha256": "2a207c8ad9d13cf546f862075b92307625e83616854c88649a7dcc2331ab75cc",
+  "route_and_bundle_sha256": "4b763501e793ea52d3a2a0b9656a4275ab4ddf80f079d1cb7d9ceaa6a9532dd2",
+  "bundles": {
+    "AboutPage-CTA8x0Lq.js": "8dd1254e220b00c5b145f3149cc76d431723bf1e7ca93138ee5a2593b9987842",
+    "AboutPage-l0DnPq4U.css": "7835debd1eee531657708e70d6fa0da656b7b7daab9229e4118121bc9a049756",
+    "AdminDemo-Ct7XvdBF.js": "bb48633704881fc4e91b91f86767c6885737fe5f96f36ce4c2fcef45885cb684",
+    "AdminDemo-D7TK6Xfy.css": "eb17ad309c72d5a607b8bb7eee87681c14b01548f36a252a7e713a72da3be813",
+    "AttachmentPicker-CvFBDXOd.css": "f429eaa944323a3959831b1e8653e41a0b0137032814a207675a7e53951c25a2",
+    "AttachmentPicker-DdQvPFMz.js": "fc49cbda2d67b39d51dda9e561111827f1c3f951c88974bc18f005b627ad8189",
+    "Consultation-Cj7obPRy.css": "cf74d9e0ca5ba506bb0ec55484c30826924915adbc5d16fa8f17df50560f271a",
+    "Consultation-DtfN1cAI.js": "c0fe1286f144ce06793e3cfd916f0b8ec4fbcfe33fe351b4af99beb4894663fc",
+    "EditorialPages-Bho7pB24.css": "a8e8f0842a914768b257fa79390f663886707c7b4b5e43dce08606fba7a2d03d",
+    "EditorialPages-CypTrEY-.js": "e8d0c0c7259b764aeb8a2ad8991de7c1957af67afd35b7f7fc99a0da30feee72",
+    "Education-BXC-0oMC.css": "9a14e4aae3b5a8d8fd4d1ae14d308cb64548609f3ff22c6109a453d63aaa770e",
+    "Education-TpIDdXR_.js": "2301f3e73ea70867ec309b06c6d1bfd7b7dc2e35cad3fda629eb492114b381cc",
+    "JobsPages-Dq27tB25.js": "5e1e6562dcf61464414b60ac20f2e59d85909d222ec11f95cae19583e74b335a",
+    "JobsPages-atWhNKjT.css": "e2ccf2eef403d6c9003a92c22d61449c7280959b768b31b0a9a2dcd9b85fbf43",
+    "PartnersPage-CpXzTVyI.js": "8feacc61d579de5345ccab8265dc3dcd2199d83352737f46aeeacff6bc819d90",
+    "PartnersPage-DH0e8T9o.css": "c62477a47020955d150ad5fc516176b2d416b1d1abfcf8842aeb0a19a7be5677",
+    "ServicesPages-ChVwEsCj.js": "76e41f440df8bbc39d1bbf2c6892015d406e91b9c69d96760939595a3efdb4e3",
+    "ServicesPages-DAlRjvst.css": "75d893f9bd35d5924722bcebade5458cde0768f7c97813ca51c153cea7677310",
+    "components-CAabi-w5.js": "7ccdce93cc32ec7a426d5007d4b49912bc4d06800c5145b5c16d76f7e2d10f96",
+    "en-C8hpO_0J.js": "8ec8d34e59c2be9364f8757ed401ffdc2af323b4a9b486691f6378d0fa0870d2",
+    "index-CRw36Ds-.js": "bc45abcf1a32da91a801929978c2d86cb2a299a7cb2a69320e6c2d33b007e1d7",
+    "index-CqyiB8zo.css": "71b715bba8dd734737abf5988ca3e5074f0cbfe04c6c0f22fb8f0f7343444bb5",
+    "ja-D4IqwKdo.js": "9c80577e1615aa91d4f292f01c34bc4be897d03372d388d7acfb56983cd5d74e",
+    "ko-CGvrUq7U.js": "15f975ddd4165d5985811737f905bf878faee3ada58c8c2eef69fe84ad48ea4f",
+    "zh-C7-i1ZGY.js": "f44ea82918f496ac652cfefb15d29e5e2306897a70f4ae7d55c62973a70ece9c"
+  },
+  "run_utc": "2026-11-27T13:38:42.422Z",
+  "artifact": "dist",
+  "host": "https://kenbinhoainam.github.io/WebMinhDuc",
+  "environment": "Node v24.22.1, JSDOM (no pixel rendering, native keyboard, touch or network verification)",
+  "routes": [
+    {
+      "id": "P01",
+      "route": "/",
+      "locale": "vi",
+      "h1": [
+        "Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/",
+      "title": "Kết nối nhân lực, kiến tạo tương lai | Minh Đức Vina",
+      "description": "Minh Đức Vina đồng hành cùng doanh nghiệp và người lao động qua giải pháp nhân lực và kết nối việc làm."
+    },
+    {
+      "id": "P01",
+      "route": "/",
+      "locale": "en",
+      "h1": [
+        "Workforce solutions for factories and FDI businesses in Northern Vietnam"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en",
+      "title": "Connecting people, creating futures | Minh Đức Vina",
+      "description": "Minh Đức connects businesses and workers through workforce solutions and employment opportunities."
+    },
+    {
+      "id": "P01",
+      "route": "/",
+      "locale": "zh",
+      "h1": [
+        "越南北部工厂与外资企业的人力资源解决方案"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh",
+      "title": "连接人才，共创未来 | Minh Đức Vina",
+      "description": "明德通过人力解决方案和就业机会连接企业与劳动者。"
+    },
+    {
+      "id": "P01",
+      "route": "/",
+      "locale": "ko",
+      "h1": [
+        "베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko",
+      "title": "사람을 연결하고 미래를 만듭니다 | Minh Đức Vina",
+      "description": "민득은 인력 솔루션과 취업 기회를 통해 기업과 근로자를 연결합니다."
+    },
+    {
+      "id": "P01",
+      "route": "/",
+      "locale": "ja",
+      "h1": [
+        "ベトナム北部の工場・外資系企業向け人材ソリューション"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja",
+      "title": "人をつなぎ、未来をつくる | Minh Đức Vina",
+      "description": "ミンドゥックは人材ソリューションと就業機会を通じて企業と働く人をつなぎます。"
+    },
+    {
+      "id": "P02",
+      "route": "/about-us",
+      "locale": "vi",
+      "h1": [
+        "Về Minh Đức"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/about-us",
+      "title": "Về Minh Đức | Minh Đức Vina",
+      "description": "Tìm hiểu tầm nhìn, sứ mệnh và giá trị của Minh Đức Vina trong hành trình kết nối nhân lực."
+    },
+    {
+      "id": "P02",
+      "route": "/about-us",
+      "locale": "en",
+      "h1": [
+        "About Minh Đức"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/about-us",
+      "title": "About Minh Đức | Minh Đức Vina",
+      "description": "Learn about the vision, mission and values behind Minh Đức’s work connecting people."
+    },
+    {
+      "id": "P02",
+      "route": "/about-us",
+      "locale": "zh",
+      "h1": [
+        "关于明德"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/about-us",
+      "title": "关于明德 | Minh Đức Vina",
+      "description": "了解明德连接人才事业的愿景、使命和价值观。"
+    },
+    {
+      "id": "P02",
+      "route": "/about-us",
+      "locale": "ko",
+      "h1": [
+        "민득 소개"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/about-us",
+      "title": "민득 소개 | Minh Đức Vina",
+      "description": "사람을 연결하는 민득의 비전, 사명과 가치를 소개합니다."
+    },
+    {
+      "id": "P02",
+      "route": "/about-us",
+      "locale": "ja",
+      "h1": [
+        "ミンドゥックについて"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/about-us",
+      "title": "ミンドゥックについて | Minh Đức Vina",
+      "description": "人をつなぐミンドゥックのビジョン、使命、価値観をご紹介します。"
+    },
+    {
+      "id": "P03",
+      "route": "/services",
+      "locale": "vi",
+      "h1": [
+        "Giải pháp nhân sự"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services",
+      "title": "Giải pháp nhân lực | Minh Đức Vina",
+      "description": "Khám phá năm nhóm dịch vụ nhân lực, tuyển sinh và tổ chức doanh nghiệp của Minh Đức."
+    },
+    {
+      "id": "P03",
+      "route": "/services",
+      "locale": "en",
+      "h1": [
+        "Workforce solutions"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services",
+      "title": "Workforce solutions | Minh Đức Vina",
+      "description": "Explore five services spanning staffing, admissions and business organization."
+    },
+    {
+      "id": "P03",
+      "route": "/services",
+      "locale": "zh",
+      "h1": [
+        "人力资源解决方案"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services",
+      "title": "人力资源解决方案 | Minh Đức Vina",
+      "description": "探索涵盖人力、招生和企业组织的五类服务。"
+    },
+    {
+      "id": "P03",
+      "route": "/services",
+      "locale": "ko",
+      "h1": [
+        "인력 솔루션"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services",
+      "title": "인력 솔루션 | Minh Đức Vina",
+      "description": "인력, 입학 안내, 기업 조직에 걸친 다섯 가지 서비스를 살펴보세요."
+    },
+    {
+      "id": "P03",
+      "route": "/services",
+      "locale": "ja",
+      "h1": [
+        "人材サービス"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services",
+      "title": "人材ソリューション | Minh Đức Vina",
+      "description": "人材、入学案内、企業組織の5つのサービスをご覧ください。"
+    },
+    {
+      "id": "P04",
+      "route": "/services/labor-supply",
+      "locale": "vi",
+      "h1": [
+        "Giới thiệu & cung ứng nhân lực"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services/labor-supply",
+      "title": "Giới thiệu & cung ứng nhân lực | Minh Đức Vina",
+      "description": "Tìm hiểu cách Minh Đức trao đổi nhu cầu và kết nối nguồn lao động với doanh nghiệp."
+    },
+    {
+      "id": "P04",
+      "route": "/services/labor-supply",
+      "locale": "en",
+      "h1": [
+        "Recruitment & workforce supply"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services/labor-supply",
+      "title": "Recruitment & workforce supply | Minh Đức Vina",
+      "description": "Learn how Minh Đức discusses workforce needs and connects workers with businesses."
+    },
+    {
+      "id": "P04",
+      "route": "/services/labor-supply",
+      "locale": "zh",
+      "h1": [
+        "招聘与人力供应"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services/labor-supply",
+      "title": "招聘与人力供应 | Minh Đức Vina",
+      "description": "了解明德如何沟通用工需求并为企业对接劳动者。"
+    },
+    {
+      "id": "P04",
+      "route": "/services/labor-supply",
+      "locale": "ko",
+      "h1": [
+        "채용 및 인력 공급"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services/labor-supply",
+      "title": "채용 및 인력 공급 | Minh Đức Vina",
+      "description": "민득이 기업의 인력 수요를 파악하고 근로자를 연결하는 방법을 알아보세요."
+    },
+    {
+      "id": "P04",
+      "route": "/services/labor-supply",
+      "locale": "ja",
+      "h1": [
+        "採用・人材供給"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services/labor-supply",
+      "title": "採用・人材供給 | Minh Đức Vina",
+      "description": "ミンドゥックが企業の人材ニーズを確認し、働く人とつなぐ流れをご紹介します。"
+    },
+    {
+      "id": "P05",
+      "route": "/services/labor-leasing",
+      "locale": "vi",
+      "h1": [
+        "Cho thuê lao động"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services/labor-leasing",
+      "title": "Cho thuê lao động | Minh Đức Vina",
+      "description": "Trao đổi phương án nhân lực linh hoạt theo thời gian và phạm vi công việc."
+    },
+    {
+      "id": "P05",
+      "route": "/services/labor-leasing",
+      "locale": "en",
+      "h1": [
+        "Labor leasing"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services/labor-leasing",
+      "title": "Labor leasing | Minh Đức Vina",
+      "description": "Discuss flexible staffing options for an agreed duration and scope of work."
+    },
+    {
+      "id": "P05",
+      "route": "/services/labor-leasing",
+      "locale": "zh",
+      "h1": [
+        "劳务派遣"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services/labor-leasing",
+      "title": "劳务派遣 | Minh Đức Vina",
+      "description": "根据商定的用工期限和工作范围，交流灵活用工方案。"
+    },
+    {
+      "id": "P05",
+      "route": "/services/labor-leasing",
+      "locale": "ko",
+      "h1": [
+        "인력 파견"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services/labor-leasing",
+      "title": "인력 파견 | Minh Đức Vina",
+      "description": "합의된 기간과 업무 범위에 맞는 유연한 인력 방안을 상담하세요."
+    },
+    {
+      "id": "P05",
+      "route": "/services/labor-leasing",
+      "locale": "ja",
+      "h1": [
+        "労働者派遣"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services/labor-leasing",
+      "title": "労働者派遣 | Minh Đức Vina",
+      "description": "合意した期間と業務範囲に応じた柔軟な人員配置についてご相談ください。"
+    },
+    {
+      "id": "P06",
+      "route": "/services/recruitment",
+      "locale": "vi",
+      "h1": [
+        "Headhunt & lao động tay nghề"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services/recruitment",
+      "title": "Headhunt & lao động tay nghề | Minh Đức Vina",
+      "description": "Kết nối doanh nghiệp với nhân sự có kinh nghiệm và kỹ năng phù hợp từng vị trí."
+    },
+    {
+      "id": "P06",
+      "route": "/services/recruitment",
+      "locale": "en",
+      "h1": [
+        "Headhunting & skilled workers"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services/recruitment",
+      "title": "Headhunting & skilled workers | Minh Đức Vina",
+      "description": "Connect businesses with experienced, skilled candidates suited to each position."
+    },
+    {
+      "id": "P06",
+      "route": "/services/recruitment",
+      "locale": "zh",
+      "h1": [
+        "猎头与技能人才"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services/recruitment",
+      "title": "猎头与技能人才 | Minh Đức Vina",
+      "description": "为企业对接经验和技能符合岗位要求的候选人。"
+    },
+    {
+      "id": "P06",
+      "route": "/services/recruitment",
+      "locale": "ko",
+      "h1": [
+        "헤드헌팅 및 숙련 인력"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services/recruitment",
+      "title": "헤드헌팅 및 숙련 인력 | Minh Đức Vina",
+      "description": "각 직무에 맞는 경험과 기술을 갖춘 인재를 기업에 연결합니다."
+    },
+    {
+      "id": "P06",
+      "route": "/services/recruitment",
+      "locale": "ja",
+      "h1": [
+        "ヘッドハンティング・技能人材"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services/recruitment",
+      "title": "ヘッドハンティング・技能人材 | Minh Đức Vina",
+      "description": "各職種に合った経験と技能を持つ人材を企業につなぎます。"
+    },
+    {
+      "id": "P07",
+      "route": "/services/college-admissions",
+      "locale": "vi",
+      "h1": [
+        "Tuyển sinh cao đẳng & đại học"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services/college-admissions",
+      "title": "Tuyển sinh cao đẳng & đại học | Minh Đức Vina",
+      "description": "Khám phá hình thức học từ xa, chính quy và các bước tư vấn tuyển sinh minh họa."
+    },
+    {
+      "id": "P07",
+      "route": "/services/college-admissions",
+      "locale": "en",
+      "h1": [
+        "College and university admissions"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services/college-admissions",
+      "title": "College and university admissions | Minh Đức Vina",
+      "description": "Explore distance and campus study options and try a sample admissions journey."
+    },
+    {
+      "id": "P07",
+      "route": "/services/college-admissions",
+      "locale": "zh",
+      "h1": [
+        "大专及大学招生"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services/college-admissions",
+      "title": "大专及大学招生 | Minh Đức Vina",
+      "description": "了解远程与全日制学习方式，体验招生咨询示例流程。"
+    },
+    {
+      "id": "P07",
+      "route": "/services/college-admissions",
+      "locale": "ko",
+      "h1": [
+        "전문대학 및 대학교 입학"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services/college-admissions",
+      "title": "전문대학 및 대학교 입학 | Minh Đức Vina",
+      "description": "원격 및 정규 학습 방식을 살펴보고 입학 안내 데모를 체험하세요."
+    },
+    {
+      "id": "P07",
+      "route": "/services/college-admissions",
+      "locale": "ja",
+      "h1": [
+        "短期大学・大学の入学支援"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services/college-admissions",
+      "title": "短期大学・大学の入学支援 | Minh Đức Vina",
+      "description": "遠隔・通学の学習方法を確認し、入学相談のデモを体験できます。"
+    },
+    {
+      "id": "P08",
+      "route": "/services/hr-consulting",
+      "locale": "vi",
+      "h1": [
+        "Setup tổ chức & phần mềm doanh nghiệp"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/services/hr-consulting",
+      "title": "Setup tổ chức & phần mềm doanh nghiệp | Minh Đức Vina",
+      "description": "Tìm hiểu giải pháp tổ chức, quy trình và phần mềm hỗ trợ vận hành doanh nghiệp."
+    },
+    {
+      "id": "P08",
+      "route": "/services/hr-consulting",
+      "locale": "en",
+      "h1": [
+        "Organization & business software"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/services/hr-consulting",
+      "title": "Organization & business software | Minh Đức Vina",
+      "description": "Explore organization design, workflows and software that support business operations."
+    },
+    {
+      "id": "P08",
+      "route": "/services/hr-consulting",
+      "locale": "zh",
+      "h1": [
+        "组织架构与企业软件"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/services/hr-consulting",
+      "title": "组织架构与企业软件 | Minh Đức Vina",
+      "description": "了解组织设计、工作流程和支持企业运营的软件。"
+    },
+    {
+      "id": "P08",
+      "route": "/services/hr-consulting",
+      "locale": "ko",
+      "h1": [
+        "조직 설계 및 기업 소프트웨어"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/services/hr-consulting",
+      "title": "조직 설계 및 기업 소프트웨어 | Minh Đức Vina",
+      "description": "기업 운영을 지원하는 조직 설계, 업무 절차와 소프트웨어를 살펴보세요."
+    },
+    {
+      "id": "P08",
+      "route": "/services/hr-consulting",
+      "locale": "ja",
+      "h1": [
+        "組織設計・業務ソフトウェア"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/services/hr-consulting",
+      "title": "組織設計・業務ソフトウェア | Minh Đức Vina",
+      "description": "企業運営を支える組織設計、業務手順、ソフトウェアをご紹介します。"
+    },
+    {
+      "id": "P09",
+      "route": "/jobs",
+      "locale": "vi",
+      "h1": [
+        "Tìm việc làm"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs",
+      "title": "Cơ hội việc làm | Minh Đức Vina",
+      "description": "Khám phá các vị trí việc làm minh họa theo địa điểm, ngành nghề và hình thức làm việc."
+    },
+    {
+      "id": "P09",
+      "route": "/jobs",
+      "locale": "en",
+      "h1": [
+        "Search jobs"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs",
+      "title": "Job opportunities | Minh Đức Vina",
+      "description": "Browse illustrative jobs by location, industrial park, skills and work schedule."
+    },
+    {
+      "id": "P09",
+      "route": "/jobs",
+      "locale": "zh",
+      "h1": [
+        "搜索职位"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs",
+      "title": "工作机会 | Minh Đức Vina",
+      "description": "按地区、工业园区、技能和班次浏览示例职位。"
+    },
+    {
+      "id": "P09",
+      "route": "/jobs",
+      "locale": "ko",
+      "h1": [
+        "일자리 검색"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs",
+      "title": "채용 정보 | Minh Đức Vina",
+      "description": "지역, 산업단지, 기술과 근무 일정별로 예시 채용 정보를 검색하세요."
+    },
+    {
+      "id": "P09",
+      "route": "/jobs",
+      "locale": "ja",
+      "h1": [
+        "求人検索"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs",
+      "title": "求人情報 | Minh Đức Vina",
+      "description": "地域、工業団地、技能、勤務時間でサンプル求人を探せます。"
+    },
+    {
+      "id": "P10",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "locale": "vi",
+      "h1": [
+        "Công nhân lắp ráp linh kiện"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+      "title": "Công nhân lắp ráp linh kiện | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí công nhân lắp ráp linh kiện trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P10",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "locale": "en",
+      "h1": [
+        "Component assembly worker"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/cong-nhan-lap-rap-bac-ninh",
+      "title": "Component assembly worker | Minh Đức Vina",
+      "description": "Sample role: Component assembly worker. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P10",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "locale": "zh",
+      "h1": [
+        "零部件组装工"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/cong-nhan-lap-rap-bac-ninh",
+      "title": "零部件组装工 | Minh Đức Vina",
+      "description": "示例岗位：零部件组装工。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P10",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "locale": "ko",
+      "h1": [
+        "부품 조립 작업자"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/cong-nhan-lap-rap-bac-ninh",
+      "title": "부품 조립 작업자 | Minh Đức Vina",
+      "description": "예시 직무: 부품 조립 작업자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P10",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "locale": "ja",
+      "h1": [
+        "部品組立スタッフ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/cong-nhan-lap-rap-bac-ninh",
+      "title": "部品組立スタッフ | Minh Đức Vina",
+      "description": "職種例：部品組立スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P11",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "locale": "vi",
+      "h1": [
+        "Nhân viên kiểm tra chất lượng"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/kiem-tra-chat-luong-bac-giang",
+      "title": "Nhân viên kiểm tra chất lượng | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên kiểm tra chất lượng trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P11",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "locale": "en",
+      "h1": [
+        "Quality control worker"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/kiem-tra-chat-luong-bac-giang",
+      "title": "Quality control worker | Minh Đức Vina",
+      "description": "Sample role: Quality control worker. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P11",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "locale": "zh",
+      "h1": [
+        "质量检验员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/kiem-tra-chat-luong-bac-giang",
+      "title": "质量检验员 | Minh Đức Vina",
+      "description": "示例岗位：质量检验员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P11",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "locale": "ko",
+      "h1": [
+        "품질 검사 직원"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/kiem-tra-chat-luong-bac-giang",
+      "title": "품질 검사 직원 | Minh Đức Vina",
+      "description": "예시 직무: 품질 검사 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P11",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "locale": "ja",
+      "h1": [
+        "品質検査スタッフ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/kiem-tra-chat-luong-bac-giang",
+      "title": "品質検査スタッフ | Minh Đức Vina",
+      "description": "職種例：品質検査スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P12",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "locale": "vi",
+      "h1": [
+        "Nhân viên kho & đóng gói"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/nhan-vien-kho-thai-nguyen",
+      "title": "Nhân viên kho và đóng gói | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên kho và đóng gói trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P12",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "locale": "en",
+      "h1": [
+        "Warehouse and packing worker"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/nhan-vien-kho-thai-nguyen",
+      "title": "Warehouse & packing worker | Minh Đức Vina",
+      "description": "Sample role: Warehouse & packing worker. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P12",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "locale": "zh",
+      "h1": [
+        "仓储及包装员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/nhan-vien-kho-thai-nguyen",
+      "title": "仓储与包装员 | Minh Đức Vina",
+      "description": "示例岗位：仓储与包装员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P12",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "locale": "ko",
+      "h1": [
+        "창고 및 포장 직원"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/nhan-vien-kho-thai-nguyen",
+      "title": "창고 및 포장 직원 | Minh Đức Vina",
+      "description": "예시 직무: 창고 및 포장 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P12",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "locale": "ja",
+      "h1": [
+        "倉庫・梱包スタッフ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/nhan-vien-kho-thai-nguyen",
+      "title": "倉庫・梱包スタッフ | Minh Đức Vina",
+      "description": "職種例：倉庫・梱包スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P13",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "locale": "vi",
+      "h1": [
+        "Công nhân vận hành máy"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/van-hanh-may-quang-ninh",
+      "title": "Công nhân vận hành máy | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí công nhân vận hành máy trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P13",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "locale": "en",
+      "h1": [
+        "Machine operator"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/van-hanh-may-quang-ninh",
+      "title": "Machine operator | Minh Đức Vina",
+      "description": "Sample role: Machine operator. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P13",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "locale": "zh",
+      "h1": [
+        "机器操作员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/van-hanh-may-quang-ninh",
+      "title": "机器操作员 | Minh Đức Vina",
+      "description": "示例岗位：机器操作员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P13",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "locale": "ko",
+      "h1": [
+        "기계 운전원"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/van-hanh-may-quang-ninh",
+      "title": "기계 운전원 | Minh Đức Vina",
+      "description": "예시 직무: 기계 운전원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P13",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "locale": "ja",
+      "h1": [
+        "機械オペレーター"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/van-hanh-may-quang-ninh",
+      "title": "機械オペレーター | Minh Đức Vina",
+      "description": "職種例：機械オペレーター。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P14",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "locale": "vi",
+      "h1": [
+        "Kỹ thuật viên bảo trì"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/ky-thuat-bao-tri-bac-ninh",
+      "title": "Kỹ thuật viên bảo trì | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí kỹ thuật viên bảo trì trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P14",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "locale": "en",
+      "h1": [
+        "Maintenance technician"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/ky-thuat-bao-tri-bac-ninh",
+      "title": "Maintenance technician | Minh Đức Vina",
+      "description": "Sample role: Maintenance technician. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P14",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "locale": "zh",
+      "h1": [
+        "维修技术员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/ky-thuat-bao-tri-bac-ninh",
+      "title": "维修技术员 | Minh Đức Vina",
+      "description": "示例岗位：维修技术员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P14",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "locale": "ko",
+      "h1": [
+        "유지보수 기술자"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/ky-thuat-bao-tri-bac-ninh",
+      "title": "유지보수 기술자 | Minh Đức Vina",
+      "description": "예시 직무: 유지보수 기술자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P14",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "locale": "ja",
+      "h1": [
+        "保守技術者"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/ky-thuat-bao-tri-bac-ninh",
+      "title": "保守技術者 | Minh Đức Vina",
+      "description": "職種例：保守技術者。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P15",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "locale": "vi",
+      "h1": [
+        "Nhân viên đóng gói thời vụ"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/dong-goi-thoi-vu-bac-giang",
+      "title": "Nhân viên đóng gói thời vụ | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí nhân viên đóng gói thời vụ trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P15",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "locale": "en",
+      "h1": [
+        "Seasonal packing worker"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/dong-goi-thoi-vu-bac-giang",
+      "title": "Seasonal packing worker | Minh Đức Vina",
+      "description": "Sample role: Seasonal packing worker. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P15",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "locale": "zh",
+      "h1": [
+        "季节性包装工"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/dong-goi-thoi-vu-bac-giang",
+      "title": "季节性包装工 | Minh Đức Vina",
+      "description": "示例岗位：季节性包装工。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P15",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "locale": "ko",
+      "h1": [
+        "단기 포장 직원"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/dong-goi-thoi-vu-bac-giang",
+      "title": "단기 포장 직원 | Minh Đức Vina",
+      "description": "예시 직무: 단기 포장 직원. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P15",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "locale": "ja",
+      "h1": [
+        "短期梱包スタッフ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/dong-goi-thoi-vu-bac-giang",
+      "title": "短期梱包スタッフ | Minh Đức Vina",
+      "description": "職種例：短期梱包スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P16",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "locale": "vi",
+      "h1": [
+        "Chuyên viên tuyển dụng"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "title": "Chuyên viên tuyển dụng | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí chuyên viên tuyển dụng trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P16",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "locale": "en",
+      "h1": [
+        "Recruitment specialist"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "title": "Recruitment specialist | Minh Đức Vina",
+      "description": "Sample role: Recruitment specialist. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P16",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "locale": "zh",
+      "h1": [
+        "招聘专员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "title": "招聘专员 | Minh Đức Vina",
+      "description": "示例岗位：招聘专员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P16",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "locale": "ko",
+      "h1": [
+        "채용 담당자"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "title": "채용 담당자 | Minh Đức Vina",
+      "description": "예시 직무: 채용 담당자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P16",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "locale": "ja",
+      "h1": [
+        "採用担当者"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "title": "採用担当者 | Minh Đức Vina",
+      "description": "職種例：採用担当者。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P17",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "locale": "vi",
+      "h1": [
+        "Cộng tác viên tuyển dụng"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "title": "Cộng tác viên tuyển dụng | Minh Đức Vina",
+      "description": "Tìm hiểu công việc, yêu cầu và quyền lợi của vị trí cộng tác viên tuyển dụng trong bản minh họa của Minh Đức."
+    },
+    {
+      "id": "P17",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "locale": "en",
+      "h1": [
+        "Recruitment collaborator"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "title": "Recruitment collaborator | Minh Đức Vina",
+      "description": "Sample role: Recruitment collaborator. Review duties, requirements and benefits in the Minh Đức prototype."
+    },
+    {
+      "id": "P17",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "locale": "zh",
+      "h1": [
+        "招聘合作人员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "title": "招聘合作人员 | Minh Đức Vina",
+      "description": "示例岗位：招聘合作人员。在明德原型中了解职责、要求和待遇。"
+    },
+    {
+      "id": "P17",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "locale": "ko",
+      "h1": [
+        "채용 협력 담당자"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "title": "채용 협력 담당자 | Minh Đức Vina",
+      "description": "예시 직무: 채용 협력 담당자. 민득 프로토타입에서 업무, 자격 요건과 혜택을 확인하세요."
+    },
+    {
+      "id": "P17",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "locale": "ja",
+      "h1": [
+        "採用協力スタッフ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "title": "採用協力スタッフ | Minh Đức Vina",
+      "description": "職種例：採用協力スタッフ。ミンドゥックのプロトタイプで仕事内容、応募条件、待遇を確認できます。"
+    },
+    {
+      "id": "P18",
+      "route": "/saved-jobs",
+      "locale": "vi",
+      "h1": [
+        "Việc làm đã lưu"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "title": "Việc làm đã lưu | Minh Đức Vina",
+      "description": "Xem các vị trí bạn đã đánh dấu trên thiết bị và tiếp tục tìm hiểu cơ hội việc làm."
+    },
+    {
+      "id": "P18",
+      "route": "/saved-jobs",
+      "locale": "en",
+      "h1": [
+        "Saved jobs"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/saved-jobs",
+      "title": "Saved jobs | Minh Đức Vina",
+      "description": "Revisit jobs saved on this device and continue exploring your options."
+    },
+    {
+      "id": "P18",
+      "route": "/saved-jobs",
+      "locale": "zh",
+      "h1": [
+        "已收藏职位"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/saved-jobs",
+      "title": "已收藏职位 | Minh Đức Vina",
+      "description": "查看在此设备收藏的职位，继续探索工作机会。"
+    },
+    {
+      "id": "P18",
+      "route": "/saved-jobs",
+      "locale": "ko",
+      "h1": [
+        "저장한 채용 정보"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/saved-jobs",
+      "title": "저장한 채용 정보 | Minh Đức Vina",
+      "description": "이 기기에 저장한 채용 정보를 다시 확인하고 기회를 탐색하세요."
+    },
+    {
+      "id": "P18",
+      "route": "/saved-jobs",
+      "locale": "ja",
+      "h1": [
+        "保存した求人"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/saved-jobs",
+      "title": "保存した求人 | Minh Đức Vina",
+      "description": "この端末に保存した求人を確認し、仕事探しを続けられます。"
+    },
+    {
+      "id": "P19",
+      "route": "/careers",
+      "locale": "vi",
+      "h1": [
+        "Gia nhập đội ngũ Minh Đức"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/careers",
+      "title": "Gia nhập Minh Đức | Minh Đức Vina",
+      "description": "Khám phá môi trường làm việc và các cơ hội nội bộ minh họa tại Minh Đức."
+    },
+    {
+      "id": "P19",
+      "route": "/careers",
+      "locale": "en",
+      "h1": [
+        "Join the Minh Đức team"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/careers",
+      "title": "Join Minh Đức | Minh Đức Vina",
+      "description": "Discover Minh Đức’s working environment and illustrative internal vacancies."
+    },
+    {
+      "id": "P19",
+      "route": "/careers",
+      "locale": "zh",
+      "h1": [
+        "加入明德团队"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/careers",
+      "title": "加入明德 | Minh Đức Vina",
+      "description": "了解明德的工作环境和内部招聘示例。"
+    },
+    {
+      "id": "P19",
+      "route": "/careers",
+      "locale": "ko",
+      "h1": [
+        "민득 팀에 합류하기"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/careers",
+      "title": "민득과 함께하기 | Minh Đức Vina",
+      "description": "민득의 근무 환경과 사내 채용 예시를 살펴보세요."
+    },
+    {
+      "id": "P19",
+      "route": "/careers",
+      "locale": "ja",
+      "h1": [
+        "ミンドゥックのチームで働く"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/careers",
+      "title": "ミンドゥックで働く | Minh Đức Vina",
+      "description": "ミンドゥックの職場環境と社内採用のサンプルをご紹介します。"
+    },
+    {
+      "id": "P20",
+      "route": "/news",
+      "locale": "vi",
+      "h1": [
+        "Tin tức & cẩm nang"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news",
+      "title": "Tin tức và cẩm nang | Minh Đức Vina",
+      "description": "Đọc những gợi ý về tìm việc, tuyển dụng và nhân sự dành cho người lao động và doanh nghiệp."
+    },
+    {
+      "id": "P20",
+      "route": "/news",
+      "locale": "en",
+      "h1": [
+        "News & guides"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news",
+      "title": "News & guides | Minh Đức Vina",
+      "description": "Read practical guidance on job hunting, recruitment and workforce planning."
+    },
+    {
+      "id": "P20",
+      "route": "/news",
+      "locale": "zh",
+      "h1": [
+        "资讯与指南"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news",
+      "title": "新闻与指南 | Minh Đức Vina",
+      "description": "阅读有关求职、招聘和人力规划的实用指南。"
+    },
+    {
+      "id": "P20",
+      "route": "/news",
+      "locale": "ko",
+      "h1": [
+        "소식과 가이드"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news",
+      "title": "소식 및 안내 | Minh Đức Vina",
+      "description": "구직, 채용, 인력 계획에 관한 실용적인 안내를 확인하세요."
+    },
+    {
+      "id": "P20",
+      "route": "/news",
+      "locale": "ja",
+      "h1": [
+        "ニュースとガイド"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news",
+      "title": "ニュース・ガイド | Minh Đức Vina",
+      "description": "求職、採用、人材計画に関する実用的なガイドをご覧ください。"
+    },
+    {
+      "id": "P21",
+      "route": "/news/ho-so-xin-viec",
+      "locale": "vi",
+      "h1": [
+        "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/ho-so-xin-viec",
+      "title": "Chuẩn bị hồ sơ xin việc tại nhà máy | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: chuẩn bị hồ sơ xin việc tại nhà máy với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P21",
+      "route": "/news/ho-so-xin-viec",
+      "locale": "en",
+      "h1": [
+        "Preparing a factory job application: where to start?"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/ho-so-xin-viec",
+      "title": "Preparing a factory job application | Minh Đức Vina",
+      "description": "Minh Đức guide: Preparing a factory job application. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P21",
+      "route": "/news/ho-so-xin-viec",
+      "locale": "zh",
+      "h1": [
+        "准备工厂求职材料：从哪里开始？"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/ho-so-xin-viec",
+      "title": "准备工厂求职材料 | Minh Đức Vina",
+      "description": "明德指南：准备工厂求职材料。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P21",
+      "route": "/news/ho-so-xin-viec",
+      "locale": "ko",
+      "h1": [
+        "공장 취업 서류 준비: 어디서 시작할까요?"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/ho-so-xin-viec",
+      "title": "공장 입사 서류 준비 | Minh Đức Vina",
+      "description": "민득 가이드: 공장 입사 서류 준비. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P21",
+      "route": "/news/ho-so-xin-viec",
+      "locale": "ja",
+      "h1": [
+        "工場への応募書類、何から始める？"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/ho-so-xin-viec",
+      "title": "工場への応募書類の準備 | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：工場への応募書類の準備。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P22",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "locale": "vi",
+      "h1": [
+        "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/nhu-cau-tuyen-dung",
+      "title": "Lập kế hoạch bổ sung lao động | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: lập kế hoạch bổ sung lao động với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P22",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "locale": "en",
+      "h1": [
+        "Planning workforce additions for each production phase"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/nhu-cau-tuyen-dung",
+      "title": "Planning workforce additions | Minh Đức Vina",
+      "description": "Minh Đức guide: Planning workforce additions. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P22",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "locale": "zh",
+      "h1": [
+        "按生产批次规划补充人员"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/nhu-cau-tuyen-dung",
+      "title": "制定补充用工计划 | Minh Đức Vina",
+      "description": "明德指南：制定补充用工计划。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P22",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "locale": "ko",
+      "h1": [
+        "생산 단계별 인력 충원 계획"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/nhu-cau-tuyen-dung",
+      "title": "인력 충원 계획 | Minh Đức Vina",
+      "description": "민득 가이드: 인력 충원 계획. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P22",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "locale": "ja",
+      "h1": [
+        "生産期ごとの人員補充を計画する"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/nhu-cau-tuyen-dung",
+      "title": "人員補充の計画 | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：人員補充の計画。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P23",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "locale": "vi",
+      "h1": [
+        "Những câu hỏi nên làm rõ trước khi nhận việc"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/chon-cong-viec-phu-hop",
+      "title": "Những câu hỏi trước khi nhận việc | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: những câu hỏi trước khi nhận việc với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P23",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "locale": "en",
+      "h1": [
+        "Questions to clarify before accepting a job"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/chon-cong-viec-phu-hop",
+      "title": "Questions before accepting a job | Minh Đức Vina",
+      "description": "Minh Đức guide: Questions before accepting a job. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P23",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "locale": "zh",
+      "h1": [
+        "入职前应问清的问题"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/chon-cong-viec-phu-hop",
+      "title": "入职前应询问的问题 | Minh Đức Vina",
+      "description": "明德指南：入职前应询问的问题。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P23",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "locale": "ko",
+      "h1": [
+        "입사 전에 확인할 질문"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/chon-cong-viec-phu-hop",
+      "title": "입사 전 확인할 질문 | Minh Đức Vina",
+      "description": "민득 가이드: 입사 전 확인할 질문. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P23",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "locale": "ja",
+      "h1": [
+        "就職前に確認したい質問"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/chon-cong-viec-phu-hop",
+      "title": "入社前に確認すること | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：入社前に確認すること。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P24",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "locale": "vi",
+      "h1": [
+        "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/thong-tin-tuyen-dung-minh-bach",
+      "title": "Thông tin tuyển dụng rõ ràng | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: thông tin tuyển dụng rõ ràng với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P24",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "locale": "en",
+      "h1": [
+        "Clear recruitment information builds better connections"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/thong-tin-tuyen-dung-minh-bach",
+      "title": "Clear recruitment information | Minh Đức Vina",
+      "description": "Minh Đức guide: Clear recruitment information. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P24",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "locale": "zh",
+      "h1": [
+        "清晰的招聘信息促成更好的对接"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/thong-tin-tuyen-dung-minh-bach",
+      "title": "清晰的招聘信息 | Minh Đức Vina",
+      "description": "明德指南：清晰的招聘信息。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P24",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "locale": "ko",
+      "h1": [
+        "명확한 채용 정보가 더 나은 연결을 만듭니다"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/thong-tin-tuyen-dung-minh-bach",
+      "title": "명확한 채용 정보 | Minh Đức Vina",
+      "description": "민득 가이드: 명확한 채용 정보. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P24",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "locale": "ja",
+      "h1": [
+        "明確な採用情報がより良いつながりを生む"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/thong-tin-tuyen-dung-minh-bach",
+      "title": "明確な採用情報 | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：明確な採用情報。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P25",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "locale": "vi",
+      "h1": [
+        "Chuẩn bị ngày đầu làm việc cho người lao động mới"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/don-tiep-lao-dong-moi",
+      "title": "Chuẩn bị ngày đầu làm việc | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: chuẩn bị ngày đầu làm việc với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P25",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "locale": "en",
+      "h1": [
+        "Preparing a new worker’s first day"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/don-tiep-lao-dong-moi",
+      "title": "Preparing for the first workday | Minh Đức Vina",
+      "description": "Minh Đức guide: Preparing for the first workday. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P25",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "locale": "zh",
+      "h1": [
+        "为新员工准备入职第一天"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/don-tiep-lao-dong-moi",
+      "title": "准备入职第一天 | Minh Đức Vina",
+      "description": "明德指南：准备入职第一天。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P25",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "locale": "ko",
+      "h1": [
+        "신규 근로자의 첫 출근 준비"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/don-tiep-lao-dong-moi",
+      "title": "첫 출근 준비 | Minh Đức Vina",
+      "description": "민득 가이드: 첫 출근 준비. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P25",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "locale": "ja",
+      "h1": [
+        "新しい従業員の初日を準備する"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/don-tiep-lao-dong-moi",
+      "title": "初出勤の準備 | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：初出勤の準備。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P26",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "locale": "vi",
+      "h1": [
+        "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/news/an-toan-thong-tin-khi-tim-viec",
+      "title": "An toàn thông tin khi tìm việc | Minh Đức Vina",
+      "description": "Cẩm nang Minh Đức: an toàn thông tin khi tìm việc với những gợi ý thực tế cho hành trình việc làm."
+    },
+    {
+      "id": "P26",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "locale": "en",
+      "h1": [
+        "Keeping personal information safe when job hunting online"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/news/an-toan-thong-tin-khi-tim-viec",
+      "title": "Personal data safety when job hunting | Minh Đức Vina",
+      "description": "Minh Đức guide: Personal data safety when job hunting. Practical suggestions for your employment journey."
+    },
+    {
+      "id": "P26",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "locale": "zh",
+      "h1": [
+        "网上求职时保护个人信息"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/news/an-toan-thong-tin-khi-tim-viec",
+      "title": "求职时的个人信息安全 | Minh Đức Vina",
+      "description": "明德指南：求职时的个人信息安全。为求职和用工提供实用建议。"
+    },
+    {
+      "id": "P26",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "locale": "ko",
+      "h1": [
+        "온라인 구직 시 개인정보 안전하게 지키기"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/news/an-toan-thong-tin-khi-tim-viec",
+      "title": "구직 중 개인정보 보호 | Minh Đức Vina",
+      "description": "민득 가이드: 구직 중 개인정보 보호. 취업과 채용을 위한 실용적인 제안입니다."
+    },
+    {
+      "id": "P26",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "locale": "ja",
+      "h1": [
+        "オンライン求職で個人情報を守る"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/news/an-toan-thong-tin-khi-tim-viec",
+      "title": "求職時の個人情報保護 | Minh Đức Vina",
+      "description": "ミンドゥックのガイド：求職時の個人情報保護。就職・採用に役立つヒントをご紹介します。"
+    },
+    {
+      "id": "P27",
+      "route": "/events",
+      "locale": "vi",
+      "h1": [
+        "Hoạt động của Minh Đức Vina"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/events",
+      "title": "Sự kiện | Minh Đức Vina",
+      "description": "Khám phá các chương trình kết nối việc làm và trao đổi nhân lực minh họa của Minh Đức."
+    },
+    {
+      "id": "P27",
+      "route": "/events",
+      "locale": "en",
+      "h1": [
+        "Minh Đức Vina activities"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/events",
+      "title": "Events | Minh Đức Vina",
+      "description": "Explore sample events for employment connections and workforce discussions."
+    },
+    {
+      "id": "P27",
+      "route": "/events",
+      "locale": "zh",
+      "h1": [
+        "明德Vina活动"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/events",
+      "title": "活动 | Minh Đức Vina",
+      "description": "探索就业对接和人力交流的示例活动。"
+    },
+    {
+      "id": "P27",
+      "route": "/events",
+      "locale": "ko",
+      "h1": [
+        "민득 비나 활동"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/events",
+      "title": "행사 | Minh Đức Vina",
+      "description": "취업 연결과 인력 교류를 위한 예시 행사를 살펴보세요."
+    },
+    {
+      "id": "P27",
+      "route": "/events",
+      "locale": "ja",
+      "h1": [
+        "ミン・ドゥック・ビナの活動"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/events",
+      "title": "イベント | Minh Đức Vina",
+      "description": "仕事との出会いや人材に関する意見交換のイベント例をご紹介します。"
+    },
+    {
+      "id": "P28",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "locale": "vi",
+      "h1": [
+        "Ngày hội kết nối việc làm cùng Minh Đức"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/events/ngay-hoi-ket-noi-viec-lam",
+      "title": "Ngày hội kết nối việc làm | Minh Đức Vina",
+      "description": "Tìm hiểu nội dung chương trình minh họa ngày hội kết nối việc làm cùng Minh Đức."
+    },
+    {
+      "id": "P28",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "locale": "en",
+      "h1": [
+        "Minh Đức job connection day"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/events/ngay-hoi-ket-noi-viec-lam",
+      "title": "Job connection day | Minh Đức Vina",
+      "description": "Explore the sample program for Job connection day with Minh Đức."
+    },
+    {
+      "id": "P28",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "locale": "zh",
+      "h1": [
+        "Minh Đức 就业对接日"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/events/ngay-hoi-ket-noi-viec-lam",
+      "title": "就业对接日 | Minh Đức Vina",
+      "description": "了解明德“就业对接日”示例活动的内容。"
+    },
+    {
+      "id": "P28",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "locale": "ko",
+      "h1": [
+        "Minh Đức 일자리 연결의 날"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/events/ngay-hoi-ket-noi-viec-lam",
+      "title": "취업 연결의 날 | Minh Đức Vina",
+      "description": "민득과 함께하는 취업 연결의 날 예시 프로그램을 살펴보세요."
+    },
+    {
+      "id": "P28",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "locale": "ja",
+      "h1": [
+        "Minh Đức就職交流デー"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/events/ngay-hoi-ket-noi-viec-lam",
+      "title": "仕事との出会いの日 | Minh Đức Vina",
+      "description": "ミンドゥックの「仕事との出会いの日」イベント例の内容をご紹介します。"
+    },
+    {
+      "id": "P29",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "locale": "vi",
+      "h1": [
+        "Trao đổi kế hoạch nhân lực cho doanh nghiệp sản xuất"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/events/toa-dam-ke-hoach-nhan-luc",
+      "title": "Trao đổi kế hoạch nhân lực | Minh Đức Vina",
+      "description": "Tìm hiểu nội dung chương trình minh họa trao đổi kế hoạch nhân lực cùng Minh Đức."
+    },
+    {
+      "id": "P29",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "locale": "en",
+      "h1": [
+        "Workforce planning discussion for manufacturers"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/events/toa-dam-ke-hoach-nhan-luc",
+      "title": "Workforce planning discussion | Minh Đức Vina",
+      "description": "Explore the sample program for Workforce planning discussion with Minh Đức."
+    },
+    {
+      "id": "P29",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "locale": "zh",
+      "h1": [
+        "制造企业人力规划交流"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/events/toa-dam-ke-hoach-nhan-luc",
+      "title": "用工规划交流会 | Minh Đức Vina",
+      "description": "了解明德“用工规划交流会”示例活动的内容。"
+    },
+    {
+      "id": "P29",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "locale": "ko",
+      "h1": [
+        "제조기업을 위한 인력 계획 논의"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/events/toa-dam-ke-hoach-nhan-luc",
+      "title": "인력 계획 간담회 | Minh Đức Vina",
+      "description": "민득과 함께하는 인력 계획 간담회 예시 프로그램을 살펴보세요."
+    },
+    {
+      "id": "P29",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "locale": "ja",
+      "h1": [
+        "製造企業向け人員計画の相談会"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/events/toa-dam-ke-hoach-nhan-luc",
+      "title": "人材計画の意見交換会 | Minh Đức Vina",
+      "description": "ミンドゥックの「人材計画の意見交換会」イベント例の内容をご紹介します。"
+    },
+    {
+      "id": "P30",
+      "route": "/events/hanh-trang-tim-viec",
+      "locale": "vi",
+      "h1": [
+        "Hành trang tìm việc: từ hồ sơ đến ngày đầu đi làm"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/events/hanh-trang-tim-viec",
+      "title": "Hành trang tìm việc | Minh Đức Vina",
+      "description": "Tìm hiểu nội dung chương trình minh họa hành trang tìm việc cùng Minh Đức."
+    },
+    {
+      "id": "P30",
+      "route": "/events/hanh-trang-tim-viec",
+      "locale": "en",
+      "h1": [
+        "Job search essentials: from applications to your first day"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/events/hanh-trang-tim-viec",
+      "title": "Getting ready for a job search | Minh Đức Vina",
+      "description": "Explore the sample program for Getting ready for a job search with Minh Đức."
+    },
+    {
+      "id": "P30",
+      "route": "/events/hanh-trang-tim-viec",
+      "locale": "zh",
+      "h1": [
+        "求职准备：从申请材料到上班第一天"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/events/hanh-trang-tim-viec",
+      "title": "求职准备 | Minh Đức Vina",
+      "description": "了解明德“求职准备”示例活动的内容。"
+    },
+    {
+      "id": "P30",
+      "route": "/events/hanh-trang-tim-viec",
+      "locale": "ko",
+      "h1": [
+        "취업 준비: 지원 서류부터 첫 출근까지"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/events/hanh-trang-tim-viec",
+      "title": "구직 준비 | Minh Đức Vina",
+      "description": "민득과 함께하는 구직 준비 예시 프로그램을 살펴보세요."
+    },
+    {
+      "id": "P30",
+      "route": "/events/hanh-trang-tim-viec",
+      "locale": "ja",
+      "h1": [
+        "求職の準備：応募書類から初出勤まで"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/events/hanh-trang-tim-viec",
+      "title": "求職活動の準備 | Minh Đức Vina",
+      "description": "ミンドゥックの「求職活動の準備」イベント例の内容をご紹介します。"
+    },
+    {
+      "id": "P31",
+      "route": "/partners",
+      "locale": "vi",
+      "h1": [
+        "Đối tác & kết nối"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/partners",
+      "title": "Đối tác | Minh Đức Vina",
+      "description": "Tìm hiểu về kết nối và định hướng đồng hành cùng đối tác của Minh Đức."
+    },
+    {
+      "id": "P31",
+      "route": "/partners",
+      "locale": "en",
+      "h1": [
+        "Partners & connections"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/partners",
+      "title": "Partners | Minh Đức Vina",
+      "description": "Learn about Minh Đức’s connections and approach to working with partners."
+    },
+    {
+      "id": "P31",
+      "route": "/partners",
+      "locale": "zh",
+      "h1": [
+        "伙伴与合作"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/partners",
+      "title": "合作伙伴 | Minh Đức Vina",
+      "description": "了解明德的合作网络及与伙伴协作的方向。"
+    },
+    {
+      "id": "P31",
+      "route": "/partners",
+      "locale": "ko",
+      "h1": [
+        "파트너 및 협력"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/partners",
+      "title": "파트너 | Minh Đức Vina",
+      "description": "민득의 파트너 네트워크와 협력 방향을 알아보세요."
+    },
+    {
+      "id": "P31",
+      "route": "/partners",
+      "locale": "ja",
+      "h1": [
+        "パートナーとつながり"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/partners",
+      "title": "パートナー | Minh Đức Vina",
+      "description": "ミンドゥックのパートナーとのつながりと協力方針をご紹介します。"
+    },
+    {
+      "id": "P32",
+      "route": "/education",
+      "locale": "vi",
+      "h1": [
+        "Tuyển sinh cao đẳng & đại học"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/education",
+      "title": "Tuyển sinh | Minh Đức Vina",
+      "description": "Tìm hiểu các chương trình học từ xa và chính quy cùng quy trình đăng ký minh họa."
+    },
+    {
+      "id": "P32",
+      "route": "/education",
+      "locale": "en",
+      "h1": [
+        "College and university admissions"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/education",
+      "title": "Admissions | Minh Đức Vina",
+      "description": "Explore illustrative distance and campus programs, advice and application forms."
+    },
+    {
+      "id": "P32",
+      "route": "/education",
+      "locale": "zh",
+      "h1": [
+        "大专及大学招生"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/education",
+      "title": "招生 | Minh Đức Vina",
+      "description": "了解远程与全日制示例课程、咨询和申请表。"
+    },
+    {
+      "id": "P32",
+      "route": "/education",
+      "locale": "ko",
+      "h1": [
+        "전문대학 및 대학교 입학"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/education",
+      "title": "입학 안내 | Minh Đức Vina",
+      "description": "원격 및 정규 과정 예시와 상담, 지원 양식을 살펴보세요."
+    },
+    {
+      "id": "P32",
+      "route": "/education",
+      "locale": "ja",
+      "h1": [
+        "短期大学・大学の入学支援"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/education",
+      "title": "入学案内 | Minh Đức Vina",
+      "description": "遠隔・通学のサンプル課程と相談・出願フォームをご覧ください。"
+    },
+    {
+      "id": "P33",
+      "route": "/education/tu-xa-quan-tri",
+      "locale": "vi",
+      "h1": [
+        "Quản trị kinh doanh"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/education/tu-xa-quan-tri",
+      "title": "Quản trị kinh doanh từ xa | Minh Đức Vina",
+      "description": "Khám phá chương trình Quản trị kinh doanh từ xa và thử tư vấn hoặc đăng ký học."
+    },
+    {
+      "id": "P33",
+      "route": "/education/tu-xa-quan-tri",
+      "locale": "en",
+      "h1": [
+        "Business administration"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/education/tu-xa-quan-tri",
+      "title": "Distance business administration | Minh Đức Vina",
+      "description": "Explore Distance business administration and try the sample advice and application process."
+    },
+    {
+      "id": "P33",
+      "route": "/education/tu-xa-quan-tri",
+      "locale": "zh",
+      "h1": [
+        "工商管理"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/education/tu-xa-quan-tri",
+      "title": "远程工商管理课程 | Minh Đức Vina",
+      "description": "了解远程工商管理课程并体验咨询和申请示例流程。"
+    },
+    {
+      "id": "P33",
+      "route": "/education/tu-xa-quan-tri",
+      "locale": "ko",
+      "h1": [
+        "경영학"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/education/tu-xa-quan-tri",
+      "title": "원격 경영학 과정 | Minh Đức Vina",
+      "description": "원격 경영학 과정을 살펴보고 상담 및 지원 데모를 체험하세요."
+    },
+    {
+      "id": "P33",
+      "route": "/education/tu-xa-quan-tri",
+      "locale": "ja",
+      "h1": [
+        "経営管理"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/education/tu-xa-quan-tri",
+      "title": "経営管理の遠隔学習 | Minh Đức Vina",
+      "description": "経営管理の遠隔学習の内容を確認し、相談・出願のデモを体験できます。"
+    },
+    {
+      "id": "P34",
+      "route": "/education/chinh-quy-cong-nghe",
+      "locale": "vi",
+      "h1": [
+        "Công nghệ kỹ thuật chính quy"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/education/chinh-quy-cong-nghe",
+      "title": "Công nghệ kỹ thuật chính quy | Minh Đức Vina",
+      "description": "Tìm hiểu chương trình Công nghệ kỹ thuật chính quy trong bản minh họa tuyển sinh."
+    },
+    {
+      "id": "P34",
+      "route": "/education/chinh-quy-cong-nghe",
+      "locale": "en",
+      "h1": [
+        "Campus engineering technology"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/education/chinh-quy-cong-nghe",
+      "title": "Campus engineering technology | Minh Đức Vina",
+      "description": "Explore Campus engineering technology and try the sample advice and application process."
+    },
+    {
+      "id": "P34",
+      "route": "/education/chinh-quy-cong-nghe",
+      "locale": "zh",
+      "h1": [
+        "全日制工程技术课程"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/education/chinh-quy-cong-nghe",
+      "title": "全日制工程技术课程 | Minh Đức Vina",
+      "description": "了解全日制工程技术课程并体验咨询和申请示例流程。"
+    },
+    {
+      "id": "P34",
+      "route": "/education/chinh-quy-cong-nghe",
+      "locale": "ko",
+      "h1": [
+        "정규 공학 기술 과정"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/education/chinh-quy-cong-nghe",
+      "title": "정규 공학 기술 과정 | Minh Đức Vina",
+      "description": "정규 공학 기술 과정을 살펴보고 상담 및 지원 데모를 체험하세요."
+    },
+    {
+      "id": "P34",
+      "route": "/education/chinh-quy-cong-nghe",
+      "locale": "ja",
+      "h1": [
+        "工学技術の通学課程"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/education/chinh-quy-cong-nghe",
+      "title": "工学技術の通学課程 | Minh Đức Vina",
+      "description": "工学技術の通学課程の内容を確認し、相談・出願のデモを体験できます。"
+    },
+    {
+      "id": "P35",
+      "route": "/education/tu-xa-ke-toan",
+      "locale": "vi",
+      "h1": [
+        "Kế toán"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/education/tu-xa-ke-toan",
+      "title": "Kế toán từ xa | Minh Đức Vina",
+      "description": "Tìm hiểu chương trình Kế toán từ xa và trải nghiệm các bước chuẩn bị hồ sơ."
+    },
+    {
+      "id": "P35",
+      "route": "/education/tu-xa-ke-toan",
+      "locale": "en",
+      "h1": [
+        "Accounting"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/education/tu-xa-ke-toan",
+      "title": "Distance accounting | Minh Đức Vina",
+      "description": "Explore Distance accounting and try the sample advice and application process."
+    },
+    {
+      "id": "P35",
+      "route": "/education/tu-xa-ke-toan",
+      "locale": "zh",
+      "h1": [
+        "会计"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/education/tu-xa-ke-toan",
+      "title": "远程会计课程 | Minh Đức Vina",
+      "description": "了解远程会计课程并体验咨询和申请示例流程。"
+    },
+    {
+      "id": "P35",
+      "route": "/education/tu-xa-ke-toan",
+      "locale": "ko",
+      "h1": [
+        "회계"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/education/tu-xa-ke-toan",
+      "title": "원격 회계 과정 | Minh Đức Vina",
+      "description": "원격 회계 과정을 살펴보고 상담 및 지원 데모를 체험하세요."
+    },
+    {
+      "id": "P35",
+      "route": "/education/tu-xa-ke-toan",
+      "locale": "ja",
+      "h1": [
+        "会計"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/education/tu-xa-ke-toan",
+      "title": "会計の遠隔学習 | Minh Đức Vina",
+      "description": "会計の遠隔学習の内容を確認し、相談・出願のデモを体験できます。"
+    },
+    {
+      "id": "P36",
+      "route": "/admin-demo",
+      "locale": "vi",
+      "h1": [
+        "Hồ sơ tiếp nhận"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/admin-demo",
+      "title": "Không gian quản trị mẫu | Minh Đức Vina",
+      "description": "Trải nghiệm phân loại, phân công và xử lý hồ sơ cùng quản lý nội dung bằng dữ liệu giả định."
+    },
+    {
+      "id": "P36",
+      "route": "/admin-demo",
+      "locale": "en",
+      "h1": [
+        "Incoming records"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/admin-demo",
+      "title": "Demo administration workspace | Minh Đức Vina",
+      "description": "Try classifying, assigning and handling synthetic cases, alongside a mock content editor."
+    },
+    {
+      "id": "P36",
+      "route": "/admin-demo",
+      "locale": "zh",
+      "h1": [
+        "接收记录"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/admin-demo",
+      "title": "演示管理工作区 | Minh Đức Vina",
+      "description": "通过虚构资料体验分类、分配和处理流程，以及内容编辑演示。"
+    },
+    {
+      "id": "P36",
+      "route": "/admin-demo",
+      "locale": "ko",
+      "h1": [
+        "접수 기록"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/admin-demo",
+      "title": "관리 화면 데모 | Minh Đức Vina",
+      "description": "가상 사례의 분류, 담당자 배정, 처리와 콘텐츠 편집 데모를 체험하세요."
+    },
+    {
+      "id": "P36",
+      "route": "/admin-demo",
+      "locale": "ja",
+      "h1": [
+        "受付記録"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/admin-demo",
+      "title": "管理ワークスペースのデモ | Minh Đức Vina",
+      "description": "架空の案件の分類・担当者割り当て・処理と、コンテンツ編集のデモを体験できます。"
+    },
+    {
+      "id": "P37",
+      "route": "/contact",
+      "locale": "vi",
+      "h1": [
+        "Liên hệ Minh Đức"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/contact",
+      "title": "Liên hệ Minh Đức | Minh Đức Vina",
+      "description": "Xem thông tin liên hệ và gửi yêu cầu tư vấn minh họa tới Minh Đức Vina."
+    },
+    {
+      "id": "P37",
+      "route": "/contact",
+      "locale": "en",
+      "h1": [
+        "Contact Minh Đức"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/contact",
+      "title": "Contact Minh Đức | Minh Đức Vina",
+      "description": "Find Minh Đức contact details and try the sample business and general inquiry forms."
+    },
+    {
+      "id": "P37",
+      "route": "/contact",
+      "locale": "zh",
+      "h1": [
+        "联系明德"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/contact",
+      "title": "联系明德 | Minh Đức Vina",
+      "description": "查看明德联系方式，体验企业需求和一般咨询示例表单。"
+    },
+    {
+      "id": "P37",
+      "route": "/contact",
+      "locale": "ko",
+      "h1": [
+        "민득 문의"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/contact",
+      "title": "민득 문의 | Minh Đức Vina",
+      "description": "민득 연락처를 확인하고 기업 및 일반 문의 데모 양식을 체험하세요."
+    },
+    {
+      "id": "P37",
+      "route": "/contact",
+      "locale": "ja",
+      "h1": [
+        "ミンドゥックへのお問い合わせ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/contact",
+      "title": "ミンドゥックへのお問い合わせ | Minh Đức Vina",
+      "description": "ミンドゥックの連絡先を確認し、企業向け・一般向けの問い合わせデモを体験できます。"
+    },
+    {
+      "id": "P38",
+      "route": "/consultation",
+      "locale": "vi",
+      "h1": [
+        "Chọn giờ tư vấn"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/consultation",
+      "title": "Đặt lịch tư vấn | Minh Đức Vina",
+      "description": "Chọn ngày và khung giờ để trải nghiệm quy trình đặt lịch tư vấn minh họa cùng Minh Đức Vina."
+    },
+    {
+      "id": "P38",
+      "route": "/consultation",
+      "locale": "en",
+      "h1": [
+        "Choose a consultation time"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/consultation",
+      "title": "Book a consultation | Minh Đức Vina",
+      "description": "Choose a date and time to try the sample consultation booking process with Minh Đức Vina."
+    },
+    {
+      "id": "P38",
+      "route": "/consultation",
+      "locale": "zh",
+      "h1": [
+        "选择咨询时间"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/consultation",
+      "title": "预约咨询 | Minh Đức Vina",
+      "description": "选择日期和时间，体验明德 Vina 的咨询预约演示流程。"
+    },
+    {
+      "id": "P38",
+      "route": "/consultation",
+      "locale": "ko",
+      "h1": [
+        "상담 시간 선택"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/consultation",
+      "title": "상담 예약 | Minh Đức Vina",
+      "description": "날짜와 시간을 선택하여 Minh Đức Vina의 상담 예약 예시 절차를 체험해 보세요."
+    },
+    {
+      "id": "P38",
+      "route": "/consultation",
+      "locale": "ja",
+      "h1": [
+        "相談時間を選ぶ"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/consultation",
+      "title": "相談予約 | Minh Đức Vina",
+      "description": "日付と時間を選び、Minh Đức Vinaの相談予約デモを体験できます。"
+    },
+    {
+      "id": "P39",
+      "route": "/privacy-policy",
+      "locale": "vi",
+      "h1": [
+        "Chính sách bảo mật"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/privacy-policy",
+      "title": "Chính sách bảo mật | Minh Đức Vina",
+      "description": "Tìm hiểu cách bản prototype xử lý thông tin và lưu lựa chọn trên thiết bị."
+    },
+    {
+      "id": "P39",
+      "route": "/privacy-policy",
+      "locale": "en",
+      "h1": [
+        "Privacy policy"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/privacy-policy",
+      "title": "Privacy policy | Minh Đức Vina",
+      "description": "Learn how this prototype handles information and saves preferences on your device."
+    },
+    {
+      "id": "P39",
+      "route": "/privacy-policy",
+      "locale": "zh",
+      "h1": [
+        "隐私政策"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/privacy-policy",
+      "title": "隐私政策 | Minh Đức Vina",
+      "description": "了解本原型如何处理信息并在设备上保存偏好。"
+    },
+    {
+      "id": "P39",
+      "route": "/privacy-policy",
+      "locale": "ko",
+      "h1": [
+        "개인정보 처리방침"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/privacy-policy",
+      "title": "개인정보 처리방침 | Minh Đức Vina",
+      "description": "프로토타입의 정보 처리 방식과 기기 내 설정 저장 방식을 확인하세요."
+    },
+    {
+      "id": "P39",
+      "route": "/privacy-policy",
+      "locale": "ja",
+      "h1": [
+        "プライバシーポリシー"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/privacy-policy",
+      "title": "プライバシーポリシー | Minh Đức Vina",
+      "description": "このプロトタイプでの情報の取り扱いと端末への設定保存について説明します。"
+    },
+    {
+      "id": "P40",
+      "route": "/terms-of-use",
+      "locale": "vi",
+      "h1": [
+        "Điều khoản sử dụng"
+      ],
+      "lang": "vi",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/terms-of-use",
+      "title": "Điều khoản sử dụng | Minh Đức Vina",
+      "description": "Tìm hiểu điều khoản sử dụng và phạm vi nội dung minh họa của website."
+    },
+    {
+      "id": "P40",
+      "route": "/terms-of-use",
+      "locale": "en",
+      "h1": [
+        "Terms of use"
+      ],
+      "lang": "en",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/en/terms-of-use",
+      "title": "Terms of use | Minh Đức Vina",
+      "description": "Read the terms of use and understand the scope of this demonstration website."
+    },
+    {
+      "id": "P40",
+      "route": "/terms-of-use",
+      "locale": "zh",
+      "h1": [
+        "使用条款"
+      ],
+      "lang": "zh-Hans",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/zh/terms-of-use",
+      "title": "使用条款 | Minh Đức Vina",
+      "description": "阅读使用条款，了解本演示网站的内容范围。"
+    },
+    {
+      "id": "P40",
+      "route": "/terms-of-use",
+      "locale": "ko",
+      "h1": [
+        "이용약관"
+      ],
+      "lang": "ko",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ko/terms-of-use",
+      "title": "이용약관 | Minh Đức Vina",
+      "description": "이용약관과 데모 웹사이트의 범위를 확인하세요."
+    },
+    {
+      "id": "P40",
+      "route": "/terms-of-use",
+      "locale": "ja",
+      "h1": [
+        "利用規約"
+      ],
+      "lang": "ja",
+      "robots": "noindex,nofollow",
+      "canonical": "https://kenbinhoainam.github.io/WebMinhDuc/ja/terms-of-use",
+      "title": "利用規約 | Minh Đức Vina",
+      "description": "利用規約と、このデモサイトの内容の範囲をご確認ください。"
+    }
+  ]
+}

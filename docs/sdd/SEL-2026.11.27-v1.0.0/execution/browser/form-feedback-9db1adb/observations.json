@@ -1,0 +1,59 @@
+{
+  "application_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "dist_tree_sha256": "429a3989859c8ed4b473773ffeb99c95e7bac4123a41182fce5d27134aa52ba7",
+  "chromium": "156.0.8078.79",
+  "cases": [
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/contact?form=F01",
+      "mode": "F01",
+      "status": "Fail",
+      "error": "Locator expected not to have attribute 'true'\nActual value: true \nCall log:\n  - Expect \"not_to_have_attribute\" with timeout 500ms\n  - waiting for locator(\"form:visible\").filter(has=locator(\"[name=phone]\")).first.locator(\"[name=phone]\")\n    4 × locator resolved to <input type=\"tel\" value=\"12\" required=\"\" name=\"phone\" autocomplete=\"tel\" aria-invalid=\"true\" aria-describedby=\"_r_1_-phone-error\"/>\n      - unexpected value \"true\"\n\nAria snapshot:\n- textbox \"Số điện thoại Vui lòng nhập số điện thoại Việt Nam hợp lệ.\" [invalid]: 090 000 0000"
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/contact?form=F02",
+      "mode": "F02",
+      "status": "Fail",
+      "error": "Locator expected not to have attribute 'true'\nActual value: true \nCall log:\n  - Expect \"not_to_have_attribute\" with timeout 500ms\n  - waiting for locator(\"form:visible\").filter(has=locator(\"[name=phone]\")).first.locator(\"[name=phone]\")\n    6 × locator resolved to <input type=\"tel\" value=\"12\" required=\"\" name=\"phone\" autocomplete=\"tel\" aria-invalid=\"true\" aria-describedby=\"_r_1_-phone-error\"/>\n      - unexpected value \"true\"\n\nAria snapshot:\n- textbox \"Số điện thoại Vui lòng nhập số điện thoại Việt Nam hợp lệ.\" [invalid]: 090 000 0000"
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "mode": "F03",
+      "status": "Fail",
+      "error": "Locator expected not to have attribute 'true'\nActual value: true \nCall log:\n  - Expect \"not_to_have_attribute\" with timeout 500ms\n  - waiting for locator(\"form:visible\").filter(has=locator(\"[name=phone]\")).first.locator(\"[name=phone]\")\n    5 × locator resolved to <input type=\"tel\" required=\"\" name=\"phone\" id=\"apply-phone\" autocomplete=\"tel\" aria-invalid=\"true\" aria-describedby=\"apply-phone-error\"/>\n      - unexpected value \"true\"\n\nAria snapshot:\n- textbox \"Số điện thoại\" [invalid]: 090 000 0000"
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "mode": "F04",
+      "status": "Fail",
+      "error": "Locator expected not to have attribute 'true'\nActual value: true \nCall log:\n  - Expect \"not_to_have_attribute\" with timeout 500ms\n  - waiting for locator(\"form:visible\").filter(has=locator(\"[name=phone]\")).first.locator(\"[name=phone]\")\n    6 × locator resolved to <input type=\"tel\" required=\"\" name=\"phone\" id=\"apply-phone\" autocomplete=\"tel\" aria-invalid=\"true\" aria-describedby=\"apply-phone-error\"/>\n      - unexpected value \"true\"\n\nAria snapshot:\n- textbox \"Số điện thoại\" [invalid]: 090 000 0000"
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/education?form=F05#dang-ky",
+      "mode": "F05",
+      "status": "Pass",
+      "preserved_errors": [],
+      "fixed_field": "phone"
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "route": "/education?form=F06#dang-ky",
+      "mode": "F06",
+      "status": "Pass",
+      "preserved_errors": [],
+      "fixed_field": "phone"
+    }
+  ],
+  "page_errors": [],
+  "missing_assets": []
+}

@@ -20,7 +20,7 @@ if(!process.argv.includes('--case')) {
   assert.equal(languageSwitchUrl('/ko/jobs','?q=kho','#details','ja'),'/ja/jobs?q=kho#details');
   await build({entryPoints:['src/main.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/client.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
   for(const url of ['/','/about-us','/services','/careers','/consultation','/jobs','/saved-jobs','/jobs?q=kho','/testimonials','/partners','/news','/en/news/chon-cong-viec-phu-hop','/en','/zh','/ko','/ja','/en/jobs','/zh/jobs','/ko/jobs','/ja/jobs','/en/consultation','/zh/consultation','/ko/consultation','/ja/consultation']) {
-   const result=spawnSync(process.execPath,[process.argv[1],'--case',url],{encoding:'utf8',timeout:15000});
+   const result=spawnSync(process.execPath,[process.argv[1],'--case',url],{encoding:'utf8',timeout:60000});
    assert.equal(result.status,0,`${url}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }
  } finally {await rm(temp,{recursive:true,force:true});}
@@ -40,7 +40,28 @@ if(!process.argv.includes('--case')) {
  const errors=[]; const original=console.error;console.error=(...args)=>{errors.push(args.map(String).join(' '));original(...args)};
  const initialHeading=window.document.querySelector('h1');assert.ok(initialHeading);
  await import(pathToFileURL(`${process.cwd()}/${temp}/client.mjs`).href);
- await new Promise(resolve=>setTimeout(resolve,800));
+ // SSR is allowed to say zero until the client has read the seeded storage.
+ // A slow CI worker can still be booting when a fixed-duration sleep expires.
+ await new Promise((resolve,reject)=>{
+   const root=window.document.getElementById('root');
+   const observer=new window.MutationObserver(check);
+   const timeout=setTimeout(()=>{
+     observer.disconnect();
+     reject(new Error(`Client state did not hydrate on ${route}`));
+   },20000);
+   function check() {
+     const headerReady=/2/.test(root.querySelector('.header-saved')?.getAttribute('aria-label')||'');
+     const listReady=path!=='/saved-jobs' || root.querySelectorAll('.jobs-saved-directory .job-card').length===2;
+     const heading=root.querySelector('h1');
+     const routeReady=heading?.textContent && (!(route.includes('?') || path==='/testimonials') || heading!==initialHeading);
+     if (!headerReady || !listReady || !routeReady) return;
+     clearTimeout(timeout);
+     observer.disconnect();
+     resolve();
+   }
+   observer.observe(root,{subtree:true,childList:true,attributes:true,attributeFilter:['aria-label']});
+   check();
+ });
  assert.equal(errors.length,0,`React errors: ${errors.join('\n')}`);
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
  assert.equal(window.document.querySelector('.cookie-notice'),null,'first visit omits the storage notice');

@@ -1,0 +1,163 @@
+{
+  "workflow": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46012655936",
+  "application_sha": "c83bd9001cf2629dfb1934515fcf1c05ae553910",
+  "reports": {
+    "main": {
+      "counts": {
+        "Pass": 13036,
+        "Not Run": 130
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "reviewer": {
+      "counts": {
+        "Pass": 6
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "vi": {
+      "counts": {
+        "Pass": 160,
+        "Fail": 0,
+        "Blocked": 0
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "en": {
+      "counts": {
+        "Pass": 160,
+        "Fail": 0,
+        "Blocked": 0
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "zh": {
+      "counts": {
+        "Pass": 160,
+        "Fail": 0,
+        "Blocked": 0
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "ko": {
+      "counts": {
+        "Pass": 158,
+        "Fail": 2,
+        "Blocked": 0
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    },
+    "ja": {
+      "counts": {
+        "Pass": 160,
+        "Fail": 0,
+        "Blocked": 0
+      },
+      "chromium": "140.0.7339.16",
+      "harness_sha": "8e1a010830c9824dfc20349f589cccb2a06a36eb",
+      "dist_tree_sha256": "8886fef86e24bf437bb17e29223576cf89c4b8f85fd7b26de0de24443107ebe9"
+    }
+  },
+  "files": {
+    "main.json.gz": {
+      "sha256": "9202911666ab1087737f15cde2e951eb866779d4a2ce7d49546060b3cf35170c",
+      "size": 15718469
+    },
+    "reviewer.json.gz": {
+      "sha256": "84bfaa2e4f39017ffb69ff968146d513e92b6229462aa1fe775abcdba727f57b",
+      "size": 8247
+    },
+    "axe-vi-summary.json": {
+      "sha256": "0a78f14614b9996030bebb0cabcdc1e004199c8a2ea58ddf97f6db82e6386ad3",
+      "size": 1186
+    },
+    "axe-vi.jsonl.gz": {
+      "sha256": "397f8c55fd767eade87e91880f96d12cee62a060d28ef871401b6dc2b8525c3b",
+      "size": 646833
+    },
+    "axe-en-summary.json": {
+      "sha256": "06d863e63e3154db750056e02de7998fe846ab4e68ef48fd518ce5b2dde2c98e",
+      "size": 1186
+    },
+    "axe-en.jsonl.gz": {
+      "sha256": "e362d5823b9359f12ac2b380ddcdbd933a974c26fc679184761e428e2bd9bffa",
+      "size": 639026
+    },
+    "axe-zh-summary.json": {
+      "sha256": "004f8d329131eabc07a9c19067d8111a87e26b14669fcb8588c15dff55deba5a",
+      "size": 1186
+    },
+    "axe-zh.jsonl.gz": {
+      "sha256": "f95638334659c7812a76149e00785945394e9244f5ddf61da518a2e6ede81a90",
+      "size": 655358
+    },
+    "axe-ko-summary.json": {
+      "sha256": "7e6b1deacc2e8d3e4afb6b526cf8532c6cd5229a27ec73e7a2f3dcfc7a3d1bc8",
+      "size": 1186
+    },
+    "axe-ko.jsonl.gz": {
+      "sha256": "b09d8bc87058911b6457030a5c5d438d78b80b25e071157ee7b1c2d01da85415",
+      "size": 653778
+    },
+    "axe-ja-summary.json": {
+      "sha256": "f7983e7a12574fac927bae947bffcbbafef187aaa3322ad21221fe22f3fee347",
+      "size": 1186
+    },
+    "axe-ja.jsonl.gz": {
+      "sha256": "2c1b091079f283dd3f4dff84da80bef01729a626f80a2ca6adb3222c792ce31e",
+      "size": 659920
+    },
+    "home-vi-390.png": {
+      "sha256": "0d813adf4e449d429203f3ad61bb1dba06098956741808831b4947fe05d0acb3",
+      "size": 165076
+    },
+    "home-vi-820.png": {
+      "sha256": "810e57b69ffc784c10063d0d2d98b2ed9873beb6ddd7fbcf216b22b1d7e9e513",
+      "size": 518678
+    },
+    "home-vi-1440.png": {
+      "sha256": "36025fe34f99e3944280e6b92855ccd420922f71f22b6b87f89d968e817a89b1",
+      "size": 804537
+    },
+    "F01-receipt.png": {
+      "sha256": "4a9b6fbe9e4a65e1506981424b0af230f8a6bf685e86dbf425aa093677b86f99",
+      "size": 69864
+    },
+    "F03-admin.png": {
+      "sha256": "d4204e8a1dd09a6f4d83219cbe8a026d34a8650ade368acc9d4331aaeb027bcd",
+      "size": 51341
+    },
+    "admin-demo-vi-820.png": {
+      "sha256": "e8ce854489e53c935e3cd4a4e7267f03f1f707a6a1a473e4aaa89019520dafa5",
+      "size": 85918
+    },
+    "keyboard-restored.png": {
+      "sha256": "46b6b6834f26b307714b1ec9ce2360a53765ef06abe61a4b2c206de0163f3dbc",
+      "size": 48828
+    },
+    "reviewer-keyboard-return.png": {
+      "sha256": "cea131eac5eb18b57297b3aba5b07b40d067cb298b8cc2b11439087f71834c25",
+      "size": 169002
+    },
+    "journeys-trace.zip": {
+      "sha256": "c0f35d263ecac5f2e09a1b697da9012c09b5288d761f0d3b7b569777f83b3641",
+      "size": 6050307
+    },
+    "journeys.webm": {
+      "sha256": "8f927635785ace7a0e4ee964575dffa834f5db6646e7fcaabd1de53759af7d39",
+      "size": 623184
+    }
+  }
+}

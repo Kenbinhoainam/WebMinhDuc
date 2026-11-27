@@ -1,0 +1,722 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "site_source_sha": "b9b58c4da406a91e43e94e2ad98a0f73327a47ab",
+  "private_archive_sha256": "901989a98553b6c44e47d01c45a7d1c8f64196c0b58bc4c541929cf5585a9782",
+  "pages_dist_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "sampled_en_jobs_sha256": "e72726f68428f113b7e4642998bd59f2caa4dc6c1fbdd574a45b342142876ff3",
+  "run_utc": "2026-11-27T13:44:59.561Z",
+  "method": "In-process React DOM, actual App routes and local submissions; generated Pages HTML for legacy job alias. No physical device, OS chooser, screen reader speech or external transport.",
+  "checks": [
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F04 vi",
+      "actual": "PASS F04 vi names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F06 vi",
+      "actual": "PASS F06 vi names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F04 en",
+      "actual": "PASS F04 en names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F06 en",
+      "actual": "PASS F06 en names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F04 zh",
+      "actual": "PASS F04 zh names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F06 zh",
+      "actual": "PASS F06 zh names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F04 ko",
+      "actual": "PASS F04 ko names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F06 ko",
+      "actual": "PASS F06 ko names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F04 ja",
+      "actual": "PASS F04 ja names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C04-3",
+        "MI05-1",
+        "MI05-2",
+        "MI05-3",
+        "MI05-4"
+      ],
+      "scope": "F06 ja",
+      "actual": "PASS F06 ja names/size, cancel, replace, remove, focus, draft, validation and zero network",
+      "evidence_ref": "tests/s2-residual-files.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "CS-C01-3"
+      ],
+      "scope": "service → F01 → Admin labor-supply",
+      "actual": "Matched service, four required fields, synthetic receipt and detail DEMO-0001",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-3"
+      ],
+      "scope": "service → F01 → Admin labor-leasing",
+      "actual": "Matched service, four required fields, synthetic receipt and detail DEMO-0002",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-3"
+      ],
+      "scope": "service → F01 → Admin recruitment",
+      "actual": "Matched service, four required fields, synthetic receipt and detail DEMO-0003",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-3"
+      ],
+      "scope": "service → F01 → Admin hr-consulting",
+      "actual": "Matched service, four required fields, synthetic receipt and detail DEMO-0004",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T13"
+      ],
+      "scope": "program CTA → F05 → Admin tu-xa-quan-tri",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0005",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T14"
+      ],
+      "scope": "program CTA → F06 → Admin tu-xa-quan-tri",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0006",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T13"
+      ],
+      "scope": "program CTA → F05 → Admin chinh-quy-cong-nghe",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0007",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T14"
+      ],
+      "scope": "program CTA → F06 → Admin chinh-quy-cong-nghe",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0008",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T13"
+      ],
+      "scope": "program CTA → F05 → Admin tu-xa-ke-toan",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0009",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C01-4",
+        "T14"
+      ],
+      "scope": "program CTA → F06 → Admin tu-xa-ke-toan",
+      "actual": "Selected program and form, optional field omission, receipt and admin detail DEMO-0010",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T13"
+      ],
+      "scope": "education index direct query F05",
+      "actual": "Index entry with no program or attachment creates DEMO-0011",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T14"
+      ],
+      "scope": "education index direct query F06",
+      "actual": "Index entry with no program or attachment creates DEMO-0012",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T10"
+      ],
+      "scope": "explicit F02 query selects general contact",
+      "actual": "F02 explicitly selected with generic message field present.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T09"
+      ],
+      "scope": "contact deep link F01",
+      "actual": "Default or query entry, required fields only, receipt and admin detail DEMO-0013",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T10"
+      ],
+      "scope": "contact deep link F02",
+      "actual": "Default or query entry, required fields only, receipt and admin detail DEMO-0014",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /unknown",
+      "actual": "Page not found → /en (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /jobs/unknown",
+      "actual": "Job not found → /en/jobs#job-listings (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /services/unknown",
+      "actual": "Service not found → /en/services (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /news/unknown",
+      "actual": "Article not found → /en/news (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /events/unknown",
+      "actual": "Event not found → /en/events (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T25"
+      ],
+      "scope": "invalid runtime route /education/unknown",
+      "actual": "Program not found → /en/education (HTTP status outside DOM scope)",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T27"
+      ],
+      "scope": "partners alias equivalent main content",
+      "actual": "The /en/testimonials and /en/partners main text is identical.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "legacy jobs query/hash redirect and history",
+      "actual": "Localized alias replaces history; query, fragment and canonical Back/Forward preserved.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T29"
+      ],
+      "scope": "Vietnamese root alias",
+      "actual": "/vi replaced by home and home H1 rendered.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C04-2"
+      ],
+      "scope": "filter chips, result IDs/count and focus /jobs",
+      "actual": "Named chip removal preserved other conditions. Result IDs MD001 → MD001 → MD001,MD002,MD003,MD004,MD006; focus moved to next chip, then the first filter.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C04-2"
+      ],
+      "scope": "filter chips, result IDs/count and focus /careers",
+      "actual": "Named chip removal preserved other conditions. Result IDs MD007 → MD007 → MD007,MD008; focus moved to next chip, then the first filter.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C04-2"
+      ],
+      "scope": "filter chips, result IDs/count and focus /saved-jobs",
+      "actual": "Named chip removal preserved other conditions. Result IDs MD001 → MD001 → MD001,MD002; focus moved to next chip, then the first filter.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "CS-C07-3"
+      ],
+      "scope": "storage unavailable → session saves → storage restored",
+      "actual": "Fallback adds and removes real IDs across routes; durable write restores the normal notice.",
+      "status": "Pass",
+      "evidence_ref": "tests/s2-residual-journeys.mjs"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "Prerender alias vi",
+      "actual": "Main text of packaged jobs and job-seekers HTML is identical.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "Prerender alias en/",
+      "actual": "Main text of packaged jobs and job-seekers HTML is identical.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "Prerender alias zh/",
+      "actual": "Main text of packaged jobs and job-seekers HTML is identical.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "Prerender alias ko/",
+      "actual": "Main text of packaged jobs and job-seekers HTML is identical.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "status": "Pass"
+    },
+    {
+      "ids": [
+        "T28"
+      ],
+      "scope": "Prerender alias ja/",
+      "actual": "Main text of packaged jobs and job-seekers HTML is identical.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "status": "Pass"
+    }
+  ],
+  "choices": [
+    {
+      "choice_id": "CS-C04-3",
+      "source_row": 120,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Metadata rows show each filename, format, byte size and named remove button. Removing the middle row preserves neighboring files and form values; file-content and outbound-access traps stayed at zero.",
+      "remaining": "Long filename is retained and CSS permits wrapping; line breaks at physical browser widths were not measured.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "F04 vi",
+        "F06 vi",
+        "F04 en",
+        "F06 en",
+        "F04 zh",
+        "F06 zh",
+        "F04 ko",
+        "F06 ko",
+        "F04 ja",
+        "F06 ja"
+      ]
+    },
+    {
+      "choice_id": "MI05-1",
+      "source_row": 24,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Names, formats (including MIME and unknown fallback), localized byte sizes and count appear after selecting files. Synthetic cancel and empty change retain the selection; byte reads, fetch, XHR and beacon traps stayed at zero.",
+      "remaining": "A native OS picker or physical assistive technology was not used, and the visual presentation of very long filenames has not been measured.",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "F04 vi",
+        "F06 vi",
+        "F04 en",
+        "F06 en",
+        "F04 zh",
+        "F06 zh",
+        "F04 ko",
+        "F06 ko",
+        "F04 ja",
+        "F06 ja"
+      ]
+    },
+    {
+      "choice_id": "MI05-2",
+      "source_row": 25,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Replacement help is associated with the chooser; replacing two selected files with one replaces the complete list; cancel preserves existing rows, and name, phone and email are retained.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "F04 vi",
+        "F06 vi",
+        "F04 en",
+        "F06 en",
+        "F04 zh",
+        "F06 zh",
+        "F04 ko",
+        "F06 ko",
+        "F04 ja",
+        "F06 ja"
+      ]
+    },
+    {
+      "choice_id": "MI05-3",
+      "source_row": 26,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Middle removal gives focus to the following named button; after final removal focus returns to the chooser. A persistent polite, atomic status identifies the removed filename. Counts, remaining rows and other fields are checked.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "F04 vi",
+        "F06 vi",
+        "F04 en",
+        "F06 en",
+        "F04 zh",
+        "F06 zh",
+        "F04 ko",
+        "F06 ko",
+        "F04 ja",
+        "F06 ja"
+      ]
+    },
+    {
+      "choice_id": "MI05-4",
+      "source_row": 27,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Count above three, individual size above 5,000,000 bytes and unsupported format each expose the expected localized reason on selection. Removal clears the error; submission at the exact limit produces one local receipt. With up to three permitted files, a separate total above 15,000,000 bytes necessarily violates an earlier rule.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "F04 vi",
+        "F06 vi",
+        "F04 en",
+        "F06 en",
+        "F04 zh",
+        "F06 zh",
+        "F04 ko",
+        "F06 ko",
+        "F04 ja",
+        "F06 ja"
+      ]
+    },
+    {
+      "choice_id": "CS-C01-3",
+      "source_row": 94,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "All four workforce service CTAs open F01 with the matching service. The form identifies its four required fields and creates a local receipt; the receipt opens the exact sample in ADMIN.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "service → F01 → Admin labor-supply",
+        "service → F01 → Admin labor-leasing",
+        "service → F01 → Admin recruitment",
+        "service → F01 → Admin hr-consulting"
+      ]
+    },
+    {
+      "choice_id": "CS-C01-4",
+      "source_row": 95,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "All three programs enter both form modes with their slug preselected. F05 has no attachment field and F06 accepts empty email/files. Each synthetic record retains its program, type and source, and its receipt opens the matching ADMIN detail.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "program CTA → F05 → Admin tu-xa-quan-tri",
+        "program CTA → F06 → Admin tu-xa-quan-tri",
+        "program CTA → F05 → Admin chinh-quy-cong-nghe",
+        "program CTA → F06 → Admin chinh-quy-cong-nghe",
+        "program CTA → F05 → Admin tu-xa-ke-toan",
+        "program CTA → F06 → Admin tu-xa-ke-toan"
+      ]
+    },
+    {
+      "choice_id": "CS-C04-2",
+      "source_row": 119,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Jobs, Careers and Saved Jobs each preserved the other filter, confirmed exact before/after record IDs and counts, and focused the following chip then the initial search field. The tested chip labels identify the removed criterion.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "filter chips, result IDs/count and focus /jobs",
+        "filter chips, result IDs/count and focus /careers",
+        "filter chips, result IDs/count and focus /saved-jobs"
+      ]
+    },
+    {
+      "choice_id": "CS-C07-3",
+      "source_row": 126,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Injected storage failure allowed save and removal across routes. The saved list showed the temporary-session notice. After storage was restored, the subsequent toggle persisted and removed the stale warning.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "storage unavailable → session saves → storage restored"
+      ]
+    },
+    {
+      "choice_id": "T09",
+      "source_row": 16,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Direct /contact?form=F01#consultation opened F01, accepted the required fields and linked to the exact ADMIN record.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "contact deep link F01"
+      ]
+    },
+    {
+      "choice_id": "T10",
+      "source_row": 17,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "/contact and explicit ?form=F02#consultation selected F02. General inquiry fields, local receipt and its ADMIN record were verified.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "explicit F02 query selects general contact",
+        "contact deep link F02"
+      ]
+    },
+    {
+      "choice_id": "T13",
+      "source_row": 20,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Education index query and all three program CTAs selected F05. Optional program at index and individual default slugs on detail were verified through a real form and local receipt.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "program CTA → F05 → Admin tu-xa-quan-tri",
+        "program CTA → F05 → Admin chinh-quy-cong-nghe",
+        "program CTA → F05 → Admin tu-xa-ke-toan",
+        "education index direct query F05"
+      ]
+    },
+    {
+      "choice_id": "T14",
+      "source_row": 21,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Education index query and three program CTAs selected F06. Empty optional email/files submitted. Additional fixture tests covered metadata validation, corrections, no uploads and local receipt.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "program CTA → F06 → Admin tu-xa-quan-tri",
+        "program CTA → F06 → Admin chinh-quy-cong-nghe",
+        "program CTA → F06 → Admin tu-xa-ke-toan",
+        "education index direct query F06"
+      ]
+    },
+    {
+      "choice_id": "T25",
+      "source_row": 32,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The unknown URL and missing slugs under jobs, services, education, news and events each rendered a fallback and a working localized recovery link. This is a client-side state test; no HTTP status is inferred.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "invalid runtime route /unknown",
+        "invalid runtime route /jobs/unknown",
+        "invalid runtime route /services/unknown",
+        "invalid runtime route /news/unknown",
+        "invalid runtime route /events/unknown",
+        "invalid runtime route /education/unknown"
+      ]
+    },
+    {
+      "choice_id": "T27",
+      "source_row": 34,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The /en/testimonials and /en/partners routes rendered the same main content under the real App router.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "partners alias equivalent main content"
+      ]
+    },
+    {
+      "choice_id": "T28",
+      "source_row": 35,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The runtime jobs redirect preserved query, hash, locale and Back/Forward semantics. Packaged HTML for job-seekers matched jobs main content in all five locales.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "legacy jobs query/hash redirect and history",
+        "Prerender alias vi",
+        "Prerender alias en/",
+        "Prerender alias zh/",
+        "Prerender alias ko/",
+        "Prerender alias ja/"
+      ]
+    },
+    {
+      "choice_id": "T29",
+      "source_row": 36,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The /vi compatibility path resolved to the Vietnamese home page in the running React router.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-residual.mjs",
+      "checks": [
+        "Vietnamese root alias"
+      ]
+    }
+  ]
+}

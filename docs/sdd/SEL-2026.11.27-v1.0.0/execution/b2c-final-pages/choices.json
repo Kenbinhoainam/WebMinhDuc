@@ -1,0 +1,247 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_tree_sha256": "fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1",
+  "run_utc": "2026-11-27T14:04:27.513659+00:00",
+  "choices": [
+    {
+      "choice_id": "P33-A1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Five actual localized eyebrow, H1 and full descriptions with readable title hierarchy, no overlapping boxes and distinct real F05/F06 CTAs at ten widths from 320 to 1440px.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "All localized mastheads retained the two separated CTAs. The technical program used a decoded learning-space figure with an illustrative caption. The distance programs supplied no inline figure, but the shared education masthead displayed the learning-space illustration as a CSS background.",
+      "remaining": "The shared illustrative backdrop is visible without an adjoining caption on distance-program pages. Text-only presentation and image interpretation still require design review.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-A3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Facts, three questions and blue form region were ordered with measured column separation. At 390px the detail screenshot shows the floating support controls sharing the right edge with the lower question; the page scrolls past them.",
+      "remaining": "The persisted floating support control competes with the reading area at some scroll positions; editorial/occlusion review is still relevant.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-D1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Narrow H1 and study-mode labels fit their boxes, including at the 320px edge. A Chromium 2× visual pinch-zoom measured a 320px visual viewport within the 640px layout and retained both labels.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-D3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Under reduced motion all three questions and their ancestor layers remained visible. In five languages, the select retained a visible label and a long file name wrapped in the field at all ten widths.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05/F06 each preserved the original program on entry; deliberately submitted blank and alternate programs and verified each retry kept the deliberate selection.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard-only form navigation, invalid name and phone correction, both query modes, Back/Forward, typed receipt and retry reset, plus a different program through the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P33-D2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "At 520 and 767px real Chromium verified anchor, first invalid field, focused confirmation and clean retry.",
+      "remaining": "A physical mobile soft keyboard and its occlusion were not available.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-A1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Five actual localized eyebrow, H1 and full descriptions with readable title hierarchy, no overlapping boxes and distinct real F05/F06 CTAs at ten widths from 320 to 1440px.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-A2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "All localized mastheads retained the two separated CTAs. The technical program used a decoded learning-space figure with an illustrative caption. The distance programs supplied no inline figure, but the shared education masthead displayed the learning-space illustration as a CSS background.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-A3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Facts, three questions and blue form region were ordered with measured column separation. At 390px the detail screenshot shows the floating support controls sharing the right edge with the lower question; the page scrolls past them.",
+      "remaining": "The persisted floating support control competes with the reading area at some scroll positions; editorial/occlusion review is still relevant.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-D1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Narrow H1 and study-mode labels fit their boxes, including at the 320px edge. A Chromium 2× visual pinch-zoom measured a 320px visual viewport within the 640px layout and retained both labels.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-D3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Under reduced motion all three questions and their ancestor layers remained visible. In five languages, the select retained a visible label and a long file name wrapped in the field at all ten widths.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05/F06 each preserved the original program on entry; deliberately submitted blank and alternate programs and verified each retry kept the deliberate selection.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard-only form navigation, invalid name and phone correction, both query modes, Back/Forward, typed receipt and retry reset, plus a different program through the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P34-D2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "At 520 and 767px real Chromium verified anchor, first invalid field, focused confirmation and clean retry.",
+      "remaining": "A physical mobile soft keyboard and its occlusion were not available.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-A1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Five actual localized eyebrow, H1 and full descriptions with readable title hierarchy, no overlapping boxes and distinct real F05/F06 CTAs at ten widths from 320 to 1440px.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-A2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "All localized mastheads retained the two separated CTAs. The technical program used a decoded learning-space figure with an illustrative caption. The distance programs supplied no inline figure, but the shared education masthead displayed the learning-space illustration as a CSS background.",
+      "remaining": "The shared illustrative backdrop is visible without an adjoining caption on distance-program pages. Text-only presentation and image interpretation still require design review.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-A3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Facts, three questions and blue form region were ordered with measured column separation. At 390px the detail screenshot shows the floating support controls sharing the right edge with the lower question; the page scrolls past them.",
+      "remaining": "The persisted floating support control competes with the reading area at some scroll positions; editorial/occlusion review is still relevant.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-D1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Narrow H1 and study-mode labels fit their boxes, including at the 320px edge. A Chromium 2× visual pinch-zoom measured a 320px visual viewport within the 640px layout and retained both labels.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-D3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Under reduced motion all three questions and their ancestor layers remained visible. In five languages, the select retained a visible label and a long file name wrapped in the field at all ten widths.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05/F06 each preserved the original program on entry; deliberately submitted blank and alternate programs and verified each retry kept the deliberate selection.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Keyboard-only form navigation, invalid name and phone correction, both query modes, Back/Forward, typed receipt and retry reset, plus a different program through the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P35-D2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "At 520 and 767px real Chromium verified anchor, first invalid field, focused confirmation and clean retry.",
+      "remaining": "A physical mobile soft keyboard and its occlusion were not available.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P09-F2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Opened /job-seekers with invalid status/location and page 999; actual router retained query/hash and returned five valid active factory jobs after filtering and reload. Saved list with 8 fixtures clamped an oversized page to page 2.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P09-C3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Opened two listing results using the keyboard, exercised an apply dialog and Escape, returned to the same list URL/focus, and removed an empty filter. Before/after scroll coordinates recorded.",
+      "remaining": "A mix of valid multi-filter URLs and additional measured scroll positions is required for full row acceptance.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P18-A1",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight saved IDs filled two pages; no horizontal overflow, working masthead return link and distinct true-empty CTA observed at 390 and 1440px.",
+      "remaining": "The visual balance of long translated mastheads remains for editorial review.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P18-A2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Read all eight row salaries over two pages at 390 and 1440px; MD001–MD007 use numeric amounts and MD008 displays the textual negotiated salary.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P18-A3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Internal and closed labels were text. Every saved toggle had an explicit Vietnamese remove title and pressed state across all eight records. After clearing both pages, focus moved to the empty CTA.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    },
+    {
+      "choice_id": "P18-C3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Page 2, original URL, focus and scroll were restored after the related detail path. A cross-tab removal clamped the rendered list to six rows but left the URL at page=2 and sent focus to BODY. Final removal focused the empty CTA.",
+      "remaining": "Focus recovery and the URL after the last row on a page is removed from another tab remain incomplete.",
+      "evidence_ref": "tests/s2-b2c-final-pages.py"
+    }
+  ]
+}

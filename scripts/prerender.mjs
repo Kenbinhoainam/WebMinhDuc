@@ -1,5 +1,6 @@
 import {readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import {join} from 'node:path';
+import {adaptHostingPaths, base as hostingBase} from './hosting-profile.mjs';
 import {pages,render,localizedSeo,locales,languageTags,localizedPath,loadLocale} from '../.ssr/entry-server.js';
 await Promise.all(locales.map(loadLocale));
 const template=await readFile('dist/index.html','utf8');
@@ -28,7 +29,7 @@ function routeStyles(path){
  if(entry)visit(entry);
  return styles;
 }
-const heroAssets=JSON.parse(await readFile('src/hero-assets.json','utf8'));
+const heroAssets=JSON.parse(adaptHostingPaths(await readFile('src/hero-assets.json','utf8')));
 const posterPreload=`<link rel="preload" as="image" href="${heroAssets.poster}" fetchPriority="high"/>`;
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const sitemapUrls = [];
@@ -37,7 +38,7 @@ for(const page of pages) for(const locale of locales){
  const s=localizedSeo(page.path,locale); let html=template.replace(/<title>.*?<\/title>/,`<title>${escape(s.title)}</title>`);
  // Lazy route CSS must style prerendered content before JavaScript hydrates it.
  for(const css of routeStyles(page.path)) {
-  const href=`/WebMinhDuc/${css}`;
+  const href=`${hostingBase}/${css}`;
   if(!html.includes(`href="${href}"`))html=html.replace('</head>',`<link rel="stylesheet" href="${escape(href)}"/>`+'</head>');
  }
  const set=(key,value)=>{html=html.replace(new RegExp(`(<meta (?:name|property)="${key}" content=")[^"]*("\\s*\\/?>)`),(_,a,b)=>a+escape(value)+b)};
@@ -66,7 +67,7 @@ for(const locale of locales) {
  const base=locale==='vi'?'':`/${locale}`;
  // Old shared profile links also work when the browser has JavaScript disabled.
  const about=localizedSeo('/about-us',locale);
- const target='/WebMinhDuc'+localizedPath('/about-us',locale)+'#profile';
+ const target=hostingBase+localizedPath('/about-us',locale)+'#profile';
  const redirectDir=join('dist',base+'/e-brochure');
  await mkdir(redirectDir,{recursive:true});
  await writeFile(join(redirectDir,'index.html'),`<!doctype html>
@@ -86,3 +87,15 @@ await mkdir('dist/vi',{recursive:true});await writeFile('dist/vi/index.html',awa
 // Private prototype: do not advertise a sitemap in robots.txt or submit one.
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapUrls.map(url=>`<url><loc>${escape(url)}</loc></url>`).join('')}</urlset>\n`);
 await rm('.ssr',{recursive:true,force:true});
+
+if (!hostingBase) {
+ // Owner-private Sprint 2 review only. QA diagnostics are intentionally absent from Pages.
+ const inventory=await readFile('docs/sdd/SEL-2026.11.27-v1.0.0/data/pages-and-urls.jsonl','utf8');
+ const routes=inventory.trim().split('\n').map(line=>JSON.parse(line)).filter(row=>row.source_code!=='P41')
+  .map(row=>({id:row.source_code,path:row.fields['Đường dẫn']}));
+ await writeFile('dist/__sprint2-routes.json',JSON.stringify(routes));
+ await writeFile('dist/__sprint2-qa.html',await readFile('tests/s2-browser-matrix.html'));
+ for (const path of ['dist/404.html', 'dist/xem-hero/index.html']) {
+  await writeFile(path, adaptHostingPaths(await readFile(path, 'utf8')));
+ }
+}

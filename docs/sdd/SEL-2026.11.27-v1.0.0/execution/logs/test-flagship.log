@@ -1,0 +1,59 @@
+2026-11-27T13:38:02.675825+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:flagship
+
+> minhduc-prototype@1.0.0 test:flagship
+> node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && npm run test:carousel && npm run test:motion && node tests/media.mjs && node tests/image-fallback.mjs && npm run test:hero && node tests/flagship-review.mjs
+
+PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap
+PASS locale selector
+PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR.
+
+> minhduc-prototype@1.0.0 test:carousel
+> node tests/home-carousel.mjs && node tests/info-carousel.mjs && node tests/careers-carousel.mjs
+
+PASS home rails: autoplay, variable-width keyboard navigation, overflow across breakpoints, input and motion guards, observer fallback and snap restoration
+PASS service rails, inquiry context and linked records after service navigation
+PASS four careers rails, audited gallery, motion guards, manual lightbox and focus restoration
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+> minhduc-prototype@1.0.0 test:motion
+> node tests/motion.mjs && node tests/motion-repeat-review.mjs && node tests/home-metric-replay.mjs && node tests/home-business-intro.mjs
+
+Repeat reveals, focus, resize, preference and fallback checks passed
+PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety
+PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards
+PASS homepage intro: wide/tall sticky at 130px; narrow/short static; mobile stack unchanged; original reveals, telephone link and F01 fields preserved in five locales (DOM/CSS contract).
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: desktop: 
+
+
+null !== 0
+
+    at file:///workspace/sprint2-implementation/tests/media.mjs:15:116 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 1

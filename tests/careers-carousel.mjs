@@ -38,13 +38,18 @@ try {
   assert.equal(timers.size, 4);
   const tracks = [...document.querySelectorAll('.career-track')];
   assert.deepEqual(tracks.map(el => el.children.length), [3,3,3,11]);
-  assert.equal(document.querySelectorAll('.career-rail-controls,.career-carousel-pause').length, 0);
+  assert.equal(document.querySelectorAll('.career-rail-controls').length, 4);
+  assert.equal(document.querySelectorAll('.career-carousel-pause').length, 4);
   assert.ok(tracks.every(track => track.hasAttribute('data-auto-rail') && track.tabIndex === 0 && document.getElementById(track.getAttribute('aria-labelledby'))));
   const photos = [...tracks[3].querySelectorAll('img')];
   assert.equal(new Set(photos.map(photo => photo.src)).size, 11);
   assert.ok(photos.every(photo => photo.alt && /\/assets\/minhduc-v1[68]\//.test(photo.src)));
   assert.ok(photos.every(photo => photo.width > 0 && photo.height > 0 && photo.srcset.includes('480w') && photo.srcset.includes('960w')));
   assert.equal(document.querySelectorAll('h1').length, 1);
+  assert.match(document.querySelector('.md-page-masthead img').src,/field-team\.webp$/);
+  assert.deepEqual([...document.querySelectorAll('.career-feature h3 a')].map(link=>link.getAttribute('href')),
+    ['/jobs/chuyen-vien-tuyen-dung-bac-ninh','/jobs/cong-tac-vien-tuyen-dung-quang-ninh']);
+  assert.ok([...document.querySelectorAll('.career-feature img')].every(image=>image.loading==='lazy'||image.getAttribute('loading')==='lazy'));
   assert.equal(document.querySelector('a[href$="#open-positions"]').hash, '#open-positions');
   for (const id of ['open-positions','position-benefits','cv-requirements','career-contact']) assert.ok(document.getElementById(id));
 
@@ -58,10 +63,26 @@ try {
   assert.equal(typeof frame, 'function');
   await act(() => frame(performance.now()+600));
   assert.equal(first.scrollLeft, 280, 'autoplay advances by one item');
-  await act(() => first.dispatchEvent(new Event('pointerenter')));
+  await act(() => first.closest('section').dispatchEvent(new Event('pointerenter')));
   assert.equal(timers.size, 3);
-  await act(() => first.dispatchEvent(new Event('pointerleave')));
+  await act(() => first.closest('section').dispatchEvent(new Event('pointerleave')));
   assert.equal(timers.size, 4);
+
+  const controls = first.closest('section').querySelectorAll('.career-rail-controls button');
+  assert.ok([...controls].every(button=>button.getAttribute('aria-controls')===first.id));
+  await act(()=>controls[0].click());
+  assert.equal(first.scrollLeft,0);
+  await act(()=>controls[2].click());
+  assert.equal(first.scrollLeft,280);
+  await act(()=>controls[1].click());
+  await makeVisible();
+  assert.equal(controls[1].getAttribute('aria-label'),'Phát chuyển động');
+  assert.equal(timers.size,3);
+  await act(()=>document.dispatchEvent(new Event('visibilitychange')));
+  assert.equal(timers.size,3,'user pause outlasts visibility transitions');
+  await act(()=>controls[1].click());
+  await makeVisible();
+  assert.equal(timers.size,4);
 
   const galleryButton = tracks[3].querySelector('button');
   await act(() => galleryButton.click());

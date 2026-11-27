@@ -1,0 +1,51 @@
+2026-11-27T13:21:15.999614+00:00 | 07e61874db50c14575d693f8d7e3e40769ab34e1 | npm run test:hydration
+
+> minhduc-prototype@1.0.0 test:hydration
+> node tests/hydration.mjs
+
+PASS hydration /
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: /about-us: 
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /2/. Input:
+
+'Việc đã lưu: 0'
+
+    at file:///workspace/sprint2-implementation/tests/hydration.mjs:74:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Việc đã lưu: 0',
+  expected: /2/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+
+
+1 !== 0
+
+    at file:///workspace/sprint2-implementation/tests/hydration.mjs:24:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 1

@@ -1,0 +1,489 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "dist_tree_sha256": "8c30aaa642ad276bd4fbc26b79c06221063aaab532f39c5e569b53e794b041b0",
+  "browser": "Chromium 156.0.8078.79",
+  "checks": [
+    {
+      "name": "external focused button at page boundary",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "history_scroll": [
+        484,
+        484
+      ],
+      "restored_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external focused title, following sibling",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-link=MD003]",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": "MD003",
+        "id": null,
+        "href": "/WebMinhDuc/jobs/nhan-vien-kho-thai-nguyen"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change with no control focused",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "body",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on filter",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "#jobs-query",
+      "actual_focus": {
+        "tag": "INPUT",
+        "save": null,
+        "link": null,
+        "id": "jobs-query",
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on another card",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD004]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD004",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external last remaining card",
+      "width": 390,
+      "before_ids": [
+        "MD001"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    },
+    {
+      "name": "local removal, previous page",
+      "width": 390,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "local final saved record",
+      "width": 390,
+      "before_ids": [
+        "MD008"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    },
+    {
+      "name": "external focused button at page boundary",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "history_scroll": [
+        0,
+        0
+      ],
+      "restored_url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external focused title, following sibling",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-link=MD003]",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": "MD003",
+        "id": null,
+        "href": "/WebMinhDuc/jobs/nhan-vien-kho-thai-nguyen"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change with no control focused",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "body",
+      "actual_focus": {
+        "tag": "BODY",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on filter",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "#jobs-query",
+      "actual_focus": {
+        "tag": "INPUT",
+        "save": null,
+        "link": null,
+        "id": "jobs-query",
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external change, focus on another card",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD008"
+      ],
+      "expected_focus": "[data-job-save=MD004]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD004",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "external last remaining card",
+      "width": 1440,
+      "before_ids": [
+        "MD001"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    },
+    {
+      "name": "local removal, previous page",
+      "width": 1440,
+      "before_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007"
+      ],
+      "expected_focus": "[data-job-save=MD006]",
+      "actual_focus": {
+        "tag": "BUTTON",
+        "save": "MD006",
+        "link": null,
+        "id": null,
+        "href": null
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs?campaign=qa&page=2#main",
+      "list_ids": [
+        "MD001",
+        "MD002",
+        "MD003",
+        "MD004",
+        "MD005",
+        "MD006"
+      ],
+      "status": "Pass"
+    },
+    {
+      "name": "local final saved record",
+      "width": 1440,
+      "before_ids": [
+        "MD008"
+      ],
+      "expected_focus": ".jobs-empty a",
+      "actual_focus": {
+        "tag": "A",
+        "save": null,
+        "link": null,
+        "id": null,
+        "href": "/WebMinhDuc/jobs#job-listings"
+      },
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/saved-jobs",
+      "list_ids": [],
+      "status": "Pass"
+    }
+  ],
+  "choices": [
+    {
+      "choice_id": "P18-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "At 390/1440px a local or remote removal moved the previously focused title/bookmark to its nearest surviving counterpart; last-item removal focused the empty CTA. Real storage changes did not move focus from the filter or another card.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-saved-focus-final.py"
+    },
+    {
+      "choice_id": "P18-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "All eight fixtures filled two pages. A related-detail return restored the original query, hash, focus and measured scroll. Removing the last row locally then removing the job open in another tab clamped the visible page, preserved URL parameters and restored focus to the preceding visible bookmark. Last remaining fixture removal restored the empty CTA.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-saved-focus-final.py"
+    }
+  ]
+}

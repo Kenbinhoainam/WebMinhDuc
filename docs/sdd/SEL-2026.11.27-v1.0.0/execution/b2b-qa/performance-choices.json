@@ -1,0 +1,37 @@
+{
+  "build_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "dist_tree_sha256": "429a3989859c8ed4b473773ffeb99c95e7bac4123a41182fce5d27134aa52ba7",
+  "source_profile": "Archived private Site9db; notcurrentd67",
+  "measurement_count": 24,
+  "measurement_result": "24/24Measured;2/2fallbackchecksPass",
+  "report_path": "b2b-qa/performance-9db/REPORT.md",
+  "report_sha256": "17e29be2d592a1338a8233ab112726a5fd35b3c03c915a077f108fba7bf494fb",
+  "choices": [
+    {
+      "choice_id": "F01",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Measurement collection completed:24 rendered Chromium navigations,2 routes × 2 viewports × 3 fresh/repeat pairs; initial LCP, CLS, task durations, EventTiming/click-to-rAF, Network/ResourceTiming and console. Conditions explicitly recorded.",
+      "remaining": "Not a whole-site/field-CWV pass. Actual HTTP warm-cache and throttled production network unavailable with local interception; remaining routes/locales/devices not measured.",
+      "evidence_ref": "b2b-qa/performance-9db/measurements.json"
+    },
+    {
+      "choice_id": "P01-F3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "12 native Home transition measurements. Mobile 390: native-endCLS 0.114600 in6/6 runs, hero shrinks 58.844 px; desktop 0.000736–0.001814. Font/image initial shifts and trusted end-event sources retained. This is successful measurement with an observed shift, not a quality-budget pass.",
+      "remaining": "Review recorded mobile displacement against approved budget/design; remaining viewport/locale sampling and uninterrupted 132-second playback not measured. No app change.",
+      "evidence_ref": "b2b-qa/performance-9db/summary.json",
+      "finding": "Mobile native end state changes hero geometry and moves next section/player controls."
+    },
+    {
+      "choice_id": "P31-F1",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "12 Partner navigations plus 2 forced-logo-failure checks: all 5 mapped files decoded, all 5 fallback names retained. CDP 2-second visible/offscreen windows show automatic motion visible, zero offscreen displacement and zero additional requests; CPU duration deltas recorded.",
+      "remaining": "VI desktop/mobilelab only; existing mapping/source validation is complemented, not repinned. Other locales, physical hardware and real background-tab CPU not measured.",
+      "evidence_ref": "b2b-qa/performance-9db/summary.json"
+    }
+  ],
+  "limitations": "VI-only lab sample; physical device, field data, HTTP warm-cache and throttled public network remain unverified. Three fresh-context/repeat pairs per route/device; video middle skipped by native seek."
+}

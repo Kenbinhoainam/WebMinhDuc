@@ -1,0 +1,14 @@
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+command=node tests/s2-residual-files.mjs
+tested_at=2026-11-27T13:38:21Z
+PASS F04 vi names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 vi names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 en names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 en names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 zh names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 zh names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 ko names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 ko names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 ja names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 ja names/size, cancel, replace, remove, focus, draft, validation and zero network
+exit=0

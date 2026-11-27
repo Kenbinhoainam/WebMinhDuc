@@ -66,18 +66,18 @@ try {
     assert.ok(observers.slice(0,-2).every(observer=>observer.targets.size===0));
     assert.ok(pair().every(observer=>observer.targets.size===1&&observer.targets.has(document.querySelector('[data-count-group]'))),'both observers watch the full block, never an individual number');
     await cross(790);assert.deepEqual(numbers(),[0,0,0,0]);assert.equal(frames.size,1,'four counters share one frame callback');
-    await tick(0);await tick(400);
+    await tick(0);await tick(120);
     const intermediate = numbers();assert.ok(intermediate.every((value,index)=>value>0&&value<values[index]));
     await cross(801);await cross(805);await cross(790);
     assert.deepEqual(numbers(),intermediate,'near-edge jitter never resets an active pass');
-    await tick(550);assert.deepEqual(numbers(),[1050,70,13,83]);finalA11y();
-    await tick(1099);assert.deepEqual(numbers(),[1199,79,14,94],'none reaches its final integer early');
-    await tick(1100);assert.deepEqual(text(),finalText);assert.equal(frames.size,0);
+    await tick(160);assert.deepEqual(numbers(),[1050,70,13,83]);finalA11y();
+    await tick(319);assert.deepEqual(numbers(),[1199,79,14,94],'none reaches its final integer early');
+    await tick(320);assert.deepEqual(text(),finalText);assert.equal(frames.size,0);
     await cross(400);await cross(791);assert.deepEqual(text(),finalText,'remaining in the viewport cannot replay completed counts');
 
     await cross(-159);assert.deepEqual(numbers(),[0,0,0,0],'whole-group exit above re-arms');
     await cross(-141);assert.deepEqual(numbers(),[0,0,0,0],'entry from above restarts together');
-    await tick(2000);await tick(2400);
+    await tick(2000);await tick(2120);
     const staleFrame = [...frames.values()][0];
     await cross(809);assert.deepEqual(numbers(),[0,0,0,0]);assert.equal(frames.size,0,'full exit below cancels an unfinished run');
     await cross(790);await act(async()=>staleFrame(9000));assert.deepEqual(numbers(),[0,0,0,0],'a canceled callback cannot advance the new pass');
@@ -92,7 +92,7 @@ try {
     assert.deepEqual(numbers(),bothRows,'first mobile row leaving cannot reset the second row');
     await tick(11100);assert.deepEqual(text(),finalText,'both mobile rows finish on one timeline');
     await cross(-289,280);await cross(-271,280);assert.deepEqual(numbers(),[0,0,0,0]);
-    await tick(12000);await tick(12400);await reduce(true);
+    await tick(12000);await tick(12120);await reduce(true);
     assert.deepEqual(text(),finalText);assert.equal(frames.size,0);
     await reduce(false);assert.deepEqual(text(),finalText);assert.equal(frames.size,0,'turning motion back on cannot reset visible values');
     await cross(820,280);await cross(780,280);assert.deepEqual(numbers(),[0,0,0,0],'the next genuine pass animates again');
@@ -117,6 +117,6 @@ try {
     await act(async()=>root.render(metrics('preference-failure')));assert.deepEqual(text(),finalText);assert.equal(frames.size,0,'preference failure restores final values');
     window.matchMedia=()=>({matches:false});
     await act(async()=>root.render(metrics('preference-unsupported')));assert.deepEqual(text(),finalText);assert.equal(frames.size,0,'unsupported preference events leave final values readable');
-    console.log('PASS metric replay: shared 1100ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards');
+    console.log('PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards');
   } finally {await act(async()=>root.unmount());dom.window.close()}
 } finally {await rm(temp,{recursive:true,force:true})}

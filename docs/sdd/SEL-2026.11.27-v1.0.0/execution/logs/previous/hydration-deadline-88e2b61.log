@@ -1,0 +1,48 @@
+2026-11-27T13:37:48.790533+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:hydration
+
+> minhduc-prototype@1.0.0 test:hydration
+> node tests/hydration.mjs
+
+PASS hydration /
+PASS hydration /about-us
+PASS hydration /services
+PASS hydration /careers
+PASS hydration /consultation
+PASS hydration /jobs
+PASS hydration /saved-jobs
+PASS hydration /jobs?q=kho
+PASS hydration /testimonials
+PASS hydration /partners
+PASS hydration /news
+PASS hydration /en/news/chon-cong-viec-phu-hop
+PASS hydration /en
+PASS hydration /zh
+PASS hydration /ko
+PASS hydration /ja
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: /en/jobs: 
+
+
+null !== 0
+
+    at file:///workspace/sprint2-implementation/tests/hydration.mjs:24:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 1

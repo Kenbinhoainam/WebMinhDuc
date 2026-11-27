@@ -1,0 +1,1075 @@
+{
+  "build_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "dist_tree_sha256": "429a3989859c8ed4b473773ffeb99c95e7bac4123a41182fce5d27134aa52ba7",
+  "tested_utc": "2026-11-27T13:59:08+00:00",
+  "observations": [
+    {
+      "route": "/education",
+      "width": 390,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/tu-xa-quan-tri",
+      "width": 390,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/chinh-quy-cong-nghe",
+      "width": 390,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/tu-xa-ke-toan",
+      "width": 390,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "observations": [
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Nhu cầu nhân lực",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F01",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "company",
+            "location",
+            "jobrole",
+            "quantity",
+            "shift",
+            "needdate",
+            "service",
+            "notes"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Nhu cầu nhân lực",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F01",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "company",
+            "location",
+            "jobrole",
+            "quantity",
+            "shift",
+            "needdate",
+            "service",
+            "notes"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education",
+      "width": 1440,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/tu-xa-quan-tri",
+      "width": 1440,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/chinh-quy-cong-nghe",
+      "width": 1440,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/education/tu-xa-ke-toan",
+      "width": 1440,
+      "observations": [
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Hồ sơ đăng ký tuyển sinh",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F06",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "program",
+            "document"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Đăng ký tư vấn tuyển sinh",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F05",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "program",
+            "question"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "observations": [
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 1,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Nhu cầu nhân lực",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F01",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "company",
+            "location",
+            "jobrole",
+            "quantity",
+            "shift",
+            "needdate",
+            "service",
+            "notes"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Nhu cầu nhân lực",
+          "checked": [
+            "false",
+            "true"
+          ],
+          "mode": "F01",
+          "name": "QA draft two",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "company",
+            "location",
+            "jobrole",
+            "quantity",
+            "shift",
+            "needdate",
+            "service",
+            "notes"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        },
+        {
+          "title": "Gửi lời nhắn đến Minh Đức",
+          "checked": [
+            "true",
+            "false"
+          ],
+          "mode": "F02",
+          "name": "QA draft one",
+          "fields": [
+            "name",
+            "phone",
+            "email",
+            "message"
+          ],
+          "errors": 0,
+          "forms": 1,
+          "validFocus": true
+        }
+      ],
+      "checks": {
+        "state_and_drafts": true,
+        "headings": true,
+        "no_stale_error": true,
+        "reduced_focus": true
+      }
+    }
+  ],
+  "missing": [],
+  "page_errors": [],
+  "chromium": "156.0.8078.79",
+  "limits": "VI desktop Chromium at two viewport widths; this is mode behaviour, not native device coverage."
+}

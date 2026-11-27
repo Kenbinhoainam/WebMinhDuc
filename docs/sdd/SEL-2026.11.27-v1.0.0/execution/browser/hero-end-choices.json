@@ -1,0 +1,45 @@
+{
+  "build_sha": "07e61874db50c14575d693f8d7e3e40769ab34e1",
+  "dist_tree_sha256": "a9de600e4581e5b7e16b383615f67c4874779f4c7a6bc6d5b7c74eac72bf3b89",
+  "evidence": "execution/browser/hero-end-observations.json",
+  "choices": [
+    {
+      "choice_id": "CS-A01-1",
+      "source_row": 14,
+      "route": "/",
+      "coverage": "full",
+      "test_status": "Pass",
+      "input_type": "Hermetic Chromium; real packaged video, real trusted ended event after seeking, Tab and rendered geometry",
+      "steps": "Seek real local film to its final 0.35s at 1440px once per locale, preserving native playback. The browser delivers a trusted ended event; no synthetic event, stage setting, or full 132-second waiting. Resize the same stable end card across the 26 target viewports.",
+      "actual": "130/130 route-locale-width observations passed.",
+      "remaining": "",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "26/26 width cases passed; see per-width measured rectangles, label fragments, center hit-tests, keyboard targets and video receipt."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "26/26 width cases passed; see per-width measured rectangles, label fragments, center hit-tests, keyboard targets and video receipt."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "26/26 width cases passed; see per-width measured rectangles, label fragments, center hit-tests, keyboard targets and video receipt."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "26/26 width cases passed; see per-width measured rectangles, label fragments, center hit-tests, keyboard targets and video receipt."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "26/26 width cases passed; see per-width measured rectangles, label fragments, center hit-tests, keyboard targets and video receipt."
+        }
+      ]
+    }
+  ]
+}

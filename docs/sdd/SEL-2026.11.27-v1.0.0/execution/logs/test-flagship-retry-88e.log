@@ -1,0 +1,78 @@
+Application source=88e2b61596eab5952f183a81b3030da760696c9c
+Unchanged retry completion exit0 reported byrelease coordinator; raw stdout/stderr follows.
+
+> minhduc-prototype@1.0.0 test:flagship
+> node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && npm run test:carousel && npm run test:motion && node tests/media.mjs && node tests/image-fallback.mjs && npm run test:hero && node tests/flagship-review.mjs
+
+PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap
+PASS locale selector
+PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR.
+
+> minhduc-prototype@1.0.0 test:carousel
+> node tests/home-carousel.mjs && node tests/info-carousel.mjs && node tests/careers-carousel.mjs
+
+PASS home rails: autoplay, variable-width keyboard navigation, overflow across breakpoints, input and motion guards, observer fallback and snap restoration
+PASS service rails, inquiry context and linked records after service navigation
+PASS four careers rails, audited gallery, motion guards, manual lightbox and focus restoration
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+> minhduc-prototype@1.0.0 test:motion
+> node tests/motion.mjs && node tests/motion-repeat-review.mjs && node tests/home-metric-replay.mjs && node tests/home-business-intro.mjs
+
+Repeat reveals, focus, resize, preference and fallback checks passed
+PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety
+PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards
+PASS homepage intro: wide/tall sticky at 130px; narrow/short static; mobile stack unchanged; original reveals, telephone link and F01 fields preserved in five locales (DOM/CSS contract).
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+PASS media desktop
+PASS media mobile
+PASS media reduced
+PASS media data
+PASS media slow
+PASS media blocked
+PASS media race
+PASS media endrace
+PASS media preference
+PASS media observer
+PASS media observer-observe
+PASS media error
+PASS media error-offscreen
+PASS media error-paused
+PASS media webm
+PASS original image retry, pre-hydration failure, intrinsic ref/alt, masthead text layout and local media paths
+
+> minhduc-prototype@1.0.0 test:hero
+> node tests/hero-review.mjs && node tests/hero-responsive.mjs && node tests/hero-lifecycle.mjs
+
+PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules
+PASS responsive hero CSS: content-led phone/tablet, 16:9 film with inset controls, portrait/landscape and breakpoint boundaries, compact header row, desktop isolation. Browser geometry still requires visual review.
+PASS independent hero lifecycle manual
+PASS independent hero lifecycle scroll
+PASS independent hero lifecycle scroll-away
+PASS independent hero lifecycle scroll-before-start
+PASS independent hero lifecycle pending
+PASS independent hero lifecycle hidden
+PASS independent hero lifecycle noio
+PASS independent hero lifecycle noio-offscreen
+PASS independent hero lifecycle observe-failure
+PASS independent hero lifecycle reduced
+PASS independent hero lifecycle blocked
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+PASS independent flagship: five locale routes, mutually exclusive disclosures/search, Escape focus, destination links, poster-first media, quick manual pause, compiled CSS order
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

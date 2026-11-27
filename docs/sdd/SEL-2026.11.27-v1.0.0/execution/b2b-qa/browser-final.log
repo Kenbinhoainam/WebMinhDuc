@@ -1,0 +1,7 @@
+Authoritative complete hermetic Chromium receipt
+CI=https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46010404698
+Application=c25a398a424880651cfc375760401aadc0c006d1
+Pages tree SHA256=fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1
+Chromium=140.0.7339.16
+615/615 Pass; missing packaged resources=0; page errors=0.
+Partial local diagnostics retained outside repository at /workspace/research/minhduc-sprint2-w2-diagnostics.

@@ -1,5 +1,11 @@
 /* BRAND-01. The blue and red are sampled from the supplied Minh Đức logo. */
 :root {
+  --motion-t0: 0ms;
+  --motion-t1: 120ms;
+  --motion-t2: 180ms;
+  --motion-t3: 240ms;
+  --motion-t4: 320ms;
+  --motion-ease: ease-out;
   --md-surface: #ffffff;
   --md-surface-blue: #eaf4ff;
   --md-surface-soft: #f6faff;
@@ -12,4 +18,14 @@
   --md-rule: #c6d9ec;
   --md-control-border: #758ba1;
   --md-focus: #075fb9;
+  --md-radius-control: 999px;
+  --md-radius-panel: 16px;
+  --md-radius-card: 20px;
+  --md-space-control: 8px;
+  --md-space-group: 16px;
+  --md-panel-shadow: 0 12px 35px #183c6726;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-t1:var(--motion-t0); --motion-t2:var(--motion-t0); --motion-t3:var(--motion-t0); --motion-t4:var(--motion-t0); }
 }

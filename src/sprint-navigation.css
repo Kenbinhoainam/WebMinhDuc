@@ -8,6 +8,7 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
   position:sticky;
   inset:0 0 auto;
   z-index:40;
+  transition:background-color var(--motion-t2) var(--motion-ease), color var(--motion-t2) var(--motion-ease), box-shadow var(--motion-t2) var(--motion-ease);
   width:100%;
   min-height:0;
   color:var(--header-ink);
@@ -22,7 +23,7 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
 .site-header .header-actions { display:flex; align-items:center; gap:6px; flex:none; }
 .site-header :is(.header-search,.header-saved,.menu-button,.language-trigger) {
   display:flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; height:44px;
-  border:1px solid transparent; border-radius:999px; color:var(--header-ink); background:var(--header-control);
+  border:1px solid transparent; border-radius:var(--md-radius-control); color:var(--header-ink); background:var(--header-control);
 }
 .site-header :is(.header-search,.header-saved,.menu-button) { position:relative; flex:0 0 44px; width:44px; padding:0; }
 .site-header .header-search span { display:none; }
@@ -72,8 +73,14 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
     background:var(--md-red); transform:scaleX(0); transform-origin:left;
   }
   .desktop-nav-heading > a:is(:hover,.active,[aria-expanded="true"])::after { transform:scaleX(1); }
-  @media (prefers-reduced-motion:no-preference) { .desktop-nav-heading > a::after { transition:transform 160ms ease-out; } }
-  .desktop-subnav { position:absolute; top:100%; left:0; width:max-content; min-width:230px; max-width:min(340px,calc(100vw - 48px)); padding:8px; background:white; color:var(--md-ink); border:1px solid #dce4ee; border-radius:12px; box-shadow:0 12px 35px #183c6726; }
+  @media (prefers-reduced-motion:no-preference) {
+    .desktop-subnav {
+      transition:opacity var(--motion-t2) var(--motion-ease),transform var(--motion-t2) var(--motion-ease),display var(--motion-t2) allow-discrete;
+    }
+    .desktop-subnav[hidden] { opacity:0; transition-duration:var(--motion-t1); pointer-events:none; }
+    @starting-style { .desktop-subnav:not([hidden]) { opacity:0; transform:translateY(-4px); } }
+  }
+  .desktop-subnav { position:absolute; top:100%; left:0; width:max-content; min-width:230px; max-width:min(340px,calc(100vw - 48px)); padding:var(--md-space-control); background:var(--md-surface); color:var(--md-ink); border:1px solid var(--md-rule); border-radius:var(--md-radius-panel); box-shadow:var(--md-panel-shadow); }
   .desktop-subnav[hidden] { display:none; }
   .desktop-subnav a { display:flex; align-items:center; min-height:44px; padding:10px 12px; border-radius:6px; font-size:15px; line-height:1.4; }
   .desktop-subnav a:is(:hover,:focus-visible) { background:var(--md-surface-blue); color:#183e77; }
@@ -97,8 +104,12 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
 .drawer-nav .drawer-group-heading > a { flex:1; min-width:0; padding:14px 0; border:0; font-size:18px; line-height:1.35; overflow-wrap:anywhere; }
 .drawer-nav .drawer-group-heading > a.active { color:var(--md-red); }
 .drawer-group-heading > button { display:grid; place-items:center; width:44px; min-height:44px; flex:none; border:0; border-radius:50%; background:transparent; color:#292929; }
-.drawer-subnav { display:grid; gap:2px; padding:5px 0 12px 20px; }
-.drawer-subnav[hidden] { display:none; }
+.drawer-group-heading > button svg { transition:transform var(--motion-t1) var(--motion-ease); }
+.drawer-group-heading > button[aria-expanded="true"] svg { transform:rotate(180deg); }
+.drawer-subnav { display:grid; grid-template-rows:1fr; opacity:1; transition:grid-template-rows var(--motion-t2) var(--motion-ease), opacity var(--motion-t1) var(--motion-ease); }
+.drawer-subnav[inert] { grid-template-rows:0fr; opacity:0; pointer-events:none; }
+.drawer-subnav-clip { min-height:0; overflow:hidden; }
+.drawer-subnav-links { display:grid; gap:2px; padding:5px 0 12px 20px; }
 .drawer-nav .drawer-subnav a { display:flex; align-items:center; min-height:44px; padding:8px 0; border:0; color:#555; font-size:14px; line-height:1.5; }
 .drawer-nav .drawer-subnav a:hover { color:var(--md-red); text-decoration:underline; }
 .no-script-nav { background:#f5f8f9; color:#20343e; padding:16px 24px; }

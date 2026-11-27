@@ -16,7 +16,11 @@ export function useHomeCarousel(
     if (!element || disabled) return;
     const surfaces = element.matches(interactionSelector) ? [element] : [...element.querySelectorAll<HTMLElement>(interactionSelector)];
     if (!surfaces.length) return;
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let motion: MediaQueryList;
+    try {
+      motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!motion?.addEventListener || !motion.removeEventListener) return;
+    } catch { return; }
     const root = document.getElementById('root');
     const hovered = new Set(surfaces.filter(node => window.matchMedia('(hover: hover)').matches && node.matches(':hover')));
     const containsFocus = (target: EventTarget | null) => target instanceof Node && surfaces.some(node => node.contains(target));
@@ -83,7 +87,7 @@ export function useHomeCarousel(
       observer?.disconnect();
       observer = undefined;
     }
-    const modalObserver = root && new MutationObserver(schedule);
+    const modalObserver = root && typeof MutationObserver !== 'undefined' ? new MutationObserver(schedule) : null;
     if (root) modalObserver?.observe(root, {attributes: true, attributeFilter: ['inert']});
     for (const node of surfaces) {
       node.addEventListener('pointerenter', enter);
@@ -167,6 +171,10 @@ export function advanceHomeRail(rail: HTMLElement | null, durationMs = 500) {
 
 /** Animate a measured native-scroll offset. The returned cancellation restores scroll snapping. */
 export function slideRailTo(rail: HTMLElement, target: number, durationMs: number) {
+  if (durationMs <= 0 || !Number.isFinite(durationMs) || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+    rail.scrollLeft = target;
+    return () => {};
+  }
   const start = rail.scrollLeft;
   const started = performance.now();
   const previousSnap = rail.style.scrollSnapType;

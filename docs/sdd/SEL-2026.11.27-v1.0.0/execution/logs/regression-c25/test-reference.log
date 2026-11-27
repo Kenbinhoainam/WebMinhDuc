@@ -1,0 +1,10 @@
+
+> minhduc-prototype@1.0.0 test:reference
+> node tests/reference-structure.mjs && node tests/home-reference-motion.mjs && node tests/info-v13.mjs && node tests/editorial-content.mjs && node tests/editorial-reference.mjs && node tests/home-video-gallery.mjs
+
+PASS independent reference structures: page families × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints
+PASS home motion: five locales, stable frames, bounded stagger and controlled media geometry
+PASS Info page family structure and interactions
+PASS 15 original articles, stable URLs, complete bodies, verified local image files and 247 display strings in five languages
+PASS editorial routes, numbered chapters, captioned images, latest and related links, real galleries, feature controls and keyboard navigation, clipboard fallback and filter history
+PASS video gallery: five locales, SSR file links, on-demand player, all selections, focus, fallback, retry and cleanup

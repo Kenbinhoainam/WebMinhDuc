@@ -1,0 +1,1730 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "report_sha256": "2418c80c8b6116a2401b5fccb870364367dd8633fb592ba0c283fd49b0baf048",
+  "report_path": "browser/service-keyboard/browser-results.json",
+  "checks": 50,
+  "choices": [
+    {
+      "choice_id": "P04-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · service-decision-keyboard-grid · Paired 767/768 grids and complete natural Tab route to the footer, DPR-2 reflow, visible ordered service text.",
+      "actual_example": {
+        "grids": [
+          {
+            "selector": ".service-planning",
+            "columns": 1,
+            "scroll": 767,
+            "client": 767,
+            "children": [
+              {
+                "x": 15,
+                "y": 756,
+                "w": 737,
+                "text": "Kế hoạch bổ sung theo đợt\nVí dụ kế hoạch tiếp nhận\nĐợt\tĐịa điểm\tCa làm việc\tSố lượng\tNgày "
+              },
+              {
+                "x": 15,
+                "y": 1140,
+                "w": 737,
+                "text": "Hoạt động tìm nguồn"
+              }
+            ]
+          },
+          {
+            "selector": ".service-process ol",
+            "columns": 1,
+            "scroll": 737,
+            "client": 737,
+            "children": [
+              {
+                "x": 15,
+                "y": 1672,
+                "w": 737,
+                "text": "Tiếp nhận nhu cầu"
+              },
+              {
+                "x": 15,
+                "y": 1719,
+                "w": 737,
+                "text": "Thống nhất kế hoạch"
+              },
+              {
+                "x": 15,
+                "y": 1767,
+                "w": 737,
+                "text": "Tìm nguồn và tư vấn"
+              },
+              {
+                "x": 15,
+                "y": 1814,
+                "w": 737,
+                "text": "Kết nối, phỏng vấn"
+              },
+              {
+                "x": 15,
+                "y": 1862,
+                "w": 737,
+                "text": "Theo dõi phản hồi"
+              }
+            ]
+          }
+        ],
+        "tab_steps": 34,
+        "focused": [
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Trang chủ",
+            "hidden": false,
+            "w": 61.75,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 201.03125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "service-inline-link",
+            "name": "Xem việc phổ thông",
+            "hidden": false,
+            "w": 142.203125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-table-scroll",
+            "name": "Ví dụ kế hoạch tiếp nhận",
+            "hidden": false,
+            "w": 737,
+            "h": 204.5625,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-fee-table-wrap service-table-scroll",
+            "name": "Cơ cấu chi phí tham khảo",
+            "hidden": false,
+            "w": 737,
+            "h": 204.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Cần cung cấp thông tin gì?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Có hỗ trợ tuyển theo đợt không?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Chi phí được xác định thế nào?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-testimonial-rail",
+            "name": "Tình huống minh họa · Nhân vật giả định",
+            "hidden": false,
+            "w": 737,
+            "h": 207.5625,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-gallery-track",
+            "name": "Danh sách giải pháp",
+            "hidden": false,
+            "w": 713,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Cho thuê lao động\n\nTrao đổi phương án nhân lực linh hoạt cho",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Headhunt & lao động tay nghề\n\nTìm kiếm và kết nối nhân sự có",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Tuyển sinh cao đẳng & đại học\n\nTìm hiểu cơ hội học tập từ xa",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Setup tổ chức & phần mềm doanh nghiệp\n\nCùng làm rõ cấu trúc,",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ trước",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ tiếp theo",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Liên hệ chung",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "name",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "phone",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "email",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "company",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "location",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "jobrole",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "quantity",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Chọn ca\nNgày\nĐêm\nXoay ca\nKhác",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\nCho thuê lao động\nHeadhunt & ",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "TEXTAREA",
+            "cls": "",
+            "name": "notes",
+            "hidden": false,
+            "w": 737,
+            "h": 113.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "footer-logo",
+            "name": "Minh Đức — Trang chủ",
+            "hidden": false,
+            "w": 99.703125,
+            "h": 71.140625,
+            "footer": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/service-keyboard/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P05-D1",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · service-decision-keyboard-grid · Paired 767/768 grids and complete natural Tab route to the footer, DPR-2 reflow, visible ordered service text.",
+      "actual_example": {
+        "grids": [
+          {
+            "selector": ".service-responsibilities",
+            "columns": 1,
+            "scroll": 767,
+            "client": 767,
+            "children": [
+              {
+                "x": 15,
+                "y": 756,
+                "w": 737,
+                "text": "Thống nhất trách nhiệm trước khi triển khai"
+              },
+              {
+                "x": 15,
+                "y": 881,
+                "w": 737,
+                "text": "Thời hạn\nXác định khoảng thời gian và số người cần cho từng ca.\nĐầu mối phối hợp\nThống nhấ"
+              }
+            ]
+          }
+        ],
+        "tab_steps": 32,
+        "focused": [
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Trang chủ",
+            "hidden": false,
+            "w": 61.75,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 201.03125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-fee-table-wrap service-table-scroll",
+            "name": "Cơ cấu chi phí tham khảo",
+            "hidden": false,
+            "w": 737,
+            "h": 204.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Có thể thuê theo thời hạn không?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Điều kiện triển khai là gì?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Chi phí được xác định thế nào?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-testimonial-rail",
+            "name": "Tình huống minh họa · Nhân vật giả định",
+            "hidden": false,
+            "w": 737,
+            "h": 207.5625,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-gallery-track",
+            "name": "Danh sách giải pháp",
+            "hidden": false,
+            "w": 713,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\n\nKết nối người lao động và do",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Headhunt & lao động tay nghề\n\nTìm kiếm và kết nối nhân sự có",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Tuyển sinh cao đẳng & đại học\n\nTìm hiểu cơ hội học tập từ xa",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Setup tổ chức & phần mềm doanh nghiệp\n\nCùng làm rõ cấu trúc,",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ trước",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ tiếp theo",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Liên hệ chung",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "name",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "phone",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "email",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "company",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "location",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "jobrole",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "quantity",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Chọn ca\nNgày\nĐêm\nXoay ca\nKhác",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\nCho thuê lao động\nHeadhunt & ",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "TEXTAREA",
+            "cls": "",
+            "name": "notes",
+            "hidden": false,
+            "w": 737,
+            "h": 113.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "footer-logo",
+            "name": "Minh Đức — Trang chủ",
+            "hidden": false,
+            "w": 99.703125,
+            "h": 71.140625,
+            "footer": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/service-keyboard/browser-results.json#/checks/1",
+      "case_indices": [
+        1,
+        6,
+        11,
+        16,
+        21,
+        26,
+        31,
+        36,
+        41,
+        46
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P06-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · service-decision-keyboard-grid · Paired 767/768 grids and complete natural Tab route to the footer, DPR-2 reflow, visible ordered service text.",
+      "actual_example": {
+        "grids": [
+          {
+            "selector": ".service-role",
+            "columns": 1,
+            "scroll": 767,
+            "client": 767,
+            "children": [
+              {
+                "x": 15,
+                "y": 756,
+                "w": 737,
+                "text": "Tiêu chí tuyển kỹ thuật viên bảo trì\n\nMẫu mô tả vị trí để thống nhất cách tuyển chọn."
+              },
+              {
+                "x": 15,
+                "y": 900,
+                "w": 737,
+                "text": "Kỹ năng bắt buộc\nĐọc sơ đồ và nhận diện lỗi thiết bị.\nKinh nghiệm mong muốn\nMô tả thiết bị"
+              }
+            ]
+          }
+        ],
+        "tab_steps": 31,
+        "focused": [
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Trang chủ",
+            "hidden": false,
+            "w": 61.75,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 201.03125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "service-inline-link",
+            "name": "Xem việc tay nghề",
+            "hidden": false,
+            "w": 131.328125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Vị trí nào có thể trao đổi?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Ứng viên cần chuẩn bị gì?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Thời gian tuyển là bao lâu?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-gallery-track",
+            "name": "Danh sách giải pháp",
+            "hidden": false,
+            "w": 713,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\n\nKết nối người lao động và do",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Cho thuê lao động\n\nTrao đổi phương án nhân lực linh hoạt cho",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Tuyển sinh cao đẳng & đại học\n\nTìm hiểu cơ hội học tập từ xa",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Setup tổ chức & phần mềm doanh nghiệp\n\nCùng làm rõ cấu trúc,",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ trước",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ tiếp theo",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Liên hệ chung",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "name",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "phone",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "email",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "company",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "location",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "jobrole",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "quantity",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Chọn ca\nNgày\nĐêm\nXoay ca\nKhác",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\nCho thuê lao động\nHeadhunt & ",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "TEXTAREA",
+            "cls": "",
+            "name": "notes",
+            "hidden": false,
+            "w": 737,
+            "h": 113.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "footer-logo",
+            "name": "Minh Đức — Trang chủ",
+            "hidden": false,
+            "w": 99.703125,
+            "h": 71.140625,
+            "footer": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/service-keyboard/browser-results.json#/checks/2",
+      "case_indices": [
+        2,
+        7,
+        12,
+        17,
+        22,
+        27,
+        32,
+        37,
+        42,
+        47
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P07-D1",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · service-decision-keyboard-grid · Paired 767/768 grids and complete natural Tab route to the footer, DPR-2 reflow, visible ordered service text.",
+      "actual_example": {
+        "grids": [
+          {
+            "selector": ".service-study-modes",
+            "columns": 1,
+            "scroll": 737,
+            "client": 737,
+            "children": [
+              {
+                "x": 15,
+                "y": 811,
+                "w": 737,
+                "text": "Từ xa\n\nHỏi trường về lịch học trực tuyến, thời gian tự học và địa điểm thi."
+              },
+              {
+                "x": 15,
+                "y": 947,
+                "w": 737,
+                "text": "Chính quy\n\nHỏi trường về lịch học tại lớp, yêu cầu có mặt và điều kiện thực hành."
+              }
+            ]
+          }
+        ],
+        "tab_steps": 18,
+        "focused": [
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Trang chủ",
+            "hidden": false,
+            "w": 61.75,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "btn",
+            "name": "Tư vấn tuyển sinh",
+            "hidden": false,
+            "w": 177.109375,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "service-inline-link",
+            "name": "Nộp hồ sơ tuyển sinh",
+            "hidden": false,
+            "w": 151.15625,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "service-inline-link",
+            "name": "Khám phá chương trình tuyển sinh",
+            "hidden": false,
+            "w": 246.375,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-fee-table-wrap service-table-scroll",
+            "name": "Chi phí cần xác nhận với trường",
+            "hidden": false,
+            "w": 737,
+            "h": 204.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Có những hình thức nào?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Thông tin chương trình đã chính thức chưa?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Làm sao đăng ký?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-testimonial-rail",
+            "name": "Tình huống minh họa · Nhân vật giả định",
+            "hidden": false,
+            "w": 737,
+            "h": 207.5625,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-gallery-track",
+            "name": "Danh sách giải pháp",
+            "hidden": false,
+            "w": 713,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\n\nKết nối người lao động và do",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Cho thuê lao động\n\nTrao đổi phương án nhân lực linh hoạt cho",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Headhunt & lao động tay nghề\n\nTìm kiếm và kết nối nhân sự có",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Setup tổ chức & phần mềm doanh nghiệp\n\nCùng làm rõ cấu trúc,",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ trước",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ tiếp theo",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "btn",
+            "name": "Xem tất cả chương trình",
+            "hidden": false,
+            "w": 222.234375,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "footer-logo",
+            "name": "Minh Đức — Trang chủ",
+            "hidden": false,
+            "w": 99.703125,
+            "h": 71.140625,
+            "footer": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/service-keyboard/browser-results.json#/checks/3",
+      "case_indices": [
+        3,
+        8,
+        13,
+        18,
+        23,
+        28,
+        33,
+        38,
+        43,
+        48
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P08-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · service-decision-keyboard-grid · Paired 767/768 grids and complete natural Tab route to the footer, DPR-2 reflow, visible ordered service text.",
+      "actual_example": {
+        "grids": [
+          {
+            "selector": ".service-workflow ol",
+            "columns": 1,
+            "scroll": 737,
+            "client": 737,
+            "children": [
+              {
+                "x": 15,
+                "y": 785,
+                "w": 737,
+                "text": "Tiếp nhận nhu cầu"
+              },
+              {
+                "x": 15,
+                "y": 833,
+                "w": 737,
+                "text": "Phân công"
+              },
+              {
+                "x": 15,
+                "y": 880,
+                "w": 737,
+                "text": "Theo dõi phản hồi"
+              }
+            ]
+          },
+          {
+            "selector": ".service-process ol",
+            "columns": 1,
+            "scroll": 737,
+            "client": 737,
+            "children": [
+              {
+                "x": 15,
+                "y": 1081,
+                "w": 737,
+                "text": "Lắng nghe hiện trạng"
+              },
+              {
+                "x": 15,
+                "y": 1128,
+                "w": 737,
+                "text": "Làm rõ mục tiêu"
+              },
+              {
+                "x": 15,
+                "y": 1175,
+                "w": 737,
+                "text": "Trao đổi phương án"
+              },
+              {
+                "x": 15,
+                "y": 1223,
+                "w": 737,
+                "text": "Thống nhất phạm vi"
+              },
+              {
+                "x": 15,
+                "y": 1270,
+                "w": 737,
+                "text": "Theo dõi và điều chỉnh"
+              }
+            ]
+          },
+          {
+            "selector": ".service-consulting-list",
+            "columns": 1,
+            "scroll": 737,
+            "client": 737,
+            "children": [
+              {
+                "x": 15,
+                "y": 1790,
+                "w": 737,
+                "text": "Hiểu hiện trạng\n\nLắng nghe mục tiêu, nhân sự và quy trình hiện có."
+              },
+              {
+                "x": 15,
+                "y": 1926,
+                "w": 737,
+                "text": "Rõ phương án\n\nXác định phạm vi, ưu tiên và cách phối hợp."
+              },
+              {
+                "x": 15,
+                "y": 2062,
+                "w": 737,
+                "text": "Hỗ trợ vận hành\n\nTrao đổi nhu cầu phần mềm phù hợp với thực tế."
+              }
+            ]
+          }
+        ],
+        "tab_steps": 32,
+        "focused": [
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Trang chủ",
+            "hidden": false,
+            "w": 61.75,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 201.03125,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-fee-table-wrap service-table-scroll",
+            "name": "Cơ cấu chi phí tham khảo",
+            "hidden": false,
+            "w": 737,
+            "h": 204.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ bao gồm những gì?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Có thể trao đổi trước không?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Có thay thế tư vấn pháp lý không?",
+            "hidden": false,
+            "w": 735,
+            "h": 60,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "info-testimonial-rail",
+            "name": "Tình huống minh họa · Nhân vật giả định",
+            "hidden": false,
+            "w": 737,
+            "h": 207.5625,
+            "footer": false
+          },
+          {
+            "tag": "DIV",
+            "cls": "service-gallery-track",
+            "name": "Danh sách giải pháp",
+            "hidden": false,
+            "w": 713,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\n\nKết nối người lao động và do",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Cho thuê lao động\n\nTrao đổi phương án nhân lực linh hoạt cho",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Headhunt & lao động tay nghề\n\nTìm kiếm và kết nối nhân sự có",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "",
+            "name": "Tuyển sinh cao đẳng & đại học\n\nTìm hiểu cơ hội học tập từ xa",
+            "hidden": false,
+            "w": 349.5,
+            "h": 339.3125,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ trước",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Dịch vụ tiếp theo",
+            "hidden": false,
+            "w": 44,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "",
+            "name": "Liên hệ chung",
+            "hidden": false,
+            "w": 363.5,
+            "h": 44,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "name",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "phone",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "email",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "company",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "location",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "jobrole",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "quantity",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Chọn ca\nNgày\nĐêm\nXoay ca\nKhác",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "INPUT",
+            "cls": "",
+            "name": "needdate",
+            "hidden": false,
+            "w": 737,
+            "h": 48.390625,
+            "footer": false
+          },
+          {
+            "tag": "SELECT",
+            "cls": "",
+            "name": "Giới thiệu & cung ứng nhân lực\nCho thuê lao động\nHeadhunt & ",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "TEXTAREA",
+            "cls": "",
+            "name": "notes",
+            "hidden": false,
+            "w": 737,
+            "h": 113.5625,
+            "footer": false
+          },
+          {
+            "tag": "BUTTON",
+            "cls": "btn",
+            "name": "Gửi nhu cầu nhân lực",
+            "hidden": false,
+            "w": 737,
+            "h": 48,
+            "footer": false
+          },
+          {
+            "tag": "A",
+            "cls": "footer-logo",
+            "name": "Minh Đức — Trang chủ",
+            "hidden": false,
+            "w": 99.703125,
+            "h": 71.140625,
+            "footer": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/service-keyboard/browser-results.json#/checks/4",
+      "case_indices": [
+        4,
+        9,
+        14,
+        19,
+        24,
+        29,
+        34,
+        39,
+        44,
+        49
+      ],
+      "remaining": ""
+    }
+  ]
+}

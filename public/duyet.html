@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Duyệt giao diện · Minh Đức Vina</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#17385d;background:#edf2f8;font:16px/1.45 system-ui,sans-serif}
+header{background:#fff;border-bottom:1px solid #cbd8e7}
+.controls{max-width:1536px;margin:auto;padding:12px clamp(12px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
+h1{font-size:18px;line-height:1.3;margin:0}.sizes,.paths{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+button,select,.direct{min-height:44px;font:600 14px/1.2 system-ui,sans-serif;color:#193f6f}
+button,select{background:white;border:1px solid #bdcfe2;border-radius:8px;padding:8px 12px;cursor:pointer}
+button[aria-pressed=true]{box-shadow:inset 0 -3px 0 #85c3ff;background:#1c477b;color:white;border-color:#1c477b}.direct{display:inline-flex;align-items:center;padding:0 8px}
+:focus-visible{outline:3px solid #1461a9;outline-offset:3px}
+main{padding:14px 8px 28px;text-align:center}output{display:block;margin:0 0 8px;color:#4c657e;font-size:14px}
+.frame{position:relative;width:390px;height:844px;max-width:100%;margin:auto;background:white;box-shadow:0 4px 24px #19385625}
+iframe{display:block;border:0;position:absolute;inset:0;max-width:none;transform-origin:top left;background:#fff}
+@media(max-width:700px){.controls{display:grid;gap:7px}.sizes button{padding-inline:10px}.controls h1{font-size:16px}.paths label{font-size:14px}.paths{min-width:0}.paths select{max-width:100%;min-width:0}}
+</style>
+</head>
+<body>
+<header><div class="controls">
+<h1>Duyệt giao diện Minh Đức</h1>
+<div class="sizes" role="group" aria-label="Chiều rộng khung xem">
+<button type="button" data-width="390">Điện thoại</button><button type="button" data-width="820">Tablet</button><button type="button" data-width="1440">Desktop</button>
+</div>
+<div class="paths"><label for="page">Trang xem</label><select id="page">
+<option value="/">Trang chủ · Video mở đầu</option><option value="/#home-services-title">Trang chủ · Giải pháp nhân lực</option><option value="/services#service-directory-heading">Dịch vụ · Danh mục giải pháp</option><option value="/about-us">Giới thiệu</option><option value="/services">Dịch vụ</option><option value="/jobs">Việc làm</option><option value="/careers">Tuyển dụng nội bộ</option><option value="/education">Tuyển sinh</option><optgroup label="Tin tức và video"><option value="/#home-editorial-heading">Trang chủ · Tin tức &amp; cẩm nang</option><option value="/news/nhu-cau-tuyen-dung">Bài chi tiết · Lập kế hoạch bổ sung lao động</option><option value="/news">Danh mục tin tức</option><option value="/#home-films-heading">Trang chủ · Video giới thiệu</option></optgroup><option value="/contact">Liên hệ</option>
+</select><a class="direct" href="/" target="_blank" rel="noopener">Mở ở tab riêng</a></div>
+</div></header>
+<main><output id="dimensions" aria-live="polite"></output><div class="frame"><iframe title="Website Minh Đức Vina" width="390" height="844" allow="autoplay; fullscreen"></iframe></div></main>
+<script>
+const sizes=new Map([[390,844],[820,1180],[1440,900]]);
+const appBase = new URL('.', location.href);
+const search=new URLSearchParams(location.search);
+const buttons=[...document.querySelectorAll('[data-width]')];
+const frame=document.querySelector('iframe');
+const shell=document.querySelector('.frame');
+const select=document.getElementById('page');
+const direct=document.querySelector('.direct');
+let width=sizes.has(Number(search.get('w')))?Number(search.get('w')):390;
+if([...select.options].some(option=>option.value===search.get('page')))select.value=search.get('page');
+function layout(){
+  const height=sizes.get(width);
+  const scale=Math.min(1,(document.documentElement.clientWidth-16)/width);
+  frame.width=width;frame.height=height;frame.style.transform='scale('+scale+')';
+  shell.style.width=width*scale+'px';shell.style.height=height*scale+'px';
+  document.getElementById('dimensions').textContent='Khung mô phỏng '+width+' × '+height+' CSS px · Tỷ lệ hiển thị '+Math.round(scale*100)+'%';
+  for(const button of buttons)button.setAttribute('aria-pressed',String(Number(button.dataset.width)===width));
+}
+function address(){
+  const url=new URL(location.href);url.searchParams.set('w',width);
+  if(select.value==='/')url.searchParams.delete('page');else url.searchParams.set('page',select.value);
+  history.replaceState(null,'',url);
+}
+function selectedUrl(){return new URL('.'+select.value, appBase).href;}
+function navigate(){direct.href=selectedUrl();frame.src=direct.href;address();}
+buttons.forEach(button=>button.addEventListener('click',()=>{width=Number(button.dataset.width);layout();address();}));
+select.addEventListener('change',navigate);window.addEventListener('resize',layout);
+direct.addEventListener('click',()=>{direct.href=selectedUrl();try{const current=frame.contentWindow.location;if(current.origin===location.origin && current.pathname.startsWith(appBase.pathname))direct.href=current.href;}catch{/* Keep the selected page as the fallback. */}});
+layout();navigate();
+</script>
+</body>
+</html>

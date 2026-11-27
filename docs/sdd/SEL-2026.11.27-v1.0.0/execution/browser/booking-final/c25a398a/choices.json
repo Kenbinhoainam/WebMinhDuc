@@ -1,0 +1,79 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_tree_sha256": "ba241ff9afedbfa57572d293d0a7352d493b0a33e03fd712f509e11f0ead9c91",
+  "tested_utc": "2026-11-27T13:57:35+00:00",
+  "choices": [
+    {
+      "choice_id": "MI06-1",
+      "coverage": "partial",
+      "test_status": "Fail",
+      "assertion": "invalid_date; native_partial; live_date; missing_slot_before_progress",
+      "actual": "0/10 route-locale-width sets passed.",
+      "remaining": "Failed live_date. ",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "MI06-2",
+      "coverage": "partial",
+      "test_status": "Fail",
+      "assertion": "slots; native_selection; slot_summary; stable_tiles",
+      "actual": "0/10 route-locale-width sets passed.",
+      "remaining": "Failed slot_summary. ",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "MI06-4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "edit_focus; details_focus; draft; pre_receipt; success; sequence",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "CS-C10-4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "draft; success; sequence; pre_receipt; edit_focus",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "P38-A2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "invalid_date; missing_slot; slot_geometry; slots; details_focus",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "MI07-1",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "pre_receipt; success; sequence",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "P38 F02 only; other form types and linked jobs require independent receipts.",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "MI07-2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "success",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "P38 focus and status only; screen reader announcements and F01–F06 need independent verification.",
+      "route": "/consultation"
+    },
+    {
+      "choice_id": "MI07-4",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "reset; clean_form; sequence",
+      "actual": "10/10 route-locale-width sets passed.",
+      "remaining": "P38 F02 only; reset of linked program/job and memory ledger persistence need independent evidence.",
+      "route": "/consultation"
+    }
+  ]
+}

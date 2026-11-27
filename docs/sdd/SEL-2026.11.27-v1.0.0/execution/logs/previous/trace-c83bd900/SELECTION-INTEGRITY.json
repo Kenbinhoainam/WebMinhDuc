@@ -1,0 +1,140 @@
+{
+  "handoff": "5744b6da70af721bf08d915107960ab61dfb0080",
+  "immutable_file_sha256": {
+    "APPROVAL-BOUNDARIES.md": "6a1b97cb07c0e759f1f005064e14d2f542a4302bfe4c75b634b4e987534e53cd",
+    "CODEX-CLOUD-TASK.md": "e3904651f4785385c0165e2c71d95d0d067c16f10de38cc7167773e10d47d2f2",
+    "MDU-DEC-v1.0.0.md": "2639901eb67149d4c0d73cfcb55f7fa79c6cb972264f42bad30c1dd4f218f34e",
+    "MDU-EXEC-BRIEF-v1.0.0.md": "ee75c81eabf34054b0f3b567c2638073cabc3a31eb3f8964e996f364c1f35741",
+    "MDU-PLAN-v1.0.0.md": "a5a0dad370dc2cc969f4b60f36d9470baddca612c2bc12af916b298f62dfb8b7",
+    "MDU-SDD-v1.0.0.md": "ca1135b9261d8d31c783b6cfc66454f1f8b9d58659d61f66d9563e11bd34f4dd",
+    "MDU-TRC-v1.0.0.md": "7e4b9bb345e6c2b0ab13bf1b1bbede0501231ed37e772b5e989ddc439a4be022",
+    "QA-EXECUTION-CHECKLIST.md": "27e28c82137a180b99f16f763104f68fe3e17f037165837ffea050cb4068ad85",
+    "README.md": "daf722608ad5d47d53104e10879bd14de5b0c6de41b1828b161a7ffff1719c8b",
+    "data/README.md": "833d2bc275b7806b1927fd4e4f32004214b236576538bf0c0a288da3e8708c4a",
+    "data/dx-proposals-reference-only.jsonl": "b756f426f585d7afda8f0fd9dafead7691757e3102919bde471c0d0c64251683",
+    "data/pages-and-urls.jsonl": "ca9edd52cfc0d1a95f2114b45876515d4c21f5568f8ad77e957c20cc951324f5",
+    "data/selections-common-all-statuses.jsonl": "e4b1a7eb906b1e286412e80f35610722a76a462831d616271469d4351833bdc6",
+    "data/selections-cs-all-statuses.jsonl": "435b374f645a23ead7c2fbca445ff136bab5fb305e119819d34b0586837161c2",
+    "data/selections-motion-all-statuses.jsonl": "121081ed3cf916ad19838ff4a1004f6c51e68faea5847b49a8ebe832243dea8c",
+    "data/selections-pages-P01-P10.jsonl": "96e0ee608a197c86b8cf3525422d5325bf9ad3bf7d245ad9ea606006e4724d04",
+    "data/selections-pages-P11-P20.jsonl": "7ec38ef13fba5bf445b7618dfc3b1383493fe02ed6d3344d1131148a069e5a2a",
+    "data/selections-pages-P21-P30.jsonl": "4e98eed1e37f73dac55954408c537e1b987f2fb7f10893902dac19fcc98b9904",
+    "data/selections-pages-P31-P41.jsonl": "837344f3317fe490c1528b93d4c8ebd94ed2c12348c780bffc5ad75d418fada6",
+    "data/selections-states-all-statuses.jsonl": "708173c3c1bdd228c066140b8b0944a7651adeeaac84bee0f52fb5ae761b587e",
+    "execution/RESULT-BY-CHOICE-TEMPLATE.csv": "c119a74f704cb3c9e632e6b0c51d163f4bbb121827e00981a39ae17ff5506935",
+    "manifest.json": "1c4fe66f09c6502f8dc2747d010a8d5ed1b1175587508a6610014f4a00078bae"
+  },
+  "app_sha": "c83bd9001cf2629dfb1934515fcf1c05ae553910",
+  "change_impact": [
+    {
+      "parent_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "target_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+      "changed_files": [
+        "src/Contact.tsx"
+      ],
+      "diff_sha256": "199854d0f19d13cc8ef566b9d1f9661f941f26a15d8afd3c005b978af9fed4f5",
+      "scope": "Existing locale catalog translation of office.name for the contact map iframe title."
+    },
+    {
+      "parent_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+      "target_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "changed_files": [
+        "src/Consultation.css",
+        "src/Consultation.tsx",
+        "tests/consultation.mjs"
+      ],
+      "diff_sha256": "a58677d12815d533cdb128fa24b717e951135379ebfa12a75e3332e083edb457",
+      "scope": "Update /consultation live date/time summary, receipt formatting, slot timing and its unit assertions."
+    },
+    {
+      "parent_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "target_sha": "d67c9914a17c3cedb4dcd76e397189e833ab9a4d",
+      "changed_files": [
+        "src/Contact.tsx",
+        "src/JobsPages.tsx",
+        "src/sharedformvalidation.ts",
+        "tests/s2-form-field-repair.py"
+      ],
+      "diff_sha256": "e9c2bc78866931ef6a065ca68d33941bb700d2b754d438ed9055ed03644ff2df",
+      "scope": "Update input-time validation of public contact and job application identity fields after a failed submit."
+    },
+    {
+      "parent_sha": "d67c9914a17c3cedb4dcd76e397189e833ab9a4d",
+      "target_sha": "c83bd9001cf2629dfb1934515fcf1c05ae553910",
+      "changed_files": [
+        "src/JobsPages.tsx",
+        "tests/jobs-sprint1.mjs"
+      ],
+      "diff_sha256": "fc62940bed9800e4c8d0fb26c9cb34c465ae64b63356b1daebdb569bda2c88b8",
+      "scope": "Restore the equivalent focus target inside the saved-jobs browser after local removal or storage updates; correct the stale jobs test expectation for validated phone fields."
+    }
+  ],
+  "selected": 1257,
+  "selected_page_e": 146,
+  "excluded": {
+    "Không chọn, kể cả 8 dòng E của P01/P02": 38,
+    "Để sau": 15,
+    "Chưa chọn": 1,
+    "DX chỉ tham khảo": 246
+  },
+  "result_csv_sha256": "c60e0f9bfa9a9e75dd94b1cf0c0d131368790e11d532ada60457e65760769915",
+  "completed_by_execution": {
+    "target_pass": 173,
+    "only_prior_unchanged_pass": 346
+  },
+  "result_counts": {
+    "implementation_status": {
+      "Blocked": 116,
+      "Incomplete": 622,
+      "Completed": 519
+    },
+    "test_status": {
+      "Blocked": 116,
+      "Not Run": 619,
+      "Pass": 519,
+      "Fail": 3
+    }
+  },
+  "qa_input_sha256": {
+    "trace-content.json": "d7ffe5c4b6541c5be0bbfd51e1b3bbcdd4647d08ffb0b2da0e7eaac9cc450ab5",
+    "qa/choice-evidence.json": "655755abfb4901bd83719ce9bc164c0966f1ec76f08fa0b812ca920ff3095760",
+    "trace-regression.json": "d8fc5f52a113aa5c8d0e4f9d4af68f2260e71a93d483f208e07c104334a42b6b",
+    "common-audit.json": "7aa391a6751665116f110910a47b28f4bd1b2074e6b6e6b56a3cc1334c64babd",
+    "media-audit.json": "edfec28794c6beca0c41ce7a9e16dca582e7b5e28d6e4c39328d7c112adec7ec",
+    "trace-accessibility.json": "ddbfa1407fd3e23e3863bdc3f2b87680df4c64ab4c96673f2fdb0736953f942c",
+    "browser-choice-evidence.json": "e1ae45d2b30418ab8c2fdddfda387dfb7c57a772b89f2e03ce5ba7180f15cac2",
+    "browser-reviewer-evidence.json": "21f124ced6201625d22b9113d9c255ef57614868a48ba37b71dadcddc8e7b274",
+    "browser-a11y-evidence.json": "f3de96a87a37b2e0c035fbeed7f583bae2918e9f013527847a0214bab6ef7ead",
+    "browser-extra-evidence.json": "7d8c712c9a510b7d99ef43534cbb3b706ec60e4dee8ce500520917f574540ca9",
+    "browser-edge-evidence.json": "4fa46c2d8ab00736a2378467bdf6a512171eef73c04ed71ef57fa37583168680",
+    "residual.json": "6cc4ff666183376a4d64ef325bbdf6bdf95a65bff7f14bc4837b4cab8a92fddc",
+    "residual-browser.json": "6dae7047dd74adae822481c3e7d4291e500d916f9c4b215fe786f14bc897559f",
+    "residual-education/choices.json": "253b3478ce02416f52c49e468cc7bc9bdb5f533a9ed8c5f9f61c9a259b5558dd",
+    "browser-service-keyboard.json": "3f867e2922874953c58a8bd77a289057deecce848ecca02d88974bf07eb086c6",
+    "b2b-qa/browser-choices.json": "bbb598cb1d96590d0ed56f492023be78e265edf7c20013306cf8ecb6f1f27163",
+    "b2b-qa/performance-choices.json": "8895ca1f129dd5720b109b80f537be24a28b8f1b8aee3363924de7d4c35f7e21",
+    "b2c-final-pages/choices.json": "3b42e2df5a443f41b173fb6d3503a3feba3cbb92276f9ae5a914fe175b51a5f1",
+    "b2c-final-pages/vacancies.json": "79697461ffb06984a2ed4d6fa27d2f927238fe63201b1d2b1dd1c9d75c6a76ff",
+    "b2c-saved-focus/choices.json": "a3dc35aeab148fd1dcc14364efb1072075bce5f850251f5f0ee3e3474fd8c5fa",
+    "w4-qa/browser-choices-rc6.json": "fbd683b07a14c6c2d71bfecfa0f5230478e204943fe821ea67b80ac0918c919d",
+    "w4-qa/browser-event-choices-rc7.json": "8ff9122141909f6dab1c3e846a069cd87340209bbc270c951432521a6ed832f5",
+    "trace-booking-functional.json": "909fe273cbe4fb7cf35e79cd49480d608748574137114ed486f30981a9c7271d",
+    "w4-pages-browser-evidence.json": "2f851b81ab123182485fd3dbdc72a6642414eb1dfe4f87d3d4134bc638d59aa6",
+    "w4-sites-browser-evidence.json": "a6e7c109cf6c21c75b2dc7975129c13b4b7a0b093e024fbb1b60e923361c4093",
+    "browser/hero-end-88e2b615/hero-end-choices.json": "31975affe00a7f3a41dc50b6303d260d7020d62ce82bfe5f42460b86f3a94baf",
+    "browser/motion-final/88e2b615/choices.json": "f0b43864463dd2767433127c771bceeea72039b115fd1338defef1db156b3c9b",
+    "browser/booking-final/9db1adb2/choices.json": "2640bdc4add1bebf5142fe631c01f9c48078ef47f112f0ea06b6b5138f0c94e4",
+    "browser/form-mode-final/9db1adb2/choices.json": "78cdc6067834662ad83304017950c77cf459184a3c4be144faa19b6d869de171",
+    "browser/form-feedback-d67c991/choices.json": "205907ad5b1249d20abc96a69bd536448fe09aa02fa73c1d649bc4d99e774410",
+    "b2b.csv": "523c6ba8e2db61de4068c8142753f2d3c9eafcbd19fa159dc8c50653ffd0eaa1",
+    "b2c.csv": "49d8a52301f28a31009c4d976486a42d8e8c97b1795b4a5f3bb2176ecdd30f6d",
+    "other-pages.csv": "63f147add109a6fed829a66c0675ea4460bb4b310280cbd42e6a63c3e01d92c9",
+    "shared.csv": "e36310a9ed705820ac9021a8c8c463dcfc5ec08c0d888a2919eab94752dcaf8f",
+    "p41.csv": "5d843f109aea941f5f413d0f31fb1625e54823cf9a746b4572a5a16989286fd8",
+    "shared-qa/MOTION-INVENTORY.csv": "5ddcff9015e74790d4ec5b03a84fb8a4104788f009395ef541697a711f694e29",
+    "trace-reviewer.json": "6cbf9e3b452a89d27744511802df9892fe5cf1151e1ce08f6beab7904c892a20",
+    "browser/keyboard-zoom/browser-results.json": "e5cdab207bd0d1fda23137d4bba3826ed9f558f60445f40b5d4d43a1b22239a6",
+    "browser/keyboard-zoom-edges/browser-results.json": "d4191d2edb63179058b7d13d0c0c392c232e84355bf1128c5fac76388ce465ca",
+    "browser/service-keyboard/browser-results.json": "2418c80c8b6116a2401b5fccb870364367dd8633fb592ba0c283fd49b0baf048"
+  }
+}

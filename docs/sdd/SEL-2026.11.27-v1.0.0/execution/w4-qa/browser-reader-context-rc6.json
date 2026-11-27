@@ -1,0 +1,2115 @@
+{
+  "sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "mount": "/",
+  "checks": [
+    {
+      "page": "P21",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P21-A2",
+        "P21-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Một danh sách gọn gàng giúp bạn chuẩn bị hồ sơ và hỏi đúng thông tin trước ngày phỏng vấn.",
+            "title": "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "Dành cho người lao động",
+            "headings": [
+              "1.\nXác nhận yêu cầu của từng vị trí",
+              "2.\nSắp xếp thông tin dễ kiểm tra",
+              "3.\nBảo vệ thông tin cá nhân",
+              "4.\nKiểm tra lần cuối trước khi gửi hồ sơ"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Một danh sách gọn gàng giúp bạn chuẩn bị hồ sơ và hỏi đúng thông tin trước ngày phỏng vấn.",
+            "title": "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "Dành cho người lao động",
+            "headings": [
+              "1.\nXác nhận yêu cầu của từng vị trí",
+              "2.\nSắp xếp thông tin dễ kiểm tra",
+              "3.\nBảo vệ thông tin cá nhân",
+              "4.\nKiểm tra lần cuối trước khi gửi hồ sơ"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1524
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P22",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P22-A2",
+        "P22-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Làm rõ nhu cầu từ đầu giúp các bên phối hợp nhất quán trong quá trình tìm nguồn và tiếp nhận.",
+            "title": "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "Dành cho doanh nghiệp",
+            "headings": [
+              "1.\nBắt đầu từ kế hoạch vận hành",
+              "2.\nLập lịch theo khả năng tiếp nhận thực tế",
+              "3.\nThống nhất thông tin trước khi tìm nguồn",
+              "4.\nPhân biệt nhu cầu, lịch hẹn và dự kiến đến",
+              "5.\nTheo dõi và cập nhật theo giai đoạn",
+              "6.\nKết thúc đợt bằng những điều có thể tái sử dụng"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc",
+              "Các thành viên Minh Đức họp và cùng xem tài liệu",
+              "Nhóm Minh Đức cùng đối chiếu tài liệu công việc"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Làm rõ nhu cầu từ đầu giúp các bên phối hợp nhất quán trong quá trình tìm nguồn và tiếp nhận.",
+            "title": "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "Dành cho doanh nghiệp",
+            "headings": [
+              "1.\nBắt đầu từ kế hoạch vận hành",
+              "2.\nLập lịch theo khả năng tiếp nhận thực tế",
+              "3.\nThống nhất thông tin trước khi tìm nguồn",
+              "4.\nPhân biệt nhu cầu, lịch hẹn và dự kiến đến",
+              "5.\nTheo dõi và cập nhật theo giai đoạn",
+              "6.\nKết thúc đợt bằng những điều có thể tái sử dụng"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc",
+              "Các thành viên Minh Đức họp và cùng xem tài liệu",
+              "Nhóm Minh Đức cùng đối chiếu tài liệu công việc"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 1849
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P23",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P23-A2",
+        "P23-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Hiểu rõ công việc, thời gian và thu nhập giúp bạn lựa chọn công việc phù hợp hơn.",
+            "title": "Những câu hỏi nên làm rõ trước khi nhận việc",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "Dành cho người lao động",
+            "headings": [
+              "1.\nCông việc hằng ngày là gì?",
+              "2.\nThời gian và thu nhập được tính ra sao?",
+              "3.\nLưu lại các thông tin đã xác nhận"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "Nhóm nhân viên Minh Đức trao đổi ngoài trời"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Hiểu rõ công việc, thời gian và thu nhập giúp bạn lựa chọn công việc phù hợp hơn.",
+            "title": "Những câu hỏi nên làm rõ trước khi nhận việc",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "Dành cho người lao động",
+            "headings": [
+              "1.\nCông việc hằng ngày là gì?",
+              "2.\nThời gian và thu nhập được tính ra sao?",
+              "3.\nLưu lại các thông tin đã xác nhận"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "Nhóm nhân viên Minh Đức trao đổi ngoài trời"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1106
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P24",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P24-A2",
+        "P24-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Sự nhất quán giữa tin tuyển dụng, tư vấn và thực tế tiếp nhận giúp giảm hiểu nhầm.",
+            "title": "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "Góc nhân sự",
+            "headings": [
+              "1.\nMột nguồn thông tin thống nhất",
+              "2.\nTrình bày đủ điều kiện",
+              "3.\nDành chỗ cho phản hồi"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Sự nhất quán giữa tin tuyển dụng, tư vấn và thực tế tiếp nhận giúp giảm hiểu nhầm.",
+            "title": "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "Góc nhân sự",
+            "headings": [
+              "1.\nMột nguồn thông tin thống nhất",
+              "2.\nTrình bày đủ điều kiện",
+              "3.\nDành chỗ cho phản hồi"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 909
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P25",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P25-A2",
+        "P25-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Từ lịch hẹn đến người hướng dẫn, những chi tiết nhỏ giúp ngày đầu diễn ra thuận lợi.",
+            "title": "Chuẩn bị ngày đầu làm việc cho người lao động mới",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "Dành cho doanh nghiệp",
+            "headings": [
+              "1.\nTrước ngày tiếp nhận",
+              "2.\nTrong ngày đầu tiên",
+              "3.\nSau khi bắt đầu công việc"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "Đội ngũ Minh Đức ngồi họp quanh bàn"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Từ lịch hẹn đến người hướng dẫn, những chi tiết nhỏ giúp ngày đầu diễn ra thuận lợi.",
+            "title": "Chuẩn bị ngày đầu làm việc cho người lao động mới",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "Dành cho doanh nghiệp",
+            "headings": [
+              "1.\nTrước ngày tiếp nhận",
+              "2.\nTrong ngày đầu tiên",
+              "3.\nSau khi bắt đầu công việc"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "Đội ngũ Minh Đức ngồi họp quanh bàn"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1123
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 72,
+          "scrolling": 2522
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P26",
+      "locale": "vi",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P26-A2",
+        "P26-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Xác minh nguồn tin, bảo vệ giấy tờ và thận trọng trước những yêu cầu chưa rõ ràng.",
+            "title": "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "Góc nhân sự",
+            "headings": [
+              "1.\nKiểm tra nguồn tin",
+              "2.\nChia sẻ vừa đủ thông tin",
+              "3.\nCẩn trọng với yêu cầu chuyển tiền"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Xác minh nguồn tin, bảo vệ giấy tờ và thận trọng trước những yêu cầu chưa rõ ràng.",
+            "title": "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "Góc nhân sự",
+            "headings": [
+              "1.\nKiểm tra nguồn tin",
+              "2.\nChia sẻ vừa đủ thông tin",
+              "3.\nCẩn trọng với yêu cầu chuyển tiền"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 909
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P21",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P21-A2",
+        "P21-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "A clear checklist helps you prepare documents and ask the right questions before an interview.",
+            "title": "Preparing a factory job application: where to start?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "For workers",
+            "headings": [
+              "1.\nConfirm each role’s requirements",
+              "2.\nOrganize information for easy review",
+              "3.\nProtect personal information",
+              "4.\nMake a final check before sending an application"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "A Minh Đức staff member holds documents outdoors"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "A clear checklist helps you prepare documents and ask the right questions before an interview.",
+            "title": "Preparing a factory job application: where to start?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "For workers",
+            "headings": [
+              "1.\nConfirm each role’s requirements",
+              "2.\nOrganize information for easy review",
+              "3.\nProtect personal information",
+              "4.\nMake a final check before sending an application"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "A Minh Đức staff member holds documents outdoors"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1460
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P22",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P22-A2",
+        "P22-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Clarifying needs at the outset keeps sourcing and onboarding coordinated.",
+            "title": "Planning workforce additions for each production phase",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "For businesses",
+            "headings": [
+              "1.\nStart with the operations plan",
+              "2.\nSchedule against actual intake capacity",
+              "3.\nAlign information before sourcing",
+              "4.\nDistinguish demand, appointments and expected arrivals",
+              "5.\nTrack and update at each stage",
+              "6.\nFinish with lessons that can be reused"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "The Minh Đức team discusses documents at a table",
+              "Minh Đức team members meeting and reviewing documents",
+              "A Minh Đức group cross-checking work documents"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Clarifying needs at the outset keeps sourcing and onboarding coordinated.",
+            "title": "Planning workforce additions for each production phase",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "For businesses",
+            "headings": [
+              "1.\nStart with the operations plan",
+              "2.\nSchedule against actual intake capacity",
+              "3.\nAlign information before sourcing",
+              "4.\nDistinguish demand, appointments and expected arrivals",
+              "5.\nTrack and update at each stage",
+              "6.\nFinish with lessons that can be reused"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "The Minh Đức team discusses documents at a table",
+              "Minh Đức team members meeting and reviewing documents",
+              "A Minh Đức group cross-checking work documents"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 1912
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P23",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P23-A2",
+        "P23-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Understanding duties, hours and pay helps you choose a more suitable job.",
+            "title": "Questions to clarify before accepting a job",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "For workers",
+            "headings": [
+              "1.\nWhat are the daily duties?",
+              "2.\nHow are hours and pay calculated?",
+              "3.\nKeep confirmed information"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "Minh Đức staff discuss their work outdoors"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Understanding duties, hours and pay helps you choose a more suitable job.",
+            "title": "Questions to clarify before accepting a job",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "For workers",
+            "headings": [
+              "1.\nWhat are the daily duties?",
+              "2.\nHow are hours and pay calculated?",
+              "3.\nKeep confirmed information"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "Minh Đức staff discuss their work outdoors"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1037
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P24",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P24-A2",
+        "P24-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Consistency between job ads, advice and actual onboarding reduces misunderstandings.",
+            "title": "Clear recruitment information builds better connections",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "HR insights",
+            "headings": [
+              "1.\nOne consistent source of information",
+              "2.\nState all relevant conditions",
+              "3.\nMake room for feedback"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Consistency between job ads, advice and actual onboarding reduces misunderstandings.",
+            "title": "Clear recruitment information builds better connections",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "HR insights",
+            "headings": [
+              "1.\nOne consistent source of information",
+              "2.\nState all relevant conditions",
+              "3.\nMake room for feedback"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 972
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P25",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P25-A2",
+        "P25-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "From appointments to the person providing guidance, small details help the first day run smoothly.",
+            "title": "Preparing a new worker’s first day",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "For businesses",
+            "headings": [
+              "1.\nBefore the start date",
+              "2.\nOn the first day",
+              "3.\nAfter work begins"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "The Minh Đức team meets around a table"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "From appointments to the person providing guidance, small details help the first day run smoothly.",
+            "title": "Preparing a new worker’s first day",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "For businesses",
+            "headings": [
+              "1.\nBefore the start date",
+              "2.\nOn the first day",
+              "3.\nAfter work begins"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "The Minh Đức team meets around a table"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1087
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 189,
+          "clearance": 72,
+          "scrolling": 2492
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P26",
+      "locale": "en",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P26-A2",
+        "P26-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "Verify sources, protect documents and be cautious about unclear requests.",
+            "title": "Keeping personal information safe when job hunting online",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "HR insights",
+            "headings": [
+              "1.\nCheck the source",
+              "2.\nShare only what is needed",
+              "3.\nBe cautious about payment requests"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "Verify sources, protect documents and be cautious about unclear requests.",
+            "title": "Keeping personal information safe when job hunting online",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "HR insights",
+            "headings": [
+              "1.\nCheck the source",
+              "2.\nShare only what is needed",
+              "3.\nBe cautious about payment requests"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 972
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P21",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P21-A2",
+        "P21-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "一份清晰的清单有助于您在面试前备齐材料并问清所需信息。",
+            "title": "准备工厂求职材料：从哪里开始？",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "面向劳动者",
+            "headings": [
+              "1.\n确认各职位的要求",
+              "2.\n整理信息，便于核查",
+              "3.\n保护个人信息",
+              "4.\n发送申请材料前再核对一遍"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "一名明德员工在户外手持资料"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "一份清晰的清单有助于您在面试前备齐材料并问清所需信息。",
+            "title": "准备工厂求职材料：从哪里开始？",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "面向劳动者",
+            "headings": [
+              "1.\n确认各职位的要求",
+              "2.\n整理信息，便于核查",
+              "3.\n保护个人信息",
+              "4.\n发送申请材料前再核对一遍"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "一名明德员工在户外手持资料"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1300
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P22",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P22-A2",
+        "P22-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "提前明确需求有助于各方在招聘和接收过程中保持一致。",
+            "title": "按生产批次规划补充人员",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "面向企业",
+            "headings": [
+              "1.\n从运营计划开始",
+              "2.\n按实际接收能力安排报到时间",
+              "3.\n寻访人才前统一信息",
+              "4.\n分清用工需求、已约人数和预计到场情况",
+              "5.\n分阶段跟踪与更新",
+              "6.\n每批结束后，为下一批留下一份可用的记录"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "明德团队围桌讨论资料",
+              "明德团队在会上一起查看资料",
+              "明德团队一起核对工作资料"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "提前明确需求有助于各方在招聘和接收过程中保持一致。",
+            "title": "按生产批次规划补充人员",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "面向企业",
+            "headings": [
+              "1.\n从运营计划开始",
+              "2.\n按实际接收能力安排报到时间",
+              "3.\n寻访人才前统一信息",
+              "4.\n分清用工需求、已约人数和预计到场情况",
+              "5.\n分阶段跟踪与更新",
+              "6.\n每批结束后，为下一批留下一份可用的记录"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "明德团队围桌讨论资料",
+              "明德团队在会上一起查看资料",
+              "明德团队一起核对工作资料"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 1722
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P23",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P23-A2",
+        "P23-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "了解工作内容、时间和收入，有助于选择更合适的工作。",
+            "title": "入职前应问清的问题",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "面向劳动者",
+            "headings": [
+              "1.\n日常工作内容是什么？",
+              "2.\n工时和收入如何计算？",
+              "3.\n保存已确认的信息"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "明德员工在户外交流"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "了解工作内容、时间和收入，有助于选择更合适的工作。",
+            "title": "入职前应问清的问题",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "面向劳动者",
+            "headings": [
+              "1.\n日常工作内容是什么？",
+              "2.\n工时和收入如何计算？",
+              "3.\n保存已确认的信息"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "明德员工在户外交流"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 939
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P24",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P24-A2",
+        "P24-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "招聘信息、咨询内容及实际接收情况保持一致，有助于减少误解。",
+            "title": "清晰的招聘信息促成更好的对接",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "人力资源专栏",
+            "headings": [
+              "1.\n统一的信息来源",
+              "2.\n完整说明条件",
+              "3.\n留出反馈渠道"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "招聘信息、咨询内容及实际接收情况保持一致，有助于减少误解。",
+            "title": "清晰的招聘信息促成更好的对接",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "人力资源专栏",
+            "headings": [
+              "1.\n统一的信息来源",
+              "2.\n完整说明条件",
+              "3.\n留出反馈渠道"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 875
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P25",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P25-A2",
+        "P25-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "从约定时间到指导人员，小细节让第一天更加顺利。",
+            "title": "为新员工准备入职第一天",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "面向企业",
+            "headings": [
+              "1.\n入职日前",
+              "2.\n第一天",
+              "3.\n开始工作后"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "明德团队围桌开会"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "从约定时间到指导人员，小细节让第一天更加顺利。",
+            "title": "为新员工准备入职第一天",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "面向企业",
+            "headings": [
+              "1.\n入职日前",
+              "2.\n第一天",
+              "3.\n开始工作后"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "明德团队围桌开会"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1007
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 72,
+          "scrolling": 2396
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P26",
+      "locale": "zh",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P26-A2",
+        "P26-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "核实信息来源，保护证件，对不明确的要求保持谨慎。",
+            "title": "网上求职时保护个人信息",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "人力资源专栏",
+            "headings": [
+              "1.\n核查信息来源",
+              "2.\n仅分享必要信息",
+              "3.\n谨慎对待转账要求"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "核实信息来源，保护证件，对不明确的要求保持谨慎。",
+            "title": "网上求职时保护个人信息",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "人力资源专栏",
+            "headings": [
+              "1.\n核查信息来源",
+              "2.\n仅分享必要信息",
+              "3.\n谨慎对待转账要求"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 812
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P21",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P21-A2",
+        "P21-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "간단한 체크리스트로 면접 전에 서류를 준비하고 필요한 정보를 정확히 확인할 수 있습니다.",
+            "title": "공장 취업 서류 준비: 어디서 시작할까요?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "근로자를 위한 정보",
+            "headings": [
+              "1.\n직무별 요구 사항 확인",
+              "2.\n확인하기 쉽게 정보 정리",
+              "3.\n개인정보 보호",
+              "4.\n지원서를 보내기 전에 최종 확인하기"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "야외에서 자료를 든 민득 직원"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "간단한 체크리스트로 면접 전에 서류를 준비하고 필요한 정보를 정확히 확인할 수 있습니다.",
+            "title": "공장 취업 서류 준비: 어디서 시작할까요?",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "근로자를 위한 정보",
+            "headings": [
+              "1.\n직무별 요구 사항 확인",
+              "2.\n확인하기 쉽게 정보 정리",
+              "3.\n개인정보 보호",
+              "4.\n지원서를 보내기 전에 최종 확인하기"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "야외에서 자료를 든 민득 직원"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1330
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P22",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P22-A2",
+        "P22-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "처음부터 수요를 명확히 하면 인재 발굴과 입사 지원 과정에서 일관되게 협력할 수 있습니다.",
+            "title": "생산 단계별 인력 충원 계획",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "기업을 위한 정보",
+            "headings": [
+              "1.\n운영 계획에서 시작",
+              "2.\n현장에서 실제로 받을 수 있는 인원에 맞춰 일정을 잡으세요",
+              "3.\n인재 발굴 전 정보 합의",
+              "4.\n인력 수요, 확정 일정, 예상 방문 인원을 구분하세요",
+              "5.\n단계별 추적 및 업데이트",
+              "6.\n모집 차수를 마치면 다음에도 쓸 수 있는 내용을 남기세요"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "회의 테이블에서 서류를 함께 검토하는 민득 직원들",
+              "회의에서 업무 자료를 함께 검토하는 민득(Minh Đức) 팀원들",
+              "업무 자료를 함께 대조하는 민득 팀"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "처음부터 수요를 명확히 하면 인재 발굴과 입사 지원 과정에서 일관되게 협력할 수 있습니다.",
+            "title": "생산 단계별 인력 충원 계획",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "기업을 위한 정보",
+            "headings": [
+              "1.\n운영 계획에서 시작",
+              "2.\n현장에서 실제로 받을 수 있는 인원에 맞춰 일정을 잡으세요",
+              "3.\n인재 발굴 전 정보 합의",
+              "4.\n인력 수요, 확정 일정, 예상 방문 인원을 구분하세요",
+              "5.\n단계별 추적 및 업데이트",
+              "6.\n모집 차수를 마치면 다음에도 쓸 수 있는 내용을 남기세요"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "회의 테이블에서 서류를 함께 검토하는 민득 직원들",
+              "회의에서 업무 자료를 함께 검토하는 민득(Minh Đức) 팀원들",
+              "업무 자료를 함께 대조하는 민득 팀"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 1786
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P23",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P23-A2",
+        "P23-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "업무, 근무 시간, 급여를 정확히 알면 더 적합한 일자리를 선택할 수 있습니다.",
+            "title": "입사 전에 확인할 질문",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "근로자를 위한 정보",
+            "headings": [
+              "1.\n매일 어떤 업무를 하나요?",
+              "2.\n근무 시간과 급여는 어떻게 계산하나요?",
+              "3.\n확인한 정보 보관"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "야외에서 대화를 나누는 민득 직원들"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "업무, 근무 시간, 급여를 정확히 알면 더 적합한 일자리를 선택할 수 있습니다.",
+            "title": "입사 전에 확인할 질문",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "근로자를 위한 정보",
+            "headings": [
+              "1.\n매일 어떤 업무를 하나요?",
+              "2.\n근무 시간과 급여는 어떻게 계산하나요?",
+              "3.\n확인한 정보 보관"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "야외에서 대화를 나누는 민득 직원들"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 969
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P24",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P24-A2",
+        "P24-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "채용 공고, 상담, 실제 입사 절차가 일치하면 오해를 줄일 수 있습니다.",
+            "title": "명확한 채용 정보가 더 나은 연결을 만듭니다",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "인사 이야기",
+            "headings": [
+              "1.\n일관된 정보 출처",
+              "2.\n조건을 충분히 안내",
+              "3.\n피드백 창구 마련"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "채용 공고, 상담, 실제 입사 절차가 일치하면 오해를 줄일 수 있습니다.",
+            "title": "명확한 채용 정보가 더 나은 연결을 만듭니다",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "인사 이야기",
+            "headings": [
+              "1.\n일관된 정보 출처",
+              "2.\n조건을 충분히 안내",
+              "3.\n피드백 창구 마련"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 875
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P25",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P25-A2",
+        "P25-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "일정부터 안내 담당자까지 작은 준비가 첫날을 순조롭게 만듭니다.",
+            "title": "신규 근로자의 첫 출근 준비",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "기업을 위한 정보",
+            "headings": [
+              "1.\n입사일 전",
+              "2.\n첫날",
+              "3.\n근무 시작 후"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "테이블에 둘러앉아 회의하는 민득 직원들"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "일정부터 안내 담당자까지 작은 준비가 첫날을 순조롭게 만듭니다.",
+            "title": "신규 근로자의 첫 출근 준비",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "기업을 위한 정보",
+            "headings": [
+              "1.\n입사일 전",
+              "2.\n첫날",
+              "3.\n근무 시작 후"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "테이블에 둘러앉아 회의하는 민득 직원들"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1007
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 72,
+          "scrolling": 2423
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P26",
+      "locale": "ko",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P26-A2",
+        "P26-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "정보 출처를 확인하고 서류를 보호하며 불명확한 요구에 주의하세요.",
+            "title": "온라인 구직 시 개인정보 안전하게 지키기",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "인사 이야기",
+            "headings": [
+              "1.\n정보 출처 확인",
+              "2.\n필요한 정보만 공유",
+              "3.\n송금 요청에 주의"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "정보 출처를 확인하고 서류를 보호하며 불명확한 요구에 주의하세요.",
+            "title": "온라인 구직 시 개인정보 안전하게 지키기",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "인사 이야기",
+            "headings": [
+              "1.\n정보 출처 확인",
+              "2.\n필요한 정보만 공유",
+              "3.\n송금 요청에 주의"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 875
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P21",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P21-A2",
+        "P21-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "簡潔なチェックリストがあれば、面接前に書類を整え、必要な情報を確認できます。",
+            "title": "工場への応募書類、何から始める？",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "働く人向け",
+            "headings": [
+              "1.\n職種ごとの要件を確認する",
+              "2.\n確認しやすく情報を整理する",
+              "3.\n個人情報を守る",
+              "4.\n応募書類を送る前の最終チェック"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "屋外で資料を持つミンドゥックのスタッフ"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "簡潔なチェックリストがあれば、面接前に書類を整え、必要な情報を確認できます。",
+            "title": "工場への応募書類、何から始める？",
+            "h1": 1,
+            "date": "2026-11-12",
+            "category": "働く人向け",
+            "headings": [
+              "1.\n職種ごとの要件を確認する",
+              "2.\n確認しやすく情報を整理する",
+              "3.\n個人情報を守る",
+              "4.\n応募書類を送る前の最終チェック"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "屋外で資料を持つミンドゥックのスタッフ"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1330
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P22",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P22-A2",
+        "P22-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "最初にニーズを明確にすると、人材確保から受け入れまで一貫して連携できます。",
+            "title": "生産期ごとの人員補充を計画する",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "企業向け",
+            "headings": [
+              "1.\n運営計画から始める",
+              "2.\n実際に受け入れられる人数に合わせて日程を組む",
+              "3.\n人材確保の前に情報を統一する",
+              "4.\n必要人数、予約数、来場見込みを区別する",
+              "5.\n段階ごとに追跡・更新する",
+              "6.\n各回の終わりに、次回に生かせる情報を残す"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "テーブルで資料を確認するミンドゥックのスタッフ",
+              "打ち合わせで一緒に資料を確認するMinh Đứcのスタッフ",
+              "仕事の資料を一緒に照合するMinh Đứcのスタッフ"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "最初にニーズを明確にすると、人材確保から受け入れまで一貫して連携できます。",
+            "title": "生産期ごとの人員補充を計画する",
+            "h1": 1,
+            "date": "2026-11-10",
+            "category": "企業向け",
+            "headings": [
+              "1.\n運営計画から始める",
+              "2.\n実際に受け入れられる人数に合わせて日程を組む",
+              "3.\n人材確保の前に情報を統一する",
+              "4.\n必要人数、予約数、来場見込みを区別する",
+              "5.\n段階ごとに追跡・更新する",
+              "6.\n各回の終わりに、次回に生かせる情報を残す"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "テーブルで資料を確認するミンドゥックのスタッフ",
+              "打ち合わせで一緒に資料を確認するMinh Đứcのスタッフ",
+              "仕事の資料を一緒に照合するMinh Đứcのスタッフ"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 1849
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P23",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P23-A2",
+        "P23-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "仕事内容、時間、給与を理解すると、自分に合う仕事を選びやすくなります。",
+            "title": "就職前に確認したい質問",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "働く人向け",
+            "headings": [
+              "1.\n毎日の仕事内容は？",
+              "2.\n勤務時間と給与はどう計算される？",
+              "3.\n確認した情報を残す"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "屋外で話し合うミンドゥックのスタッフ"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "仕事内容、時間、給与を理解すると、自分に合う仕事を選びやすくなります。",
+            "title": "就職前に確認したい質問",
+            "h1": 1,
+            "date": "2026-11-08",
+            "category": "働く人向け",
+            "headings": [
+              "1.\n毎日の仕事内容は？",
+              "2.\n勤務時間と給与はどう計算される？",
+              "3.\n確認した情報を残す"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "屋外で話し合うミンドゥックのスタッフ"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1007
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P24",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P24-A2",
+        "P24-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "求人情報、相談内容、実際の受け入れが一貫していると誤解を減らせます。",
+            "title": "明確な採用情報がより良いつながりを生む",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "人事コラム",
+            "headings": [
+              "1.\n一貫した情報源",
+              "2.\n条件を十分に示す",
+              "3.\nフィードバックを受け付ける"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "求人情報、相談内容、実際の受け入れが一貫していると誤解を減らせます。",
+            "title": "明確な採用情報がより良いつながりを生む",
+            "h1": 1,
+            "date": "2026-11-05",
+            "category": "人事コラム",
+            "headings": [
+              "1.\n一貫した情報源",
+              "2.\n条件を十分に示す",
+              "3.\nフィードバックを受け付ける"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 909
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 80,
+          "scrolling": 2654
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P25",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P25-A2",
+        "P25-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "予定から指導担当者まで、小さな配慮が初日を円滑にします。",
+            "title": "新しい従業員の初日を準備する",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "企業向け",
+            "headings": [
+              "1.\n受け入れ日の前に",
+              "2.\n初日に",
+              "3.\n勤務開始後に"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": [
+              "テーブルを囲んで打ち合わせるミンドゥックのスタッフ"
+            ]
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "予定から指導担当者まで、小さな配慮が初日を円滑にします。",
+            "title": "新しい従業員の初日を準備する",
+            "h1": 1,
+            "date": "2026-11-02",
+            "category": "企業向け",
+            "headings": [
+              "1.\n受け入れ日の前に",
+              "2.\n初日に",
+              "3.\n勤務開始後に"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": [
+              "テーブルを囲んで打ち合わせるミンドゥックのスタッフ"
+            ]
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 72,
+          "scrolling": 1007
+        },
+        "destination": "/#business-contact",
+        "landing": {
+          "active": true,
+          "top": 190,
+          "clearance": 72,
+          "scrolling": 2449
+        }
+      },
+      "status": "Pass"
+    },
+    {
+      "page": "P26",
+      "locale": "ja",
+      "ids": [
+        "B08",
+        "CS-B06-3",
+        "P26-A2",
+        "P26-E1"
+      ],
+      "actual": {
+        "layout": [
+          {
+            "width": 390,
+            "document": 390,
+            "reading": 354,
+            "maxReading": 668.78125,
+            "subtitle": "情報源を確認し、書類を守り、不明確な要求には慎重に対応しましょう。",
+            "title": "オンライン求職で個人情報を守る",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "人事コラム",
+            "headings": [
+              "1.\n情報源を確認する",
+              "2.\n必要な情報だけを共有する",
+              "3.\n送金の要求に注意する"
+            ],
+            "proseFont": 17,
+            "titleFont": 34,
+            "sidebarBelow": true,
+            "alt": []
+          },
+          {
+            "width": 1440,
+            "document": 1440,
+            "reading": 668.78125,
+            "maxReading": 668.78125,
+            "subtitle": "情報源を確認し、書類を守り、不明確な要求には慎重に対応しましょう。",
+            "title": "オンライン求職で個人情報を守る",
+            "h1": 1,
+            "date": "2026-10-30",
+            "category": "人事コラム",
+            "headings": [
+              "1.\n情報源を確認する",
+              "2.\n必要な情報だけを共有する",
+              "3.\n送金の要求に注意する"
+            ],
+            "proseFont": 17,
+            "titleFont": 56.16,
+            "sidebarBelow": false,
+            "alt": []
+          }
+        ],
+        "anchor": {
+          "active": true,
+          "top": 100,
+          "clearance": 80,
+          "scrolling": 875
+        },
+        "destination": "/jobs",
+        "landing": {}
+      },
+      "status": "Pass"
+    }
+  ],
+  "missing": [],
+  "page_errors": [],
+  "site_sha": "814828c92ccafba27b4f5c3f7394f9665c2724c7",
+  "runner_sha256": "c480fd4fcda0c7e2d8c644cc7c3f0678604e6f279f36dc61afcbc79429aca57c"
+}

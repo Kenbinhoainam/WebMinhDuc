@@ -1,0 +1,5 @@
+
+> minhduc-prototype@1.0.0 test:catalog
+> node tests/catalog-parity.mjs
+
+PASS generated catalogs: freshness, merged and jobs-only parity, translation and whitespace in five locales

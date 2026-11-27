@@ -1,0 +1,255 @@
+{
+  "sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "mount": "/",
+  "checks": [
+    {
+      "page": "P27",
+      "locale": "vi",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/about-us#activities",
+      "secondary": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news",
+      "status": "Pass"
+    },
+    {
+      "page": "P32",
+      "locale": "vi",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education?form=F05#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "locale": "vi",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "locale": "vi",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "locale": "vi",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P27",
+      "locale": "en",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/about-us#activities",
+      "secondary": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/news",
+      "status": "Pass"
+    },
+    {
+      "page": "P32",
+      "locale": "en",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education?form=F05#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "locale": "en",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/tu-xa-quan-tri?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/tu-xa-quan-tri?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "locale": "en",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "locale": "en",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/tu-xa-ke-toan?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/education/tu-xa-ke-toan?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P27",
+      "locale": "zh",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/about-us#activities",
+      "secondary": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/news",
+      "status": "Pass"
+    },
+    {
+      "page": "P32",
+      "locale": "zh",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education?form=F05#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "locale": "zh",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/tu-xa-quan-tri?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/tu-xa-quan-tri?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "locale": "zh",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "locale": "zh",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/tu-xa-ke-toan?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/education/tu-xa-ke-toan?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P27",
+      "locale": "ko",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/about-us#activities",
+      "secondary": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/news",
+      "status": "Pass"
+    },
+    {
+      "page": "P32",
+      "locale": "ko",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education?form=F05#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "locale": "ko",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/tu-xa-quan-tri?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/tu-xa-quan-tri?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "locale": "ko",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "locale": "ko",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/tu-xa-ke-toan?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/education/tu-xa-ke-toan?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P27",
+      "locale": "ja",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/about-us#activities",
+      "secondary": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/news",
+      "status": "Pass"
+    },
+    {
+      "page": "P32",
+      "locale": "ja",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "destination": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education?form=F05#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "locale": "ja",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/tu-xa-quan-tri?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/tu-xa-quan-tri?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "locale": "ja",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "locale": "ja",
+      "ids": [
+        "CS-B06-3"
+      ],
+      "F05": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/tu-xa-ke-toan?form=F05#dang-ky",
+      "F06": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/education/tu-xa-ke-toan?form=F06#dang-ky",
+      "status": "Pass"
+    }
+  ],
+  "missing": [],
+  "page_errors": [],
+  "site_sha": "814828c92ccafba27b4f5c3f7394f9665c2724c7",
+  "limits": "Root-mounted Site offline Chromium, 390×900 on P27/P32/P34 and 1440×900 on P33/P35. Context destinations and visible forms only. Program records and form payloads not sent."
+}

@@ -1,0 +1,35 @@
+2026-11-27T13:37:48.790210+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test
+
+> minhduc-prototype@1.0.0 test
+> node tests/jobs-logic.mjs
+
+PASS 8 distinct job IDs and routes
+PASS No real partner assigned to demo jobs
+PASS Vietnamese accent and whitespace normalization
+PASS Malformed saved storage is safe
+PASS Saved IDs sanitize duplicates and unknown values
+PASS Save persists and count updates
+PASS Fresh module restores saved jobs
+PASS Unknown IDs cannot be saved
+PASS Cross-tab remove clears stale memory
+PASS Cross-tab clear resets count
+PASS Failed write still toggles existing state
+PASS Blocked storage remains usable in memory
+PASS Optional attachments can be absent
+PASS PDF exactly 5,000,000 bytes accepted
+PASS Attachment above 5,000,000 bytes rejected
+PASS Maximum three files totaling 15,000,000 bytes accepted
+PASS More than three files rejected
+PASS Unsupported extension rejected
+PASS Renamed incompatible MIME rejected
+PASS Uppercase DOCX accepted
+PASS Generic file MIME accepted with allowed extension
+PASS Missing file MIME accepted with allowed extension
+22 checks passed
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 0

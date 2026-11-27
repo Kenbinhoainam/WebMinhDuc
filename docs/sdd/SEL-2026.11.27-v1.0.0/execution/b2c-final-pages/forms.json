@@ -1,0 +1,217 @@
+{
+  "source": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_sha256": "fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1",
+  "browser": "156.0.8078.79",
+  "cases": [
+    {
+      "page": "P33",
+      "width": 520,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "chinh-quy-cong-nghe",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "chinh-quy-cong-nghe"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "chinh-quy-cong-nghe",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "chinh-quy-cong-nghe"
+        }
+      ],
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "width": 767,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "chinh-quy-cong-nghe",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "chinh-quy-cong-nghe"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "chinh-quy-cong-nghe",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "chinh-quy-cong-nghe"
+        }
+      ],
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "width": 520,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        }
+      ],
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "width": 767,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        }
+      ],
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "width": 520,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        }
+      ],
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "width": 767,
+      "keyboard_errors_and_receipts": [
+        {
+          "mode": "F05",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F05",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F05&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        },
+        {
+          "mode": "F06",
+          "selected": "",
+          "receipt": "DEMO-0001",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0001",
+          "retry_selected": ""
+        },
+        {
+          "mode": "F06",
+          "selected": "tu-xa-quan-tri",
+          "receipt": "DEMO-0002",
+          "href": "/WebMinhDuc/admin-demo?type=F06&id=DEMO-0002",
+          "retry_selected": "tu-xa-quan-tri"
+        }
+      ],
+      "status": "Pass"
+    }
+  ]
+}

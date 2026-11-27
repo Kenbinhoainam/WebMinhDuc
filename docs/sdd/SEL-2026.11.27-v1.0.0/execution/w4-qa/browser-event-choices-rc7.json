@@ -1,0 +1,230 @@
+{
+  "build_sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "site_sha": "bdf4066be8557f0c3765cbd9732e12f2922e881f",
+  "choices": [
+    {
+      "choice_id": "P27-C1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Three fixtures exercise both status values, real route/query changes, Back with the selected status, and reset to all without query. No available status fixture is empty.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The rendered count has polite aria-live and changes from 3 to 2 upcoming or 1 past, with both keyboard and touch.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Each rendered title navigates to its matching detail; each separate schedule CTA lands at #schedule and focuses the agenda heading.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-C4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Browser Back and explicit archive return preserve upcoming/past, with the latter landing at #event-listings.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-B4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Each journey follows the accurately named news link to /news. Three fixtures and fixed sample date 2026-11-25 were checked.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Each listing CTA reaches the correct agenda with sample dates and times and provides the matching company phone link.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P27-E4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "No registration form/button is offered by any detail and listing CTAs lead to schedule/documentation, with the phone URL left inert.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-C1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Listing and detail schedule CTA plus all five exact fragment paths work by keyboard and emulated touch. Each heading is focused and visually clear of the header.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-C2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Agenda starts and UTC offset survive navigation; keyboard and emulated touch preserve anchor focus under reduced motion.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": "Normal-motion per-item reveal and focus while scrolling."
+    },
+    {
+      "choice_id": "P28-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both other-event destinations are navigable with Back to the original detail fragment; the archive link returns to the correct filtered listing.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-C4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Explicit archive return retains the original status in the URL and lands at the focused listing heading.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-B4",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Both figures have named captions, nonempty alt, and adjacent explicit copy saying the photographs came from other activities. Exact sample dates, times, place, and agenda starts were checked.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": "Independent verification of the actual depicted activities."
+    },
+    {
+      "choice_id": "P28-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Local link accessible name is Gọi hỏi thông tin 081 8919666 and href matches company tel:0818919666. No call was made.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P28-E4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The detail only provides informational navigation and phone; no event registration or appointment form/button is rendered.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/0",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-C1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Listing and detail schedule CTA plus all five exact fragment paths work by keyboard and emulated touch. Each heading is focused and visually clear of the header.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-C2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Agenda starts and UTC offset survive navigation; keyboard and emulated touch preserve anchor focus under reduced motion.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": "Normal-motion per-item reveal and focus while scrolling."
+    },
+    {
+      "choice_id": "P29-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both other-event destinations are navigable with Back to the original detail fragment; the archive link returns to the correct filtered listing.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-C4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Explicit archive return retains the original status in the URL and lands at the focused listing heading.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-B4",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Both figures have named captions, nonempty alt, and adjacent explicit copy saying the photographs came from other activities. Exact sample dates, times, place, and agenda starts were checked.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": "Independent verification of the actual depicted activities."
+    },
+    {
+      "choice_id": "P29-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Local link accessible name is Gọi hỏi thông tin 081 8919666 and href matches company tel:0818919666. No call was made.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P29-E4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The detail only provides informational navigation and phone; no event registration or appointment form/button is rendered.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/1",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-C1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Listing and detail schedule CTA plus all five exact fragment paths work by keyboard and emulated touch. Each heading is focused and visually clear of the header.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-C2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Agenda starts and UTC offset survive navigation; keyboard and emulated touch preserve anchor focus under reduced motion.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": "Normal-motion per-item reveal and focus while scrolling."
+    },
+    {
+      "choice_id": "P30-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both other-event destinations are navigable with Back to the original detail fragment; the archive link returns to the correct filtered listing.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-C4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Explicit archive return retains the original status in the URL and lands at the focused listing heading.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-B4",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Both figures have named captions, nonempty alt, and adjacent explicit copy saying the photographs came from other activities. Exact sample dates, times, place, and agenda starts were checked.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": "Independent verification of the actual depicted activities."
+    },
+    {
+      "choice_id": "P30-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Local link accessible name is Gọi hỏi thông tin 081 8919666 and href matches company tel:0818919666. No call was made.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P30-E4",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The detail only provides informational navigation and phone; no event registration or appointment form/button is rendered.",
+      "evidence_ref": "docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/browser-event-journeys-rc7.json#/checks/2",
+      "remaining": ""
+    }
+  ]
+}
