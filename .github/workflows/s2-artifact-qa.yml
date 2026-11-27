@@ -5,7 +5,7 @@ on:
 permissions:
   contents: read
 env:
-  QA_SHA: c83bd9001cf2629dfb1934515fcf1c05ae553910
+  QA_SHA: 66b76036469f07b35bc3cb188dc6b61d40fdda32
 jobs:
   chromium:
     runs-on: ubuntu-24.04
