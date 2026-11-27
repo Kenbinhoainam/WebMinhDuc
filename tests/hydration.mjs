@@ -40,7 +40,28 @@ if(!process.argv.includes('--case')) {
  const errors=[]; const original=console.error;console.error=(...args)=>{errors.push(args.map(String).join(' '));original(...args)};
  const initialHeading=window.document.querySelector('h1');assert.ok(initialHeading);
  await import(pathToFileURL(`${process.cwd()}/${temp}/client.mjs`).href);
- await new Promise(resolve=>setTimeout(resolve,800));
+ if (path==='/saved-jobs') {
+   // The header and the lazy saved-list route hydrate independently. Observe the
+   // route's actual completion, then verify its count/focusable cards below.
+   await new Promise((resolve,reject)=>{
+     const root=window.document.getElementById('root');
+     const observer=new window.MutationObserver(check);
+     const timeout=setTimeout(()=>{
+       observer.disconnect();
+       reject(new Error('Saved jobs did not finish hydrating within 5 seconds'));
+     },5000);
+     function check() {
+       if (!root.querySelector('.jobs-saved-directory .jobs-result-bar')) return;
+       clearTimeout(timeout);
+       observer.disconnect();
+       resolve();
+     }
+     observer.observe(root,{childList:true,subtree:true});
+     check();
+   });
+ } else {
+   await new Promise(resolve=>setTimeout(resolve,800));
+ }
  assert.equal(errors.length,0,`React errors: ${errors.join('\n')}`);
  assert.ok(window.document.querySelector('h1')?.textContent, 'client content missing');
  assert.equal(window.document.querySelector('.cookie-notice'),null,'first visit omits the storage notice');

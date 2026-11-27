@@ -147,7 +147,7 @@ html:has(.jobs-detail-section),body:has(.jobs-detail-section){font-size:16px}
 .application-success>svg{color:#287248}
 .jobs-browser :is(a,button,input,select,[tabindex]):focus-visible,.jobs-detail-section :is(a,button):focus-visible,.jobs-education-link a:focus-visible,.jobs-mast-link:focus-visible{outline:3px solid #1b5d9e;outline-offset:3px}
 @media(prefers-reduced-motion:no-preference){
- .job-save{transition:color 120ms ease,background-color 120ms ease,border-color 120ms ease}
+ .job-save{transition:color var(--motion-t1) var(--motion-ease),background-color var(--motion-t1) var(--motion-ease),border-color var(--motion-t1) var(--motion-ease)}
  .job-card h3 a>svg{transition:transform 160ms ease-out}
  .job-card h3 a:focus-visible>svg{transform:translate(2px,-2px)}
 }

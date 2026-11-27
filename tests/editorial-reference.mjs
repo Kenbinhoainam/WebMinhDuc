@@ -99,6 +99,9 @@ try {
   assert.equal(prerender('/news?category=bad&page=25').querySelectorAll('.ed-archive-row').length,(articles.length - 1) % pageSize + 1);
   assert.equal(prerender('/news?page=-5').querySelectorAll('.editorial-feature-slide').length,featuredArticles.length);
   const news = prerender('/news');
+  assert.equal(news.querySelectorAll('.ed-filters button[aria-pressed=true]').length,1);
+  assert.equal(news.querySelector('.ed-pagination button[aria-current=page]').textContent,'1');
+  assert.ok(news.querySelector('.ed-pagination button[aria-label="Trang trước"]').disabled);
   const leadReader = prerender('/news/nhu-cau-tuyen-dung');
   assert.ok(leadReader.querySelectorAll('.ed-prose-section').length >= 6,'the lead supports sustained reading');
   const leadFigures = [...leadReader.querySelectorAll('.ed-inline-photo')];
@@ -159,7 +162,15 @@ try {
   slides.forEach((slide,i) => Object.defineProperty(slide,'offsetLeft',{value:80 + i * 400}));
   await act(() => observer([{isIntersecting:true}]));
   assert.equal(typeof timer,'function');
-  assert.equal(track.closest('section').querySelector('button'),null,'the story rail has no manual control bar');
+  const pause = track.closest('section').querySelector('.ed-feature-pause');
+  assert.equal(pause.getAttribute('aria-controls'),track.id);
+  await click(pause);
+  assert.equal(timer,undefined,'explicit pause stops the timer');
+  await act(() => observer([{isIntersecting:true}]));
+  assert.equal(timer,undefined,'pause continues after visibility changes');
+  await click(pause);
+  await act(() => observer([{isIntersecting:true}]));
+  assert.equal(typeof timer,'function','explicit play restarts on visibility');
   assert.match(slides[0].querySelector('img').getAttribute('srcset'),/240w/);
   Object.defineProperties(track,{scrollWidth:{value:800},clientWidth:{value:400}});
   let nextFrame;
@@ -195,12 +206,22 @@ try {
   const thumbnail = document.querySelector('.ed-archive a img');
   const articlePath = thumbnail.closest('a').getAttribute('href');
   await click(thumbnail);
-  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async() => {throw new dom.window.DOMException('Denied','NotAllowedError');}}});
+  let copiedUrl;
+  let denied = true;
+  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async url => {
+    if (denied) throw new dom.window.DOMException('Denied','NotAllowedError');
+    copiedUrl = url;
+  }}});
   const copy = document.querySelector('.ed-share button');
   await click(copy);
   const fallback = document.querySelector('.ed-copy-fallback input');
   assert.equal(document.activeElement,fallback);
   assert.ok(fallback.value.endsWith(articlePath));
+  denied = false;
+  await click(copy);
+  assert.ok(copiedUrl.endsWith(articlePath));
+  assert.match(document.querySelector('.ed-share [role=status]').textContent,/Đã sao chép/);
+  assert.equal(document.querySelector('.ed-copy-fallback'),null);
   await click(document.querySelector('.ed-actions a:not(.btn)'));
   assert.equal(location.search,'?category=employers');
   for (const [from, start, follow = '.ed-related a'] of [
@@ -230,7 +251,7 @@ try {
   assert.equal(location.search,'?status=upcoming');
   assert.equal(document.querySelectorAll('.ed-event-line').length,2);
   await act(() => root.unmount()); dom.window.close();
-  console.log('PASS editorial routes, numbered chapters, captioned images, latest and related links, real galleries, feature keyboard navigation, clipboard fallback and filter history');
+  console.log('PASS editorial routes, numbered chapters, captioned images, latest and related links, real galleries, feature controls and keyboard navigation, clipboard fallback and filter history');
 } finally {
   await rm(temp,{recursive:true,force:true});
 }

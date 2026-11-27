@@ -1,4 +1,5 @@
 import {build} from 'esbuild';
+import {sitePath, outputPath} from './pages-paths.mjs';
 import {mkdir,rm,readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
@@ -9,8 +10,8 @@ import {MemoryRouter,useNavigate} from 'react-router-dom';
 
 const temp='.about-anchors';await mkdir(temp,{recursive:true});
 try {
- await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage'; export {Header} from './src/Header'; export {PageTransition} from './src/App'; export {LocaleProvider,localeBase,languageSwitchUrl} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",resolveDir:process.cwd(),sourcefile:'about-anchors-test.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
- const {AboutPage,Header,PageTransition,LocaleProvider,localeBase,languageSwitchUrl,loadLocale}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
+ await build({stdin:{contents:"export {AboutPage} from './src/pages/info/AboutPage'; export {Header} from './src/Header'; export {PageTransition} from './src/App'; export {LocaleProvider,localeBase,languageSwitchUrl} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog'; export {originalImageSource} from './src/media';",resolveDir:process.cwd(),sourcefile:'about-anchors-test.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/bundle.mjs`,logLevel:'silent'});
+ const {AboutPage,Header,PageTransition,LocaleProvider,localeBase,languageSwitchUrl,loadLocale,originalImageSource}=await import(pathToFileURL(`${process.cwd()}/${temp}/bundle.mjs`).href);
  const ids=['profile','history','partners','activities','achievements','business-contact'];
  const menuIds=['profile','history','partners','achievements'];let vietnameseLabels;
  for(const locale of ['vi','en','zh','ko','ja']){
@@ -24,17 +25,17 @@ try {
   assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/about-us#profile`,`${locale}: profile menu opens the profile chapter`);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.deepEqual([...doc.querySelectorAll('.about-chapters a')].map(a=>a.hash),['#profile','#history','#partners','#activities','#achievements']);
-  assert.ok(doc.querySelector('.md-masthead-figure img[src^="/assets/minhduc-v18/about-team"]'),'masthead uses the genuine team photo');
+  assert.ok(doc.querySelector(`.md-masthead-figure img[src^="${sitePath('/assets/minhduc-v18/about-team')}"]`),'masthead uses the genuine team photo');
   assert.ok(doc.querySelector(`.about-profile-actions a[href="${base}/about-us#business-contact"]`),'staffing CTA reaches the form on this page');
-  assert.equal(doc.querySelectorAll('#activities img[src^="/assets/minhduc-v16/"]').length,4);
+  assert.equal(doc.querySelectorAll(`#activities img[src^="${sitePath('/assets/minhduc-v16/')}"]`).length,4);
   assert.ok([...doc.querySelectorAll('#history [role=tab]')].every(tab=>tab.textContent.trim() && !/^\d+$/.test(tab.textContent.trim())),'phases have readable names');
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
   assert.equal(doc.querySelectorAll('.md-team-overview img').length,1,'one genuine group image accompanies the role list');
   const teamPhoto=doc.querySelector('.md-team-photo');
-  assert.equal(teamPhoto.getAttribute('src'),'/assets/minhduc-v18/field-team.webp');
+  assert.equal(outputPath(originalImageSource(teamPhoto.getAttribute('src'))),'/assets/minhduc-v18/field-team.webp');
   assert.match(teamPhoto.getAttribute('srcset'), /480w.*960w.*1600w/,'documentary role image serves phone and desktop variants');
   assert.equal(doc.querySelectorAll('.info-team-grid button').length,4,'four accessible role details');
-  assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>img.getAttribute('src').startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
+  assert.ok([...doc.querySelectorAll('#history .md-history-image img')].every(img=>outputPath(img.getAttribute('src')).startsWith('/assets/minhduc-')),'history uses Minh Đức imagery');
   const labels=[...doc.querySelectorAll('#profile .about-scope-item > span')].map(node=>node.textContent.trim());
   assert.equal(labels.length,4);if(locale==='vi')vietnameseLabels=labels;else assert.ok(labels.every((label,index)=>label!==vietnameseLabels[index]),`${locale}: all scope labels translated`);
   const profile=doc.getElementById('profile');

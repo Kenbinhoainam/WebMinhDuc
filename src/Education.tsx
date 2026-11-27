@@ -4,9 +4,10 @@ import { ArrowUpRight } from 'lucide-react';
 import { PageMasthead } from './PageMasthead';
 import { learningSpace, learningAlt } from './pages/info/data';
 import { RevealFrame } from './motion';
+import {useTranslation} from './i18n';
 import './education.css';
 import { createDemoSubmission } from './demo-submissions';
-import { FILE_ACCEPT,validateDemoFiles,validDemoPhone,validOptionalEmail } from './sharedformvalidation';
+import { FILE_ACCEPT,validateDemoFiles,validDemoPhone,validOptionalEmail, type FileSummary } from './sharedformvalidation';
 import { educationPrograms } from './education-data';
 export { educationPrograms } from './education-data';
 
@@ -25,34 +26,156 @@ function ProgramDirectory() {
     </div>
   </section>;
 }
-function EducationForm({ program }: { program?: string }) {
- const location = useLocation();
- const navigate = useNavigate();
- const submitted = useRef(false);
- const type = new URLSearchParams(location.search).get('form') === 'F06' ? 'F06' : 'F05';
- const [receipt,setReceipt] = useState('');
- const [errors,setErrors] = useState<Record<string,string>>({});
- const [selectedProgram,setSelectedProgram] = useState(program || '');
- const formRef = useRef<HTMLFormElement>(null);
- const receiptRef = useRef<HTMLHeadingElement>(null);
- useEffect(() => { if (receipt) receiptRef.current?.focus({preventScroll:true}); }, [receipt]);
- useEffect(() => { setReceipt(''); setErrors({}); submitted.current = false; }, [type]);
- function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();if(submitted.current)return;const form=event.currentTarget,d=new FormData(form),next:Record<string,string>={};
-  if(!String(d.get('name')||'').trim())next.name='Vui lòng nhập họ tên.';if(!validDemoPhone(String(d.get('phone')||'')))next.phone='Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
-  if(type==='F06'&&!validOptionalEmail(String(d.get('email')||'')))next.email='Email chưa đúng định dạng.';
-  if(type==='F06'){const input=form.elements.namedItem('document') as HTMLInputElement;const err=validateDemoFiles(Array.from(input.files||[]));if(err)next.document=err;}
-  setErrors(next);if(Object.keys(next).length){const first=Object.keys(next)[0];requestAnimationFrame(()=>formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus());return;}
-  submitted.current=true;const record=createDemoSubmission({type,name:String(d.get('name')),phone:String(d.get('phone')),source:location.pathname,linkId:selectedProgram||undefined,fields:{program:selectedProgram,email:type==='F06'?String(d.get('email')||''):'',question:type==='F05'?String(d.get('question')||''):''}});setReceipt(record.id);
- }
- function choose(next: 'F05'|'F06') {
-   if (next === type) return;
-   const query = new URLSearchParams(location.search);
-   query.set('form', next);
-   navigate({pathname: location.pathname, search: query.toString(), hash:'#dang-ky'});
- }
- const error=(key:string)=>errors[key]?<small id={`education-${key}-error`} className="education-error" role="alert">{errors[key]}</small>:null;
- return <section className="section education-form-section" id="dang-ky" tabIndex={-1}><div className="container education-form-layout"><div><h2>Tư vấn hoặc nộp hồ sơ</h2><p>Chọn tư vấn nếu bạn muốn tìm hiểu thêm, hoặc chọn hồ sơ để trải nghiệm bước đăng ký.</p><p className="education-note">Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài. Không tải giấy tờ thật.</p></div><div className="education-form-card"><div className="education-form-tabs" aria-label="Mục đích đăng ký"><button type="button" aria-pressed={type==='F05'} onClick={()=>choose('F05')}>Tư vấn tuyển sinh</button><button type="button" aria-pressed={type==='F06'} onClick={()=>choose('F06')}>Hồ sơ đăng ký</button></div>{receipt?<div className="education-success" role="status"><h3 ref={receiptRef} tabIndex={-1}><span>Hoàn tất mô phỏng</span> {type}</h3><p>Mã mô phỏng: <strong>{receipt}</strong></p><p>Dữ liệu mẫu chỉ giữ trong bộ nhớ phiên trang; không gửi ra ngoài. Không dùng thông tin thật.</p><Link to={`/admin-demo?type=${type}&id=${receipt}`} className="btn">Xem quản trị minh họa</Link><button type="button" className="education-again" onClick={()=>{setReceipt('');submitted.current=false}}>Thử lại biểu mẫu</button></div>:<form ref={formRef} onSubmit={submit} noValidate><h3>{type==='F05'?'Đăng ký tư vấn tuyển sinh':'Hồ sơ đăng ký tuyển sinh'}</h3><label>Họ và tên <span>*</span><input name="name" required autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errors.name?'education-name-error':undefined}/>{error('name')}</label><label>Số điện thoại <span>*</span><input name="phone" required type="tel" inputMode="tel" autoComplete="tel" aria-invalid={!!errors.phone} aria-describedby={errors.phone?'education-phone-error':undefined}/>{error('phone')}</label>{type==='F06'&&<label>Email (không bắt buộc)<input name="email" type="email" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email?'education-email-error':undefined}/>{error('email')}</label>}<label>Chương trình quan tâm <select name="program" value={selectedProgram} onChange={e=>setSelectedProgram(e.currentTarget.value)}><option value="">Chưa chọn</option><option value="other">Khác / Chưa rõ</option>{educationPrograms.map(p=><option key={p.slug} value={p.slug}>{p.title} · {p.mode} (minh họa)</option>)}</select></label>{type==='F05'?<label>Nội dung cần tư vấn<textarea name="question" rows={3}/></label>:<><label>Tệp hồ sơ minh họa (không bắt buộc)<input name="document" type="file" multiple accept={FILE_ACCEPT} onChange={event=>{const message=validateDemoFiles(Array.from(event.currentTarget.files||[]));setErrors(previous=>{const next={...previous};if(message)next.document=message;else delete next.document;return next})}} aria-invalid={!!errors.document} aria-describedby={errors.document?'education-file-help education-document-error':'education-file-help'}/></label><small id="education-file-help">Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX; 5 MB/tệp, tổng 15 MB. Tệp không được tải lên.</small>{error('document')}</>}<button className="btn" type="submit">{type==='F05'?'Mô phỏng gửi tư vấn':'Mô phỏng gửi hồ sơ'}</button></form>}</div></div></section>;
+type EducationMode = 'F05' | 'F06';
+type EducationDraft = {fields: Record<string, string>; files: FileSummary[]};
+
+function EducationForm({program}: {program?: string}) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const type = new URLSearchParams(location.search).get('form') === 'F06' ? 'F06' : 'F05';
+  const queryMode = (next: EducationMode) => {
+    if (next === type) return;
+    const query = new URLSearchParams(location.search);
+    query.set('form', next);
+    navigate({pathname: location.pathname, search: query.toString(), hash:'#dang-ky'});
+  };
+  const drafts = useRef<Record<EducationMode, EducationDraft>>({
+    F05:{fields:{program:program ?? ''}, files:[]}, F06:{fields:{program:program ?? ''}, files:[]},
+  });
+  return <section className="section education-form-section" id="dang-ky" tabIndex={-1}><div className="container education-form-layout">
+    <div><h2>Tư vấn hoặc nộp hồ sơ</h2><p>Chọn tư vấn nếu bạn muốn tìm hiểu thêm, hoặc chọn hồ sơ để trải nghiệm bước đăng ký.</p>
+      <p className="education-note">Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài. Không tải giấy tờ thật.</p></div>
+    <div className="education-form-card">
+      <div className="education-form-tabs" role="group" aria-label="Mục đích đăng ký">
+        <button type="button" aria-pressed={type === 'F05'} onClick={() => queryMode('F05')}>Tư vấn tuyển sinh</button>
+        <button type="button" aria-pressed={type === 'F06'} onClick={() => queryMode('F06')}>Hồ sơ đăng ký</button>
+      </div>
+      <EducationFields key={type} type={type} draft={drafts.current[type]} source={location.pathname}/>
+    </div>
+  </div></section>;
 }
+
+function EducationFields({type, draft, source}: {type: EducationMode; draft: EducationDraft; source: string}) {
+  const t = useTranslation();
+  const submitted = useRef(false), attempted = useRef(false), restarting = useRef(false);
+  const [receipt,setReceipt] = useState('');
+  const [errors,setErrors] = useState<Record<string,string>>({});
+  const [files,setFiles] = useState(draft.files);
+  const formRef = useRef<HTMLFormElement>(null), fileRef = useRef<HTMLInputElement>(null), receiptRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (receipt) receiptRef.current?.focus();
+    else if (restarting.current) {
+      formRef.current?.querySelector<HTMLInputElement>('[name=name]')?.focus();
+      restarting.current = false;
+    }
+  },[receipt]);
+
+  function validate(name: string, value: string) {
+    if (name === 'name' && !value.trim()) return 'Vui lòng nhập họ tên.';
+    if (name === 'phone' && !validDemoPhone(value)) return 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
+    if (name === 'email' && !validOptionalEmail(value)) return 'Email chưa đúng định dạng.';
+    return '';
+  }
+  function setFieldError(name: string, message: string) {
+    setErrors(previous => {
+      if (message) return {...previous,[name]:message};
+      const next = {...previous};
+      delete next[name];
+      return next;
+    });
+  }
+  function remember(event: FormEvent<HTMLFormElement>) {
+    const target = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    if (!target.name || target.name === 'document') return;
+    draft.fields[target.name] = target.value;
+    if (attempted.current) setFieldError(target.name,validate(target.name,target.value));
+  }
+  function updateFiles(next: FileSummary[]) {
+    draft.files = next;
+    setFiles(next);
+    setFieldError('document',validateDemoFiles(next));
+  }
+  function selectFiles(input: HTMLInputElement) {
+    const next = Array.from(input.files ?? [], ({name,size,type}) => ({name,size,type}));
+    if (next.length) updateFiles(next);
+    input.value = '';
+  }
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitted.current) return;
+    attempted.current = true;
+    const data = new FormData(event.currentTarget);
+    const value = (name: string) => String(data.get(name) ?? '');
+    const required = type === 'F06' ? ['name','phone','email'] : ['name','phone'];
+    const next: Record<string,string> = {};
+    for (const name of required) {
+      const message = validate(name,value(name));
+      if (message) next[name] = message;
+    }
+    if (type === 'F06') {
+      const pending = Array.from(fileRef.current?.files ?? []);
+      const message = validateDemoFiles(pending.length ? pending : files);
+      if (message) next.document = message;
+    }
+    setErrors(next);
+    const first = Object.keys(next)[0];
+    if (first) {
+      requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus());
+      return;
+    }
+    submitted.current = true;
+    const program = value('program');
+    const record = createDemoSubmission({type,name:value('name'),phone:value('phone'),source,linkId:program || undefined,
+      fields:{program,email:type === 'F06' ? value('email') : '',question:type === 'F05' ? value('question') : ''}});
+    draft.fields = {program};
+    draft.files = [];
+    setFiles([]);
+    setReceipt(record.id);
+  }
+  function fieldError(name: string) {
+    return errors[name] && <small id={'education-' + name + '-error'} className="education-error" role="alert">{errors[name]}</small>;
+  }
+  function invalid(name: string) {
+    return {'aria-invalid':!!errors[name], 'aria-describedby':errors[name] ? 'education-' + name + '-error' : undefined};
+  }
+  if (receipt) return <div className="education-success" role="status">
+    <h3 ref={receiptRef} tabIndex={-1}><span>Hoàn tất mô phỏng</span> {type}</h3>
+    <p>Mã mô phỏng: <strong>{receipt}</strong></p>
+    <p>Dữ liệu mẫu chỉ giữ trong bộ nhớ phiên trang; không gửi ra ngoài. Không dùng thông tin thật.</p>
+    <Link to={`/admin-demo?type=${type}&id=${receipt}`} className="btn">Xem quản trị minh họa</Link>
+    <button type="button" className="education-again" onClick={() => {
+      submitted.current = false; attempted.current = false; restarting.current = true; setReceipt(''); setErrors({});
+    }}>Thử lại biểu mẫu</button>
+  </div>;
+
+  const removeLabel = t({vi:'Xóa tệp',en:'Remove file',zh:'移除文件',ko:'파일 제거',ja:'ファイルを削除'});
+  return <form ref={formRef} onSubmit={submit} onInput={remember} onChange={remember} noValidate>
+    <h3>{type === 'F05' ? 'Đăng ký tư vấn tuyển sinh' : 'Hồ sơ đăng ký tuyển sinh'}</h3>
+    <label>Họ và tên <span aria-hidden="true">*</span><input name="name" defaultValue={draft.fields.name} required autoComplete="name" {...invalid('name')}/>{fieldError('name')}</label>
+    <label>Số điện thoại <span aria-hidden="true">*</span><input name="phone" defaultValue={draft.fields.phone} required type="tel" inputMode="tel" autoComplete="tel" {...invalid('phone')}/>{fieldError('phone')}</label>
+    {type === 'F06' && <label>Email (không bắt buộc)<input name="email" defaultValue={draft.fields.email} type="email" autoComplete="email" {...invalid('email')}/>{fieldError('email')}</label>}
+    <label>Chương trình quan tâm <select name="program" defaultValue={draft.fields.program}>
+      <option value="">Chưa chọn</option><option value="other">Khác / Chưa rõ</option>
+      {educationPrograms.map(item => <option key={item.slug} value={item.slug}>{item.title} · {item.mode} (minh họa)</option>)}
+    </select></label>
+    {type === 'F05' ? <label>Nội dung cần tư vấn<textarea name="question" rows={3} defaultValue={draft.fields.question}/></label> : <>
+      <label>Tệp hồ sơ minh họa (không bắt buộc)
+        <input ref={fileRef} name="document" type="file" multiple accept={FILE_ACCEPT} onChange={event => selectFiles(event.currentTarget)}
+          aria-invalid={!!errors.document} aria-describedby={errors.document ? 'education-file-help education-document-error' : 'education-file-help'}/>
+      </label>
+      <small id="education-file-help">Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX; 5 MB/tệp, tổng 15 MB. Tệp không được tải lên.</small>
+      {files.length > 0 && <ul className="education-files">{files.map((file,index) => <li key={index + ':' + file.name}>
+        <span>{file.name}</span><button type="button" aria-label={removeLabel + ': ' + file.name} onClick={() => {
+          updateFiles(files.filter((_,position) => position !== index));
+          fileRef.current?.focus();
+        }}>{removeLabel}</button>
+      </li>)}</ul>}
+      {fieldError('document')}
+    </>}
+    <button className="btn" type="submit">{type === 'F05' ? 'Mô phỏng gửi tư vấn' : 'Mô phỏng gửi hồ sơ'}</button>
+  </form>;
+}
+
 export function EducationPage() {
   return <div className="education-pages">
     <PageMasthead eyebrow="Tuyển sinh" title="Tuyển sinh cao đẳng & đại học" description="Tìm hiểu hình thức học từ xa hoặc chính quy và chọn chương trình bạn muốn trao đổi." image={learningSpace} imageAlt={learningAlt} imageCaption={learningAlt}>

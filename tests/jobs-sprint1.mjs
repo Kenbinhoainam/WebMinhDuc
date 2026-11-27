@@ -34,13 +34,15 @@ try {
  await render('/jobs',JobsPage);assert.doesNotMatch(document.querySelector('.jobs-grid').textContent,/Chuyên viên tuyển dụng/);
  assert.ok(document.querySelector('.md-masthead-actions a[href="/saved-jobs"]'));
  const bookmark = document.querySelector('[data-job-save]');
+ const saveLabel=bookmark.getAttribute('aria-label');
+ assert.match(saveLabel,/^Lưu việc làm · /);
  assert.equal(bookmark.getAttribute('aria-pressed'),'false');
  await click(bookmark);
  assert.equal(bookmark.getAttribute('aria-pressed'),'true');
- assert.match(bookmark.getAttribute('aria-label'),/^Bỏ lưu /);
+ assert.equal(bookmark.getAttribute('aria-label'),saveLabel);
  await click(bookmark);
  assert.equal(bookmark.getAttribute('aria-pressed'),'false');
- assert.match(bookmark.getAttribute('aria-label'),/^Lưu /);
+ assert.equal(bookmark.getAttribute('aria-label'),saveLabel);
  const search = document.querySelector('.jobs-filters');
  assert.equal(search.compareDocumentPosition(document.querySelector('.jobs-result-bar h2')), window.Node.DOCUMENT_POSITION_FOLLOWING);
  await act(() => document.querySelector('.jobs-event-photo img').dispatchEvent(new window.Event('error')));
@@ -60,6 +62,8 @@ try {
  await change('[name=phone]','09');
  assert.ok(document.querySelector('#apply-phone-error'),'an incomplete correction keeps the error visible');
  await change('[name=phone]','0912345678');
+ assert.ok(document.querySelector('#apply-phone-error'),'required fields revalidate on resubmission');
+ await submit();
  assert.equal(document.querySelector('#apply-phone-error'),null);
  assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'false');
  await change('[name=name]','Nguyen An');await change('[name=phone]','0912345678');await submit();assert.match(document.querySelector('.application-success').textContent,/MD007/);assert.match(document.querySelector('.application-success a[href^="/admin-demo"]').getAttribute('href'),/^\/admin-demo\?type=F04&id=DEMO-/);

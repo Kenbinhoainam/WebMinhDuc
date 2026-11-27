@@ -2,3 +2,6 @@
 .admin-demo{padding-top:90px;background:linear-gradient(to bottom,#263543 0 90px,#f3f6f8 90px)}
 @media(max-width:1279px){.admin-demo{padding-top:80px;background:linear-gradient(to bottom,#263543 0 80px,#f3f6f8 80px)}}
 @media(max-width:575px){.admin-demo{padding-top:74px;background:linear-gradient(to bottom,#263543 0 74px,#f3f6f8 74px)}}
+.admin-table-wrap:focus-visible{outline:3px solid var(--md-focus);outline-offset:2px}
+.admin-reset-actions{display:flex;flex-wrap:wrap;gap:12px}
+.admin-demo :is(button,select,input){min-height:44px}

@@ -1,4 +1,11 @@
 /* Shared presentation for F01–F06. Field definitions and submission remain in their components. */
+.contact-form .form-requirements{font-size:14px;line-height:1.5;color:var(--md-muted);margin:12px 0 20px}
+:is(form.contact-form,form.application-form,.education-form-card) .form-optional{color:var(--md-muted);font-size:.92em;font-weight:400;white-space:normal}
+:is(form.contact-form,form.application-form,.education-form-card,.consultation-card) :is(input,select,textarea,button,[tabindex="-1"]){scroll-margin-block-start:calc(var(--header-height,80px) + 24px);scroll-margin-block-end:24px}
+.form-success .form-context{overflow-wrap:anywhere}
+@media(prefers-reduced-motion:no-preference){
+ :is(form.contact-form,form.application-form,.education-form-card) :is(input,select,textarea):not([aria-invalid="true"]){transition:border-color var(--motion-t1,120ms) var(--motion-ease,ease-out)}
+}
 form.contact-form, form.application-form, section.education-form-section .education-form-card,
 section.consultation-page .consultation-card{font-size:16px;line-height:1.6;color:var(--md-ink)}
 form.contact-form .form-intro, form.contact-form .form-disclaimer,

@@ -67,7 +67,7 @@ try {
   y=900;window.dispatchEvent(new Event('scroll'));
   await act(()=>navigate(-1));await tick();assert.equal(y,120,'Back to same pathname without hash restores its saved position');
   await act(()=>navigate(1));await tick();assert.equal(y,900,'Forward restores the user position within a hashed entry');
-  await act(()=>navigate('/jobs?skillLevel=second#job-listings'));await tick();assert.equal(y,640,'new filter destination still scrolls to its anchor');
+  await act(()=>navigate('/jobs?skillLevel=second#job-listings'));await tick();assert.equal(y,900,'query-only filter changes do not steal the existing reading position');
  } finally {await act(()=>root.unmount());dom.window.close()}
  // Guard the concrete cascade regressions found during review, without treating
  // JSDOM as a rendering engine. A dark .75 glass surface over white has 7:1

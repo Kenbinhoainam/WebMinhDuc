@@ -96,3 +96,20 @@
 @media(prefers-reduced-motion:reduce){
   .about-page .info-history-slide,.about-page .info-history-slide.is-side { transition:none; animation:none; }
 }
+
+.about-page .about-rail-pause {
+  min-height:44px;
+  padding:6px 12px;
+  background:var(--md-surface);
+  color:var(--md-blue);
+  border:1px solid var(--md-rule);
+  border-radius:4px;
+  font:inherit;
+  font-weight:650;
+}
+.about-page .about-rail-pause:hover { background:var(--md-surface-blue); }
+.about-page .about-rail-pause:focus-visible { outline:3px solid var(--md-focus); outline-offset:2px; }
+@media(prefers-reduced-motion:reduce){
+  .about-page .about-rail-pause{display:none}
+  .about-page .about-milestone-interaction .info-document-grid{display:grid;grid-auto-flow:row;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));overflow:visible}
+}

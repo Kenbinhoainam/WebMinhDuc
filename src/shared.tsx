@@ -16,5 +16,72 @@ export function PageHero({title,image,eyebrow,description}:{title:string;eyebrow
 </section>}
 export function DemoNote(){return <p className="demo-note"><Info size={16}/><span>Nội dung minh họa cho prototype. Thông tin chính thức sẽ được Minh Đức cập nhật.</span></p>}
 export function CTASection(){const contact=useContact();return <section className="cta-section"><div className="container cta-inner" data-reveal="up"><div><span className="eyebrow">CÙNG MINH ĐỨC TIẾN XA HƠN</span><h2>Đúng người. Đúng cơ hội.</h2><p>Kết nối nhu cầu của bạn với giải pháp nhân lực phù hợp.</p></div><button className="btn btn-white" onClick={()=>contact()}>Trao đổi cùng chúng tôi <ArrowUpRight size={20}/></button></div></section>}
-export function Modal({title,onClose,children,variant='modal'}:{title:string;onClose:()=>void;children:ReactNode;variant?:'modal'|'drawer'}){const panel=useRef<HTMLDivElement>(null);const close=useRef(onClose);close.current=onClose;const titleId=useId();useEffect(()=>{const previous=document.activeElement as HTMLElement;const overflow=document.body.style.overflow;document.body.style.overflow='hidden';const root=document.getElementById('root');const wasInert=root?.hasAttribute('inert');root?.setAttribute('inert','');panel.current?.focus();const handler=(e:KeyboardEvent)=>{if(e.key==='Escape'){e.preventDefault();close.current()}if(e.key==='Tab'){const els=Array.from(panel.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex="0"]')||[]).filter(x=>x.getClientRects().length);const first=els[0],last=els.at(-1);if(!first){e.preventDefault();return}if(e.shiftKey&&(document.activeElement===first||document.activeElement===panel.current)){e.preventDefault();last?.focus()}else if(!e.shiftKey&&(document.activeElement===last||document.activeElement===panel.current)){e.preventDefault();first.focus()}}};document.addEventListener('keydown',handler);return()=>{document.body.style.overflow=overflow;if(!wasInert)root?.removeAttribute('inert');document.removeEventListener('keydown',handler);if(previous?.isConnected)previous.focus()}},[]);return createPortal(<div className={`modal-backdrop ${variant==='drawer'?'navigation-backdrop':''}`} onClick={e=>{if(e.target===e.currentTarget)onClose()}}><div ref={panel} className={`modal-panel ${variant==='drawer'?'navigation-panel':''}`} role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1}><div className="modal-heading"><h2 id={titleId}>{title}</h2><button className="icon-button" aria-label="Đóng cửa sổ" onClick={onClose}><X/></button></div>{children}</div></div>,document.body)}
+export function Modal({title, onClose, children, variant = 'modal'}: {
+  title: string;
+  onClose: () => void;
+  children: ReactNode;
+  variant?: 'modal' | 'drawer';
+}) {
+  const panel = useRef<HTMLDivElement>(null);
+  const close = useRef(onClose);
+  const titleId = useId();
+  const backdropPress = useRef(false);
+  close.current = onClose;
+
+  useEffect(() => {
+    const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const overflow = document.body.style.overflow;
+    const root = document.getElementById('root');
+    const wasInert = root?.hasAttribute('inert');
+    document.body.style.overflow = 'hidden';
+    root?.setAttribute('inert', '');
+    panel.current?.focus({preventScroll:true});
+
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.defaultPrevented || event.isComposing) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        close.current();
+        return;
+      }
+      if (event.key !== 'Tab' || !panel.current) return;
+      const selector = 'button:not(:disabled),a[href],input:not(:disabled),textarea:not(:disabled),select:not(:disabled),summary,[tabindex]';
+      const controls = Array.from(panel.current.querySelectorAll<HTMLElement>(selector))
+        .filter(control => control.tabIndex >= 0 && !control.closest('[inert],[hidden]') && control.getClientRects().length);
+      const first = controls[0], last = controls.at(-1);
+      const active = document.activeElement;
+      if (!first || !panel.current.contains(active) || active === panel.current ||
+        active === (event.shiftKey ? first : last)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first)?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = overflow;
+      if (!wasInert) root?.removeAttribute('inert');
+      const target = previous?.isConnected && previous !== document.body &&
+        !previous.closest('[hidden],[inert]') ? previous : document.querySelector<HTMLElement>('main[tabindex]');
+      target?.focus({preventScroll:true});
+    };
+  }, []);
+
+  return createPortal(<div className={`modal-backdrop ${variant === 'drawer' ? 'navigation-backdrop' : ''}`}
+    onPointerDown={event => { backdropPress.current = event.target === event.currentTarget; }}
+    onPointerCancel={() => { backdropPress.current = false; }}
+    onClick={event => {
+      if (backdropPress.current && event.target === event.currentTarget) onClose();
+      backdropPress.current = false;
+    }}>
+    <div ref={panel} className={`modal-panel ${variant === 'drawer' ? 'navigation-panel' : ''}`}
+      role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1}>
+      <div className="modal-heading">
+        <h2 id={titleId}>{title}</h2>
+        <button type="button" className="icon-button" aria-label="Đóng cửa sổ" onClick={onClose}><X aria-hidden="true"/></button>
+      </div>
+      {children}
+    </div>
+  </div>, document.body);
+}
 export function NotFound(){return <><PageHero title="Không tìm thấy trang" eyebrow="404"/><section className="section container empty-page"><span className="eyebrow">404</span><h2>Trang bạn tìm chưa có ở đây.</h2><p>Hãy trở về trang chủ hoặc khám phá cơ hội việc làm.</p><ButtonLink to="/">Về trang chủ</ButtonLink><Link to="/jobs" className="text-link">Tìm việc làm <ArrowRight size={16}/></Link></section></>}

@@ -89,6 +89,12 @@ await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<url
 await rm('.ssr',{recursive:true,force:true});
 
 if (!hostingBase) {
+ // Owner-private Sprint 2 review only. QA diagnostics are intentionally absent from Pages.
+ const inventory=await readFile('docs/sdd/SEL-2026.11.27-v1.0.0/data/pages-and-urls.jsonl','utf8');
+ const routes=inventory.trim().split('\n').map(line=>JSON.parse(line)).filter(row=>row.source_code!=='P41')
+  .map(row=>({id:row.source_code,path:row.fields['Đường dẫn']}));
+ await writeFile('dist/__sprint2-routes.json',JSON.stringify(routes));
+ await writeFile('dist/__sprint2-qa.html',await readFile('tests/s2-browser-matrix.html'));
  for (const path of ['dist/404.html', 'dist/xem-hero/index.html']) {
   await writeFile(path, adaptHostingPaths(await readFile(path, 'utf8')));
  }

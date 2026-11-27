@@ -11,8 +11,7 @@ import {
   X,
   ArrowUpRight,
   Bookmark,
-  Plus,
-  Minus,
+  ChevronDown,
 } from "lucide-react";
 import { Modal } from "./shared";
 import { jobs } from "./jobs-data";
@@ -55,6 +54,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
   const locale = useLocale(),
     t = useTranslation();
   const [query, setQuery] = useState("");
+  const composing = useRef(false);
   const results = searchItems.filter((x) =>
     normalize(x.title + " " + String(translate(x.title, locale))).includes(
       normalize(query),
@@ -66,6 +66,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
         className="site-search"
         onSubmit={(e) => {
           e.preventDefault();
+          if (composing.current) return;
           const first =
             document.querySelector<HTMLAnchorElement>(".search-results a");
           first?.click();
@@ -75,6 +76,9 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
         <input
           aria-label="Tìm kiếm trên website"
           placeholder="Việc làm, dịch vụ, liên hệ…"
+          onCompositionStart={() => { composing.current = true; }}
+          onCompositionEnd={() => { composing.current = false; }}
+          onKeyDown={event => { if (event.key === "Enter" && event.nativeEvent.isComposing) event.preventDefault(); }}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -128,7 +132,13 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
     location = useLocation();
   return (
     <Modal title="Khám phá Minh Đức" onClose={onClose} variant="drawer">
-      <nav className="drawer-nav" aria-label="Điều hướng chính">
+      <nav className="drawer-nav" aria-label="Điều hướng chính" onKeyDown={event => {
+        if (event.key !== 'Escape' || !openGroup) return;
+        event.preventDefault();
+        event.stopPropagation();
+        event.currentTarget.querySelector<HTMLButtonElement>('button[aria-expanded="true"]')?.focus();
+        setOpenGroup(null);
+      }}>
         {navigation.map(([url, title], i) => (
           <div className="drawer-group" key={url}>
             <div className="drawer-group-heading">
@@ -150,9 +160,9 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
                   aria-label={`${t({ vi: "Mở menu", en: "Open menu", zh: "打开菜单", ko: "메뉴 열기", ja: "メニューを開く" })}: ${String(translate(title, locale))}`}
                   aria-expanded={openGroup === url}
                   aria-controls={`drawer-subnav-${i}`}
-                  onClick={() => setOpenGroup(openGroup === url ? null : url)}
+                  onClick={() => setOpenGroup(current => current === url ? null : url)}
                 >
-                  {openGroup === url ? <Minus size={20} /> : <Plus size={20} />}
+                  <ChevronDown size={20} aria-hidden="true"/>
                 </button>
               )}
             </div>
@@ -160,13 +170,14 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
               <div
                 className="drawer-subnav"
                 id={`drawer-subnav-${i}`}
-                hidden={openGroup !== url}
+                inert={openGroup !== url}
+                aria-hidden={openGroup !== url}
               >
-                {subnavigation[url].map(([to, label]) => (
+                <div className="drawer-subnav-clip"><div className="drawer-subnav-links">{subnavigation[url].map(([to, label]) => (
                   <Link key={to} to={to} onClick={onClose}>
                     {label}
                   </Link>
-                ))}
+                ))}</div></div>
               </div>
             )}
           </div>
@@ -256,7 +267,7 @@ export function Header() {
   };
   useEffect(() => () => clearTimers(), []);
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 30);
+    const update = () => setScrolled(previous => window.scrollY > (previous ? 24 : 32));
     update();
     window.addEventListener('scroll', update, {passive: true});
     return () => window.removeEventListener('scroll', update);
@@ -289,14 +300,14 @@ export function Header() {
           ?.contains(document.activeElement);
         setMenu(false);
         if (hadFocus)
-          requestAnimationFrame(() =>
+          focusFrame.current = requestAnimationFrame(() =>
             navRef.current?.querySelector<HTMLAnchorElement>("a")?.focus(),
           );
       } else if (!event.matches) {
         const hadFocus = !!navRef.current?.contains(document.activeElement);
         setOpenGroup(null);
         if (hadFocus)
-          requestAnimationFrame(() =>
+          focusFrame.current = requestAnimationFrame(() =>
             document.querySelector<HTMLButtonElement>(".menu-button")?.focus(),
           );
       }
@@ -348,6 +359,7 @@ export function Header() {
   }, []);
   const openMenu = (url: string) => {
     clearTimers();
+    openRef.current = url;
     document.dispatchEvent(new window.CustomEvent("header-overlay-open", {detail: {owner: "navigation"}}));
     setOpenGroup(url);
   };
@@ -444,6 +456,8 @@ export function Header() {
                       <div
                         className="desktop-subnav"
                         id={`desktop-subnav-${i}`}
+                        inert={openGroup !== url}
+                        aria-hidden={openGroup !== url}
                         hidden={openGroup !== url}
                       >
                         {subnavigation[url].map(([to, label]) => (

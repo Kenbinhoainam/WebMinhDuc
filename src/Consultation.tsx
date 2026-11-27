@@ -80,13 +80,13 @@ export default function ConsultationPage() {
         {stage !== 'details' && <form noValidate className="consultation-choose" onSubmit={continueToContact}>
           <h2>Chọn ngày và giờ</h2>
           <label htmlFor="consultation-date">Ngày tư vấn</label>
-          <input id="consultation-date" ref={dateInput} className="consultation-date" type="date" min={today} value={date}
+          <input id="consultation-date" required ref={dateInput} className="consultation-date" type="date" min={today} value={date}
             onChange={e => {setDate(e.target.value); setError('');}} aria-invalid={error === 'date'}
             aria-describedby={error === 'date' ? 'consultation-error' : undefined}/>
           <fieldset aria-invalid={error === 'time'} aria-describedby={error === 'time' ? 'consultation-error' : undefined}>
             <legend>Giờ tư vấn</legend>
             <div className="consultation-times">{times.map((slot, index) => <label key={slot}>
-              <input ref={index === 0 ? timeInput : undefined} type="radio" name="consultation-time" value={slot}
+              <input ref={index === 0 ? timeInput : undefined} type="radio" name="consultation-time" value={slot} required
                 checked={time === slot} onChange={() => {setTime(slot); setError('');}}/>
               <span>{slot}</span>
             </label>)}</div>

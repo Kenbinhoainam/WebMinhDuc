@@ -5,8 +5,12 @@ import {services, type Service} from './pages/info/data';
 import {adjacentRailOffset, advanceHomeRail, slideRailTo, useHomeCarousel} from './useHomeCarousel';
 import './service-showcase.css';
 
-const serviceSlideMs = 375;
-const serviceMotionStyle = {'--service-slide-time': serviceSlideMs + 'ms'} as CSSProperties;
+const serviceMotionStyle = {'--service-slide-time': 'var(--motion-t2,180ms)'} as CSSProperties;
+export function serviceSlideDuration(rail: HTMLElement) {
+  const token = window.getComputedStyle(rail).getPropertyValue('--motion-t2').trim();
+  const value = Number.parseFloat(token);
+  return Number.isFinite(value) ? value * (token.endsWith('ms') ? 1 : 1000) : 180;
+}
 
 function ServiceCard({service}: {service: Service}) {
   const id = useId();
@@ -17,7 +21,8 @@ function ServiceCard({service}: {service: Service}) {
       <span className="service-card-media" aria-hidden="true">
         <img className="service-card-photo" src={photo?.src ?? service.image} width={photo?.width} height={photo?.height}
           sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 44vw, (max-width: 1500px) 30vw, 430px"
-          alt="" loading="lazy" decoding="async" draggable={false}/>
+          alt="" loading="lazy" decoding="async" draggable={false}
+          onLoad={event=>{event.currentTarget.hidden=false;}} onError={event=>{event.currentTarget.hidden=true;}}/>
       </span>
       <span className={'service-card-icon service-card-icon--' + icon} aria-hidden="true">
         {icon==='admissions' && <GraduationCap/>}
@@ -64,13 +69,13 @@ export function ServiceCards({exclude}: {exclude?: string}) {
     if (wrap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       track.scrollTo({left:target, behavior:'instant'});
     } else {
-      cancelSlide.current = slideRailTo(track,target,serviceSlideMs);
+      cancelSlide.current = slideRailTo(track,target,serviceSlideDuration(track));
     }
   }
 
   useHomeCarousel(frame, () => {
     interruptSlide();
-    cancelSlide.current = advanceHomeRail(rail.current,serviceSlideMs);
+    cancelSlide.current = advanceHomeRail(rail.current,rail.current ? serviceSlideDuration(rail.current) : 180);
     return cancelSlide.current;
   }, '.service-gallery', {intervalMs:4500, paused});
   useEffect(()=>{
@@ -137,7 +142,8 @@ export function ServiceCards({exclude}: {exclude?: string}) {
     <div className="service-gallery-track" id={id} ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Danh sách giải pháp"
       onPointerEnter={event=>{if (event.pointerType !== 'touch') interruptSlide();}}
       onWheel={interruptSlide} onKeyDownCapture={interruptSlide} onFocusCapture={interruptSlide}
-      onPointerDown={startGrab} onPointerMove={drag} onPointerUp={endGrab} onPointerCancel={endGrab} onLostPointerCapture={endGrab}
+      onPointerDown={startGrab} onPointerMove={drag} onPointerUp={endGrab}
+      onPointerCancel={event=>{suppressClick.current=true;endGrab(event);}} onLostPointerCapture={endGrab}
       onPointerLeave={event=>{if (!grab.current?.dragging) endGrab(event);}}
       onClickCapture={event=>{
         // Keyboard and assistive activation have no mouse click count.
@@ -149,13 +155,13 @@ export function ServiceCards({exclude}: {exclude?: string}) {
       }}>
       {services.filter(service=>service.slug!==exclude).map(service=><ServiceCard key={service.slug} service={service}/>)}
     </div>
-    <button className="service-gallery-rotation" type="button" aria-controls={id}
-      aria-label={paused?'Phát chuyển động':'Tạm dừng chuyển động'} onClick={()=>{interruptSlide();setPaused(!paused);}}>
+    <div className="service-gallery-toolbar"><button className="service-gallery-rotation" type="button" aria-controls={id}
+      aria-label={paused?'Phát chuyển động':'Tạm dừng chuyển động'} onClick={()=>{interruptSlide();setPaused(value=>!value);}}>
       {paused?<Play size={17} aria-hidden="true"/>:<Pause size={17} aria-hidden="true"/>}
     </button>
     <div className="service-gallery-controls">
       <button type="button" aria-label="Dịch vụ trước" aria-controls={id} onClick={()=>move(true)}><ChevronLeft aria-hidden="true"/></button>
       <button type="button" aria-label="Dịch vụ tiếp theo" aria-controls={id} onClick={()=>move(false)}><ChevronRight aria-hidden="true"/></button>
-    </div>
+    </div></div>
   </div>;
 }

@@ -135,3 +135,5 @@
   .md-ref-service-metrics article { overflow-wrap:anywhere; }
   .service-table-scroll th,.service-table-scroll td { padding:11px 7px; overflow-wrap:anywhere; }
 }
+.service-stories-controls{display:flex;justify-content:flex-end;margin-top:16px}
+@media(prefers-reduced-motion:reduce){.service-stories-controls{display:none}}
