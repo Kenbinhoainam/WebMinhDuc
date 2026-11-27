@@ -152,6 +152,39 @@
     const luminance = rgb => rgb.reduce((sum,n,i) => {
       const x=n/255; return sum+[.2126,.7152,.0722][i]*(x<=.04045 ? x/12.92 : ((x+.055)/1.055)**2.4);
     },0);
+    // These route-specific colors failed the first native axe run. Walk up only
+    // through transparent undrawn boxes; do not guess colors behind photographs.
+    if (id===36 || id===39 || id===40) {
+      const nodes=visible(id===36
+        ? '.admin-kpis span,.admin-kpis small,.admin-count,.admin-card p,.admin-demo th,.admin-demo td small'
+        : '.info-article-breadcrumb a,.info-article-breadcrumb > span:last-child');
+      const palette=nodes.map(el=>{
+        const foreground=css(el).color;
+        let background=null;
+        for(let ancestor=el;ancestor;ancestor=ancestor.parentElement) {
+          const st=css(ancestor);
+          if(st.backgroundImage!=='none') break;
+          const resolved=channels(st.backgroundColor);
+          if(resolved){ background=st.backgroundColor;break; }
+          if(st.backgroundColor!=='rgba(0, 0, 0, 0)' && st.backgroundColor!=='transparent')break;
+        }
+        const fg=channels(foreground), bg=background && channels(background);
+        const l1=fg&&luminance(fg), l2=bg&&luminance(bg);
+        const ratio=fg && bg ? (Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05) : null;
+        return { label:name(el),foreground,background,ratio:ratio===null?null:Math.round(ratio*100)/100,
+          passes:ratio===null?null:ratio>=4.5, decoration:css(el).textDecorationLine, link:el.matches('a') };
+      }).filter(p=>p.label);
+      const checked=palette.filter(p=>p.passes!==null);
+      const pass=checked.some(p=>!p.passes) ? false : palette.length>0 && checked.length===palette.length ? true : null;
+      record('CS-A02-2','Previously flagged ADMIN metadata or policy breadcrumb text has at least 4.5:1 contrast on its opaque computed surface.',
+        { pairs:palette },pass,'These are selected opaque text pairs; run axe and also inspect focus, disabled and image-backed states.');
+      if(id!==36) {
+        const links=palette.filter(p=>p.link);
+        page('D3','Policy breadcrumb link is visibly underlined and trail text clears 4.5:1.',
+          { pairs:palette },links.length!==1 || !links[0].decoration.includes('underline') ? false : pass,
+          'Tab/focus, other draft text and additional viewport/language combinations.');
+      }
+    }
     const contrast = [];
     for (const el of visible('.service-card-cta, main .btn, main button[type="submit"]')) {
       const style = css(el);

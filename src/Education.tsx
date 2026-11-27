@@ -92,7 +92,7 @@ function EducationFields({type, draft, source}: {type: EducationMode; draft: Edu
   function updateFiles(next: FileSummary[]) {
     draft.files = next;
     setFiles(next);
-    if (errors.document) setFieldError('document',validateDemoFiles(next));
+    setFieldError('document',validateDemoFiles(next));
   }
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

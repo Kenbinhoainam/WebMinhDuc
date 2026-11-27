@@ -362,7 +362,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
           <AttachmentPicker id="apply-cv" name="cv" label="CV của bạn (không bắt buộc)" helpId="apply-cv-help"
             errorId={errors.cv ? 'apply-cv-error' : undefined} files={files} onChange={next=>{
               setFiles(next);
-              if (errors.cv) setErrors(previous=>({...previous,cv:validateDemoFiles(next) || undefined}));
+              setErrors(previous=>({...previous,cv:validateDemoFiles(next) || undefined}));
             }}/>
           {errorFor('cv')}
         </div>
