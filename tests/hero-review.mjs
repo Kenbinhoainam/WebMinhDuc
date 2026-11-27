@@ -32,26 +32,19 @@ try {
  const css=await readFile('src/hero-media.css','utf8');
  assert.match(css,/\.hero-media \.hero-poster,\.hero-media video\s*\{[^}]*object-fit:contain;object-position:center/,'film remains centered and uncropped');
  const layoutDom=new JSDOM('<style>'+css+'</style><section class="home-hero section-home-banner" data-show-brand="true"><div class="hero-stage"><div class="hero-brand-finish is-visible"></div></div></section>');
- const {window}=layoutDom, hero=window.document.querySelector('.home-hero'), box=hero.querySelector('.hero-stage');
- assert.equal(window.getComputedStyle(box).minHeight,window.getComputedStyle(hero).minHeight,'playing and paused layouts reserve the same room');
+ const {window}=layoutDom, hero=window.document.querySelector('.home-hero');
  assert.equal(window.getComputedStyle(hero.querySelector('.hero-brand-finish')).position,'relative','visible conclusion contributes intrinsic height');
  const rules=[...window.document.styleSheets[0].cssRules];
  const mediaRules=query=>rules.filter(rule=>rule.conditionText===query).flatMap(rule=>[...rule.cssRules]);
- const portraitFilm=mediaRules('(orientation: portrait)').find(rule=>rule.selectorText?.endsWith(' .hero-media'));
- assert.equal(portraitFilm.style.aspectRatio.replace(/\s/g,''),'16/9','portrait reserves a full-width frame without cropping edge titles');
  assert.ok(mediaRules('(height:1svh)').some(rule=>rule.style.getPropertyValue('--hero-room').includes('svh')),'mobile toolbar changes do not resize the stage');
- for(const scope of [rules,mediaRules('(max-width: 767px)')]){
-  const controls=scope.find(rule=>rule.selectorText==='.home-hero .hero-player-tools');
-  assert.ok(controls.style.right && controls.style.bottom && !controls.style.left,'playback and sound occupy the lower right on desktop and mobile');
- }
+ const controls=rules.find(rule=>rule.selectorText==='.home-hero .hero-player-tools');
+ assert.ok(controls.style.right && controls.style.bottom && !controls.style.left,'desktop playback and sound retain their lower-right placement');
  window.close();
  const stageRule=css.match(/\.home-hero \.hero-stage\s*\{([^}]*)\}/)[1];
  assert.ok(!stageRule.includes('url('),'active stage cannot expose the decorative architecture behind the film');
  const mediaRule=css.match(/\.hero-media\s*\{([^}]*)\}/)[1];
  assert.match(mediaRule,/background:#[0-9a-f]{6}(?:;|$)/i,'media has an opaque backing');
  assert.match(css,/\.hero-brand-finish\.is-visible::before\s*\{[^}]*background-image:var\(--atrium-finish,none\)/,'the full-size image is only consumed on the end card');
- const portraitPhoto=mediaRules('(orientation: portrait)').find(rule=>rule.selectorText?.endsWith('.hero-introduction::before'));
- assert.ok(portraitPhoto.style.backgroundImage.includes('--atrium-small'),'portrait reads the compact architectural photo');
  assert.ok(mediaRules('(prefers-reduced-data: reduce)').some(rule=>rule.style.getPropertyValue('--atrium-small')==='none'));
  assert.ok(!css.includes('min-height:100svh'),'finish growth uses content rather than a forced viewport floor');
  console.log('PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules');

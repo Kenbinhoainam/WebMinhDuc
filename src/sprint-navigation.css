@@ -80,6 +80,14 @@ html[lang=ko], html[lang=ja], html[lang=zh-Hans] { word-break:normal; overflow-w
   .desktop-nav-group:nth-last-child(-n+2) .desktop-subnav { left:auto; right:0; }
   .site-header .menu-button { display:none; }
 }
+/* The compact home hero has its own header row, including wide touch tablets. */
+@media (max-width:1279px), (max-width:1400px) and (pointer:coarse) {
+  .site-header.site-header[data-home="true"],
+  body:has(.home-hero[data-show-brand="true"]) .site-header.site-header[data-home="true"]:not(.is-scrolled) {
+    --header-ink:var(--md-ink);--header-control:var(--md-surface-blue);
+    position:sticky;background:#fff;box-shadow:0 1px 0 #193d6714;
+  }
+}
 /* Drawer: links and disclosure buttons remain separate keyboard targets. */
 .modal-backdrop:has(.navigation-panel) { backdrop-filter:none; }
 .navigation-panel { width:min(19.4270833rem,100%); padding:1.66667rem 2.08333rem; background:#fff; color:#292929; border:0; }
