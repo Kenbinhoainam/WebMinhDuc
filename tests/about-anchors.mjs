@@ -66,7 +66,7 @@ try {
    const base=localeBase(locale);seen=[];
    await act(()=>root.render(React.createElement(LocaleProvider,{value:locale},React.createElement(MemoryRouter,{key:locale+id,basename:base||'/',initialEntries:[`${base}/about-us#${id}`]},React.createElement(Harness)))));await tick();
    assert.ok(seen.includes(id),`${locale}: direct hash scrolls to ${id}`);
-   assert.equal(document.activeElement,document.getElementById(id).querySelector('h2'),`${locale}: direct hash focuses its heading`);
+   assert.ok(document.activeElement===document.getElementById(id).querySelector('h2'),`${locale}: direct hash focuses its heading (got ${document.activeElement?.tagName}#${document.activeElement?.id})`);
   }
   seen=[];await act(()=>root.render(React.createElement(LocaleProvider,{value:'en'},React.createElement(MemoryRouter,{key:'history',basename:'/en',initialEntries:['/en/about-us#profile']},React.createElement(Harness)))));await tick();
   y=250;window.dispatchEvent(new Event('scroll'));await act(()=>navigate('/about-us#history'));await tick();assert.equal(y,400);
@@ -83,7 +83,7 @@ try {
   await act(()=>primary.click());await tick();
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true','profile CTA intentionally starts F01 after F02');
   assert.equal(formSection.querySelector('[name=name]').value,'','new F01 starts blank');
-  assert.equal(document.activeElement,formSection.querySelector('h2'),'form heading keeps focus across form restart');
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus across form restart');
   await chooseF02();assert.equal(formSection.querySelector('[name=name]').value,'Draft before staffing CTA','an intentionally fresh F01 leaves the separate F02 draft intact');
   await act(()=>typeValue('name','Draft to preserve'));
   await act(()=>navigate('/about-us#history'));await tick();await act(()=>navigate(-1));await tick();
@@ -98,7 +98,7 @@ try {
   assert.equal(formSection.querySelector('.form-success'),null,'fourth role action dismisses a previous receipt');
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true');
   assert.equal(formSection.querySelector('[name=name]').value,'');
-  assert.equal(document.activeElement,formSection.querySelector('h2'));
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus');
   await act(()=>typeValue('name','Second same-hash request'));await act(()=>primary.click());await tick();
   assert.equal(formSection.querySelector('[name=name]').value,'Second same-hash request','acting on the same URL keeps unfinished F01 work editable');
   await act(()=>{typeValue('phone','0901234567');typeValue('location','Sample workplace');typeValue('notes','Sample staffing request');});
@@ -108,7 +108,7 @@ try {
   assert.equal(formSection.querySelector('.form-success'),null,'the same-hash staffing action reopens an editable F01 after its own receipt');
   assert.equal(formSection.querySelector('.form-mode button').getAttribute('aria-pressed'),'true');
   assert.equal(formSection.querySelector('[name=name]').value,'','completed F01 starts a blank request');
-  assert.equal(document.activeElement,formSection.querySelector('h2'));
+  assert.ok(document.activeElement===formSection.querySelector('h2'),'form heading keeps focus');
  } finally {await act(()=>root.unmount());dom.window.close();}
  console.log('PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance');
 } finally {await rm(temp,{recursive:true,force:true});}

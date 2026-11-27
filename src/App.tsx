@@ -50,7 +50,7 @@ export function PageTransition(){
         if (!target) return false;
         observer?.disconnect();
         target.scrollIntoView();
-        if(navigationType==='PUSH'){
+        if(navigationType==='PUSH' && !target.contains(document.activeElement)){
           // Sections and headings can receive fragment focus without becoming a Tab stop.
           if(target.tabIndex < 0 && !target.hasAttribute('tabindex')) target.tabIndex = -1;
           target.focus({preventScroll:true});
