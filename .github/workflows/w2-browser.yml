@@ -1,0 +1,47 @@
+name: W2 isolated packaged browser scope
+on:
+  push:
+    branches: [qa/s2-w2-browser-scope-20261127]
+permissions:
+  contents: read
+env:
+  QA_SHA: 88e2b61596eab5952f183a81b3030da760696c9c
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: [vi, en, zh, ko, ja]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git merge-base --is-ancestor "$QA_SHA" HEAD
+          git diff --exit-code "$QA_SHA" HEAD -- . ':(exclude)tests/**' ':(exclude).github/**'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Run W2 checks on Pages package
+        env:
+          S2_W2_LOCALES: ${{ matrix.locale }}
+          QA_OUTPUT: ${{ runner.temp }}/w2-browser-${{ matrix.locale }}
+        run: |
+          export CHROME_PATH=$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')
+          python tests/s2-w2-browser-final.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w2-browser-${{ matrix.locale }}
+          path: ${{ runner.temp }}/w2-browser-${{ matrix.locale }}
+          retention-days: 7

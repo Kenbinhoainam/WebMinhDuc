@@ -126,6 +126,20 @@ def geometry(page, width, capture):
         h1:document.querySelector('main h1')?.textContent,drawer:visible('.menu-button'),nav:visible('.desktop-nav'),
         headerHeight:h.getBoundingClientRect().height,offenders};
     }""")
+    if facts["scroll"]>facts["client"]+1 and width in (320,820):
+        facts["overflowDiagnostics"]=page.evaluate("""() => {
+          const root=document.documentElement, note={};
+          for (const sel of ['.admin-kpis','.admin-filters','.admin-main','.admin-top','.admin-queues','.admin-card','.admin-card-head','.admin-table-wrap','.admin-table-wrap th','.admin-table-wrap table','.admin-queues','.admin-side','.admin-demo','.site-header','.site-footer']) {
+            const node=document.querySelector(sel); if (!node) continue;
+            const css=node.getAttribute('style'); const values={};
+            for(const [key,value] of [['position','relative'],['display','none']]) {
+              node.style.setProperty(key,value,'important'); values[key]=root.scrollWidth;
+              if(css===null)node.removeAttribute('style');else node.setAttribute('style',css);
+            }
+            note[sel]=values;
+          }
+          return note;
+        }""")
     assert facts["inner"]==width and facts["scroll"]<=facts["client"]+1, facts
     assert facts["h1"] and facts["headerHeight"]>0, facts
     assert facts["drawer"] == (width<1280) and facts["nav"] == (width>=1280), facts
@@ -233,6 +247,53 @@ def twofold_reflow(browser, locale):
     ctx.close()
 
 
+def table_and_filter_interactions(page, locale):
+    for path,selector,row_id in [("/news",".ed-filters button","P20-D2"),("/events",".ed-filters button","P27-D1")]:
+        def filters():
+            navigate(page,locale,path)
+            buttons=page.locator(selector)
+            count=buttons.count()
+            assert count==(4 if path=="/news" else 3),count
+            measured=[]
+            for i in range(count):
+                b=buttons.nth(i)
+                b.scroll_into_view_if_needed()
+                r=b.bounding_box()
+                assert r, (i,"invisible filter")
+                measured.append({"label":b.inner_text(),"width":r["width"],"height":r["height"]})
+                assert r["width"]>=24 and r["height"]>=24,measured
+                b.focus()
+                page.keyboard.press("Space")
+                expect(b).to_have_attribute("aria-pressed","true")
+            return {"controls":measured,"criterion":"24 CSS px and keyboard activation; actual sizes provided"}
+        step(page,"filter-targets-and-activation",[row_id],locale,390,path,filters)
+    for path,selector,row_id,columns in [("/services/labor-supply",".service-planning .service-table-scroll","P04-D1",5),
+                            ("/services/labor-leasing",".info-fee-table-wrap","P05-D2",None),
+                            ("/services/college-admissions",".info-fee-table-wrap","P07-D2",3)]:
+        def table():
+            navigate(page,locale,path)
+            region=page.locator(selector).first
+            region.scroll_into_view_if_needed()
+            if row_id=="P07-D2":
+                page.add_style_tag(content="html{font-size:200%!important}")
+            region.focus()
+            expect(region).to_be_focused()
+            dims=region.evaluate("""e=>({outer:document.documentElement.scrollWidth,viewport:innerWidth,
+                scroll:e.scrollWidth,client:e.clientWidth,caption:e.querySelector('caption').innerText,
+                columns:[...e.querySelectorAll('thead th[scope=col]')].map(t=>t.innerText),
+                textPx:getComputedStyle(e.querySelector('td')).fontSize})""")
+            assert dims["outer"]<=dims["viewport"]+1 and dims["caption"] and all(dims["columns"]),dims
+            if columns:
+                assert len(dims["columns"])==columns,dims
+            if dims["scroll"]>dims["client"]+1:
+                page.keyboard.press("ArrowRight")
+                page.wait_for_function("e=>e.scrollLeft>0",arg=region.element_handle(),timeout=2500)
+                dims["afterArrowRight"]=region.evaluate("e=>e.scrollLeft")
+                assert page.evaluate("scrollX")==0,dims
+            return dims
+        step(page,"table-local-scroll-and-labels",[row_id],locale,390,path,table)
+
+
 def isolate(ctx):
     ctx.route("**/*",local)
     ctx.route_web_socket("**/*",lambda ws:ws.close(code=1000,reason="offline fixture"))
@@ -277,6 +338,8 @@ def run(browser):
                     predicates(page,locale,width,path)
             except Exception as e:
                 results.append(dict(test="layout-predicate-page",status="Fail",locale=locale,route=path,error=str(e)))
+        page.set_viewport_size({"width":390,"height":844})
+        table_and_filter_interactions(page,locale)
         twofold_reflow(browser,locale)
     matrix.close()
     context=browser.new_context(viewport={"width":390,"height":844},has_touch=True,
