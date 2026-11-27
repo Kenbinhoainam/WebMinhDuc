@@ -42,6 +42,8 @@ export default function ConsultationPage() {
   const localDate = readDate(date);
   const displayDate = localDate && new Intl.DateTimeFormat(languageTags[locale], {day:'numeric',month:'long',year:'numeric'}).format(localDate);
 
+  const selectedTime = [displayDate, time].filter(Boolean).join(' · ');
+
   function validateSelection() {
     const now = localToday();
     setToday(now);
@@ -72,7 +74,7 @@ export default function ConsultationPage() {
       <div className="consultation-card">
       {stage === 'complete' ? <div className="consultation-success" role="status">
         <CheckCircle2 size={36} aria-hidden="true"/><h2 ref={receiptHeading} tabIndex={-1}>Đã hoàn tất trải nghiệm</h2>
-        <p>Thời gian đã chọn: <strong>{displayDate} · {time}</strong></p>
+        <p>Thời gian đã chọn: <strong>{selectedTime}</strong></p>
         <p>Mã mô phỏng: <strong>{receipt}</strong></p>
         <p>Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.</p>
         <button type="button" className="btn btn-secondary" onClick={restart}>Chọn thời gian khác</button>
@@ -91,6 +93,9 @@ export default function ConsultationPage() {
               <span>{slot}</span>
             </label>)}</div>
           </fieldset>
+          <p className="consultation-live-summary" role="status" aria-atomic="true">
+            {selectedTime && <><span>Thời gian đã chọn:</span> <strong>{selectedTime}</strong></>}
+          </p>
           {error && <p id="consultation-error" className="consultation-error" role="alert">{error === 'date' ?
             'Vui lòng chọn ngày hôm nay hoặc một ngày trong tương lai.' : 'Vui lòng chọn giờ tư vấn.'}</p>}
           <button className="btn" type="submit">Tiếp tục</button>
@@ -98,7 +103,7 @@ export default function ConsultationPage() {
         {(stage === 'details' || stage === 'edit') && <div className="consultation-details" hidden={stage === 'edit'}>
           <h2 ref={detailsHeading} tabIndex={-1}>Hoàn tất yêu cầu tư vấn</h2>
           <div className="consultation-summary">
-            <p><CalendarDays size={20} aria-hidden="true"/><span>Thời gian đã chọn: <strong>{displayDate} · {time}</strong></span></p>
+            <p><CalendarDays size={20} aria-hidden="true"/><span>Thời gian đã chọn: <strong>{selectedTime}</strong></span></p>
             <button className="text-link" type="button" onClick={() => {setToday(localToday()); setStage('edit');}}>Đổi thời gian</button>
           </div>
           <ContactForm initialMode="F02" lockMode beforeSubmit={() => stage === 'details' && validateSelection()}

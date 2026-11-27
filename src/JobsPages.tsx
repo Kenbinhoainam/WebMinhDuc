@@ -12,7 +12,7 @@ import {translate} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {useSavedJobs} from './saved-jobs';
 import {createDemoSubmission} from './demo-submissions';
-import {type FileSummary,validateDemoFiles,validDemoPhone,validOptionalEmail} from './sharedformvalidation';
+import {type FileSummary,validateDemoFiles,identityFieldError} from './sharedformvalidation';
 import {AttachmentPicker} from './AttachmentPicker';
 import './jobs.css';
 export {jobs} from './jobs-data';
@@ -289,7 +289,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
   const [files,setFiles] = useState<FileSummary[]>([]);
   const formRef = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLHeadingElement>(null);
-  const submitted = useRef(false);
+  const attempted = useRef(false), submitted = useRef(false);
   const location = useLocation();
   const locale = useLocale();
   const formType = job.internal ? 'F04' : 'F03';
@@ -304,10 +304,12 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
     const phone = String(data.get('phone') || '');
     const email = String(data.get('email') || '');
     const next: ApplicationErrors = {};
-    if (!name.trim()) next.name = 'Vui lòng nhập họ tên.';
-    if (!validDemoPhone(phone)) next.phone = 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
+    attempted.current = true;
+    for (const key of ['name', 'phone', 'email'] as const) {
+      const error = identityFieldError(key, String(data.get(key) ?? ''));
+      if (error) next[key] = error;
+    }
     if (job.internal) {
-      if (!validOptionalEmail(email)) next.email = 'Email chưa đúng định dạng.';
       const fileError = validateDemoFiles(files);
       if (fileError) next.cv = fileError;
     }
@@ -327,8 +329,11 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
   function errorFor(field: keyof ApplicationErrors) {
     return errors[field] && <span className="application-error" id={`apply-${field}-error`} role="alert">{errors[field]}</span>;
   }
-  function clearEmptyOptionalError(field: 'email' | 'cv') {
-    if (errors[field]) setErrors(previous => ({...previous,[field]:undefined}));
+  function recheckField(event: FormEvent<HTMLFormElement>) {
+    const {name, value} = event.target as HTMLInputElement;
+    if (!attempted.current || (name !== 'name' && name !== 'phone' && name !== 'email')) return;
+    const error = identityFieldError(name, value) || undefined;
+    setErrors(previous => previous[name] === error ? previous : {...previous, [name]:error});
   }
   return <Modal title={receipt ? 'Hoàn tất trải nghiệm ứng tuyển' : 'Ứng tuyển vị trí'} onClose={onClose}>
     {receipt ? <div className="application-success">
@@ -338,7 +343,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
       <p>Dữ liệu mẫu chỉ giữ trong bộ nhớ phiên trang; không gửi ra ngoài. Không dùng thông tin thật.</p>
       <Link to={`/admin-demo?type=${formType}&id=${receipt}`} onClick={onClose}>Xem hồ sơ mẫu</Link>
       <button className="application-close-link" type="button" onClick={onClose}>Đóng cửa sổ</button>
-    </div> : <form className="application-form" ref={formRef} onSubmit={submit} noValidate>
+    </div> : <form className="application-form" ref={formRef} onInput={recheckField} onSubmit={submit} noValidate>
       <div className="application-job"><strong>{job.id}</strong><strong>{job.title}</strong></div>
       <p className="application-note">Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài.</p>
       <div className="application-field">
@@ -358,8 +363,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
         </div>
         <div className="application-field">
           <label htmlFor="apply-email">Email (không bắt buộc)</label>
-          <input id="apply-email" name="email" type="email" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'apply-email-error' : undefined}
-            onChange={event => {if (!event.currentTarget.value.trim()) clearEmptyOptionalError('email');}}/>
+          <input id="apply-email" name="email" type="email" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'apply-email-error' : undefined}/>
           {errorFor('email')}
         </div>
         <div className="application-field">

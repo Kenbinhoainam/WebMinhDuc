@@ -89,6 +89,7 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+.consultation-live-summary { min-height: 1lh; margin: 0 0 16px; overflow-wrap: anywhere; }
 .consultation-card :is(input,button,h2):focus-visible, .consultation-times input:focus-visible + span, .consultation-back:focus-visible {
   outline: 3px solid #255e9c;
   outline-offset: 3px;
@@ -125,7 +126,7 @@
 .consultation-success svg { color: #237046; }
 .consultation-success .btn { margin-top: 16px; }
 @media (prefers-reduced-motion:no-preference) and (hover:hover) {
-  .consultation-times span { transition: border-color 140ms ease-out, background-color 140ms ease-out; }
+  .consultation-times span { transition: border-color var(--motion-t1) ease-out, background-color var(--motion-t1) ease-out; }
   .consultation-times label:hover input:not(:checked) + span { border-color: var(--md-blue); background: #eaf1f8; }
 }
 @media (max-width:767px) {
