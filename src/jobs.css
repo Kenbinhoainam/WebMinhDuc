@@ -38,7 +38,18 @@ html:has(.jobs-detail-section),body:has(.jobs-detail-section){font-size:16px}
 .jobs-filter-main,.jobs-filter-more{display:grid;align-items:end;gap:14px}
 .jobs-filter-main{grid-template-columns:minmax(0,2fr) minmax(0,1fr) auto auto}
 .jobs-filter-more{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:20px}
-.jobs-filter-more[hidden]{display:none}
+.jobs-filter-disclosure[aria-hidden=true]{display:none}
+@media(max-width:767px){
+  .jobs-filter-disclosure[data-public-filters]{display:grid;grid-template-rows:1fr}
+  .jobs-filter-disclosure[data-public-filters][aria-hidden=true]{grid-template-rows:0fr;visibility:hidden}
+  .jobs-filter-disclosure[data-public-filters] > .jobs-filter-clip{min-height:0;overflow:hidden;opacity:1}
+  .jobs-filter-disclosure[data-public-filters][aria-hidden=true] > .jobs-filter-clip{opacity:0}
+}
+@media(max-width:767px) and (prefers-reduced-motion:no-preference){
+  .jobs-filter-disclosure[data-public-filters]{transition:grid-template-rows var(--motion-t2) var(--motion-ease),visibility 0s}
+  .jobs-filter-disclosure[data-public-filters][aria-hidden=true]{transition-delay:0s,var(--motion-t2)}
+  .jobs-filter-disclosure[data-public-filters] > .jobs-filter-clip{transition:opacity var(--motion-t1) var(--motion-ease)}
+}
 .jobs-filter-field{min-width:0}
 .jobs-filter-field label{display:block;margin-bottom:6px;color:var(--md-ink);font-size:14px;font-weight:700}
 .jobs-filter-field input,.jobs-filter-field select{display:block;width:100%;min-width:0;height:48px;background:#fff;border:1px solid var(--md-control-border);border-radius:6px;padding:0 12px;color:#243c54;font:400 16px/1.5 var(--font-body,Montserrat,sans-serif)}

@@ -83,9 +83,9 @@ try {
  assert.equal(document.getElementById('job-listings').getAttribute('tabindex'),'-1');
  await render('/jobs?location=Th%C3%A1i+Nguy%C3%AAn',JobsPage);
  assert.equal(document.querySelector('#jobs-status').value,'active');
- assert.ok(document.querySelector('#jobs-more-filters').hidden);
+ assert.ok(document.querySelector('#jobs-more-filters').hasAttribute('inert'));
  await click(document.querySelector('[aria-controls="jobs-more-filters"]'));
- assert.equal(document.querySelector('#jobs-more-filters').hidden,false);
+ assert.equal(document.querySelector('#jobs-more-filters').hasAttribute('inert'),false);
  await change('#jobs-status','closed');
  assert.equal(document.querySelectorAll('.job-card').length,0);
  assert.ok(document.querySelector('.jobs-empty button'));

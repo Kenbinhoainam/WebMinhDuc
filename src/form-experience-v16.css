@@ -54,3 +54,9 @@ form.contact-form .form-disclaimer{margin-top:18px}
 .education-form-card .education-success[role=status] :is(h3,a,button):focus-visible,
 .application-success :is(h3,a,button):focus-visible,
 .consultation-card .consultation-success[role=status] :is(h2,a,button):focus-visible{outline:3px solid var(--md-focus);outline-offset:3px}
+
+/* The heading receives focus immediately while supporting receipt text appears. */
+@media(prefers-reduced-motion:no-preference){
+  [role=dialog] :is(.form-success,.application-success) > p{animation:receipt-copy-enter var(--motion-t1) var(--motion-ease)}
+}
+@keyframes receipt-copy-enter{from{opacity:0}to{opacity:1}}
