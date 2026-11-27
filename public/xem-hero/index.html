@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://kenbinhoainam.github.io/WebMinhDuc/xem-hero/">
+  <title>Xem trước video trang chủ | Minh Đức Vina</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #122f50; background: #edf3f9; font: 16px/1.4 Roboto, Arial, sans-serif; }
+    header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; padding: 10px clamp(14px,3vw,48px); border-bottom: 1px solid #cad7e6; background: white; }
+    h1 { margin: 0; font-size: 17px; }
+    nav { display: flex; flex-wrap: wrap; gap: 4px; }
+    a { color: #164c87; }
+    nav a, header > a { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 11px; font-size: 14px; }
+    nav a { border: 1px solid transparent; border-radius: 6px; text-decoration: none; }
+    nav a[aria-current="true"] { color: #fff; background: #164c87; }
+    a:focus-visible { outline: 3px solid #134fc1; outline-offset: 2px; }
+    main { height: calc(100vh - var(--toolbar-height,66px)); height: calc(100dvh - var(--toolbar-height,66px)); min-height: 220px; padding: clamp(6px,1.6vw,20px); }
+    .canvas { width: 100%; height: 100%; }
+    .screen { position: relative; margin: 0 auto; border-radius: 5px; overflow: hidden; background: white; box-shadow: 0 0 0 1px #9fb4c9, 0 4px 20px #17344f19; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; transform-origin: top left; }
+    @media (max-width: 550px) {
+      header { padding-block: 5px; }
+      h1 { font-size: 15px; }
+      nav { order: 1; width: 100%; }
+      header > a { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Xem trước video trang chủ</h1>
+    <nav aria-label="Kích thước xem trước">
+      <a href="#dien-thoai" data-width="390" data-height="844" aria-current="true">Điện thoại</a>
+      <a href="#tablet-doc" data-width="820" data-height="1180">Tablet dọc</a>
+      <a href="#tablet-ngang" data-width="1180" data-height="820">Tablet ngang</a>
+    </nav>
+    <a href="../">Mở trang chủ</a>
+  </header>
+  <main>
+    <div class="canvas">
+      <div class="screen">
+        <iframe title="Trang chủ Minh Đức Vina" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+    <noscript><a href="../">Xem video trên trang chủ</a></noscript>
+  </main>
+  <script>
+    const header = document.querySelector('header');
+    const canvas = document.querySelector('.canvas');
+    const deviceShell = document.querySelector('.screen');
+    const previewFrame = document.querySelector('iframe');
+    const choices = Array.from(document.querySelectorAll('nav a'));
+    function fit() {
+      const current = choices.find(link => link.hash === location.hash) || choices[0];
+      for (const link of choices) {
+        if (link === current) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      }
+      const width = Number(current.dataset.width);
+      const height = Number(current.dataset.height);
+      document.body.style.setProperty('--toolbar-height', header.offsetHeight + 'px');
+      const scale = Math.min(1, canvas.clientWidth / width, canvas.clientHeight / height);
+      deviceShell.style.width = (width * scale) + 'px';
+      deviceShell.style.height = (height * scale) + 'px';
+      previewFrame.style.width = width + 'px';
+      previewFrame.style.height = height + 'px';
+      previewFrame.style.transform = 'scale(' + scale + ')';
+      previewFrame.title = 'Trang chủ Minh Đức Vina · ' + current.textContent + ' · ' + width + ' × ' + height;
+    }
+    fit();
+    previewFrame.src = '../';
+    window.addEventListener('resize', fit);
+    window.addEventListener('hashchange', fit);
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(header);
+  </script>
+</body>
+</html>

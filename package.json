@@ -21,7 +21,7 @@
     "test:sitemap": "node tests/sitemap-destinations.mjs && node tests/sitemap-review.mjs",
     "test:header": "node tests/header-reference.mjs && node tests/header-hover-review.mjs",
     "test:motion": "node tests/motion.mjs && node tests/motion-repeat-review.mjs && node tests/home-metric-replay.mjs && node tests/home-business-intro.mjs",
-    "test:hero": "node tests/hero-review.mjs && node tests/hero-lifecycle.mjs",
+    "test:hero": "node tests/hero-review.mjs && node tests/hero-responsive.mjs && node tests/hero-lifecycle.mjs",
     "test:reference": "node tests/reference-structure.mjs && node tests/home-reference-motion.mjs && node tests/info-v13.mjs && node tests/editorial-content.mjs && node tests/editorial-reference.mjs && node tests/home-video-gallery.mjs",
     "test:carousel": "node tests/home-carousel.mjs && node tests/info-carousel.mjs && node tests/careers-carousel.mjs"
   },
