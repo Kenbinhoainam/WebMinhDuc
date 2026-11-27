@@ -43,7 +43,7 @@ OPT_INS = {
 }
 WAVES = ["b2b.csv", "b2c.csv", "other-pages.csv", "shared.csv", "p41.csv"]
 QA_INPUTS = ["trace-content.json","qa/choice-evidence.json","trace-regression.json",
-             "common-audit.json","media-audit.json","trace-accessibility.json"]
+             "common-audit.json","media-audit.json","trace-accessibility.json","browser-choice-evidence.json","residual.json"]
 CHECKS = ["Tiêu chí hoàn thành", "Cách kiểm tra", "Ghi chú cần phân biệt"]
 DETAIL = ["Chi tiết để chọn", "Đề xuất cụ thể", "Chi tiết cần nâng cấp", "Các tiểu tiết", "Tên phần hoặc trạng thái"]
 
@@ -122,7 +122,8 @@ def read_evidence(sha):
             assert choice["test_status"] in ("Pass", "Fail", "Blocked", "Not Run")
             evidence[choice["choice_id"]].append({
                 "scope":choice["coverage"], "test":choice["test_status"],
-                "ref":str(path.relative_to(EXEC))+" → "+choice["choice_id"],
+                "ref":str(path.relative_to(EXEC))+" → "+choice["choice_id"] + (
+                    " · " + choice["evidence_ref"] if isinstance(choice.get("evidence_ref"),str) else ""),
                 "observed":first(choice,["assertion","actual","steps"]),
                 "remaining":choice.get("remaining", ""),
             })
@@ -179,6 +180,8 @@ def build_matrix(sha):
     motion = {r["ID"]:r for r in csv_file(motion_path)} if motion_path.exists() else {}
     if motion:
         assert len(motion) == 88 and set(motion) <= selection.keys()
+    cms_editorial_fix = "4231bae137528dbf152250832c1a26d060c579d9"
+    has_fix = subprocess.run(["git","merge-base","--is-ancestor",cms_editorial_fix,sha]).returncode == 0
     assert set(outcomes) <= selection.keys(), "evidence attached to an unselected ID"
     for row in template:
         code = row["choice_id"]
@@ -198,6 +201,8 @@ def build_matrix(sha):
             verification_scope="No evidence for the full row on this build.",
             observed_behavior="", evidence="", target_sha=sha,
         )
+        if has_fix and code in ("CS-C07-4","P22-B1","P22-B3"):
+            row["fix_commit"] = cms_editorial_fix
         next_owner, next_check, missing_environment = missing_check(code, f)
         row.update(next_owner=next_owner,next_check=next_check)
         if code == "ROW625-P01-A-UNRESOLVED":
@@ -247,6 +252,11 @@ def build_matrix(sha):
         if missing_environment and row["implementation_status"] != "Blocked" and row["test_status"] != "Fail":
             row.update(implementation_status="Blocked",test_status="Blocked",blocker=next_check,next_owner=next_owner,next_check=next_check,
                        verification_scope="The required participant or device observation is pending.")
+        if has_fix and code == "CS-C07-4" and row["implementation_status"] == "Incomplete" and any(
+            result["test"] == "Pass" and "publish the demo" in result["observed"] for result in local_evidence
+        ):
+            row.update(next_owner="Browser QA",
+                       next_check="Xác nhận vị trí thông báo cạnh các nút CMS và phản hồi trợ năng bản dịch trên trình duyệt. Ca sửa tiếp sau cả lưu nháp và xuất bản thử đã đạt.")
         if code in OPT_INS:
             gate = OPT_INS[code]
             row.update(implementation_status="Blocked",test_status="Blocked",blocker=gate,

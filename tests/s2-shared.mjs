@@ -46,7 +46,12 @@ try {
     let panel=q('.navigation-panel');
     assert.equal(document.activeElement,panel);
     const [first,second]=panel.querySelectorAll('.drawer-group-heading button');
+    const openName=second.getAttribute('aria-label');
     await click(first);await click(first);await click(first);await click(second);
+    const closeAction={vi:'Đóng menu',en:'Close menu',zh:'关闭菜单',ko:'메뉴 닫기',ja:'メニューを閉じる'}[locale];
+    assert.ok(second.getAttribute('aria-label').startsWith(closeAction+': '));
+    await press(second,'Escape',{isComposing:true});
+    assert.equal(second.getAttribute('aria-expanded'),'true','IME cancellation does not collapse the group');
     const secondPanel=document.getElementById(second.getAttribute('aria-controls'));
     assert.equal(panel.querySelectorAll('.drawer-subnav:not([inert])').length,1);
     assert.equal(secondPanel.getAttribute('aria-hidden'),'false');
@@ -54,13 +59,24 @@ try {
     const child=secondPanel.querySelector('a');
     await act(()=>child.focus());await press(child,'Escape');
     assert.equal(secondPanel.hasAttribute('inert'),true);
+    assert.equal(second.getAttribute('aria-label'),openName);
     assert.equal(document.activeElement,second);
     assert.equal(q('.navigation-panel'),panel);
     await press(second,'Escape');assert.equal(q('[role=dialog]'),null);assert.equal(document.activeElement,menu);
+    await click(q('.header-search'));
+    const input=q('.site-search input');
+    const inputValue=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;
+    await act(()=>{inputValue.call(input,'Minh');input.dispatchEvent(new Event('input',{bubbles:true}));});
+    const clear=q('.site-search button');
+    assert.ok(clear);
+    await act(()=>clear.focus());await click(clear);
+    assert.equal(input.value,'');assert.equal(document.activeElement,input,'clear returns typing focus before its button disappears');
+    await press(input,'Escape');
     const formatted=renderToStaticMarkup(h(LocaleProvider,{value:locale},h(AnimatedNumber,{value:1200,suffix:'+'})));
     assert.ok(formatted.includes(new Intl.NumberFormat(languageTags[locale]).format(1200)+'+'));
   }
   console.log('PASS S2-DRAWER all 5 locales; open/close/open/switch, inert and expanded, Escape from child then drawer restores both triggers');
+  console.log('PASS S2-SEARCH clear query restores input focus, five locales; drawer open/close labels match state and IME Escape stays local');
   console.log('PASS S2-NUMBER all 5 locales; visible and accessible final value formatter keeps quantity and suffix');
   let dropTrigger;
   function Harness() {

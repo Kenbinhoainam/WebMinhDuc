@@ -118,15 +118,15 @@ try {
   await act(() => file.dispatchEvent(new Event('change',{bubbles:true})));
   Object.defineProperty(file,'files',{configurable:true,value:[]});
   await act(() => file.dispatchEvent(new Event('change',{bubbles:true})));
-  assert.match(q('.education-files').textContent,/fixture\.pdf/);
+  assert.match(q('.attachment-files').textContent,/fixture\.pdf/);
   await act(() => navigate(-1));
   assert.equal(location.search,'?form=F05');
   assert.equal(q('[name=name]').value,'Nguoi Mau F05');
   assert.equal(q('[name=program]').value,'tu-xa-ke-toan');
   await act(() => navigate(1));
-  assert.match(q('.education-files').textContent,/fixture\.pdf/);
-  await click(q('.education-files button'));
-  assert.equal(q('.education-files'),null);
+  assert.match(q('.attachment-files').textContent,/fixture\.pdf/);
+  await click(q('.attachment-files button'));
+  assert.equal(q('.attachment-files'),null);
   assert.equal(document.activeElement,q('[name=document]'));
 
   pages.createDemoSubmission({type:'F01',name:'Synthetic fixture',phone:'000-000-0000',source:'S2 test'});

@@ -159,8 +159,7 @@ try {
       assert.equal(document.activeElement,cv);
       assert.equal(cv.getAttribute('aria-invalid'),'true');
       assert.equal(getDemoSubmissions().length,previous);
-      Object.defineProperty(cv,'files',{configurable:true,value:[]});
-      await act(()=>cv.dispatchEvent(new Event('change',{bubbles:true})));
+      await click(q('.attachment-files button'));
       assert.equal(q('#apply-cv-error'),null);
     }
     await act(()=>{submit(form);submit(form);});

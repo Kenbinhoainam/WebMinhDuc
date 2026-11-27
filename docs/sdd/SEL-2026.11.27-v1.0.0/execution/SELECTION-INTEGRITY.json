@@ -1,0 +1,63 @@
+{
+  "handoff": "5744b6da70af721bf08d915107960ab61dfb0080",
+  "immutable_file_sha256": {
+    "APPROVAL-BOUNDARIES.md": "6a1b97cb07c0e759f1f005064e14d2f542a4302bfe4c75b634b4e987534e53cd",
+    "CODEX-CLOUD-TASK.md": "e3904651f4785385c0165e2c71d95d0d067c16f10de38cc7167773e10d47d2f2",
+    "MDU-DEC-v1.0.0.md": "2639901eb67149d4c0d73cfcb55f7fa79c6cb972264f42bad30c1dd4f218f34e",
+    "MDU-EXEC-BRIEF-v1.0.0.md": "ee75c81eabf34054b0f3b567c2638073cabc3a31eb3f8964e996f364c1f35741",
+    "MDU-PLAN-v1.0.0.md": "a5a0dad370dc2cc969f4b60f36d9470baddca612c2bc12af916b298f62dfb8b7",
+    "MDU-SDD-v1.0.0.md": "ca1135b9261d8d31c783b6cfc66454f1f8b9d58659d61f66d9563e11bd34f4dd",
+    "MDU-TRC-v1.0.0.md": "7e4b9bb345e6c2b0ab13bf1b1bbede0501231ed37e772b5e989ddc439a4be022",
+    "QA-EXECUTION-CHECKLIST.md": "27e28c82137a180b99f16f763104f68fe3e17f037165837ffea050cb4068ad85",
+    "README.md": "daf722608ad5d47d53104e10879bd14de5b0c6de41b1828b161a7ffff1719c8b",
+    "data/README.md": "833d2bc275b7806b1927fd4e4f32004214b236576538bf0c0a288da3e8708c4a",
+    "data/dx-proposals-reference-only.jsonl": "b756f426f585d7afda8f0fd9dafead7691757e3102919bde471c0d0c64251683",
+    "data/pages-and-urls.jsonl": "ca9edd52cfc0d1a95f2114b45876515d4c21f5568f8ad77e957c20cc951324f5",
+    "data/selections-common-all-statuses.jsonl": "e4b1a7eb906b1e286412e80f35610722a76a462831d616271469d4351833bdc6",
+    "data/selections-cs-all-statuses.jsonl": "435b374f645a23ead7c2fbca445ff136bab5fb305e119819d34b0586837161c2",
+    "data/selections-motion-all-statuses.jsonl": "121081ed3cf916ad19838ff4a1004f6c51e68faea5847b49a8ebe832243dea8c",
+    "data/selections-pages-P01-P10.jsonl": "96e0ee608a197c86b8cf3525422d5325bf9ad3bf7d245ad9ea606006e4724d04",
+    "data/selections-pages-P11-P20.jsonl": "7ec38ef13fba5bf445b7618dfc3b1383493fe02ed6d3344d1131148a069e5a2a",
+    "data/selections-pages-P21-P30.jsonl": "4e98eed1e37f73dac55954408c537e1b987f2fb7f10893902dac19fcc98b9904",
+    "data/selections-pages-P31-P41.jsonl": "837344f3317fe490c1528b93d4c8ebd94ed2c12348c780bffc5ad75d418fada6",
+    "data/selections-states-all-statuses.jsonl": "708173c3c1bdd228c066140b8b0944a7651adeeaac84bee0f52fb5ae761b587e",
+    "execution/RESULT-BY-CHOICE-TEMPLATE.csv": "c119a74f704cb3c9e632e6b0c51d163f4bbb121827e00981a39ae17ff5506935",
+    "manifest.json": "1c4fe66f09c6502f8dc2747d010a8d5ed1b1175587508a6610014f4a00078bae"
+  },
+  "app_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "selected": 1257,
+  "selected_page_e": 146,
+  "excluded": {
+    "Không chọn, kể cả 8 dòng E của P01/P02": 38,
+    "Để sau": 15,
+    "Chưa chọn": 1,
+    "DX chỉ tham khảo": 246
+  },
+  "result_csv_sha256": "a93fbea52421065c1ed2cd859c499a4ebecce9cbed6edcb068f2821f0fbbcab0",
+  "result_counts": {
+    "implementation_status": {
+      "Blocked": 116,
+      "Incomplete": 736,
+      "Completed": 405
+    },
+    "test_status": {
+      "Blocked": 116,
+      "Not Run": 736,
+      "Pass": 405
+    }
+  },
+  "qa_input_sha256": {
+    "trace-content.json": "d884c15f70e801751d323a69fe8fc37abbe4acdfe9ab81e179be710ddb65a8ea",
+    "qa/choice-evidence.json": "69500b4e77d209a67911888dfeea30d938c1d6ec94469434acfd7397e7d45837",
+    "trace-regression.json": "ee7f265ef2430d07ab04c01866b4947e54cb5b5b38e02753560e1d758aa099fd",
+    "common-audit.json": "26f371a53b6746fcc3f232531391d8cf7db6bce3d4cdf3301144b47883ef865e",
+    "media-audit.json": "6e22f4236960ab023abb0a793bde08d2b36b14cd8dc935b909381b63cab75109",
+    "trace-accessibility.json": "23b48dee4b151a125512d86b5941fe04dbd272defee5ff494f4563985a4b5f5f",
+    "b2b.csv": "6af73e383a240d03b378bcdf4aef361d5b9cd5ef218a42e8f80c5785969a8f78",
+    "b2c.csv": "68bc9dfc766894e3df70cdbcbeb824a22958364b99bf746cfc2e822e4b469acf",
+    "other-pages.csv": "dc215d49aef22dda6606373f0c2bc7754b06d39e28f5e3ffcef3d50bf06fa54c",
+    "shared.csv": "a02c92bb6a700df2dfc17cf78f170577c3162a42dadbd45319fe013efd978382",
+    "p41.csv": "e160221c0dd3d9c5c832e5f82cc44a0a9a52472462fad7a4c55c2e4cf35337ee",
+    "shared-qa/MOTION-INVENTORY.csv": "5ddcff9015e74790d4ec5b03a84fb8a4104788f009395ef541697a711f694e29"
+  }
+}

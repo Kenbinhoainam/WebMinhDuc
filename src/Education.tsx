@@ -4,10 +4,10 @@ import { ArrowUpRight } from 'lucide-react';
 import { PageMasthead } from './PageMasthead';
 import { learningSpace, learningAlt } from './pages/info/data';
 import { RevealFrame } from './motion';
-import {useTranslation} from './i18n';
+import {AttachmentPicker} from './AttachmentPicker';
 import './education.css';
 import { createDemoSubmission } from './demo-submissions';
-import { FILE_ACCEPT,validateDemoFiles,validDemoPhone,validOptionalEmail, type FileSummary } from './sharedformvalidation';
+import { validateDemoFiles,validDemoPhone,validOptionalEmail, type FileSummary } from './sharedformvalidation';
 import { educationPrograms } from './education-data';
 export { educationPrograms } from './education-data';
 
@@ -56,12 +56,11 @@ function EducationForm({program}: {program?: string}) {
 }
 
 function EducationFields({type, draft, source}: {type: EducationMode; draft: EducationDraft; source: string}) {
-  const t = useTranslation();
   const submitted = useRef(false), attempted = useRef(false), restarting = useRef(false);
   const [receipt,setReceipt] = useState('');
   const [errors,setErrors] = useState<Record<string,string>>({});
   const [files,setFiles] = useState(draft.files);
-  const formRef = useRef<HTMLFormElement>(null), fileRef = useRef<HTMLInputElement>(null), receiptRef = useRef<HTMLHeadingElement>(null);
+  const formRef = useRef<HTMLFormElement>(null), receiptRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (receipt) receiptRef.current?.focus();
     else if (restarting.current) {
@@ -93,12 +92,7 @@ function EducationFields({type, draft, source}: {type: EducationMode; draft: Edu
   function updateFiles(next: FileSummary[]) {
     draft.files = next;
     setFiles(next);
-    setFieldError('document',validateDemoFiles(next));
-  }
-  function selectFiles(input: HTMLInputElement) {
-    const next = Array.from(input.files ?? [], ({name,size,type}) => ({name,size,type}));
-    if (next.length) updateFiles(next);
-    input.value = '';
+    if (errors.document) setFieldError('document',validateDemoFiles(next));
   }
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -113,8 +107,7 @@ function EducationFields({type, draft, source}: {type: EducationMode; draft: Edu
       if (message) next[name] = message;
     }
     if (type === 'F06') {
-      const pending = Array.from(fileRef.current?.files ?? []);
-      const message = validateDemoFiles(pending.length ? pending : files);
+      const message = validateDemoFiles(files);
       if (message) next.document = message;
     }
     setErrors(next);
@@ -148,7 +141,6 @@ function EducationFields({type, draft, source}: {type: EducationMode; draft: Edu
     }}>Thử lại biểu mẫu</button>
   </div>;
 
-  const removeLabel = t({vi:'Xóa tệp',en:'Remove file',zh:'移除文件',ko:'파일 제거',ja:'ファイルを削除'});
   return <form ref={formRef} onSubmit={submit} onInput={remember} onChange={remember} noValidate>
     <h3>{type === 'F05' ? 'Đăng ký tư vấn tuyển sinh' : 'Hồ sơ đăng ký tuyển sinh'}</h3>
     <label>Họ và tên <span aria-hidden="true">*</span><input name="name" defaultValue={draft.fields.name} required autoComplete="name" {...invalid('name')}/>{fieldError('name')}</label>
@@ -159,17 +151,9 @@ function EducationFields({type, draft, source}: {type: EducationMode; draft: Edu
       {educationPrograms.map(item => <option key={item.slug} value={item.slug}>{item.title} · {item.mode} (minh họa)</option>)}
     </select></label>
     {type === 'F05' ? <label>Nội dung cần tư vấn<textarea name="question" rows={3} defaultValue={draft.fields.question}/></label> : <>
-      <label>Tệp hồ sơ minh họa (không bắt buộc)
-        <input ref={fileRef} name="document" type="file" multiple accept={FILE_ACCEPT} onChange={event => selectFiles(event.currentTarget)}
-          aria-invalid={!!errors.document} aria-describedby={errors.document ? 'education-file-help education-document-error' : 'education-file-help'}/>
-      </label>
-      <small id="education-file-help">Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX; 5 MB/tệp, tổng 15 MB. Tệp không được tải lên.</small>
-      {files.length > 0 && <ul className="education-files">{files.map((file,index) => <li key={index + ':' + file.name}>
-        <span>{file.name}</span><button type="button" aria-label={removeLabel + ': ' + file.name} onClick={() => {
-          updateFiles(files.filter((_,position) => position !== index));
-          fileRef.current?.focus();
-        }}>{removeLabel}</button>
-      </li>)}</ul>}
+      <AttachmentPicker id="education-document" name="document" label="Tệp hồ sơ minh họa (không bắt buộc)"
+        helpId="education-file-help" errorId={errors.document ? 'education-document-error' : undefined}
+        files={files} onChange={updateFiles}/>
       {fieldError('document')}
     </>}
     <button className="btn" type="submit">{type === 'F05' ? 'Mô phỏng gửi tư vấn' : 'Mô phỏng gửi hồ sơ'}</button>

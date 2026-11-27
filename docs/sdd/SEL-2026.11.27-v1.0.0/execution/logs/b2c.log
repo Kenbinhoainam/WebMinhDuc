@@ -1,0 +1,56 @@
+W3 / B2C Sprint 2, release verification after the CMS and P22 correction
+Application commit 4231bae137528dbf152250832c1a26d060c579d9
+Collection time 2026-11-27T13:05:02.791706+00:00
+Target: Pages build execution/logs/build.log; independently attested complete Pages dist SHA-256 ca25ff51c80afd5428a56cc3adf6a0ed889ef45b9d6e824455419065f84e05f5
+Environment: Node DOM, rendered HTML, frozen source in an isolated scratch checkout; no native device/screenshot claim.
+
+$ node tests/s2-b2c.mjs
+PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only.
+Exit 0
+
+$ node tests/jobs-sprint1.mjs
+PASS Sprint 1 filters, audiences, closed vacancy and application flows
+Exit 0
+
+$ node tests/jobs-headline-locales.mjs
+PASS jobs headline SSR in five locales
+Exit 0
+
+$ node tests/jobs-logic.mjs
+PASS 8 distinct job IDs and routes
+PASS No real partner assigned to demo jobs
+PASS Vietnamese accent and whitespace normalization
+PASS Malformed saved storage is safe
+PASS Saved IDs sanitize duplicates and unknown values
+PASS Save persists and count updates
+PASS Fresh module restores saved jobs
+PASS Unknown IDs cannot be saved
+PASS Cross-tab remove clears stale memory
+PASS Cross-tab clear resets count
+PASS Failed write still toggles existing state
+PASS Blocked storage remains usable in memory
+PASS Optional attachments can be absent
+PASS PDF exactly 5,000,000 bytes accepted
+PASS Attachment above 5,000,000 bytes rejected
+PASS Maximum three files totaling 15,000,000 bytes accepted
+PASS More than three files rejected
+PASS Unsupported extension rejected
+PASS Renamed incompatible MIME rejected
+PASS Uppercase DOCX accepted
+PASS Generic file MIME accepted with allowed extension
+PASS Missing file MIME accepted with allowed extension
+22 checks passed
+Exit 0
+
+$ node tests/careers-carousel.mjs
+PASS four careers rails, audited gallery, motion guards, manual lightbox and focus restoration
+Exit 0
+
+$ node tests/route-data.mjs
+PASS 26 finite job/article/program routes, unique URLs, translated metadata and body/UI-free SSR data imports
+Exit 0
+
+$ node tests/seo-output.mjs
+SEO output audit passed: 245 pages
+Exit 0
+

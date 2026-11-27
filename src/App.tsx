@@ -50,7 +50,11 @@ export function PageTransition(){
         if (!target) return false;
         observer?.disconnect();
         target.scrollIntoView();
-        if(navigationType==='PUSH'&&target.hasAttribute('tabindex')) target.focus({preventScroll:true});
+        if(navigationType==='PUSH'){
+          // Sections and headings can receive fragment focus without becoming a Tab stop.
+          if(target.tabIndex < 0 && !target.hasAttribute('tabindex')) target.tabIndex = -1;
+          target.focus({preventScroll:true});
+        }
         return true;
       };
       frame=requestAnimationFrame(()=>{

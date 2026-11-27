@@ -1,0 +1,110 @@
+{
+  "target_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "checkout": "/tmp/minhduc-w1-4231-q4csuk2i",
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/s2-shared.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:34.038175+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/header-reference.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:38.249593+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/header-hover-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:44.134034+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/navigation.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:51.413077+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/motion.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:03:57.609102+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/motion-repeat-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:02.548947+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-metric-replay.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:04.874026+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-reference-motion.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:07.595100+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sitemap-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:11.426932+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/support-tools.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:15.036117+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-carousel.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:18.549208+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/locale-selector.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:21.136252+00:00"
+    },
+    {
+      "command": [
+        "python",
+        "tests/s2-shared-palette.py"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:04:23.784065+00:00"
+    }
+  ]
+}

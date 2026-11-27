@@ -55,6 +55,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
     t = useTranslation();
   const [query, setQuery] = useState("");
   const composing = useRef(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const results = searchItems.filter((x) =>
     normalize(x.title + " " + String(translate(x.title, locale))).includes(
       normalize(query),
@@ -74,6 +75,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
       >
         <Search />
         <input
+          ref={inputRef}
           aria-label="Tìm kiếm trên website"
           placeholder="Việc làm, dịch vụ, liên hệ…"
           onCompositionStart={() => { composing.current = true; }}
@@ -87,7 +89,10 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
             type="button"
             className="icon-button"
             aria-label="Xóa tìm kiếm"
-            onClick={() => setQuery("")}
+            onClick={() => {
+              inputRef.current?.focus();
+              setQuery("");
+            }}
           >
             <X size={18} />
           </button>
@@ -133,7 +138,7 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
   return (
     <Modal title="Khám phá Minh Đức" onClose={onClose} variant="drawer">
       <nav className="drawer-nav" aria-label="Điều hướng chính" onKeyDown={event => {
-        if (event.key !== 'Escape' || !openGroup) return;
+        if (event.key !== 'Escape' || event.nativeEvent.isComposing || !openGroup) return;
         event.preventDefault();
         event.stopPropagation();
         event.currentTarget.querySelector<HTMLButtonElement>('button[aria-expanded="true"]')?.focus();
@@ -157,7 +162,9 @@ function NavigationDrawer({ onClose, onSearch }: { onClose: () => void; onSearch
               {subnavigation[url] && (
                 <button
                   type="button"
-                  aria-label={`${t({ vi: "Mở menu", en: "Open menu", zh: "打开菜单", ko: "메뉴 열기", ja: "メニューを開く" })}: ${String(translate(title, locale))}`}
+                  aria-label={`${openGroup === url
+                    ? t({vi:"Đóng menu", en:"Close menu", zh:"关闭菜单", ko:"메뉴 닫기", ja:"メニューを閉じる"})
+                    : t({vi:"Mở menu", en:"Open menu", zh:"打开菜单", ko:"메뉴 열기", ja:"メニューを開く"})}: ${translate(title, locale)}`}
                   aria-expanded={openGroup === url}
                   aria-controls={`drawer-subnav-${i}`}
                   onClick={() => setOpenGroup(current => current === url ? null : url)}

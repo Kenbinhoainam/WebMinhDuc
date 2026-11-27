@@ -118,7 +118,7 @@ writeFileSync(join(output,'trace-reviewer.json'),JSON.stringify(report,null,2)+'
 const rows=[];
 const add=(ids,status,observed,remaining='',owner='Browser QA')=>{
   for(const suffix of ids.split(' '))rows.push({choice_id:'P41-'+suffix,status,target_sha:sha,
-    evidence:'trace-reviewer.json · '+observed,actual:observed,remaining,next_owner:owner,
+    evidence:'SOURCE-BASELINE.md (Sites v1/v3; v3 reviewer blob 95a08bc45cb20f21de50a69382798822ca89ad3d) + trace-reviewer.json · '+observed,actual:observed,remaining,next_owner:owner,
     blocker:status==='Blocked'?remaining:''});
 };
 add('F1 F2 B3 C1 C3 C4 E2 D1','Completed',

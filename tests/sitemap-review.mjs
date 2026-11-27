@@ -64,6 +64,8 @@ try {
   await act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:['/jobs']},React.createElement(Harness))));await tick();
   window.dispatchEvent(new Event('scroll'));
   await act(()=>navigate('/jobs?skillLevel=first#job-listings'));await tick();assert.equal(y,640,'new same-path menu destination scrolls to anchor');
+  assert.equal(document.activeElement,document.getElementById('job-listings'),'PUSH fragment moves focus to the target, including plain sections');
+  assert.equal(document.activeElement.tabIndex,-1,'visited section does not become an extra Tab stop');
   y=900;window.dispatchEvent(new Event('scroll'));
   await act(()=>navigate(-1));await tick();assert.equal(y,120,'Back to same pathname without hash restores its saved position');
   await act(()=>navigate(1));await tick();assert.equal(y,900,'Forward restores the user position within a hashed entry');

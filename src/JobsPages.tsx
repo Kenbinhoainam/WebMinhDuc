@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState, type FormEvent} from 'react';
 import {Link, useLocation, useNavigate, useNavigationType, useParams, useSearchParams} from 'react-router-dom';
-import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, FileUp, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
+import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
 import {company} from './company';
 import {subnavigation} from './navigation';
 import CareersSections from './CareersSections';
@@ -12,7 +12,8 @@ import {translate} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {useSavedJobs} from './saved-jobs';
 import {createDemoSubmission} from './demo-submissions';
-import {FILE_ACCEPT,validateDemoFiles,validDemoPhone,validOptionalEmail} from './sharedformvalidation';
+import {type FileSummary,validateDemoFiles,validDemoPhone,validOptionalEmail} from './sharedformvalidation';
+import {AttachmentPicker} from './AttachmentPicker';
 import './jobs.css';
 export {jobs} from './jobs-data';
 export type {Job} from './jobs-data';
@@ -281,7 +282,7 @@ type ApplicationErrors = Partial<Record<'name'|'phone'|'email'|'cv',string>>;
 function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
   const [errors,setErrors] = useState<ApplicationErrors>({});
   const [receipt,setReceipt] = useState('');
-  const [fileNames,setFileNames] = useState('');
+  const [files,setFiles] = useState<FileSummary[]>([]);
   const formRef = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLHeadingElement>(null);
   const submitted = useRef(false);
@@ -303,8 +304,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
     if (!validDemoPhone(phone)) next.phone = 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
     if (job.internal) {
       if (!validOptionalEmail(email)) next.email = 'Email chưa đúng định dạng.';
-      const input = form.elements.namedItem('cv') as HTMLInputElement;
-      const fileError = validateDemoFiles(Array.from(input.files || []));
+      const fileError = validateDemoFiles(files);
       if (fileError) next.cv = fileError;
     }
     setErrors(next);
@@ -359,16 +359,11 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
           {errorFor('email')}
         </div>
         <div className="application-field">
-          <label htmlFor="apply-cv">CV của bạn (không bắt buộc)</label>
-          <div className={`application-upload${errors.cv ? ' has-error' : ''}`}><FileUp size={25} aria-hidden="true"/>
-            <input id="apply-cv" name="cv" type="file" multiple accept={FILE_ACCEPT} aria-invalid={!!errors.cv}
-              aria-describedby={errors.cv ? 'apply-cv-help apply-cv-error' : 'apply-cv-help'} onChange={event => {
-                const files = Array.from(event.currentTarget.files || []);
-                setFileNames(files.map(file => file.name).join(', '));
-                if (!files.length) clearEmptyOptionalError('cv');
-              }}/><span>{fileNames || 'Chọn tệp từ thiết bị của bạn'}</span>
-          </div>
-          <small id="apply-cv-help">Tối đa 3 tệp JPG, JPEG, PNG, PDF, DOC hoặc DOCX; 5 MB/tệp, tổng 15 MB. Tệp không được tải lên.</small>
+          <AttachmentPicker id="apply-cv" name="cv" label="CV của bạn (không bắt buộc)" helpId="apply-cv-help"
+            errorId={errors.cv ? 'apply-cv-error' : undefined} files={files} onChange={next=>{
+              setFiles(next);
+              if (errors.cv) setErrors(previous=>({...previous,cv:validateDemoFiles(next) || undefined}));
+            }}/>
           {errorFor('cv')}
         </div>
       </>}

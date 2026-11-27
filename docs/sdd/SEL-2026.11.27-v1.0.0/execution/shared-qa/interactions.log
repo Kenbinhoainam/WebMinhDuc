@@ -1,0 +1,12 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
+Isolated checkout: /tmp/minhduc-w1-4231-q4csuk2i
+Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
+command=node tests/s2-shared.mjs
+PASS S2-DRAWER all 5 locales; open/close/open/switch, inert and expanded, Escape from child then drawer restores both triggers
+PASS S2-NUMBER all 5 locales; visible and accessible final value formatter keeps quantity and suffix
+PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event
+PASS S2-FALLBACK zero-duration & reduced motion land at requested rail offset, missing preference API leaves content visible
+PASS S2-TOKENS T0–T4 and ease-out roles match selected values
+
+exit 0

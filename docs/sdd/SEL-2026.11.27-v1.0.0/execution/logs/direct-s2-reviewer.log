@@ -1,0 +1,4 @@
+2026-11-27T13:05:12.257890+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | node tests/s2-reviewer.mjs
+PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState
+
+Exit 0

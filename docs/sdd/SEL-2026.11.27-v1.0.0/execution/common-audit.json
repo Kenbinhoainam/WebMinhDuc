@@ -1,0 +1,2430 @@
+{
+  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "site_source_sha": "7721ff18d35855dc2a8e0df6fd667c39d2a973cd",
+  "artifact_input": "/workspace/sites/minhduc-sprint2-approved-review/dist",
+  "method": "Root-mounted preview artifact HTML/CSS/font cmap and pinned implementation source. Existing React DOM interaction suites rerun on the same application source. No simulated layout used as native device evidence.",
+  "tested_html_sha256": "3ead65be3aef3a21430a528c7192b19feef4c2b8005bf3ffb5e208cf14d4cb93",
+  "css_sha256": {
+    "AboutPage-_S5hwxG_.css": "146759175501db9be8eb127279aada4feed22a0f1d0d2d40fa4b802f3448a2a6",
+    "AdminDemo-BL6nrbPm.css": "0855f47276f99f4cd572a247b2290c023d723af040c390a5077521ae2843c5ab",
+    "Consultation-Cj7obPRy.css": "cf74d9e0ca5ba506bb0ec55484c30826924915adbc5d16fa8f17df50560f271a",
+    "EditorialPages-Bho7pB24.css": "a8e8f0842a914768b257fa79390f663886707c7b4b5e43dce08606fba7a2d03d",
+    "Education-C78ezuzU.css": "87b5c0a631d72819a0cb9a92e3dd04f6d82c736471d28528d19f34a5b52d1ebe",
+    "JobsPages-atWhNKjT.css": "e2ccf2eef403d6c9003a92c22d61449c7280959b768b31b0a9a2dcd9b85fbf43",
+    "PartnersPage-DH0e8T9o.css": "c62477a47020955d150ad5fc516176b2d416b1d1abfcf8842aeb0a19a7be5677",
+    "ServicesPages-DAlRjvst.css": "75d893f9bd35d5924722bcebade5458cde0768f7c97813ca51c153cea7677310",
+    "index-BlugrZdW.css": "65a9898158f12c505119b752e1220d77ba81d401ff03b3990bfede85bd7d2635"
+  },
+  "source_revision": "4231bae137528dbf152250832c1a26d060c579d9",
+  "checks": [
+    {
+      "name": "Built opaque role contrast",
+      "test_status": "Pass",
+      "actual": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}"
+    },
+    {
+      "name": "Physical font files and declared roles",
+      "test_status": "Pass",
+      "actual": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif"
+    },
+    {
+      "name": "Action, metadata and heading declarations",
+      "test_status": "Pass",
+      "actual": ".job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px"
+    },
+    {
+      "name": "Print presentation actually shipped",
+      "test_status": "Pass",
+      "actual": "17 print selectors, including hidden header, footer and support UI and a plain masthead background."
+    },
+    {
+      "name": "Motion tokens and reduced override",
+      "test_status": "Pass",
+      "actual": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1."
+    },
+    {
+      "name": "No global layer hints",
+      "test_status": "Pass",
+      "actual": "9 complete CSS bundles scanned; 0 will-change declarations: none"
+    },
+    {
+      "name": "Responsive image dimensions and fallback",
+      "test_status": "Pass",
+      "actual": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact."
+    },
+    {
+      "name": "Eight job identities and related destinations",
+      "test_status": "Pass",
+      "actual": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply."
+    },
+    {
+      "name": "Shared service information across templates",
+      "test_status": "Pass",
+      "actual": "P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form"
+    },
+    {
+      "name": "Editorial heading anchors and related articles",
+      "test_status": "Pass",
+      "actual": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL."
+    },
+    {
+      "name": "Audience entries and shared brand",
+      "test_status": "Pass",
+      "actual": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home."
+    },
+    {
+      "name": "Structural job filters and form labels",
+      "test_status": "Pass",
+      "actual": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels."
+    },
+    {
+      "name": "Localized canonical metadata and index policy",
+      "test_status": "Pass",
+      "actual": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs."
+    },
+    {
+      "name": "Contact routes and visible fallback information",
+      "test_status": "Pass",
+      "actual": "3 offices with address text; 2 visible telephone/email links; 4 map links independent of iframe rendering."
+    },
+    {
+      "name": "Visually hidden versus disabled control structure",
+      "test_status": "Pass",
+      "actual": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors."
+    },
+    {
+      "name": "Menu, native buttons and structural ARIA",
+      "test_status": "Pass",
+      "actual": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label."
+    },
+    {
+      "name": "Stable card semantics with long locale strings",
+      "test_status": "Pass",
+      "actual": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}"
+    },
+    {
+      "name": "Explicit scroll regions and reading hierarchy",
+      "test_status": "Pass",
+      "actual": "Named, focusable ADMIN region with 6 scoped column headers and horizontal overflow declaration; reader TOC/body sections present."
+    },
+    {
+      "name": "Date, currency and string locale behavior",
+      "test_status": "Pass",
+      "actual": "{\"vi\":[\"8–11 triệu/tháng\",\"Trao đổi khi tư vấn\"],\"en\":[\"8–11 million VND/month\",\"Discuss during consultation\"],\"zh\":[\"每月 800万–1100万越南盾\",\"咨询时商议\"],\"ko\":[\"월 800만–1,100만 동\",\"상담 시 협의\"],\"ja\":[\"月800万〜1,100万ドン\",\"相談時に説明\"]}"
+    },
+    {
+      "name": "Project fixture boundaries and missing production entry points",
+      "test_status": "Pass",
+      "actual": "ADMIN mock edits a single home-introduction string via draft/content state and reset; submission module retains records in memory without HTTP/storage APIs. No login/roles route and no gtag/dataLayer/analytics.track/sendBeacon event entry in 55 application source files."
+    },
+    {
+      "name": "s2-b2c / one fixture for the whole attempt",
+      "test_status": "Pass",
+      "actual": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL."
+    },
+    {
+      "name": "s2-b2c / the editing cursor",
+      "test_status": "Pass",
+      "actual": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts."
+    },
+    {
+      "name": "s2-b2c / selecting file metadata",
+      "test_status": "Pass",
+      "actual": "s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error."
+    },
+    {
+      "name": "s2-b2c / return to the original apply button",
+      "test_status": "Pass",
+      "actual": "s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger."
+    },
+    {
+      "name": "s2-b2c / .jobs-empty a",
+      "test_status": "Pass",
+      "actual": "s2-b2c.mjs exited 0; Filtered-empty vs no-saved distinct and canonical empty CTA focused after final removal."
+    },
+    {
+      "name": "jobs-sprint1 / original job was removed",
+      "test_status": "Pass",
+      "actual": "jobs-sprint1.mjs exited 0; Back with original query/hash/page restores surviving adjacent target after original saved position is deleted."
+    },
+    {
+      "name": "jobs-sprint1 / keyboardInput.focus()",
+      "test_status": "Pass",
+      "actual": "jobs-sprint1.mjs exited 0; Simulated header/inline bounds, focused text entry, modal state and viewport change hide the mobile Apply bar; closed MD005 has no Apply control."
+    },
+    {
+      "name": "careers-carousel / user pause outlasts visibility transitions",
+      "test_status": "Pass",
+      "actual": "careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers."
+    },
+    {
+      "name": "s2-b2b-flows / rapid reversal",
+      "test_status": "Pass",
+      "actual": "s2-b2b-flows.mjs exited 0; FAQ rapid reversal leaves only last intended panel open and inert prevents focus in closed answers."
+    },
+    {
+      "name": "s2-b2b-flows / Rapid double toggle",
+      "test_status": "Pass",
+      "actual": "s2-b2b-flows.mjs exited 0; Service rail consecutive pause/play commands return to correct state; relative 0ms/180ms token duration parsed."
+    },
+    {
+      "name": "s2-b2b-flows / .service-card-title",
+      "test_status": "Pass",
+      "actual": "s2-b2b-flows.mjs exited 0; Media error hides decorative image while card title and action remain usable; a subsequent load clears the fallback."
+    },
+    {
+      "name": "consultation / requests,0",
+      "test_status": "Pass",
+      "actual": "consultation.mjs exited 0; Switch F01/F02 drafts and return from time selection while maintaining keyed local state and no outgoing request."
+    },
+    {
+      "name": "Spacing between and within reading groups",
+      "test_status": "Pass",
+      "actual": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]"
+    },
+    {
+      "name": "Service card geometry and surfaces",
+      "test_status": "Pass",
+      "actual": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]"
+    },
+    {
+      "name": "Photo scrims and crop properties in preview CSS",
+      "test_status": "Pass",
+      "actual": "Service overlay linear-gradient(160deg,transparent 25%,rgba(7,20,34,.36)),#1020309e; explicit focal declarations .ed-reader-latest-grid img.ed-portrait=50% 40% | .md-photo-stage .md-masthead-figure>img=center 42%"
+    },
+    {
+      "name": "Icons and paired native controls",
+      "test_status": "Pass",
+      "actual": "[[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]"
+    },
+    {
+      "name": "Named component-specific media transitions",
+      "test_status": "Pass",
+      "actual": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}"
+    },
+    {
+      "name": "Preview application release handoff",
+      "test_status": "Pass",
+      "actual": "40 preview application routes plus a separate duyet.html reviewer, 30 selected state records, checksum manifest, two mount profiles, viewport/real-input checklist and confirmed reset entry. Source/application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd."
+    },
+    {
+      "name": "Separate documentary and conceptual images",
+      "test_status": "Pass",
+      "actual": "Careers banner matches field-team from careers-media; eleven activity photos each have contextual alt/caption. Repository provenance separately identifies the architectural artwork as generated."
+    },
+    {
+      "name": "Static saved-list hydration contract",
+      "test_status": "Pass",
+      "actual": "Preview shows the initial local-storage status and no false empty state before hydration. Store exposes ready with the same snapshot that carries sanitized IDs."
+    },
+    {
+      "name": "Handoff for unsupported role and conversion fixtures",
+      "test_status": "Pass",
+      "actual": "Chỉ là bản minh họa. Dùng dữ liệu giả. Hồ sơ gửi thử chỉ giữ trong bộ nhớ trang khi chuyển trang nội bộ, không tải tệp hay gửi ra ngoài. Tải lại hoặc khôi phục mẫu sẽ xóa hồ sơ gửi thử. Không có đăng nhập hay phân quyền thực."
+    },
+    {
+      "name": "Saved pagination boundary activations",
+      "test_status": "Pass",
+      "actual": "Eight saved IDs: first page six rows, Previous disabled; second two rows, Next disabled; repeated disabled click inert. Filtering from last page produced one MD001, no pagination."
+    },
+    {
+      "name": "Related job ordering for every fixture",
+      "test_status": "Pass",
+      "actual": "{\"MD001\":[\"MD002\",\"MD003\",\"MD004\"],\"MD002\":[\"MD006\",\"MD001\",\"MD003\"],\"MD003\":[\"MD001\",\"MD002\",\"MD004\"],\"MD004\":[\"MD001\",\"MD002\",\"MD003\"],\"MD005\":[\"MD001\",\"MD002\",\"MD003\"],\"MD006\":[\"MD002\",\"MD001\",\"MD003\"],\"MD007\":[\"MD008\"],\"MD008\":[\"MD007\"]}"
+    },
+    {
+      "name": "ADMIN CMS local editor capability",
+      "test_status": "Pass",
+      "actual": "{\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}"
+    },
+    {
+      "name": "ADMIN feedback after editing a saved draft",
+      "test_status": "Pass",
+      "actual": "{\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}"
+    },
+    {
+      "name": "Careers FAQ presentation gate",
+      "test_status": "Pass",
+      "actual": "Career questions are three readable rail articles with links. No accordion toggle in the questions track."
+    },
+    {
+      "name": "Robots directives on every preview sitemap entry",
+      "test_status": "Pass",
+      "actual": "245 canonical sitemap records on preview all noindex,nofollow, 0 JobPosting JSON-LD entries on jobs routes."
+    },
+    {
+      "name": "Workers and internal job journeys",
+      "test_status": "Pass",
+      "actual": "s2-b2c rerun above: each of five open worker jobs and two careers jobs preserved title, original list URL and code; F03 required name/phone, F04 optional email/CV and read-only position; confirmed receipt and ADMIN href; closing returns to the opener."
+    }
+  ],
+  "choices": [
+    {
+      "choice_id": "A03",
+      "source_row": 10,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}",
+      "checks": [
+        "Built opaque role contrast"
+      ],
+      "remaining": "Ratios are for opaque tokens shipped in preview CSS. Composited hero/disabled/overlay colors and actual focus pixels are unmeasured."
+    },
+    {
+      "choice_id": "D09",
+      "source_row": 61,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}",
+      "checks": [
+        "Built opaque role contrast"
+      ],
+      "remaining": "Ratios are for opaque tokens shipped in preview CSS. Composited hero/disabled/overlay colors and actual focus pixels are unmeasured."
+    },
+    {
+      "choice_id": "CS-A02-1",
+      "source_row": 18,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}",
+      "checks": [
+        "Built opaque role contrast"
+      ],
+      "remaining": "Ratios are for opaque tokens shipped in preview CSS. Composited hero/disabled/overlay colors and actual focus pixels are unmeasured."
+    },
+    {
+      "choice_id": "CS-A02-2",
+      "source_row": 8,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}",
+      "checks": [
+        "Built opaque role contrast"
+      ],
+      "remaining": "Ratios are for opaque tokens shipped in preview CSS. Composited hero/disabled/overlay colors and actual focus pixels are unmeasured."
+    },
+    {
+      "choice_id": "CS-A12-1",
+      "source_row": 52,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"ink/surface\":\"12.42\",\"muted/surface-blue\":\"5.80\",\"surface/red\":\"6.20\",\"surface/red-hover\":\"8.48\",\"blue/surface-blue\":\"7.67\",\"focus/surface\":\"6.28\",\"control-border/surface\":\"3.52\"}",
+      "checks": [
+        "Built opaque role contrast"
+      ],
+      "remaining": "Ratios are for opaque tokens shipped in preview CSS. Composited hero/disabled/overlay colors and actual focus pixels are unmeasured."
+    },
+    {
+      "choice_id": "A04",
+      "source_row": 11,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif | .job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px",
+      "checks": [
+        "Physical font files and declared roles",
+        "Action, metadata and heading declarations"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A05",
+      "source_row": 12,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif",
+      "checks": [
+        "Physical font files and declared roles"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "F02",
+      "source_row": 84,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif | 11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact.",
+      "checks": [
+        "Physical font files and declared roles",
+        "Responsive image dimensions and fallback"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A04-1",
+      "source_row": 24,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif | .job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px",
+      "checks": [
+        "Physical font files and declared roles",
+        "Action, metadata and heading declarations"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A04-2",
+      "source_row": 25,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif",
+      "checks": [
+        "Physical font files and declared roles"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A04-3",
+      "source_row": 26,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif",
+      "checks": [
+        "Physical font files and declared roles"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D05-4",
+      "source_row": 159,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif",
+      "checks": [
+        "Physical font files and declared roles"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "D13",
+      "source_row": 65,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "inter-vietnamese-wght-normal.woff2 100 900, inter-latin-wght-normal.woff2 100 900, roboto-vietnamese-wght-normal.woff2 100 900, roboto-latin-wght-normal.woff2 100 900; both cmaps cover all three Vietnamese samples; \"Roboto\", system-ui, sans-serif / \"Inter\", \"Roboto\", system-ui, sans-serif | Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Physical font files and declared roles",
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A12",
+      "source_row": 19,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": ".job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px | [{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Action, metadata and heading declarations",
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A15",
+      "source_row": 22,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": ".job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px | 40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Action, metadata and heading declarations",
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row. The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-A07-2",
+      "source_row": 36,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": ".job-card h3 font=700 clamp(19px,1.5vw,24px)/1.35 var(--font-display,Montserrat,sans-serif) | .job-card-meta font-size=14px | .service-card-cta font=650 clamp(14px,.98vw,16px)/1.35 var(--font-body,sans-serif) | .job-row-pay>span font-size=14px",
+      "checks": [
+        "Action, metadata and heading declarations"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "MS01-1",
+      "source_row": 72,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1.",
+      "checks": [
+        "Motion tokens and reduced override"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS01-2",
+      "source_row": 73,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1.",
+      "checks": [
+        "Motion tokens and reduced override"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS02-1",
+      "source_row": 76,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1.",
+      "checks": [
+        "Motion tokens and reduced override"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C03-1",
+      "source_row": 117,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1.",
+      "checks": [
+        "Motion tokens and reduced override"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C14",
+      "source_row": 51,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1. | careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers.",
+      "checks": [
+        "Motion tokens and reduced override",
+        "careers-carousel / user pause outlasts visibility transitions"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "D10",
+      "source_row": 62,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "0ms/120ms/180ms/240ms/320ms; ease-out; all four decorative durations resolve to T0 on reduce; 6 rules reference T1. | careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers.",
+      "checks": [
+        "Motion tokens and reduced override",
+        "careers-carousel / user pause outlasts visibility transitions"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS05-2",
+      "source_row": 89,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "9 complete CSS bundles scanned; 0 will-change declarations: none",
+      "checks": [
+        "No global layer hints"
+      ],
+      "remaining": "Layer counts and paint/memory traces require DevTools on the representative page."
+    },
+    {
+      "choice_id": "A09",
+      "source_row": 16,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact. | Service overlay linear-gradient(160deg,transparent 25%,rgba(7,20,34,.36)),#1020309e; explicit focal declarations .ed-reader-latest-grid img.ed-portrait=50% 40% | .md-photo-stage .md-masthead-figure>img=center 42%",
+      "checks": [
+        "Responsive image dimensions and fallback",
+        "Photo scrims and crop properties in preview CSS"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A03-2",
+      "source_row": 21,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact.",
+      "checks": [
+        "Responsive image dimensions and fallback"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A03-3",
+      "source_row": 22,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact.",
+      "checks": [
+        "Responsive image dimensions and fallback"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "MS05-4",
+      "source_row": 91,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact.",
+      "checks": [
+        "Responsive image dimensions and fallback"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D05-3",
+      "source_row": 158,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "11 gallery photos have width, height, alt, 480w source and lazy loading; video poster present in artifact.",
+      "checks": [
+        "Responsive image dimensions and fallback"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B11",
+      "source_row": 33,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "F06",
+      "source_row": 88,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-A02-3",
+      "source_row": 9,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-A07-3",
+      "source_row": 11,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B01-2",
+      "source_row": 61,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form",
+      "checks": [
+        "Eight job identities and related destinations",
+        "Shared service information across templates"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners."
+    },
+    {
+      "choice_id": "CS-B02-3",
+      "source_row": 63,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B04-3",
+      "source_row": 82,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B06-1",
+      "source_row": 84,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | {\"MD001\":[\"MD002\",\"MD003\",\"MD004\"],\"MD002\":[\"MD006\",\"MD001\",\"MD003\"],\"MD003\":[\"MD001\",\"MD002\",\"MD004\"],\"MD004\":[\"MD001\",\"MD002\",\"MD003\"],\"MD005\":[\"MD001\",\"MD002\",\"MD003\"],\"MD006\":[\"MD002\",\"MD001\",\"MD003\"],\"MD007\":[\"MD008\"],\"MD008\":[\"MD007\"]}",
+      "checks": [
+        "Eight job identities and related destinations",
+        "Related job ordering for every fixture"
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "CS-B06-4",
+      "source_row": 87,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form",
+      "checks": [
+        "Eight job identities and related destinations",
+        "Shared service information across templates"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners."
+    },
+    {
+      "choice_id": "CS-B08-1",
+      "source_row": 75,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.",
+      "checks": [
+        "Eight job identities and related destinations",
+        "s2-b2c / one fixture for the whole attempt"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-D04-3",
+      "source_row": 146,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply.",
+      "checks": [
+        "Eight job identities and related destinations"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-D08-2",
+      "source_row": 165,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | {\"vi\":[\"8–11 triệu/tháng\",\"Trao đổi khi tư vấn\"],\"en\":[\"8–11 million VND/month\",\"Discuss during consultation\"],\"zh\":[\"每月 800万–1100万越南盾\",\"咨询时商议\"],\"ko\":[\"월 800만–1,100만 동\",\"상담 시 협의\"],\"ja\":[\"月800万〜1,100万ドン\",\"相談時に説明\"]}",
+      "checks": [
+        "Eight job identities and related destinations",
+        "Date, currency and string locale behavior"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Preservation of salary values and textual exception verified. Formatting of dates, consultation timezone and other units have separate acceptance criteria."
+    },
+    {
+      "choice_id": "CS-D08-4",
+      "source_row": 166,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 detail pages, exact MD codes, nonempty salary/shift/location, three content groups, correct audience return, related IDs exclude current, closed MD005 has no Apply. | {\"vi\":[\"8–11 triệu/tháng\",\"Trao đổi khi tư vấn\"],\"en\":[\"8–11 million VND/month\",\"Discuss during consultation\"],\"zh\":[\"每月 800万–1100万越南盾\",\"咨询时商议\"],\"ko\":[\"월 800만–1,100만 동\",\"상담 시 협의\"],\"ja\":[\"月800万〜1,100万ドン\",\"相談時に説明\"]}",
+      "checks": [
+        "Eight job identities and related destinations",
+        "Date, currency and string locale behavior"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Preservation of salary values and textual exception verified. Formatting of dates, consultation timezone and other units have separate acceptance criteria."
+    },
+    {
+      "choice_id": "B10",
+      "source_row": 32,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form",
+      "checks": [
+        "Shared service information across templates"
+      ],
+      "remaining": "Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners."
+    },
+    {
+      "choice_id": "B07",
+      "source_row": 29,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | 22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL.",
+      "checks": [
+        "Shared service information across templates",
+        "Editorial heading anchors and related articles"
+      ],
+      "remaining": "Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners. Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open."
+    },
+    {
+      "choice_id": "CS-A11-2",
+      "source_row": 49,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | s2-b2b-flows.mjs exited 0; FAQ rapid reversal leaves only last intended panel open and inert prevents focus in closed answers.",
+      "checks": [
+        "Shared service information across templates",
+        "s2-b2b-flows / rapid reversal"
+      ],
+      "remaining": "Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners. The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B03-3",
+      "source_row": 81,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "P04 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P05 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P06 section container service-overview/service-process/section container info-faq-section service-faq/contact-form | P07 section container service-overview/service-process/section container info-faq-section service-faq/A | P08 section container service-overview/service-process/section container info-faq-section service-faq/contact-form",
+      "checks": [
+        "Shared service information across templates"
+      ],
+      "remaining": "Content structure on five service routes; appearance, wording comprehension and real process validation require design and content owners."
+    },
+    {
+      "choice_id": "B05",
+      "source_row": 27,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL. | Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Editorial heading anchors and related articles",
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open. Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B08",
+      "source_row": 30,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL. | Named, focusable ADMIN region with 6 scoped column headers and horizontal overflow declaration; reader TOC/body sections present.",
+      "checks": [
+        "Editorial heading anchors and related articles",
+        "Explicit scroll regions and reading hierarchy"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open. Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B12",
+      "source_row": 34,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL.",
+      "checks": [
+        "Editorial heading anchors and related articles"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open."
+    },
+    {
+      "choice_id": "CS-A01-4",
+      "source_row": 17,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL.",
+      "checks": [
+        "Editorial heading anchors and related articles"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open."
+    },
+    {
+      "choice_id": "CS-B03-2",
+      "source_row": 64,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL. | Named, focusable ADMIN region with 6 scoped column headers and horizontal overflow declaration; reader TOC/body sections present.",
+      "checks": [
+        "Editorial heading anchors and related articles",
+        "Explicit scroll regions and reading hierarchy"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open. Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-B04-4",
+      "source_row": 83,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL.",
+      "checks": [
+        "Editorial heading anchors and related articles"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open."
+    },
+    {
+      "choice_id": "CS-B06-2",
+      "source_row": 85,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "22 article TOC links resolved to prose sections with h2; relevant article groups exclude own URL.",
+      "checks": [
+        "Editorial heading anchors and related articles"
+      ],
+      "remaining": "Body ordering and local link targets tested; related topic appropriateness, visual reading width and native anchor landing remain open."
+    },
+    {
+      "choice_id": "A01",
+      "source_row": 8,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A02",
+      "source_row": 9,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A14",
+      "source_row": 21,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B02",
+      "source_row": 24,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A13-1",
+      "source_row": 56,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A13-3",
+      "source_row": 58,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-B02-1",
+      "source_row": 62,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-B04-1",
+      "source_row": 66,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight page families share /assets/minh-duc-logo-transparent.webp with declared dimensions; five audience/contact paths reachable by native links from Home.",
+      "checks": [
+        "Audience entries and shared brand"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B14",
+      "source_row": 36,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | 3 offices with address text; 2 visible telephone/email links; 4 map links independent of iframe rendering.",
+      "checks": [
+        "Structural job filters and form labels",
+        "Contact routes and visible fallback information"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Offline behavior of the external destination and device call/email handlers was not exercised."
+    },
+    {
+      "choice_id": "C05",
+      "source_row": 42,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "Structural job filters and form labels",
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C07",
+      "source_row": 44,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.",
+      "checks": [
+        "Structural job filters and form labels",
+        "s2-b2c / selecting file metadata"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "D08",
+      "source_row": 60,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | 1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label. | Named, focusable ADMIN region with 6 scoped column headers and horizontal overflow declaration; reader TOC/body sections present.",
+      "checks": [
+        "Structural job filters and form labels",
+        "Menu, native buttons and structural ARIA",
+        "Explicit scroll regions and reading hierarchy"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes. Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order. Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "MI04-1",
+      "source_row": 20,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels.",
+      "checks": [
+        "Structural job filters and form labels"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-A10-2",
+      "source_row": 13,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels.",
+      "checks": [
+        "Structural job filters and form labels"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B05-2",
+      "source_row": 69,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels.",
+      "checks": [
+        "Structural job filters and form labels"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B07-2",
+      "source_row": 72,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels.",
+      "checks": [
+        "Structural job filters and form labels"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C02-3",
+      "source_row": 98,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "Structural job filters and form labels",
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C08-1",
+      "source_row": 108,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels. | s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.",
+      "checks": [
+        "Structural job filters and form labels",
+        "s2-b2c / selecting file metadata"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-D05-2",
+      "source_row": 148,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Nine named filters, collapsed advanced control and live count; F01 requires name/phone/location/notes, F02 name/phone. All named controls on both default forms have persistent labels.",
+      "checks": [
+        "Structural job filters and form labels"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "F04",
+      "source_row": 86,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "F05",
+      "source_row": 87,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs. | 245 canonical sitemap records on preview all noindex,nofollow, 0 JobPosting JSON-LD entries on jobs routes.",
+      "checks": [
+        "Localized canonical metadata and index policy",
+        "Robots directives on every preview sitemap entry"
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "F09",
+      "source_row": 91,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "D12",
+      "source_row": 64,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "D14",
+      "source_row": 66,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "CS-B03-1",
+      "source_row": 80,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "CS-D07-1",
+      "source_row": 150,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "CS-D07-4",
+      "source_row": 164,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "200 localised page artifacts have exact lang, real canonical in sitemap, noindex,nofollow, description, OG URL and six unique hreflangs.",
+      "checks": [
+        "Localized canonical metadata and index policy"
+      ],
+      "remaining": "Static metadata and language pairing verified. Query/Back/Forward, missing translations, dynamic states and actual search-engine processing are separate checks."
+    },
+    {
+      "choice_id": "CS-D06-2",
+      "source_row": 160,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "3 offices with address text; 2 visible telephone/email links; 4 map links independent of iframe rendering.",
+      "checks": [
+        "Contact routes and visible fallback information"
+      ],
+      "remaining": "Offline behavior of the external destination and device call/email handlers was not exercised."
+    },
+    {
+      "choice_id": "CS-D06-4",
+      "source_row": 162,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "3 offices with address text; 2 visible telephone/email links; 4 map links independent of iframe rendering.",
+      "checks": [
+        "Contact routes and visible fallback information"
+      ],
+      "remaining": "Offline behavior of the external destination and device call/email handlers was not exercised."
+    },
+    {
+      "choice_id": "C04",
+      "source_row": 41,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "D05",
+      "source_row": 57,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "D07",
+      "source_row": 59,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "CS-A05-3",
+      "source_row": 10,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors. | [{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Visually hidden versus disabled control structure",
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified. Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A10-1",
+      "source_row": 45,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "CS-C05-1",
+      "source_row": 122,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "CS-D03-2",
+      "source_row": 156,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "MI01-1",
+      "source_row": 8,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "MS03-2",
+      "source_row": 81,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "5 status toggles; native active-list anchor on MD005; 44×44 job-save declaration; 26 authored outline selectors.",
+      "checks": [
+        "Visually hidden versus disabled control structure"
+      ],
+      "remaining": "Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified."
+    },
+    {
+      "choice_id": "C03",
+      "source_row": 40,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label.",
+      "checks": [
+        "Menu, native buttons and structural ARIA"
+      ],
+      "remaining": "Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order."
+    },
+    {
+      "choice_id": "C12",
+      "source_row": 49,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label.",
+      "checks": [
+        "Menu, native buttons and structural ARIA"
+      ],
+      "remaining": "Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order."
+    },
+    {
+      "choice_id": "CS-A08-3",
+      "source_row": 12,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label.",
+      "checks": [
+        "Menu, native buttons and structural ARIA"
+      ],
+      "remaining": "Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order."
+    },
+    {
+      "choice_id": "CS-C05-2",
+      "source_row": 102,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label.",
+      "checks": [
+        "Menu, native buttons and structural ARIA"
+      ],
+      "remaining": "Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order."
+    },
+    {
+      "choice_id": "MI08-4",
+      "source_row": 39,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "1 native menu buttons resolve to controlled elements with accessible names; scroll-to-top uses title + aria-label.",
+      "checks": [
+        "Menu, native buttons and structural ARIA"
+      ],
+      "remaining": "Native hover titles alone do not verify custom tooltip announcement, pointer dismissal, touch descriptions or real focus order."
+    },
+    {
+      "choice_id": "A13",
+      "source_row": 20,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "D04",
+      "source_row": 56,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A04-4",
+      "source_row": 27,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A06-2",
+      "source_row": 32,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A10-3",
+      "source_row": 46,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A11-3",
+      "source_row": 50,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D01-1",
+      "source_row": 136,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]} | {\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Stable card semantics with long locale strings",
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D04-4",
+      "source_row": 147,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D07-3",
+      "source_row": 163,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Maximum visible card-title lengths by VI/EN/ZH/KO/JA: {\"P01\":[37,33,9,16,14],\"P03\":[37,33,9,16,14],\"P09\":[29,28,6,10,9],\"P19\":[24,24,6,9,8]}",
+      "checks": [
+        "Stable card semantics with long locale strings"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D01-2",
+      "source_row": 137,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Named, focusable ADMIN region with 6 scoped column headers and horizontal overflow declaration; reader TOC/body sections present.",
+      "checks": [
+        "Explicit scroll regions and reading hierarchy"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "B15",
+      "source_row": 37,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"vi\":[\"8–11 triệu/tháng\",\"Trao đổi khi tư vấn\"],\"en\":[\"8–11 million VND/month\",\"Discuss during consultation\"],\"zh\":[\"每月 800万–1100万越南盾\",\"咨询时商议\"],\"ko\":[\"월 800만–1,100만 동\",\"상담 시 협의\"],\"ja\":[\"月800万〜1,100万ドン\",\"相談時に説明\"]}",
+      "checks": [
+        "Date, currency and string locale behavior"
+      ],
+      "remaining": "Preservation of salary values and textual exception verified. Formatting of dates, consultation timezone and other units have separate acceptance criteria."
+    },
+    {
+      "choice_id": "D15",
+      "source_row": 67,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"vi\":[\"8–11 triệu/tháng\",\"Trao đổi khi tư vấn\"],\"en\":[\"8–11 million VND/month\",\"Discuss during consultation\"],\"zh\":[\"每月 800万–1100万越南盾\",\"咨询时商议\"],\"ko\":[\"월 800만–1,100만 동\",\"상담 시 협의\"],\"ja\":[\"月800万〜1,100万ドン\",\"相談時に説明\"]}",
+      "checks": [
+        "Date, currency and string locale behavior"
+      ],
+      "remaining": "Preservation of salary values and textual exception verified. Formatting of dates, consultation timezone and other units have separate acceptance criteria."
+    },
+    {
+      "choice_id": "F07",
+      "source_row": 89,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "ADMIN mock edits a single home-introduction string via draft/content state and reset; submission module retains records in memory without HTTP/storage APIs. No login/roles route and no gtag/dataLayer/analytics.track/sendBeacon event entry in 55 application source files. | {\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}",
+      "checks": [
+        "Project fixture boundaries and missing production entry points",
+        "ADMIN CMS local editor capability"
+      ],
+      "remaining": "No generic create/hide-news CMS, role/denied-session fixture, conversion event plan or delayed-failure integration fixture was identified in these entry points. Real integrations/auth/tracking require separate scope. Existing demo controls are not evidence for those capabilities. This is a single local homepage-text editor. No article creation/preview, per-record publish/hide, real access-control or external publishing is implied."
+    },
+    {
+      "choice_id": "F11",
+      "source_row": 93,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "ADMIN mock edits a single home-introduction string via draft/content state and reset; submission module retains records in memory without HTTP/storage APIs. No login/roles route and no gtag/dataLayer/analytics.track/sendBeacon event entry in 55 application source files. | Chỉ là bản minh họa. Dùng dữ liệu giả. Hồ sơ gửi thử chỉ giữ trong bộ nhớ trang khi chuyển trang nội bộ, không tải tệp hay gửi ra ngoài. Tải lại hoặc khôi phục mẫu sẽ xóa hồ sơ gửi thử. Không có đăng nhập hay phân quyền thực.",
+      "checks": [
+        "Project fixture boundaries and missing production entry points",
+        "Handoff for unsupported role and conversion fixtures"
+      ],
+      "remaining": "No generic create/hide-news CMS, role/denied-session fixture, conversion event plan or delayed-failure integration fixture was identified in these entry points. Real integrations/auth/tracking require separate scope. Existing demo controls are not evidence for those capabilities. No role-switch/denied-path or named conversion tracking fixture occurs in the authorized prototype; these require a separate specification before implementation."
+    },
+    {
+      "choice_id": "F13",
+      "source_row": 95,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "ADMIN mock edits a single home-introduction string via draft/content state and reset; submission module retains records in memory without HTTP/storage APIs. No login/roles route and no gtag/dataLayer/analytics.track/sendBeacon event entry in 55 application source files.",
+      "checks": [
+        "Project fixture boundaries and missing production entry points"
+      ],
+      "remaining": "No generic create/hide-news CMS, role/denied-session fixture, conversion event plan or delayed-failure integration fixture was identified in these entry points. Real integrations/auth/tracking require separate scope. Existing demo controls are not evidence for those capabilities."
+    },
+    {
+      "choice_id": "F14",
+      "source_row": 96,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "ADMIN mock edits a single home-introduction string via draft/content state and reset; submission module retains records in memory without HTTP/storage APIs. No login/roles route and no gtag/dataLayer/analytics.track/sendBeacon event entry in 55 application source files. | Chỉ là bản minh họa. Dùng dữ liệu giả. Hồ sơ gửi thử chỉ giữ trong bộ nhớ trang khi chuyển trang nội bộ, không tải tệp hay gửi ra ngoài. Tải lại hoặc khôi phục mẫu sẽ xóa hồ sơ gửi thử. Không có đăng nhập hay phân quyền thực.",
+      "checks": [
+        "Project fixture boundaries and missing production entry points",
+        "Handoff for unsupported role and conversion fixtures"
+      ],
+      "remaining": "No generic create/hide-news CMS, role/denied-session fixture, conversion event plan or delayed-failure integration fixture was identified in these entry points. Real integrations/auth/tracking require separate scope. Existing demo controls are not evidence for those capabilities. No role-switch/denied-path or named conversion tracking fixture occurs in the authorized prototype; these require a separate specification before implementation."
+    },
+    {
+      "choice_id": "C01",
+      "source_row": 38,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C09",
+      "source_row": 46,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C15",
+      "source_row": 52,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL. | s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt",
+        "s2-b2c / return to the original apply button"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C01-1",
+      "source_row": 92,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL. | s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger. | s2-b2c rerun above: each of five open worker jobs and two careers jobs preserved title, original list URL and code; F03 required name/phone, F04 optional email/CV and read-only position; confirmed receipt and ADMIN href; closing returns to the opener.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt",
+        "s2-b2c / return to the original apply button",
+        "Workers and internal job journeys"
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "CS-C01-2",
+      "source_row": 93,
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL. | s2-b2c rerun above: each of five open worker jobs and two careers jobs preserved title, original list URL and code; F03 required name/phone, F04 optional email/CV and read-only position; confirmed receipt and ADMIN href; closing returns to the opener.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt",
+        "Workers and internal job journeys"
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "MI01-2",
+      "source_row": 9,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MI07-1",
+      "source_row": 32,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.",
+      "checks": [
+        "s2-b2c / one fixture for the whole attempt"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C08",
+      "source_row": 45,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C06-3",
+      "source_row": 125,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts. | s2-b2c.mjs exited 0; Filtered-empty vs no-saved distinct and canonical empty CTA focused after final removal.",
+      "checks": [
+        "s2-b2c / the editing cursor",
+        "s2-b2c / .jobs-empty a"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C07-2",
+      "source_row": 107,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C08-3",
+      "source_row": 109,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MI04-2",
+      "source_row": 21,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts. | s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.",
+      "checks": [
+        "s2-b2c / the editing cursor",
+        "s2-b2c / selecting file metadata"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO04-3",
+      "source_row": 54,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.",
+      "checks": [
+        "s2-b2c / the editing cursor"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS04-3",
+      "source_row": 86,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts. | s2-b2b-flows.mjs exited 0; Service rail consecutive pause/play commands return to correct state; relative 0ms/180ms token duration parsed.",
+      "checks": [
+        "s2-b2c / the editing cursor",
+        "s2-b2b-flows / Rapid double toggle"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C05-3",
+      "source_row": 103,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.",
+      "checks": [
+        "s2-b2c / selecting file metadata"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B07-3",
+      "source_row": 73,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.",
+      "checks": [
+        "s2-b2c / selecting file metadata"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C10",
+      "source_row": 47,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.",
+      "checks": [
+        "s2-b2c / return to the original apply button"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-B07-4",
+      "source_row": 74,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.",
+      "checks": [
+        "s2-b2c / return to the original apply button"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MI07-2",
+      "source_row": 33,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.",
+      "checks": [
+        "s2-b2c / return to the original apply button"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO02-4",
+      "source_row": 47,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.",
+      "checks": [
+        "s2-b2c / return to the original apply button"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C13",
+      "source_row": 50,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Filtered-empty vs no-saved distinct and canonical empty CTA focused after final removal.",
+      "checks": [
+        "s2-b2c / .jobs-empty a"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO04-2",
+      "source_row": 53,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2c.mjs exited 0; Filtered-empty vs no-saved distinct and canonical empty CTA focused after final removal. | jobs-sprint1.mjs exited 0; Back with original query/hash/page restores surviving adjacent target after original saved position is deleted.",
+      "checks": [
+        "s2-b2c / .jobs-empty a",
+        "jobs-sprint1 / original job was removed"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C02",
+      "source_row": 39,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "jobs-sprint1.mjs exited 0; Back with original query/hash/page restores surviving adjacent target after original saved position is deleted.",
+      "checks": [
+        "jobs-sprint1 / original job was removed"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C10-1",
+      "source_row": 112,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "jobs-sprint1.mjs exited 0; Back with original query/hash/page restores surviving adjacent target after original saved position is deleted.",
+      "checks": [
+        "jobs-sprint1 / original job was removed"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "D03",
+      "source_row": 55,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "jobs-sprint1.mjs exited 0; Simulated header/inline bounds, focused text entry, modal state and viewport change hide the mobile Apply bar; closed MD005 has no Apply control.",
+      "checks": [
+        "jobs-sprint1 / keyboardInput.focus()"
+      ],
+      "remaining": "Native pointer/IME/keyboard, screen reader and visual-state verification on the selected devices remain open."
+    },
+    {
+      "choice_id": "CS-C09-1",
+      "source_row": 110,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "jobs-sprint1.mjs exited 0; Simulated header/inline bounds, focused text entry, modal state and viewport change hide the mobile Apply bar; closed MD005 has no Apply control.",
+      "checks": [
+        "jobs-sprint1 / keyboardInput.focus()"
+      ],
+      "remaining": "Native pointer/IME/keyboard, screen reader and visual-state verification on the selected devices remain open."
+    },
+    {
+      "choice_id": "MO06-3",
+      "source_row": 62,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "jobs-sprint1.mjs exited 0; Simulated header/inline bounds, focused text entry, modal state and viewport change hide the mobile Apply bar; closed MD005 has no Apply control.",
+      "checks": [
+        "jobs-sprint1 / keyboardInput.focus()"
+      ],
+      "remaining": "Native pointer/IME/keyboard, screen reader and visual-state verification on the selected devices remain open."
+    },
+    {
+      "choice_id": "CS-C03-3",
+      "source_row": 100,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers.",
+      "checks": [
+        "careers-carousel / user pause outlasts visibility transitions"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO07-4",
+      "source_row": 67,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers.",
+      "checks": [
+        "careers-carousel / user pause outlasts visibility transitions"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS02-2",
+      "source_row": 77,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers.",
+      "checks": [
+        "careers-carousel / user pause outlasts visibility transitions"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS04-4",
+      "source_row": 87,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "careers-carousel.mjs exited 0; Four independent rails: user pause survives visibility, active gallery stops in modal, keyboard arrows/Escape restore focus, reduced preference disables timers. | s2-b2b-flows.mjs exited 0; FAQ rapid reversal leaves only last intended panel open and inert prevents focus in closed answers.",
+      "checks": [
+        "careers-carousel / user pause outlasts visibility transitions",
+        "s2-b2b-flows / rapid reversal"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "C11",
+      "source_row": 48,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; FAQ rapid reversal leaves only last intended panel open and inert prevents focus in closed answers.",
+      "checks": [
+        "s2-b2b-flows / rapid reversal"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO03-1",
+      "source_row": 48,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; FAQ rapid reversal leaves only last intended panel open and inert prevents focus in closed answers.",
+      "checks": [
+        "s2-b2b-flows / rapid reversal"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MO07-1",
+      "source_row": 64,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; Service rail consecutive pause/play commands return to correct state; relative 0ms/180ms token duration parsed.",
+      "checks": [
+        "s2-b2b-flows / Rapid double toggle"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS03-1",
+      "source_row": 80,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; Service rail consecutive pause/play commands return to correct state; relative 0ms/180ms token duration parsed.",
+      "checks": [
+        "s2-b2b-flows / Rapid double toggle"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "F03",
+      "source_row": 85,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; Media error hides decorative image while card title and action remain usable; a subsequent load clears the fallback.",
+      "checks": [
+        "s2-b2b-flows / .service-card-title"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MS05-3",
+      "source_row": 90,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "s2-b2b-flows.mjs exited 0; Media error hides decorative image while card title and action remain usable; a subsequent load clears the fallback.",
+      "checks": [
+        "s2-b2b-flows / .service-card-title"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "CS-C10-3",
+      "source_row": 113,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "consultation.mjs exited 0; Switch F01/F02 drafts and return from time selection while maintaining keyed local state and no outgoing request.",
+      "checks": [
+        "consultation / requests,0"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "MI06-3",
+      "source_row": 30,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "consultation.mjs exited 0; Switch F01/F02 drafts and return from time selection while maintaining keyed local state and no outgoing request.",
+      "checks": [
+        "consultation / requests,0"
+      ],
+      "remaining": "The test covers the named component and state. The frozen row also requires other component families or input modes."
+    },
+    {
+      "choice_id": "A06",
+      "source_row": 13,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}] | [{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups",
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A07",
+      "source_row": 14,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A01-2",
+      "source_row": 15,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A05-1",
+      "source_row": 28,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A05-2",
+      "source_row": 29,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A05-4",
+      "source_row": 30,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A06-1",
+      "source_row": 31,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}]",
+      "checks": [
+        "Spacing between and within reading groups"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A06-3",
+      "source_row": 33,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".jobs-section\",\"actual\":{\"padding\":[\"clamp(32px,3.5vw,56px) 0 clamp(48px,5vw,82px)\",\"28px 0\"]}},{\"selector\":\".jobs-filter-selection\",\"actual\":{\"gap\":[\"8px\"],\"margin-top\":[\"16px\"]}},{\"selector\":\".job-description-block h2\",\"actual\":{\"margin\":[\"0 0 14px\"]}},{\"selector\":\".home-introduction\",\"actual\":{\"gap\":[\"clamp(32px,6vw,120px)\",\"28px\",\"30px\"],\"grid-template-columns\":[\"minmax(0,7fr) minmax(0,5fr)\",\"1.35fr 1fr\",\"minmax(0,1fr)\"]}},{\"selector\":\".job-summary-primary .job-summary-locality\",\"actual\":{\"gap\":[\"7px\"],\"align-items\":[\"baseline\"]}}] | [[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]",
+      "checks": [
+        "Spacing between and within reading groups",
+        "Icons and paired native controls"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row. Inspected job-title, map and bookmark SVGs in a rendered action row. Optical alignment and unaided reader interpretation require visual/usability testing."
+    },
+    {
+      "choice_id": "A11",
+      "source_row": 18,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A07-1",
+      "source_row": 35,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A09-1",
+      "source_row": 41,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A09-2",
+      "source_row": 42,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A09-4",
+      "source_row": 44,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A11-1",
+      "source_row": 48,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D03-3",
+      "source_row": 142,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[{\"selector\":\".service-card-grid\",\"actual\":{\"grid-template-columns\":[\"repeat(3,minmax(0,1fr))\",\"repeat(2,minmax(0,1fr))\",\"minmax(0,1fr)\"],\"gap\":[\"var(--card-gap)\"]}},{\"selector\":\".service-gallery-card>a\",\"actual\":{\"border-radius\":[\"clamp(16px,1.4vw,22px)\"],\"padding\":[\"clamp(20px,2.2vw,36px)\",\"22px\",\"18px\"]}},{\"selector\":\".service-card-cta\",\"actual\":{\"border-radius\":[\"999px\"],\"gap\":[\"10px\"],\"padding\":[\"9px 16px\"]}},{\"selector\":\".service-gallery-controls button\",\"actual\":{\"box-shadow\":[\"0 3px 14px #0002\",\"none\"],\"border-radius\":[\"50%\"],\"width\":[\"44px\"],\"height\":[\"44px\"]}},{\"selector\":\".job-card\",\"actual\":{\"border-bottom\":[\"1px solid #cddae6\"],\"padding\":[\"20px 0\",\"18px 0\"],\"gap\":[\"24px\",\"16px\",\"9px 12px\"]}}]",
+      "checks": [
+        "Service card geometry and surfaces"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A02-4",
+      "source_row": 19,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Service overlay linear-gradient(160deg,transparent 25%,rgba(7,20,34,.36)),#1020309e; explicit focal declarations .ed-reader-latest-grid img.ed-portrait=50% 40% | .md-photo-stage .md-masthead-figure>img=center 42%",
+      "checks": [
+        "Photo scrims and crop properties in preview CSS"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A03-1",
+      "source_row": 20,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Service overlay linear-gradient(160deg,transparent 25%,rgba(7,20,34,.36)),#1020309e; explicit focal declarations .ed-reader-latest-grid img.ed-portrait=50% 40% | .md-photo-stage .md-masthead-figure>img=center 42%",
+      "checks": [
+        "Photo scrims and crop properties in preview CSS"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "A10",
+      "source_row": 17,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]",
+      "checks": [
+        "Icons and paired native controls"
+      ],
+      "remaining": "Inspected job-title, map and bookmark SVGs in a rendered action row. Optical alignment and unaided reader interpretation require visual/usability testing."
+    },
+    {
+      "choice_id": "CS-A08-1",
+      "source_row": 38,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]",
+      "checks": [
+        "Icons and paired native controls"
+      ],
+      "remaining": "Inspected job-title, map and bookmark SVGs in a rendered action row. Optical alignment and unaided reader interpretation require visual/usability testing."
+    },
+    {
+      "choice_id": "CS-A08-2",
+      "source_row": 39,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]",
+      "checks": [
+        "Icons and paired native controls"
+      ],
+      "remaining": "Inspected job-title, map and bookmark SVGs in a rendered action row. Optical alignment and unaided reader interpretation require visual/usability testing."
+    },
+    {
+      "choice_id": "CS-A08-4",
+      "source_row": 40,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "[[\"lucide lucide-arrow-up-right\",\"17\",\"2\",\"true\"],[\"lucide lucide-map-pin\",\"16\",\"2\",\"true\"],[\"lucide lucide-bookmark\",\"20\",\"2\",\"true\"]]",
+      "checks": [
+        "Icons and paired native controls"
+      ],
+      "remaining": "Inspected job-title, map and bookmark SVGs in a rendered action row. Optical alignment and unaided reader interpretation require visual/usability testing."
+    },
+    {
+      "choice_id": "D01",
+      "source_row": 53,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "D02",
+      "source_row": 54,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-A12-3",
+      "source_row": 54,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D02-1",
+      "source_row": 155,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D02-2",
+      "source_row": 139,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D02-3",
+      "source_row": 140,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "MO04-4",
+      "source_row": 55,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\".job-card\":[[\"base\",\"minmax(0,1.65fr) minmax(0,1fr) minmax(0,1fr) auto\"],[\"media (max-width:767px)\",\"minmax(0,1fr) auto\"]],\".jobs-filter-more\":[[\"base\",\"repeat(4,minmax(0,1fr))\"],[\"media (max-width:1000px)\",\"repeat(3,minmax(0,1fr))\"],[\"media (max-width:767px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:520px)\",\"minmax(0,1fr)\"]],\".education-form-layout\":[[\"base\",\"minmax(0,4fr) minmax(0,7fr)\"],[\"media (max-width:767px)\",\"minmax(0,1fr)\"]],\".service-card-grid\":[[\"base\",\"repeat(3,minmax(0,1fr))\"],[\"media (min-width:640px)and (max-width:1023px)\",\"repeat(2,minmax(0,1fr))\"],[\"media (max-width:639px)\",\"minmax(0,1fr)\"]]}",
+      "checks": [
+        "Named component-specific media transitions"
+      ],
+      "remaining": "Computed layout, zoom, native touch, real font fallback and screenshots remain necessary where required by the frozen row."
+    },
+    {
+      "choice_id": "F15",
+      "source_row": 97,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 preview application routes plus a separate duyet.html reviewer, 30 selected state records, checksum manifest, two mount profiles, viewport/real-input checklist and confirmed reset entry. Source/application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd.",
+      "checks": [
+        "Preview application release handoff"
+      ],
+      "remaining": "The handoff can be rerun; native viewport/input coverage, physical screenshots and independent PO rehearsal are outside these checks."
+    },
+    {
+      "choice_id": "MS06-2",
+      "source_row": 93,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 preview application routes plus a separate duyet.html reviewer, 30 selected state records, checksum manifest, two mount profiles, viewport/real-input checklist and confirmed reset entry. Source/application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd.",
+      "checks": [
+        "Preview application release handoff"
+      ],
+      "remaining": "The handoff can be rerun; native viewport/input coverage, physical screenshots and independent PO rehearsal are outside these checks."
+    },
+    {
+      "choice_id": "MS06-3",
+      "source_row": 94,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 preview application routes plus a separate duyet.html reviewer, 30 selected state records, checksum manifest, two mount profiles, viewport/real-input checklist and confirmed reset entry. Source/application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd.",
+      "checks": [
+        "Preview application release handoff"
+      ],
+      "remaining": "The handoff can be rerun; native viewport/input coverage, physical screenshots and independent PO rehearsal are outside these checks."
+    },
+    {
+      "choice_id": "MS06-4",
+      "source_row": 95,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "40 preview application routes plus a separate duyet.html reviewer, 30 selected state records, checksum manifest, two mount profiles, viewport/real-input checklist and confirmed reset entry. Source/application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd.",
+      "checks": [
+        "Preview application release handoff"
+      ],
+      "remaining": "The handoff can be rerun; native viewport/input coverage, physical screenshots and independent PO rehearsal are outside these checks."
+    },
+    {
+      "choice_id": "CS-A13-2",
+      "source_row": 57,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Careers banner matches field-team from careers-media; eleven activity photos each have contextual alt/caption. Repository provenance separately identifies the architectural artwork as generated.",
+      "checks": [
+        "Separate documentary and conceptual images"
+      ],
+      "remaining": "Evidence verifies the documented distinction, not image rights, architectural reality, publication approvals or perceived image quality."
+    },
+    {
+      "choice_id": "CS-A13-4",
+      "source_row": 59,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Careers banner matches field-team from careers-media; eleven activity photos each have contextual alt/caption. Repository provenance separately identifies the architectural artwork as generated.",
+      "checks": [
+        "Separate documentary and conceptual images"
+      ],
+      "remaining": "Evidence verifies the documented distinction, not image rights, architectural reality, publication approvals or perceived image quality."
+    },
+    {
+      "choice_id": "CS-B01-4",
+      "source_row": 77,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Careers banner matches field-team from careers-media; eleven activity photos each have contextual alt/caption. Repository provenance separately identifies the architectural artwork as generated.",
+      "checks": [
+        "Separate documentary and conceptual images"
+      ],
+      "remaining": "Evidence verifies the documented distinction, not image rights, architectural reality, publication approvals or perceived image quality."
+    },
+    {
+      "choice_id": "CS-C06-1",
+      "source_row": 104,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Preview shows the initial local-storage status and no false empty state before hydration. Store exposes ready with the same snapshot that carries sanitized IDs.",
+      "checks": [
+        "Static saved-list hydration contract"
+      ],
+      "remaining": "Initial HTML and subscription contract, plus separate saved/store suites. First paint time and assistive announcements on real devices pending."
+    },
+    {
+      "choice_id": "CS-C07-3",
+      "source_row": 126,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Preview shows the initial local-storage status and no false empty state before hydration. Store exposes ready with the same snapshot that carries sanitized IDs.",
+      "checks": [
+        "Static saved-list hydration contract"
+      ],
+      "remaining": "Initial HTML and subscription contract, plus separate saved/store suites. First paint time and assistive announcements on real devices pending."
+    },
+    {
+      "choice_id": "MI01-4",
+      "source_row": 11,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight saved IDs: first page six rows, Previous disabled; second two rows, Next disabled; repeated disabled click inert. Filtering from last page produced one MD001, no pagination.",
+      "checks": [
+        "Saved pagination boundary activations"
+      ],
+      "remaining": "Boundary behavior for job pagination tested, the selection also applies to news, events and other existing list controls."
+    },
+    {
+      "choice_id": "C06",
+      "source_row": 43,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Eight saved IDs: first page six rows, Previous disabled; second two rows, Next disabled; repeated disabled click inert. Filtering from last page produced one MD001, no pagination.",
+      "checks": [
+        "Saved pagination boundary activations"
+      ],
+      "remaining": "Boundary behavior for job pagination tested, the selection also applies to news, events and other existing list controls."
+    },
+    {
+      "choice_id": "CS-C05-4",
+      "source_row": 123,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}",
+      "checks": [
+        "ADMIN CMS local editor capability"
+      ],
+      "remaining": "This is a single local homepage-text editor. No article creation/preview, per-record publish/hide, real access-control or external publishing is implied."
+    },
+    {
+      "choice_id": "MI08-2",
+      "source_row": 37,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}",
+      "checks": [
+        "ADMIN CMS local editor capability"
+      ],
+      "remaining": "This is a single local homepage-text editor. No article creation/preview, per-record publish/hide, real access-control or external publishing is implied."
+    },
+    {
+      "choice_id": "CS-C07-4",
+      "source_row": 127,
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "{\"afterSave\":\"Trạng thái: Đã lưu bản nháp mẫu\",\"afterEdit\":\"Trạng thái: Có thay đổi chưa lưu\",\"afterPublish\":\"Trạng thái: Đã xuất bản mẫu\",\"inputs\":1,\"actions\":[\"Lưu bản nháp\",\"Xuất bản thử\"]}",
+      "checks": [
+        "ADMIN feedback after editing a saved draft"
+      ],
+      "remaining": "Retest editing after both save and simulated publish, then save the changed content to confirm the message follows current draft state."
+    },
+    {
+      "choice_id": "MI08-3",
+      "source_row": 38,
+      "coverage": "partial",
+      "test_status": "Blocked",
+      "assertion": "Career questions are three readable rail articles with links. No accordion toggle in the questions track.",
+      "checks": [
+        "Careers FAQ presentation gate"
+      ],
+      "remaining": "The frozen selector makes a new Careers FAQ accordion conditional on separate approval. Service FAQ toggles do not meet this P19 condition."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
+Isolated checkout: /tmp/minhduc-w2-4231-e3ria6fs
+Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
+2026-11-27T13:04:31.557735+00:00  node tests/home-video-gallery.mjs
+PASS video gallery: five locales, SSR file links, on-demand player, all selections, focus, fallback, retry and cleanup
+
+exit 0

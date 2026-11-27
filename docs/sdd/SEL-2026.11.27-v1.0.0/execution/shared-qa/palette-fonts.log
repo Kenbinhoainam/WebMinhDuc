@@ -1,0 +1,18 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
+Isolated checkout: /tmp/minhduc-w1-4231-q4csuk2i
+Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
+command=python tests/s2-shared-palette.py
+PASS S2-COLOR ink #183653 / surface #ffffff = 12.42:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface #ffffff = 6.45:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface-blue #eaf4ff = 5.80:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red #bd1e2d = 6.20:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red-hover #971827 = 8.48:1 (opaque source colors)
+PASS S2-COLOR blue #1b489d / surface-blue #eaf4ff = 7.67:1 (opaque source colors)
+PASS S2-COLOR blue-hover #143a7b / surface-blue #eaf4ff = 9.83:1 (opaque source colors)
+PASS S2-COLOR focus #075fb9 / surface #ffffff = 6.28:1 (opaque source colors)
+PASS S2-COLOR control-border #758ba1 / surface #ffffff = 3.52:1 (opaque source colors)
+PASS S2-FONT inter shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+PASS S2-FONT roboto shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+
+exit 0
