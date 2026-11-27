@@ -11,3 +11,11 @@ export function validateDemoFiles(files:FileSummary[]):string {
 }
 export const validDemoPhone=(value:string)=>/^(?:0|\+?84)[35789]\d{8}$/.test(value.replace(/[\s.()-]/g,''));
 export const validOptionalEmail=(value:string)=>!value.trim()||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
+/** Field-level rules shared by the public demo forms. */
+export function identityFieldError(name: string, value: string): string {
+  if (name === 'name' && !value.trim()) return 'Vui lòng nhập họ tên.';
+  if (name === 'phone' && !validDemoPhone(value)) return 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
+  if (name === 'email' && !validOptionalEmail(value)) return 'Email chưa đúng định dạng.';
+  return '';
+}
