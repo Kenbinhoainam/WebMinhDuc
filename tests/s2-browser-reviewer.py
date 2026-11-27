@@ -130,13 +130,17 @@ def navigation(page):
     frame.wait_for_url("**/education**")
     expect(page.locator(".direct")).to_have_attribute("href",path("/education"))
     replaced=page.url
-    # The iframe can add its own session-history step. Traverse until the serving tab leaves P41.
-    for _ in range(6):
-        page.go_back(wait_until="domcontentloaded")
-        if not urlsplit(page.url).path.endswith("/duyet.html"):
-            break
-    assert page.url.rstrip("/") == path("/jobs").rstrip("/"),page.url
-    return {"retained_child":in_frame,"direct_popup":in_frame,"changed_page":replaced,"history_back":page.url}
+    # Make the next history entry a top-level page so Back has a top-level
+    # DOM event to await even when the preceding viewer has iframe history.
+    page.goto(path("/contact"),wait_until="domcontentloaded")
+    page.go_back(wait_until="domcontentloaded")
+    assert page.url == replaced, page.url
+    expect(page.locator("#page")).to_have_value("/education")
+    expect(page.locator("[data-width='1440']")).to_have_attribute("aria-pressed","true")
+    back = page.url
+    page.go_forward(wait_until="domcontentloaded")
+    assert page.url.rstrip("/") == path("/contact").rstrip("/"),page.url
+    return {"retained_child":in_frame,"direct_popup":in_frame,"changed_page":replaced,"history_back":back,"history_forward":page.url}
 
 
 def run(browser):
