@@ -1,0 +1,35 @@
+name: Unchanged hero regression checks
+on:
+  push:
+    branches: [qa/s2-hero-unchanged-20261127]
+permissions:
+  contents: read
+jobs:
+  hero:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git merge-base --is-ancestor 88e2b61596eab5952f183a81b3030da760696c9c HEAD
+          git diff --exit-code 88e2b61596eab5952f183a81b3030da760696c9c HEAD -- . ':(exclude).github/**'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: |
+          set -o pipefail
+          node tests/hero-lifecycle.mjs 2>&1 | tee "$RUNNER_TEMP/hero-lifecycle.log"
+      - if: always()
+        run: |
+          set -o pipefail
+          npm run test:hero 2>&1 | tee "$RUNNER_TEMP/hero-suite.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unchanged-hero-logs
+          path: ${{ runner.temp }}/hero-*.log
