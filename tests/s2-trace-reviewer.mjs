@@ -3,7 +3,7 @@
  */
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {readFileSync,writeFileSync} from 'node:fs';
+import {existsSync,readFileSync,writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {JSDOM} from 'jsdom';
 
@@ -134,6 +134,21 @@ add('E1 E4','Incomplete','Both artifacts open the same URL-selected pages and fr
     'Hoàn thành phiên so sánh trước/sau với người duyệt và lưu kết luận theo trang/viewport.');
 add('F3','Incomplete','Direct link fallback works when reading the child location throws.','Giả lập lỗi tải iframe trên trình duyệt được cấp quyền. Việc thêm thông báo lỗi riêng cần quyết định theo dòng chọn.');
 add('F4','Completed','SOURCE-BASELINE.md and trace-reviewer.json identify the reviewed source version, the eight original page paths, the five v3 shortcuts and all three CSS sizes.');
+const browserReport = join(output,'browser-reviewer-evidence.json');
+if (existsSync(browserReport)) {
+  const proof = JSON.parse(readFileSync(browserReport,'utf8'));
+  if (proof.build_sha===sha) {
+    for (const observed of proof.choices) {
+      const row = rows.find(r => r.choice_id===observed.choice_id);
+      if (!row) continue;
+      row.evidence += ' · browser-reviewer-evidence.json → '+observed.choice_id;
+      row.actual += ' '+observed.assertion;
+      if (row.status!=='Blocked' && observed.test_status==='Pass' && observed.coverage==='full') {
+        row.status='Completed'; row.remaining=''; row.next_owner='';
+      }
+    }
+  }
+}
 assert.equal(rows.length,24); assert.equal(new Set(rows.map(r=>r.choice_id)).size,24);
 const keys=Object.keys(rows[0]);
 const quote=s=>'"'+String(s).replaceAll('"','""')+'"';

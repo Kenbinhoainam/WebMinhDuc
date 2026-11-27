@@ -1,4 +1,1 @@
-Application 4231bae137528dbf152250832c1a26d060c579d9; independently matching Pages dist SHA-256 ca25ff51c80afd5428a56cc3adf6a0ed889ef45b9d6e824455419065f84e05f5
-$ python tests/s2-media-audit.py --dist dist --sha 4231bae137528dbf152250832c1a26d060c579d9
 200 route/locale HTML files; 67 unique decoded assets; 60 selection predicates; failed: []
-Exit 0

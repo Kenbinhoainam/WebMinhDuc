@@ -1,0 +1,52 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "workflow": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489",
+  "check_counts": {
+    "Pass": 800
+  },
+  "sha256_by_locale": {
+    "vi": "396c55eabfe452a986a25e2b51d0a74a1c35eaaa0570ee2f315a5492318c5794",
+    "en": "802f0f82ebee8d804bfa62269729ffd902a8e4f0a40b05cfa56909c1388174b9",
+    "zh": "2347b60530c5ef9fb8e4010bfe91e2278b69f344cf9348fd3b50cd29ce26bed1",
+    "ko": "0825c7d85b0d614e74c022ff3866cc84df346e4858993160c24e717c81e6b254",
+    "ja": "83a03b02ae16cb88a7d4abee019a3f80bccd9f2a7961f9c0b7b1d5a3de50c0ac"
+  },
+  "choices": [
+    {
+      "choice_id": "CS-A02-2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Chromium axe rule or bounded keyboard observations in five locales at 390/1440 CSS px. {'Pass': 400, 'Not Run': 165}. color-contrast",
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-axe-vi/a11y-observations.jsonl#L1",
+      "examples": [],
+      "remaining": "Review manual findings in the axe journal, keyboard paths beyond the recorded initial sequence, unopened states and screen-reader output as required by the frozen row."
+    },
+    {
+      "choice_id": "CS-B04-4",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Chromium axe rule or bounded keyboard observations in five locales at 390/1440 CSS px. {'Pass': 120}. bypass",
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-axe-vi/a11y-observations.jsonl#L3",
+      "examples": [],
+      "remaining": "Review manual findings in the axe journal, keyboard paths beyond the recorded initial sequence, unopened states and screen-reader output as required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D04-1",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Chromium axe rule or bounded keyboard observations in five locales at 390/1440 CSS px. {'Pass': 400}. keyboard",
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-axe-vi/a11y-observations.jsonl#L2",
+      "examples": [],
+      "remaining": "Review manual findings in the axe journal, keyboard paths beyond the recorded initial sequence, unopened states and screen-reader output as required by the frozen row."
+    },
+    {
+      "choice_id": "CS-D04-2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Chromium axe rule or bounded keyboard observations in five locales at 390/1440 CSS px. {'Pass': 680}. aria-allowed-attr, aria-hidden-focus, aria-required-attr, aria-roles, aria-valid-attr, aria-valid-attr-value, button-name, image-alt, label, link-name, nested-interactive, select-name",
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-axe-vi/a11y-observations.jsonl#L17",
+      "examples": [],
+      "remaining": "Review manual findings in the axe journal, keyboard paths beyond the recorded initial sequence, unopened states and screen-reader output as required by the frozen row."
+    }
+  ]
+}

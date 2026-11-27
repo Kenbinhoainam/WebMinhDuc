@@ -1,0 +1,25 @@
+/ desktop 1 fresh_context Measured
+/ desktop 1 repeat_same_context_no_http_cache Measured
+/ desktop 2 fresh_context Measured
+/ desktop 2 repeat_same_context_no_http_cache Measured
+/ desktop 3 fresh_context Measured
+/ desktop 3 repeat_same_context_no_http_cache Measured
+/ mobile 1 fresh_context Measured
+/ mobile 1 repeat_same_context_no_http_cache Measured
+/ mobile 2 fresh_context Measured
+/ mobile 2 repeat_same_context_no_http_cache Measured
+/ mobile 3 fresh_context Measured
+/ mobile 3 repeat_same_context_no_http_cache Measured
+/partners desktop 1 fresh_context Measured
+/partners desktop 1 repeat_same_context_no_http_cache Measured
+/partners desktop 2 fresh_context Measured
+/partners desktop 2 repeat_same_context_no_http_cache Measured
+/partners desktop 3 fresh_context Measured
+/partners desktop 3 repeat_same_context_no_http_cache Measured
+/partners mobile 1 fresh_context Measured
+/partners mobile 1 repeat_same_context_no_http_cache Measured
+/partners mobile 2 fresh_context Measured
+/partners mobile 2 repeat_same_context_no_http_cache Measured
+/partners mobile 3 fresh_context Measured
+/partners mobile 3 repeat_same_context_no_http_cache Measured
+COMPLETE 24 measurements 2 fallback checks; blocked 0

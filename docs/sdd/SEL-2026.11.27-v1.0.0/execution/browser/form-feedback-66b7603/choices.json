@@ -1,0 +1,23 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "dist_tree_sha256": "338dabc145438e40cc32ac6809c64d1c90d8ecf74bff8937158234b84f66b3e3",
+  "chromium": "156.0.8078.79",
+  "raw_sha256": "212bdd6b8d46537b671ecd1d175450768c045d4ec3187329095be2865b78aa59",
+  "choices": [
+    {
+      "choice_id": "CS-C08-3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Type before submitting, send the invalid form, check focused/linked first error, correct the phone number and compare remaining invalid controls and retained input values.",
+      "actual": {
+        "counts": {
+          "Pass": 60
+        },
+        "case_count": 60,
+        "failed": []
+      },
+      "evidence_ref": "browser/form-feedback-66b7603/observations.json",
+      "remaining": ""
+    }
+  ]
+}

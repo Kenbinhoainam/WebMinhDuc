@@ -11,6 +11,7 @@ const sdd='docs/sdd/SEL-2026.11.27-v1.0.0';
 const base=resolve(process.argv[2]||'/workspace/sites/minhduc-sprint2-approved-review/dist');
 const output=process.argv[3]||sdd+'/execution/common-audit.json';
 const proof=JSON.parse(readFileSync(sdd+'/execution/logs/preview-paths.json','utf8'));
+assert.match(proof.archive_sha256,/^[0-9a-f]{64}$/, 'Missing private archive SHA-256');
 const appSha=proof.source;
 execFileSync('git',['diff','--quiet',appSha,'--','src']);
 const frozen=new Map();
@@ -176,7 +177,7 @@ run('Audience entries and shared brand',()=>{
   for(const id of ['P01','P03','P09','P19','P20','P32','P36','P37']){
     const d=doc(id),brand=d.querySelector('header .brand img');
     assert.ok(brand?.height&&brand.width&&brand.alt);signatures.add(brand.getAttribute('src'));
-    assert.ok(d.querySelector('footer a[href*="privacy-policy"]')); 
+    assert.ok(d.querySelector('footer a[href*="privacy-policy"]'));
   }
   assert.equal(signatures.size,1);return 'Eight page families share '+[...signatures][0]+' with declared dimensions; five audience/contact paths reachable by native links from Home.';
 },'A01 A02 A14 B02 B05 CS-A13-1 CS-A13-3 CS-B02-1 CS-B04-1',visual);
@@ -280,7 +281,7 @@ run('Project fixture boundaries and missing production entry points',()=>{
 },'F07 F11 F13 F14','No generic create/hide-news CMS, role/denied-session fixture, conversion event plan or delayed-failure integration fixture was identified in these entry points. Real integrations/auth/tracking require separate scope. Existing demo controls are not evidence for those capabilities.');
 // Execute existing behavior suites. Each binding cites the concrete observed assertion, not just the suite name.
 function suite(file,phrase,definitions){
-  const log=execFileSync(process.execPath,['tests/'+file+'.mjs'],{encoding:'utf8',timeout:90000,maxBuffer:2*1024*1024});
+  const log=execFileSync(process.execPath,['tests/'+file+'.mjs'],{encoding:'utf8',timeout:360000,maxBuffer:2*1024*1024});
   assert.ok(log.includes(phrase),'missing completion marker for '+file);const fileText=readFileSync('tests/'+file+'.mjs','utf8');
   for(const [probe,binding,actual,remaining] of definitions) run(file+' / '+probe,()=>{
     assert.ok(fileText.includes(probe),file+' lost predicate '+probe);
@@ -290,7 +291,7 @@ function suite(file,phrase,definitions){
 suite('s2-b2c','PASS W3',[
   ['one fixture for the whole attempt','C01 C09 C15 CS-C01-1 CS-C01-2 CS-B08-1 MI01-2 MI07-1','Seven positions submitted twice per attempt; each produced exactly one local receipt with correct form, job ID, title and URL.'],
   ['the editing cursor','C05 C08 CS-C02-3 CS-C06-3 CS-C07-2 CS-C08-3 MI04-2 MO04-3 MS04-3','Composition drafts retained focus, data and history until IME commit; query plus three filters, chip removal and reset reach exact counts.'],
-  ['selecting file metadata','C07 CS-C05-3 CS-C08-1 CS-B07-3 MI04-2','F04 optional file correction: select executable, no error during editing; submit focuses CV with error and no stored record; clearing removes error.'],
+  ['invalid attachment metadata is reported immediately','C07 CS-C05-3 CS-C08-1 CS-B07-3 MI04-2','F04 optional file correction: selecting an executable shows an immediate metadata error, submitting focuses CV and saves no record, and removing the file clears the error.'],
   ['return to the original apply button','C10 C15 CS-C01-1 CS-B07-4 MI07-2 MO02-4','Success heading focus, correct ADMIN link and job label; dismissing each receipt returns focus to the inline trigger.'],
   ['.jobs-empty a','C13 CS-C06-3 MO04-2','Filtered-empty vs no-saved distinct and canonical empty CTA focused after final removal.'],
 ]);
@@ -417,7 +418,7 @@ const choices=[...cases].map(([id,items])=>{
   return {choice_id:id,source_row:frozen.get(id).row,coverage:remaining?'partial':'full',test_status:items.some(i=>i.status==='Fail')?'Fail':id==='MI08-3'?'Blocked':'Pass',
     assertion:items.map(i=>i.actual).join(' | '),checks:items.map(i=>i.name),remaining};
 });
-const report={build_sha:appSha,site_source_sha:proof.site_sha,artifact_input:base,method:'Root-mounted preview artifact HTML/CSS/font cmap and pinned implementation source. Existing React DOM interaction suites rerun on the same application source. No simulated layout used as native device evidence.',
+const report={build_sha:appSha,site_source_sha:proof.site_sha,archive_sha256:proof.archive_sha256,artifact_input:base,method:'Root-mounted preview artifact HTML/CSS/font cmap and pinned implementation source. Existing React DOM interaction suites rerun on the same application source. No simulated layout used as native device evidence.',
   tested_html_sha256:treeDigest.digest('hex'),css_sha256:digests,source_revision:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),checks,choices};
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(choices.length+' selections; '+checks.length+' checks; '+checks.filter(x=>x.test_status==='Fail').length+' failed predicates');

@@ -1,0 +1,14 @@
+Fail 390 external focused button at page boundary {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Fail 390 external focused title, following sibling {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Pass 390 external change, focus on filter {'tag': 'INPUT', 'save': None, 'link': None, 'id': 'jobs-query', 'href': None}
+Pass 390 external change, focus on another card {'tag': 'BUTTON', 'save': 'MD004', 'link': None, 'id': None, 'href': None}
+Fail 390 external last remaining card {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Pass 390 local removal, previous page {'tag': 'BUTTON', 'save': 'MD006', 'link': None, 'id': None, 'href': None}
+Pass 390 local final saved record {'tag': 'A', 'save': None, 'link': None, 'id': None, 'href': '/WebMinhDuc/jobs#job-listings'}
+Fail 1440 external focused button at page boundary {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Fail 1440 external focused title, following sibling {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Pass 1440 external change, focus on filter {'tag': 'INPUT', 'save': None, 'link': None, 'id': 'jobs-query', 'href': None}
+Pass 1440 external change, focus on another card {'tag': 'BUTTON', 'save': 'MD004', 'link': None, 'id': None, 'href': None}
+Fail 1440 external last remaining card {'tag': 'BODY', 'save': None, 'link': None, 'id': None, 'href': None}
+Pass 1440 local removal, previous page {'tag': 'BUTTON', 'save': 'MD006', 'link': None, 'id': None, 'href': None}
+Pass 1440 local final saved record {'tag': 'A', 'save': None, 'link': None, 'id': None, 'href': '/WebMinhDuc/jobs#job-listings'}

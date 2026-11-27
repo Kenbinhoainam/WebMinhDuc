@@ -1,0 +1,13 @@
+PASS tu-xa-quan-tri F05 False
+PASS tu-xa-quan-tri F05 True
+PASS tu-xa-quan-tri F06 False
+PASS tu-xa-quan-tri F06 True
+PASS chinh-quy-cong-nghe F05 False
+PASS chinh-quy-cong-nghe F05 True
+PASS chinh-quy-cong-nghe F06 False
+PASS chinh-quy-cong-nghe F06 True
+PASS tu-xa-ke-toan F05 False
+PASS tu-xa-ke-toan F05 True
+PASS tu-xa-ke-toan F06 False
+PASS tu-xa-ke-toan F06 True
+12 end-to-end submissions; 15 localized noindex checks; 15 frozen IDs

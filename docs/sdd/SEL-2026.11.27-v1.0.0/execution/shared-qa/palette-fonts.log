@@ -1,8 +1,10 @@
-target_sha=4231bae137528dbf152250832c1a26d060c579d9
-Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
-Isolated checkout: /tmp/minhduc-w1-4231-q4csuk2i
-Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
-command=python tests/s2-shared-palette.py
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+Application source extracted via git archive 88e2b61596eab5952f183a81b3030da760696c9c
+Isolated checkout: /tmp/minhduc-w1-88e-v2geslox
+QA-only overlays (SHA256): {}
+Linux x86_64, Node v24.22.1; deterministic JSDOM / CSS / SSR / mocked media. No real browser, device, network-performance or screenshot claim.
+
+2026-11-27T13:43:14.084242+00:00  python tests/s2-shared-palette.py
 PASS S2-COLOR ink #183653 / surface #ffffff = 12.42:1 (opaque source colors)
 PASS S2-COLOR muted #486178 / surface #ffffff = 6.45:1 (opaque source colors)
 PASS S2-COLOR muted #486178 / surface-blue #eaf4ff = 5.80:1 (opaque source colors)

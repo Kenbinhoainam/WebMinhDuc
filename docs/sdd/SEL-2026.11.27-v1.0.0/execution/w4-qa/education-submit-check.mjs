@@ -39,7 +39,7 @@ try {
     if (mode === 'F06') {
       for (const key of ['email','document']) {
         assert.equal(field(key).required,false);
-        assert.match(field(key).closest('label').textContent,/không bắt buộc/);
+        assert.match([...field(key).labels].map(label=>label.textContent).join(' '),/không bắt buộc/);
       }
     } else {
       assert.ok(field('question'));

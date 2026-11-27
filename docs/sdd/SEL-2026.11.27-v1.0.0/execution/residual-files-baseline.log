@@ -1,0 +1,29 @@
+Initial reproduction against app 4231bae137528dbf152250832c1a26d060c579d9, prior to AttachmentPicker.
+Command: node tests/s2-residual-files.mjs (first harness, failures before first remove operation).
+React DOM fixture, two forms × five locales. Exit 1.
+
+FAIL F04 vi each file has a separate visible metadata row
+
+0 !== 3
+
+FAIL F06 vi row shows selected file size
+FAIL F04 en each file has a separate visible metadata row
+
+0 !== 3
+
+FAIL F06 en row shows selected file size
+FAIL F04 zh each file has a separate visible metadata row
+
+0 !== 3
+
+FAIL F06 zh row shows selected file size
+FAIL F04 ko each file has a separate visible metadata row
+
+0 !== 3
+
+FAIL F06 ko row shows selected file size
+FAIL F04 ja each file has a separate visible metadata row
+
+0 !== 3
+
+FAIL F06 ja row shows selected file size

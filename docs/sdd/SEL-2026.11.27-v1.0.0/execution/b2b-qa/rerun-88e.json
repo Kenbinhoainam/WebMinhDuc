@@ -1,0 +1,119 @@
+{
+  "target_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "checkout": "/tmp/minhduc-w2-88e-cvt1mw6m",
+  "qa_overlays_sha256": {
+    "tests/s2-w2-extra-flows.mjs": "8ea78c4d05ac328b2c17e4a65ee4552eab0b700029f28b8660f290c6163b362c",
+    "tests/s2-w2-extra-hero.mjs": "de09217da949fccd4025f2a0de42b51698e068e662c0647f58db22104a0fa95b"
+  },
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/s2-b2b-flows.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:01.199139+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/info-carousel.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:20.925509+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/business-info.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:39:47.038281+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-b2b.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:40:19.793769+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/consultation.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:40:50.519134+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-review.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:15.358780+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-responsive.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:26.586586+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-lifecycle.mjs"
+      ],
+      "exit": 1,
+      "UTC": "2026-11-27T13:41:27.506529+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/home-video-gallery.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:41:59.208842+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/s2-w2-extra-flows.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:42:16.896010+00:00"
+    },
+    {
+      "command": [
+        "node",
+        "tests/s2-w2-extra-hero.mjs"
+      ],
+      "exit": 0,
+      "UTC": "2026-11-27T13:43:26.864383+00:00"
+    }
+  ],
+  "retry": {
+    "command": [
+      "node",
+      "tests/hero-lifecycle.mjs"
+    ],
+    "exit": 1,
+    "log": "hero-lifecycle-retry-88e.log",
+    "note": "Unchanged isolated command retry also exceeded a 15s child subprocess deadline; manual returned status=null. Need complete runner proof; not a passing full suite."
+  },
+  "resolution": {
+    "command": [
+      "node",
+      "tests/hero-lifecycle.mjs"
+    ],
+    "exit": 0,
+    "scenario_count": 11,
+    "ci_url": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46010047063",
+    "evidence": "hero-lifecycle-ci-88e.log",
+    "scope": "Unchanged file andoriginal15s child timer. Supersedes local resource deadline outcome without deleting initialattempts."
+  },
+  "effective_suite_result": "11/11Pass;10local commands plus unchangedCI lifecycle"
+}

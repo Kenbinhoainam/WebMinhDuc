@@ -1,0 +1,6 @@
+
+> minhduc-prototype@1.0.0 test:header
+> node tests/header-reference.mjs && node tests/header-hover-review.mjs
+
+PASS wide and compact header: five locales, original logo, control order, fallback sitemap and source geometry
+PASS independent hover: pending Escape suppression, same-route cancellation, visible-trigger hover switching, focused-panel protection

@@ -1,4 +1,4 @@
-2026-11-27T13:03:02.932317+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:flagship
+2026-11-27T13:38:02.675825+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:flagship
 
 > minhduc-prototype@1.0.0 test:flagship
 > node tests/navigation.mjs && node tests/locale-selector.mjs && node tests/partners.mjs && npm run test:carousel && npm run test:motion && node tests/media.mjs && node tests/image-fallback.mjs && npm run test:hero && node tests/flagship-review.mjs
@@ -31,49 +31,29 @@ npm notice New major version of npm available! 11.9.0 -> 12.2.3
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
 npm notice To update run: npm install -g npm@12.2.3
 npm notice
-PASS media desktop
-PASS media mobile
-PASS media reduced
-PASS media data
-PASS media slow
-PASS media blocked
-PASS media race
-PASS media endrace
-PASS media preference
-PASS media observer
-PASS media observer-observe
-PASS media error
-PASS media error-offscreen
-PASS media error-paused
-PASS media webm
-PASS original image retry, pre-hydration failure, intrinsic ref/alt, masthead text layout and local media paths
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
 
-> minhduc-prototype@1.0.0 test:hero
-> node tests/hero-review.mjs && node tests/hero-responsive.mjs && node tests/hero-lifecycle.mjs
+AssertionError [ERR_ASSERTION]: desktop: 
 
-PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules
-PASS responsive hero CSS: content-led phone/tablet, 16:9 film with inset controls, portrait/landscape and breakpoint boundaries, compact header row, desktop isolation. Browser geometry still requires visual review.
-PASS independent hero lifecycle manual
-PASS independent hero lifecycle scroll
-PASS independent hero lifecycle scroll-away
-PASS independent hero lifecycle scroll-before-start
-PASS independent hero lifecycle pending
-PASS independent hero lifecycle hidden
-PASS independent hero lifecycle noio
-PASS independent hero lifecycle noio-offscreen
-PASS independent hero lifecycle observe-failure
-PASS independent hero lifecycle reduced
-PASS independent hero lifecycle blocked
-npm notice
-npm notice New major version of npm available! 11.9.0 -> 12.2.3
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
-npm notice To update run: npm install -g npm@12.2.3
-npm notice
-PASS independent flagship: five locale routes, mutually exclusive disclosures/search, Escape focus, destination links, poster-first media, quick manual pause, compiled CSS order
+
+null !== 0
+
+    at file:///workspace/sprint2-implementation/tests/media.mjs:15:116 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
 npm notice
 npm notice New major version of npm available! 11.9.0 -> 12.2.3
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
 npm notice To update run: npm install -g npm@12.2.3
 npm notice
 
-Exit 0
+Exit 1

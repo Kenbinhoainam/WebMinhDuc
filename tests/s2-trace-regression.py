@@ -135,6 +135,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sha",required=True)
     parser.add_argument("--logs",type=Path,default=ROOT/"logs")
+    parser.add_argument("--ci-receipt",type=Path,help="Downloaded GitHub Actions run directory with the original job log and artifacts.")
+    parser.add_argument("--out",type=Path,default=ROOT/"trace-regression.json")
     args=parser.parse_args()
     sha=subprocess.check_output(["git","rev-parse","--verify",args.sha+"^{commit}"],text=True).strip()
     cms_test = subprocess.check_output(["git","show",sha+":tests/s2-other-pages.mjs"],text=True)
@@ -150,6 +152,21 @@ def main():
                       if item.get("sha") == sha and item.get("result") == "Pass" and item.get("exit") == 0
                       } if ledger.exists() else set()
     sources = [args.logs, ROOT/"w4-qa", ROOT/"b2b-qa", ROOT/"b2c-qa", ROOT/"shared-qa"]
+    if args.ci_receipt:
+        job_log = (args.ci_receipt/"actions.log").read_text()
+        assert f"git merge-base --is-ancestor {sha} HEAD" in job_log
+        assert f"git diff --exit-code {sha} HEAD -- . ':(exclude).github/**'" in job_log
+        packaged = args.ci_receipt/"packaged-regression-logs"
+        completed = [name.replace(":","-")+".log" for name,status in
+                     (line.split() for line in (packaged/"summary.log").read_text().splitlines()) if status=="PASS"]
+        checked = [packaged/name for name in completed]
+        checked.extend(sorted((args.ci_receipt/"unchanged-hero-logs").glob("*.log")))
+        for original in checked:
+            data = original.read_bytes()
+            copy = args.logs/original.name
+            assert data == copy.read_bytes(), f"Repository log differs from workflow artifact: {copy}"
+            logs.append((copy,data.decode(),hashlib.sha256(data).hexdigest()))
+        sources = []
     for folder in sources:
         for file in sorted(folder.rglob("*.log")):
             text=file.read_text(errors="replace")
@@ -173,7 +190,7 @@ def main():
                                     assertion=measured,remaining=remaining,source_test=f"tests/{suite}.mjs",
                                     evidence_ref=name,log_sha256=digest,success_marker=matching[:450]))
             break
-    output=ROOT/"trace-regression.json"
+    output=args.out
     output.write_text(json.dumps(dict(build_sha=sha,environment="Node/Linux; see raw log for harness. No physical-device claim.",choices=choices),ensure_ascii=False,indent=2)+"\n")
     print(len(choices),"row-to-test references;",len(set(r["choice_id"] for r in choices)),"IDs;",output)
 

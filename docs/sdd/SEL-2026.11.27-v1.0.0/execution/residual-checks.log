@@ -1,0 +1,42 @@
+App 88e2b61596eab5952f183a81b3030da760696c9c
+Pages eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211
+Site b9b58c4da406a91e43e94e2ad98a0f73327a47ab archive 901989a98553b6c44e47d01c45a7d1c8f64196c0b58bc4c541929cf5585a9782
+PASS F04 vi names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 vi names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 en names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 en names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 zh names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 zh names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 ko names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 ko names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F04 ja names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS F06 ja names/size, cancel, replace, remove, focus, draft, validation and zero network
+PASS service → F01 → Admin labor-supply
+PASS service → F01 → Admin labor-leasing
+PASS service → F01 → Admin recruitment
+PASS service → F01 → Admin hr-consulting
+PASS program CTA → F05 → Admin tu-xa-quan-tri
+PASS program CTA → F06 → Admin tu-xa-quan-tri
+PASS program CTA → F05 → Admin chinh-quy-cong-nghe
+PASS program CTA → F06 → Admin chinh-quy-cong-nghe
+PASS program CTA → F05 → Admin tu-xa-ke-toan
+PASS program CTA → F06 → Admin tu-xa-ke-toan
+PASS education index direct query F05
+PASS education index direct query F06
+PASS explicit F02 query selects general contact
+PASS contact deep link F01
+PASS contact deep link F02
+PASS invalid runtime route /unknown
+PASS invalid runtime route /jobs/unknown
+PASS invalid runtime route /services/unknown
+PASS invalid runtime route /news/unknown
+PASS invalid runtime route /events/unknown
+PASS invalid runtime route /education/unknown
+PASS partners alias equivalent main content
+PASS legacy jobs query/hash redirect and history
+PASS Vietnamese root alias
+PASS filter chips, result IDs/count and focus /jobs
+PASS filter chips, result IDs/count and focus /careers
+PASS filter chips, result IDs/count and focus /saved-jobs
+PASS storage unavailable → session saves → storage restored
+43 checked cases across 17 choices.

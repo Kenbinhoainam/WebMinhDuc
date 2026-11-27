@@ -1,0 +1,23 @@
+{
+  "base_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "application_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "changed_files": [
+    "src/Contact.tsx"
+  ],
+  "method": "Source dependency/diff review; this is carry-forward, not a new run of the unchanged suites.",
+  "changed_behavior": "Only ContactPage map accessible name now translates selected office.name before localized prefix/suffix. ContactForm, fields, validation, receipt APIs, service data, media, shared navigation/motion and route APIs unchanged.",
+  "carried_evidence": [
+    "shared-qa/rerun-88e.json",
+    "b2b-qa/rerun-88e.json",
+    "logs/regression.json"
+  ],
+  "direct_c25_evidence": [
+    "b2b-qa/contact-c25-source.json",
+    "b2b-qa/consultation-c25.log",
+    "b2b-qa/business-info-c25.log",
+    "b2b-qa/browser-choices.json",
+    "b2b-qa/browser-final/browser-results.json"
+  ],
+  "browser_status": "Direct c25 CI46010404698: 615/615 passed, including all40P37 cases. Final Pages fingerprint fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1.",
+  "limits": "No blanket completion or repinning of prior executed checks. Source replay provenance remains88e; direct c25 checks carry their own source pin."
+}

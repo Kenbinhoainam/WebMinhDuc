@@ -1,0 +1,527 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "site_source_sha": "b9b58c4da406a91e43e94e2ad98a0f73327a47ab",
+  "archive_sha256": "901989a98553b6c44e47d01c45a7d1c8f64196c0b58bc4c541929cf5585a9782",
+  "checked_utc": "2026-11-27T13:45:53.404559+00:00",
+  "browser": "Chromium 156.0.8078.79",
+  "method": "Synthetic submissions through the actual Vietnamese Chromium UI on an extracted private archive. Independently loaded three detail routes in all five languages for noindex. No external requests, server, CMS or production records.",
+  "observations": [
+    {
+      "page": "P33",
+      "slug": "tu-xa-quan-tri",
+      "form": "F05",
+      "changed": false,
+      "expected_program": "tu-xa-quan-tri",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "tu-xa-quan-tri",
+      "fields_program": "tu-xa-quan-tri",
+      "admin_source": "/education/tu-xa-quan-tri",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-quan-tri?form=F05#dang-ky",
+        "/education#programs",
+        "chinh-quy-cong-nghe",
+        "tu-xa-ke-toan"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "slug": "tu-xa-quan-tri",
+      "form": "F05",
+      "changed": true,
+      "expected_program": "chinh-quy-cong-nghe",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "chinh-quy-cong-nghe",
+      "fields_program": "chinh-quy-cong-nghe",
+      "admin_source": "/education/tu-xa-quan-tri",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-quan-tri?form=F05#dang-ky",
+        "/education#programs",
+        "chinh-quy-cong-nghe",
+        "tu-xa-ke-toan"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "slug": "tu-xa-quan-tri",
+      "form": "F06",
+      "changed": false,
+      "expected_program": "tu-xa-quan-tri",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "optional email and file both omitted",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "tu-xa-quan-tri",
+      "fields_program": "tu-xa-quan-tri",
+      "admin_source": "/education/tu-xa-quan-tri",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-quan-tri?form=F06#dang-ky",
+        "/education#programs",
+        "chinh-quy-cong-nghe",
+        "tu-xa-ke-toan"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P33",
+      "slug": "tu-xa-quan-tri",
+      "form": "F06",
+      "changed": true,
+      "expected_program": "chinh-quy-cong-nghe",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "native chooser event twice, invalid extension rejected, PDF metadata displayed, no file content read",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "chinh-quy-cong-nghe",
+      "fields_program": "chinh-quy-cong-nghe",
+      "admin_source": "/education/tu-xa-quan-tri",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-quan-tri?form=F06#dang-ky",
+        "/education#programs",
+        "chinh-quy-cong-nghe",
+        "tu-xa-ke-toan"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "slug": "chinh-quy-cong-nghe",
+      "form": "F05",
+      "changed": false,
+      "expected_program": "chinh-quy-cong-nghe",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "chinh-quy-cong-nghe",
+      "fields_program": "chinh-quy-cong-nghe",
+      "admin_source": "/education/chinh-quy-cong-nghe",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+        "/education#programs",
+        "tu-xa-ke-toan",
+        "tu-xa-quan-tri"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "slug": "chinh-quy-cong-nghe",
+      "form": "F05",
+      "changed": true,
+      "expected_program": "tu-xa-ke-toan",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "tu-xa-ke-toan",
+      "fields_program": "tu-xa-ke-toan",
+      "admin_source": "/education/chinh-quy-cong-nghe",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+        "/education#programs",
+        "tu-xa-ke-toan",
+        "tu-xa-quan-tri"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "slug": "chinh-quy-cong-nghe",
+      "form": "F06",
+      "changed": false,
+      "expected_program": "chinh-quy-cong-nghe",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "optional email and file both omitted",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "chinh-quy-cong-nghe",
+      "fields_program": "chinh-quy-cong-nghe",
+      "admin_source": "/education/chinh-quy-cong-nghe",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+        "/education#programs",
+        "tu-xa-ke-toan",
+        "tu-xa-quan-tri"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P34",
+      "slug": "chinh-quy-cong-nghe",
+      "form": "F06",
+      "changed": true,
+      "expected_program": "tu-xa-ke-toan",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "native chooser event twice, invalid extension rejected, PDF metadata displayed, no file content read",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "tu-xa-ke-toan",
+      "fields_program": "tu-xa-ke-toan",
+      "admin_source": "/education/chinh-quy-cong-nghe",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/chinh-quy-cong-nghe?form=F06#dang-ky",
+        "/education#programs",
+        "tu-xa-ke-toan",
+        "tu-xa-quan-tri"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "slug": "tu-xa-ke-toan",
+      "form": "F05",
+      "changed": false,
+      "expected_program": "tu-xa-ke-toan",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "tu-xa-ke-toan",
+      "fields_program": "tu-xa-ke-toan",
+      "admin_source": "/education/tu-xa-ke-toan",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-ke-toan?form=F05#dang-ky",
+        "/education#programs",
+        "tu-xa-quan-tri",
+        "chinh-quy-cong-nghe"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "slug": "tu-xa-ke-toan",
+      "form": "F05",
+      "changed": true,
+      "expected_program": "tu-xa-quan-tri",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "no document field in F05",
+      "receipt_href": "/admin-demo?type=F05&id=DEMO-0001",
+      "linkId": "tu-xa-quan-tri",
+      "fields_program": "tu-xa-quan-tri",
+      "admin_source": "/education/tu-xa-ke-toan",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-ke-toan?form=F05#dang-ky",
+        "/education#programs",
+        "tu-xa-quan-tri",
+        "chinh-quy-cong-nghe"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "slug": "tu-xa-ke-toan",
+      "form": "F06",
+      "changed": false,
+      "expected_program": "tu-xa-ke-toan",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "optional email and file both omitted",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "tu-xa-ke-toan",
+      "fields_program": "tu-xa-ke-toan",
+      "admin_source": "/education/tu-xa-ke-toan",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-ke-toan?form=F06#dang-ky",
+        "/education#programs",
+        "tu-xa-quan-tri",
+        "chinh-quy-cong-nghe"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    },
+    {
+      "page": "P35",
+      "slug": "tu-xa-ke-toan",
+      "form": "F06",
+      "changed": true,
+      "expected_program": "tu-xa-quan-tri",
+      "locale": "vi",
+      "robots": "noindex,nofollow",
+      "attachment": "native chooser event twice, invalid extension rejected, PDF metadata displayed, no file content read",
+      "receipt_href": "/admin-demo?type=F06&id=DEMO-0001",
+      "linkId": "tu-xa-quan-tri",
+      "fields_program": "tu-xa-quan-tri",
+      "admin_source": "/education/tu-xa-ke-toan",
+      "file_reads": [],
+      "web_storage_writes": [],
+      "form_transport": [],
+      "clear": "Explicit cancel preserved sample. Confirming local reset removed it.",
+      "reloaded_receipt": "No sample row/details after ADMIN document reload",
+      "back_and_directory": [
+        "/education/tu-xa-ke-toan?form=F06#dang-ky",
+        "/education#programs",
+        "tu-xa-quan-tri",
+        "chinh-quy-cong-nghe"
+      ],
+      "reloaded_program": "route retained original program and type; draft and receipt cleared",
+      "status": "Pass"
+    }
+  ],
+  "localized_noindex": [
+    {
+      "slug": "tu-xa-quan-tri",
+      "locale": "vi",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-quan-tri",
+      "locale": "en",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-quan-tri",
+      "locale": "zh",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-quan-tri",
+      "locale": "ko",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-quan-tri",
+      "locale": "ja",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "chinh-quy-cong-nghe",
+      "locale": "vi",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "chinh-quy-cong-nghe",
+      "locale": "en",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "chinh-quy-cong-nghe",
+      "locale": "zh",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "chinh-quy-cong-nghe",
+      "locale": "ko",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "chinh-quy-cong-nghe",
+      "locale": "ja",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-ke-toan",
+      "locale": "vi",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-ke-toan",
+      "locale": "en",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-ke-toan",
+      "locale": "zh",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-ke-toan",
+      "locale": "ko",
+      "robots": "noindex,nofollow"
+    },
+    {
+      "slug": "tu-xa-ke-toan",
+      "locale": "ja",
+      "robots": "noindex,nofollow"
+    }
+  ],
+  "choices": [
+    {
+      "choice_id": "P33-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "tu-xa-quan-tri preselected in F05 and F06. Both modes submitted default and alternate selections; ADMIN link ID and program field matched the selected program.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P33-E2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05 had no document control. F06 accepted blank email/files, rejected an executable on selection and accepted PDF metadata. Only name and phone were required.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P33-E3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Four receipts opened their matching queue, sample ID, recorded program and source route. Browser Back/Forward preserved the sample until explicit reset or reload. The /education#programs link opened the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P33-F2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both alternate program links were followed in the same browser document. Each form had its correct default; no stale receipt or input carried across slugs, Back or reload.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P33-F3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Instrumented File and FileReader methods, storage writes and fetch/XHR/non-GET transports remained unused while F05/F06 ran. A receipt existed in-session and disappeared after hard reload. All five localized direct documents declared noindex.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P34-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "chinh-quy-cong-nghe preselected in F05 and F06. Both modes submitted default and alternate selections; ADMIN link ID and program field matched the selected program.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P34-E2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05 had no document control. F06 accepted blank email/files, rejected an executable on selection and accepted PDF metadata. Only name and phone were required.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P34-E3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Four receipts opened their matching queue, sample ID, recorded program and source route. Browser Back/Forward preserved the sample until explicit reset or reload. The /education#programs link opened the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P34-F2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both alternate program links were followed in the same browser document. Each form had its correct default; no stale receipt or input carried across slugs, Back or reload.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P34-F3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Instrumented File and FileReader methods, storage writes and fetch/XHR/non-GET transports remained unused while F05/F06 ran. A receipt existed in-session and disappeared after hard reload. All five localized direct documents declared noindex.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P35-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "tu-xa-ke-toan preselected in F05 and F06. Both modes submitted default and alternate selections; ADMIN link ID and program field matched the selected program.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P35-E2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F05 had no document control. F06 accepted blank email/files, rejected an executable on selection and accepted PDF metadata. Only name and phone were required.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P35-E3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Four receipts opened their matching queue, sample ID, recorded program and source route. Browser Back/Forward preserved the sample until explicit reset or reload. The /education#programs link opened the directory.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P35-F2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Both alternate program links were followed in the same browser document. Each form had its correct default; no stale receipt or input carried across slugs, Back or reload.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    },
+    {
+      "choice_id": "P35-F3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Instrumented File and FileReader methods, storage writes and fetch/XHR/non-GET transports remained unused while F05/F06 ran. A receipt existed in-session and disappeared after hard reload. All five localized direct documents declared noindex.",
+      "remaining": "",
+      "evidence_ref": "tests/s2-education-browser-final.py"
+    }
+  ]
+}

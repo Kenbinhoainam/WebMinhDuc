@@ -12,55 +12,58 @@
 
 vite v7.3.8 building client environment for production...
 transforming...
-✓ 1680 modules transformed.
+✓ 1682 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                            1.66 kB │ gzip:   0.64 kB
-dist/.vite/manifest.json                   4.05 kB │ gzip:   0.74 kB
-dist/assets/PartnersPage-DH0e8T9o.css      1.44 kB │ gzip:   0.63 kB
-dist/assets/Consultation-Cj7obPRy.css      4.11 kB │ gzip:   1.44 kB
-dist/assets/AdminDemo-BL6nrbPm.css         4.38 kB │ gzip:   1.42 kB
-dist/assets/Education-C78ezuzU.css         4.75 kB │ gzip:   1.45 kB
-dist/assets/JobsPages-atWhNKjT.css         7.61 kB │ gzip:   2.23 kB
-dist/assets/ServicesPages-DAlRjvst.css     8.49 kB │ gzip:   2.29 kB
-dist/assets/AboutPage-_S5hwxG_.css         9.36 kB │ gzip:   2.47 kB
-dist/assets/EditorialPages-Bho7pB24.css   16.90 kB │ gzip:   4.08 kB
-dist/assets/index-BlugrZdW.css           147.20 kB │ gzip:  28.72 kB
-dist/assets/components-CwyAOEkc.js         0.93 kB │ gzip:   0.53 kB
-dist/assets/PartnersPage-C3TVrhzn.js       1.20 kB │ gzip:   0.72 kB
-dist/assets/Consultation-BS544wGh.js       4.30 kB │ gzip:   1.84 kB
-dist/assets/Education-BcaHKtFw.js          9.51 kB │ gzip:   3.74 kB
-dist/assets/ServicesPages-D-CcJumz.js     11.59 kB │ gzip:   3.94 kB
-dist/assets/AdminDemo-Cx9yk10f.js         13.00 kB │ gzip:   4.86 kB
-dist/assets/AboutPage-DA_tUYUU.js         16.26 kB │ gzip:   6.40 kB
-dist/assets/JobsPages-CZ4l9tL3.js         35.25 kB │ gzip:  11.78 kB
-dist/assets/EditorialPages-D4lZ9egy.js    51.29 kB │ gzip:  16.29 kB
-dist/assets/zh-C7-i1ZGY.js               197.37 kB │ gzip:  64.99 kB
-dist/assets/en-C8hpO_0J.js               209.13 kB │ gzip:  63.77 kB
-dist/assets/ko-CGvrUq7U.js               221.49 kB │ gzip:  65.33 kB
-dist/assets/ja-D4IqwKdo.js               227.93 kB │ gzip:  67.96 kB
-dist/assets/index-Ckf5NwuT.js            418.13 kB │ gzip: 132.94 kB
-✓ built in 3.60s
+dist/index.html                              1.66 kB │ gzip:   0.64 kB
+dist/.vite/manifest.json                     4.50 kB │ gzip:   0.80 kB
+dist/assets/AttachmentPicker-CvFBDXOd.css    1.22 kB │ gzip:   0.55 kB
+dist/assets/PartnersPage-DH0e8T9o.css        1.44 kB │ gzip:   0.63 kB
+dist/assets/Consultation-Cj7obPRy.css        4.11 kB │ gzip:   1.44 kB
+dist/assets/Education-BXC-0oMC.css           4.34 kB │ gzip:   1.35 kB
+dist/assets/AdminDemo-D7TK6Xfy.css           4.76 kB │ gzip:   1.49 kB
+dist/assets/JobsPages-atWhNKjT.css           7.61 kB │ gzip:   2.23 kB
+dist/assets/ServicesPages-DAlRjvst.css       8.49 kB │ gzip:   2.29 kB
+dist/assets/AboutPage-l0DnPq4U.css           9.77 kB │ gzip:   2.55 kB
+dist/assets/EditorialPages-Bho7pB24.css     16.90 kB │ gzip:   4.08 kB
+dist/assets/index-CroQTcnq.css             147.19 kB │ gzip:  28.75 kB
+dist/assets/components-B4YqtQLI.js           0.93 kB │ gzip:   0.53 kB
+dist/assets/PartnersPage-BFotQ5-g.js         1.20 kB │ gzip:   0.72 kB
+dist/assets/AttachmentPicker-BitO69H-.js     3.28 kB │ gzip:   1.74 kB
+dist/assets/Consultation-D6U5UnOF.js         4.30 kB │ gzip:   1.84 kB
+dist/assets/Education-DFrs_iy9.js            8.71 kB │ gzip:   3.39 kB
+dist/assets/ServicesPages-DpkQ0Rfz.js       11.59 kB │ gzip:   3.94 kB
+dist/assets/AdminDemo-5MCNWyXV.js           13.00 kB │ gzip:   4.86 kB
+dist/assets/AboutPage-LIrHcWX7.js           16.26 kB │ gzip:   6.40 kB
+dist/assets/JobsPages-BMVqKyoG.js           34.68 kB │ gzip:  11.62 kB
+dist/assets/EditorialPages-DWlavFZ0.js      51.29 kB │ gzip:  16.29 kB
+dist/assets/zh-C7-i1ZGY.js                 197.37 kB │ gzip:  64.99 kB
+dist/assets/en-C8hpO_0J.js                 209.13 kB │ gzip:  63.77 kB
+dist/assets/ko-CGvrUq7U.js                 221.49 kB │ gzip:  65.33 kB
+dist/assets/ja-D4IqwKdo.js                 227.93 kB │ gzip:  67.96 kB
+dist/assets/index-BNkf2xpn.js              418.48 kB │ gzip: 133.09 kB
+✓ built in 5.62s
 vite v7.3.8 building ssr environment for production...
 transforming...
-✓ 86 modules transformed.
+✓ 88 modules transformed.
 rendering chunks...
-.ssr/.vite/manifest.json                  4.17 kB
-.ssr/assets/components-l3NOaDTc.js        1.61 kB
-.ssr/assets/PartnersPage-DWrG4wpp.js      1.82 kB
-.ssr/assets/Consultation-BpG9droG.js      8.38 kB
-.ssr/assets/Education-CsHcdeZN.js        15.88 kB
-.ssr/assets/ServicesPages-BRkrFU_5.js    18.60 kB
-.ssr/assets/AdminDemo-CXcNIsC5.js        22.23 kB
-.ssr/assets/AboutPage--E0riXiJ.js        22.84 kB
-.ssr/assets/JobsPages-CjuGz7WF.js        58.40 kB
-.ssr/assets/EditorialPages-BkWhcQ6s.js   68.94 kB
-.ssr/assets/zh-CITTsPfE.js              197.44 kB
-.ssr/assets/en-CC_0t6Es.js              209.20 kB
-.ssr/assets/ko-BcYsvLYR.js              221.56 kB
-.ssr/entry-server.js                    227.55 kB
-.ssr/assets/ja-DqISpKik.js              228.00 kB
-✓ built in 1.33s
+.ssr/.vite/manifest.json                    4.49 kB
+.ssr/assets/components-tLeGAymk.js          1.61 kB
+.ssr/assets/PartnersPage-JGULwjbW.js        1.82 kB
+.ssr/assets/AttachmentPicker-C0eBqIF0.js    5.39 kB
+.ssr/assets/Consultation-CIjuyBOe.js        8.38 kB
+.ssr/assets/Education-DNPGy6YW.js          14.49 kB
+.ssr/assets/ServicesPages-Bz-tzSDj.js      18.60 kB
+.ssr/assets/AdminDemo-DO_sBH2Y.js          22.23 kB
+.ssr/assets/AboutPage-DwobsCzG.js          22.84 kB
+.ssr/assets/JobsPages-BQeN84Yk.js          58.00 kB
+.ssr/assets/EditorialPages-59blfLjN.js     68.94 kB
+.ssr/assets/zh-CITTsPfE.js                197.44 kB
+.ssr/assets/en-CC_0t6Es.js                209.20 kB
+.ssr/assets/ko-BcYsvLYR.js                221.56 kB
+.ssr/entry-server.js                      227.98 kB
+.ssr/assets/ja-DqISpKik.js                228.00 kB
+✓ built in 1.76s
 npm notice
 npm notice New major version of npm available! 11.9.0 -> 12.2.3
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3

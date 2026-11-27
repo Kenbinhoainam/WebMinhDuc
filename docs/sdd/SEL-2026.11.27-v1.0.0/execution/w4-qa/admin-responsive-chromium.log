@@ -1,0 +1,20 @@
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+site_sha=b9b58c4da406a91e43e94e2ad98a0f73327a47ab
+command=Hermetic Chromium on RC5 root-mounted Site
+chromium 156.0.8078.79
+vi 320 {'client': 320, 'document': 320, 'region': 246, 'table': 760, 'headers': 6}
+vi 390 {'client': 390, 'document': 390, 'region': 316, 'table': 760, 'headers': 6}
+vi 820 {'client': 820, 'document': 820, 'region': 468, 'table': 760, 'headers': 6}
+en 320 {'client': 320, 'document': 320, 'region': 246, 'table': 760, 'headers': 6}
+en 390 {'client': 390, 'document': 390, 'region': 316, 'table': 760, 'headers': 6}
+en 820 {'client': 820, 'document': 820, 'region': 468, 'table': 760, 'headers': 6}
+zh 320 {'client': 320, 'document': 320, 'region': 246, 'table': 760, 'headers': 6}
+zh 390 {'client': 390, 'document': 390, 'region': 316, 'table': 760, 'headers': 6}
+zh 820 {'client': 820, 'document': 820, 'region': 468, 'table': 760, 'headers': 6}
+ko 320 {'client': 320, 'document': 320, 'region': 246, 'table': 760, 'headers': 6}
+ko 390 {'client': 390, 'document': 390, 'region': 316, 'table': 760, 'headers': 6}
+ko 820 {'client': 820, 'document': 820, 'region': 468, 'table': 760, 'headers': 6}
+ja 320 {'client': 320, 'document': 320, 'region': 246, 'table': 760, 'headers': 6}
+ja 390 {'client': 390, 'document': 390, 'region': 316, 'table': 760, 'headers': 6}
+ja 820 {'client': 820, 'document': 820, 'region': 468, 'table': 760, 'headers': 6}
+exit=0

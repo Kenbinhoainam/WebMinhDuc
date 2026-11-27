@@ -1,0 +1,5 @@
+Exact c25 Pages digest fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1. Chromium 156.0.8078.79. Final passing observations include reruns after correction of test timing and localized URL assumptions.
+layout 15 passed: P33 vi, P33 en, P33 zh, P33 ko, P33 ja, P34 vi, P34 en, P34 ko, P34 ja, P35 en, P35 zh, P35 ko, P35 ja, P34 zh, P35 vi
+forms 6 passed: P33 520, P33 767, P34 520, P34 767, P35 520, P35 767
+jobs 2 passed: 390, 1440
+vacancies 40 passed: P10 vi, P10 en, P10 zh, P10 ko, P10 ja, P11 vi, P11 en, P11 zh, P11 ko, P11 ja, P12 vi, P12 en, P12 zh, P12 ko, P12 ja, P13 vi, P13 en, P13 zh, P13 ko, P13 ja, P14 vi, P14 en, P14 zh, P14 ko, P14 ja, P15 vi, P15 en, P15 zh, P15 ko, P15 ja, P16 vi, P16 en, P16 zh, P16 ko, P16 ja, P17 vi, P17 en, P17 zh, P17 ko, P17 ja

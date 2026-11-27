@@ -1,0 +1,28 @@
+
+> minhduc-prototype@1.0.0 test:hydration
+> node tests/hydration.mjs
+
+PASS hydration /
+PASS hydration /about-us
+PASS hydration /services
+PASS hydration /careers
+PASS hydration /consultation
+PASS hydration /jobs
+PASS hydration /saved-jobs
+PASS hydration /jobs?q=kho
+PASS hydration /testimonials
+PASS hydration /partners
+PASS hydration /news
+PASS hydration /en/news/chon-cong-viec-phu-hop
+PASS hydration /en
+PASS hydration /zh
+PASS hydration /ko
+PASS hydration /ja
+PASS hydration /en/jobs
+PASS hydration /zh/jobs
+PASS hydration /ko/jobs
+PASS hydration /ja/jobs
+PASS hydration /en/consultation
+PASS hydration /zh/consultation
+PASS hydration /ko/consultation
+PASS hydration /ja/consultation

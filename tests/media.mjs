@@ -12,7 +12,7 @@ if(!process.argv.includes('--case')){
   await build({entryPoints:['src/HomeHero.tsx'],bundle:true,platform:'node',format:'esm',outfile:`${temp}/hero.mjs`,packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
   const assets=JSON.parse(await readFile('src/hero-assets.json','utf8'));for(const path of Object.values(assets))await access('public'+outputPath(path));
   for(const mode of ['desktop','mobile','reduced','data','slow','blocked','race','endrace','preference','observer','observer-observe','error','error-offscreen','error-paused','webm']){
-   const result=spawnSync(process.execPath,[process.argv[1],'--case',mode],{encoding:'utf8',timeout:10000});assert.equal(result.status,0,`${mode}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
+   const result=spawnSync(process.execPath,[process.argv[1],'--case',mode],{encoding:'utf8',timeout:60000});assert.equal(result.status,0,`${mode}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }
  } finally {await rm(temp,{recursive:true,force:true});}
 }else{

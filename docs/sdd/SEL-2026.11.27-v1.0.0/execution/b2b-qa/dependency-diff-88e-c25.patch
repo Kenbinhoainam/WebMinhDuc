@@ -1,0 +1,25 @@
+diff --git a/src/Contact.tsx b/src/Contact.tsx
+index 2566a00..05d7a99 100644
+--- a/src/Contact.tsx
++++ b/src/Contact.tsx
+@@ -2,6 +2,7 @@ import {useEffect, useId, useRef, useState, type FormEvent} from 'react';
+ import {Link, useLocation, useSearchParams} from 'react-router-dom';
+ import {CalendarDays, CheckCircle2, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
+ import {company} from './company';
++import {translate} from './i18n-runtime/catalog';
+ import {createDemoSubmission} from './demo-submissions';
+ import {validDemoPhone, validOptionalEmail} from './sharedformvalidation';
+ import {useLocale, useTranslation} from './i18n';
+@@ -174,7 +175,11 @@ export function ContactPage() {
+   const [officeIndex, setOfficeIndex] = useState(0);
+   const formTitle = useRef<HTMLHeadingElement>(null);
+   const office = company.offices[officeIndex];
+-  const mapTitle = t({vi:'Bản đồ ' + office.name, en:'Map of ' + office.name, zh:office.name + '地图', ko:office.name + ' 지도', ja:office.name + 'の地図'});
++  const officeName = translate(office.name, locale);
++  const mapTitle = t({
++    vi: `Bản đồ ${officeName}`, en: `Map of ${officeName}`, zh: `${officeName}地图`,
++    ko: `${officeName} 지도`, ja: `${officeName}の地図`,
++  });
+   const mapUrl = `https://maps.google.com/maps?cid=${officeMapIds[officeIndex]}&output=embed&hl=${locale === 'zh' ? 'zh-CN' : locale}`;
+ 
+   function choose(value: Mode) {

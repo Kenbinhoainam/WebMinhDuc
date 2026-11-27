@@ -1,4 +1,4 @@
-2026-11-27T13:02:42.841616+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:seo
+2026-11-27T13:37:49.620759+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:seo
 
 > minhduc-prototype@1.0.0 test:seo
 > node tests/route-data.mjs && node tests/seo-output.mjs && node tests/preload-output.mjs

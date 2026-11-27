@@ -1,0 +1,7 @@
+target_sha=c25a398a424880651cfc375760401aadc0c006d1
+Isolated git archive: /tmp/s2-w2-contact-c25-okqucw08
+UTC=2026-11-27T13:49:59.669361+00:00
+command=node tests/consultation.mjs
+PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts
+
+exit=0

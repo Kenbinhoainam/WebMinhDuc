@@ -1,6 +1,6 @@
 {
-  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
-  "tested_html_sha256": "ce59c880020da4d3d3ef4525b0d2bf97006ce7fdf59bff6e47be86c978d2d750",
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "tested_html_sha256": "0a5ad5e4801cc699164c2c7bfbab79865bb24dbb8dd1ecb0509c5d5ce6ff589c",
   "runtime": "lxml static DOM; collapsed dynamic control targets recorded separately",
   "choices": [
     {

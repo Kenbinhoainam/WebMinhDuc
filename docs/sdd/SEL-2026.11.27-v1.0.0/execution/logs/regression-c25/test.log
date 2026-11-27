@@ -1,0 +1,27 @@
+
+> minhduc-prototype@1.0.0 test
+> node tests/jobs-logic.mjs
+
+PASS 8 distinct job IDs and routes
+PASS No real partner assigned to demo jobs
+PASS Vietnamese accent and whitespace normalization
+PASS Malformed saved storage is safe
+PASS Saved IDs sanitize duplicates and unknown values
+PASS Save persists and count updates
+PASS Fresh module restores saved jobs
+PASS Unknown IDs cannot be saved
+PASS Cross-tab remove clears stale memory
+PASS Cross-tab clear resets count
+PASS Failed write still toggles existing state
+PASS Blocked storage remains usable in memory
+PASS Optional attachments can be absent
+PASS PDF exactly 5,000,000 bytes accepted
+PASS Attachment above 5,000,000 bytes rejected
+PASS Maximum three files totaling 15,000,000 bytes accepted
+PASS More than three files rejected
+PASS Unsupported extension rejected
+PASS Renamed incompatible MIME rejected
+PASS Uppercase DOCX accepted
+PASS Generic file MIME accepted with allowed extension
+PASS Missing file MIME accepted with allowed extension
+22 checks passed

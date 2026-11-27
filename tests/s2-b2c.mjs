@@ -153,7 +153,8 @@ try {
       const cv=form.elements.cv;
       Object.defineProperty(cv,'files',{configurable:true,value:[new window.File(['demo'],'demo.exe',{type:'application/octet-stream'})]});
       await act(()=>cv.dispatchEvent(new Event('change',{bubbles:true})));
-      assert.equal(q('#apply-cv-error'),null,'selecting file metadata does not interrupt editing');
+      assert.ok(q('#apply-cv-error'),'invalid attachment metadata is reported immediately after selection');
+      assert.equal(cv.getAttribute('aria-invalid'),'true');
       await act(()=>submit(form));
       await act(()=>new Promise(resolve=>requestAnimationFrame(resolve)));
       assert.equal(document.activeElement,cv);

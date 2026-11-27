@@ -1,0 +1,1809 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_tree_sha256": "27643043bf335a11d3a575a65c7113e512d5caa6cd0a34d5348ac125892823f8",
+  "tested_utc": "2026-11-27T13:45:10+00:00",
+  "chromium": "156.0.8078.79",
+  "observations": [
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 56.625,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/labor-leasing",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 50.71875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/recruitment",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/college-admissions",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/hr-consulting",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 68.375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/about-us",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/about-us",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 656.09375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1381,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-supply",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 649.25,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1374.15625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/labor-leasing",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-leasing",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 649.25,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1374.15625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/recruitment",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/recruitment",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 649.25,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1374.15625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/hr-consulting",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/hr-consulting",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 649.25,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1374.15625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 626.96875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 526.6875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/tu-xa-quan-tri",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 626.96875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 526.6875,
+          "hidden": false,
+          "inert": false
+        }
+      },
+      "rerun_after": "could not convert string to float: ''"
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/chinh-quy-cong-nghe",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 626.96875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 526.6875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/tu-xa-ke-toan",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 626.96875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 526.6875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/contact",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact?form=F02",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 1374.34375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 641.34375,
+          "hidden": false,
+          "inert": false
+        }
+      },
+      "rerun_after": "could not convert string to float: ''"
+    },
+    {
+      "choice_id": "MO03-3",
+      "path": "/jobs",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "mobile-only T2 expansion with T1 opacity": true,
+        "closed panel inert or hidden": true,
+        "retains selected filter across interruption and breakpoint": true,
+        "reduced immediate": true
+      },
+      "actual": {
+        "selected": "Toàn thời gian",
+        "opening": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 638.734375,
+          "hidden": false,
+          "inert": false
+        },
+        "initial_inner": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "1",
+          "display": "block",
+          "height": 638.734375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 166.78125,
+          "hidden": false,
+          "inert": false
+        },
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs?type=To%C3%A0n+th%E1%BB%9Di+gian"
+      }
+    },
+    {
+      "choice_id": "MO03-4",
+      "path": "/about-us",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "selected tab and panel agree": true,
+        "keyboard focus at selected tab": true,
+        "unselected panels cannot receive Tab": true,
+        "normal content uses T2": true,
+        "active indicator uses T1": true,
+        "reduced finishes immediately": true
+      },
+      "actual": {
+        "selection_after_arrow_before_enter": "history-tab-1",
+        "normal": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.18s",
+          "opacity": "1",
+          "display": "block",
+          "height": 352.625,
+          "hidden": false,
+          "inert": false
+        },
+        "indicator": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "background-color, color",
+          "duration": "0.12s, 0.12s",
+          "opacity": "1",
+          "display": "flex",
+          "height": 44,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 352.625,
+          "hidden": false,
+          "inert": false
+        },
+        "selected": "history-tab-2"
+      }
+    },
+    {
+      "choice_id": "MO03-4",
+      "path": "/admin-demo",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "last admin view active": true,
+        "draft survives real view switches": true,
+        "one active view": true
+      },
+      "actual": {
+        "semantic_pattern": "ordinary aria-pressed view selector, not role=tab; does not supply evidence for true tab transition",
+        "normal": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 455.75,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO02-4",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 390,
+      "status": "Pass",
+      "checks": {
+        "receipt immediately focused": true,
+        "dismissal and reset": true,
+        "duplicate submit created only one record": true,
+        "regular receipt uses T1": true,
+        "reduced immediate": true,
+        "final dialog closed": true
+      },
+      "actual": {
+        "regular": {
+          "animation": "receipt-copy-enter",
+          "anim": "0.12s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "0",
+          "display": "block",
+          "height": 25.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 25.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "receipt_links": [
+          "/admin-demo?type=F01&id=DEMO-0001",
+          "/admin-demo?type=F01&id=DEMO-0002"
+        ],
+        "restored": true
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 77.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 77.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/labor-leasing",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 26.09375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/recruitment",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/college-admissions",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-1",
+      "path": "/services/hr-consulting",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "T2 height and T1 opacity declared": true,
+        "last answer only": true,
+        "trigger and panel ARIA synchronized": true,
+        "all closed panels inert and hidden from AT": true,
+        "reduced switches immediately": true
+      },
+      "actual": {
+        "initial": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "initial_copy": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.12s",
+          "opacity": "0",
+          "display": "block",
+          "height": 0,
+          "hidden": false,
+          "inert": false
+        },
+        "interrupted_open": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "grid-template-rows, visibility",
+          "duration": "0.18s, 0s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced_final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 48.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": 2
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/about-us",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/about-us",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 544.921875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 907.921875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-supply",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 538.5625,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 901.5625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/labor-leasing",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-leasing",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 538.5625,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 901.5625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/recruitment",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/recruitment",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 538.5625,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 901.5625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/services/hr-consulting",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "",
+        "history_applies": false,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/hr-consulting",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 538.5625,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 901.5625,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 613.125,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 535.171875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/tu-xa-quan-tri",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-quan-tri?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 613.125,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 535.171875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/chinh-quy-cong-nghe",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/chinh-quy-cong-nghe?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 613.125,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 535.171875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/education/tu-xa-ke-toan",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/education/tu-xa-ke-toan?form=F05#dang-ky",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 613.125,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 535.171875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-2",
+      "path": "/contact",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "optional fade is either immediate or T1": true,
+        "one form and chosen mode": true,
+        "drafts persist": true,
+        "reduced change immediate": true
+      },
+      "actual": {
+        "first_draft": "QA first mode",
+        "second_after_back": "QA second mode",
+        "history_applies": true,
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact?form=F02",
+        "regular": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 996.796875,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 547.046875,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO03-3",
+      "path": "/jobs",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "mobile-only T2 expansion with T1 opacity": true,
+        "closed panel inert or hidden": true,
+        "retains selected filter across interruption and breakpoint": true,
+        "reduced immediate": true
+      },
+      "actual": {
+        "selected": "Toàn thời gian",
+        "opening": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 166.78125,
+          "hidden": false,
+          "inert": false
+        },
+        "initial_inner": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 166.78125,
+          "hidden": false,
+          "inert": false
+        },
+        "closed": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "none",
+          "height": 0,
+          "hidden": false,
+          "inert": true
+        },
+        "final": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "grid",
+          "height": 638.734375,
+          "hidden": false,
+          "inert": false
+        },
+        "url": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs?type=To%C3%A0n+th%E1%BB%9Di+gian"
+      }
+    },
+    {
+      "choice_id": "MO03-4",
+      "path": "/about-us",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "selected tab and panel agree": true,
+        "keyboard focus at selected tab": true,
+        "unselected panels cannot receive Tab": true,
+        "normal content uses T2": true,
+        "active indicator uses T1": true,
+        "reduced finishes immediately": true
+      },
+      "actual": {
+        "selection_after_arrow_before_enter": "history-tab-1",
+        "normal": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "opacity",
+          "duration": "0.18s",
+          "opacity": "1",
+          "display": "block",
+          "height": 574.390625,
+          "hidden": false,
+          "inert": false
+        },
+        "indicator": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "background-color, color",
+          "duration": "0.12s, 0.12s",
+          "opacity": "1",
+          "display": "flex",
+          "height": 44,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "none",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 574.390625,
+          "hidden": false,
+          "inert": false
+        },
+        "selected": "history-tab-2"
+      }
+    },
+    {
+      "choice_id": "MO03-4",
+      "path": "/admin-demo",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "last admin view active": true,
+        "draft survives real view switches": true,
+        "one active view": true
+      },
+      "actual": {
+        "semantic_pattern": "ordinary aria-pressed view selector, not role=tab; does not supply evidence for true tab transition",
+        "normal": {
+          "animation": "none",
+          "anim": "0s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "1",
+          "display": "block",
+          "height": 429.75,
+          "hidden": false,
+          "inert": false
+        }
+      }
+    },
+    {
+      "choice_id": "MO02-4",
+      "path": "/services/labor-supply",
+      "locale": "vi",
+      "width": 1440,
+      "status": "Pass",
+      "checks": {
+        "receipt immediately focused": true,
+        "dismissal and reset": true,
+        "duplicate submit created only one record": true,
+        "regular receipt uses T1": true,
+        "reduced immediate": true,
+        "final dialog closed": true
+      },
+      "actual": {
+        "regular": {
+          "animation": "receipt-copy-enter",
+          "anim": "0.12s",
+          "transition": "all",
+          "duration": "0s",
+          "opacity": "0",
+          "display": "block",
+          "height": 25.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "reduced": {
+          "animation": "none",
+          "anim": "1e-05s",
+          "transition": "all",
+          "duration": "1e-05s",
+          "opacity": "1",
+          "display": "block",
+          "height": 25.59375,
+          "hidden": false,
+          "inert": false
+        },
+        "receipt_links": [
+          "/admin-demo?type=F01&id=DEMO-0001",
+          "/admin-demo?type=F01&id=DEMO-0002"
+        ],
+        "restored": true
+      }
+    }
+  ],
+  "limits": "Localized VI representative mobile/desktop, actual keyboard inputs and rapid DOM click inputs with animation frames, mid-journey reduced-motion switch. No physical IME or device.",
+  "missing": [],
+  "errors": []
+}

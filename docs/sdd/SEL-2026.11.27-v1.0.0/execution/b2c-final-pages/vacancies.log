@@ -1,0 +1,78 @@
+PASS P10 vi
+PASS P10 en
+PASS P10 zh
+PASS P10 ko
+PASS P10 ja
+PASS P11 vi
+PASS P11 en
+PASS P11 zh
+PASS P11 ko
+PASS P11 ja
+FAIL P12 vi 
+PASS P12 en
+PASS P12 zh
+PASS P12 ko
+PASS P12 ja
+PASS P13 vi
+PASS P13 en
+PASS P13 zh
+PASS P13 ko
+PASS P13 ja
+PASS P14 vi
+FAIL P14 en Locator expected to have attribute '/WebMinhDuc/jobs?status=active#job-listings'
+Actual value: /WebMinhDuc/en/jobs?status=active#job-listings 
+Call log:
+  - Expect "to_have_attribute" with timeout 5000ms
+  - waiting for locator(":focus")
+    14 × locator resolved to <a data-discover="true" class="jobs-quiet-button" href="/WebMinhDuc/en/jobs?status=active#job-listings">View open positions</a>
+       - unexpected value "/WebMinhDuc/en/jobs?status=active#job-listings"
+
+Aria snapshot:
+- link "View o
+FAIL P14 zh Locator expected to have attribute '/WebMinhDuc/jobs?status=active#job-listings'
+Actual value: /WebMinhDuc/zh/jobs?status=active#job-listings 
+Call log:
+  - Expect "to_have_attribute" with timeout 5000ms
+  - waiting for locator(":focus")
+    14 × locator resolved to <a data-discover="true" class="jobs-quiet-button" href="/WebMinhDuc/zh/jobs?status=active#job-listings">查看在招职位</a>
+       - unexpected value "/WebMinhDuc/zh/jobs?status=active#job-listings"
+
+Aria snapshot:
+- link "查看在招职位":
+  - /url: 
+FAIL P14 ko Locator expected to have attribute '/WebMinhDuc/jobs?status=active#job-listings'
+Actual value: /WebMinhDuc/ko/jobs?status=active#job-listings 
+Call log:
+  - Expect "to_have_attribute" with timeout 5000ms
+  - waiting for locator(":focus")
+    14 × locator resolved to <a data-discover="true" class="jobs-quiet-button" href="/WebMinhDuc/ko/jobs?status=active#job-listings">모집 중인 일자리 보기</a>
+       - unexpected value "/WebMinhDuc/ko/jobs?status=active#job-listings"
+
+Aria snapshot:
+- link "모집 중인 일자리 보기"
+FAIL P14 ja Locator expected to have attribute '/WebMinhDuc/jobs?status=active#job-listings'
+Actual value: /WebMinhDuc/ja/jobs?status=active#job-listings 
+Call log:
+  - Expect "to_have_attribute" with timeout 5000ms
+  - waiting for locator(":focus")
+    14 × locator resolved to <a data-discover="true" class="jobs-quiet-button" href="/WebMinhDuc/ja/jobs?status=active#job-listings">募集中の仕事を見る</a>
+       - unexpected value "/WebMinhDuc/ja/jobs?status=active#job-listings"
+
+Aria snapshot:
+- link "募集中の仕事を見る":
+  - 
+PASS P15 vi
+PASS P15 en
+PASS P15 zh
+PASS P15 ko
+PASS P15 ja
+PASS P16 vi
+PASS P16 en
+PASS P16 zh
+PASS P16 ko
+PASS P16 ja
+PASS P17 vi
+PASS P17 en
+PASS P17 zh
+PASS P17 ko
+PASS P17 ja

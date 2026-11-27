@@ -1,0 +1,1090 @@
+{
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "report_sha256": "d4191d2edb63179058b7d13d0c0c392c232e84355bf1128c5fac76388ce465ca",
+  "report_path": "browser/keyboard-zoom-edges/browser-results.json",
+  "checks": 165,
+  "choices": [
+    {
+      "choice_id": "P04-D1",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Ví dụ kế hoạch tiếp nhận",
+            "caption": "Ví dụ kế hoạch tiếp nhận",
+            "headers": [
+              "Đợt",
+              "Địa điểm",
+              "Ca làm việc",
+              "Số lượng",
+              "Ngày cần người"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 737,
+            "documentWidth": 767
+          },
+          {
+            "name": "Cơ cấu chi phí tham khảo",
+            "caption": "Các yếu tố để trao đổi chi phí",
+            "headers": [
+              "Hạng mục",
+              "Căn cứ tính phí",
+              "Điểm cần thống nhất"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 737,
+            "documentWidth": 767
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/9",
+      "case_indices": [
+        9,
+        12,
+        42,
+        45,
+        75,
+        78,
+        108,
+        111,
+        141,
+        144
+      ],
+      "remaining": "Increase real text size and use the keyboard to pan the table between its first and last column while observing the document width."
+    },
+    {
+      "choice_id": "P05-D2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Cơ cấu chi phí tham khảo",
+            "caption": "Các yếu tố để trao đổi chi phí",
+            "headers": [
+              "Hạng mục",
+              "Căn cứ tính phí",
+              "Điểm cần thống nhất"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 737,
+            "documentWidth": 767
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/10",
+      "case_indices": [
+        10,
+        13,
+        43,
+        46,
+        76,
+        79,
+        109,
+        112,
+        142,
+        145
+      ],
+      "remaining": "Verify the fee table's first/last column with keyboard and enlarged text; the normal-size scroller dimensions are recorded."
+    },
+    {
+      "choice_id": "P07-D2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 10 Pass · keyboard-table",
+      "actual_example": {
+        "tables": [
+          {
+            "name": "Chi phí cần xác nhận với trường",
+            "caption": "Thông tin cần xác nhận",
+            "headers": [
+              "Hạng mục",
+              "Nơi xác nhận",
+              "Thông tin cần xác nhận"
+            ],
+            "firstPx": 32,
+            "max": 0,
+            "width": 737,
+            "documentWidth": 767
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        767,
+        768
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/11",
+      "case_indices": [
+        11,
+        14,
+        44,
+        47,
+        77,
+        80,
+        110,
+        113,
+        143,
+        146
+      ],
+      "remaining": "Exercise the fee region with actual text enlargement and keyboard panning from the first to last cell."
+    },
+    {
+      "choice_id": "P21-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 100.328125,
+            "bottom": 128.84375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 100.328125,
+            "bottom": 128.84375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 99.953125,
+            "bottom": 128.46875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-3",
+            "active": "article-section-3",
+            "heading": "H2",
+            "top": 99.953125,
+            "bottom": 128.46875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/15",
+      "case_indices": [
+        15,
+        21,
+        27,
+        48,
+        54,
+        60,
+        81,
+        87,
+        93,
+        114,
+        120,
+        126,
+        147,
+        153,
+        159
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P22-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.75,
+            "bottom": 128.265625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 128.046875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.125,
+            "bottom": 128.640625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-3",
+            "active": "article-section-3",
+            "heading": "H2",
+            "top": 100.171875,
+            "bottom": 128.6875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-4",
+            "active": "article-section-4",
+            "heading": "H2",
+            "top": 99.796875,
+            "bottom": 128.3125,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-5",
+            "active": "article-section-5",
+            "heading": "H2",
+            "top": 100.421875,
+            "bottom": 128.9375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/16",
+      "case_indices": [
+        16,
+        22,
+        28,
+        49,
+        55,
+        61,
+        82,
+        88,
+        94,
+        115,
+        121,
+        127,
+        148,
+        154,
+        160
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P23-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 100.234375,
+            "bottom": 128.75,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 100.328125,
+            "bottom": 128.84375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.046875,
+            "bottom": 128.5625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/17",
+      "case_indices": [
+        17,
+        23,
+        29,
+        50,
+        56,
+        62,
+        83,
+        89,
+        95,
+        116,
+        122,
+        128,
+        149,
+        155,
+        161
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P24-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 128.046875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.625,
+            "bottom": 128.140625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 99.625,
+            "bottom": 128.140625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/18",
+      "case_indices": [
+        18,
+        24,
+        30,
+        51,
+        57,
+        63,
+        84,
+        90,
+        96,
+        117,
+        123,
+        129,
+        150,
+        156,
+        162
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P25-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.5,
+            "bottom": 128.015625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.59375,
+            "bottom": 128.109375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 100.3125,
+            "bottom": 128.828125,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/19",
+      "case_indices": [
+        19,
+        25,
+        31,
+        52,
+        58,
+        64,
+        85,
+        91,
+        97,
+        118,
+        124,
+        130,
+        151,
+        157,
+        163
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P26-D3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-article",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "article-section-0",
+            "active": "article-section-0",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 128.046875,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-1",
+            "active": "article-section-1",
+            "heading": "H2",
+            "top": 99.625,
+            "bottom": 128.140625,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          },
+          {
+            "id": "article-section-2",
+            "active": "article-section-2",
+            "heading": "H2",
+            "top": 99.71875,
+            "bottom": 128.234375,
+            "headerBottom": 80,
+            "viewportHeight": 844,
+            "viewportWidth": 899,
+            "documentWidth": 899,
+            "width": 668.78125,
+            "overflow": 0
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        899,
+        900,
+        901
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/20",
+      "case_indices": [
+        20,
+        26,
+        32,
+        53,
+        59,
+        65,
+        86,
+        92,
+        98,
+        119,
+        125,
+        131,
+        152,
+        158,
+        164
+      ],
+      "remaining": "Activate each article TOC anchor with the keyboard and verify the focused heading’s actual rectangle with enlarged text and scroll restored."
+    },
+    {
+      "choice_id": "P28-D2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.09375,
+            "bottom": 134.59375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 134.03125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 100.40625,
+            "bottom": 134.90625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.234375,
+            "bottom": 134.734375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100.28125,
+            "bottom": 134.78125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-11-28T08:30:00+07:00",
+            "description": "Đón tiếp và ghi nhận nhu cầu tìm việc",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T09:00:00+07:00",
+            "description": "Chia sẻ thông tin về công việc tại nhà máy",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T10:00:00+07:00",
+            "description": "Tư vấn cách chuẩn bị hồ sơ",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-28T11:00:00+07:00",
+            "description": "Hỏi đáp và hướng dẫn bước tiếp theo",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        699,
+        700,
+        701
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        3,
+        6,
+        33,
+        36,
+        39,
+        66,
+        69,
+        72,
+        99,
+        102,
+        105,
+        132,
+        135,
+        138
+      ],
+      "remaining": "Exercise all five event anchors at increased text and with reduced motion; agenda column counts and normal viewport widths are recorded."
+    },
+    {
+      "choice_id": "P29-D2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.09375,
+            "bottom": 134.59375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 134.03125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 100.40625,
+            "bottom": 134.90625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.234375,
+            "bottom": 134.734375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100.28125,
+            "bottom": 134.78125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:00:00+07:00",
+            "description": "Giới thiệu nội dung trao đổi",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:15:00+07:00",
+            "description": "Làm rõ nhu cầu và thông tin tuyển dụng",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T14:45:00+07:00",
+            "description": "Phối hợp tiếp nhận theo từng đợt",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-12-05T15:15:00+07:00",
+            "description": "Thảo luận các tình huống thực tế",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        699,
+        700,
+        701
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/1",
+      "case_indices": [
+        1,
+        4,
+        7,
+        34,
+        37,
+        40,
+        67,
+        70,
+        73,
+        100,
+        103,
+        106,
+        133,
+        136,
+        139
+      ],
+      "remaining": "Exercise all five event anchors at increased text and with reduced motion; agenda column counts and normal viewport widths are recorded."
+    },
+    {
+      "choice_id": "P30-D2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 156.0.8078.79 · 15 Pass · keyboard-event",
+      "actual_example": {
+        "anchors": [
+          {
+            "id": "overview",
+            "active": "overview",
+            "heading": "H2",
+            "top": 100.09375,
+            "bottom": 134.59375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "schedule",
+            "active": "schedule",
+            "heading": "H2",
+            "top": 99.53125,
+            "bottom": 134.03125,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "location",
+            "active": "location",
+            "heading": "H2",
+            "top": 99.5625,
+            "bottom": 134.0625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "gallery",
+            "active": "gallery",
+            "heading": "H2",
+            "top": 100.390625,
+            "bottom": 134.890625,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          },
+          {
+            "id": "other-events",
+            "active": "other-events",
+            "heading": "H2",
+            "top": 100.4375,
+            "bottom": 134.9375,
+            "headerBottom": 72,
+            "viewportHeight": 844,
+            "viewportWidth": 699,
+            "documentWidth": 699,
+            "width": 663,
+            "overflow": 0
+          }
+        ],
+        "agenda": [
+          {
+            "columns": 1,
+            "clock": "2026-11-08T09:00:00+07:00",
+            "description": "Chuẩn bị thông tin và hồ sơ",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-08T09:30:00+07:00",
+            "description": "Những điều cần hỏi trước khi nhận việc",
+            "ordered": true
+          },
+          {
+            "columns": 1,
+            "clock": "2026-11-08T10:00:00+07:00",
+            "description": "Bảo vệ thông tin cá nhân khi ứng tuyển",
+            "ordered": true
+          }
+        ]
+      },
+      "locales": [
+        "en",
+        "ja",
+        "ko",
+        "vi",
+        "zh"
+      ],
+      "widths": [
+        699,
+        700,
+        701
+      ],
+      "evidence_ref": "browser/keyboard-zoom-edges/browser-results.json#/checks/2",
+      "case_indices": [
+        2,
+        5,
+        8,
+        35,
+        38,
+        41,
+        68,
+        71,
+        74,
+        101,
+        104,
+        107,
+        134,
+        137,
+        140
+      ],
+      "remaining": "Exercise all five event anchors at increased text and with reduced motion; agenda column counts and normal viewport widths are recorded."
+    }
+  ]
+}

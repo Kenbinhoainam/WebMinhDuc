@@ -1,0 +1,189 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "source_test": "tests/consultation.mjs",
+  "source_sha256": "8be5fcd7be4feda73910ebbff5549f446d4e50002546cc27b0911a017cca0da5",
+  "instrumented_fixture_sha256": "e60f3db53790f36ef3f73a823966f38e86c4f371f26e877282b4f07d87a794b0",
+  "environment": "Node, JSDOM, Vietnamese; mock clock and fetch bound to the fixture; no production scheduling.",
+  "choices": [
+    {
+      "choice_id": "T15",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "F02 is locked and produces one local receipt; no fetch call occurred.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-B1",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Receipt labels the experience as a demonstration, gives a mock reference and explicitly says it created no real appointment.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": "Read labels/commitments throughout the entire flow in the other four locales."
+    },
+    {
+      "choice_id": "P38-C1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Choose, enter required contact details, edit the slot, return, submit twice and reset; the fixture asserts focus at each stage.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-C2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Empty date and empty time focus their own invalid control. A chosen date that becomes past at midnight prevents submission, keeps the draft and updates min.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-C3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The F02 draft survives a slot change and the repeat-receipt button returns to an empty date step.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-E1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Only the locked F02 form is present in details. The single stored record is F02 from /consultation.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-E2",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "Submitting before the local date rollover is reconciled creates no record. Completing with valid date/time and contact and repeating submission creates one receipt.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-E3",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The receipt displays the chosen slot and mock reference, links back to Contact, supports reset, creates one local record and sends no request.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    },
+    {
+      "choice_id": "P38-F1",
+      "coverage": "full",
+      "test_status": "Pass",
+      "assertion": "The receipt has a localized date and time. The stored record keeps the name/phone at the top level and only email/message in fields, F02, source /consultation.",
+      "actual": {
+        "receipt": "Đã hoàn tất trải nghiệmThời gian đã chọn: 25 tháng 11, 2030 · 10:30Mã mô phỏng: DEMO-0001Không có lịch hẹn thực tế nào được tạo. Biên nhận mẫu được giữ đến khi tải lại trang.Chọn thời gian khác",
+        "fieldNames": [
+          "email",
+          "message"
+        ],
+        "type": "F02",
+        "source": "/consultation",
+        "message": "Hỏi thông tin",
+        "count": 1,
+        "contactHref": "/contact"
+      },
+      "evidence_ref": "logs/trace-booking-functional.log",
+      "remaining": ""
+    }
+  ]
+}

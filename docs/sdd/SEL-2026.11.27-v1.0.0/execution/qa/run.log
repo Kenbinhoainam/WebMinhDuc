@@ -1,4 +1,1 @@
-Application commit 4231bae137528dbf152250832c1a26d060c579d9
-$ node tests/s2-qa.mjs
 {"rows":200,"assertions":795,"choice_ids":182,"failures":[]}
-Exit 0

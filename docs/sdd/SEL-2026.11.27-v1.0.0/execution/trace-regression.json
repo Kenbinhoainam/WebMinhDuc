@@ -1,5 +1,5 @@
 {
-  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
   "environment": "Node/Linux; see raw log for harness. No physical-device claim.",
   "choices": [
     {
@@ -10,7 +10,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -21,7 +21,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -32,7 +32,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -43,7 +43,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -54,7 +54,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -65,7 +65,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -76,7 +76,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -87,7 +87,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -98,7 +98,7 @@
       "remaining": "",
       "source_test": "tests/about-anchors.mjs",
       "evidence_ref": "w4-qa/about-anchors.log",
-      "log_sha256": "407887ac72d4e04e19b6012b1d8eacdc9581d1cb3c7585f7e779dc9bde6da5b1",
+      "log_sha256": "b522b88fa431853148d1ec935aa9d968ae245a47ff09472cc6f419eaecebf877",
       "success_marker": "PASS About anchors: five locales, unique sections, direct hashes, Back/Forward, fallback routes and header clearance"
     },
     {
@@ -109,7 +109,7 @@
       "remaining": "Confirm that opening each mobile destination by actual touch is equivalent to the desktop interaction.",
       "source_test": "tests/sitemap-review.mjs",
       "evidence_ref": "logs/test-sitemap.log",
-      "log_sha256": "6e2af3e43b57b9bab392df756c209f16d2da360b0ecf99d6dbacabd46c1af6c8",
+      "log_sha256": "0a84123f5127ce48a91385c3182434b02080370fd0ab5b8ed8baaa33451dc924",
       "success_marker": "PASS independent sitemap: two-level no-JS fallback, fourteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions"
     },
     {
@@ -120,7 +120,7 @@
       "remaining": "Confirm that opening each mobile destination by actual touch is equivalent to the desktop interaction.",
       "source_test": "tests/sitemap-review.mjs",
       "evidence_ref": "logs/test-sitemap.log",
-      "log_sha256": "6e2af3e43b57b9bab392df756c209f16d2da360b0ecf99d6dbacabd46c1af6c8",
+      "log_sha256": "0a84123f5127ce48a91385c3182434b02080370fd0ab5b8ed8baaa33451dc924",
       "success_marker": "PASS independent sitemap: two-level no-JS fallback, fourteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions"
     },
     {
@@ -131,7 +131,7 @@
       "remaining": "Verify the real pointer and transition-cancel scenarios on the compact drawer too.",
       "source_test": "tests/header-hover-review.mjs",
       "evidence_ref": "logs/test-header.log",
-      "log_sha256": "0c5665b2cbda91b8d319fda25030634b20d09aa7356da35ad504440f349bd019",
+      "log_sha256": "5d0a8de9e2c95908eec5f9bee7caef5a354c532bc70a1b3a86643215d40372ae",
       "success_marker": "PASS independent hover: pending Escape suppression, same-route cancellation, visible-trigger hover switching, focused-panel protection"
     },
     {
@@ -141,8 +141,8 @@
       "assertion": "Rendered five locales; exercised parent-link and submenu controls independently using synthetic hover, keyboard, touch and mobile navigation.",
       "remaining": "Inspect active styling and focus geometry with a browser on the required viewports.",
       "source_test": "tests/navigation.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap"
     },
     {
@@ -152,8 +152,8 @@
       "assertion": "Rendered five locales; exercised parent-link and submenu controls independently using synthetic hover, keyboard, touch and mobile navigation.",
       "remaining": "Inspect active styling and focus geometry with a browser on the required viewports.",
       "source_test": "tests/navigation.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap"
     },
     {
@@ -163,8 +163,8 @@
       "assertion": "Rendered five locales; exercised parent-link and submenu controls independently using synthetic hover, keyboard, touch and mobile navigation.",
       "remaining": "Inspect active styling and focus geometry with a browser on the required viewports.",
       "source_test": "tests/navigation.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap"
     },
     {
@@ -175,7 +175,7 @@
       "remaining": "Desktop hover and touch on physical devices are not covered by this specific fixture.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-DRAWER all 5 locales; open/close/open/switch, inert and expanded, Escape from child then drawer restores both triggers"
     },
     {
@@ -186,7 +186,7 @@
       "remaining": "Desktop hover and touch on physical devices are not covered by this specific fixture.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-DRAWER all 5 locales; open/close/open/switch, inert and expanded, Escape from child then drawer restores both triggers"
     },
     {
@@ -197,7 +197,7 @@
       "remaining": "",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -208,7 +208,7 @@
       "remaining": "",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -219,7 +219,7 @@
       "remaining": "Repeat across all other applicable controls, including form submit and active tab during transition.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -230,7 +230,7 @@
       "remaining": "Repeat across all other applicable controls, including form submit and active tab during transition.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -241,7 +241,7 @@
       "remaining": "Repeat across all other applicable controls, including form submit and active tab during transition.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -252,7 +252,7 @@
       "remaining": "Repeat across all other applicable controls, including form submit and active tab during transition.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event"
     },
     {
@@ -263,7 +263,7 @@
       "remaining": "Verify other supported numerical labels and units in the built page.",
       "source_test": "tests/s2-shared.mjs",
       "evidence_ref": "shared-qa/interactions.log",
-      "log_sha256": "fcd006641277255e42c454cd1ce827d5fc6656168fd819c006b125f123bb64fd",
+      "log_sha256": "4fc065e59ce712d9644930cdec9b8af27c8b0b9ad25e4fae3cc3784207e2d81e",
       "success_marker": "PASS S2-NUMBER all 5 locales; visible and accessible final value formatter keeps quantity and suffix"
     },
     {
@@ -274,7 +274,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -285,7 +285,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -296,7 +296,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -307,7 +307,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -318,7 +318,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -329,7 +329,7 @@
       "remaining": "",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -340,7 +340,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -351,7 +351,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -362,7 +362,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -373,7 +373,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -384,7 +384,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -395,7 +395,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -406,7 +406,7 @@
       "remaining": "Measure applied scale, inspect focus, labels and shared review URLs using a rendered browser.",
       "source_test": "tests/s2-reviewer.mjs",
       "evidence_ref": "logs/direct-s2-reviewer.log",
-      "log_sha256": "09e3dcea88b11a490bd729f2789d330161ad6a8313d87d278603cd643b31180e",
+      "log_sha256": "7882092b92a613e121640560a5d8b57ef9dea52b663f87aeae4a9baeed2883e1",
       "success_marker": "PASS reviewer fixture — 48 page/preset/mount combinations; invalid values, preserved navigation, all v3 shortcuts, noindex and replaceState"
     },
     {
@@ -417,7 +417,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -428,7 +428,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -439,7 +439,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -450,7 +450,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -461,7 +461,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -472,7 +472,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -483,7 +483,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -494,7 +494,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -505,7 +505,7 @@
       "remaining": "Repeat with a native IME/caret, pointer and live announcement; synthetic DOM events do not exercise a system keyboard.",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -516,7 +516,7 @@
       "remaining": "Repeat with a native IME/caret, pointer and live announcement; synthetic DOM events do not exercise a system keyboard.",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -527,7 +527,7 @@
       "remaining": "Repeat with a native IME/caret, pointer and live announcement; synthetic DOM events do not exercise a system keyboard.",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -538,7 +538,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -549,7 +549,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -560,7 +560,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -571,7 +571,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -582,7 +582,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -593,7 +593,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -604,7 +604,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -615,7 +615,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -626,7 +626,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -637,7 +637,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -648,7 +648,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -659,7 +659,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -670,7 +670,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -681,7 +681,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -692,7 +692,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -703,7 +703,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -714,7 +714,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -725,7 +725,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -736,7 +736,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -747,7 +747,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -758,7 +758,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -769,7 +769,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -780,7 +780,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -791,7 +791,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -802,7 +802,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -813,7 +813,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -824,7 +824,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -835,7 +835,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -846,7 +846,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -857,7 +857,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -868,7 +868,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -879,7 +879,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -890,7 +890,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -901,7 +901,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -912,7 +912,7 @@
       "remaining": "",
       "source_test": "tests/s2-b2c.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS W3 T06/T07/T11/T12; IME, combined filters, chips, five-language saves and eight job descriptions, closed MD005, seven form receipts and focus; DOM fixtures only."
     },
     {
@@ -923,7 +923,7 @@
       "remaining": "",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -934,7 +934,7 @@
       "remaining": "",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -945,7 +945,7 @@
       "remaining": "",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -956,7 +956,7 @@
       "remaining": "Verify scroll position and header/keyboard obstruction on a rendered device.",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -967,7 +967,7 @@
       "remaining": "Verify scroll position and header/keyboard obstruction on a rendered device.",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -978,7 +978,7 @@
       "remaining": "Verify scroll position and header/keyboard obstruction on a rendered device.",
       "source_test": "tests/jobs-sprint1.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS Sprint 1 filters, audiences, closed vacancy and application flows"
     },
     {
@@ -989,7 +989,7 @@
       "remaining": "",
       "source_test": "tests/jobs-logic.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "22 checks passed"
     },
     {
@@ -1000,7 +1000,7 @@
       "remaining": "Separately compare receipts/URL/logs across actual browser sessions and all forms.",
       "source_test": "tests/jobs-logic.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "22 checks passed"
     },
     {
@@ -1011,7 +1011,7 @@
       "remaining": "Separately compare receipts/URL/logs across actual browser sessions and all forms.",
       "source_test": "tests/jobs-logic.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "22 checks passed"
     },
     {
@@ -1022,7 +1022,7 @@
       "remaining": "",
       "source_test": "tests/education-validation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS Education rejects invalid phone/oversize file; optional file demo completes"
     },
     {
@@ -1033,7 +1033,7 @@
       "remaining": "Repeat complete failure/success/optional branches on F01–F06, including native file-picker cancellation.",
       "source_test": "tests/education-validation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS Education rejects invalid phone/oversize file; optional file demo completes"
     },
     {
@@ -1044,7 +1044,7 @@
       "remaining": "Repeat complete failure/success/optional branches on F01–F06, including native file-picker cancellation.",
       "source_test": "tests/education-validation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS Education rejects invalid phone/oversize file; optional file demo completes"
     },
     {
@@ -1055,7 +1055,7 @@
       "remaining": "Repeat complete failure/success/optional branches on F01–F06, including native file-picker cancellation.",
       "source_test": "tests/education-validation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS Education rejects invalid phone/oversize file; optional file demo completes"
     },
     {
@@ -1066,7 +1066,7 @@
       "remaining": "Repeat complete failure/success/optional branches on F01–F06, including native file-picker cancellation.",
       "source_test": "tests/education-validation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS Education rejects invalid phone/oversize file; optional file demo completes"
     },
     {
@@ -1077,7 +1077,7 @@
       "remaining": "",
       "source_test": "tests/business-info.mjs",
       "evidence_ref": "logs/direct-business-info.log",
-      "log_sha256": "67b4a04c041c315dcb3e63b22def7ff306126a1ffb535e94ae4fecbaec36585b",
+      "log_sha256": "95d993c4d018c4d8708d6a227d0a0fef6102357583750040793375678614f501",
       "success_marker": "PASS verified contact details, optional CV guidance and education form routes in five locales"
     },
     {
@@ -1088,7 +1088,7 @@
       "remaining": "",
       "source_test": "tests/business-info.mjs",
       "evidence_ref": "logs/direct-business-info.log",
-      "log_sha256": "67b4a04c041c315dcb3e63b22def7ff306126a1ffb535e94ae4fecbaec36585b",
+      "log_sha256": "95d993c4d018c4d8708d6a227d0a0fef6102357583750040793375678614f501",
       "success_marker": "PASS verified contact details, optional CV guidance and education form routes in five locales"
     },
     {
@@ -1098,8 +1098,8 @@
       "assertion": "Simulated rejected autoplay transitions to fallback and retains correct explicit user choices.",
       "remaining": "Media rendering, slow network and on-device video/audio policies require a browser.",
       "source_test": "tests/hero-lifecycle.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/test-flagship-retry-88e.log",
+      "log_sha256": "e8524667f15df32c60eaec30db667adbf631407452b631e8574d9f07f7af94ac",
       "success_marker": "PASS independent hero lifecycle blocked"
     },
     {
@@ -1110,7 +1110,7 @@
       "remaining": "Verify actual mouse, touch and keyboard activation and the player on the rendered page.",
       "source_test": "tests/home-video-gallery.mjs",
       "evidence_ref": "logs/test-reference.log",
-      "log_sha256": "e1895861339c9b599864b6b82cfb940b8ee03f3ac6341db6c24940eaeaabd679",
+      "log_sha256": "4d0420fab2c91eed506a7b17876197fe8f974338045d4a3d3b3c232b80089f7a",
       "success_marker": "PASS video gallery: five locales, SSR file links, on-demand player, all selections, focus, fallback, retry and cleanup"
     },
     {
@@ -1120,8 +1120,8 @@
       "assertion": "Shared counter clock, both entry directions, edge jitter, reduced mid-run, unmount and accessible final values verified.",
       "remaining": "Check pixel motion/alignment in a rendered viewport.",
       "source_test": "tests/home-metric-replay.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards"
     },
     {
@@ -1131,8 +1131,8 @@
       "assertion": "Deterministic visibility, hysteresis, protected focused forms, viewport resize, late insertion and unmount callbacks.",
       "remaining": "Inspect real scroll, visible focus and contrast across required viewport pairs.",
       "source_test": "tests/motion-repeat-review.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety"
     },
     {
@@ -1142,8 +1142,8 @@
       "assertion": "Deterministic visibility, hysteresis, protected focused forms, viewport resize, late insertion and unmount callbacks.",
       "remaining": "Inspect real scroll, visible focus and contrast across required viewport pairs.",
       "source_test": "tests/motion-repeat-review.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety"
     },
     {
@@ -1153,8 +1153,8 @@
       "assertion": "Loaded failing derivatives, retained original URL, alt and fallback content; simulated pre-hydration failures.",
       "remaining": "Inspect layout geometry with failed assets and complete remaining logo/media cases.",
       "source_test": "tests/image-fallback.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/test-flagship-retry-88e.log",
+      "log_sha256": "e8524667f15df32c60eaec30db667adbf631407452b631e8574d9f07f7af94ac",
       "success_marker": "PASS original image retry, pre-hydration failure, intrinsic ref/alt, masthead text layout and local media paths"
     },
     {
@@ -1164,8 +1164,8 @@
       "assertion": "Loaded failing derivatives, retained original URL, alt and fallback content; simulated pre-hydration failures.",
       "remaining": "Inspect layout geometry with failed assets and complete remaining logo/media cases.",
       "source_test": "tests/image-fallback.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/test-flagship-retry-88e.log",
+      "log_sha256": "e8524667f15df32c60eaec30db667adbf631407452b631e8574d9f07f7af94ac",
       "success_marker": "PASS original image retry, pre-hydration failure, intrinsic ref/alt, masthead text layout and local media paths"
     },
     {
@@ -1175,8 +1175,8 @@
       "assertion": "Loaded failing derivatives, retained original URL, alt and fallback content; simulated pre-hydration failures.",
       "remaining": "Inspect layout geometry with failed assets and complete remaining logo/media cases.",
       "source_test": "tests/image-fallback.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/test-flagship-retry-88e.log",
+      "log_sha256": "e8524667f15df32c60eaec30db667adbf631407452b631e8574d9f07f7af94ac",
       "success_marker": "PASS original image retry, pre-hydration failure, intrinsic ref/alt, masthead text layout and local media paths"
     },
     {
@@ -1186,8 +1186,8 @@
       "assertion": "Keyboard Home/End/arrow, synthetic drag and focus pause, image error to exact partner name, verified five named local logo assets.",
       "remaining": "Measure CPU and network during visibility changes, then check actual touch, scroll and focus when returning from F01.",
       "source_test": "tests/partners.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR."
     },
     {
@@ -1197,8 +1197,8 @@
       "assertion": "Keyboard Home/End/arrow, synthetic drag and focus pause, image error to exact partner name, verified five named local logo assets.",
       "remaining": "Measure CPU and network during visibility changes, then check actual touch, scroll and focus when returning from F01.",
       "source_test": "tests/partners.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR."
     },
     {
@@ -1208,8 +1208,8 @@
       "assertion": "SSR/static names, hidden duplicate sets, hover/focus/hidden/reduced handling tested.",
       "remaining": "Measure overflow and inspect optical logo alignment/cropping in a rendered browser.",
       "source_test": "tests/partners.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR."
     },
     {
@@ -1219,8 +1219,8 @@
       "assertion": "SSR/static names, hidden duplicate sets, hover/focus/hidden/reduced handling tested.",
       "remaining": "Measure overflow and inspect optical logo alignment/cropping in a rendered browser.",
       "source_test": "tests/partners.mjs",
-      "evidence_ref": "logs/test-flagship.log",
-      "log_sha256": "a1daeb0f82e0870d8d702d079186b51bfced52967f126f0926bfac026cf505bb",
+      "evidence_ref": "logs/previous/flagship-first-run-88e2b61.log",
+      "log_sha256": "ca27b9bfe2c0f809e11f3c0d137e59f2823c60fbd3431c63bcf87f32c7bd3c80",
       "success_marker": "PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR."
     },
     {
@@ -1231,7 +1231,7 @@
       "remaining": "Check actual image transition geometry and reduced preferences during interactions.",
       "source_test": "tests/careers-carousel.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS four careers rails, audited gallery, motion guards, manual lightbox and focus restoration"
     },
     {
@@ -1242,7 +1242,7 @@
       "remaining": "Check actual image transition geometry and reduced preferences during interactions.",
       "source_test": "tests/careers-carousel.mjs",
       "evidence_ref": "logs/b2c.log",
-      "log_sha256": "de047cce0a6a03e3a142926d44e4e5cb31436f442d1b93cd049f2dc50b3d04fe",
+      "log_sha256": "abc3b79332755d67cf2ffd0c94fc88faacb5713ede1e9c5562caa9af687ec90b",
       "success_marker": "PASS four careers rails, audited gallery, motion guards, manual lightbox and focus restoration"
     },
     {
@@ -1253,7 +1253,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1264,7 +1264,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1275,7 +1275,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1286,7 +1286,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1297,7 +1297,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1308,7 +1308,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1319,7 +1319,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1330,7 +1330,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1341,7 +1341,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1352,7 +1352,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1363,7 +1363,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1374,7 +1374,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1385,7 +1385,7 @@
       "remaining": "",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1396,7 +1396,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1407,7 +1407,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1418,7 +1418,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1429,7 +1429,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1440,7 +1440,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1451,7 +1451,7 @@
       "remaining": "Also inspect complete required/optional field counts on F01 and accessible labels in all locales.",
       "source_test": "tests/consultation.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts"
     },
     {
@@ -1462,7 +1462,7 @@
       "remaining": "Confirm the displayed warning and its non-blocking UI wording.",
       "source_test": "tests/admin-demo.mjs",
       "evidence_ref": "logs/test-sprint.log",
-      "log_sha256": "d8c24fb5e3ad7e0622f719b52236b9b818c10f2c8b8d205fa946d738b044a9f6",
+      "log_sha256": "3596e3860f4b88dee1fca74092327b10658ec745f4c78731e6c6e90141daf815",
       "success_marker": "Admin sample duplicate detection and filtered CSV checks passed"
     },
     {
@@ -1472,8 +1472,8 @@
       "assertion": "Empty editorial fixtures produce clear result and reset, partners CTA lands in #business-contact with F01 state.",
       "remaining": "",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1483,8 +1483,8 @@
       "assertion": "Empty editorial fixtures produce clear result and reset, partners CTA lands in #business-contact with F01 state.",
       "remaining": "",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1494,8 +1494,8 @@
       "assertion": "Empty editorial fixtures produce clear result and reset, partners CTA lands in #business-contact with F01 state.",
       "remaining": "",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1505,8 +1505,8 @@
       "assertion": "Empty editorial fixtures produce clear result and reset, partners CTA lands in #business-contact with F01 state.",
       "remaining": "",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1516,8 +1516,8 @@
       "assertion": "Exercised type/id modal routing, reset confirmation, local rows and CSV formula/newline/quote escaping.",
       "remaining": "Review other filter, CMS, BOM and update state branches in the ADMIN run.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1527,8 +1527,8 @@
       "assertion": "Exercised type/id modal routing, reset confirmation, local rows and CSV formula/newline/quote escaping.",
       "remaining": "Review other filter, CMS, BOM and update state branches in the ADMIN run.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1538,8 +1538,8 @@
       "assertion": "Exercised type/id modal routing, reset confirmation, local rows and CSV formula/newline/quote escaping.",
       "remaining": "Review other filter, CMS, BOM and update state branches in the ADMIN run.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1549,8 +1549,8 @@
       "assertion": "Exercised type/id modal routing, reset confirmation, local rows and CSV formula/newline/quote escaping.",
       "remaining": "Review other filter, CMS, BOM and update state branches in the ADMIN run.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1560,8 +1560,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1571,8 +1571,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1582,8 +1582,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1593,8 +1593,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1604,8 +1604,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1615,8 +1615,8 @@
       "assertion": "Education draft for each mode, program restoration, metadata-only attachment with delete/focus and separate form state.",
       "remaining": "Repeat native picker cancellation, per-file removal and F04 equivalent, including accessibility.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     },
     {
@@ -1627,7 +1627,7 @@
       "remaining": "Verify every applicable destination and user-visible scroll/focus on the preview.",
       "source_test": "tests/sitemap-destinations.mjs",
       "evidence_ref": "logs/test-sitemap.log",
-      "log_sha256": "6e2af3e43b57b9bab392df756c209f16d2da360b0ecf99d6dbacabd46c1af6c8",
+      "log_sha256": "0a84123f5127ce48a91385c3182434b02080370fd0ab5b8ed8baaa33451dc924",
       "success_marker": "PASS sitemap destination anchors, filters and history"
     },
     {
@@ -1638,7 +1638,7 @@
       "remaining": "Verify every applicable destination and user-visible scroll/focus on the preview.",
       "source_test": "tests/sitemap-destinations.mjs",
       "evidence_ref": "logs/test-sitemap.log",
-      "log_sha256": "6e2af3e43b57b9bab392df756c209f16d2da360b0ecf99d6dbacabd46c1af6c8",
+      "log_sha256": "0a84123f5127ce48a91385c3182434b02080370fd0ab5b8ed8baaa33451dc924",
       "success_marker": "PASS sitemap destination anchors, filters and history"
     },
     {
@@ -1649,7 +1649,7 @@
       "remaining": "Verify every applicable destination and user-visible scroll/focus on the preview.",
       "source_test": "tests/sitemap-destinations.mjs",
       "evidence_ref": "logs/test-sitemap.log",
-      "log_sha256": "6e2af3e43b57b9bab392df756c209f16d2da360b0ecf99d6dbacabd46c1af6c8",
+      "log_sha256": "0a84123f5127ce48a91385c3182434b02080370fd0ab5b8ed8baaa33451dc924",
       "success_marker": "PASS sitemap destination anchors, filters and history"
     },
     {
@@ -1660,7 +1660,7 @@
       "remaining": "",
       "source_test": "tests/home-b2b.mjs",
       "evidence_ref": "logs/direct-home-b2b.log",
-      "log_sha256": "f8975822e3eaa7fd5a0d481eec92b9dbd339397f826998122501f51a4d81fd69",
+      "log_sha256": "4893744b7d94fa77dff2da8d000299c470491ba21f919f10e3e2c468f7ce6ec4",
       "success_marker": "PASS homepage B2B: five services, reference metrics, partner rail, on-demand film and locked F01 in five languages"
     },
     {
@@ -1671,7 +1671,7 @@
       "remaining": "Verify all six entry-point paths, linked receipt types and display copy with each locale.",
       "source_test": "tests/v14-forms-demo.mjs",
       "evidence_ref": "logs/direct-v14-forms-demo.log",
-      "log_sha256": "f08fc3b1e990cc0f6eb03f0b0b3e5e39afaaf5fd4448b3391418d202b2482a84",
+      "log_sha256": "aa0e9d5e9a7db73bd4e21a50f15f33156c26c7ef9a7d3dc9a3e1e0e3f9398a64",
       "success_marker": "PASS six forms, attachment boundaries and connected in-memory ADMIN"
     },
     {
@@ -1682,7 +1682,7 @@
       "remaining": "Verify all six entry-point paths, linked receipt types and display copy with each locale.",
       "source_test": "tests/v14-forms-demo.mjs",
       "evidence_ref": "logs/direct-v14-forms-demo.log",
-      "log_sha256": "f08fc3b1e990cc0f6eb03f0b0b3e5e39afaaf5fd4448b3391418d202b2482a84",
+      "log_sha256": "aa0e9d5e9a7db73bd4e21a50f15f33156c26c7ef9a7d3dc9a3e1e0e3f9398a64",
       "success_marker": "PASS six forms, attachment boundaries and connected in-memory ADMIN"
     },
     {
@@ -1692,8 +1692,8 @@
       "assertion": "Type, save a mock draft, edit, publish the demo, edit again, and verify the status reflects the unsaved value immediately for both branches.",
       "remaining": "Inspect the placement of status feedback near the actions on rendered devices and evaluate localized announcements.",
       "source_test": "tests/s2-other-pages.mjs",
-      "evidence_ref": "logs/common-audit.log",
-      "log_sha256": "d09de75fe30dbac14eddc7652b17e2dcb9d9856e3bafb7560d4a9437c4d24d9f",
+      "evidence_ref": "w4-qa/s2-other-pages.log",
+      "log_sha256": "348edd6f2d6ddeee9bba360f58eceaffd1e8eb10fa1330245f8af586c8a77459",
       "success_marker": "PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales"
     }
   ]

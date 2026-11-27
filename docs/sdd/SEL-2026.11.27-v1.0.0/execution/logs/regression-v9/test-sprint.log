@@ -1,0 +1,9 @@
+
+> minhduc-prototype@1.0.0 test:sprint
+> node tests/jobs-sprint1.mjs && node tests/admin-demo.mjs && node tests/admin-interaction.mjs && node tests/education-validation.mjs && node tests/consultation.mjs
+
+PASS Sprint 1 filters, audiences, closed vacancy and application flows
+Admin sample duplicate detection and filtered CSV checks passed
+Admin and contact interaction checks passed in five locales
+PASS Education rejects invalid phone/oversize file; optional file demo completes
+PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts

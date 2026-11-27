@@ -1,0 +1,457 @@
+{
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
+  "dist_sha256": "338dabc145438e40cc32ac6809c64d1c90d8ecf74bff8937158234b84f66b3e3",
+  "report_sha256": "dccb4600e026ac9063d17b0c7986646d9fbc41dfc81761839a2f2b2c0d461ca2",
+  "report_path": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json",
+  "checks": 6,
+  "choices": [
+    {
+      "choice_id": "P41-A2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-keyboard-tab-cycle",
+      "actual_example": {
+        "tab_order": [
+          "three preset buttons",
+          "page select",
+          "direct link",
+          "iframe skip link",
+          "return to direct link"
+        ],
+        "selected_background": "rgb(28, 71, 123)",
+        "screenshot": "screenshots/reviewer-keyboard-return.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/3",
+      "case_indices": [
+        3
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-A3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 3 Pass · p41-scaled-vs-direct-1440, p41-scaled-vs-direct-390, p41-scaled-vs-direct-820",
+      "actual_example": {
+        "iframe": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "direct": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "scales": [
+          {
+            "client": 1600,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 980,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 390,
+            "scale": 0.958974,
+            "width": 374,
+            "height": 809.3743896484375,
+            "shell": [
+              374,
+              809.359375
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 96%"
+          }
+        ],
+        "reviewer_shot": "screenshots/reviewer-390-scaled.png",
+        "direct_shot": "screenshots/direct-390.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        390,
+        820,
+        1440
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        1,
+        2
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-B3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 3 Pass · p41-scaled-vs-direct-1440, p41-scaled-vs-direct-390, p41-scaled-vs-direct-820",
+      "actual_example": {
+        "iframe": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "direct": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "scales": [
+          {
+            "client": 1600,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 980,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 390,
+            "scale": 0.958974,
+            "width": 374,
+            "height": 809.3743896484375,
+            "shell": [
+              374,
+              809.359375
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 96%"
+          }
+        ],
+        "reviewer_shot": "screenshots/reviewer-390-scaled.png",
+        "direct_shot": "screenshots/direct-390.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        390,
+        820,
+        1440
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        1,
+        2
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-C1",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-invalid-query-normalization",
+      "actual_example": {
+        "normalized": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=390",
+        "frame": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/4",
+      "case_indices": [
+        4
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    },
+    {
+      "choice_id": "P41-C2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 2 Pass · p41-invalid-query-normalization, p41-navigation-reload-and-popup",
+      "actual_example": {
+        "normalized": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=390",
+        "frame": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/4",
+      "case_indices": [
+        4,
+        5
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    },
+    {
+      "choice_id": "P41-C3",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-navigation-reload-and-popup",
+      "actual_example": {
+        "retained_child": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "direct_popup": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "changed_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation",
+        "history_back": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact",
+        "history_forward": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/5",
+      "case_indices": [
+        5
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    },
+    {
+      "choice_id": "P41-C4",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-navigation-reload-and-popup",
+      "actual_example": {
+        "retained_child": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "direct_popup": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "changed_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation",
+        "history_back": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact",
+        "history_forward": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/5",
+      "case_indices": [
+        5
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    },
+    {
+      "choice_id": "P41-D1",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 3 Pass · p41-scaled-vs-direct-1440, p41-scaled-vs-direct-390, p41-scaled-vs-direct-820",
+      "actual_example": {
+        "iframe": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "direct": {
+          "width": 390,
+          "height": 844,
+          "client": 390,
+          "heading": "Tìm việc làm",
+          "mobile": true,
+          "desktop": false
+        },
+        "scales": [
+          {
+            "client": 1600,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 980,
+            "scale": 1,
+            "width": 390,
+            "height": 844,
+            "shell": [
+              390,
+              844
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+          },
+          {
+            "client": 390,
+            "scale": 0.958974,
+            "width": 374,
+            "height": 809.3743896484375,
+            "shell": [
+              374,
+              809.359375
+            ],
+            "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 96%"
+          }
+        ],
+        "reviewer_shot": "screenshots/reviewer-390-scaled.png",
+        "direct_shot": "screenshots/direct-390.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        390,
+        820,
+        1440
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/0",
+      "case_indices": [
+        0,
+        1,
+        2
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-D2",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-keyboard-tab-cycle",
+      "actual_example": {
+        "tab_order": [
+          "three preset buttons",
+          "page select",
+          "direct link",
+          "iframe skip link",
+          "return to direct link"
+        ],
+        "selected_background": "rgb(28, 71, 123)",
+        "screenshot": "screenshots/reviewer-keyboard-return.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/3",
+      "case_indices": [
+        3
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-D3",
+      "test_status": "Pass",
+      "coverage": "full",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-keyboard-tab-cycle",
+      "actual_example": {
+        "tab_order": [
+          "three preset buttons",
+          "page select",
+          "direct link",
+          "iframe skip link",
+          "return to direct link"
+        ],
+        "selected_background": "rgb(28, 71, 123)",
+        "screenshot": "screenshots/reviewer-keyboard-return.png"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/3",
+      "case_indices": [
+        3
+      ],
+      "remaining": ""
+    },
+    {
+      "choice_id": "P41-E2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-navigation-reload-and-popup",
+      "actual_example": {
+        "retained_child": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "direct_popup": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+        "changed_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation",
+        "history_back": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact",
+        "history_forward": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/5",
+      "case_indices": [
+        5
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    },
+    {
+      "choice_id": "P41-F2",
+      "test_status": "Pass",
+      "coverage": "partial",
+      "assertion": "Chromium 140.0.7339.16 · 1 Pass · p41-invalid-query-normalization",
+      "actual_example": {
+        "normalized": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=390",
+        "frame": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/"
+      },
+      "locales": [
+        "vi"
+      ],
+      "widths": [
+        980
+      ],
+      "evidence_ref": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46013579489 → sprint2-browser-reviewer/browser-results.json#/checks/4",
+      "case_indices": [
+        4
+      ],
+      "remaining": "Reconcile the remaining frozen acceptance clauses and other required input methods."
+    }
+  ]
+}

@@ -3,160 +3,235 @@
     "command": "npm run test",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:41.956192+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:37:48.790210+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test.log"
   },
   {
     "command": "npm run test:sprint",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:42.920336+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:37:50.099029+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-sprint.log"
   },
   {
     "command": "npm run test:header",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:03:04.111863+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:38:00.220977+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-header.log"
   },
   {
     "command": "npm run test:sitemap",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:03:10.200864+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:38:05.560051+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-sitemap.log"
   },
   {
     "command": "npm run test:review",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:03:16.703529+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:38:10.687991+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-review.log"
   },
   {
     "command": "npm run test:hydration",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:41.957003+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
-    "log": "logs/test-hydration.log"
+    "utc": null,
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+    "log": "logs/test-hydration-retry-88e.log",
+    "attempts": [
+      {
+        "command": "npm run test:hydration",
+        "result": "Fail",
+        "exit": 1,
+        "utc": "2026-11-27T13:37:48.790533+00:00",
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "log": "logs/test-hydration.log"
+      },
+      {
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "command": "npm run test:hydration",
+        "exit": 0,
+        "result": "Pass",
+        "log": "logs/test-hydration-retry-88e.log",
+        "utc": null,
+        "provenance": "Release coordinator ran unchanged retry; source88e, raw log preserved."
+      }
+    ]
   },
   {
     "command": "npm run test:reference",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:04:05.285707+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:38:50.330010+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-reference.log"
   },
   {
     "command": "npm run test:catalog",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:41.957641+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:37:48.791376+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-catalog.log"
   },
   {
     "command": "npm run test:seo",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:42.841616+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:37:49.620759+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-seo.log"
   },
   {
     "command": "npm run audit:i18n",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:02:44.969105+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:37:54.681293+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/audit-i18n.log"
   },
   {
     "command": "npm run test:flagship",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:03:02.932317+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
-    "log": "logs/test-flagship.log"
+    "utc": null,
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+    "log": "logs/test-flagship-retry-88e.log",
+    "attempts": [
+      {
+        "command": "npm run test:flagship",
+        "result": "Fail",
+        "exit": 1,
+        "utc": "2026-11-27T13:38:02.675825+00:00",
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "log": "logs/test-flagship.log"
+      },
+      {
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "command": "npm run test:flagship",
+        "exit": 0,
+        "result": "Pass",
+        "log": "logs/test-flagship-retry-88e.log",
+        "utc": null,
+        "provenance": "Release coordinator ran unchanged retry; source88e, raw log preserved."
+      }
+    ]
   },
   {
     "command": "npm run test:carousel",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:04:41.959196+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:42:12.062930+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/test-carousel.log"
   },
   {
     "command": "npm run test:hero",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:04:48.680409+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
-    "log": "logs/test-hero.log"
+    "utc": null,
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+    "log": "b2b-qa/hero-suite-ci-88e.log",
+    "attempts": [
+      {
+        "command": "npm run test:hero",
+        "result": "Fail",
+        "exit": 1,
+        "utc": "2026-11-27T13:43:15.097414+00:00",
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "log": "logs/test-hero.log"
+      },
+      {
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "command": "npm run test:hero",
+        "exit": 0,
+        "result": "Pass",
+        "log": "b2b-qa/hero-suite-ci-88e.log",
+        "ci_url": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46010047063"
+      }
+    ]
   },
   {
     "command": "npm run test:motion",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:05.838170+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
-    "log": "logs/test-motion.log"
+    "utc": null,
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+    "log": "logs/test-motion-retry-88e.log",
+    "attempts": [
+      {
+        "command": "npm run test:motion",
+        "result": "Fail",
+        "exit": 1,
+        "utc": "2026-11-27T13:44:01.999640+00:00",
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "log": "logs/test-motion.log"
+      },
+      {
+        "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+        "command": "npm run test:motion",
+        "exit": 0,
+        "result": "Pass",
+        "log": "logs/test-motion-retry-88e.log",
+        "utc": null,
+        "provenance": "Release coordinator ran unchanged retry; source88e, raw log preserved."
+      }
+    ]
   },
   {
     "command": "node tests/s2-reviewer.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:12.257890+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:44:30.513468+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-s2-reviewer.log"
   },
   {
     "command": "node tests/business-info.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:15.803580+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:45:01.422178+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-business-info.log"
   },
   {
     "command": "node tests/home-b2b.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:17.960882+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:45:12.008005+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-home-b2b.log"
   },
   {
     "command": "node tests/favicon.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:19.852069+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:45:21.755311+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-favicon.log"
   },
   {
     "command": "node tests/support-tools.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:20.941199+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:45:27.305803+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-support-tools.log"
   },
   {
     "command": "node tests/v14-forms-demo.mjs",
     "result": "Pass",
     "exit": 0,
-    "utc": "2026-11-27T13:05:22.353065+00:00",
-    "sha": "4231bae137528dbf152250832c1a26d060c579d9",
+    "utc": "2026-11-27T13:45:36.231173+00:00",
+    "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
     "log": "logs/direct-v14-forms-demo.log"
   }
 ]

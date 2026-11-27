@@ -1,0 +1,388 @@
+{
+  "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+  "chromium": "156.0.8078.79",
+  "mount": "/",
+  "checks": [
+    {
+      "test": "P28-keyboard",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P28-C1",
+        "P28-C2",
+        "P28-C3",
+        "P28-C4",
+        "P28-B4",
+        "P28-E1",
+        "P28-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 1440,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "keyboard",
+        "directory": "/events?status=upcoming",
+        "detail": "/events/ngay-hoi-ket-noi-viec-lam?status=upcoming",
+        "date": "2026-11-28",
+        "span": "08:30 – 11:30",
+        "agenda": [
+          "08:30",
+          "09:00",
+          "10:00",
+          "11:00"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "schedule": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "location": {
+            "top": 99.65625,
+            "bottom": 80
+          },
+          "gallery": {
+            "top": 100.421875,
+            "bottom": 80
+          },
+          "other-events": {
+            "top": 100.28125,
+            "bottom": 80
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "P29-keyboard",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P29-C1",
+        "P29-C2",
+        "P29-C3",
+        "P29-C4",
+        "P29-B4",
+        "P29-E1",
+        "P29-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 1440,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "keyboard",
+        "directory": "/events?status=upcoming",
+        "detail": "/events/toa-dam-ke-hoach-nhan-luc?status=upcoming",
+        "date": "2026-12-05",
+        "span": "14:00 – 15:30",
+        "agenda": [
+          "14:00",
+          "14:15",
+          "14:45",
+          "15:15"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "schedule": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "location": {
+            "top": 99.65625,
+            "bottom": 80
+          },
+          "gallery": {
+            "top": 100.421875,
+            "bottom": 80
+          },
+          "other-events": {
+            "top": 100.28125,
+            "bottom": 80
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "P30-keyboard",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P30-C1",
+        "P30-C2",
+        "P30-C3",
+        "P30-C4",
+        "P30-B4",
+        "P30-E1",
+        "P30-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 1440,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "keyboard",
+        "directory": "/events?status=past",
+        "detail": "/events/hanh-trang-tim-viec?status=past",
+        "date": "2026-11-08",
+        "span": "09:00 – 10:30",
+        "agenda": [
+          "09:00",
+          "09:30",
+          "10:00"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "schedule": {
+            "top": 100.09375,
+            "bottom": 80
+          },
+          "location": {
+            "top": 99.859375,
+            "bottom": 80
+          },
+          "gallery": {
+            "top": 99.625,
+            "bottom": 80
+          },
+          "other-events": {
+            "top": 100.484375,
+            "bottom": 80
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "P28-touch",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P28-C1",
+        "P28-C2",
+        "P28-C3",
+        "P28-C4",
+        "P28-B4",
+        "P28-E1",
+        "P28-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 390,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "touch",
+        "directory": "/events?status=upcoming",
+        "detail": "/events/ngay-hoi-ket-noi-viec-lam?status=upcoming",
+        "date": "2026-11-28",
+        "span": "08:30 – 11:30",
+        "agenda": [
+          "08:30",
+          "09:00",
+          "10:00",
+          "11:00"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.375,
+            "bottom": 72
+          },
+          "schedule": {
+            "top": 100.265625,
+            "bottom": 72
+          },
+          "location": {
+            "top": 100.140625,
+            "bottom": 72
+          },
+          "gallery": {
+            "top": 100.03125,
+            "bottom": 72
+          },
+          "other-events": {
+            "top": 100,
+            "bottom": 72
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "P29-touch",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P29-C1",
+        "P29-C2",
+        "P29-C3",
+        "P29-C4",
+        "P29-B4",
+        "P29-E1",
+        "P29-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 390,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "touch",
+        "directory": "/events?status=upcoming",
+        "detail": "/events/toa-dam-ke-hoach-nhan-luc?status=upcoming",
+        "date": "2026-12-05",
+        "span": "14:00 – 15:30",
+        "agenda": [
+          "14:00",
+          "14:15",
+          "14:45",
+          "15:15"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.484375,
+            "bottom": 72
+          },
+          "schedule": {
+            "top": 100.375,
+            "bottom": 72
+          },
+          "location": {
+            "top": 100.25,
+            "bottom": 72
+          },
+          "gallery": {
+            "top": 100.140625,
+            "bottom": 72
+          },
+          "other-events": {
+            "top": 100.109375,
+            "bottom": 72
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    },
+    {
+      "test": "P30-touch",
+      "choice_ids": [
+        "P27-C1",
+        "P27-C2",
+        "P27-C3",
+        "P27-C4",
+        "P27-B4",
+        "P27-E1",
+        "P27-E4",
+        "P30-C1",
+        "P30-C2",
+        "P30-C3",
+        "P30-C4",
+        "P30-B4",
+        "P30-E1",
+        "P30-E4"
+      ],
+      "locale": "vi",
+      "viewport_width": 390,
+      "route": "/events",
+      "sha": "9db1adb2d7f84371dd7b954038a5c3ae2643a469",
+      "coverage": "scoped assertion",
+      "actual": {
+        "mode": "touch",
+        "directory": "/events?status=past",
+        "detail": "/events/hanh-trang-tim-viec?status=past",
+        "date": "2026-11-08",
+        "span": "09:00 – 10:30",
+        "agenda": [
+          "09:00",
+          "09:30",
+          "10:00"
+        ],
+        "status_fixture": "2026-11-25",
+        "tel": "tel:0818919666 (attribute inspected, never activated)",
+        "anchors": {
+          "overview": {
+            "top": 100.484375,
+            "bottom": 72
+          },
+          "schedule": {
+            "top": 100.375,
+            "bottom": 72
+          },
+          "location": {
+            "top": 100.40625,
+            "bottom": 72
+          },
+          "gallery": {
+            "top": 100.296875,
+            "bottom": 72
+          },
+          "other-events": {
+            "top": 100.265625,
+            "bottom": 72
+          }
+        },
+        "news": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/news"
+      },
+      "status": "Pass"
+    }
+  ],
+  "missing": [],
+  "page_errors": [],
+  "site_sha": "bdf4066be8557f0c3765cbd9732e12f2922e881f",
+  "runner_sha256": "bc7badaf47724a88ed2ccedcf07b698fe0c3a3de20158e592c3dae3ffd125ae0",
+  "limits": "Chromium 1440×900 keyboard and 390×900 touch emulation, VI, reduced motion. No external phone launch or event registration, physical device, or AT announcement test."
+}

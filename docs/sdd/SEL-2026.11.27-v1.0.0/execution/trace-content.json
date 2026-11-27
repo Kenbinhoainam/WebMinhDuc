@@ -1,9 +1,120 @@
 {
-  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "build_sha": "66b76036469f07b35bc3cb188dc6b61d40fdda32",
   "artifact_input": "dist",
-  "tested_html_sha256": "bc8b3b2cbbb4b51bec2ad70ab60149836fbb16573b8b92be6976a0c34808cc43",
+  "tested_html_sha256": "8d28b481d2355a566b0ee5b8a4d3df33636d7e75f461ce26d15239571f9da1f9",
   "runtime": "Node v24.22.1; linux; jsdom, prerendered HTML; no viewport or browser layout",
   "choices": [
+    {
+      "choice_id": "P02-F2",
+      "source_row": 167,
+      "route": "/about-us",
+      "coverage": "full",
+      "steps": "Reopen each localized e-brochure fallback and confirm the actual refresh, ordinary link, canonical and unique destination profile anchor.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "vi: /about-us#profile; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/about-us"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "en: /en/about-us#profile; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/about-us"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "zh: /zh/about-us#profile; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/about-us"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "ko: /ko/about-us#profile; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/about-us"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "ja: /ja/about-us#profile; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/about-us"
+        }
+      ]
+    },
+    {
+      "choice_id": "P03-F1",
+      "source_row": 170,
+      "route": "/services",
+      "coverage": "full",
+      "steps": "Compare all five service slugs in data, navigation, card href and built child HTML with each localized page H1 and its metadata.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "/services/labor-supply Giới thiệu & cung ứng nhân lực | Minh Đức Vina | /services/labor-leasing Cho thuê lao động | Minh Đức Vina | /services/recruitment Headhunt & lao động tay nghề | Minh Đức Vina | /services/college-admissions Tuyển sinh cao đẳng & đại học | Minh Đức Vina | /services/hr-consulting Setup tổ chức & phần mềm doanh nghiệp | Minh Đức Vina"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "/en/services/labor-supply Recruitment & workforce supply | Minh Đức Vina | /en/services/labor-leasing Labor leasing | Minh Đức Vina | /en/services/recruitment Headhunting & skilled workers | Minh Đức Vina | /en/services/college-admissions College and university admissions | Minh Đức Vina | /en/services/hr-consulting Organization & business software | Minh Đức Vina"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "/zh/services/labor-supply 招聘与人力供应 | Minh Đức Vina | /zh/services/labor-leasing 劳务派遣 | Minh Đức Vina | /zh/services/recruitment 猎头与技能人才 | Minh Đức Vina | /zh/services/college-admissions 大专及大学招生 | Minh Đức Vina | /zh/services/hr-consulting 组织架构与企业软件 | Minh Đức Vina"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "/ko/services/labor-supply 채용 및 인력 공급 | Minh Đức Vina | /ko/services/labor-leasing 인력 파견 | Minh Đức Vina | /ko/services/recruitment 헤드헌팅 및 숙련 인력 | Minh Đức Vina | /ko/services/college-admissions 전문대학 및 대학교 입학 | Minh Đức Vina | /ko/services/hr-consulting 조직 설계 및 기업 소프트웨어 | Minh Đức Vina"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "/ja/services/labor-supply 採用・人材供給 | Minh Đức Vina | /ja/services/labor-leasing 労働者派遣 | Minh Đức Vina | /ja/services/recruitment ヘッドハンティング・技能人材 | Minh Đức Vina | /ja/services/college-admissions 短期大学・大学の入学支援 | Minh Đức Vina | /ja/services/hr-consulting 組織設計・業務ソフトウェア | Minh Đức Vina"
+        }
+      ]
+    },
+    {
+      "choice_id": "P03-F4",
+      "source_row": 173,
+      "route": "/services",
+      "coverage": "full",
+      "steps": "Reopen the built directory HTML for each locale and verify all five translated titles, localized metadata and noindex.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Giải pháp nhân lực | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services; vi; noindex,nofollow"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Workforce solutions | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services; en; noindex,nofollow"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "人力资源解决方案 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services; zh-Hans; noindex,nofollow"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "인력 솔루션 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services; ko; noindex,nofollow"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "人材ソリューション | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services; ja; noindex,nofollow"
+        }
+      ]
+    },
     {
       "choice_id": "P03-B1",
       "source_row": 325,
@@ -112,6 +223,80 @@
           "locale": "ja",
           "test_status": "Pass",
           "actual": "遠隔学習と全日制の機会を探します。 /ja/services/college-admissions"
+        }
+      ]
+    },
+    {
+      "choice_id": "P04-F1",
+      "source_row": 174,
+      "route": "/services/labor-supply",
+      "coverage": "full",
+      "steps": "Reopen actual service URL and compare canonical, title, description and localized complete service name, plus leasing responsibility labels where applicable.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Giới thiệu & cung ứng nhân lực; Giới thiệu & cung ứng nhân lực | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-supply"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Recruitment & workforce supply; Recruitment & workforce supply | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services/labor-supply"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "招聘与人力供应; 招聘与人力供应 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services/labor-supply"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "채용 및 인력 공급; 채용 및 인력 공급 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services/labor-supply"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "採用・人材供給; 採用・人材供給 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services/labor-supply"
+        }
+      ]
+    },
+    {
+      "choice_id": "P04-F2",
+      "source_row": 175,
+      "route": "/services/labor-supply",
+      "coverage": "full",
+      "steps": "Compare sample intake A/B, dates, quantities, work periods and all five column labels as actually emitted in each locale.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Đợt | Địa điểm | Ca làm việc | Số lượng | Ngày cần người — A | B — Bắc Ninh | Ngày | 12 | 02/03 | Bắc Ninh | Đêm | 8 | 09/03"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Round | Location | Shift | Number of workers | Workers needed by — A | B — Bắc Ninh | Day | 12 | 02/03 | Bắc Ninh | Night | 8 | 09/03"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "批次 | 地点 | 工作班次 | 人数 | 需要人员日期 — A | B — 北宁省 | 白班 | 12 | 02/03 | 北宁省 | 夜班 | 8 | 09/03"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "차수 | 지역 | 근무 교대 | 인원 | 인력 필요일 — A | B — 박닌성 | 주간 | 12 | 02/03 | 박닌성 | 야간 | 8 | 09/03"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "回 | 勤務地 | 勤務シフト | 人数 | 人材が必要な日 — A | B — バクニン省 | 日勤 | 12 | 02/03 | バクニン省 | 夜勤 | 8 | 09/03"
         }
       ]
     },
@@ -264,6 +449,80 @@
       ]
     },
     {
+      "choice_id": "P05-F1",
+      "source_row": 178,
+      "route": "/services/labor-leasing",
+      "coverage": "full",
+      "steps": "Reopen actual service URL and compare canonical, title, description and localized complete service name, plus leasing responsibility labels where applicable.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Cho thuê lao động; Cho thuê lao động | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/labor-leasing"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Labor leasing; Labor leasing | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services/labor-leasing"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "劳务派遣; 劳务派遣 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services/labor-leasing"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "인력 파견; 인력 파견 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services/labor-leasing"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "労働者派遣; 労働者派遣 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services/labor-leasing"
+        }
+      ]
+    },
+    {
+      "choice_id": "P05-F2",
+      "source_row": 179,
+      "route": "/services/labor-leasing",
+      "coverage": "full",
+      "steps": "Compare the two fee rows and all three conditional FAQ pairs against the live service data.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Thời hạn | Ca làm việc — Ngày bắt đầu và kết thúc | Thời điểm rà soát | Quy mô từng ca | Cách xử lý thay đổi — Có thể thuê theo thời hạn không? | Điều kiện triển khai là gì? | Chi phí được xác định thế nào? — Thời hạn và khả năng đáp ứng được trao đổi theo nhu cầu cụ thể. | Các bên cần xác minh ngành nghề, điều kiện pháp lý và trách nhiệm trước khi ký kết. | Chi phí phụ thuộc vào phạm vi, thời gian và điều kiện đã thống nhất."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Duration | Shift — Start and end dates | Review date | Staffing per shift | How changes are handled — Can workers be leased for a fixed period? | What are the conditions for implementation? | How are fees determined? — The term and availability are discussed based on your needs. | The parties must verify permitted work, legal conditions and responsibilities before signing. | Fees depend on the agreed scope, duration and conditions."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "期限 | 工作班次 — 起止日期 | 复核时间 | 每班人数 | 变更处理方式 — 可以按期限派遣吗？ | 实施条件是什么？ | 如何确定费用？ — 期限和可行性根据具体需求商议。 | 签约前各方需核实行业、法律条件和责任。 | 费用取决于商定的范围、时间和条件。"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "기간 | 근무 교대 — 시작일과 종료일 | 검토 시점 | 교대별 인원 | 변경 처리 방식 — 정해진 기간 동안 인력을 이용할 수 있나요? | 진행 조건은 무엇인가요? | 비용은 어떻게 정해지나요? — 기간과 지원 가능 여부는 구체적인 요구에 따라 논의합니다. | 계약 전에 당사자는 업종, 법적 조건 및 책임을 확인해야 합니다. | 비용은 합의된 범위, 기간 및 조건에 따라 달라집니다."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "期間 | 勤務シフト — 開始日と終了日 | 見直しの時期 | シフト別の人数 | 変更時の対応 — 期間を定めて派遣を利用できますか？ | 実施条件は何ですか？ | 費用はどのように決まりますか？ — 期間と対応可能性は具体的なニーズに応じて相談します。 | 契約前に関係者は業種、法的条件、責任を確認する必要があります。 | 費用は合意した範囲、期間、条件によって異なります。"
+        }
+      ]
+    },
+    {
       "choice_id": "P05-B1",
       "source_row": 333,
       "route": "/services/labor-leasing",
@@ -408,6 +667,80 @@
           "locale": "ja",
           "test_status": "Pass",
           "actual": "期間を定めて派遣を利用できますか？ | 実施条件は何ですか？ | 費用はどのように決まりますか？ — 期間と対応可能性は具体的なニーズに応じて相談します。 | 契約前に関係者は業種、法的条件、責任を確認する必要があります。 | 費用は合意した範囲、期間、条件によって異なります。"
+        }
+      ]
+    },
+    {
+      "choice_id": "P06-F1",
+      "source_row": 182,
+      "route": "/services/recruitment",
+      "coverage": "full",
+      "steps": "Reopen actual service URL and compare canonical, title, description and localized complete service name, plus leasing responsibility labels where applicable.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Headhunt & lao động tay nghề; Headhunt & lao động tay nghề | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/recruitment"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Headhunting & skilled workers; Headhunting & skilled workers | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services/recruitment"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "猎头与技能人才; 猎头与技能人才 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services/recruitment"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "헤드헌팅 및 숙련 인력; 헤드헌팅 및 숙련 인력 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services/recruitment"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "ヘッドハンティング・技能人材; ヘッドハンティング・技能人材 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services/recruitment"
+        }
+      ]
+    },
+    {
+      "choice_id": "P06-F2",
+      "source_row": 183,
+      "route": "/services/recruitment",
+      "coverage": "full",
+      "steps": "Compare rendered job destination with navigation source, decoded skillLevel and listing anchor.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Xem việc tay nghề /jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Browse skilled jobs /en/jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "查看技能岗位 /zh/jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "기능직 일자리 보기 /ko/jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "技能職の求人を見る /ja/jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings"
         }
       ]
     },
@@ -560,6 +893,80 @@
       ]
     },
     {
+      "choice_id": "P07-F2",
+      "source_row": 187,
+      "route": "/services/college-admissions",
+      "coverage": "full",
+      "steps": "Reopen actual service URL and compare canonical, title, description and localized complete service name, plus leasing responsibility labels where applicable.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Tuyển sinh cao đẳng & đại học; Tuyển sinh cao đẳng & đại học | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/college-admissions"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "College and university admissions; College and university admissions | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services/college-admissions"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "大专及大学招生; 大专及大学招生 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services/college-admissions"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "전문대학 및 대학교 입학; 전문대학 및 대학교 입학 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services/college-admissions"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "短期大学・大学の入学支援; 短期大学・大学の入学支援 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services/college-admissions"
+        }
+      ]
+    },
+    {
+      "choice_id": "P07-F4",
+      "source_row": 189,
+      "route": "/services/college-admissions",
+      "coverage": "full",
+      "steps": "Verify noindex, actual structured data types and the prototype qualification that the programmes are examples unconnected to a particular school.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "noindex,nofollow; Organization, WebSite, WebPage, BreadcrumbList; Các chương trình trên prototype là dữ liệu minh họa, chưa gắn với trường cụ thể."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "noindex,nofollow; Organization, WebSite, WebPage, BreadcrumbList; The programs in this prototype are illustrative and are not affiliated with a specific school."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "noindex,nofollow; Organization, WebSite, WebPage, BreadcrumbList; 原型中的课程仅为示例，不关联任何学校。"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "noindex,nofollow; Organization, WebSite, WebPage, BreadcrumbList; 프로토타입의 과정은 예시이며 특정 학교와 연결되지 않습니다."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "noindex,nofollow; Organization, WebSite, WebPage, BreadcrumbList; このプロトタイプの課程はサンプルで、特定の学校には所属していません。"
+        }
+      ]
+    },
+    {
       "choice_id": "P07-B1",
       "source_row": 341,
       "route": "/services/college-admissions",
@@ -704,6 +1111,80 @@
           "locale": "ja",
           "test_status": "Pass",
           "actual": "参考事例サンプルの状況 · 架空の人物"
+        }
+      ]
+    },
+    {
+      "choice_id": "P08-F2",
+      "source_row": 191,
+      "route": "/services/hr-consulting",
+      "coverage": "full",
+      "steps": "Reopen actual service URL and compare canonical, title, description and localized complete service name, plus leasing responsibility labels where applicable.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Setup tổ chức & phần mềm doanh nghiệp; Setup tổ chức & phần mềm doanh nghiệp | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/services/hr-consulting"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Organization & business software; Organization & business software | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/services/hr-consulting"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "组织架构与企业软件; 组织架构与企业软件 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/services/hr-consulting"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "조직 설계 및 기업 소프트웨어; 조직 설계 및 기업 소프트웨어 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/services/hr-consulting"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "組織設計・業務ソフトウェア; 組織設計・業務ソフトウェア | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/services/hr-consulting"
+        }
+      ]
+    },
+    {
+      "choice_id": "P08-F1",
+      "source_row": 190,
+      "route": "/services/hr-consulting",
+      "coverage": "full",
+      "steps": "Compare consultingTopics titles and descriptions, three named workflow tasks and the five coordination steps to their displayed counterparts.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Hiểu hiện trạng | Rõ phương án | Hỗ trợ vận hành — Lắng nghe mục tiêu, nhân sự và quy trình hiện có. | Xác định phạm vi, ưu tiên và cách phối hợp. | Trao đổi nhu cầu phần mềm phù hợp với thực tế. — Tiếp nhận nhu cầu | Phân công | Theo dõi phản hồi — Lắng nghe hiện trạng | Làm rõ mục tiêu | Trao đổi phương án | Thống nhất phạm vi | Theo dõi và điều chỉnh"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Understand the current situation | Clear plan | Support operations — Understand existing goals, staff and processes. | Define scope, priorities and how to work together. | Discuss software needs suited to your situation. — Understand requirements | Assign the work | Follow up on feedback — Understand the current situation | Clarify objectives | Discuss options | Agree on scope | Follow up and adjust"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "了解现状 | 明确方案 | 支持运营 — 了解现有目标、人员和流程。 | 确定范围、优先事项和合作方式。 | 讨论适合实际情况的软件需求。 — 接收需求 | 分配任务 | 跟进反馈 — 了解现状 | 明确目标 | 讨论方案 | 商定范围 | 跟进与调整"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "현황 파악 | 명확한 방안 | 운영 지원 — 현재 목표, 인력 및 프로세스를 파악합니다. | 범위, 우선순위 및 협력 방식을 정합니다. | 실제 상황에 맞는 소프트웨어 요구를 논의합니다. — 요구 접수 | 업무 배정 | 피드백 확인 — 현황 파악 | 목표 명확화 | 방안 논의 | 범위 합의 | 후속 관리 및 조정"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "現状の把握 | 明確な方針 | 運営を支援 — 現在の目標、人員、業務フローを把握します。 | 範囲、優先事項、連携方法を定めます。 | 実情に合うソフトウェアのニーズを相談します。 — ニーズの受付 | 担当を決める | フィードバックの確認 — 現状を把握する | 目標の明確化 | 方針の相談 | 範囲の合意 | 確認と調整"
         }
       ]
     },
@@ -4996,6 +5477,80 @@
           "locale": "ja",
           "test_status": "Pass",
           "actual": "No cover or empty cover frame."
+        }
+      ]
+    },
+    {
+      "choice_id": "P31-F2",
+      "source_row": 280,
+      "route": "/partners",
+      "coverage": "full",
+      "steps": "Match the five actual logo file identities and sequence in the partner directory, homepage strip and About grid in each language.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "/partners/luxshare.svg | /partners/foxconn.svg | /partners/samsung.svg | /partners/glovitech.webp | /partners/tacu.webp; matches on /, /about-us and /partners"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "/partners/luxshare.svg | /partners/foxconn.svg | /partners/samsung.svg | /partners/glovitech.webp | /partners/tacu.webp; matches on /, /about-us and /partners"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "/partners/luxshare.svg | /partners/foxconn.svg | /partners/samsung.svg | /partners/glovitech.webp | /partners/tacu.webp; matches on /, /about-us and /partners"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "/partners/luxshare.svg | /partners/foxconn.svg | /partners/samsung.svg | /partners/glovitech.webp | /partners/tacu.webp; matches on /, /about-us and /partners"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "/partners/luxshare.svg | /partners/foxconn.svg | /partners/samsung.svg | /partners/glovitech.webp | /partners/tacu.webp; matches on /, /about-us and /partners"
+        }
+      ]
+    },
+    {
+      "choice_id": "P31-F3",
+      "source_row": 281,
+      "route": "/partners",
+      "coverage": "full",
+      "steps": "Open the alternate and canonical rendered routes, verify title, description, H1, canonical and the same five partner assets.",
+      "remaining": "",
+      "input_type": "Static prerendered HTML; jsdom; no screen rendering",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Đối tác | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/partners; equivalent localized /testimonials title, chapter and logos"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Partners | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/en/partners; equivalent localized /testimonials title, chapter and logos"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "合作伙伴 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/zh/partners; equivalent localized /testimonials title, chapter and logos"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "파트너 | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ko/partners; equivalent localized /testimonials title, chapter and logos"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "パートナー | Minh Đức Vina; https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/ja/partners; equivalent localized /testimonials title, chapter and logos"
         }
       ]
     },

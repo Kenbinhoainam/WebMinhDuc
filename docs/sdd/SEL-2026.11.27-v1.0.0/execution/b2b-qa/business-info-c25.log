@@ -1,0 +1,7 @@
+target_sha=c25a398a424880651cfc375760401aadc0c006d1
+Isolated git archive: /tmp/s2-w2-contact-c25-okqucw08
+UTC=2026-11-27T13:50:02.264320+00:00
+command=node tests/business-info.mjs
+PASS verified contact details, optional CV guidance and education form routes in five locales
+
+exit=0

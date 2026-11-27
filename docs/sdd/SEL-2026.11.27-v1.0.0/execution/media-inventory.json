@@ -1,14 +1,14 @@
 {
-  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
-  "dist_tree_sha256": "ca25ff51c80afd5428a56cc3adf6a0ed889ef45b9d6e824455419065f84e05f5",
-  "tested_html_sha256": "72f78ae496dae5350a0d2dc924b25227cf797937956bb833b72f78ef1b430dc2",
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_tree_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "tested_html_sha256": "e5b928acbee516c49301a020b2f75cb6ed649e1b86fb64457c2b14773827fad5",
   "routes": [
     {
       "page": "P01",
       "locale": "vi",
       "route": "/",
       "lang": "vi",
-      "html_sha256": "d784aeeed81b105431725168cb8749802caa959556d631c1bbef6fd91693bd03",
+      "html_sha256": "58ad88e4f7292a7fe9c4bcd7965f8ef4845f5188ae50b57f9a362adac7c345d6",
       "h1": [
         "Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc"
       ],
@@ -506,7 +506,7 @@
       "locale": "en",
       "route": "/",
       "lang": "en",
-      "html_sha256": "67b2c3eec3cd193a6efd582881fcdd713bb363b2870ce7fe97b7bcaab964e42f",
+      "html_sha256": "8b5b7987541657b89f6ff7c801b86cb4d610302127a2ae4d5aa2543667538c78",
       "h1": [
         "Workforce solutions for factories and FDI businesses in Northern Vietnam"
       ],
@@ -1004,7 +1004,7 @@
       "locale": "zh",
       "route": "/",
       "lang": "zh-Hans",
-      "html_sha256": "d427a1b87152beab3531d46785ad779d820c7fe3bb263cba367f974544093690",
+      "html_sha256": "12419778e0105a6ce784fabd80c93ea05f0921158fcf38b7ff6c863d2e73e423",
       "h1": [
         "越南北部工厂与外资企业的人力资源解决方案"
       ],
@@ -1502,7 +1502,7 @@
       "locale": "ko",
       "route": "/",
       "lang": "ko",
-      "html_sha256": "e40f52b3977c0cfd9119526d893a8326f37a2a2219605d341601eb31afd23bd2",
+      "html_sha256": "1289a1df67bbc54ea27006a50f3814fd374d8e79a67bf1f38dc0c7edb95ee67f",
       "h1": [
         "베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션"
       ],
@@ -2000,7 +2000,7 @@
       "locale": "ja",
       "route": "/",
       "lang": "ja",
-      "html_sha256": "6aaaf4dfb51a236e57dd8652391fe59739165e68d1adf8e5224b31e40ee6cfa7",
+      "html_sha256": "9d3b4eae23ea7b928cd85742f9a55c489f91d8e827f064b346f487cf80997f87",
       "h1": [
         "ベトナム北部の工場・外資系企業向け人材ソリューション"
       ],
@@ -2498,7 +2498,7 @@
       "locale": "vi",
       "route": "/about-us",
       "lang": "vi",
-      "html_sha256": "dec3712149f241b7358ca12137d99025d4fe39bd2d0b464ee270b905e1cfa108",
+      "html_sha256": "259b9b0fbfdd5a79ce6147fd6325034411c024b3be5e3bb069548cfc7c45e68e",
       "h1": [
         "Về Minh Đức"
       ],
@@ -2957,7 +2957,7 @@
       "locale": "en",
       "route": "/about-us",
       "lang": "en",
-      "html_sha256": "123b48e5f943664daf40567df74027ac92268b059e3bcc06aeff5b31b66cca4b",
+      "html_sha256": "bbac424aec3d49f5320195090858fecaedfbb240fbfbe2ad9fb674d4a07f1284",
       "h1": [
         "About Minh Đức"
       ],
@@ -3416,7 +3416,7 @@
       "locale": "zh",
       "route": "/about-us",
       "lang": "zh-Hans",
-      "html_sha256": "55b7bb1c23adcf87f30f5d3107c32d36526403ac1dc5815a13b2d146b3b5a7aa",
+      "html_sha256": "2528838b192f3a86e050cc0c9e3b8dc93a842673e15b83b45d2c655b9c97d0f6",
       "h1": [
         "关于明德"
       ],
@@ -3875,7 +3875,7 @@
       "locale": "ko",
       "route": "/about-us",
       "lang": "ko",
-      "html_sha256": "35e468fe623fbcdffc3b7ff9a46e8370efc4bf4bc83a87befbb17b012198546b",
+      "html_sha256": "b90acaa2af9f6f5ecaa6b085fe5b43f00533d09718cad96243d9c6ac6204d381",
       "h1": [
         "민득 소개"
       ],
@@ -4334,7 +4334,7 @@
       "locale": "ja",
       "route": "/about-us",
       "lang": "ja",
-      "html_sha256": "35232528ca4c1d632bfe8f850c35f4001cdcedfe1cb1635fc7f2a0c9f40079a9",
+      "html_sha256": "52679af464a3117f1f2a6e755a4755c8a7aa6f6923326cd16fec9a67bed8ae81",
       "h1": [
         "ミンドゥックについて"
       ],
@@ -4793,7 +4793,7 @@
       "locale": "vi",
       "route": "/services",
       "lang": "vi",
-      "html_sha256": "aca2a1050d489e51a5ed1f3c85a6d506e3f69eff8ed98255e44f253a9c2f1668",
+      "html_sha256": "3d3272f88785bef61f9e7ce031c0ca3d6e20fcedb962bd21f111a398ae935320",
       "h1": [
         "Giải pháp nhân sự"
       ],
@@ -4968,7 +4968,7 @@
       "locale": "en",
       "route": "/services",
       "lang": "en",
-      "html_sha256": "e611f0439835cb1598220fa01c04e95c5a2aebc721d9fd03690d9f04a7621265",
+      "html_sha256": "2559b801e5f01e38733f1f02fb74f444b0663c4276b65dac2ff81ab720d76a3a",
       "h1": [
         "Workforce solutions"
       ],
@@ -5143,7 +5143,7 @@
       "locale": "zh",
       "route": "/services",
       "lang": "zh-Hans",
-      "html_sha256": "30dbd10a5b27fd07a78cc5ed90326133b24dc6ff40ac425cbcb3f12c0b9ef53d",
+      "html_sha256": "fb0a0ac1deca7b3c5ccf352253de00cb37bdaf8cf2b1c06de546a4e664da3e4e",
       "h1": [
         "人力资源解决方案"
       ],
@@ -5318,7 +5318,7 @@
       "locale": "ko",
       "route": "/services",
       "lang": "ko",
-      "html_sha256": "519e0bba1ce814a309af7833ffb0b4bf7300146e123aa95ea5f56ba622d72208",
+      "html_sha256": "9ca879fd0c059a27d398941923a16efe840fd4fbc14788b6f065a4fefb6e6cd1",
       "h1": [
         "인력 솔루션"
       ],
@@ -5493,7 +5493,7 @@
       "locale": "ja",
       "route": "/services",
       "lang": "ja",
-      "html_sha256": "7a766f9bf07f35b60f16fa1996b8f790e581a691cb313ea55d1e765e8b6ac326",
+      "html_sha256": "bfa835302c7c0477c5555cae112fc36e1cec5841506e67392f600be0cea8b24e",
       "h1": [
         "人材サービス"
       ],
@@ -5668,7 +5668,7 @@
       "locale": "vi",
       "route": "/services/labor-supply",
       "lang": "vi",
-      "html_sha256": "00e65fcc939db487414960b8fe218c67c74775cbf75ba010944114e6dea466dc",
+      "html_sha256": "5c63a7cdf4b1364d0d659d86f9e37dae74b6f42f07d3c60bad7fbd9957316364",
       "h1": [
         "Giới thiệu & cung ứng nhân lực"
       ],
@@ -5944,7 +5944,7 @@
       "locale": "en",
       "route": "/services/labor-supply",
       "lang": "en",
-      "html_sha256": "0c8226897a23a444f0f9f962b001c72766be90dd6ccd2fabec42cc11ad54ea75",
+      "html_sha256": "0be31a5545807d48828d4079fdde5a695c34e380f9b34a1c609df3104462ceb4",
       "h1": [
         "Recruitment & workforce supply"
       ],
@@ -6220,7 +6220,7 @@
       "locale": "zh",
       "route": "/services/labor-supply",
       "lang": "zh-Hans",
-      "html_sha256": "4c764ed276f1f945a5cfad27c3ec7e1ce21e64a256fa8461521d1513b55af0b7",
+      "html_sha256": "27d77d40220d1b584fc172a145fffcb337f9c9fcea27596f9fd1dcc0219341c5",
       "h1": [
         "招聘与人力供应"
       ],
@@ -6496,7 +6496,7 @@
       "locale": "ko",
       "route": "/services/labor-supply",
       "lang": "ko",
-      "html_sha256": "d900c0d52583d2e91d746f4a2847eb1201c3e08e03de1dc8677fa902ec21cff1",
+      "html_sha256": "766a6016bf164847e5c75efd4703510f959e0cd5d4e1a641b7085ba8ae0c88c7",
       "h1": [
         "채용 및 인력 공급"
       ],
@@ -6772,7 +6772,7 @@
       "locale": "ja",
       "route": "/services/labor-supply",
       "lang": "ja",
-      "html_sha256": "0c002a6a6b16a8456883e72bc7fa33b4b4a4a3bbdedf97e29a033c4254af55bc",
+      "html_sha256": "dd82d21fb116b44415c5da5c424703e6f6e920cd149646c2028903c782ac0a04",
       "h1": [
         "採用・人材供給"
       ],
@@ -7048,7 +7048,7 @@
       "locale": "vi",
       "route": "/services/labor-leasing",
       "lang": "vi",
-      "html_sha256": "ac08df2416c40a0ce3c33df59fc3948237d843efe6e1cce26401f253aae8cac9",
+      "html_sha256": "350f97e2c9833aa85bae7fa5815302d60298ab4880b0ccfcda40d1a8619a0f48",
       "h1": [
         "Cho thuê lao động"
       ],
@@ -7271,7 +7271,7 @@
       "locale": "en",
       "route": "/services/labor-leasing",
       "lang": "en",
-      "html_sha256": "9c1de0f406f50bc7b0d418bc5427f00b375e9e112034be6f1dfc014a737608ef",
+      "html_sha256": "e1656dac24dafd4993ae175576e7c11fb2fb807453a7510c029b5ba15d3474b7",
       "h1": [
         "Labor leasing"
       ],
@@ -7494,7 +7494,7 @@
       "locale": "zh",
       "route": "/services/labor-leasing",
       "lang": "zh-Hans",
-      "html_sha256": "027b800122eb29ebe5ac59dc68c2f2d32355a342382543d1874fe2a6a7802173",
+      "html_sha256": "b31a5c321c56b19a8f5efa0c6ad2abbf4f39cb9765beb59b2a0ed99f4e662d24",
       "h1": [
         "劳务派遣"
       ],
@@ -7717,7 +7717,7 @@
       "locale": "ko",
       "route": "/services/labor-leasing",
       "lang": "ko",
-      "html_sha256": "830df22185394d86e64ebc5712be23d3f9fd4daa3dd64d472c7d6f4090dc40bf",
+      "html_sha256": "37875505afce45d11ccc51de1889ad36234ebc543f6f15d2bd2df0d1b3e09fe8",
       "h1": [
         "인력 파견"
       ],
@@ -7940,7 +7940,7 @@
       "locale": "ja",
       "route": "/services/labor-leasing",
       "lang": "ja",
-      "html_sha256": "8ea78508ef07bb98abd4121358638d5fbe20750d06532aeb2d7a95da7596902e",
+      "html_sha256": "b5a537000d4b425cc506c5a60c758c058aba86b6d98f0217cba1cda30ce718fb",
       "h1": [
         "労働者派遣"
       ],
@@ -8163,7 +8163,7 @@
       "locale": "vi",
       "route": "/services/recruitment",
       "lang": "vi",
-      "html_sha256": "ef307bc09a01510a99ee84455add5711bd4615c8d2346ec351f1e927adbfb714",
+      "html_sha256": "6d54fb4af5c548f627f07481bff6a45d8e3c604e22081ce2edab4650d65d9f8f",
       "h1": [
         "Headhunt & lao động tay nghề"
       ],
@@ -8326,7 +8326,7 @@
       "locale": "en",
       "route": "/services/recruitment",
       "lang": "en",
-      "html_sha256": "a3fbf7626b13615193786fb957c6fcbb192903668d5a780cb55c89f814e90371",
+      "html_sha256": "a8dc3a8414ec4fe86bf8e06aa8479b198ba8b16ca7f9bc7fd8ee8cfda926be0e",
       "h1": [
         "Headhunting & skilled workers"
       ],
@@ -8489,7 +8489,7 @@
       "locale": "zh",
       "route": "/services/recruitment",
       "lang": "zh-Hans",
-      "html_sha256": "2ac7b3cc4113ab382338fb0313265725163ace76c0944dd15791a3da069bd303",
+      "html_sha256": "1be0f7c8b70df734b18ee533056952f5d1d50c61bda79416ee88a3a5ca809c6d",
       "h1": [
         "猎头与技能人才"
       ],
@@ -8652,7 +8652,7 @@
       "locale": "ko",
       "route": "/services/recruitment",
       "lang": "ko",
-      "html_sha256": "d64f30be49500333516a447b276a3fef6fb6ca71fd8927e19cc150239e940330",
+      "html_sha256": "527d8a10a4c521873adbd97f70407889a15f473f3204991e9f5acd29af61ccea",
       "h1": [
         "헤드헌팅 및 숙련 인력"
       ],
@@ -8815,7 +8815,7 @@
       "locale": "ja",
       "route": "/services/recruitment",
       "lang": "ja",
-      "html_sha256": "60907b3d083b74964d0e7c17b7b8d7937d05b292328c200113fc30c7d09f8523",
+      "html_sha256": "04a5bd5101b4d52b3c138410936b63ccea3a2fff0d5fb9919535b0d19fdf5ea5",
       "h1": [
         "ヘッドハンティング・技能人材"
       ],
@@ -8978,7 +8978,7 @@
       "locale": "vi",
       "route": "/services/college-admissions",
       "lang": "vi",
-      "html_sha256": "d2a9d0d2eec3bfe67a9d41665f6189e5aba00fa966edb964f26e311657f92f2e",
+      "html_sha256": "02f0e0f88c518c4cdaaa08384cc56f6215f8e67c0691084ee4df2a1720d3f62e",
       "h1": [
         "Tuyển sinh cao đẳng & đại học"
       ],
@@ -9221,7 +9221,7 @@
       "locale": "en",
       "route": "/services/college-admissions",
       "lang": "en",
-      "html_sha256": "a386b9fec88a02c09a26a03367704b66101be3616a7ce20938b66eedb3b37d44",
+      "html_sha256": "282599430e16722ccf92fd0acd98a38fe987ff3582cc5e0764023fc796e6ae31",
       "h1": [
         "College and university admissions"
       ],
@@ -9464,7 +9464,7 @@
       "locale": "zh",
       "route": "/services/college-admissions",
       "lang": "zh-Hans",
-      "html_sha256": "64d423eb55a7b37286b3650edca4452cd725201b683ae8ae047af320f833f670",
+      "html_sha256": "880db104ae332c970da470a1077be63975e0dc9c2d58a7878d73a8f21f4f670c",
       "h1": [
         "大专及大学招生"
       ],
@@ -9707,7 +9707,7 @@
       "locale": "ko",
       "route": "/services/college-admissions",
       "lang": "ko",
-      "html_sha256": "0087392d843f7173762af01442271b43810298095837bd7d5ed96d75127484bf",
+      "html_sha256": "ff3fa859150495390f5b577e515286165dd3c37cfa52dfd9181a482c0c5f6fba",
       "h1": [
         "전문대학 및 대학교 입학"
       ],
@@ -9950,7 +9950,7 @@
       "locale": "ja",
       "route": "/services/college-admissions",
       "lang": "ja",
-      "html_sha256": "4f5ba6c81703f3e42926437ef1d1bde61bd6a3f28f1106721d255fa5746182f5",
+      "html_sha256": "d8c7f378d9bdb9bf2ef4cfd48bac2c749cfc451521979a36713a5c585be4bc2a",
       "h1": [
         "短期大学・大学の入学支援"
       ],
@@ -10193,7 +10193,7 @@
       "locale": "vi",
       "route": "/services/hr-consulting",
       "lang": "vi",
-      "html_sha256": "977a631996effdffbdf8cddcafe77f46c10ae7bc9fa13c0b16276e4000ebaf91",
+      "html_sha256": "79bd0a7eb3dc4c50d7488e37cd03d227865f6e382bb503b6595d339f53b281a7",
       "h1": [
         "Setup tổ chức & phần mềm doanh nghiệp"
       ],
@@ -10416,7 +10416,7 @@
       "locale": "en",
       "route": "/services/hr-consulting",
       "lang": "en",
-      "html_sha256": "920728850b4cb1cf5494d20abee39e47f734dc67fdc69c048cd35aae32ac1b08",
+      "html_sha256": "ecd40370b00386fcff410d3973770977fa51fa390eb7d55ee06394fb6f2c8225",
       "h1": [
         "Organization & business software"
       ],
@@ -10639,7 +10639,7 @@
       "locale": "zh",
       "route": "/services/hr-consulting",
       "lang": "zh-Hans",
-      "html_sha256": "41919dc3685dc4b10df1a5a152a693b5af8bd0c2d80b94e048bb35286f1686a5",
+      "html_sha256": "d320229a04432f2afbd92c3b4ee7ad17e3c3e29e25692554ca4cc468d001673e",
       "h1": [
         "组织架构与企业软件"
       ],
@@ -10862,7 +10862,7 @@
       "locale": "ko",
       "route": "/services/hr-consulting",
       "lang": "ko",
-      "html_sha256": "2de804c322cc0067d18d2ad203e143e991a90839bc2364c572db2866d9334d6d",
+      "html_sha256": "2acf87cab23d37e064d2172ca0f36571915e3d4a11df0f0b338e0392f851a0f0",
       "h1": [
         "조직 설계 및 기업 소프트웨어"
       ],
@@ -11085,7 +11085,7 @@
       "locale": "ja",
       "route": "/services/hr-consulting",
       "lang": "ja",
-      "html_sha256": "70b4d3df29dfa36dc55338cb77e8efb952ea0ae5ee22ae47f6730bb58fb80835",
+      "html_sha256": "166215b11eae3c8ea999c6a75d1b64de72a9ed2db1a959aa350baef4b351d918",
       "h1": [
         "組織設計・業務ソフトウェア"
       ],
@@ -11308,7 +11308,7 @@
       "locale": "vi",
       "route": "/jobs",
       "lang": "vi",
-      "html_sha256": "95a1122003fad22f0986e3efe528bbdb55901a6f5e69de564564d54a2d23e4d5",
+      "html_sha256": "0a60b94877c845fe158a92942c742bf27fa5235ef88dd82b0b7c8ebf0c595de7",
       "h1": [
         "Tìm việc làm"
       ],
@@ -11375,7 +11375,7 @@
       "locale": "en",
       "route": "/jobs",
       "lang": "en",
-      "html_sha256": "0d182010dd84d2b179ad950bfb6cda1c28b78c0c91d41f8c02dd53aa6cd4fa60",
+      "html_sha256": "e72726f68428f113b7e4642998bd59f2caa4dc6c1fbdd574a45b342142876ff3",
       "h1": [
         "Search jobs"
       ],
@@ -11442,7 +11442,7 @@
       "locale": "zh",
       "route": "/jobs",
       "lang": "zh-Hans",
-      "html_sha256": "e48258c2e09c216c897578f2a156856c94c4c2ba6508f82beaed99f3bba692bf",
+      "html_sha256": "96f5ff7cce9da29453572b08fbd61e4f3930925323966a2c3af70f72ad499974",
       "h1": [
         "搜索职位"
       ],
@@ -11509,7 +11509,7 @@
       "locale": "ko",
       "route": "/jobs",
       "lang": "ko",
-      "html_sha256": "c2acb496fa5a4a51bb3abf3bc008831e5d7457657531dac50e8bb3962aeaad7a",
+      "html_sha256": "5f29b1b9129702c0145584e2453385e337bfdecca2399b358e93ddf65c0756d5",
       "h1": [
         "일자리 검색"
       ],
@@ -11576,7 +11576,7 @@
       "locale": "ja",
       "route": "/jobs",
       "lang": "ja",
-      "html_sha256": "a97229b81dc958cb4eed03d6d54d41634f5030096a3473d3648fec2af18c6f7e",
+      "html_sha256": "b75ea21baa90aca3362ea84ea23fff4774e5cc402df576c3c4af2896f58ab502",
       "h1": [
         "求人検索"
       ],
@@ -11643,7 +11643,7 @@
       "locale": "vi",
       "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
       "lang": "vi",
-      "html_sha256": "c81c6d4532f913dacdee84635fbd7c067bf10e7a06c522e5eec303cfab682f82",
+      "html_sha256": "8a7f24049baef30be01c4079517e4fe44e5749ca6db734675111bbdde2c10033",
       "h1": [
         "Công nhân lắp ráp linh kiện"
       ],
@@ -11677,7 +11677,7 @@
       "locale": "en",
       "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
       "lang": "en",
-      "html_sha256": "d7f70c8519f79e29a6e4d3ec0918ef1b89abdfeb53fdd37adfeaada22aaaa0a5",
+      "html_sha256": "1a525d646327e4d44682d5c51f763f0e1f9a50804d476507dc53ebbbd528ebc0",
       "h1": [
         "Component assembly worker"
       ],
@@ -11711,7 +11711,7 @@
       "locale": "zh",
       "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
       "lang": "zh-Hans",
-      "html_sha256": "426c327bf35b91b505cb148fff5aa6f460b04ecc5a2f9deb51efbf34f7da52ab",
+      "html_sha256": "806ed29b852f6d17264d897f7c06bfd5b539062af55fa613cc5623a8c04c4c0b",
       "h1": [
         "零部件组装工"
       ],
@@ -11745,7 +11745,7 @@
       "locale": "ko",
       "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
       "lang": "ko",
-      "html_sha256": "a01a496b6cebab747142af1e930119e0d54634d6903439cb3b8d614d00ebcd18",
+      "html_sha256": "88c5c5d9cf3f02a07981b1f7b770732f19ef346d36346eebea77a4fe8e1b1a4a",
       "h1": [
         "부품 조립 작업자"
       ],
@@ -11779,7 +11779,7 @@
       "locale": "ja",
       "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
       "lang": "ja",
-      "html_sha256": "abdc7e2dbb1441beb93de9efbc0698eb356e659ca7c7a9ea354c1f296e0992f3",
+      "html_sha256": "eac4a9af7b2961485eba7bff86fab24bd67435ff1f9b257d4801d102f4826fa3",
       "h1": [
         "部品組立スタッフ"
       ],
@@ -11813,7 +11813,7 @@
       "locale": "vi",
       "route": "/jobs/kiem-tra-chat-luong-bac-giang",
       "lang": "vi",
-      "html_sha256": "f925088574236d9f5705a6809e782cea0cede9751faa12789724e1c67d6dbbce",
+      "html_sha256": "f13e278aa2831d37a4a3210571246c3c07c32903aa873d92d22b4bda88b1e752",
       "h1": [
         "Nhân viên kiểm tra chất lượng"
       ],
@@ -11847,7 +11847,7 @@
       "locale": "en",
       "route": "/jobs/kiem-tra-chat-luong-bac-giang",
       "lang": "en",
-      "html_sha256": "469396469794b528dddfa9d5885364fe6ffb71635f78a56fddb85fdcfa21b4b1",
+      "html_sha256": "2f0dee5ab8eb62ddce8e5b8c0b7ed38466ceead5286643d4645b7b2008450433",
       "h1": [
         "Quality control worker"
       ],
@@ -11881,7 +11881,7 @@
       "locale": "zh",
       "route": "/jobs/kiem-tra-chat-luong-bac-giang",
       "lang": "zh-Hans",
-      "html_sha256": "8cacf34bf9f78d54cb082775b0f22dc243f4e00e297fad4a8600e0dc09d5d97e",
+      "html_sha256": "f94bbbbc5ed6a651dfb4d58b27c4c8e4a0ffb365bd70eddefbd6d1e436eb878e",
       "h1": [
         "质量检验员"
       ],
@@ -11915,7 +11915,7 @@
       "locale": "ko",
       "route": "/jobs/kiem-tra-chat-luong-bac-giang",
       "lang": "ko",
-      "html_sha256": "0a114772ecd72e4a9a015d12da1ecb7f8e569d39448b72643e171d5511463de1",
+      "html_sha256": "339ab18eecce713962704f290d4f99cf9e485c8a4d7ad9b9af3c8343c40f3a56",
       "h1": [
         "품질 검사 직원"
       ],
@@ -11949,7 +11949,7 @@
       "locale": "ja",
       "route": "/jobs/kiem-tra-chat-luong-bac-giang",
       "lang": "ja",
-      "html_sha256": "23c4c4350f6bb831fbb186b5419d43393b7d0a5a94b90f4dd0ea4cc5dc8a8e8e",
+      "html_sha256": "18e251d4aa35cdbfb28d4635954ca254a03e9042bd5962b6c6d4dc7a8a6e71e7",
       "h1": [
         "品質検査スタッフ"
       ],
@@ -11983,7 +11983,7 @@
       "locale": "vi",
       "route": "/jobs/nhan-vien-kho-thai-nguyen",
       "lang": "vi",
-      "html_sha256": "c4a3861334a0ffbc0e00ec5bf2afb31d0082b18883e8976e4dcd25d4b8af1b2e",
+      "html_sha256": "73bd4095ba104ce89a4b722bfb9b1f32a76561e44c9e60568628fa07b0fd5198",
       "h1": [
         "Nhân viên kho & đóng gói"
       ],
@@ -12017,7 +12017,7 @@
       "locale": "en",
       "route": "/jobs/nhan-vien-kho-thai-nguyen",
       "lang": "en",
-      "html_sha256": "7609aa4710e85e9744a3a6c0c99aa279bf0c79eb0050f47b9e2a799bca302f3c",
+      "html_sha256": "b3b900c2637fc2cbea85aa86ad801b52c8f1ed92a2449c2aa1c2b661e7f6751e",
       "h1": [
         "Warehouse and packing worker"
       ],
@@ -12051,7 +12051,7 @@
       "locale": "zh",
       "route": "/jobs/nhan-vien-kho-thai-nguyen",
       "lang": "zh-Hans",
-      "html_sha256": "b6732fb17b156ac8ee0591df1f45ff7e1a9aabf3abcf2e6d7b3a716bc58c6b10",
+      "html_sha256": "51d4aef09c000d4a9266e3a0f056603439bbc6efa5ce5468aa410bbb12e02a75",
       "h1": [
         "仓储及包装员"
       ],
@@ -12085,7 +12085,7 @@
       "locale": "ko",
       "route": "/jobs/nhan-vien-kho-thai-nguyen",
       "lang": "ko",
-      "html_sha256": "408e5022641bcea713c2dad6dcb8c1edae334d31c39c7ef207e899cf3d176090",
+      "html_sha256": "4931d72afaf4b363b11fdc2d7e88419d6825448f13772f848ff9daa33d2c4f03",
       "h1": [
         "창고 및 포장 직원"
       ],
@@ -12119,7 +12119,7 @@
       "locale": "ja",
       "route": "/jobs/nhan-vien-kho-thai-nguyen",
       "lang": "ja",
-      "html_sha256": "75c24d44321a19302d837bad7973bed2d39600eabd29bd5296f9d1751c1e319e",
+      "html_sha256": "15396a6c845e3c14523055161ef15f9dc1a3a43d7f19b4072a8f76b29b7062e8",
       "h1": [
         "倉庫・梱包スタッフ"
       ],
@@ -12153,7 +12153,7 @@
       "locale": "vi",
       "route": "/jobs/van-hanh-may-quang-ninh",
       "lang": "vi",
-      "html_sha256": "4bb2da40fe9c046b1725b12967a2edf4d97b2d213a9423fce47991aebe11c4ee",
+      "html_sha256": "954c00a105039f0bfad3ae9c2166038ada030abfb0398f29998c9b59914f7ab5",
       "h1": [
         "Công nhân vận hành máy"
       ],
@@ -12187,7 +12187,7 @@
       "locale": "en",
       "route": "/jobs/van-hanh-may-quang-ninh",
       "lang": "en",
-      "html_sha256": "b5783e24fc91b5d228a0c67472222a7f50aaa933defbc073f0c586f8ef37165c",
+      "html_sha256": "57ceafeb64fa829786630f0915a6571a355a78f37bd7120f971661629f161859",
       "h1": [
         "Machine operator"
       ],
@@ -12221,7 +12221,7 @@
       "locale": "zh",
       "route": "/jobs/van-hanh-may-quang-ninh",
       "lang": "zh-Hans",
-      "html_sha256": "455fc6edd72f3991df6eb5b3b3a2bd7fd2ad63af1f34262990383021d244e803",
+      "html_sha256": "d31069e139c3bee84c8d673882860b490f51d92629614e45c903ced132d5593d",
       "h1": [
         "机器操作员"
       ],
@@ -12255,7 +12255,7 @@
       "locale": "ko",
       "route": "/jobs/van-hanh-may-quang-ninh",
       "lang": "ko",
-      "html_sha256": "7baa04887183667429768cffc6f44ca472e5831d89cd4532f26f2d2efa0b9891",
+      "html_sha256": "d3caf4ae7833f826dbdb9209fd6cb1e31b9ddb773bb2605bc6492df43bb62e75",
       "h1": [
         "기계 운전원"
       ],
@@ -12289,7 +12289,7 @@
       "locale": "ja",
       "route": "/jobs/van-hanh-may-quang-ninh",
       "lang": "ja",
-      "html_sha256": "443adee8f832cbd288b1e7be6cbbea5299cebd6165dbc5a6e281101e1207cfb2",
+      "html_sha256": "7f8a8a78870dbc8519fff056cc9c7340c2b9acd632744499dbec8565c0a4d2d6",
       "h1": [
         "機械オペレーター"
       ],
@@ -12323,7 +12323,7 @@
       "locale": "vi",
       "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
       "lang": "vi",
-      "html_sha256": "6dc85789a812fee0a596ad225919e7b5f5b4b3548231593efb8bbfb98c5931c8",
+      "html_sha256": "c583f5218b0e9197aa64e2f9beee6fb2bc2a54eda922e25af8876f38caa21c0a",
       "h1": [
         "Kỹ thuật viên bảo trì"
       ],
@@ -12361,7 +12361,7 @@
       "locale": "en",
       "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
       "lang": "en",
-      "html_sha256": "70547729793108b325ac6ec3709a43fa1dc71c3e03c1514ef248493d34d143ca",
+      "html_sha256": "83bf15a268ad2e234ffdab9af954bf9fd9f3c96a754abb289e998cb7a7f59d3a",
       "h1": [
         "Maintenance technician"
       ],
@@ -12399,7 +12399,7 @@
       "locale": "zh",
       "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
       "lang": "zh-Hans",
-      "html_sha256": "bf31a23c8c1885fb1c89149f12c19d919b7860bc5e33e54e752151a62abe074f",
+      "html_sha256": "fd3cd1201a64e98145c5dec563721cc2b1f40bc62ce7a09f47b0874ec7052c8b",
       "h1": [
         "维修技术员"
       ],
@@ -12437,7 +12437,7 @@
       "locale": "ko",
       "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
       "lang": "ko",
-      "html_sha256": "fb52dfec8cebe5b5bc65c8285b99a14dfa56bfbf67a21bc3acacdc545a6be991",
+      "html_sha256": "b0d0f0c23d3d976691aaeb98384cbd817b0e7f5a92d2d5bee947e62de95fb7a0",
       "h1": [
         "유지보수 기술자"
       ],
@@ -12475,7 +12475,7 @@
       "locale": "ja",
       "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
       "lang": "ja",
-      "html_sha256": "469dbcea0fba838dd3a7e7ee2a1bb48180bc8a041a281614e62cf18e7956ece4",
+      "html_sha256": "81b1b595ed6e421ca3718c82371d4c2cd083bf436b7ef53df9a2d703704bdd87",
       "h1": [
         "保守技術者"
       ],
@@ -12513,7 +12513,7 @@
       "locale": "vi",
       "route": "/jobs/dong-goi-thoi-vu-bac-giang",
       "lang": "vi",
-      "html_sha256": "e28d121e44aaf42b1d24156d84472aac2a3fe3e6debfbac2ddc6bfa184ccc6ca",
+      "html_sha256": "b4df8738c0b9c043c209c47eb1a0265f25ca36216a35ef4e9da7eed7760e54fb",
       "h1": [
         "Nhân viên đóng gói thời vụ"
       ],
@@ -12547,7 +12547,7 @@
       "locale": "en",
       "route": "/jobs/dong-goi-thoi-vu-bac-giang",
       "lang": "en",
-      "html_sha256": "85e8af694466d1b28046f35ccaeb4680df50b18b88b4f057737d23cd66a7b774",
+      "html_sha256": "abd0d65525b3635c27917bf11ad1bfa4b5a2164f4e6456450823fb2310d6f268",
       "h1": [
         "Seasonal packing worker"
       ],
@@ -12581,7 +12581,7 @@
       "locale": "zh",
       "route": "/jobs/dong-goi-thoi-vu-bac-giang",
       "lang": "zh-Hans",
-      "html_sha256": "1564d1d3c72b8571d17aeba63d389244febef33b2266aaaa6f5e0db8a273a572",
+      "html_sha256": "d7887cb86e22f7b95dc781a7d8bc36acbad8371221772e058826bfee6d0c1b86",
       "h1": [
         "季节性包装工"
       ],
@@ -12615,7 +12615,7 @@
       "locale": "ko",
       "route": "/jobs/dong-goi-thoi-vu-bac-giang",
       "lang": "ko",
-      "html_sha256": "4ca0196e50896d49c0ce73d97bf7261c6ef1aef9f8d46e67792e394ae8f4a3a1",
+      "html_sha256": "9a49ca64a6beef70a3d16c3a836e0daf84e2831f4af0d9c8701d0501cda51c6d",
       "h1": [
         "단기 포장 직원"
       ],
@@ -12649,7 +12649,7 @@
       "locale": "ja",
       "route": "/jobs/dong-goi-thoi-vu-bac-giang",
       "lang": "ja",
-      "html_sha256": "25dc00cca829bff0aa3c2a4e38233f1d176bb0c67e5e7e3b28b8b909d18c21b7",
+      "html_sha256": "851ce187c470480929f2ff1591db9c53aff6cf4eb4e8f98422b26d4f595c00d4",
       "h1": [
         "短期梱包スタッフ"
       ],
@@ -12683,7 +12683,7 @@
       "locale": "vi",
       "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
       "lang": "vi",
-      "html_sha256": "dbe03fb12a6c64d9953bf07e8331d513a94d400b4eacad47ff82e789f8ac71b9",
+      "html_sha256": "b12ae9a3be76a3e5505d897fecd5df907968389df36d4acbd95c1bcdc3dbdb71",
       "h1": [
         "Chuyên viên tuyển dụng"
       ],
@@ -12709,7 +12709,7 @@
       "locale": "en",
       "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
       "lang": "en",
-      "html_sha256": "709179ad5dcebbb5c655dd2c286acc24dfceaaa327bd9952444ed75270b756f8",
+      "html_sha256": "9cdf85e3a7db18be24b5aa76b209933d936f819e469b21f70ce004f6b93828aa",
       "h1": [
         "Recruitment specialist"
       ],
@@ -12735,7 +12735,7 @@
       "locale": "zh",
       "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
       "lang": "zh-Hans",
-      "html_sha256": "d3b696cfb3b631d0e6b2d8bfbb7e9c96132cec844d0697d3e19f8f971d0ae4cf",
+      "html_sha256": "722ea6996674df921c36f478e3f82fd2fc2eb0a757da700964df10237c47fbcb",
       "h1": [
         "招聘专员"
       ],
@@ -12761,7 +12761,7 @@
       "locale": "ko",
       "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
       "lang": "ko",
-      "html_sha256": "912266fdb317f78a0504fc60e0ec5e4b449a8e7061d6e0a492cc413f55f67489",
+      "html_sha256": "973089b39f7747125246cecda48ef5fa7a1bff5506f69ec67fe697f30c40a719",
       "h1": [
         "채용 담당자"
       ],
@@ -12787,7 +12787,7 @@
       "locale": "ja",
       "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
       "lang": "ja",
-      "html_sha256": "168f1efad38398e823e42a9f1b945718b433c1906d706899d2f1ff343914a991",
+      "html_sha256": "2b424393336745d7933e2786fe758f6a0d17ae28bc50a5e5c8ce569aeb4f31e9",
       "h1": [
         "採用担当者"
       ],
@@ -12813,7 +12813,7 @@
       "locale": "vi",
       "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
       "lang": "vi",
-      "html_sha256": "406cc8832db6edcc404e30c37bb45f8ad526e52a80f0ca6e468ec52186b406a3",
+      "html_sha256": "5f36148cbca68e7af3297eb6aa3a3aca574e37c85b085909400cd15c19dfacd5",
       "h1": [
         "Cộng tác viên tuyển dụng"
       ],
@@ -12839,7 +12839,7 @@
       "locale": "en",
       "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
       "lang": "en",
-      "html_sha256": "604c98af6c1cf0e29c523366550bdd5a55acea7b6b29a07ab9fc3837d6474c9c",
+      "html_sha256": "5d80251cbd6c96bdebc186d4a8189f1d8e9d10245ab639f2bb281dd6268450d4",
       "h1": [
         "Recruitment collaborator"
       ],
@@ -12865,7 +12865,7 @@
       "locale": "zh",
       "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
       "lang": "zh-Hans",
-      "html_sha256": "1b792b5f721ec5593a7578e3b675f33fe4907b96caaeb75478e9846a858a75a2",
+      "html_sha256": "17ab3b213591347d154ec8378334221fd52dbf92f1b90a57a811c0c942bd877b",
       "h1": [
         "招聘合作人员"
       ],
@@ -12891,7 +12891,7 @@
       "locale": "ko",
       "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
       "lang": "ko",
-      "html_sha256": "38cf521ccfb7b6b7f992f52f7dc833a3f5c25373c399466d47436e3891a25431",
+      "html_sha256": "ceefedae117083a26c4db054e776fa7b3989f7a50464572f19ce87f263317837",
       "h1": [
         "채용 협력 담당자"
       ],
@@ -12917,7 +12917,7 @@
       "locale": "ja",
       "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
       "lang": "ja",
-      "html_sha256": "423de1282d0444065479dbda8a6ca642abd4e6486e58c5f6e497bd3bc6ef89ea",
+      "html_sha256": "d3fb2163a9e2aa8027f58c4d24da4a7aa51c412732a2b404a28761dfb3bb9070",
       "h1": [
         "採用協力スタッフ"
       ],
@@ -12943,7 +12943,7 @@
       "locale": "vi",
       "route": "/saved-jobs",
       "lang": "vi",
-      "html_sha256": "43e58e65265e906e93c4c777f332b8d585f4f3b2bc17e40b0757ba0c31958a0c",
+      "html_sha256": "90c18a670398907ed3061b074b3c251b7d79e810b52c8742f9417ce455486430",
       "h1": [
         "Việc làm đã lưu"
       ],
@@ -12965,7 +12965,7 @@
       "locale": "en",
       "route": "/saved-jobs",
       "lang": "en",
-      "html_sha256": "bc5334f54dd38deae16469a42162d66b99cb7cbe903636b9d875381a7457a4b7",
+      "html_sha256": "dead469e0cf4087bbe1baef1e65cb183fb8e0e6524d198d3c9908b6e1ee93a88",
       "h1": [
         "Saved jobs"
       ],
@@ -12987,7 +12987,7 @@
       "locale": "zh",
       "route": "/saved-jobs",
       "lang": "zh-Hans",
-      "html_sha256": "9011516186885d5adf3b7931495ce0a30c3d24553a57228923ace362ffadb03e",
+      "html_sha256": "5e9be5eedfd74a4d9f813d6114d93e947f889168accd70d689555ca887a5fc76",
       "h1": [
         "已收藏职位"
       ],
@@ -13009,7 +13009,7 @@
       "locale": "ko",
       "route": "/saved-jobs",
       "lang": "ko",
-      "html_sha256": "0674b3bda807261cfb2c868728ce312fe793319d87e0b8f96559a4801f23c71d",
+      "html_sha256": "cc23523b29c57fc451b7aed96a5bbe82e57ecf4beaf30aac144ea769d9633e0e",
       "h1": [
         "저장한 채용 정보"
       ],
@@ -13031,7 +13031,7 @@
       "locale": "ja",
       "route": "/saved-jobs",
       "lang": "ja",
-      "html_sha256": "0c8722db4895481ef606e59ce19909d5b2709dcd73189c8be5686fc96456b43d",
+      "html_sha256": "b9cd52df7997a093256122441bd8902b3c311535973299f6964efdef18c0869e",
       "h1": [
         "保存した求人"
       ],
@@ -13053,7 +13053,7 @@
       "locale": "vi",
       "route": "/careers",
       "lang": "vi",
-      "html_sha256": "90694542cb213f8deb67c4bc30c2ebb140031816b915e0197e398b60439edaf5",
+      "html_sha256": "b9024c6d2f4de7a06afdc4ae86353b7cf798aaef4a89797e5fcebdcb8faefb2c",
       "h1": [
         "Gia nhập đội ngũ Minh Đức"
       ],
@@ -13484,7 +13484,7 @@
       "locale": "en",
       "route": "/careers",
       "lang": "en",
-      "html_sha256": "82fea4416b72434e816581a3cc4f71862dd9886eb1183ab631b31cb38a0e4a96",
+      "html_sha256": "386699ace2483076f88848d67dca15ca0ea496e2da20d3c92289853c2f54c14f",
       "h1": [
         "Join the Minh Đức team"
       ],
@@ -13915,7 +13915,7 @@
       "locale": "zh",
       "route": "/careers",
       "lang": "zh-Hans",
-      "html_sha256": "b7f15b13fe37f2df5376f40463bbd143530e36a98006e61144ebf8280ffaf003",
+      "html_sha256": "d4a889327af1fd7864ee1d5607a4e68f5d311c545da650d209fc5313ac695817",
       "h1": [
         "加入明德团队"
       ],
@@ -14346,7 +14346,7 @@
       "locale": "ko",
       "route": "/careers",
       "lang": "ko",
-      "html_sha256": "d34a6ab243ce612042b7b67a71914cb873e78abc9b5b1dff59c0e3d462767de0",
+      "html_sha256": "b492a1cd3091fb3e479fc11f45d0a49a2fbbfba7e4ea613cbd905a61d3a1b343",
       "h1": [
         "민득 팀에 합류하기"
       ],
@@ -14777,7 +14777,7 @@
       "locale": "ja",
       "route": "/careers",
       "lang": "ja",
-      "html_sha256": "979f5cb70ac022e52db165db6e75222b33293dd51ba7b9f94d24f0803755f010",
+      "html_sha256": "289a69a7d50b04c7e1d3f97d4c7440c2618362933c62707586e6e8d912cb425b",
       "h1": [
         "ミンドゥックのチームで働く"
       ],
@@ -15208,7 +15208,7 @@
       "locale": "vi",
       "route": "/news",
       "lang": "vi",
-      "html_sha256": "f1643f8c7ebf047546a15a121486cf63d55abdc96e9d048cfb45a39172ede41f",
+      "html_sha256": "2345546a46ed03df5f60a06bfc1b7411f1b46432853d726c51a83c32e47e4446",
       "h1": [
         "Tin tức & cẩm nang"
       ],
@@ -15387,7 +15387,7 @@
       "locale": "en",
       "route": "/news",
       "lang": "en",
-      "html_sha256": "e4614fdafc8684efe3417d5b73ec00deb870dd563266d626f46105931eb908ea",
+      "html_sha256": "fcd1cc80606b952e51ef5089a72ae876efb9d93f77d71b82d7a196c92f7e98e6",
       "h1": [
         "News & guides"
       ],
@@ -15566,7 +15566,7 @@
       "locale": "zh",
       "route": "/news",
       "lang": "zh-Hans",
-      "html_sha256": "05e907abb2978bbb8c4536e637ff78f263e697009a0034708b06ec8d64eebba5",
+      "html_sha256": "57de893053623b7df5647f5004a35fa2bf53dba2fae2826410a35f5df24c9696",
       "h1": [
         "资讯与指南"
       ],
@@ -15745,7 +15745,7 @@
       "locale": "ko",
       "route": "/news",
       "lang": "ko",
-      "html_sha256": "3061bdb94532f616051f1b3bad79ebe66a0d0b4ff41a025d4ff086f1f8788a2b",
+      "html_sha256": "5a5b496fac6a92fc23d8751c1249f4b5efb72c311513e90429739ffd5e342c6a",
       "h1": [
         "소식과 가이드"
       ],
@@ -15924,7 +15924,7 @@
       "locale": "ja",
       "route": "/news",
       "lang": "ja",
-      "html_sha256": "a38a2dea5e0d0f41c4c64824d31524579bcac64c382d1411cf276e4ce07d9499",
+      "html_sha256": "4b50648174d00050ef454aa51d1bde375113251d11ec92869ac7bc01db2f379a",
       "h1": [
         "ニュースとガイド"
       ],
@@ -16103,7 +16103,7 @@
       "locale": "vi",
       "route": "/news/ho-so-xin-viec",
       "lang": "vi",
-      "html_sha256": "bfb64a04781d5adce7a3baf579890717ff9ab323bd71287882d697e44577be2d",
+      "html_sha256": "c0769acefa81572ecfbac9f836efd5c69110817fc502918a4d1989c05a499bf6",
       "h1": [
         "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu?"
       ],
@@ -16366,7 +16366,7 @@
       "locale": "en",
       "route": "/news/ho-so-xin-viec",
       "lang": "en",
-      "html_sha256": "a9ffe5aa0b1ddd759190008ac1e244426e9012deea29a4fa594cc24e35a15b42",
+      "html_sha256": "57e21a6e4d28e914f9e1d91e58c41ee7f1e2d73bc906a64d30c8155ec6eaa340",
       "h1": [
         "Preparing a factory job application: where to start?"
       ],
@@ -16629,7 +16629,7 @@
       "locale": "zh",
       "route": "/news/ho-so-xin-viec",
       "lang": "zh-Hans",
-      "html_sha256": "066a6e9bbe4ff66f7b7ff6a20a78e5d71abcd1b976ff9721e24ca2528681626a",
+      "html_sha256": "fb6345cfd94ef38efe6e0134837b30ba882d138652ec1ae4a7a8b6161e3f1e17",
       "h1": [
         "准备工厂求职材料：从哪里开始？"
       ],
@@ -16892,7 +16892,7 @@
       "locale": "ko",
       "route": "/news/ho-so-xin-viec",
       "lang": "ko",
-      "html_sha256": "73e837093c5e132426660dc65bafbb08f27cd9664f8993e49f499154f5d82808",
+      "html_sha256": "741cfe5acb5aa25eabf874f40378bb3e8557a1a9efb03eee864f60b2af4e39d9",
       "h1": [
         "공장 취업 서류 준비: 어디서 시작할까요?"
       ],
@@ -17155,7 +17155,7 @@
       "locale": "ja",
       "route": "/news/ho-so-xin-viec",
       "lang": "ja",
-      "html_sha256": "d9f5e2683c74d09d21f27050c484ca5a2ead2719e9d8e604945ada283912172e",
+      "html_sha256": "3e73abb7b75c042084017596b2839e2dda8da2541c0878d38fc7b311a27ae56f",
       "h1": [
         "工場への応募書類、何から始める？"
       ],
@@ -17418,7 +17418,7 @@
       "locale": "vi",
       "route": "/news/nhu-cau-tuyen-dung",
       "lang": "vi",
-      "html_sha256": "f2b1fc142950d6a8a12e50c78b338ad63b3683c1e39f99b55452f6fef4d469e8",
+      "html_sha256": "59fa74abe4ad72be58051c26c4114cbc116aff70331ebd476680da5508daa269",
       "h1": [
         "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất"
       ],
@@ -17737,7 +17737,7 @@
       "locale": "en",
       "route": "/news/nhu-cau-tuyen-dung",
       "lang": "en",
-      "html_sha256": "8ecc2f6f3ebb48d459f0ec99ef3b6102550d3277e55c55e62fbd0be3741837aa",
+      "html_sha256": "34704e8a1b729c062337f5f48e9f0c5bc5ef89bb03ae660f6358760ccb03907b",
       "h1": [
         "Planning workforce additions for each production phase"
       ],
@@ -18056,7 +18056,7 @@
       "locale": "zh",
       "route": "/news/nhu-cau-tuyen-dung",
       "lang": "zh-Hans",
-      "html_sha256": "617d654ecdeadaf5698f1521a7e863f016af2f5509b45734473a7731e6cac364",
+      "html_sha256": "d2227e21b79535286707f14c66c1dfc5329014d48be75b7f49643ac319da6078",
       "h1": [
         "按生产批次规划补充人员"
       ],
@@ -18375,7 +18375,7 @@
       "locale": "ko",
       "route": "/news/nhu-cau-tuyen-dung",
       "lang": "ko",
-      "html_sha256": "cfb372d412da42edd75aff4f81fd8d7ef75efa57dec39c99630882cd2d8b44a9",
+      "html_sha256": "387a6c86bbd902dc3bf81205209ef314dfe57b50a6c71a568d43215dcd3dad93",
       "h1": [
         "생산 단계별 인력 충원 계획"
       ],
@@ -18694,7 +18694,7 @@
       "locale": "ja",
       "route": "/news/nhu-cau-tuyen-dung",
       "lang": "ja",
-      "html_sha256": "12854eb6645fc3a052eecd3afdcc13f4ec020fd646cbfeb0319545a5d02a3da6",
+      "html_sha256": "e6576f7b1d6060c52527cee63e9035ae3826d3b0b9193410a00c871d0223d66f",
       "h1": [
         "生産期ごとの人員補充を計画する"
       ],
@@ -19013,7 +19013,7 @@
       "locale": "vi",
       "route": "/news/chon-cong-viec-phu-hop",
       "lang": "vi",
-      "html_sha256": "97349c7fac2de1073d61108dbf974545929a4ca3dddf23d16a1046f309d3978a",
+      "html_sha256": "daeab96a2b1f7deadff113ef867a243b197e35fcfaf874cf404a18abd20909ee",
       "h1": [
         "Những câu hỏi nên làm rõ trước khi nhận việc"
       ],
@@ -19276,7 +19276,7 @@
       "locale": "en",
       "route": "/news/chon-cong-viec-phu-hop",
       "lang": "en",
-      "html_sha256": "6489372d9dd021d4bbd817cb559f4bc92e917973e95bb65edcd0e179368029bf",
+      "html_sha256": "59664fd9ae4ae14b356c9f9ae4ed2b0b1d2e7c177e615d3f1798da97ef286b35",
       "h1": [
         "Questions to clarify before accepting a job"
       ],
@@ -19539,7 +19539,7 @@
       "locale": "zh",
       "route": "/news/chon-cong-viec-phu-hop",
       "lang": "zh-Hans",
-      "html_sha256": "3de39d450d95995c3afcf35843b794869f109d8ffed9de25dba3a6bfa1e3cfa4",
+      "html_sha256": "e2dd7d546683f9cb6ca6ef7ae5a88fa85039377516d134c3bc5c0560fdb5cda7",
       "h1": [
         "入职前应问清的问题"
       ],
@@ -19802,7 +19802,7 @@
       "locale": "ko",
       "route": "/news/chon-cong-viec-phu-hop",
       "lang": "ko",
-      "html_sha256": "c1a47568137fca721c42f8027489a6c2d97b41aded8f4a7a8f390270af33c504",
+      "html_sha256": "a5966cc946e21944d42c02f1b9dfe0b9893c64b928f6081110cf721cd652fdc8",
       "h1": [
         "입사 전에 확인할 질문"
       ],
@@ -20065,7 +20065,7 @@
       "locale": "ja",
       "route": "/news/chon-cong-viec-phu-hop",
       "lang": "ja",
-      "html_sha256": "9ae9fc9f62c841a4718d6f6af2259c46a82628d4a77d93a1e1840597bf2fb3c3",
+      "html_sha256": "bed57bcfe559e7ebc12bd077fb6e3368bb192d637f8c4892e5b785f409e3762f",
       "h1": [
         "就職前に確認したい質問"
       ],
@@ -20328,7 +20328,7 @@
       "locale": "vi",
       "route": "/news/thong-tin-tuyen-dung-minh-bach",
       "lang": "vi",
-      "html_sha256": "91bfac3e600abb7eec6cdb7a804d68edeeead6c4f2e31cf4619dbe508e994ee1",
+      "html_sha256": "409a6b6c8ba01dc34171fbdb3be4d4309a17a17edc29801cd3136ffb8d10013c",
       "h1": [
         "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn"
       ],
@@ -20535,7 +20535,7 @@
       "locale": "en",
       "route": "/news/thong-tin-tuyen-dung-minh-bach",
       "lang": "en",
-      "html_sha256": "a30996fdf727dcefd62dd90567754cc5a92dd96b44f32f0f84372882e848da94",
+      "html_sha256": "3c5ac72ee47098625e6907a0e3aba19fc1c79e148c7cfb6727b78c65b131a9eb",
       "h1": [
         "Clear recruitment information builds better connections"
       ],
@@ -20742,7 +20742,7 @@
       "locale": "zh",
       "route": "/news/thong-tin-tuyen-dung-minh-bach",
       "lang": "zh-Hans",
-      "html_sha256": "b2a8b7b11dce548493c49a76f07a639c5c7763548213d1f6fa32b38b4668dcd8",
+      "html_sha256": "007b5f2975d9536fc8483f1ff62e380f70bfd84213e33e01f46e31b78d96a084",
       "h1": [
         "清晰的招聘信息促成更好的对接"
       ],
@@ -20949,7 +20949,7 @@
       "locale": "ko",
       "route": "/news/thong-tin-tuyen-dung-minh-bach",
       "lang": "ko",
-      "html_sha256": "9a9efd8a138ea517187e9ee2a181ac1f3dc2652dbef8911171fbeb1f78eaea99",
+      "html_sha256": "37d51e30d6e7bf95e2cdcfe9e1053b62ec23ad719f572930cbe4ed1c4b3c262c",
       "h1": [
         "명확한 채용 정보가 더 나은 연결을 만듭니다"
       ],
@@ -21156,7 +21156,7 @@
       "locale": "ja",
       "route": "/news/thong-tin-tuyen-dung-minh-bach",
       "lang": "ja",
-      "html_sha256": "55f9cd901aa1e5cb13d8c89ca3dbafb6578ae980fd614da6a2396ab8b76e9458",
+      "html_sha256": "de4a07768d8d983c33c25e4a3ce4c23ad50af2dfd81edff64601f0b5678613b9",
       "h1": [
         "明確な採用情報がより良いつながりを生む"
       ],
@@ -21363,7 +21363,7 @@
       "locale": "vi",
       "route": "/news/don-tiep-lao-dong-moi",
       "lang": "vi",
-      "html_sha256": "99f3dbf47bb993b57978429f30e10a7ff4af39723af42d5f8c4fae48c58f54c3",
+      "html_sha256": "25e34c8462a871280366021e8a2c48f6cf8be7d6adc94af7127af326ddf7a56c",
       "h1": [
         "Chuẩn bị ngày đầu làm việc cho người lao động mới"
       ],
@@ -21626,7 +21626,7 @@
       "locale": "en",
       "route": "/news/don-tiep-lao-dong-moi",
       "lang": "en",
-      "html_sha256": "42fc936475e51d505207ce2993fe46ecdb43ddc1df17edc5d8eee63de12ffa72",
+      "html_sha256": "a8a5e8c35ca0f34adf1bf7482ec2e18ac7dd640fe2f5e0136c58c0c76f9c2a20",
       "h1": [
         "Preparing a new worker’s first day"
       ],
@@ -21889,7 +21889,7 @@
       "locale": "zh",
       "route": "/news/don-tiep-lao-dong-moi",
       "lang": "zh-Hans",
-      "html_sha256": "a069e46756276bd292547127fb873cf1c33502b5ef514d3bc2202e3a9d78a52c",
+      "html_sha256": "437808df6f87484c79796af9dd8815edc65b530c212f3ca1550055e66b94c699",
       "h1": [
         "为新员工准备入职第一天"
       ],
@@ -22152,7 +22152,7 @@
       "locale": "ko",
       "route": "/news/don-tiep-lao-dong-moi",
       "lang": "ko",
-      "html_sha256": "ec2ec16d2ef11cf961ab40545ade02d15b729c9893f3f75e6dba51030bb4ff23",
+      "html_sha256": "2f8df4d6e3fd6a01903d2bf32fffd704709eac8f1f8698b23e52de574b9afe82",
       "h1": [
         "신규 근로자의 첫 출근 준비"
       ],
@@ -22415,7 +22415,7 @@
       "locale": "ja",
       "route": "/news/don-tiep-lao-dong-moi",
       "lang": "ja",
-      "html_sha256": "c13f793b4267ae66b31ff2e77e4a2cc7ac430f7b6da0e18003a4f22de1d15f21",
+      "html_sha256": "d61c3122dd58dd2f9be9902fd89ccb7f0bb6cc919b6b1240b8aae0bea0ea4062",
       "h1": [
         "新しい従業員の初日を準備する"
       ],
@@ -22678,7 +22678,7 @@
       "locale": "vi",
       "route": "/news/an-toan-thong-tin-khi-tim-viec",
       "lang": "vi",
-      "html_sha256": "0af810b25d7c1bc4269c1f5af69921c499f9d0e16d57cdd84800a0e808a45673",
+      "html_sha256": "2b56595e4172a8d54435feb59c069170a753fcd9b90cabf6c4030492449d040d",
       "h1": [
         "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến"
       ],
@@ -22885,7 +22885,7 @@
       "locale": "en",
       "route": "/news/an-toan-thong-tin-khi-tim-viec",
       "lang": "en",
-      "html_sha256": "af370ef7e393f142cd1c856e72b94eb790f405e38564d4c9bf9d378a34ca18d6",
+      "html_sha256": "3b07a34d69f4065196afe41d721703a29f3f4ef67fb70eb7247ec493f9a89722",
       "h1": [
         "Keeping personal information safe when job hunting online"
       ],
@@ -23092,7 +23092,7 @@
       "locale": "zh",
       "route": "/news/an-toan-thong-tin-khi-tim-viec",
       "lang": "zh-Hans",
-      "html_sha256": "67eb642291f8476210e756fb257f86bc108cfff4df830e2b7617942803693d03",
+      "html_sha256": "4ee481a094243be56f7f9356c7bc02f8d790c1951918ee7d0d61208768f9d1f5",
       "h1": [
         "网上求职时保护个人信息"
       ],
@@ -23299,7 +23299,7 @@
       "locale": "ko",
       "route": "/news/an-toan-thong-tin-khi-tim-viec",
       "lang": "ko",
-      "html_sha256": "c44be61f14c2f0a8a2453d8d43b621ec714457d7638d83f82d0c7376a897477a",
+      "html_sha256": "67aa263185bf5c5213a3d174392cb00e70ab179eff56f7f1e7a7a807b1b6a094",
       "h1": [
         "온라인 구직 시 개인정보 안전하게 지키기"
       ],
@@ -23506,7 +23506,7 @@
       "locale": "ja",
       "route": "/news/an-toan-thong-tin-khi-tim-viec",
       "lang": "ja",
-      "html_sha256": "8887fd4a095f115678f1212f8ea52cf539d9865c341aa65710ce55314feffa9c",
+      "html_sha256": "faf9c304b25308921ecd493e114be8454a115e208cc0f3e24f4e37928144f09c",
       "h1": [
         "オンライン求職で個人情報を守る"
       ],
@@ -23713,7 +23713,7 @@
       "locale": "vi",
       "route": "/events",
       "lang": "vi",
-      "html_sha256": "84659992844275a212f0ec89e9d90b5710dff0e825bc63b6ab37202bf802b7b9",
+      "html_sha256": "7f4c081b33572540f39629f03041abdad67492e96ef6af9c26676d1475d77263",
       "h1": [
         "Hoạt động của Minh Đức Vina"
       ],
@@ -23780,7 +23780,7 @@
       "locale": "en",
       "route": "/events",
       "lang": "en",
-      "html_sha256": "c54f36e77860f047a238a353e1582233563545a749f462c5cd74d1eef51eb911",
+      "html_sha256": "5d97e09326125aa7e4112860d495d4d7293b0c59b0018fb8e2001f5c22d3659e",
       "h1": [
         "Minh Đức Vina activities"
       ],
@@ -23847,7 +23847,7 @@
       "locale": "zh",
       "route": "/events",
       "lang": "zh-Hans",
-      "html_sha256": "cdece826cd3e7cd6b84b59da2068b5785efad0d1a54097e3486c10e2e2ec2274",
+      "html_sha256": "620ebd77ffdb2bb6455ae66785a26030c04131df66d41cc44edd3e81fc4db490",
       "h1": [
         "明德Vina活动"
       ],
@@ -23914,7 +23914,7 @@
       "locale": "ko",
       "route": "/events",
       "lang": "ko",
-      "html_sha256": "35bd518fc21878ae7b507c69726e1e583ae0d78aeaa3f939227af9ac29ef3cf7",
+      "html_sha256": "b15475c31d83e77a8e75a6ebcbb7aa53caac23280157c8aa0617a749e8130054",
       "h1": [
         "민득 비나 활동"
       ],
@@ -23981,7 +23981,7 @@
       "locale": "ja",
       "route": "/events",
       "lang": "ja",
-      "html_sha256": "3334150cacb1ee7e0a02e51fc53709208410b765f4f73dc09f12842232b27d1a",
+      "html_sha256": "4982b9b050a2f8445391d6f8c32ee6159c3bd53f60ae8db00e1c2ac0b5283b29",
       "h1": [
         "ミン・ドゥック・ビナの活動"
       ],
@@ -24048,7 +24048,7 @@
       "locale": "vi",
       "route": "/events/ngay-hoi-ket-noi-viec-lam",
       "lang": "vi",
-      "html_sha256": "90b2ca1edab36cbda5acd0e4d5cf81a13ca29ee2f785d45825b24f5926166ea8",
+      "html_sha256": "0e8b309da26c3ca10c43c9908400ad631e1a6816cff8f1875d6ee5081eae50ae",
       "h1": [
         "Ngày hội kết nối việc làm cùng Minh Đức"
       ],
@@ -24143,7 +24143,7 @@
       "locale": "en",
       "route": "/events/ngay-hoi-ket-noi-viec-lam",
       "lang": "en",
-      "html_sha256": "111242910c6252239665e572c12a1731efbbb8329815ad366d2380316b47d566",
+      "html_sha256": "c75afc41d78ac223741eeb74839f3331807b6bd91c0129b35c7831aec684e1f7",
       "h1": [
         "Minh Đức job connection day"
       ],
@@ -24238,7 +24238,7 @@
       "locale": "zh",
       "route": "/events/ngay-hoi-ket-noi-viec-lam",
       "lang": "zh-Hans",
-      "html_sha256": "40d4a64a09fa571f331a2d9bb9c6265f10e165c7870d5731cbbdcff0241cd2c0",
+      "html_sha256": "ad5185640209fc5447d5f3df89dd97431259e11f8329b764c1143f91462ef4a9",
       "h1": [
         "Minh Đức 就业对接日"
       ],
@@ -24333,7 +24333,7 @@
       "locale": "ko",
       "route": "/events/ngay-hoi-ket-noi-viec-lam",
       "lang": "ko",
-      "html_sha256": "f9972919b7f1c3fa65fc29cb2f71219f00b1cab4ab41b2aaa4cd2724b40e110a",
+      "html_sha256": "f024fd22e10c8bb6003b77ed3a6cf4579df7195fd9af98b65139035672e845fb",
       "h1": [
         "Minh Đức 일자리 연결의 날"
       ],
@@ -24428,7 +24428,7 @@
       "locale": "ja",
       "route": "/events/ngay-hoi-ket-noi-viec-lam",
       "lang": "ja",
-      "html_sha256": "5ffbf4d827c77dea3e7f25ddd7dc4c3661a24db56eb578811037be782c10d0a6",
+      "html_sha256": "3fcc643af3437f06d5662ab7f1e39bae77a714126f8d2698e58d7c992ba39e52",
       "h1": [
         "Minh Đức就職交流デー"
       ],
@@ -24523,7 +24523,7 @@
       "locale": "vi",
       "route": "/events/toa-dam-ke-hoach-nhan-luc",
       "lang": "vi",
-      "html_sha256": "ea545615ce9edf9cfba78417a7924a418dfb695e08d45bb46338aab7de5437a4",
+      "html_sha256": "09d03e706ee18bc8389d0f61ccd0f53c12a6c0b1b5610fe1f64aed1c4a963774",
       "h1": [
         "Trao đổi kế hoạch nhân lực cho doanh nghiệp sản xuất"
       ],
@@ -24618,7 +24618,7 @@
       "locale": "en",
       "route": "/events/toa-dam-ke-hoach-nhan-luc",
       "lang": "en",
-      "html_sha256": "c798e4cc98b994506676cce8b1ea7b309022f4ccca8ecf5d60c09e12f7821bc9",
+      "html_sha256": "9eed53ed9f5326766e913c6c75078a1ccdc95d5cb61a438d2179905833ca7aad",
       "h1": [
         "Workforce planning discussion for manufacturers"
       ],
@@ -24713,7 +24713,7 @@
       "locale": "zh",
       "route": "/events/toa-dam-ke-hoach-nhan-luc",
       "lang": "zh-Hans",
-      "html_sha256": "c853680df7d1e0273e31bc39d29a32b1c1e02ca545e1c931d6c2cccdc50969ba",
+      "html_sha256": "51f684c6d842c3591cac49fb867ad05a2a11d430610b01b81339606194d44f12",
       "h1": [
         "制造企业人力规划交流"
       ],
@@ -24808,7 +24808,7 @@
       "locale": "ko",
       "route": "/events/toa-dam-ke-hoach-nhan-luc",
       "lang": "ko",
-      "html_sha256": "2c14e21a0c611fe085a0b3ec6ca9337947a16a0f2ab468739ccbec5973ca7c1c",
+      "html_sha256": "e3675803cf8f7b1cf9f006191f943174d3eb644052f89c26e37f2327e3c24571",
       "h1": [
         "제조기업을 위한 인력 계획 논의"
       ],
@@ -24903,7 +24903,7 @@
       "locale": "ja",
       "route": "/events/toa-dam-ke-hoach-nhan-luc",
       "lang": "ja",
-      "html_sha256": "6a0a30e34f5eec5453d736fd18c5402346aee02240bb268ebb22268e4a8c39e4",
+      "html_sha256": "c9a70f18b00c1fd66e8e75bbe0e1d5bc83bd6b23a586baa2f5e08a36a293a1f3",
       "h1": [
         "製造企業向け人員計画の相談会"
       ],
@@ -24998,7 +24998,7 @@
       "locale": "vi",
       "route": "/events/hanh-trang-tim-viec",
       "lang": "vi",
-      "html_sha256": "4faa29bb20078bb155ef50fd256ec1592ee731df6ebed1a11f4b5f4274ea3261",
+      "html_sha256": "e00cd7af1f1cab3955a5dcfd57b89f36b2de3c40ef919f2c17bade96efb15762",
       "h1": [
         "Hành trang tìm việc: từ hồ sơ đến ngày đầu đi làm"
       ],
@@ -25093,7 +25093,7 @@
       "locale": "en",
       "route": "/events/hanh-trang-tim-viec",
       "lang": "en",
-      "html_sha256": "31f35b68b5d23388368a759d629edcd1ad2066aed2d1a03c696c4df0b765f6f9",
+      "html_sha256": "e3c41adf695942489aea9c8c6081cf5f8ad4d19be3e2535bd7410c9b63dc703d",
       "h1": [
         "Job search essentials: from applications to your first day"
       ],
@@ -25188,7 +25188,7 @@
       "locale": "zh",
       "route": "/events/hanh-trang-tim-viec",
       "lang": "zh-Hans",
-      "html_sha256": "246c1b61c8bf6011d1b2c950d9b5fb10880503e368fa5fc7ef55f1793d616a9a",
+      "html_sha256": "ca6e447aca292824804bb799295a12a6e4084098752a35415831a3eba52c3fd5",
       "h1": [
         "求职准备：从申请材料到上班第一天"
       ],
@@ -25283,7 +25283,7 @@
       "locale": "ko",
       "route": "/events/hanh-trang-tim-viec",
       "lang": "ko",
-      "html_sha256": "ef7e910c84f53a405ac1f71535a9fa29bb364c4d09b5bdf42d1de2213bbb130d",
+      "html_sha256": "5d6a12cd0d6b3a5f34195118540ac87145105f42503175cdbf311ef921a27f42",
       "h1": [
         "취업 준비: 지원 서류부터 첫 출근까지"
       ],
@@ -25378,7 +25378,7 @@
       "locale": "ja",
       "route": "/events/hanh-trang-tim-viec",
       "lang": "ja",
-      "html_sha256": "09f43be50918ad6e881fa52af579ed57e16bf1ce5ce98713c91ee57be01512ac",
+      "html_sha256": "2b3c6656a0a7a9b21eee52f038df7a5dd19ca70d651a955f872fc87c42c4fff7",
       "h1": [
         "求職の準備：応募書類から初出勤まで"
       ],
@@ -25473,7 +25473,7 @@
       "locale": "vi",
       "route": "/partners",
       "lang": "vi",
-      "html_sha256": "51c76e09566393fd5a94f05a0107d151f9168354d65f2a9ab41d92b30e202423",
+      "html_sha256": "07816b5d1a3057f6150b6c0d5d711b87c33ec6f229669a2f6bb2e8a60b3edfa0",
       "h1": [
         "Đối tác & kết nối"
       ],
@@ -25588,7 +25588,7 @@
       "locale": "en",
       "route": "/partners",
       "lang": "en",
-      "html_sha256": "506ccd03ccb461c02c2f8c39f4825695a5fbce5aee61fbb0bc0bf9ba0891c344",
+      "html_sha256": "42d0cfb80ec9cfe93f0d82ed43b6131e46af45c1fc1366bd52a8457e3d0ba6d6",
       "h1": [
         "Partners & connections"
       ],
@@ -25703,7 +25703,7 @@
       "locale": "zh",
       "route": "/partners",
       "lang": "zh-Hans",
-      "html_sha256": "bdc9921b9ac124fe49af1b65d9e3f6ea5fe46914e82d1e6bb5cbc878c768a00c",
+      "html_sha256": "1af06c8c3b4ec8d2964b15d70ca1172d013bccaf7e805884648c1c961754b662",
       "h1": [
         "伙伴与合作"
       ],
@@ -25818,7 +25818,7 @@
       "locale": "ko",
       "route": "/partners",
       "lang": "ko",
-      "html_sha256": "b8ef5b42174290cdb8d0ec565c558fd96bb0231a9e7c05e9e63160989550f7df",
+      "html_sha256": "3db925c4109ae4b57f2376f4ca3e8606f2faaaf1aaee5abfe7584a08fe501d79",
       "h1": [
         "파트너 및 협력"
       ],
@@ -25933,7 +25933,7 @@
       "locale": "ja",
       "route": "/partners",
       "lang": "ja",
-      "html_sha256": "7caf92a7a3d90b44b2bdd48c874827ce239e456ffc54fe7b5f4d4d10ae2b8e60",
+      "html_sha256": "0955b9f58ca9bfbdee9c6e0915be08fa646d4c0f7d33aa8d6877c616b5bb40b2",
       "h1": [
         "パートナーとつながり"
       ],
@@ -26048,7 +26048,7 @@
       "locale": "vi",
       "route": "/education",
       "lang": "vi",
-      "html_sha256": "cff70c3dd3593c451bb1698b39d0b6647f1fcedd1d8eac7477f02d24a517219d",
+      "html_sha256": "25f311f5f76413b1f2e5956480d5b6ee77d681659d41fe3f40be070f14900efc",
       "h1": [
         "Tuyển sinh cao đẳng & đại học"
       ],
@@ -26115,7 +26115,7 @@
       "locale": "en",
       "route": "/education",
       "lang": "en",
-      "html_sha256": "de63fe613467d31a8606b75bcf2759a7fd272c174b2e1511e92c479fd7dc4d70",
+      "html_sha256": "176de03f74be064432e7d51a9a21b48ad1065dfdf47431d84b2de5717d8c1fa7",
       "h1": [
         "College and university admissions"
       ],
@@ -26182,7 +26182,7 @@
       "locale": "zh",
       "route": "/education",
       "lang": "zh-Hans",
-      "html_sha256": "57f53bb964f697c4b626bbf60ed844fbfd77d6e2c30d16893378a8dbf382e100",
+      "html_sha256": "28847ca41562c1de8ca6323950d09b3fa479ddd8a63d0df1e7133e07ae861a50",
       "h1": [
         "大专及大学招生"
       ],
@@ -26249,7 +26249,7 @@
       "locale": "ko",
       "route": "/education",
       "lang": "ko",
-      "html_sha256": "e368cfaa498049a3201a94392e378de5ea2e19dfbe2eedd2f55e15f8158ed56e",
+      "html_sha256": "362ec560032de84f6c6d70ea7aea21b3d3f8059e5988eb066fb95e3cffd01dc9",
       "h1": [
         "전문대학 및 대학교 입학"
       ],
@@ -26316,7 +26316,7 @@
       "locale": "ja",
       "route": "/education",
       "lang": "ja",
-      "html_sha256": "09bd07c2aa081f42c7c407e50a20f6395bb31517edd7c9921ddb84a52ade17a6",
+      "html_sha256": "e27efc20d8c30b802eaa6e07c97fccdb0b718b105e991e0c8565c11eee5e3e25",
       "h1": [
         "短期大学・大学の入学支援"
       ],
@@ -26383,7 +26383,7 @@
       "locale": "vi",
       "route": "/education/tu-xa-quan-tri",
       "lang": "vi",
-      "html_sha256": "c4955e8679af80fc40b5194041b5e46852586af25ea5bc1ea2f8447361c60fe2",
+      "html_sha256": "9d52550dbf6f7a2655a6efb93d6ff128d528d163835ecd80b5fae8a915aaa2e0",
       "h1": [
         "Quản trị kinh doanh"
       ],
@@ -26413,7 +26413,7 @@
       "locale": "en",
       "route": "/education/tu-xa-quan-tri",
       "lang": "en",
-      "html_sha256": "ff4c3c904eceabc3a741d54e7b0f339992cbdcf92ff9f0ee0e9ae1e35e62c5b0",
+      "html_sha256": "207452a5d1a71dbc098f2924951630e9484bdef226d51d1f34d545c09f98c14f",
       "h1": [
         "Business administration"
       ],
@@ -26443,7 +26443,7 @@
       "locale": "zh",
       "route": "/education/tu-xa-quan-tri",
       "lang": "zh-Hans",
-      "html_sha256": "af2cec8522e66741efbc45d7f2f64e3ecc4c64a442b4247926da1e99dbb4dcf9",
+      "html_sha256": "485046c9793397b6d42707336b7e00a517915672a81114c658263663beac74ad",
       "h1": [
         "工商管理"
       ],
@@ -26473,7 +26473,7 @@
       "locale": "ko",
       "route": "/education/tu-xa-quan-tri",
       "lang": "ko",
-      "html_sha256": "79a96ea1c2f023c7783d985a92127809c63b47803d9ec5d561af5f586f36ef6d",
+      "html_sha256": "1906739fb4db212059c839436255b0e2dc05b3f3fe5396a1dd7140b9857755f3",
       "h1": [
         "경영학"
       ],
@@ -26503,7 +26503,7 @@
       "locale": "ja",
       "route": "/education/tu-xa-quan-tri",
       "lang": "ja",
-      "html_sha256": "99f26ad75e8f9b533a18ddb052eb5ce00fb4780eaaa1ad36a55d6f83b50a2079",
+      "html_sha256": "4a9e7b2701902e49ed1e03e951dcf372c77affc90516a35470a1347379907240",
       "h1": [
         "経営管理"
       ],
@@ -26533,7 +26533,7 @@
       "locale": "vi",
       "route": "/education/chinh-quy-cong-nghe",
       "lang": "vi",
-      "html_sha256": "393b7adbeeb29be62146d3fc9e367c32206ad59364f8b71848e7ea8c4e2c6a0b",
+      "html_sha256": "f4d57f9df4932f0c55b71a43ba52cdbbfda19fd3b518c1b1fd389f1187d442f5",
       "h1": [
         "Công nghệ kỹ thuật chính quy"
       ],
@@ -26592,7 +26592,7 @@
       "locale": "en",
       "route": "/education/chinh-quy-cong-nghe",
       "lang": "en",
-      "html_sha256": "099b11f0452cb448f053a3e196bb7dd2a823263d8e556e09ac6b3dd46ce2a13a",
+      "html_sha256": "653f38d40e5da375c1b2940b591d6594bbc5aebff2b3ea122b105a48f5a3366f",
       "h1": [
         "Campus engineering technology"
       ],
@@ -26651,7 +26651,7 @@
       "locale": "zh",
       "route": "/education/chinh-quy-cong-nghe",
       "lang": "zh-Hans",
-      "html_sha256": "19cdc9c4043bd7e2b9b027d9504464c9c0feb33ab75e152a7e5e5b8bbb183d0e",
+      "html_sha256": "70fea382a1cb6ec7b6fa40d60988a16c60b4022dfd89583d9cd5f318912f0a8a",
       "h1": [
         "全日制工程技术课程"
       ],
@@ -26710,7 +26710,7 @@
       "locale": "ko",
       "route": "/education/chinh-quy-cong-nghe",
       "lang": "ko",
-      "html_sha256": "e1e170e103a4eb802e3661b8ae7e358f05a26d87902b831d32ff5d539e27e88f",
+      "html_sha256": "2537c74cb852f989f367465ea3cfdc20da8a29ae6587891694319562bf5fa4b4",
       "h1": [
         "정규 공학 기술 과정"
       ],
@@ -26769,7 +26769,7 @@
       "locale": "ja",
       "route": "/education/chinh-quy-cong-nghe",
       "lang": "ja",
-      "html_sha256": "2012b1a0f916dad28568616d8416a39aa8e56018eeb554cdb28dadfdef937123",
+      "html_sha256": "c149ebfa21c66f44bb0d42f5d3c144fa3758a1140e008a4f56183455cbf125ec",
       "h1": [
         "工学技術の通学課程"
       ],
@@ -26828,7 +26828,7 @@
       "locale": "vi",
       "route": "/education/tu-xa-ke-toan",
       "lang": "vi",
-      "html_sha256": "b7d3b6e80f6865301c47ab68b46c7a9bcbe104c4e4e7b34528005a5c5aaa2c4e",
+      "html_sha256": "7603fa10307904b294f64701d3e46633d778d7ebbd50af8f31c85fd9987f94e4",
       "h1": [
         "Kế toán"
       ],
@@ -26858,7 +26858,7 @@
       "locale": "en",
       "route": "/education/tu-xa-ke-toan",
       "lang": "en",
-      "html_sha256": "9e20ebb879a2ac07bf381328741a7b25662c1a18f50dba57d1f6803cce9b9f0b",
+      "html_sha256": "1403f1227b138105742084fccaa19c6ab5d9a221e5c6fb15d4b1df1e35e34668",
       "h1": [
         "Accounting"
       ],
@@ -26888,7 +26888,7 @@
       "locale": "zh",
       "route": "/education/tu-xa-ke-toan",
       "lang": "zh-Hans",
-      "html_sha256": "ad1c438785b34b2c8f196884468c8de32ebad8325182dcfbff8eaad5aed797f7",
+      "html_sha256": "ec9ac1dc73393b5c9e59716c611415bda67c6be6ddbf7098f8e23dbd798eddff",
       "h1": [
         "会计"
       ],
@@ -26918,7 +26918,7 @@
       "locale": "ko",
       "route": "/education/tu-xa-ke-toan",
       "lang": "ko",
-      "html_sha256": "314b5c9a591e9bd16f2da60387454b4f5c3fb31453efa01f200541eb15262c93",
+      "html_sha256": "6d989c6f7c49a91e9233eec56458734748b51ed802e221c717cd7aa18733f424",
       "h1": [
         "회계"
       ],
@@ -26948,7 +26948,7 @@
       "locale": "ja",
       "route": "/education/tu-xa-ke-toan",
       "lang": "ja",
-      "html_sha256": "e35915fa4163a837cef02d6789886aafc16719020edb80266d3667cdfac2ec67",
+      "html_sha256": "8e70384074943451ebe2b242185b1becf1d5d9c1e1e6546060d6f3167a2cf3e6",
       "h1": [
         "会計"
       ],
@@ -26978,7 +26978,7 @@
       "locale": "vi",
       "route": "/admin-demo",
       "lang": "vi",
-      "html_sha256": "104acc970d5cd258b2c0f3903b99cac40b505b9fcc7d16b66b30b43f9526b524",
+      "html_sha256": "8fbbaff6188e5baaf9d95eb36397a44e02bf2459080e59bb2bcfb8472c6cde95",
       "h1": [
         "Hồ sơ tiếp nhận"
       ],
@@ -27016,7 +27016,7 @@
       "locale": "en",
       "route": "/admin-demo",
       "lang": "en",
-      "html_sha256": "b3f9f922e2714684738fe775be72c9c3145bcdf906f2ba49f28068f1a1da126f",
+      "html_sha256": "51a76b3a29985c2b00b15744a8a80372d30d60cec43d259938797eebd47cc202",
       "h1": [
         "Incoming records"
       ],
@@ -27054,7 +27054,7 @@
       "locale": "zh",
       "route": "/admin-demo",
       "lang": "zh-Hans",
-      "html_sha256": "c10d75111c3d58b2225df8e27eec8b0b56bfd11a310a89ce53ce1bc113f97948",
+      "html_sha256": "1e80d698d25268009b4b83c5e07bb817078b693941ef67f64fb9b89a05b0e4ac",
       "h1": [
         "接收记录"
       ],
@@ -27092,7 +27092,7 @@
       "locale": "ko",
       "route": "/admin-demo",
       "lang": "ko",
-      "html_sha256": "d7f3ce8330065cd80e59b2c45b9249d829363888a53de816d884ef3283e9f3cb",
+      "html_sha256": "ded8114f8e4c19253a840466d49d4aa0131ce7565b4a43d2bb8e44bb2e4a004c",
       "h1": [
         "접수 기록"
       ],
@@ -27130,7 +27130,7 @@
       "locale": "ja",
       "route": "/admin-demo",
       "lang": "ja",
-      "html_sha256": "3328dc3bccc6884185103c534a2aeb1860c34b498699b98177f304fb050311e4",
+      "html_sha256": "14c873aa0aeb24346ffaa0847e8e09e3a009111864ecc27f291ab88a90053c29",
       "h1": [
         "受付記録"
       ],
@@ -27168,7 +27168,7 @@
       "locale": "vi",
       "route": "/contact",
       "lang": "vi",
-      "html_sha256": "778ff62a66676b594e4cde6aad8bb22aab85a91f50d54babb004b628db21772b",
+      "html_sha256": "09c0d767d769a85b9f5ebc6c48b329dc92ac9f9ebaf9178337cd3b482b996897",
       "h1": [
         "Liên hệ Minh Đức"
       ],
@@ -27206,7 +27206,7 @@
       "locale": "en",
       "route": "/contact",
       "lang": "en",
-      "html_sha256": "6cd2d18bd0ede59f54d6c49e5cb2f572082943dd3f2bf730c68c2dd88015be83",
+      "html_sha256": "92fe3897d41cf4409d74512491bbd020d26a28d03826a649d379ce20a85839f5",
       "h1": [
         "Contact Minh Đức"
       ],
@@ -27244,7 +27244,7 @@
       "locale": "zh",
       "route": "/contact",
       "lang": "zh-Hans",
-      "html_sha256": "62c124940ea374348a585732e6d31cf77d2aacb974463c8427b0e1f01d25eaac",
+      "html_sha256": "8e050868eb019f13707020f4e4edc85a998139b9225e3b1491dd8ab7c46ae493",
       "h1": [
         "联系明德"
       ],
@@ -27282,7 +27282,7 @@
       "locale": "ko",
       "route": "/contact",
       "lang": "ko",
-      "html_sha256": "becc0f787752078600a67afa5982cc07b6b9cd271e762f1dcbc48cf115901a52",
+      "html_sha256": "f36ab129936f5be4e2f485874831d9e00ae41da66735a7fc43514b65e10bcb7a",
       "h1": [
         "민득 문의"
       ],
@@ -27320,7 +27320,7 @@
       "locale": "ja",
       "route": "/contact",
       "lang": "ja",
-      "html_sha256": "80318be65e0cb58d62412f1cb16d5716c6ee7c27cae8b13e7c8f5a9a9f7e12ef",
+      "html_sha256": "52693cd6234f0072d6b395c81d866d1806d8a6d3323819362f95cdb507da0f7a",
       "h1": [
         "ミンドゥックへのお問い合わせ"
       ],
@@ -27358,7 +27358,7 @@
       "locale": "vi",
       "route": "/consultation",
       "lang": "vi",
-      "html_sha256": "87f2d6eac93a260f591efbb3fee764032d61950f0014963f3e1d568e827a6a3f",
+      "html_sha256": "2f77746e5e6fca224ba34aba46e389b0490bee9c10aed29ea00834b478ca1b1c",
       "h1": [
         "Chọn giờ tư vấn"
       ],
@@ -27380,7 +27380,7 @@
       "locale": "en",
       "route": "/consultation",
       "lang": "en",
-      "html_sha256": "4dd523d05278f28d640138e549f16520a5f5c46fe228b5b2982ee3deea8d3c10",
+      "html_sha256": "8e591bab624cd77d599222f3879cd628317df5fbb27d23bcfcf32ab3c37d05ee",
       "h1": [
         "Choose a consultation time"
       ],
@@ -27402,7 +27402,7 @@
       "locale": "zh",
       "route": "/consultation",
       "lang": "zh-Hans",
-      "html_sha256": "69c4bcdbf4c02da6e941bfb12bbddbcc2033d1c1b4810b8119e62c753e810a2c",
+      "html_sha256": "4852751657760c193b88f0fdc96a854d9eb9975de4c8d9d1ef21d7c1c5838340",
       "h1": [
         "选择咨询时间"
       ],
@@ -27424,7 +27424,7 @@
       "locale": "ko",
       "route": "/consultation",
       "lang": "ko",
-      "html_sha256": "21289392f671f57c04dcc65baf988db26e01bce854f75bd3835eb53df0da2b47",
+      "html_sha256": "f4c30ccd4a85d8945b99ef4e6ca626712cf85cac2226f50cb7b41f6f835c3527",
       "h1": [
         "상담 시간 선택"
       ],
@@ -27446,7 +27446,7 @@
       "locale": "ja",
       "route": "/consultation",
       "lang": "ja",
-      "html_sha256": "c158be354499315a1896978a45b72630d8ff7049dfbaf7feaee3a733b597c78e",
+      "html_sha256": "bd8a26605c68cb52a6ae0d52b9427b925256c2f708864cd125a07ac72a98362a",
       "h1": [
         "相談時間を選ぶ"
       ],
@@ -27468,7 +27468,7 @@
       "locale": "vi",
       "route": "/privacy-policy",
       "lang": "vi",
-      "html_sha256": "baa74a21e0a319a12ec5195c1b1362e24e11a835a478b0659b655f35abea36e5",
+      "html_sha256": "1ae6c3e54fe52ec07ca4febd411d4dad3ffc36cb80ec6a694904355b3220dbbb",
       "h1": [
         "Chính sách bảo mật"
       ],
@@ -27498,7 +27498,7 @@
       "locale": "en",
       "route": "/privacy-policy",
       "lang": "en",
-      "html_sha256": "37cdfe663387ac1001c45532d8c0ac20188f5e8909a52635ec81db9a3a3b007e",
+      "html_sha256": "866c61195a91a9a4afe49a2c3ba30c1d9a57940d644a9a19e0f083907a3af507",
       "h1": [
         "Privacy policy"
       ],
@@ -27528,7 +27528,7 @@
       "locale": "zh",
       "route": "/privacy-policy",
       "lang": "zh-Hans",
-      "html_sha256": "338bfddf3c4bcc2438d028064e7f950c6c7284d0e33a67c513087a1c48ba2df8",
+      "html_sha256": "a78acf44ec2d4e02c5f610784622466d5a1b3ffa31e40514eae4a6fb96c897fa",
       "h1": [
         "隐私政策"
       ],
@@ -27558,7 +27558,7 @@
       "locale": "ko",
       "route": "/privacy-policy",
       "lang": "ko",
-      "html_sha256": "35e551cc5b3e6943dcbdf2694a6d79f6b4e3b247bdfff95cd8e1a4f8be734374",
+      "html_sha256": "5075ec08be65cadacb1f3f0b99b94d1de7f5273c25fc27c445bf27cf65c07aad",
       "h1": [
         "개인정보 처리방침"
       ],
@@ -27588,7 +27588,7 @@
       "locale": "ja",
       "route": "/privacy-policy",
       "lang": "ja",
-      "html_sha256": "65d7b17c0623ae950efab18303c0bc50b09d5397ddb9630fe0869543df9267c6",
+      "html_sha256": "39857a05682fc0700821a3224650e1a3ecc7cb6291a4d3a4b39ef0ecf56bee3d",
       "h1": [
         "プライバシーポリシー"
       ],
@@ -27618,7 +27618,7 @@
       "locale": "vi",
       "route": "/terms-of-use",
       "lang": "vi",
-      "html_sha256": "d5ffc459d3b2f21673e534fe9dee152f5de9647697edb8f9579544e751e0a688",
+      "html_sha256": "1d6591d41ff68509eef0b172daeb804c7c4c0a6705605c85118423ad28aa966d",
       "h1": [
         "Điều khoản sử dụng"
       ],
@@ -27648,7 +27648,7 @@
       "locale": "en",
       "route": "/terms-of-use",
       "lang": "en",
-      "html_sha256": "2b84fb5fe89a25a061bc8655598781bbb4e4186a23b28e272ac02ee285190e7e",
+      "html_sha256": "22e13db4ad518781131a681bea4317b411e1b3fa4b8d31edcbbb51fffacca8bf",
       "h1": [
         "Terms of use"
       ],
@@ -27678,7 +27678,7 @@
       "locale": "zh",
       "route": "/terms-of-use",
       "lang": "zh-Hans",
-      "html_sha256": "036f7e0a64b51471e63d91f35111d48b6c16e851fc71d519410e446d93b58315",
+      "html_sha256": "5984f26416be881fa8849e4409f3b2f2632c326e56904406dc22d858c4cb6d1a",
       "h1": [
         "使用条款"
       ],
@@ -27708,7 +27708,7 @@
       "locale": "ko",
       "route": "/terms-of-use",
       "lang": "ko",
-      "html_sha256": "6e00b98ebfadb98ab8aa51f70995c23648feaac280336ec5976367d311665ed9",
+      "html_sha256": "5d010228226ce2555a3e7f8b9a4bded13d09281ee2e1b3bf858ecd69c161afd2",
       "h1": [
         "이용약관"
       ],
@@ -27738,7 +27738,7 @@
       "locale": "ja",
       "route": "/terms-of-use",
       "lang": "ja",
-      "html_sha256": "8c8776992916b130d358d888f7faba33063543f1c14a1e7a290309b3ec7e7374",
+      "html_sha256": "75aef8302c2fad8c328fb22ba7b71f8c9a673558c136dbf530986c54abd55c73",
       "h1": [
         "利用規約"
       ],

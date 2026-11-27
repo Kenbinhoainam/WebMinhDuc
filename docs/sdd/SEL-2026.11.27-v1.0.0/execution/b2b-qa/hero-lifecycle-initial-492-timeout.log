@@ -1,0 +1,29 @@
+target_sha=49259ccec3d3a6f6fe1d77ba5e692a3fe5cd046d
+Application source extracted via git archive 49259ccec3d3a6f6fe1d77ba5e692a3fe5cd046d
+Isolated checkout: /tmp/minhduc-w2-492-g0vwnvnp
+QA-only overlays (SHA256): {"tests/s2-w2-extra-flows.mjs": "8ea78c4d05ac328b2c17e4a65ee4552eab0b700029f28b8660f290c6163b362c", "tests/s2-w2-extra-hero.mjs": "de09217da949fccd4025f2a0de42b51698e068e662c0647f58db22104a0fa95b"}
+Linux x86_64, Node v24.22.1; deterministic JSDOM / CSS / SSR / mocked media. No real browser, device, network-performance or screenshot claim.
+2026-11-27T13:15:54.262031+00:00  node tests/hero-lifecycle.mjs
+PASS independent hero lifecycle manual
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: scroll: 
+
+
+null !== 0
+
+    at file:///tmp/minhduc-w2-492-g0vwnvnp/tests/hero-lifecycle.mjs:15:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+
+exit 1

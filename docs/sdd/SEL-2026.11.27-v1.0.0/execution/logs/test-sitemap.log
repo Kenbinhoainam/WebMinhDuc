@@ -1,4 +1,4 @@
-2026-11-27T13:03:10.200864+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:sitemap
+2026-11-27T13:38:05.560051+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:sitemap
 
 > minhduc-prototype@1.0.0 test:sitemap
 > node tests/sitemap-destinations.mjs && node tests/sitemap-review.mjs

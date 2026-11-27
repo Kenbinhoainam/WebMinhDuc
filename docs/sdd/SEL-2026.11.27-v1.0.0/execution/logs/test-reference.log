@@ -1,4 +1,4 @@
-2026-11-27T13:04:05.285707+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:reference
+2026-11-27T13:38:50.330010+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | npm run test:reference
 
 > minhduc-prototype@1.0.0 test:reference
 > node tests/reference-structure.mjs && node tests/home-reference-motion.mjs && node tests/info-v13.mjs && node tests/editorial-content.mjs && node tests/editorial-reference.mjs && node tests/home-video-gallery.mjs

@@ -1,5 +1,5 @@
-target_sha=4231bae137528dbf152250832c1a26d060c579d9
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
 command=node tests/editorial-reference.mjs
-tested_at=2026-11-27T13:02:46Z
+tested_at=2026-11-27T13:38:21Z
 PASS editorial routes, numbered chapters, captioned images, latest and related links, real galleries, feature controls and keyboard navigation, clipboard fallback and filter history
 exit=0

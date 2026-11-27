@@ -1,4 +1,4 @@
-2026-11-27T13:05:15.803580+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | node tests/business-info.mjs
+2026-11-27T13:45:01.422178+00:00 | 88e2b61596eab5952f183a81b3030da760696c9c | node tests/business-info.mjs
 PASS verified contact details, optional CV guidance and education form routes in five locales
 
 Exit 0

@@ -1,8 +1,9 @@
-target_sha=4231bae137528dbf152250832c1a26d060c579d9
-Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
-Isolated checkout: /tmp/minhduc-w2-4231-e3ria6fs
-Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
-2026-11-27T13:03:50.953775+00:00  node tests/home-b2b.mjs
+target_sha=88e2b61596eab5952f183a81b3030da760696c9c
+Application source extracted via git archive 88e2b61596eab5952f183a81b3030da760696c9c
+Isolated checkout: /tmp/minhduc-w2-88e-cvt1mw6m
+QA-only overlays (SHA256): {"tests/s2-w2-extra-flows.mjs": "8ea78c4d05ac328b2c17e4a65ee4552eab0b700029f28b8660f290c6163b362c", "tests/s2-w2-extra-hero.mjs": "de09217da949fccd4025f2a0de42b51698e068e662c0647f58db22104a0fa95b"}
+Linux x86_64, Node v24.22.1; deterministic JSDOM / CSS / SSR / mocked media. No real browser, device, network-performance or screenshot claim.
+2026-11-27T13:40:19.793769+00:00  node tests/home-b2b.mjs
 PASS homepage B2B: five services, reference metrics, partner rail, on-demand film and locked F01 in five languages
 
 exit 0

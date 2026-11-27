@@ -1,7 +1,7 @@
 {
-  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
-  "dist_tree_sha256": "ca25ff51c80afd5428a56cc3adf6a0ed889ef45b9d6e824455419065f84e05f5",
-  "tested_html_sha256": "72f78ae496dae5350a0d2dc924b25227cf797937956bb833b72f78ef1b430dc2",
+  "build_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "dist_tree_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+  "tested_html_sha256": "e5b928acbee516c49301a020b2f75cb6ed649e1b86fb64457c2b14773827fad5",
   "artifact_input": "dist",
   "runtime": "Python/lxml, Pillow asset decode, Node/PostCSS; static evidence only",
   "choices": [
@@ -2070,30 +2070,30 @@
         {
           "locale": "vi",
           "test_status": "Pass",
-          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]}"
         },
         {
           "locale": "en",
           "test_status": "Pass",
-          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]}"
         },
         {
           "locale": "zh",
           "test_status": "Pass",
-          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]}"
         },
         {
           "locale": "ko",
           "test_status": "Pass",
-          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]}"
         },
         {
           "locale": "ja",
           "test_status": "Pass",
-          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]}"
         }
       ],
-      "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]} (See all five locale records.)"
+      "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': 'minmax(0,2fr) repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,minmax(0,1fr))'}, {'media': ['(max-width:450px)'], 'value': 'minmax(0,1fr)'}, {'media': ['(min-width:801px)and (max-width:1023px)'], 'value': 'repeat(2,minmax(0,1fr))'}]} (See all five locale records.)"
     },
     {
       "choice_id": "P36-D2",

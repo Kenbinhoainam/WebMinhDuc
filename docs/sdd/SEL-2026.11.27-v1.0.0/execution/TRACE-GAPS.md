@@ -1,6 +1,6 @@
 # Quyết định và điều kiện nghiệm thu còn thiếu
 
-Build UI `4231bae137528dbf152250832c1a26d060c579d9`.
+Build UI `66b76036469f07b35bc3cb188dc6b61d40fdda32`.
 
 Mỗi dòng dưới đây dẫn tới các mã có trạng thái Blocked trong RESULT-BY-CHOICE.csv. Các bước QA còn có thể thực hiện được liệt kê ở cột next_check của các mã Incomplete.
 
@@ -62,3 +62,15 @@ Mỗi dòng dưới đây dẫn tới các mã có trạng thái Blocked trong R
 | Project Owner / QA | P30-E3 | SCOPE-E and missing confirmed event/venue evidence. Existing mock schedule, contact and archival imagery retained; no registration or attendance link. |
 | Project Owner / QA | P36-F4 | SCOPE-E or approval boundary: no production or new persistence, CMS expansion, AI/CRM or added consultation payload fields. |
 | Project Owner / QA | P20-E3 | SCOPE-E: archive search/analytics are optional new product behaviors. Existing categories and paging are retained. |
+
+## Phần còn lại của đội thực hiện
+
+Các mã Incomplete còn thuộc phạm vi bàn giao. Frontend và QA cần đối chiếu tiêu chí gốc, sửa chênh lệch nếu phát hiện và ghi lại phép thử. Xem cột next_check của từng dòng trong [bảng kết quả](RESULT-BY-CHOICE.csv).
+
+| Người xử lý tiếp | Số mã Incomplete | Ví dụ mã và bước kiểm |
+| --- | ---: | --- |
+| Frontend + Accessibility QA | 1 | MS02-4 · Thực hiện trigger Khi số kết quả, dấu lưu, lỗi form hoặc biên nhận thay đổi trong giao diện.; lặp/hủy: Khi thao tác bị thay thế, bỏ thông báo cũ không còn đúng; chỉ phản hồi kết quả hiện hành.; giảm chuyển động: Giữ cùng văn bản, nhãn và thông báo hỗ trợ khi bỏ animation; không yêu cầu nhìn thấy chuyển động để hiểu thành công hay lỗi.; đối chiếu: Trình đọc màn hình nhận một thông báo có nghĩa cho mỗi thay đổi được thử; không đọc trạng thái lỗi thời hoặc tiến độ diễn hoạt. Cần nghe trực tiếp kết quả bằng tổ hợp AT đã chọn với log chế độ, tên trình đọc và lời đọc. |
+| Frontend + Browser QA | 298 | P01-D1 · Inspect both successful decoded playback and the final brand heading/CTA on every required locale and layout; use the stage and decoded-dimension fields in this report. |
+| Frontend + Browser QA + Device QA | 37 | P10-D1 · Tests the named compiled selector and declaration across the indicated media widths. Text fit, overlap, touch and rendered geometry require browser verification.  /  The frozen comparison calls for separate phone evidence; these measurements came from desktop Chromium with a mobile viewport. Ghi thêm kết quả riêng trên điện thoại thật cho trạng thái tương ứng, gồm hướng màn hình, bàn phím hệ thống và modal nếu có. |
+| Frontend + Functional QA | 229 | P03-E3 · Human task/comprehension trial or Project Owner judgment not run. Thử ba tình huống có/không biết tên dịch vụ; ghi số lần phải quay lại và dữ liệu cần để gửi nhu cầu. |
+| Frontend + Motion QA | 52 | MI01-1 · Declaration/semantics only. Actual touched area after cascade, pointer gestures, outlines on real backgrounds, hover behavior and overlap are unverified. |

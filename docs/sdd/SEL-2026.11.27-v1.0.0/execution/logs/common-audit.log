@@ -1,8 +1,1 @@
-Application 4231bae137528dbf152250832c1a26d060c579d9; preview source 7721ff18d35855dc2a8e0df6fd667c39d2a973cd
-$ node tests/s2-common-audit.mjs /workspace/sites/minhduc-sprint2-approved-review/dist
 193 selections; 48 checks; 0 failed predicates
-Exit 0
-CS-C07-4 isolated CMS probe: {"afterSave":"Trạng thái: Đã lưu bản nháp mẫu","afterEdit":"Trạng thái: Có thay đổi chưa lưu","afterPublish":"Trạng thái: Đã xuất bản mẫu","inputs":1,"actions":["Lưu bản nháp","Xuất bản thử"]}
-$ node tests/s2-other-pages.mjs
-PASS W4 empty lists, event return context, About keyboard, Partners F01, separate Education drafts/file metadata, Admin route/reset/CSV and policy routes in five locales
-Exit 0. Additional assertion confirms another edit after simulated Publish returns the live status to unsaved and retains the last published local value.

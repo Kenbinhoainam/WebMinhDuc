@@ -1,0 +1,8 @@
+{
+  "build_sha": "c25a398a424880651cfc375760401aadc0c006d1",
+  "dist_tree_sha256": "fa5a40a7d42721f0ed5353be2ea33b4cd71abcb37fe40466b20fe06b016e47c1",
+  "html_files": 264,
+  "built_utc": "2026-11-27T13:52:48.463741+00:00",
+  "profile": "Pages /WebMinhDuc",
+  "method": "Isolated git archive of the recorded commit, reused locked node_modules, npm run build. Browser intercepted requests directly from the verified dist tree."
+}

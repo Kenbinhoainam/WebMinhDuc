@@ -1,0 +1,6 @@
+
+> minhduc-prototype@1.0.0 test:sitemap
+> node tests/sitemap-destinations.mjs && node tests/sitemap-review.mjs
+
+PASS sitemap destination anchors, filters and history
+PASS independent sitemap: two-level no-JS fallback, fourteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions

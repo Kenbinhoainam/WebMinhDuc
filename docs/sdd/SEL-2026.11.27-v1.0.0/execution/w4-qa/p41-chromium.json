@@ -1,0 +1,585 @@
+{
+  "app_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+  "site_sha": "b9b58c4da406a91e43e94e2ad98a0f73327a47ab",
+  "screenshots": "Relative paths refer to the full Chromium QA report bundle. This JSON preserves the measurements from both local runs.",
+  "profiles": {
+    "pages": {
+      "runner_sha256": "4bcf640fb594c5e6ccd74d9fe7a142a2d500a6c8bc2eccb8b56279943ed96946",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "harness_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "dist_tree_sha256": "eb23762c4afa9ff5e909159f93858404d6c14135f45751171131981eb8134211",
+      "chromium": "156.0.8078.79",
+      "mount": "/WebMinhDuc",
+      "limits": "Hermetic Chromium only. P41-C2 assertions cover invalid paths and reload, not the unresolved exact-eight menu count. Iframe geometry does not replace physical devices.",
+      "blocked_external": [
+        [
+          "maps.google.com",
+          "document"
+        ]
+      ],
+      "checks": [
+        {
+          "test": "p41-scaled-vs-direct-390",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 390,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 390,
+              "height": 844,
+              "client": 390,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "direct": {
+              "width": 390,
+              "height": 844,
+              "client": 390,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 390,
+                "height": 844,
+                "shell": [
+                  390,
+                  844
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 1,
+                "width": 390,
+                "height": 844,
+                "shell": [
+                  390,
+                  844
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 390,
+                "scale": 0.958974,
+                "width": 374,
+                "height": 809.3743896484375,
+                "shell": [
+                  374,
+                  809.359375
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 96%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-390-scaled.png",
+            "direct_shot": "screenshots/direct-390.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-scaled-vs-direct-820",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 820,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 820,
+              "height": 1180,
+              "client": 820,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "direct": {
+              "width": 820,
+              "height": 1180,
+              "client": 820,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 820,
+                "height": 1180,
+                "shell": [
+                  820,
+                  1180
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 1,
+                "width": 820,
+                "height": 1180,
+                "shell": [
+                  820,
+                  1180
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 390,
+                "scale": 0.456098,
+                "width": 374,
+                "height": 538.1951293945312,
+                "shell": [
+                  374,
+                  538.1875
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 46%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-820-scaled.png",
+            "direct_shot": "screenshots/direct-820.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-scaled-vs-direct-1440",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 1440,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 1440,
+              "height": 900,
+              "client": 1440,
+              "heading": "Tìm việc làm",
+              "mobile": false,
+              "desktop": true
+            },
+            "direct": {
+              "width": 1440,
+              "height": 900,
+              "client": 1440,
+              "heading": "Tìm việc làm",
+              "mobile": false,
+              "desktop": true
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 1440,
+                "height": 900,
+                "shell": [
+                  1440,
+                  900
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 0.669444,
+                "width": 964,
+                "height": 602.5,
+                "shell": [
+                  964,
+                  602.5
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 67%"
+              },
+              {
+                "client": 390,
+                "scale": 0.259722,
+                "width": 374,
+                "height": 233.75,
+                "shell": [
+                  374,
+                  233.75
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 26%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-1440-scaled.png",
+            "direct_shot": "screenshots/direct-1440.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-keyboard-tab-cycle",
+          "choice_ids": [
+            "P41-A2",
+            "P41-D2",
+            "P41-D3"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "tab_order": [
+              "three preset buttons",
+              "page select",
+              "direct link",
+              "iframe skip link",
+              "return to direct link"
+            ],
+            "selected_background": "rgb(28, 71, 123)",
+            "screenshot": "screenshots/reviewer-keyboard-return.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-invalid-query-normalization",
+          "choice_ids": [
+            "P41-C1",
+            "P41-C2",
+            "P41-F2"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "normalized": "https://kenbinhoainam.github.io/WebMinhDuc/duyet.html?w=390",
+            "frame": "https://kenbinhoainam.github.io/WebMinhDuc/"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-navigation-reload-and-popup",
+          "choice_ids": [
+            "P41-C2",
+            "P41-C3",
+            "P41-C4",
+            "P41-E2"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "retained_child": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+            "direct_popup": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+            "changed_page": "https://kenbinhoainam.github.io/WebMinhDuc/duyet.html?w=1440&page=%2Feducation",
+            "history_back": "https://kenbinhoainam.github.io/WebMinhDuc/contact",
+            "history_forward": "https://kenbinhoainam.github.io/WebMinhDuc/duyet.html?w=1440&page=%2Feducation"
+          },
+          "status": "Pass"
+        }
+      ]
+    },
+    "sites": {
+      "runner_sha256": "4bcf640fb594c5e6ccd74d9fe7a142a2d500a6c8bc2eccb8b56279943ed96946",
+      "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "harness_sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+      "dist_tree_sha256": "27643043bf335a11d3a575a65c7113e512d5caa6cd0a34d5348ac125892823f8",
+      "chromium": "156.0.8078.79",
+      "mount": "/",
+      "limits": "Hermetic Chromium only. P41-C2 assertions cover invalid paths and reload, not the unresolved exact-eight menu count. Iframe geometry does not replace physical devices.",
+      "blocked_external": [
+        [
+          "maps.google.com",
+          "document"
+        ]
+      ],
+      "checks": [
+        {
+          "test": "p41-scaled-vs-direct-390",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 390,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 390,
+              "height": 844,
+              "client": 390,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "direct": {
+              "width": 390,
+              "height": 844,
+              "client": 390,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 390,
+                "height": 844,
+                "shell": [
+                  390,
+                  844
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 1,
+                "width": 390,
+                "height": 844,
+                "shell": [
+                  390,
+                  844
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 390,
+                "scale": 0.958974,
+                "width": 374,
+                "height": 809.3743896484375,
+                "shell": [
+                  374,
+                  809.359375
+                ],
+                "label": "Khung mô phỏng 390 × 844 CSS px · Tỷ lệ hiển thị 96%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-390-scaled.png",
+            "direct_shot": "screenshots/direct-390.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-scaled-vs-direct-820",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 820,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 820,
+              "height": 1180,
+              "client": 820,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "direct": {
+              "width": 820,
+              "height": 1180,
+              "client": 820,
+              "heading": "Tìm việc làm",
+              "mobile": true,
+              "desktop": false
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 820,
+                "height": 1180,
+                "shell": [
+                  820,
+                  1180
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 1,
+                "width": 820,
+                "height": 1180,
+                "shell": [
+                  820,
+                  1180
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 390,
+                "scale": 0.456098,
+                "width": 374,
+                "height": 538.1951293945312,
+                "shell": [
+                  374,
+                  538.1875
+                ],
+                "label": "Khung mô phỏng 820 × 1180 CSS px · Tỷ lệ hiển thị 46%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-820-scaled.png",
+            "direct_shot": "screenshots/direct-820.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-scaled-vs-direct-1440",
+          "choice_ids": [
+            "P41-A3",
+            "P41-B3",
+            "P41-D1"
+          ],
+          "locale": "vi",
+          "viewport_width": 1440,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "iframe": {
+              "width": 1440,
+              "height": 900,
+              "client": 1440,
+              "heading": "Tìm việc làm",
+              "mobile": false,
+              "desktop": true
+            },
+            "direct": {
+              "width": 1440,
+              "height": 900,
+              "client": 1440,
+              "heading": "Tìm việc làm",
+              "mobile": false,
+              "desktop": true
+            },
+            "scales": [
+              {
+                "client": 1600,
+                "scale": 1,
+                "width": 1440,
+                "height": 900,
+                "shell": [
+                  1440,
+                  900
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 100%"
+              },
+              {
+                "client": 980,
+                "scale": 0.669444,
+                "width": 964,
+                "height": 602.5,
+                "shell": [
+                  964,
+                  602.5
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 67%"
+              },
+              {
+                "client": 390,
+                "scale": 0.259722,
+                "width": 374,
+                "height": 233.75,
+                "shell": [
+                  374,
+                  233.75
+                ],
+                "label": "Khung mô phỏng 1440 × 900 CSS px · Tỷ lệ hiển thị 26%"
+              }
+            ],
+            "reviewer_shot": "screenshots/reviewer-1440-scaled.png",
+            "direct_shot": "screenshots/direct-1440.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-keyboard-tab-cycle",
+          "choice_ids": [
+            "P41-A2",
+            "P41-D2",
+            "P41-D3"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "tab_order": [
+              "three preset buttons",
+              "page select",
+              "direct link",
+              "iframe skip link",
+              "return to direct link"
+            ],
+            "selected_background": "rgb(28, 71, 123)",
+            "screenshot": "screenshots/reviewer-keyboard-return.png"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-invalid-query-normalization",
+          "choice_ids": [
+            "P41-C1",
+            "P41-C2",
+            "P41-F2"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "normalized": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=390",
+            "frame": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/"
+          },
+          "status": "Pass"
+        },
+        {
+          "test": "p41-navigation-reload-and-popup",
+          "choice_ids": [
+            "P41-C2",
+            "P41-C3",
+            "P41-C4",
+            "P41-E2"
+          ],
+          "locale": "vi",
+          "viewport_width": 980,
+          "route": "/duyet.html",
+          "sha": "88e2b61596eab5952f183a81b3030da760696c9c",
+          "coverage": "scoped assertion",
+          "actual": {
+            "retained_child": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "direct_popup": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/jobs/cong-nhan-lap-rap-bac-ninh",
+            "changed_page": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation",
+            "history_back": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/contact",
+            "history_forward": "https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site/duyet.html?w=1440&page=%2Feducation"
+          },
+          "status": "Pass"
+        }
+      ]
+    }
+  }
+}
