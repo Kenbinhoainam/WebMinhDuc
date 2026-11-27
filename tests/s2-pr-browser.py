@@ -39,7 +39,8 @@ FROZEN = Path("docs/sdd/SEL-2026.11.27-v1.0.0/data/pages-and-urls.jsonl")
 PAGE_IDS = {r["fields"]["Đường dẫn"]:r["source_code"] for line in FROZEN.read_text().splitlines()
             if (r:=json.loads(line))["source_code"]!="P41"}
 
-SHA = os.getenv("QA_SHA") or subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
+HARNESS_SHA = subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
+SHA = os.getenv("QA_SHA") or HARNESS_SHA
 
 
 def url(locale, path):
@@ -330,7 +331,7 @@ if __name__=="__main__":
     assert (DIST/"index.html").is_file(),"Build the Pages profile into DIST_DIR first."
     (OUT/"observations.jsonl").write_text("")
     artifact=fingerprint()
-    (OUT/"build.json").write_text(json.dumps(dict(sha=SHA,dist_tree_sha256=artifact))+"\n")
+    (OUT/"build.json").write_text(json.dumps(dict(sha=SHA,harness_sha=HARNESS_SHA,dist_tree_sha256=artifact))+"\n")
     try:
         with sync_playwright() as pw:
             browser=pw.chromium.launch(executable_path=os.getenv("CHROME_PATH"),args=[
@@ -342,7 +343,7 @@ if __name__=="__main__":
         results.append({"test":"runner","status":"Fail","error":repr(e)})
     if missing or errors:
         results.append({"test":"packaged-resources-and-page-errors","status":"Fail","missing":sorted(missing),"page_errors":errors})
-    report={"sha":SHA,"dist_tree_sha256":artifact,"chromium":globals().get("version"),
+    report={"sha":SHA,"harness_sha":HARNESS_SHA,"dist_tree_sha256":artifact,"chromium":globals().get("version"),
             "offline":"All browser context requests fulfilled from dist or blocked; external embeds cannot load.",
             "limits":"Chromium touch emulation; 200% reflow equivalent. Physical devices, native IME, user research and external integrations were not exercised.",
             "blocked_external":sorted(denied),"checks":results}
