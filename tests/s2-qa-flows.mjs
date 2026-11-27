@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {runExtra} from './s2-qa-extra.mjs';
 import {build} from 'esbuild';
 import {JSDOM} from 'jsdom';
 
@@ -8,9 +9,9 @@ export async function runFlows({check,temp,locales}){
   const file=join(temp,'flows.mjs');
   await build({stdin:{contents:`export {JobsPage, JobDetailPage, SavedJobsPage, jobs} from './src/JobsPages';
     export {EducationDetailPage,educationPrograms} from './src/Education';
-    export {EventsPage,EventPage,NewsPage} from './src/EditorialPages';
-    export {ServiceDirectory} from './src/ServiceShowcase';export {FAQ} from './src/pages/info/components';export {services} from './src/pages/info/data';export {company} from './src/company';export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale,translate} from './src/i18n-runtime/catalog';
-    export {getDemoSubmissions,resetDemoSubmissions} from './src/demo-submissions';`,
+    export {EventsPage,EventPage,NewsPage,ArticlePage} from './src/EditorialPages';
+    export {ServiceDirectory} from './src/ServiceShowcase';export {FAQ} from './src/pages/info/components';export {services} from './src/pages/info/data';export {company} from './src/company';export {articles} from './src/editorial-data';export {Header} from './src/Header';export {default as Footer} from './src/Footer';export {SupportTools} from './src/SupportTools';export {ContactPage} from './src/Contact';export {AdminDemo} from './src/AdminDemo';export {default as ConsultationPage} from './src/Consultation';export {toCsv,queueNames,sampleRecords} from './src/admin-demo-data';export {LocaleProvider,LanguageSelector} from './src/i18n';export {loadLocale,translate} from './src/i18n-runtime/catalog';
+    export {getDemoSubmissions,resetDemoSubmissions,createDemoSubmission} from './src/demo-submissions';`,
     resolveDir:process.cwd(),sourcefile:'s2-qa-flows.tsx'},bundle:true,platform:'node',format:'esm',packages:'external',outfile:file,loader:{'.css':'empty'},logLevel:'silent'});
   const dom=new JSDOM('<div id="root"></div>',{url:'https://example.test/WebMinhDuc/',pretendToBeVisual:true});
   const w=dom.window,d=w.document;
@@ -37,15 +38,27 @@ export async function runFlows({check,temp,locales}){
       set.call(el,value);el.dispatchEvent(new w.Event('input',{bubbles:true}));el.dispatchEvent(new w.Event('change',{bubbles:true}));
     }
   }
+  async function receiptQueue(locale,type,id,expectedLink){
+    await open(locale,'/admin-demo?type='+type+'&id='+id,'/admin-demo',app.AdminDemo);
+    await check('admin.form-to-queue.'+type,['P36-E1'],'component interaction',locale,'Receipt created by '+type+' opens with matching code, source and link ID in its filtered admin queue',()=>{
+      const dialog=d.querySelector('[role=dialog]'),detail=dialog.querySelector('.admin-detail');
+      assert.ok(dialog.querySelector('h2').textContent.includes(id));assert.ok(dialog.querySelector('h2').textContent.includes(type));assert.ok(detail.textContent.includes(expectedLink));
+      const record=app.getDemoSubmissions().find(r=>r.id===id);assert.equal(record.type,type);assert.equal(record.linkId,expectedLink);assert.ok(detail.textContent.includes(record.source));
+      const row=[...d.querySelectorAll('tbody tr')].find(tr=>tr.textContent.includes(id));assert.ok(row);assert.ok(row.textContent.includes(type));return {type,id,source:record.source,linkId:expectedLink};
+    });
+  }
   try{
     for(const locale of locales){
       const shared='component interaction';
+      await runExtra({locale,app,open,act,click,send,fill,check,d,w,frame,h,Route,Routes});
       await open(locale,'/services','/services',app.ServiceDirectory);
       await check('service.image-fallback',['P03-F3'],shared,locale,'All five service tiles retain their exact title and destination when their photo fails or recovers',async()=>{
         const cards=[...d.querySelectorAll('.service-gallery-card')];assert.equal(cards.length,5);const results=[];
         for(const [i,card] of cards.entries()){
-          const image=card.querySelector('img'),link=card.querySelector('a'),title=card.querySelector('h3'),service=app.services[i];
-          await act(()=>image.dispatchEvent(new w.Event('error')));assert.equal(image.hidden,true);assert.equal(title.textContent,String(app.translate(service.title,locale)));assert.ok(link.pathname.endsWith('/services/'+service.slug));
+          let image=card.querySelector('img');const link=card.querySelector('a'),title=card.querySelector('h3'),service=app.services[i];
+          await act(()=>image.dispatchEvent(new w.Event('error')));
+          const original=card.querySelector('img');if(original!==image){image=original;assert.equal(image.hasAttribute('srcset'),false);await act(()=>image.dispatchEvent(new w.Event('error')));}
+          assert.equal(image.hidden,true);assert.equal(title.textContent,String(app.translate(service.title,locale)));assert.ok(link.pathname.endsWith('/services/'+service.slug));
           await act(()=>image.dispatchEvent(new w.Event('load')));assert.equal(image.hidden,false);results.push({title:title.textContent,href:link.pathname});
         }
         return results;
@@ -140,6 +153,7 @@ export async function runFlows({check,temp,locales}){
           await act(()=>{fill(form);if(type==='F01'){form.elements.location.value='QA';form.elements.notes.value='DEMO';}});await send(form,2);
           const rs=app.getDemoSubmissions();assert.equal(rs.length,1);assert.equal(rs[0].type,type);assert.equal(d.activeElement,d.querySelector('.form-success h3'));return {type,required,receipt:rs[0].id};
         },'Synthetic submit and focus in DOM. Device IME, mobile keyboard and network require separate observations.');
+        await receiptQueue(locale,type,app.getDemoSubmissions()[0].id,'—');
       }
       await open(locale,'/jobs','/jobs',app.Footer);
       await check('footer.newsletter',['T21'],shared,locale,'Footer opens email-only dialog; email validation rejects invalid syntax, reset and status follow a valid demo submit; storage and receipt count remain unchanged',async()=>{
@@ -182,6 +196,7 @@ export async function runFlows({check,temp,locales}){
           await act(()=>d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true})));assert.equal(d.querySelector('[role=dialog]'),null);assert.equal(d.activeElement,launcher);
           return {job:job.id,type,fields,receipt:r.id,source:r.source,firstErrorFocus:'name',successFocus:'h3',duplicateSubmitRecords:1,focusReturned:true};
         },'Inline CTA, synthetic submit and Escape verified. Sticky CTA, enter/space activation and physical keyboard interactions need separate observations.');
+        await receiptQueue(locale,type,app.getDemoSubmissions()[0].id,job.id);
       }
       for(const [idx,prog] of app.educationPrograms.entries()){
         const id='P'+(33+idx),route='/education/'+prog.slug;
@@ -195,6 +210,7 @@ export async function runFlows({check,temp,locales}){
             const rows=app.getDemoSubmissions();assert.equal(rows.length,1);const r=rows[0];assert.equal(r.type,type);assert.equal(r.linkId,prog.slug);assert.equal(r.fields.program,prog.slug);assert.ok(r.source.includes(route));
             assert.equal(d.activeElement,d.querySelector('.education-success h3'));await click(d.querySelector('.education-again'));assert.equal(d.querySelector('.education-success'),null);assert.equal(d.querySelector('#dang-ky form [name=name]').value,'');return {program:r.linkId,type:r.type,receipt:r.id,source:r.source,duplicateSubmitRecords:1,optionalFile:!!file};
           },'Direct query, default program, validation, receipt and retry tested; native file selection, browser history, IME and physical keyboards unverified.');
+          await receiptQueue(locale,type,app.getDemoSubmissions()[0].id,prog.slug);
         }
       }
       for(const [skill,state] of [['Phổ thông','T06'],['Tay nghề','T07']]){

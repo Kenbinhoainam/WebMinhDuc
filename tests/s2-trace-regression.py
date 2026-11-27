@@ -7,7 +7,6 @@ Run in the same verified checkout; partial is never a full acceptance.
 import argparse
 import hashlib
 import json
-import re
 import subprocess
 from pathlib import Path
 
@@ -86,7 +85,8 @@ case("hero-lifecycle","PASS independent hero lifecycle blocked","MO08-3",
      "Simulated rejected autoplay transitions to fallback and retains correct explicit user choices.",
      "Media rendering, slow network and on-device video/audio policies require a browser.")
 case("home-video-gallery","PASS video gallery:", "P01-C4",
-     "Activated demand-loaded gallery from posters, checked selected sources, player, failure and retry, and focus restoration in the DOM fixture.")
+     "Activated demand-loaded gallery from posters, checked selected sources, player, failure and retry, and focus restoration in the DOM fixture.",
+     "Verify actual mouse, touch and keyboard activation and the player on the rendered page.")
 case("home-metric-replay","PASS metric replay:", "MO06-4",
      "Shared counter clock, both entry directions, edge jitter, reduced mid-run, unmount and accessible final values verified.",
      "Check pixel motion/alignment in a rendered viewport.")
@@ -97,7 +97,8 @@ case("image-fallback","PASS original image retry", "CS-A03-4 CS-D06-4 MO08-4",
      "Loaded failing derivatives, retained original URL, alt and fallback content; simulated pre-hydration failures.",
      "Inspect layout geometry with failed assets and complete remaining logo/media cases.")
 case("partners","PASS partners:", "P31-C1 P31-F1",
-     "Keyboard Home/End/arrow, synthetic drag and focus pause, image error to exact partner name, verified five named local logo assets.")
+     "Keyboard Home/End/arrow, synthetic drag and focus pause, image error to exact partner name, verified five named local logo assets.",
+     "Measure CPU and network during visibility changes, then check actual touch, scroll and focus when returning from F01.")
 case("partners","PASS partners:", "MO07-2 CS-A06-4",
      "SSR/static names, hidden duplicate sets, hover/focus/hidden/reduced handling tested.",
      "Measure overflow and inspect optical logo alignment/cropping in a rendered browser.")
@@ -139,10 +140,20 @@ def main():
     if not args.logs.exists(): parser.error("Final SHA-matched regression logs must exist.")
     choices=[]
     logs=[]
-    for file in sorted(args.logs.rglob("*.log")):
-        text=file.read_text(errors="replace")
-        if not text.strip(): continue
-        logs.append((file,text,hashlib.sha256(text.encode()).hexdigest()))
+    ledger = args.logs / "regression.json"
+    verified_paths = {str(item["log"]) for item in json.loads(ledger.read_text())
+                      if item.get("sha") == sha and item.get("result") == "Pass" and item.get("exit") == 0
+                      } if ledger.exists() else set()
+    sources = [args.logs, ROOT/"w4-qa", ROOT/"b2b-qa", ROOT/"b2c-qa", ROOT/"shared-qa"]
+    for folder in sources:
+        for file in sorted(folder.rglob("*.log")):
+            text=file.read_text(errors="replace")
+            if not text.strip(): continue
+            # Group records must be either the final regression directory or independently stamped.
+            same_build_run = folder == args.logs and str(file.relative_to(ROOT)) in verified_paths
+            if not same_build_run and sha not in text:
+                continue
+            logs.append((file,text,hashlib.sha256(file.read_bytes()).hexdigest()))
     for suite,marker,ids,measured,remaining in cases:
         for file,text,digest in logs:
             matching=next((line for line in text.splitlines() if marker in line and not line.startswith('>')),None)

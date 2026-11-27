@@ -11,7 +11,7 @@ const temp = '.editorial-test';
 const h = React.createElement;
 await mkdir(temp, {recursive:true});
 try {
-  await build({stdin:{contents:"export * from './src/EditorialPages'; export {articles, categories, featuredArticles} from './src/editorial-data'; export {getArticle} from './src/editorial-content'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale} from './src/i18n-runtime/catalog';",
+  await build({stdin:{contents:"export * from './src/EditorialPages'; export {articles, categories, featuredArticles} from './src/editorial-data'; export {getArticle} from './src/editorial-content'; export {LocaleProvider,localeBase} from './src/i18n'; export {loadLocale,lookup} from './src/i18n-runtime/catalog';",
     resolveDir:process.cwd(), sourcefile:'editorial-test.tsx'}, bundle:true, platform:'node', format:'esm', packages:'external', loader:{'.css':'empty'}, outfile:temp + '/pages.mjs', logLevel:'silent'});
   const pages = await import(pathToFileURL(process.cwd() + '/' + temp + '/pages.mjs').href);
   const {articles, categories, featuredArticles} = pages;
@@ -29,8 +29,33 @@ try {
     return new JSDOM(renderToStaticMarkup(content)).window.document;
   }
   const tableSlugs = ['doc-thong-tin-thu-nhap-va-ca-lam','theo-doi-pheu-tuyen-dung'];
+  const planningHeadings = [[0,'Bắt đầu từ kế hoạch vận hành'],[2,'Thống nhất thông tin trước khi tìm nguồn'],[4,'Theo dõi và cập nhật theo giai đoạn']];
+  const planningChecklist = [
+    'Địa điểm và phương án đi lại nếu có.',
+    'Ca làm, yêu cầu cơ bản và điều kiện làm việc.',
+    'Thu nhập, cách tính và các khoản cần làm rõ.',
+    'Đầu mối xác nhận lịch phỏng vấn, nhận việc.',
+  ];
   for (const locale of ['vi','en','zh','ko','ja']) {
     await pages.loadLocale(locale);
+    const plan = prerender('/news/nhu-cau-tuyen-dung',locale);
+    const message = key => {
+      if (locale === 'vi') return key;
+      const localized = pages.lookup(locale,key);
+      assert.ok(localized && localized !== key);
+      return localized;
+    };
+    assert.equal(plan.querySelectorAll('#article-toc li').length,6);
+    for (const [index,label] of planningHeadings) {
+      const heading = plan.getElementById('article-section-' + index);
+      assert.ok(heading.textContent.endsWith(message(label)));
+      assert.equal(plan.querySelector('#article-toc a[href$="#article-section-' + index + '"]').textContent,message(label));
+    }
+    assert.deepEqual(
+      [...plan.querySelectorAll('section[aria-labelledby="article-section-1"] ul li')].map(item=>item.textContent),
+      planningChecklist.map(message)
+    );
+    plan.defaultView.close();
     for (const [index, slug] of tableSlugs.entries()) {
       const doc = prerender('/news/' + slug, locale);
       const table = doc.querySelector('[aria-labelledby="article-section-1"] table.ed-reader-table');

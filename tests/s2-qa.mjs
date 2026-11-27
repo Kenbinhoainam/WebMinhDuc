@@ -45,7 +45,7 @@ function values(doc,selector){return [...doc.querySelectorAll(selector)].map(el=
 const temp=await mkdtemp('.s2-qa-');
 try{
  const bundle=join(temp,'oracle.mjs');
- await build({stdin:{contents:`export {jobs} from './src/jobs-data';export {localizedSeo} from './src/seo/metadata';export {loadLocale,translate} from './src/i18n-runtime/catalog';export {formatEditorialDate} from './src/EditorialDate';`,sourcefile:'s2-oracle.ts',resolveDir:process.cwd()},outfile:bundle,bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
+ await build({stdin:{contents:`export {articles} from './src/editorial-data';export {jobs} from './src/jobs-data';export {localizedSeo} from './src/seo/metadata';export {loadLocale,translate} from './src/i18n-runtime/catalog';export {formatEditorialDate} from './src/EditorialDate';`,sourcefile:'s2-oracle.ts',resolveDir:process.cwd()},outfile:bundle,bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},logLevel:'silent'});
  const data=await import(pathToFileURL(resolve(bundle)));await Promise.all(locales.map(data.loadLocale));
  for(const p of pages.filter(x=>x.source_code!=='P41')){
    const id=p.source_code,route=p.fields['Đường dẫn'];
@@ -64,6 +64,12 @@ try{
        assert.deepEqual([...doc.querySelectorAll('link[rel=alternate]')].map(a=>[a.hreflang,a.href]),expectedSeo.alternates.map(a=>[a.hrefLang,a.href.replace(legacy,host+base)]));
        return fields;
      },'Static HTML and metadata only. User navigation, layout and additional row-specific behavior are outside this assertion.');
+     if(['P21','P22','P23','P24','P25','P26'].includes(id))await check('news.six-selected-slugs',['P20-F1'],'generated HTML',locale,'Each frozen article route has one matching record, translated heading, locale canonical and metadata for that slug',()=>{
+       const hits=data.articles.filter(a=>'/news/'+a.slug===route);assert.equal(hits.length,1);assert.equal(fields.h1[0],String(data.translate(hits[0].title,locale)));assert.equal(fields.title,expectedSeo.title);assert.equal(fields.canonical,host+webPath);return {route,title:fields.title,h1:fields.h1[0],canonical:fields.canonical};
+     });
+     if(id==='P20')await check('news.host-and-robots',['P20-F3'],'generated HTML',locale,'News index has noindex and canonical/OG use the configured deployment origin and locale path',()=>{
+       assert.equal(fields.robots,'noindex,nofollow');assert.equal(fields.canonical,host+webPath);const og=doc.querySelector('meta[property="og:url"]').content;assert.equal(og,fields.canonical);return {canonical:fields.canonical,og,robots:fields.robots};
+     });
      if(id==='P02')for(const [anchor,state] of [['profile','T01'],['history','T02'],['partners','T03'],['achievements','T04'],['activities','T05']]){
        await check('about.'+anchor,[state,'P02-F1'],'generated HTML',locale,'About anchor occurs once; a link addresses the target',()=>{
          assert.equal(doc.querySelectorAll('#'+anchor).length,1);const link=[...doc.querySelectorAll('a[href]')].find(a=>a.pathname.replace(/\/$/,'')===webPath&&a.hash==='#'+anchor);assert.ok(link);return {href:link.href,target:anchor};

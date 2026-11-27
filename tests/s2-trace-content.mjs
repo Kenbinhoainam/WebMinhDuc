@@ -23,11 +23,12 @@ const bundle = await build({stdin:{contents:[
   "export {jobs} from './src/jobs-data'",
   "export {getArticle} from './src/editorial-content'",
   "export {company} from './src/company'",
+  "export {services,consultingTopics} from './src/pages/info/data'",
   "export {educationPrograms} from './src/education-data'",
   "export {loadLocale,translate} from './src/i18n-runtime/catalog'",
   "export {localizedSeo} from './src/seo/metadata'",
 ].join('\n'),resolveDir:process.cwd()}, bundle:true,platform:'node',format:'esm',write:false,logLevel:'silent'});
-const {jobs,getArticle,company,educationPrograms,loadLocale,translate,localizedSeo} =
+const {jobs,getArticle,company,services,consultingTopics,educationPrograms,loadLocale,translate,localizedSeo} =
   await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].contents).toString('base64'));
 const results = new Map();
 const digest = createHash('sha256');
@@ -45,7 +46,7 @@ for (const locale of locales) {
   for (const page of pages) {
     const pageId = page.source_code;
     const number = Number(pageId.slice(1));
-    if (!((number >= 10 && number <= 17) || (number >= 21 && number <= 26)
+    if (!((number >= 3 && number <= 8) || (number >= 10 && number <= 17) || (number >= 21 && number <= 26)
       || (number >= 33 && number <= 35) || number === 39 || number === 40)) continue;
     const route = page.fields['Đường dẫn'];
     const localePrefix = locale === 'vi' ? '' : '/' + locale;
@@ -66,7 +67,9 @@ for (const locale of locales) {
     function verify(suffix, predicate, steps, coverage='full') {
       const id = suffix.startsWith('CS-') ? suffix : pageId+'-'+suffix;
       assert.ok(spec.has(id),id);
-      const result = results.get(id) ?? {choice_id:id,source_row:spec.get(id).row,route,coverage,steps,
+      const researchCheck = number >= 3 && number <= 8 && suffix.startsWith('B')
+        ? spec.get(id).fields['Cách kiểm tra'] : '';
+      const result = results.get(id) ?? {choice_id:id,source_row:spec.get(id).row,route,coverage:researchCheck ? "partial" : coverage,steps,remaining:researchCheck,
         input_type:'Static prerendered HTML; jsdom; no screen rendering',test_status:'Pass',locales:[]};
       try {
         const observed = predicate();
@@ -83,6 +86,87 @@ for (const locale of locales) {
       assert.equal(doc.querySelector('[name=description]').content,expected.description);
       assert.equal(canonical.href,adaptHostingPaths(expected.url));
       return expected.title+'; '+canonical.href;
+    }
+    function exactList(selector, expected) {
+      const actual = allText(doc,selector).map(ts);
+      assert.deepEqual(actual,expected.map(translated));
+      return actual.join(' | ');
+    }
+    if (number === 3) {
+      const cards = [...doc.querySelectorAll('.service-card-grid a')];
+      verify('B1', () => {
+        assert.equal(cards.length,5);
+        return cards.map((card,i) => {
+          assert.equal(href(card),loc('/services/'+services[i].slug));
+          assert.equal(ts(card.querySelector('.service-card-title').textContent),translated(services[i].title));
+          assert.equal(ts(card.querySelector('.service-card-detail').textContent),translated(services[i].card.detail));
+          return href(card)+' '+textOf(card.querySelector('.service-card-title'));
+        }).join(' | ');
+      }, 'Check all five named needs, descriptive decision lines and exact localized service routes.');
+      verify('B2', () => exactList('.service-card-grid .service-card-detail',services.map(s=>s.card.detail)),
+        'Read the localized decision lines for shifts and staggered factory intake, fixed periods, and skills-based assessment in order.');
+      verify('B3', () => {
+        const card = cards[3];
+        assert.equal(ts(card.querySelector('.service-card-summary').textContent),translated(services[3].short));
+        assert.equal(href(card),loc('/services/college-admissions'));
+        return textOf(card.querySelector('.service-card-summary'))+' '+href(card);
+      }, 'Verify the learner-specific distance and full-time study summary and the admissions destination.');
+    }
+    if (number >= 4 && number <= 8) {
+      const service = services[number-4];
+      const steps = () => exactList('.service-process ol > li', service.steps);
+      const headings = (selector,items) => exactList(selector,items);
+      const faq = () => [exactList('.info-faq-item h3', service.questions.map(q=>q[0])),
+                         exactList('.service-faq-answer p',service.questions.map(q=>q[1]))].join(' — ');
+      const feeLabels = (...labels) => exactList('.service-fees tbody th',labels);
+      const prompt = () => { assertCopy(service.prompt,'h2'); return translated(service.prompt); };
+      const decision = () => exactList('.service-decision dt',
+        number===5 ? ['Thời hạn','Đầu mối phối hợp','Điều kiện triển khai'] : ['Kỹ năng bắt buộc','Kinh nghiệm mong muốn','Cách đánh giá']);
+      function check(id, test, title) { verify(id,test,title); }
+      if (number === 4) {
+        check('B1',()=>[prompt(),exactList('.service-planning tbody th',['A','B']),exactList('.service-planning tbody td',['Bắc Ninh','Ngày','12','02/03','Bắc Ninh','Đêm','8','09/03'])].join(' — '),
+          'Match the opening question about quantity, place and time to the sample intake rows A/B and their displayed shifts/dates.');
+        check('B2',()=>{assertCopy(service.card.detail,'.service-decision p');return translated(service.card.detail);},
+          'Match the two distinct responsibilities in the displayed factory and sourcing handoff.');
+        check('B3',steps,'Compare all five ordered steps, from receipt of needs to following feedback.');
+        check('B4',()=>feeLabels('Tìm nguồn','Tiếp nhận')+' — '+faq(),'Verify sourcing and intake price factors and scope-dependent FAQ responses in each locale.');
+      }
+      if (number === 5) {
+        check('B1',()=>prompt()+' — '+decision(),'Read the opening shift/duration question and three responsibilities.');
+        check('B2',()=>{assertCopy(service.questions[1][1],'.service-decision dd');return translated(service.questions[1][1]);},
+          'Display the explicit joint verification of occupation, legal conditions and responsibilities before signature.');
+        check('B3',()=>steps()+' — '+feeLabels('Thời hạn','Ca làm việc'),'Verify the distinct five-step process and the two duration/shift price factors.');
+        check('B4',faq,'Compare all three duration, conditions and fees questions and their conditional localized answers against the verified service record.');
+      }
+      if (number === 6) {
+        check('B1',()=>{assertCopy(service.title,'h1');assertCopy('Tiêu chí tuyển kỹ thuật viên bảo trì','.service-role h2');return h1+' — '+textOf(doc.querySelector('.service-role h2'));},
+          'Compare the service title and the named maintenance-technician example.');
+        check('B2',()=>decision()+' — '+exactList('.service-role dd',['Đọc sơ đồ và nhận diện lỗi thiết bị.','Mô tả thiết bị đã bảo trì và phần việc đã đảm nhiệm.','Trao đổi một tình huống xử lý sự cố với người phụ trách kỹ thuật.']),
+          'Match each of three distinct skill, experience and assessment fields to its explanation.');
+        check('B3',steps,'Read the five ordered sequence entries from role definition to following results.');
+        check('B4',faq,'Check the position, candidate preparation and market-dependent recruiting timeline responses.');
+      }
+      if (number === 7) {
+        check('B1',()=>prompt()+' — '+headings('.service-study h3',['Từ xa','Chính quy']),'Check the study-time question against both decision options.');
+        check('B2',()=>{
+          const links=[...doc.querySelectorAll('.service-overview-actions a,.service-study a')];
+          assert.deepEqual(links.map(href),['/education?form=F05#dang-ky','/education?form=F06#dang-ky','/education'].map(loc));
+          return links.map(a=>textOf(a)+' '+href(a)).join(' | ');
+        },'Compare the study information URL and the separately labeled F05 consultation and F06 application destinations.');
+        check('B3',()=>feeLabels('Học phí','Hồ sơ đăng ký')+' — '+exactList('.service-fees tbody td',['Đơn vị đào tạo','Mức thu và lịch đóng','Bộ phận tuyển sinh của trường','Các khoản phí liên quan']),
+          'Read the distinct training-unit and admissions-office confirmations for tuition and application costs.');
+        check('B4',()=>{assertCopy('Đối tác doanh nghiệp','.info-service-customers h2');assertCopy('Tình huống minh họa · Nhân vật giả định','.service-stories-heading p');return textOf(doc.querySelector('.service-stories-heading'));},
+          'Identify the logos explicitly as corporate partners and read the illustrative-situations and fictitious-persons qualification.');
+      }
+      if (number === 8) {
+        check('B1',()=>prompt()+' — '+exactList('.service-workflow li',['Tiếp nhận nhu cầu','Phân công','Theo dõi phản hồi']),
+          'Match the duplicated-entry question to the three ordered intake/assignment/follow-up steps.');
+        check('B2',()=>steps()+' — '+exactList('.service-consulting-list h3',consultingTopics.map(item=>item.title)),
+          'Distinguish the survey findings, coordination process, and three topics to agree.');
+        check('B3',()=>feeLabels('Tổ chức và quy trình','Công cụ quản lý')+' — '+exactList('.service-consulting-list p',consultingTopics.map(item=>item.text)),
+          'Check the stated organizational, process and current tooling scope and its three explanations.');
+        check('B4',faq,'Read all answers for scope, initial discussion and limits of general guidance, including the specialized legal opinion qualification.');
+      }
     }
     if (number >= 10 && number <= 17) {
       const job = jobs[number-10];

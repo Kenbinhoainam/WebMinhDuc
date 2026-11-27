@@ -15,6 +15,7 @@ ROOT = Path("docs/sdd/SEL-2026.11.27-v1.0.0")
 EXEC = ROOT / "execution"
 DATA = ROOT / "data"
 OPT_INS = {
+    "MI08-3": "P19 đang dùng dải câu hỏi. Đổi sang accordion mở nhiều mục cần quyết định riêng theo điều kiện của dòng 38.",
     "MI07-3": "Fixture riêng cho lỗi xử lý ở server chưa được chọn. Các lỗi validation của luồng demo vẫn kiểm được.",
     "CS-B05-4": "Chưa duyệt mở rộng sắp xếp việc làm. Cần chỉ rõ tập giá trị, quy tắc và mặc định.",
     "T22": "Toast lưu việc cũ đã được yêu cầu gỡ. Xác nhận vị trí thông tin thay thế hoặc thay đổi phạm vi trước khi tái tạo toast.",
@@ -41,8 +42,10 @@ OPT_INS = {
     "P38-F2": "Ghi giờ hẹn vào hồ sơ ADMIN là thay đổi payload có điều kiện; cần quyết định riêng.",
 }
 WAVES = ["b2b.csv", "b2c.csv", "other-pages.csv", "shared.csv", "p41.csv"]
+QA_INPUTS = ["trace-content.json","qa/choice-evidence.json","trace-regression.json",
+             "common-audit.json","media-audit.json","trace-accessibility.json"]
 CHECKS = ["Tiêu chí hoàn thành", "Cách kiểm tra", "Ghi chú cần phân biệt"]
-DETAIL = ["Chi tiết để chọn", "Đề xuất cụ thể", "Các tiểu tiết", "Tên phần hoặc trạng thái"]
+DETAIL = ["Chi tiết để chọn", "Đề xuất cụ thể", "Chi tiết cần nâng cấp", "Các tiểu tiết", "Tên phần hoặc trạng thái"]
 
 
 def first(values, fields):
@@ -56,6 +59,19 @@ def rows_file(path):
 def csv_file(path):
     with path.open(encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def freeze_integrity():
+    handoff="5744b6da70af721bf08d915107960ab61dfb0080"
+    files=subprocess.check_output(["git","ls-tree","-r","--name-only",handoff,str(ROOT)],text=True).splitlines()
+    hashes={}
+    for name in files:
+        path=Path(name)
+        frozen=subprocess.check_output(["git","show",handoff+":"+name])
+        on_disk=path.read_bytes()
+        assert frozen==on_disk, f"Frozen artifact changed: {name}"
+        hashes[str(path.relative_to(ROOT))]=hashlib.sha256(on_disk).hexdigest()
+    return {"handoff":handoff,"immutable_file_sha256":hashes}
 
 
 def checked_selection():
@@ -95,7 +111,8 @@ def checked_selection():
 
 def read_evidence(sha):
     evidence = collections.defaultdict(list)
-    for path in (EXEC / "trace-content.json", EXEC / "qa/choice-evidence.json", EXEC / "trace-regression.json"):
+    for name in QA_INPUTS:
+        path = EXEC / name
         if not path.exists():
             continue
         report = json.loads(path.read_text())
@@ -112,13 +129,16 @@ def read_evidence(sha):
     return evidence
 
 
-def read_owners(selected):
+def read_owners(selected, sha):
     owners = collections.defaultdict(list)
     for filename in WAVES:
         path = EXEC / filename
         if not path.exists():
             continue
         for row in csv_file(path):
+            reported_sha = first(row, ["target_sha","build_sha","sha"])
+            if reported_sha:
+                assert reported_sha == sha, f"{path} from {reported_sha}, expected {sha}"
             code = first(row, ["choice_id","id","ID","code"])
             if not code or not code.strip(): continue
             assert code in selected, f"{path} references nonselected {code}"
@@ -126,7 +146,7 @@ def read_owners(selected):
     return owners
 
 
-def missing_check(code, choice, fields):
+def missing_check(code, fields):
     """Describe the unmet full acceptance; device and UAT blocks apply only where required."""
     family = code.split("-")[-1][0] if code.startswith("P") else code[0]
     check = first(fields, CHECKS)
@@ -135,7 +155,13 @@ def missing_check(code, choice, fields):
     detail = f"{page} · {subject}".strip(" ·")
     if code in {"D03","D11","CS-D05-1"}:
         return "Device QA", "Cần thiết bị iOS Safari / Android Chrome hoặc dịch vụ thiết bị đã cấp quyền, bàn phím hệ thống và phép xoay màn hình.", True
-    if code in {"A10","B06","CS-A07-1","CS-B01-1","P03-E1","P04-E1","P05-E1","P06-E1","P07-E1","P08-E1","P31-E1"}:
+    requires_participant = any(phrase in check.lower() for phrase in (
+        "cho người thử", "hỏi người thử", "yêu cầu người thử", "quan sát người thử",
+        "ghi cta người thử chọn", "ghi chỗ người thử", "người thử mô tả", "người thử hiểu",
+        "người thử giải thích", "người thử chỉ ra", "người thử nêu", "người thử đoán",
+        "người thử phân biệt", "người thử chọn đúng nhóm",
+    ))
+    if requires_participant or code in {"A10","B06","CS-A07-1","CS-B01-1","P03-E1","P04-E1","P05-E1","P06-E1","P07-E1","P08-E1","P31-E1"}:
         return "PO / UX research", "Điều phối người dùng thử ngoài nhóm thực thi. Thu nhận câu trả lời và đối chiếu tiêu chí: " + check, True
     if family in {"A","D"} or code.startswith(("CS-A","CS-D")):
         return "Browser QA", "Đo hoặc so sánh build bằng trình duyệt ở viewport/zoom và trạng thái cụ thể: " + detail + " · " + check, False
@@ -148,7 +174,11 @@ def missing_check(code, choice, fields):
 
 def build_matrix(sha):
     template, selection, pages = checked_selection()
-    outcomes, owners = read_evidence(sha), read_owners(selection)
+    outcomes, owners = read_evidence(sha), read_owners(selection, sha)
+    motion_path = EXEC / "shared-qa/MOTION-INVENTORY.csv"
+    motion = {r["ID"]:r for r in csv_file(motion_path)} if motion_path.exists() else {}
+    if motion:
+        assert len(motion) == 88 and set(motion) <= selection.keys()
     assert set(outcomes) <= selection.keys(), "evidence attached to an unselected ID"
     for row in template:
         code = row["choice_id"]
@@ -161,11 +191,14 @@ def build_matrix(sha):
             route_or_scope=page.get("Đường dẫn",scope or "Shared"),
             selected_detail=first(f,DETAIL), frozen_check=first(f,CHECKS),
             applicability=f.get("Điều kiện áp dụng",""),
+            trigger=f.get("Kích hoạt",""),feedback=f.get("Phản hồi và quy tắc",""),
+            motion_token=f.get("Chuyển động đề xuất",""),interruption=f.get("Khi thao tác liên tiếp / bị ngắt",""),
+            reduced_motion=f.get("Giảm chuyển động",""),
             next_owner="QA", next_check=first(f,CHECKS),
             verification_scope="No evidence for the full row on this build.",
             observed_behavior="", evidence="", target_sha=sha,
         )
-        next_owner, next_check, missing_environment = missing_check(code, choice, f)
+        next_owner, next_check, missing_environment = missing_check(code, f)
         row.update(next_owner=next_owner,next_check=next_check)
         if code == "ROW625-P01-A-UNRESOLVED":
             row.update(implementation_status="Blocked",test_status="Blocked",next_owner="Project Owner",
@@ -175,15 +208,19 @@ def build_matrix(sha):
             continue
         local_evidence = outcomes.get(code,[])
         observations, refs = [], []
+        if code in motion:
+            row["component"] = motion[code]["source_or_review_location"]
+            refs.append("shared-qa/MOTION-INVENTORY.csv → " + code + " · Source mapping; see independent QA for observed behavior.")
         full_owner = False
         for filename, entry in owners.get(code, []):
-            status = first(entry, ["implementation_status","status","Status"])
+            status = first(entry, ["status","Status","implementation_status"])
             evidence = first(entry,["evidence","Evidence","evidence_ref"])
             if status:
-                observations.append(first(entry, ["actual","observed_behavior","notes","detail"]) or status)
+                observations.append(first(entry, ["actual","observed_behavior","notes","detail","qa_status"]) or filename + " · " + status)
                 refs.append(filename+" → "+code+(" · "+evidence if evidence else ""))
             # Accept a worker's final evidence only when it explicitly identifies the verified build.
-            if status in ("Completed","Pass") and evidence and first(entry,["target_sha","build_sha","sha"]) == sha:
+            if (status in ("Completed","Pass") and evidence and not entry.get("qa_status","").startswith("Partial")
+                    and first(entry,["target_sha","build_sha","sha"]) == sha):
                 full_owner = True
             if status in ("Partial","Not Run","Incomplete") and entry.get("remaining"):
                 row["next_check"]=entry["remaining"]
@@ -206,18 +243,39 @@ def build_matrix(sha):
                            verification_scope="Verified in the recorded test modality and locale scope.")
             elif not passed and row["implementation_status"] != "Blocked":
                 row["verification_scope"]="Partial predicate only; full acceptance pending."
-                row["next_check"]=" | ".join(r["remaining"] for r in local_evidence if r["remaining"]) or row["frozen_check"]
-        if missing_environment and row["implementation_status"] == "Incomplete" and row["test_status"] != "Fail":
-            row.update(implementation_status="Blocked",test_status="Blocked",blocker=next_check,next_owner=next_owner)
+                row["next_check"]=" | ".join(r["remaining"] for r in local_evidence if r["remaining"]) or row["next_check"] or row["frozen_check"]
+        if missing_environment and row["implementation_status"] != "Blocked" and row["test_status"] != "Fail":
+            row.update(implementation_status="Blocked",test_status="Blocked",blocker=next_check,next_owner=next_owner,next_check=next_check,
+                       verification_scope="The required participant or device observation is pending.")
         if code in OPT_INS:
             gate = OPT_INS[code]
             row.update(implementation_status="Blocked",test_status="Blocked",blocker=gate,
                        next_owner="Project Owner",next_check=gate,
                        verification_scope="Optional extension held; any checked existing behavior is linked separately.")
             refs.append("APPROVAL-BOUNDARIES.md + "+source)
-        row["evidence"]=" | ".join(dict.fromkeys(refs))
+        row["evidence"]=" | ".join(dict.fromkeys(refs)) or ("Chưa có quan sát riêng trên build; tiêu chí gốc: " + source)
         row["observed_behavior"]=" | ".join(dict.fromkeys(obs for obs in observations if obs))
+        if not row["observed_behavior"]:
+            row["observed_behavior"]="Chưa có phép kiểm đủ tiêu chí trên build này."
     return template
+
+
+def decision_register(rows, sha):
+    grouped = collections.defaultdict(list)
+    for row in rows:
+        if row["implementation_status"] == "Blocked":
+            grouped[(row["next_owner"], row["blocker"])].append(row["choice_id"])
+    lines = [
+        "# Quyết định và điều kiện nghiệm thu còn thiếu", "",
+        f"Build UI `{sha}`.", "",
+        "Mỗi dòng dưới đây dẫn tới các mã có trạng thái Blocked trong RESULT-BY-CHOICE.csv. "
+        "Các bước QA còn có thể thực hiện được liệt kê ở cột next_check của các mã Incomplete.", "",
+        "| Người xử lý | Mã lựa chọn | Điều kiện để tiếp tục |",
+        "| --- | --- | --- |",
+    ]
+    for (owner, reason), codes in sorted(grouped.items()):
+        lines.append("| " + owner + " | " + ", ".join(codes) + " | " + reason.replace("|", " / ").replace("\n"," ") + " |")
+    (EXEC / "TRACE-GAPS.md").write_text("\n".join(lines) + "\n")
 
 
 def main():
@@ -226,11 +284,26 @@ def main():
     parser.add_argument("--out",type=Path,default=EXEC / "RESULT-BY-CHOICE.csv")
     args=parser.parse_args()
     sha = subprocess.check_output(["git","rev-parse","--verify",args.sha+"^{commit}"],text=True).strip()
+    verified = freeze_integrity()
     rows = build_matrix(sha)
     with args.out.open("w", encoding="utf-8", newline="") as stream:
         writer=csv.DictWriter(stream, fieldnames=rows[0].keys(),lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
+    if args.out == EXEC / "RESULT-BY-CHOICE.csv":
+        verified["app_sha"] = sha
+        verified["selected"] = len(rows)
+        verified["selected_page_e"] = sum(r["scope_gate"] == "BUSINESS_E_GATE" for r in rows)
+        verified["excluded"] = {"Không chọn, kể cả 8 dòng E của P01/P02": 38,"Để sau":15,"Chưa chọn":1,
+                                "DX chỉ tham khảo":246}
+        verified["result_csv_sha256"] = hashlib.sha256(args.out.read_bytes()).hexdigest()
+        verified["result_counts"] = {k:dict(collections.Counter(r[k] for r in rows))
+                                     for k in ("implementation_status","test_status")}
+        verified["qa_input_sha256"] = {name:hashlib.sha256((EXEC/name).read_bytes()).hexdigest()
+                                       for name in QA_INPUTS + WAVES + ["shared-qa/MOTION-INVENTORY.csv"]
+                                       if (EXEC/name).is_file()}
+        decision_register(rows, sha)
+        (EXEC/"SELECTION-INTEGRITY.json").write_text(json.dumps(verified,indent=2,ensure_ascii=False)+"\n")
     print(len(rows), dict(collections.Counter(r["implementation_status"] for r in rows)),
           dict(collections.Counter(r["test_status"] for r in rows)),
           hashlib.sha256(args.out.read_bytes()).hexdigest())
