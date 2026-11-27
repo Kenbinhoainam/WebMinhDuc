@@ -4,7 +4,7 @@ import {CalendarDays, CheckCircle2, Mail, MapPin, MessageCircle, Phone} from 'lu
 import {company} from './company';
 import {translate} from './i18n-runtime/catalog';
 import {createDemoSubmission} from './demo-submissions';
-import {validDemoPhone, validOptionalEmail} from './sharedformvalidation';
+import {identityFieldError} from './sharedformvalidation';
 import {useLocale, useTranslation} from './i18n';
 import {PageMasthead} from './PageMasthead';
 import './form-experience-v16.css';
@@ -60,7 +60,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
   const t = useTranslation();
   const id = useId(), location = useLocation();
   const form = useRef<HTMLFormElement>(null), receiptHeading = useRef<HTMLHeadingElement>(null);
-  const submitted = useRef(false), restarting = useRef(false);
+  const attempted = useRef(false), submitted = useRef(false), restarting = useRef(false);
   const [errors, setErrors] = useState<Fields>({});
   const [receipt, setReceipt] = useState('');
   const [receiptService, setReceiptService] = useState('');
@@ -75,9 +75,28 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
     }
   }, [receipt]);
 
+  function fieldError(name: string, value: string) {
+    const trimmed = value.trim();
+    if (name === 'phone' && !trimmed) return 'Vui lòng nhập số điện thoại.';
+    if (mode === 'F01') {
+      if (name === 'location' && !trimmed) return 'Vui lòng nhập địa điểm.';
+      if (name === 'notes' && !trimmed) return 'Vui lòng nhập ghi chú.';
+      if (name === 'quantity' && trimmed && (!Number.isInteger(Number(trimmed)) || Number(trimmed) < 1)) {
+        return 'Vui lòng nhập số lượng từ 1 trở lên.';
+      }
+    }
+    return identityFieldError(name, value);
+  }
+
   function remember(event: FormEvent<HTMLFormElement>) {
     const field = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-    if (field.name) draft[field.name] = field.value;
+    const {name, value} = field;
+    if (!name) return;
+    draft[name] = value;
+    if (attempted.current) {
+      const error = fieldError(name, value);
+      setErrors(previous => (previous[name] ?? '') === error ? previous : {...previous, [name]: error});
+    }
   }
 
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -86,15 +105,10 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
     const data = new FormData(event.currentTarget);
     const value = (name: string) => String(data.get(name) ?? '');
     const invalid: Fields = {};
-    if (!value('name').trim()) invalid.name = 'Vui lòng nhập họ tên.';
-    if (!value('phone').trim()) invalid.phone = 'Vui lòng nhập số điện thoại.';
-    else if (!validDemoPhone(value('phone'))) invalid.phone = 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
-    if (!validOptionalEmail(value('email'))) invalid.email = 'Email chưa đúng định dạng.';
-    if (mode === 'F01') {
-      if (!value('location').trim()) invalid.location = 'Vui lòng nhập địa điểm.';
-      if (!value('notes').trim()) invalid.notes = 'Vui lòng nhập ghi chú.';
-      const quantity = value('quantity').trim();
-      if (quantity && (!Number.isInteger(Number(quantity)) || Number(quantity) < 1)) invalid.quantity = 'Vui lòng nhập số lượng từ 1 trở lên.';
+    attempted.current = true;
+    for (const key of data.keys()) {
+      const error = fieldError(key, value(key));
+      if (error) invalid[key] = error;
     }
     setErrors(invalid);
     if (Object.keys(invalid).length) {
@@ -131,7 +145,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
     <p className="form-context"><strong>{mode === 'F01' ? 'Gửi nhu cầu nhân lực' : 'Liên hệ chung'}</strong>{receiptService && <><br/>{receiptService}</>}</p>
     <p>Biên nhận mẫu được giữ đến khi tải lại trang; thông tin không gửi ra ngoài.</p>
     <Link className="btn" to={'/admin-demo?type=' + mode + '&id=' + receipt} onClick={onNavigate}>Xem hồ sơ mẫu {mode}</Link>
-    <button type="button" className="text-link" onClick={() => {restarting.current = true; submitted.current = false; setErrors({}); setReceiptService(''); setReceipt('');}}>Tạo yêu cầu thử mới</button>
+    <button type="button" className="text-link" onClick={() => {restarting.current = true; submitted.current = false; attempted.current = false; setErrors({}); setReceiptService(''); setReceipt('');}}>Tạo yêu cầu thử mới</button>
   </div>;
 
   return <form ref={form} className="contact-form" aria-describedby={id + '-requirements'} noValidate onSubmit={submit} onInput={remember} onChange={remember}>
