@@ -1,0 +1,82 @@
+Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
+Isolated checkout: /tmp/minhduc-w1-4231-q4csuk2i
+Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
+
+2026-11-27T13:03:34.038175+00:00  node tests/s2-shared.mjs
+PASS S2-DRAWER all 5 locales; open/close/open/switch, inert and expanded, Escape from child then drawer restores both triggers
+PASS S2-NUMBER all 5 locales; visible and accessible final value formatter keeps quantity and suffix
+PASS S2-MODAL Tab/Shift+Tab and immediate Escape/close restoration, removed trigger fallback, IME Escape, canceled/drag-out backdrop gesture, no transition completion event
+PASS S2-FALLBACK zero-duration & reduced motion land at requested rail offset, missing preference API leaves content visible
+PASS S2-TOKENS T0–T4 and ease-out roles match selected values
+
+exit 0
+
+2026-11-27T13:03:38.249593+00:00  node tests/header-reference.mjs
+PASS wide and compact header: five locales, original logo, control order, fallback sitemap and source geometry
+
+exit 0
+
+2026-11-27T13:03:44.134034+00:00  node tests/header-hover-review.mjs
+PASS independent hover: pending Escape suppression, same-route cancellation, visible-trigger hover switching, focused-panel protection
+
+exit 0
+
+2026-11-27T13:03:51.413077+00:00  node tests/navigation.mjs
+PASS five-locale arrow-free navigation, keyboard, touch and mobile sitemap
+
+exit 0
+
+2026-11-27T13:03:57.609102+00:00  node tests/motion.mjs
+Repeat reveals, focus, resize, preference and fallback checks passed
+
+exit 0
+
+2026-11-27T13:04:02.548947+00:00  node tests/motion-repeat-review.mjs
+PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety
+
+exit 0
+
+2026-11-27T13:04:04.874026+00:00  node tests/home-metric-replay.mjs
+PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards
+
+exit 0
+
+2026-11-27T13:04:07.595100+00:00  node tests/home-reference-motion.mjs
+PASS home motion: five locales, stable frames, bounded stagger and controlled media geometry
+
+exit 0
+
+2026-11-27T13:04:11.426932+00:00  node tests/sitemap-review.mjs
+PASS independent sitemap: two-level no-JS fallback, fourteen localized leaves in five languages, same-path Back/Forward scroll restoration, known glass CSS cascade/contrast regressions
+
+exit 0
+
+2026-11-27T13:04:15.036117+00:00  node tests/support-tools.mjs
+PASS support launcher interactions
+
+exit 0
+
+2026-11-27T13:04:18.549208+00:00  node tests/home-carousel.mjs
+PASS home rails: autoplay, variable-width keyboard navigation, overflow across breakpoints, input and motion guards, observer fallback and snap restoration
+
+exit 0
+
+2026-11-27T13:04:21.136252+00:00  node tests/locale-selector.mjs
+PASS locale selector
+
+exit 0
+
+2026-11-27T13:04:23.784065+00:00  python tests/s2-shared-palette.py
+PASS S2-COLOR ink #183653 / surface #ffffff = 12.42:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface #ffffff = 6.45:1 (opaque source colors)
+PASS S2-COLOR muted #486178 / surface-blue #eaf4ff = 5.80:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red #bd1e2d = 6.20:1 (opaque source colors)
+PASS S2-COLOR surface #ffffff / red-hover #971827 = 8.48:1 (opaque source colors)
+PASS S2-COLOR blue #1b489d / surface-blue #eaf4ff = 7.67:1 (opaque source colors)
+PASS S2-COLOR blue-hover #143a7b / surface-blue #eaf4ff = 9.83:1 (opaque source colors)
+PASS S2-COLOR focus #075fb9 / surface #ffffff = 6.28:1 (opaque source colors)
+PASS S2-COLOR control-border #758ba1 / surface #ffffff = 3.52:1 (opaque source colors)
+PASS S2-FONT inter shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+PASS S2-FONT roboto shipped variable Latin and Vietnamese faces cover Nguyễn, Ứng tuyển, Đắk Lắk (fontconfig cmap, no browser rendering assertion)
+
+exit 0

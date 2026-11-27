@@ -137,6 +137,11 @@ def main():
     parser.add_argument("--logs",type=Path,default=ROOT/"logs")
     args=parser.parse_args()
     sha=subprocess.check_output(["git","rev-parse","--verify",args.sha+"^{commit}"],text=True).strip()
+    cms_test = subprocess.check_output(["git","show",sha+":tests/s2-other-pages.mjs"],text=True)
+    if "assert.doesNotMatch(cmsStatus(),/Đã xuất bản mẫu/)" in cms_test:
+        case("s2-other-pages","PASS W4 empty lists", "CS-C07-4",
+             "Type, save a mock draft, edit, publish the demo, edit again, and verify the status reflects the unsaved value immediately for both branches.",
+             "Inspect the placement of status feedback near the actions on rendered devices and evaluate localized announcements.")
     if not args.logs.exists(): parser.error("Final SHA-matched regression logs must exist.")
     choices=[]
     logs=[]

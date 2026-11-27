@@ -1,0 +1,5 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+command=node tests/editorial-content.mjs
+tested_at=2026-11-27T13:02:46Z
+PASS 15 original articles, stable URLs, complete bodies, verified local image files and 247 display strings in five languages
+exit=0

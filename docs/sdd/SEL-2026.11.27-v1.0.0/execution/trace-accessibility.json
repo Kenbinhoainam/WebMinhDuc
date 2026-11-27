@@ -1,0 +1,4045 @@
+{
+  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "tested_html_sha256": "ce59c880020da4d3d3ef4525b0d2bf97006ce7fdf59bff6e47be86c978d2d750",
+  "runtime": "lxml static DOM; collapsed dynamic control targets recorded separately",
+  "choices": [
+    {
+      "choice_id": "D08",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Verify one main/H1, unique IDs, name-source signals, alt attributes and ID relationships in each static route and locale.",
+      "actual": "200/200 routes with locale",
+      "remaining": "Measure the computed accessibility tree, dynamic announcements, keyboard and actual screen readers as required for the full criterion.",
+      "failed": []
+    },
+    {
+      "choice_id": "CS-D04-2",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Inspect names and label/description/error relations for rendered controls across all localized routes.",
+      "actual": "200/200 routes with locale",
+      "remaining": "Measure the computed accessibility tree, dynamic announcements, keyboard and actual screen readers as required for the full criterion.",
+      "failed": []
+    },
+    {
+      "choice_id": "CS-A08-3",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Check name sources on all rendered controls, including icon actions and independently referenced labels.",
+      "actual": "200/200 routes with locale",
+      "remaining": "Measure the computed accessibility tree, dynamic announcements, keyboard and actual screen readers as required for the full criterion.",
+      "failed": []
+    },
+    {
+      "choice_id": "A10",
+      "coverage": "partial",
+      "test_status": "Pass",
+      "assertion": "Check icon command name-source coverage in the shipped HTML before the separate participant recognition test.",
+      "actual": "200/200 routes with locale",
+      "remaining": "Measure the computed accessibility tree, dynamic announcements, keyboard and actual screen readers as required for the full criterion.",
+      "failed": []
+    }
+  ],
+  "observations": [
+    {
+      "page": "P01",
+      "locale": "vi",
+      "route": "/",
+      "controls": 121,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P01",
+      "locale": "en",
+      "route": "/",
+      "controls": 121,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P01",
+      "locale": "zh",
+      "route": "/",
+      "controls": 121,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P01",
+      "locale": "ko",
+      "route": "/",
+      "controls": 121,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P01",
+      "locale": "ja",
+      "route": "/",
+      "controls": 121,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P02",
+      "locale": "vi",
+      "route": "/about-us",
+      "controls": 114,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P02",
+      "locale": "en",
+      "route": "/about-us",
+      "controls": 114,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P02",
+      "locale": "zh",
+      "route": "/about-us",
+      "controls": 114,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P02",
+      "locale": "ko",
+      "route": "/about-us",
+      "controls": 114,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P02",
+      "locale": "ja",
+      "route": "/about-us",
+      "controls": 114,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P03",
+      "locale": "vi",
+      "route": "/services",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P03",
+      "locale": "en",
+      "route": "/services",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P03",
+      "locale": "zh",
+      "route": "/services",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P03",
+      "locale": "ko",
+      "route": "/services",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P03",
+      "locale": "ja",
+      "route": "/services",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P04",
+      "locale": "vi",
+      "route": "/services/labor-supply",
+      "controls": 101,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P04",
+      "locale": "en",
+      "route": "/services/labor-supply",
+      "controls": 101,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P04",
+      "locale": "zh",
+      "route": "/services/labor-supply",
+      "controls": 101,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P04",
+      "locale": "ko",
+      "route": "/services/labor-supply",
+      "controls": 101,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P04",
+      "locale": "ja",
+      "route": "/services/labor-supply",
+      "controls": 101,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P05",
+      "locale": "vi",
+      "route": "/services/labor-leasing",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P05",
+      "locale": "en",
+      "route": "/services/labor-leasing",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P05",
+      "locale": "zh",
+      "route": "/services/labor-leasing",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P05",
+      "locale": "ko",
+      "route": "/services/labor-leasing",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P05",
+      "locale": "ja",
+      "route": "/services/labor-leasing",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P06",
+      "locale": "vi",
+      "route": "/services/recruitment",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P06",
+      "locale": "en",
+      "route": "/services/recruitment",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P06",
+      "locale": "zh",
+      "route": "/services/recruitment",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P06",
+      "locale": "ko",
+      "route": "/services/recruitment",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P06",
+      "locale": "ja",
+      "route": "/services/recruitment",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P07",
+      "locale": "vi",
+      "route": "/services/college-admissions",
+      "controls": 89,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P07",
+      "locale": "en",
+      "route": "/services/college-admissions",
+      "controls": 89,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P07",
+      "locale": "zh",
+      "route": "/services/college-admissions",
+      "controls": 89,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P07",
+      "locale": "ko",
+      "route": "/services/college-admissions",
+      "controls": 89,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P07",
+      "locale": "ja",
+      "route": "/services/college-admissions",
+      "controls": 89,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P08",
+      "locale": "vi",
+      "route": "/services/hr-consulting",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P08",
+      "locale": "en",
+      "route": "/services/hr-consulting",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P08",
+      "locale": "zh",
+      "route": "/services/hr-consulting",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P08",
+      "locale": "ko",
+      "route": "/services/hr-consulting",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P08",
+      "locale": "ja",
+      "route": "/services/hr-consulting",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P09",
+      "locale": "vi",
+      "route": "/jobs",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P09",
+      "locale": "en",
+      "route": "/jobs",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P09",
+      "locale": "zh",
+      "route": "/jobs",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P09",
+      "locale": "ko",
+      "route": "/jobs",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P09",
+      "locale": "ja",
+      "route": "/jobs",
+      "controls": 100,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P10",
+      "locale": "vi",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P10",
+      "locale": "en",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P10",
+      "locale": "zh",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P10",
+      "locale": "ko",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P10",
+      "locale": "ja",
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P11",
+      "locale": "vi",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P11",
+      "locale": "en",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P11",
+      "locale": "zh",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P11",
+      "locale": "ko",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P11",
+      "locale": "ja",
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P12",
+      "locale": "vi",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P12",
+      "locale": "en",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P12",
+      "locale": "zh",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P12",
+      "locale": "ko",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P12",
+      "locale": "ja",
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P13",
+      "locale": "vi",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P13",
+      "locale": "en",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P13",
+      "locale": "zh",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P13",
+      "locale": "ko",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P13",
+      "locale": "ja",
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P14",
+      "locale": "vi",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "controls": 83,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P14",
+      "locale": "en",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "controls": 83,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P14",
+      "locale": "zh",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "controls": 83,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P14",
+      "locale": "ko",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "controls": 83,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P14",
+      "locale": "ja",
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "controls": 83,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P15",
+      "locale": "vi",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P15",
+      "locale": "en",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P15",
+      "locale": "zh",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P15",
+      "locale": "ko",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P15",
+      "locale": "ja",
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P16",
+      "locale": "vi",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P16",
+      "locale": "en",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P16",
+      "locale": "zh",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P16",
+      "locale": "ko",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P16",
+      "locale": "ja",
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P17",
+      "locale": "vi",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P17",
+      "locale": "en",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P17",
+      "locale": "zh",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P17",
+      "locale": "ko",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P17",
+      "locale": "ja",
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "controls": 80,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P18",
+      "locale": "vi",
+      "route": "/saved-jobs",
+      "controls": 75,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P18",
+      "locale": "en",
+      "route": "/saved-jobs",
+      "controls": 75,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P18",
+      "locale": "zh",
+      "route": "/saved-jobs",
+      "controls": 75,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P18",
+      "locale": "ko",
+      "route": "/saved-jobs",
+      "controls": 75,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P18",
+      "locale": "ja",
+      "route": "/saved-jobs",
+      "controls": 75,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P19",
+      "locale": "vi",
+      "route": "/careers",
+      "controls": 123,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P19",
+      "locale": "en",
+      "route": "/careers",
+      "controls": 123,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P19",
+      "locale": "zh",
+      "route": "/careers",
+      "controls": 123,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P19",
+      "locale": "ko",
+      "route": "/careers",
+      "controls": 123,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P19",
+      "locale": "ja",
+      "route": "/careers",
+      "controls": 123,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P20",
+      "locale": "vi",
+      "route": "/news",
+      "controls": 93,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P20",
+      "locale": "en",
+      "route": "/news",
+      "controls": 93,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P20",
+      "locale": "zh",
+      "route": "/news",
+      "controls": 93,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P20",
+      "locale": "ko",
+      "route": "/news",
+      "controls": 93,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P20",
+      "locale": "ja",
+      "route": "/news",
+      "controls": 93,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P21",
+      "locale": "vi",
+      "route": "/news/ho-so-xin-viec",
+      "controls": 92,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P21",
+      "locale": "en",
+      "route": "/news/ho-so-xin-viec",
+      "controls": 92,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P21",
+      "locale": "zh",
+      "route": "/news/ho-so-xin-viec",
+      "controls": 92,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P21",
+      "locale": "ko",
+      "route": "/news/ho-so-xin-viec",
+      "controls": 92,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P21",
+      "locale": "ja",
+      "route": "/news/ho-so-xin-viec",
+      "controls": 92,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P22",
+      "locale": "vi",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "controls": 94,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P22",
+      "locale": "en",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "controls": 94,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P22",
+      "locale": "zh",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "controls": 94,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P22",
+      "locale": "ko",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "controls": 94,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P22",
+      "locale": "ja",
+      "route": "/news/nhu-cau-tuyen-dung",
+      "controls": 94,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P23",
+      "locale": "vi",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P23",
+      "locale": "en",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P23",
+      "locale": "zh",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P23",
+      "locale": "ko",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P23",
+      "locale": "ja",
+      "route": "/news/chon-cong-viec-phu-hop",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P24",
+      "locale": "vi",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P24",
+      "locale": "en",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P24",
+      "locale": "zh",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P24",
+      "locale": "ko",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P24",
+      "locale": "ja",
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P25",
+      "locale": "vi",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P25",
+      "locale": "en",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P25",
+      "locale": "zh",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P25",
+      "locale": "ko",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P25",
+      "locale": "ja",
+      "route": "/news/don-tiep-lao-dong-moi",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P26",
+      "locale": "vi",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P26",
+      "locale": "en",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P26",
+      "locale": "zh",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P26",
+      "locale": "ko",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P26",
+      "locale": "ja",
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "controls": 91,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P27",
+      "locale": "vi",
+      "route": "/events",
+      "controls": 85,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P27",
+      "locale": "en",
+      "route": "/events",
+      "controls": 85,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P27",
+      "locale": "zh",
+      "route": "/events",
+      "controls": 85,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P27",
+      "locale": "ko",
+      "route": "/events",
+      "controls": 85,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P27",
+      "locale": "ja",
+      "route": "/events",
+      "controls": 85,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P28",
+      "locale": "vi",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P28",
+      "locale": "en",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P28",
+      "locale": "zh",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P28",
+      "locale": "ko",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P28",
+      "locale": "ja",
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P29",
+      "locale": "vi",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P29",
+      "locale": "en",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P29",
+      "locale": "zh",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P29",
+      "locale": "ko",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P29",
+      "locale": "ja",
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P30",
+      "locale": "vi",
+      "route": "/events/hanh-trang-tim-viec",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P30",
+      "locale": "en",
+      "route": "/events/hanh-trang-tim-viec",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P30",
+      "locale": "zh",
+      "route": "/events/hanh-trang-tim-viec",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P30",
+      "locale": "ko",
+      "route": "/events/hanh-trang-tim-viec",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P30",
+      "locale": "ja",
+      "route": "/events/hanh-trang-tim-viec",
+      "controls": 86,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P31",
+      "locale": "vi",
+      "route": "/partners",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P31",
+      "locale": "en",
+      "route": "/partners",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P31",
+      "locale": "zh",
+      "route": "/partners",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P31",
+      "locale": "ko",
+      "route": "/partners",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P31",
+      "locale": "ja",
+      "route": "/partners",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P32",
+      "locale": "vi",
+      "route": "/education",
+      "controls": 88,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P32",
+      "locale": "en",
+      "route": "/education",
+      "controls": 88,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P32",
+      "locale": "zh",
+      "route": "/education",
+      "controls": 88,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P32",
+      "locale": "ko",
+      "route": "/education",
+      "controls": 88,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P32",
+      "locale": "ja",
+      "route": "/education",
+      "controls": 88,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P33",
+      "locale": "vi",
+      "route": "/education/tu-xa-quan-tri",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P33",
+      "locale": "en",
+      "route": "/education/tu-xa-quan-tri",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P33",
+      "locale": "zh",
+      "route": "/education/tu-xa-quan-tri",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P33",
+      "locale": "ko",
+      "route": "/education/tu-xa-quan-tri",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P33",
+      "locale": "ja",
+      "route": "/education/tu-xa-quan-tri",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P34",
+      "locale": "vi",
+      "route": "/education/chinh-quy-cong-nghe",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P34",
+      "locale": "en",
+      "route": "/education/chinh-quy-cong-nghe",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P34",
+      "locale": "zh",
+      "route": "/education/chinh-quy-cong-nghe",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P34",
+      "locale": "ko",
+      "route": "/education/chinh-quy-cong-nghe",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P34",
+      "locale": "ja",
+      "route": "/education/chinh-quy-cong-nghe",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P35",
+      "locale": "vi",
+      "route": "/education/tu-xa-ke-toan",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P35",
+      "locale": "en",
+      "route": "/education/tu-xa-ke-toan",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P35",
+      "locale": "zh",
+      "route": "/education/tu-xa-ke-toan",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P35",
+      "locale": "ko",
+      "route": "/education/tu-xa-ke-toan",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P35",
+      "locale": "ja",
+      "route": "/education/tu-xa-ke-toan",
+      "controls": 84,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P36",
+      "locale": "vi",
+      "route": "/admin-demo",
+      "controls": 95,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P36",
+      "locale": "en",
+      "route": "/admin-demo",
+      "controls": 95,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P36",
+      "locale": "zh",
+      "route": "/admin-demo",
+      "controls": 95,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P36",
+      "locale": "ko",
+      "route": "/admin-demo",
+      "controls": 95,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P36",
+      "locale": "ja",
+      "route": "/admin-demo",
+      "controls": 95,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P37",
+      "locale": "vi",
+      "route": "/contact",
+      "controls": 98,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P37",
+      "locale": "en",
+      "route": "/contact",
+      "controls": 98,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P37",
+      "locale": "zh",
+      "route": "/contact",
+      "controls": 98,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P37",
+      "locale": "ko",
+      "route": "/contact",
+      "controls": 98,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P37",
+      "locale": "ja",
+      "route": "/contact",
+      "controls": 98,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P38",
+      "locale": "vi",
+      "route": "/consultation",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P38",
+      "locale": "en",
+      "route": "/consultation",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P38",
+      "locale": "zh",
+      "route": "/consultation",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P38",
+      "locale": "ko",
+      "route": "/consultation",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P38",
+      "locale": "ja",
+      "route": "/consultation",
+      "controls": 81,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P39",
+      "locale": "vi",
+      "route": "/privacy-policy",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P39",
+      "locale": "en",
+      "route": "/privacy-policy",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P39",
+      "locale": "zh",
+      "route": "/privacy-policy",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P39",
+      "locale": "ko",
+      "route": "/privacy-policy",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P39",
+      "locale": "ja",
+      "route": "/privacy-policy",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P40",
+      "locale": "vi",
+      "route": "/terms-of-use",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P40",
+      "locale": "en",
+      "route": "/terms-of-use",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P40",
+      "locale": "zh",
+      "route": "/terms-of-use",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P40",
+      "locale": "ko",
+      "route": "/terms-of-use",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "page": "P40",
+      "locale": "ja",
+      "route": "/terms-of-use",
+      "controls": 77,
+      "duplicate_ids": {},
+      "missing_name_sources": [],
+      "missing_references": [],
+      "missing_alt": [],
+      "collapsed_deferred_controls": [
+        [
+          "button",
+          "support-launcher",
+          "aria-controls",
+          "support-panel"
+        ]
+      ],
+      "h1": 1,
+      "main": 1
+    }
+  ]
+}

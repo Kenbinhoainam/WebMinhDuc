@@ -1,0 +1,417 @@
+2026-11-27T13:03:16.703529+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:review
+
+> minhduc-prototype@1.0.0 test:review
+> node tests/reviewer-flows.mjs && node tests/reviewer-locales.mjs && node tests/jobs-headline-locales.mjs
+
+PASS reviewer: optional form fields, invalid upload, jobs query, single ADMIN type, navigation and dialog cleanup
+PASS reviewer multilingual DOM: 40 routes/states plus F01/F02/F04 errors, F03 no upload and F06 optional upload in five locales
+[
+  {
+    "text": "Minh Đức Vina activities",
+    "where": "en/",
+    "count": 21
+  },
+  {
+    "text": "About Minh Đức Vina",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức connects factories in northern Vietnam with workers, from clarifying the role to bringing both sides together to discuss the job.",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "The factory confirms shifts and start dates. Minh Đức discusses sourcing for each round.",
+    "where": "en/",
+    "count": 2
+  },
+  {
+    "text": "Tell us the roles, headcount and location you need. Minh Đức is ready to discuss an approach with you.",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "When the Minh Đức team gets together",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vina company film",
+    "where": "en/",
+    "count": 2
+  },
+  {
+    "text": "Meet Minh Đức Vina through scenes of its team, offices and gatherings with workers.",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "MINH ĐỨC VINA HUMAN RESOURCES COMPANY LIMITED",
+    "where": "en/",
+    "count": 10
+  },
+  {
+    "text": "Discover Minh Đức",
+    "where": "en/",
+    "count": 20
+  },
+  {
+    "text": "Nếnh Ward, Bắc Ninh City",
+    "where": "en/",
+    "count": 16
+  },
+  {
+    "text": "Rùa Vàng",
+    "where": "en/",
+    "count": 64
+  },
+  {
+    "text": "Lạng Giang, Bắc Ninh",
+    "where": "en/",
+    "count": 13
+  },
+  {
+    "text": "Đông Mai Industrial Park",
+    "where": "en/",
+    "count": 17
+  },
+  {
+    "text": "Minh Đức Vina.",
+    "where": "en/",
+    "count": 40
+  },
+  {
+    "text": "Minh Đức — Home",
+    "where": "en/",
+    "count": 20
+  },
+  {
+    "text": "Minh Đức — People are an asset",
+    "where": "en/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đức Vina — Company introduction",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "A Minh Đức team member holding recruitment materials on site",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "Play video – Minh Đức Vina company film",
+    "where": "en/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức on Facebook",
+    "where": "en/",
+    "count": 13
+  },
+  {
+    "text": "Contact Minh Đức",
+    "where": "en/contact",
+    "count": 6
+  },
+  {
+    "text": "Minh Đức on Zalo",
+    "where": "en/contact",
+    "count": 3
+  },
+  {
+    "text": "Send Minh Đức a message",
+    "where": "en/contact",
+    "count": 2
+  },
+  {
+    "text": "Yên Phong Industrial Park",
+    "where": "en/jobs",
+    "count": 1
+  },
+  {
+    "text": "Tân Hưng Industrial Park",
+    "where": "en/jobs",
+    "count": 1
+  },
+  {
+    "text": "Sông Công Industrial Park",
+    "where": "en/jobs",
+    "count": 1
+  },
+  {
+    "text": "MINH ĐỨC / DEMO ADMIN",
+    "where": "en/admin-demo",
+    "count": 1
+  },
+  {
+    "text": "Help Minh Đức connect workers with suitable opportunities. This example internal position demonstrates the prototype recruitment process.",
+    "where": "en:F04-errors",
+    "count": 1
+  },
+  {
+    "text": "关于 Minh Đức Vina",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "请告诉我们您需要的岗位、人数和地点。Minh Đức 愿与您共同探讨合适的方案。",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức 团队相聚的时刻",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vina 企业介绍影片",
+    "where": "zh/",
+    "count": 2
+  },
+  {
+    "text": "通过团队、办公室以及与劳动者见面的画面，了解 Minh Đức Vina。",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "MINH ĐỨC VINA 人力资源有限责任公司",
+    "where": "zh/",
+    "count": 10
+  },
+  {
+    "text": "了解 Minh Đức",
+    "where": "zh/",
+    "count": 20
+  },
+  {
+    "text": "北宁市 Nếnh 坊",
+    "where": "zh/",
+    "count": 16
+  },
+  {
+    "text": "北宁省 Lạng Giang",
+    "where": "zh/",
+    "count": 13
+  },
+  {
+    "text": "Minh Đức — 首页",
+    "where": "zh/",
+    "count": 20
+  },
+  {
+    "text": "Minh Đức — 人力是资产",
+    "where": "zh/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đức Vina — 企业介绍",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "播放视频 – Minh Đức Vina 企业介绍影片",
+    "where": "zh/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức 的 Facebook",
+    "where": "zh/",
+    "count": 13
+  },
+  {
+    "text": "Minh Đức 的 Zalo",
+    "where": "zh/contact",
+    "count": 3
+  },
+  {
+    "text": "给 Minh Đức 留言",
+    "where": "zh/contact",
+    "count": 2
+  },
+  {
+    "text": "MINH ĐỨC / 管理演示",
+    "where": "zh/admin-demo",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vina 소개",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "필요한 직무, 인원과 지역을 알려주세요. Minh Đức가 적합한 방안을 함께 논의합니다.",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức 동료들이 함께하는 순간",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vina 회사 소개 영상",
+    "where": "ko/",
+    "count": 2
+  },
+  {
+    "text": "팀과 사무실, 근로자들과의 만남을 통해 Minh Đức Vina를 소개합니다.",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "MINH ĐỨC VINA 인력 유한회사",
+    "where": "ko/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đức 알아보기",
+    "where": "ko/",
+    "count": 20
+  },
+  {
+    "text": "박닌시 Nếnh동",
+    "where": "ko/",
+    "count": 16
+  },
+  {
+    "text": "박닌성 Lạng Giang",
+    "where": "ko/",
+    "count": 13
+  },
+  {
+    "text": "Minh Đức — 홈",
+    "where": "ko/",
+    "count": 20
+  },
+  {
+    "text": "Minh Đức — 인력은 자산입니다",
+    "where": "ko/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đức Vina — 회사 소개",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "영상 재생 – Minh Đức Vina 회사 소개 영상",
+    "where": "ko/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức 페이스북",
+    "where": "ko/",
+    "count": 13
+  },
+  {
+    "text": "Minh Đức Zalo",
+    "where": "ko/contact",
+    "count": 3
+  },
+  {
+    "text": "Minh Đức에 메시지 보내기",
+    "where": "ko/contact",
+    "count": 2
+  },
+  {
+    "text": "MINH ĐỨC / 관리자 데모",
+    "where": "ko/admin-demo",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vinaについて",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "必要な職種、人数、勤務地をお知らせください。Minh Đứcが適切な方法を一緒に検討します。",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức の仲間が集うひととき",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "Minh Đức Vina 会社紹介映像",
+    "where": "ja/",
+    "count": 2
+  },
+  {
+    "text": "社員やオフィスの様子、働く方々との交流を通して、Minh Đức Vina を紹介します。",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "MINH ĐỨC VINA人材有限会社",
+    "where": "ja/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đứcを知る",
+    "where": "ja/",
+    "count": 20
+  },
+  {
+    "text": "バクニン市Nếnh街区",
+    "where": "ja/",
+    "count": 16
+  },
+  {
+    "text": "バクニン省Lạng Giang",
+    "where": "ja/",
+    "count": 13
+  },
+  {
+    "text": "Minh Đức — ホーム",
+    "where": "ja/",
+    "count": 20
+  },
+  {
+    "text": "Minh Đức — 人材は財産",
+    "where": "ja/",
+    "count": 10
+  },
+  {
+    "text": "Minh Đức Vina — 会社紹介",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "動画を再生 – Minh Đức Vina 会社紹介映像",
+    "where": "ja/",
+    "count": 1
+  },
+  {
+    "text": "Minh ĐứcのFacebook",
+    "where": "ja/",
+    "count": 13
+  },
+  {
+    "text": "Minh ĐứcのZalo",
+    "where": "ja/contact",
+    "count": 3
+  },
+  {
+    "text": "Minh Đứcにメッセージを送る",
+    "where": "ja/contact",
+    "count": 2
+  },
+  {
+    "text": "MINH ĐỨC / 管理デモ",
+    "where": "ja/admin-demo",
+    "count": 1
+  }
+]
+PASS jobs headline SSR in five locales
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 0

@@ -1,0 +1,58 @@
+Application source extracted via git archive 4231bae137528dbf152250832c1a26d060c579d9
+Isolated checkout: /tmp/minhduc-w2-4231-e3ria6fs
+Linux x86_64, Node v24.22.1; JSDOM deterministic fixtures / structural CSS / SSR. No real browser, device, network-performance or screenshot claim.
+
+2026-11-27T13:03:33.851276+00:00  node tests/s2-b2b-flows.mjs
+PASS S2 B2B component harness: five-locale F01 validation/retry/context, optional F02, single receipts, five service routes/CTA contexts/FAQ/table semantics, image fallback, visible rail controls, rapid pause and zero-duration tokens. DOM simulation; no browser/device claim.
+
+exit 0
+
+2026-11-27T13:03:38.433340+00:00  node tests/info-carousel.mjs
+PASS service rails, inquiry context and linked records after service navigation
+
+exit 0
+
+2026-11-27T13:03:43.988218+00:00  node tests/business-info.mjs
+PASS verified contact details, optional CV guidance and education form routes in five locales
+
+exit 0
+
+2026-11-27T13:03:50.953775+00:00  node tests/home-b2b.mjs
+PASS homepage B2B: five services, reference metrics, partner rail, on-demand film and locked F01 in five languages
+
+exit 0
+
+2026-11-27T13:03:55.662995+00:00  node tests/consultation.mjs
+PASS contact details/form/map hierarchy, three verified map selections and permanent directions, F01 deep link, F02 default, separate drafts, validation, focus, consultation rollover and single local receipts
+
+exit 0
+
+2026-11-27T13:04:00.605778+00:00  node tests/hero-review.mjs
+PASS hero SSR: five locales, two fixed CTAs, accessible heading, poster-first, end-card fallback and responsive source rules
+
+exit 0
+
+2026-11-27T13:04:03.668312+00:00  node tests/hero-responsive.mjs
+PASS responsive hero CSS: content-led phone/tablet, 16:9 film with inset controls, portrait/landscape and breakpoint boundaries, compact header row, desktop isolation. Browser geometry still requires visual review.
+
+exit 0
+
+2026-11-27T13:04:03.926988+00:00  node tests/hero-lifecycle.mjs
+PASS independent hero lifecycle manual
+PASS independent hero lifecycle scroll
+PASS independent hero lifecycle scroll-away
+PASS independent hero lifecycle scroll-before-start
+PASS independent hero lifecycle pending
+PASS independent hero lifecycle hidden
+PASS independent hero lifecycle noio
+PASS independent hero lifecycle noio-offscreen
+PASS independent hero lifecycle observe-failure
+PASS independent hero lifecycle reduced
+PASS independent hero lifecycle blocked
+
+exit 0
+
+2026-11-27T13:04:31.557735+00:00  node tests/home-video-gallery.mjs
+PASS video gallery: five locales, SSR file links, on-demand player, all selections, focus, fallback, retry and cleanup
+
+exit 0

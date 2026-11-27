@@ -1,0 +1,1022 @@
+{
+  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "artifacts": {
+    "sites": "b693f18de3d4d478dbbcccbcc1a9bd697a7643e678b456a344834b9dce547417",
+    "pages": "b693f18de3d4d478dbbcccbcc1a9bd697a7643e678b456a344834b9dce547417"
+  },
+  "method": "Packaged Pages and Sites reviewer HTML, jsdom with no network or physical display.",
+  "checks": [
+    {
+      "profile": "sites",
+      "name": "Standalone reviewer and mapped inventory",
+      "actual": {
+        "original": [
+          "/",
+          "/about-us",
+          "/services",
+          "/jobs",
+          "/careers",
+          "/education",
+          "/news",
+          "/contact"
+        ],
+        "extras": [
+          "/#home-services-title",
+          "/services#service-directory-heading",
+          "/#home-editorial-heading",
+          "/news/nhu-cau-tuyen-dung",
+          "/#home-films-heading"
+        ],
+        "robots": "noindex,nofollow",
+        "assets": 0
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 0.7794871794871795,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.37073170731707317,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.2111111111111111,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 0.958974358974359,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.4560975609756098,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.25972222222222224,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.8341463414634146,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.475,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.9804878048780488,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.5583333333333333,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.7,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.9888888888888889,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /",
+      "actual": {
+        "page": "/",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /#home-services-title",
+      "actual": {
+        "page": "/#home-services-title",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/#home-services-title"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /#home-services-title",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/#home-services-title",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /services#service-directory-heading",
+      "actual": {
+        "page": "/services#service-directory-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/services#service-directory-heading"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /services#service-directory-heading",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/services#service-directory-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /about-us",
+      "actual": {
+        "page": "/about-us",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/about-us"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /about-us",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/about-us",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /services",
+      "actual": {
+        "page": "/services",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/services"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /services",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/services",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /jobs",
+      "actual": {
+        "page": "/jobs",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/jobs"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /jobs",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/jobs",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /careers",
+      "actual": {
+        "page": "/careers",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/careers"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /careers",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/careers",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /education",
+      "actual": {
+        "page": "/education",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/education"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /education",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/education",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /#home-editorial-heading",
+      "actual": {
+        "page": "/#home-editorial-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/#home-editorial-heading"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /#home-editorial-heading",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/#home-editorial-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /news/nhu-cau-tuyen-dung",
+      "actual": {
+        "page": "/news/nhu-cau-tuyen-dung",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/news/nhu-cau-tuyen-dung"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /news/nhu-cau-tuyen-dung",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/news/nhu-cau-tuyen-dung",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /news",
+      "actual": {
+        "page": "/news",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/news"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /news",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/news",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /#home-films-heading",
+      "actual": {
+        "page": "/#home-films-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/#home-films-heading"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /#home-films-heading",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/#home-films-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Share and reopen /contact",
+      "actual": {
+        "page": "/contact",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/contact"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Internal navigation and width change /contact",
+      "actual": {
+        "actualOpened": "/jobs?status=active#job-listings",
+        "fallback": "/contact",
+        "changedTo": "/jobs",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Reject unlisted query ?w=10000&page=https://other.invalid/",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Reject unlisted query ?w=391&page=//other.invalid/",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    },
+    {
+      "profile": "sites",
+      "name": "Reject unlisted query ?page=/admin-demo",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Standalone reviewer and mapped inventory",
+      "actual": {
+        "original": [
+          "/",
+          "/about-us",
+          "/services",
+          "/jobs",
+          "/careers",
+          "/education",
+          "/news",
+          "/contact"
+        ],
+        "extras": [
+          "/#home-services-title",
+          "/services#service-directory-heading",
+          "/#home-editorial-heading",
+          "/news/nhu-cau-tuyen-dung",
+          "/#home-films-heading"
+        ],
+        "robots": "noindex,nofollow",
+        "assets": 0
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 0.7794871794871795,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.37073170731707317,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 320",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.2111111111111111,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 0.958974358974359,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.4560975609756098,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 390",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.25972222222222224,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.8341463414634146,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 700",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.475,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 0.9804878048780488,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 820",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.5583333333333333,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1024",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.7,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1440",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 0.9888888888888889,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 820,
+        "cssHeight": 1180,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "CSS frame dimensions and scale at simulated width 1920",
+      "actual": {
+        "cssWidth": 1440,
+        "cssHeight": 900,
+        "scale": 1,
+        "operator": "simulated DOM width"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /",
+      "actual": {
+        "page": "/",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /#home-services-title",
+      "actual": {
+        "page": "/#home-services-title",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/#home-services-title"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /#home-services-title",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/#home-services-title",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /services#service-directory-heading",
+      "actual": {
+        "page": "/services#service-directory-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/services#service-directory-heading"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /services#service-directory-heading",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/services#service-directory-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /about-us",
+      "actual": {
+        "page": "/about-us",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/about-us"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /about-us",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/about-us",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /services",
+      "actual": {
+        "page": "/services",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/services"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /services",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/services",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /jobs",
+      "actual": {
+        "page": "/jobs",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/jobs"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /jobs",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/jobs",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /careers",
+      "actual": {
+        "page": "/careers",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/careers"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /careers",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/careers",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /education",
+      "actual": {
+        "page": "/education",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/education"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /education",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/education",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /#home-editorial-heading",
+      "actual": {
+        "page": "/#home-editorial-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/#home-editorial-heading"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /#home-editorial-heading",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/#home-editorial-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /news/nhu-cau-tuyen-dung",
+      "actual": {
+        "page": "/news/nhu-cau-tuyen-dung",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/news/nhu-cau-tuyen-dung"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /news/nhu-cau-tuyen-dung",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/news/nhu-cau-tuyen-dung",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /news",
+      "actual": {
+        "page": "/news",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/news"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /news",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/news",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /#home-films-heading",
+      "actual": {
+        "page": "/#home-films-heading",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/#home-films-heading"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /#home-films-heading",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/#home-films-heading",
+        "changedTo": "/contact",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Share and reopen /contact",
+      "actual": {
+        "page": "/contact",
+        "width": "820",
+        "frame": "https://reviewer-fixture.invalid/WebMinhDuc/contact"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Internal navigation and width change /contact",
+      "actual": {
+        "actualOpened": "/WebMinhDuc/jobs?status=active#job-listings",
+        "fallback": "/contact",
+        "changedTo": "/jobs",
+        "reopened": true
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Reject unlisted query ?w=10000&page=https://other.invalid/",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Reject unlisted query ?w=391&page=//other.invalid/",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    },
+    {
+      "profile": "pages",
+      "name": "Reject unlisted query ?page=/admin-demo",
+      "actual": {
+        "fallback": "/",
+        "width": "390"
+      }
+    }
+  ]
+}

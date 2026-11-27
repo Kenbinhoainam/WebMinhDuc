@@ -1,0 +1,2289 @@
+{
+  "build_sha": "4231bae137528dbf152250832c1a26d060c579d9",
+  "dist_tree_sha256": "ca25ff51c80afd5428a56cc3adf6a0ed889ef45b9d6e824455419065f84e05f5",
+  "tested_html_sha256": "72f78ae496dae5350a0d2dc924b25227cf797937956bb833b72f78ef1b430dc2",
+  "artifact_input": "dist",
+  "runtime": "Python/lxml, Pillow asset decode, Node/PostCSS; static evidence only",
+  "choices": [
+    {
+      "choice_id": "P01-F2",
+      "source_row": 163,
+      "route": "/",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "23 rendered img; 40 distinct packaged fallback and candidate files; 1797161 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P02-F4",
+      "source_row": 169,
+      "route": "/about-us",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "19 rendered img; 40 distinct packaged fallback and candidate files; 3143185 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P03-F3",
+      "source_row": 172,
+      "route": "/services",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "6 rendered img; 11 distinct packaged fallback and candidate files; 884120 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P04-A2",
+      "source_row": 638,
+      "route": "/services/labor-supply",
+      "steps": "Inspect actual column/row header relationships in five generated tables.",
+      "remaining": "Visual hierarchy and alignment.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Ví dụ kế hoạch tiếp nhận\", \"column_headers\": [\"Đợt\", \"Địa điểm\", \"Ca làm việc\", \"Số lượng\", \"Ngày cần người\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Ví dụ kế hoạch tiếp nhận\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Example onboarding schedule\", \"column_headers\": [\"Round\", \"Location\", \"Shift\", \"Number of workers\", \"Workers needed by\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Example onboarding schedule\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"人员接收计划示例\", \"column_headers\": [\"批次\", \"地点\", \"工作班次\", \"人数\", \"需要人员日期\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"人员接收计划示例\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"인력 인수 일정 예시\", \"column_headers\": [\"차수\", \"지역\", \"근무 교대\", \"인원\", \"인력 필요일\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"인력 인수 일정 예시\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"受け入れ計画の例\", \"column_headers\": [\"回\", \"勤務地\", \"勤務シフト\", \"人数\", \"人材が必要な日\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"受け入れ計画の例\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        }
+      ],
+      "actual": "{\"caption\": \"Ví dụ kế hoạch tiếp nhận\", \"column_headers\": [\"Đợt\", \"Địa điểm\", \"Ca làm việc\", \"Số lượng\", \"Ngày cần người\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Ví dụ kế hoạch tiếp nhận\", \"tabindex\": \"0\"}} compiled overflow-x=auto. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P04-D1",
+      "source_row": 484,
+      "route": "/services/labor-supply",
+      "steps": "Read local scroll region, keyboard focusability, caption and table header scope; resolve compiled overflow property.",
+      "remaining": "Browser AT, text enlargement, scroll and document geometry.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Ví dụ kế hoạch tiếp nhận\", \"column_headers\": [\"Đợt\", \"Địa điểm\", \"Ca làm việc\", \"Số lượng\", \"Ngày cần người\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Ví dụ kế hoạch tiếp nhận\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Example onboarding schedule\", \"column_headers\": [\"Round\", \"Location\", \"Shift\", \"Number of workers\", \"Workers needed by\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Example onboarding schedule\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"人员接收计划示例\", \"column_headers\": [\"批次\", \"地点\", \"工作班次\", \"人数\", \"需要人员日期\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"人员接收计划示例\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"인력 인수 일정 예시\", \"column_headers\": [\"차수\", \"지역\", \"근무 교대\", \"인원\", \"인력 필요일\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"인력 인수 일정 예시\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"受け入れ計画の例\", \"column_headers\": [\"回\", \"勤務地\", \"勤務シフト\", \"人数\", \"人材が必要な日\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"受け入れ計画の例\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        }
+      ],
+      "actual": "{\"caption\": \"Ví dụ kế hoạch tiếp nhận\", \"column_headers\": [\"Đợt\", \"Địa điểm\", \"Ca làm việc\", \"Số lượng\", \"Ngày cần người\"], \"scoped_columns\": 5, \"row_headers\": [\"A\", \"B\"], \"wrapper\": {\"class\": \"service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Ví dụ kế hoạch tiếp nhận\", \"tabindex\": \"0\"}} compiled overflow-x=auto. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P04-D2",
+      "source_row": 485,
+      "route": "/services/labor-supply",
+      "steps": "Bind the compiled narrow-screen grid declaration to the actual localized route node.",
+      "remaining": "Rendered widths at 767/768px and row-specific visual/keyboard checks.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        }
+      ],
+      "actual": ".service-planning present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,2.5fr) minmax(160px,1fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P04-F3",
+      "source_row": 176,
+      "route": "/services/labor-supply",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "11 rendered img; 19 distinct packaged fallback and candidate files; 1186721 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P05-A3",
+      "source_row": 643,
+      "route": "/services/labor-leasing",
+      "steps": "Inspect actual column/row header relationships in five generated tables.",
+      "remaining": "Visual hierarchy and alignment.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Các yếu tố để trao đổi chi phí\", \"column_headers\": [\"Hạng mục\", \"Căn cứ tính phí\", \"Điểm cần thống nhất\"], \"scoped_columns\": 3, \"row_headers\": [\"Thời hạn\", \"Ca làm việc\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Cơ cấu chi phí tham khảo\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"What shapes the fee discussion\", \"column_headers\": [\"Item\", \"Pricing basis\", \"Details to agree\"], \"scoped_columns\": 3, \"row_headers\": [\"Duration\", \"Shift\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Illustrative fee structure\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"费用磋商要素\", \"column_headers\": [\"项目\", \"计费依据\", \"待确定细节\"], \"scoped_columns\": 3, \"row_headers\": [\"期限\", \"工作班次\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"参考费用结构\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"비용 협의 요소\", \"column_headers\": [\"항목\", \"비용 산정 기준\", \"합의할 내용\"], \"scoped_columns\": 3, \"row_headers\": [\"기간\", \"근무 교대\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"참고 비용 구조\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"料金を相談する際の要素\", \"column_headers\": [\"項目\", \"料金算定の基準\", \"確認する事項\"], \"scoped_columns\": 3, \"row_headers\": [\"期間\", \"勤務シフト\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"参考費用の構成\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        }
+      ],
+      "actual": "{\"caption\": \"Các yếu tố để trao đổi chi phí\", \"column_headers\": [\"Hạng mục\", \"Căn cứ tính phí\", \"Điểm cần thống nhất\"], \"scoped_columns\": 3, \"row_headers\": [\"Thời hạn\", \"Ca làm việc\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Cơ cấu chi phí tham khảo\", \"tabindex\": \"0\"}} compiled overflow-x=auto. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P05-D1",
+      "source_row": 488,
+      "route": "/services/labor-leasing",
+      "steps": "Bind the compiled narrow-screen grid declaration to the actual localized route node.",
+      "remaining": "Rendered widths at 767/768px and row-specific visual/keyboard checks.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        }
+      ],
+      "actual": ".service-responsibilities present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P05-D2",
+      "source_row": 489,
+      "route": "/services/labor-leasing",
+      "steps": "Read local scroll region, keyboard focusability, caption and table header scope; resolve compiled overflow property.",
+      "remaining": "Browser AT, text enlargement, scroll and document geometry.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Các yếu tố để trao đổi chi phí\", \"column_headers\": [\"Hạng mục\", \"Căn cứ tính phí\", \"Điểm cần thống nhất\"], \"scoped_columns\": 3, \"row_headers\": [\"Thời hạn\", \"Ca làm việc\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Cơ cấu chi phí tham khảo\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"What shapes the fee discussion\", \"column_headers\": [\"Item\", \"Pricing basis\", \"Details to agree\"], \"scoped_columns\": 3, \"row_headers\": [\"Duration\", \"Shift\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Illustrative fee structure\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"费用磋商要素\", \"column_headers\": [\"项目\", \"计费依据\", \"待确定细节\"], \"scoped_columns\": 3, \"row_headers\": [\"期限\", \"工作班次\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"参考费用结构\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"비용 협의 요소\", \"column_headers\": [\"항목\", \"비용 산정 기준\", \"합의할 내용\"], \"scoped_columns\": 3, \"row_headers\": [\"기간\", \"근무 교대\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"참고 비용 구조\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"料金を相談する際の要素\", \"column_headers\": [\"項目\", \"料金算定の基準\", \"確認する事項\"], \"scoped_columns\": 3, \"row_headers\": [\"期間\", \"勤務シフト\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"参考費用の構成\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        }
+      ],
+      "actual": "{\"caption\": \"Các yếu tố để trao đổi chi phí\", \"column_headers\": [\"Hạng mục\", \"Căn cứ tính phí\", \"Điểm cần thống nhất\"], \"scoped_columns\": 3, \"row_headers\": [\"Thời hạn\", \"Ca làm việc\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Cơ cấu chi phí tham khảo\", \"tabindex\": \"0\"}} compiled overflow-x=auto. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P05-F3",
+      "source_row": 180,
+      "route": "/services/labor-leasing",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 940593 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P06-D2",
+      "source_row": 493,
+      "route": "/services/recruitment",
+      "steps": "Bind the compiled narrow-screen grid declaration to the actual localized route node.",
+      "remaining": "Rendered widths at 767/768px and row-specific visual/keyboard checks.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        }
+      ],
+      "actual": ".service-role present; compiled grid-template-columns: [{'media': [], 'value': 'minmax(0,4fr) minmax(0,7fr)'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P06-F3",
+      "source_row": 184,
+      "route": "/services/recruitment",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "5 rendered img; 13 distinct packaged fallback and candidate files; 891788 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P07-D1",
+      "source_row": 496,
+      "route": "/services/college-admissions",
+      "steps": "Bind the compiled narrow-screen grid declaration to the actual localized route node.",
+      "remaining": "Rendered widths at 767/768px and row-specific visual/keyboard checks.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        }
+      ],
+      "actual": ".service-study-modes present; compiled grid-template-columns: [{'media': [], 'value': '1fr 1fr'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P07-D2",
+      "source_row": 497,
+      "route": "/services/college-admissions",
+      "steps": "Read local scroll region, keyboard focusability, caption and table header scope; resolve compiled overflow property.",
+      "remaining": "Browser AT, text enlargement, scroll and document geometry.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Thông tin cần xác nhận\", \"column_headers\": [\"Hạng mục\", \"Nơi xác nhận\", \"Thông tin cần xác nhận\"], \"scoped_columns\": 3, \"row_headers\": [\"Học phí\", \"Hồ sơ đăng ký\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Chi phí cần xác nhận với trường\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"Information to confirm\", \"column_headers\": [\"Item\", \"Who to ask\", \"Information to confirm\"], \"scoped_columns\": 3, \"row_headers\": [\"Tuition\", \"Application documents\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Fees to confirm with the school\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"需要确认的信息\", \"column_headers\": [\"项目\", \"确认渠道\", \"需要确认的信息\"], \"scoped_columns\": 3, \"row_headers\": [\"学费\", \"申请材料\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"需向学校确认的费用\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"확인할 정보\", \"column_headers\": [\"항목\", \"확인처\", \"확인할 정보\"], \"scoped_columns\": 3, \"row_headers\": [\"등록금\", \"지원 서류\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"학교에 확인할 비용\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{\"caption\": \"確認すべき情報\", \"column_headers\": [\"項目\", \"確認先\", \"確認すべき情報\"], \"scoped_columns\": 3, \"row_headers\": [\"学費\", \"申請書類\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"学校に確認する費用\", \"tabindex\": \"0\"}} compiled overflow-x=auto."
+        }
+      ],
+      "actual": "{\"caption\": \"Thông tin cần xác nhận\", \"column_headers\": [\"Hạng mục\", \"Nơi xác nhận\", \"Thông tin cần xác nhận\"], \"scoped_columns\": 3, \"row_headers\": [\"Học phí\", \"Hồ sơ đăng ký\"], \"wrapper\": {\"class\": \"info-fee-table-wrap service-table-scroll\", \"role\": \"region\", \"aria-label\": \"Chi phí cần xác nhận với trường\", \"tabindex\": \"0\"}} compiled overflow-x=auto. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P07-F3",
+      "source_row": 188,
+      "route": "/services/college-admissions",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "10 rendered img; 15 distinct packaged fallback and candidate files; 908853 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P08-D2",
+      "source_row": 501,
+      "route": "/services/hr-consulting",
+      "steps": "Bind the compiled narrow-screen grid declaration to the actual localized route node.",
+      "remaining": "Rendered widths at 767/768px and row-specific visual/keyboard checks.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}]"
+        }
+      ],
+      "actual": ".service-consulting-list present; compiled grid-template-columns: [{'media': [], 'value': 'repeat(3,minmax(0,1fr))'}, {'media': ['(max-width:767px)'], 'value': 'minmax(0,1fr)'}] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P08-F3",
+      "source_row": 192,
+      "route": "/services/hr-consulting",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "10 rendered img; 16 distinct packaged fallback and candidate files; 741433 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P09-F3",
+      "source_row": 196,
+      "route": "/jobs",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "1 rendered img; 3 distinct packaged fallback and candidate files; 267816 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P10-D4",
+      "source_row": 510,
+      "route": "/jobs/cong-nhan-lap-rap-bac-ninh",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P11-D4",
+      "source_row": 514,
+      "route": "/jobs/kiem-tra-chat-luong-bac-giang",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P12-D4",
+      "source_row": 518,
+      "route": "/jobs/nhan-vien-kho-thai-nguyen",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P13-D4",
+      "source_row": 522,
+      "route": "/jobs/van-hanh-may-quang-ninh",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P14-D4",
+      "source_row": 526,
+      "route": "/jobs/ky-thuat-bao-tri-bac-ninh",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P15-D4",
+      "source_row": 530,
+      "route": "/jobs/dong-goi-thoi-vu-bac-giang",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P16-D4",
+      "source_row": 534,
+      "route": "/jobs/chuyen-vien-tuyen-dung-bac-ninh",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P17-D4",
+      "source_row": 538,
+      "route": "/jobs/cong-tac-vien-tuyen-dung-quang-ninh",
+      "steps": "Read exact three progressively enhanced content frames and lists in the packaged route.",
+      "remaining": "Browser keyboard, reduced-motion, modal, zoom and real-device testing.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "['Job description', 'What makes you a good fit?', 'Benefits and support']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "['工作描述', '您需要具备什么？', '福利与支持']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "['직무 설명', '어떤 분에게 적합할까요?', '혜택 및 지원']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "['仕事内容', '求める人物像', '待遇とサポート']"
+        }
+      ],
+      "actual": "['Mô tả công việc', 'Điều gì giúp bạn phù hợp?', 'Quyền lợi & sự đồng hành'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P18-A1",
+      "source_row": 684,
+      "route": "/saved-jobs",
+      "steps": "Inspect the saved-jobs masthead and named route to listings.",
+      "remaining": "Visual balance at the specified device sizes.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "H1=['Việc làm đã lưu']; listing link=['Tất cả việc làm']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "H1=['Saved jobs']; listing link=['All jobs']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "H1=['已收藏职位']; listing link=['所有职位']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "H1=['저장한 채용 정보']; listing link=['전체 일자리']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "H1=['保存した求人']; listing link=['すべての求人']"
+        }
+      ],
+      "actual": "H1=['Việc làm đã lưu']; listing link=['Tất cả việc làm'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P19-F1",
+      "source_row": 232,
+      "route": "/careers",
+      "steps": "Decode actual masthead and match its responsive candidate widths for each careers route.",
+      "remaining": "Network timing and rail/lightbox/route regression under a controlled browser load.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208)"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208)"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208)"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208)"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208)"
+        }
+      ],
+      "actual": "('/WebMinhDuc/assets/minhduc-v18/field-team.webp', 1600, 900, 120208) (See all five locale records.)"
+    },
+    {
+      "choice_id": "P19-F2",
+      "source_row": 233,
+      "route": "/careers",
+      "steps": "Decode all unique packaged img candidates in the mapped main; measure each file; preserve slot, alt, loading and srcset.",
+      "remaining": "Browser currentSrc/network, timing, broken image and row-specific interaction checks where applicable.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory."
+        }
+      ],
+      "actual": "14 rendered img; 33 distinct packaged fallback and candidate files; 3797604 total bytes (sum of alternatives, not transferred); see per-path inventory. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P20-F2",
+      "source_row": 236,
+      "route": "/news",
+      "steps": "Measure archive's actual packaged alternatives and inspect the loading attribute on each photo; inspect eager masthead/featured separately.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio."
+        }
+      ],
+      "actual": "3 lazy row photos; 5 total responsive images. Every width descriptor checked against decoded file and declared aspect ratio. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P21-D4",
+      "source_row": 552,
+      "route": "/news/ho-so-xin-viec",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu? | 12/11/2026 | 1. Xác nhận yêu cầu của từng vị trí | 2. Sắp xếp thông tin dễ kiểm tra | 3. Bảo vệ thông tin cá nhân | Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Preparing a factory job application: where to start? | 11/12/2026 | 1. Confirm each role’s requirements | 2. Organize information for easy review | 3. Protect personal information | A Minh Đức staff member holds documents outdoors"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "准备工厂求职材料：从哪里开始？ | 2026/11/12 | 1. 确认各职位的要求 | 2. 整理信息，便于核查 | 3. 保护个人信息 | 一名明德员工在户外手持资料"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "공장 취업 서류 준비: 어디서 시작할까요? | 2026. 11. 12. | 1. 직무별 요구 사항 확인 | 2. 확인하기 쉽게 정보 정리 | 3. 개인정보 보호 | 야외에서 자료를 든 민득 직원"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "工場への応募書類、何から始める？ | 2026/11/12 | 1. 職種ごとの要件を確認する | 2. 確認しやすく情報を整理する | 3. 個人情報を守る | 屋外で資料を持つミンドゥックのスタッフ"
+        }
+      ],
+      "actual": "Chuẩn bị hồ sơ xin việc tại nhà máy: bắt đầu từ đâu? | 12/11/2026 | 1. Xác nhận yêu cầu của từng vị trí | 2. Sắp xếp thông tin dễ kiểm tra | 3. Bảo vệ thông tin cá nhân | Nhân viên Minh Đức cầm tài liệu trong buổi làm việc ngoài trời (See all five locale records.)"
+    },
+    {
+      "choice_id": "P21-F3",
+      "source_row": 241,
+      "route": "/news/ho-so-xin-viec",
+      "steps": "Validate each packaged fallback, descriptor width and intrinsic ratio of article and related images.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        }
+      ],
+      "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P22-D4",
+      "source_row": 556,
+      "route": "/news/nhu-cau-tuyen-dung",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất | 10/11/2026 | 1. Bắt đầu từ kế hoạch vận hành | 2. Lập lịch theo khả năng tiếp nhận thực tế | 3. Thống nhất thông tin trước khi tìm nguồn | Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc | Các thành viên Minh Đức họp và cùng xem tài liệu | Nhóm Minh Đức cùng đối chiếu tài liệu công việc"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Planning workforce additions for each production phase | 11/10/2026 | 1. Start with the operations plan | 2. Schedule against actual intake capacity | 3. Align information before sourcing | The Minh Đức team discusses documents at a table | Minh Đức team members meeting and reviewing documents | A Minh Đức group cross-checking work documents"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "按生产批次规划补充人员 | 2026/11/10 | 1. 从运营计划开始 | 2. 按实际接收能力安排报到时间 | 3. 寻访人才前统一信息 | 明德团队围桌讨论资料 | 明德团队在会上一起查看资料 | 明德团队一起核对工作资料"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "생산 단계별 인력 충원 계획 | 2026. 11. 10. | 1. 운영 계획에서 시작 | 2. 현장에서 실제로 받을 수 있는 인원에 맞춰 일정을 잡으세요 | 3. 인재 발굴 전 정보 합의 | 회의 테이블에서 서류를 함께 검토하는 민득 직원들 | 회의에서 업무 자료를 함께 검토하는 민득(Minh Đức) 팀원들 | 업무 자료를 함께 대조하는 민득 팀"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "生産期ごとの人員補充を計画する | 2026/11/10 | 1. 運営計画から始める | 2. 実際に受け入れられる人数に合わせて日程を組む | 3. 人材確保の前に情報を統一する | テーブルで資料を確認するミンドゥックのスタッフ | 打ち合わせで一緒に資料を確認するMinh Đứcのスタッフ | 仕事の資料を一緒に照合するMinh Đứcのスタッフ"
+        }
+      ],
+      "actual": "Lập kế hoạch bổ sung lao động theo từng đợt sản xuất | 10/11/2026 | 1. Bắt đầu từ kế hoạch vận hành | 2. Lập lịch theo khả năng tiếp nhận thực tế | 3. Thống nhất thông tin trước khi tìm nguồn | Đội ngũ Minh Đức trao đổi tài liệu tại bàn làm việc | Các thành viên Minh Đức họp và cùng xem tài liệu | Nhóm Minh Đức cùng đối chiếu tài liệu công việc (See all five locale records.)"
+    },
+    {
+      "choice_id": "P22-F3",
+      "source_row": 245,
+      "route": "/news/nhu-cau-tuyen-dung",
+      "steps": "Validate each packaged fallback, descriptor width and intrinsic ratio of article and related images.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths."
+        }
+      ],
+      "actual": "3 cover; 10 total images; measured 30 decoded width descriptors, source sizes and file lengths. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P23-D4",
+      "source_row": 560,
+      "route": "/news/chon-cong-viec-phu-hop",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Những câu hỏi nên làm rõ trước khi nhận việc | 08/11/2026 | 1. Công việc hằng ngày là gì? | 2. Thời gian và thu nhập được tính ra sao? | 3. Lưu lại các thông tin đã xác nhận | Nhóm nhân viên Minh Đức trao đổi ngoài trời"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Questions to clarify before accepting a job | 11/08/2026 | 1. What are the daily duties? | 2. How are hours and pay calculated? | 3. Keep confirmed information | Minh Đức staff discuss their work outdoors"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "入职前应问清的问题 | 2026/11/08 | 1. 日常工作内容是什么？ | 2. 工时和收入如何计算？ | 3. 保存已确认的信息 | 明德员工在户外交流"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "입사 전에 확인할 질문 | 2026. 11. 08. | 1. 매일 어떤 업무를 하나요? | 2. 근무 시간과 급여는 어떻게 계산하나요? | 3. 확인한 정보 보관 | 야외에서 대화를 나누는 민득 직원들"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "就職前に確認したい質問 | 2026/11/08 | 1. 毎日の仕事内容は？ | 2. 勤務時間と給与はどう計算される？ | 3. 確認した情報を残す | 屋外で話し合うミンドゥックのスタッフ"
+        }
+      ],
+      "actual": "Những câu hỏi nên làm rõ trước khi nhận việc | 08/11/2026 | 1. Công việc hằng ngày là gì? | 2. Thời gian và thu nhập được tính ra sao? | 3. Lưu lại các thông tin đã xác nhận | Nhóm nhân viên Minh Đức trao đổi ngoài trời (See all five locale records.)"
+    },
+    {
+      "choice_id": "P23-F3",
+      "source_row": 249,
+      "route": "/news/chon-cong-viec-phu-hop",
+      "steps": "Validate each packaged fallback, descriptor width and intrinsic ratio of article and related images.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        }
+      ],
+      "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P24-D4",
+      "source_row": 564,
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn | 05/11/2026 | 1. Một nguồn thông tin thống nhất | 2. Trình bày đủ điều kiện | 3. Dành chỗ cho phản hồi"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Clear recruitment information builds better connections | 11/05/2026 | 1. One consistent source of information | 2. State all relevant conditions | 3. Make room for feedback"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "清晰的招聘信息促成更好的对接 | 2026/11/05 | 1. 统一的信息来源 | 2. 完整说明条件 | 3. 留出反馈渠道"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "명확한 채용 정보가 더 나은 연결을 만듭니다 | 2026. 11. 05. | 1. 일관된 정보 출처 | 2. 조건을 충분히 안내 | 3. 피드백 창구 마련"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "明確な採用情報がより良いつながりを生む | 2026/11/05 | 1. 一貫した情報源 | 2. 条件を十分に示す | 3. フィードバックを受け付ける"
+        }
+      ],
+      "actual": "Thông tin tuyển dụng rõ ràng tạo nên kết nối tốt hơn | 05/11/2026 | 1. Một nguồn thông tin thống nhất | 2. Trình bày đủ điều kiện | 3. Dành chỗ cho phản hồi (See all five locale records.)"
+    },
+    {
+      "choice_id": "P24-F3",
+      "source_row": 253,
+      "route": "/news/thong-tin-tuyen-dung-minh-bach",
+      "steps": "Inspect text-only article for absent image and absent reserved cover wrapper.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        }
+      ],
+      "actual": "0 covers, 0 cover wrappers. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P25-D4",
+      "source_row": 568,
+      "route": "/news/don-tiep-lao-dong-moi",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Chuẩn bị ngày đầu làm việc cho người lao động mới | 02/11/2026 | 1. Trước ngày tiếp nhận | 2. Trong ngày đầu tiên | 3. Sau khi bắt đầu công việc | Đội ngũ Minh Đức ngồi họp quanh bàn"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Preparing a new worker’s first day | 11/02/2026 | 1. Before the start date | 2. On the first day | 3. After work begins | The Minh Đức team meets around a table"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "为新员工准备入职第一天 | 2026/11/02 | 1. 入职日前 | 2. 第一天 | 3. 开始工作后 | 明德团队围桌开会"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "신규 근로자의 첫 출근 준비 | 2026. 11. 02. | 1. 입사일 전 | 2. 첫날 | 3. 근무 시작 후 | 테이블에 둘러앉아 회의하는 민득 직원들"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "新しい従業員の初日を準備する | 2026/11/02 | 1. 受け入れ日の前に | 2. 初日に | 3. 勤務開始後に | テーブルを囲んで打ち合わせるミンドゥックのスタッフ"
+        }
+      ],
+      "actual": "Chuẩn bị ngày đầu làm việc cho người lao động mới | 02/11/2026 | 1. Trước ngày tiếp nhận | 2. Trong ngày đầu tiên | 3. Sau khi bắt đầu công việc | Đội ngũ Minh Đức ngồi họp quanh bàn (See all five locale records.)"
+    },
+    {
+      "choice_id": "P25-F3",
+      "source_row": 257,
+      "route": "/news/don-tiep-lao-dong-moi",
+      "steps": "Validate each packaged fallback, descriptor width and intrinsic ratio of article and related images.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths."
+        }
+      ],
+      "actual": "1 cover; 8 total images; measured 24 decoded width descriptors, source sizes and file lengths. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P26-D4",
+      "source_row": 572,
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "steps": "Read localized heading, date, first three section headings and informative cover alt.",
+      "remaining": "Rendered 899/900/901px, narrow, keyboard, zoom and translated copy review.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến | 30/10/2026 | 1. Kiểm tra nguồn tin | 2. Chia sẻ vừa đủ thông tin | 3. Cẩn trọng với yêu cầu chuyển tiền"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "Keeping personal information safe when job hunting online | 10/30/2026 | 1. Check the source | 2. Share only what is needed | 3. Be cautious about payment requests"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "网上求职时保护个人信息 | 2026/10/30 | 1. 核查信息来源 | 2. 仅分享必要信息 | 3. 谨慎对待转账要求"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "온라인 구직 시 개인정보 안전하게 지키기 | 2026. 10. 30. | 1. 정보 출처 확인 | 2. 필요한 정보만 공유 | 3. 송금 요청에 주의"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "オンライン求職で個人情報を守る | 2026/10/30 | 1. 情報源を確認する | 2. 必要な情報だけを共有する | 3. 送金の要求に注意する"
+        }
+      ],
+      "actual": "Giữ an toàn thông tin cá nhân khi tìm việc trực tuyến | 30/10/2026 | 1. Kiểm tra nguồn tin | 2. Chia sẻ vừa đủ thông tin | 3. Cẩn trọng với yêu cầu chuyển tiền (See all five locale records.)"
+    },
+    {
+      "choice_id": "P26-F3",
+      "source_row": 261,
+      "route": "/news/an-toan-thong-tin-khi-tim-viec",
+      "steps": "Inspect text-only article for absent image and absent reserved cover wrapper.",
+      "remaining": "",
+      "coverage": "full",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "0 covers, 0 cover wrappers."
+        }
+      ],
+      "actual": "0 covers, 0 cover wrappers. (See all five locale records.)"
+    },
+    {
+      "choice_id": "P27-A1",
+      "source_row": 718,
+      "route": "/events",
+      "steps": "Compare masthead asset, intrinsic ratio and localized main heading.",
+      "remaining": "Rendered crop and heading prominence.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['Hoạt động của Minh Đức Vina']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['Minh Đức Vina activities']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['明德Vina活动']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['민득 비나 활동']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['ミン・ドゥック・ビナの活動']"
+        }
+      ],
+      "actual": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp; source 1600×1066; declared [2560, 1706]; H1=['Hoạt động của Minh Đức Vina'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P28-D4",
+      "source_row": 580,
+      "route": "/events/ngay-hoi-ket-noi-viec-lam",
+      "steps": "Count labeled event gallery photos and explicit captions in the localized route.",
+      "remaining": "Keyboard and reduced-motion browser interaction.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('A group poses together during an outdoor activity', 'Community connections'), ('The Minh Đức team gathers for a year-end photo', 'Year-end gathering')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('人们在户外活动中合影', '社区交流'), ('明德团队在年终聚会上合影', '年终聚会')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('야외 활동 중 함께 찍은 단체 사진', '지역사회 교류'), ('연말 모임에서 단체 사진을 찍은 민득 직원들', '연말 모임')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('屋外活動での集合写真', '地域交流'), ('年末の集いで集合写真を撮るミンドゥックのスタッフ', '年末の集い')]"
+        }
+      ],
+      "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P29-D4",
+      "source_row": 584,
+      "route": "/events/toa-dam-ke-hoach-nhan-luc",
+      "steps": "Count labeled event gallery photos and explicit captions in the localized route.",
+      "remaining": "Keyboard and reduced-motion browser interaction.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('A group poses together during an outdoor activity', 'Community connections'), ('The Minh Đức team gathers for a year-end photo', 'Year-end gathering')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('人们在户外活动中合影', '社区交流'), ('明德团队在年终聚会上合影', '年终聚会')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('야외 활동 중 함께 찍은 단체 사진', '지역사회 교류'), ('연말 모임에서 단체 사진을 찍은 민득 직원들', '연말 모임')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('屋外活動での集合写真', '地域交流'), ('年末の集いで集合写真を撮るミンドゥックのスタッフ', '年末の集い')]"
+        }
+      ],
+      "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P30-D4",
+      "source_row": 588,
+      "route": "/events/hanh-trang-tim-viec",
+      "steps": "Count labeled event gallery photos and explicit captions in the localized route.",
+      "remaining": "Keyboard and reduced-motion browser interaction.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('A group poses together during an outdoor activity', 'Community connections'), ('The Minh Đức team gathers for a year-end photo', 'Year-end gathering')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('人们在户外活动中合影', '社区交流'), ('明德团队在年终聚会上合影', '年终聚会')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('야외 활동 중 함께 찍은 단체 사진', '지역사회 교류'), ('연말 모임에서 단체 사진을 찍은 민득 직원들', '연말 모임')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('屋外活動での集合写真', '地域交流'), ('年末の集いで集合写真を撮るミンドゥックのスタッフ', '年末の集い')]"
+        }
+      ],
+      "actual": "[('Mọi người chụp ảnh cùng nhau trong một hoạt động ngoài trời', 'Kết nối cộng đồng'), ('Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm', 'Buổi gặp mặt cuối năm')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P31-A2",
+      "source_row": 735,
+      "route": "/partners",
+      "steps": "Compare each displayed label and packaged logo with the committed partner mapping.",
+      "remaining": "Visual provenance review with the reference images, including JEILTECH VINA.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        }
+      ],
+      "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P31-D3",
+      "source_row": 591,
+      "route": "/partners",
+      "steps": "Check unique exposed SSR list, real label text and names.",
+      "remaining": "Hydrated duplicate strip and real assistive-technology reading.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        }
+      ],
+      "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P31-F2",
+      "source_row": 280,
+      "route": "/partners",
+      "steps": "Compare brand names, mapped asset filenames and order on Home, About and Partners in each locale.",
+      "remaining": "Browser image-error refresh and CPU/network rail measurement in frozen check.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')]"
+        }
+      ],
+      "actual": "[('Luxshare ICT', 'luxshare.svg'), ('FOXCONN', 'foxconn.svg'), ('SAMSUNG', 'samsung.svg'), ('JEILTECH VINA', 'glovitech.webp'), ('TACU', 'tacu.webp')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P32-A1",
+      "source_row": 738,
+      "route": "/education",
+      "steps": "Inspect the two masthead CTA destinations, labels and decoded learning-space image.",
+      "remaining": "Compare rendered arrangement and translated wrapping.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', 'Xem chương trình'), ('/WebMinhDuc/education?form=F05#dang-ky', 'Tư vấn tuyển sinh')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', 'View program'), ('/WebMinhDuc/en/education?form=F05#dang-ky', 'Admissions consultation')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', '查看课程'), ('/WebMinhDuc/zh/education?form=F05#dang-ky', '招生咨询')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', '과정 보기'), ('/WebMinhDuc/ko/education?form=F05#dang-ky', '입학 상담')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', '課程を見る'), ('/WebMinhDuc/ja/education?form=F05#dang-ky', '入学相談')]"
+        }
+      ],
+      "actual": "/WebMinhDuc/assets/minhduc-v18/learning-space.webp; [('#programs', 'Xem chương trình'), ('/WebMinhDuc/education?form=F05#dang-ky', 'Tư vấn tuyển sinh')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P33-A2",
+      "source_row": 742,
+      "route": "/education/tu-xa-quan-tri",
+      "steps": "Inspect masthead asset choice and actual destination labels.",
+      "remaining": "Render mobile/desktop with long copy and both form modes.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "images=[], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "images=[], links=['Home', 'Admissions consultation', 'Submit an application']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "images=[], links=['首页', '招生咨询', '提交入学申请']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "images=[], links=['홈', '입학 상담', '입학 서류 제출']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "images=[], links=['ホーム', '入学相談', '出願する']"
+        }
+      ],
+      "actual": "images=[], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P34-A2",
+      "source_row": 745,
+      "route": "/education/chinh-quy-cong-nghe",
+      "steps": "Inspect masthead asset choice and actual destination labels.",
+      "remaining": "Render mobile/desktop with long copy and both form modes.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['Home', 'Admissions consultation', 'Submit an application']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['首页', '招生咨询', '提交入学申请']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['홈', '입학 상담', '입학 서류 제출']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['ホーム', '入学相談', '出願する']"
+        }
+      ],
+      "actual": "images=['/WebMinhDuc/assets/minhduc-v18/learning-space.webp'], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P35-A2",
+      "source_row": 748,
+      "route": "/education/tu-xa-ke-toan",
+      "steps": "Inspect masthead asset choice and actual destination labels.",
+      "remaining": "Render mobile/desktop with long copy and both form modes.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "images=[], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "images=[], links=['Home', 'Admissions consultation', 'Submit an application']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "images=[], links=['首页', '招生咨询', '提交入学申请']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "images=[], links=['홈', '입학 상담', '입학 서류 제출']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "images=[], links=['ホーム', '入学相談', '出願する']"
+        }
+      ],
+      "actual": "images=[], links=['Trang chủ', 'Tư vấn tuyển sinh', 'Nộp hồ sơ tuyển sinh'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P36-D1",
+      "source_row": 605,
+      "route": "/admin-demo",
+      "steps": "Read built layout rules affecting actual admin sidebar and filters.",
+      "remaining": "Rendered reflow and label fit at adjacent 800px/450px cases.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]}"
+        }
+      ],
+      "actual": "{'.admin-side': [{'media': [], 'value': '230px'}, {'media': ['(max-width:800px)'], 'value': 'auto'}], '.admin-filters': [{'media': [], 'value': '2fr repeat(3,1fr)'}, {'media': ['(max-width:800px)'], 'value': 'repeat(2,1fr)'}, {'media': ['(max-width:450px)'], 'value': '1fr'}]} (See all five locale records.)"
+    },
+    {
+      "choice_id": "P36-D2",
+      "source_row": 606,
+      "route": "/admin-demo",
+      "steps": "Check compiled admin table overflow and minimum width against table in localized route.",
+      "remaining": "Keyboard scroll, viewport geometry and measured document overflow.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]}"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]}"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]}"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]}"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]}"
+        }
+      ],
+      "actual": "{'.admin-table-wrap': [{'media': [], 'value': 'auto'}], '.admin-demo table': [{'media': [], 'value': '760px'}]} (See all five locale records.)"
+    },
+    {
+      "choice_id": "P37-F2",
+      "source_row": 300,
+      "route": "/contact",
+      "steps": "Verify three labeled office map fallbacks with distinct destinations exist in main HTML before any map loads.",
+      "remaining": "Block the embed and operate the fallback in a browser.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', 'Chỉ đường'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', 'Chỉ đường'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', 'Chỉ đường')]"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', 'Directions'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', 'Directions'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', 'Directions')]"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', '路线'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', '路线'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', '路线')]"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', '길찾기'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', '길찾기'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', '길찾기')]"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', '経路'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', '経路'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', '経路')]"
+        }
+      ],
+      "actual": "[('https://maps.app.goo.gl/VjV1DbkajBXDqGUE7', 'Chỉ đường'), ('https://maps.app.goo.gl/2hj5gqjuaLS4t6hk8', 'Chỉ đường'), ('https://maps.app.goo.gl/kc8WAYf6mQyVMJet7', 'Chỉ đường')] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P38-A2",
+      "source_row": 758,
+      "route": "/consultation",
+      "steps": "Confirm one labeled date field and the exact four ordered radio options.",
+      "remaining": "Check rendered balance, narrow layouts and zoom.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30']"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30']"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30']"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30']"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30']"
+        }
+      ],
+      "actual": "date input ['consultation-date']; adjacent radio group ['09:00', '10:30', '14:00', '15:30'] (See all five locale records.)"
+    },
+    {
+      "choice_id": "P39-D1",
+      "source_row": 615,
+      "route": "/privacy-policy",
+      "steps": "Inspect document language plus entire localized article heading order.",
+      "remaining": "Browser keyboard/zoom review in frozen check.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "lang=vi; Chính sách bảo mật | Thông tin cá nhân & quyền riêng tư | 1. Thông tin trong biểu mẫu | 2. Dữ liệu lưu trên thiết bị | 3. Giấy tờ và hồ sơ cá nhân | 4. Liên kết bên ngoài | 5. Trao đổi về thông tin cá nhân | Liên hệ Minh Đức"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "lang=en; Privacy policy | Personal information & privacy | 1. Information in forms | 2. Data stored on your device | 3. Personal documents and records | 4. External links | 5. Personal information enquiries | Contact Minh Đức"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "lang=zh-Hans; 隐私政策 | 个人信息与隐私 | 1. 表单中的信息 | 2. 存储在设备上的数据 | 3. 个人证件及材料 | 4. 外部链接 | 5. 个人信息相关咨询 | 联系明德"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "lang=ko; 개인정보 처리방침 | 개인정보 및 프라이버시 | 1. 양식에 입력하는 정보 | 2. 기기에 저장되는 데이터 | 3. 개인 서류 및 기록 | 4. 외부 링크 | 5. 개인정보 관련 문의 | 민득 문의"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "lang=ja; プライバシーポリシー | 個人情報とプライバシー | 1. フォームに入力する情報 | 2. 端末に保存されるデータ | 3. 個人の書類と記録 | 4. 外部リンク | 5. 個人情報に関するお問い合わせ | ミンドゥックへのお問い合わせ"
+        }
+      ],
+      "actual": "lang=vi; Chính sách bảo mật | Thông tin cá nhân & quyền riêng tư | 1. Thông tin trong biểu mẫu | 2. Dữ liệu lưu trên thiết bị | 3. Giấy tờ và hồ sơ cá nhân | 4. Liên kết bên ngoài | 5. Trao đổi về thông tin cá nhân | Liên hệ Minh Đức (See all five locale records.)"
+    },
+    {
+      "choice_id": "P40-D1",
+      "source_row": 618,
+      "route": "/terms-of-use",
+      "steps": "Inspect document language plus entire localized article heading order.",
+      "remaining": "Browser keyboard/zoom review in frozen check.",
+      "coverage": "partial",
+      "input_type": "Parsed packaged Pages HTML, decoded local image bytes, compiled CSS as indicated",
+      "test_status": "Pass",
+      "locales": [
+        {
+          "locale": "vi",
+          "test_status": "Pass",
+          "actual": "lang=vi; Điều khoản sử dụng | Sử dụng website Minh Đức | 1. Phạm vi bản prototype | 2. Thông tin tuyển dụng và dịch vụ | 3. Sử dụng các biểu mẫu | 4. Tài liệu và hình ảnh | 5. Liên kết và nội dung bên ngoài | Liên hệ Minh Đức"
+        },
+        {
+          "locale": "en",
+          "test_status": "Pass",
+          "actual": "lang=en; Terms of use | Using the Minh Đức website | 1. Prototype scope | 2. Recruitment and service information | 3. Using the forms | 4. Documents and images | 5. External links and content | Contact Minh Đức"
+        },
+        {
+          "locale": "zh",
+          "test_status": "Pass",
+          "actual": "lang=zh-Hans; 使用条款 | 使用 Minh Đức 网站 | 1. 原型范围 | 2. 招聘及服务信息 | 3. 使用表单 | 4. 资料与图片 | 5. 外部链接与内容 | 联系明德"
+        },
+        {
+          "locale": "ko",
+          "test_status": "Pass",
+          "actual": "lang=ko; 이용약관 | Minh Đức 웹사이트 이용 | 1. 프로토타입 범위 | 2. 채용 및 서비스 정보 | 3. 양식 이용 | 4. 문서 및 이미지 | 5. 외부 링크 및 콘텐츠 | 민득 문의"
+        },
+        {
+          "locale": "ja",
+          "test_status": "Pass",
+          "actual": "lang=ja; 利用規約 | Minh Đứcウェブサイトの利用 | 1. プロトタイプの範囲 | 2. 採用とサービスの情報 | 3. フォームの利用 | 4. 資料と画像 | 5. 外部リンクとコンテンツ | ミンドゥックへのお問い合わせ"
+        }
+      ],
+      "actual": "lang=vi; Điều khoản sử dụng | Sử dụng website Minh Đức | 1. Phạm vi bản prototype | 2. Thông tin tuyển dụng và dịch vụ | 3. Sử dụng các biểu mẫu | 4. Tài liệu và hình ảnh | 5. Liên kết và nội dung bên ngoài | Liên hệ Minh Đức (See all five locale records.)"
+    }
+  ]
+}

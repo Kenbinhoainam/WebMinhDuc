@@ -1,0 +1,16 @@
+2026-11-27T13:05:05.838170+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | npm run test:motion
+
+> minhduc-prototype@1.0.0 test:motion
+> node tests/motion.mjs && node tests/motion-repeat-review.mjs && node tests/home-metric-replay.mjs && node tests/home-business-intro.mjs
+
+Repeat reveals, focus, resize, preference and fallback checks passed
+PASS independent repeat motion: visible lower reset/reentry, hysteresis, top/horizontal exceptions, focused forms, resize baseline, late insertion and stale-callback safety
+PASS metric replay: shared 320ms timeline, both entry directions, full-block reset, edge jitter, mid-run cancellation, mobile rows, visibility, reduced motion, SSR/a11y, StrictMode and failure/cleanup guards
+PASS homepage intro: wide/tall sticky at 130px; narrow/short static; mobile stack unchanged; original reveals, telephone link and F01 fields preserved in five locales (DOM/CSS contract).
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+Exit 0

@@ -1,0 +1,5 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+command=node docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/education-submit-check.mjs
+tested_at=2026-11-27T13:02:46Z
+PASS F05/F06 submit-only text validation, optional labels, first error focus, double-submit guard, receipt focus/type and explicit retry.
+exit=0

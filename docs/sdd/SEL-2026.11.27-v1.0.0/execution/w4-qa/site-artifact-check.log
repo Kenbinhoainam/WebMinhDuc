@@ -1,0 +1,6 @@
+target_sha=4231bae137528dbf152250832c1a26d060c579d9
+command=node docs/sdd/SEL-2026.11.27-v1.0.0/execution/w4-qa/artifact-check.mjs <RC2 preview archive dist>
+tested_at=2026-11-27T13:03:33Z
+c0a8dd1d55a4cb22cf8ff798acbfc9e83dda0408c5fd27ac43d0c87eec72f8cd  /tmp/s2-rc2-owner-preview.tar.gz
+PASS artifact HTML: 115 route/locale combinations under https://minhduc-sprint2-approved-review.kenbinhoainam.chatgpt.site; canonical/alternate/noindex, About anchors, editorial/clip/share URLs, mock event dates, Education form defaults, ADMIN and policies.
+exit=0

@@ -1,0 +1,4 @@
+2026-11-27T13:05:19.852069+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | node tests/favicon.mjs
+PASS source favicon links and icon dimensions
+
+Exit 0

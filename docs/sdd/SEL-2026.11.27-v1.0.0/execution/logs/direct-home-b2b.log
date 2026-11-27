@@ -1,0 +1,4 @@
+2026-11-27T13:05:17.960882+00:00 | 4231bae137528dbf152250832c1a26d060c579d9 | node tests/home-b2b.mjs
+PASS homepage B2B: five services, reference metrics, partner rail, on-demand film and locked F01 in five languages
+
+Exit 0
