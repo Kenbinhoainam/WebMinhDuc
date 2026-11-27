@@ -91,6 +91,16 @@
         // Absolutely positioned offscreen labels must be contained by the local scroller.
         // If their offset parent is the page, the last column can expand the root
         // scroll area even though the table itself correctly fits a local scroller.
+        const filterGrid=one('.admin-filters');
+        if (filterGrid) {
+          const gridBox=rect(filterGrid);
+          const controls=visible('.admin-filters label,.admin-filters input,.admin-filters select').map(rect);
+          const inGrid=controls.every(r=>r.x>=gridBox.x-1 && r.x+r.w<=gridBox.x+gridBox.w+1);
+          page('D1','Filter label/input/select boxes stay inside the available grid, including while the sidebar is present.',
+            { gridBox, columns:css(filterGrid).gridTemplateColumns, controls, docWidth },
+            controls.length===8 && inGrid && docWidth<=viewport.clientWidth+1,
+            'Test keyboard, zoom, all locales and both sidebar/filter breakpoints.');
+        }
         const scroller=one('.admin-table-wrap');
         const actionHeading=scroller?.querySelector('thead th:last-child .sr-only');
         const containingBlock=actionHeading?.offsetParent;
