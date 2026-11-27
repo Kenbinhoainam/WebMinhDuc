@@ -87,6 +87,20 @@
       const good = entries.every(t => t.content <= t.client+1 || /auto|scroll/.test(t.overflowX)) && docWidth<=viewport.clientWidth+1;
       if(id===36) record('CS-D01-2','Any wide table has its own horizontal scroller; no full-page horizontal scroll.',
         { tables:entries, docWidth }, good, 'Operate focused scroll region; verify zoom, keyboard and touch.');
+      if(id===36) {
+        // Absolutely positioned offscreen labels must be contained by the local scroller.
+        // If their offset parent is the page, the last column can expand the root
+        // scroll area even though the table itself correctly fits a local scroller.
+        const scroller=one('.admin-table-wrap');
+        const actionHeading=scroller?.querySelector('thead th:last-child .sr-only');
+        const containingBlock=actionHeading?.offsetParent;
+        const scoped=!!scroller && !!containingBlock && (scroller===containingBlock || scroller.contains(containingBlock));
+        page('D2','Last column keeps its accessible name and its hidden label is contained by the table scroller.',
+          { label:actionHeading?.textContent, containingBlock:containingBlock?.className,
+            scoped, localTableWidth:scroller?.scrollWidth, localWindowWidth:scroller?.clientWidth, docWidth },
+          scoped && !!actionHeading.textContent.trim() && docWidth <= viewport.clientWidth+1,
+          'Physical-device panning and text zoom; evaluate all five locale/width combinations.');
+      }
       if ([4,5,7,36].includes(id)) page(id===4 ? 'D1':'D2','Table structure fits a bounded region or scrolls locally.',
         { tables:entries, docWidth },good && entries.every(t => t.headers>0), 'Keyboard pan, text enlargement and content legibility.');
     }
