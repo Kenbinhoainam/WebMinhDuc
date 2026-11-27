@@ -12,8 +12,12 @@ from playwright.sync_api import expect, sync_playwright
 
 DIST = Path(os.getenv("DIST_DIR", "dist")).resolve()
 OUT = Path(os.environ["QA_OUTPUT"]).resolve()
-ORIGIN = "https://kenbinhoainam.github.io"
-BASE = "/WebMinhDuc"
+canonical = re.search(r'<link rel="canonical" href="([^"]+)"', (DIST/"index.html").read_text())
+assert canonical, "Packaged root is missing its canonical URL"
+mount = urlsplit(canonical[1])
+assert mount.scheme == "https" and mount.hostname, "Expected an HTTPS canonical"
+ORIGIN = mount.scheme + "://" + mount.netloc
+BASE = mount.path.rstrip("/")
 LOCALES = ["vi", "en", "zh", "ko", "ja"]
 HEIGHTS = {320:740, 359:740, 360:740, 390:844, 430:932, 450:932, 520:932,
            521:932, 639:960, 640:960, 700:960, 701:960, 767:1024, 768:1024, 799:1024, 800:1024,
@@ -46,7 +50,7 @@ def local(route):
     request = route.request
     u = urlsplit(request.url)
     path = unquote(u.path)
-    if (u.scheme, u.netloc) != ("https", "kenbinhoainam.github.io") or not (path == BASE or path.startswith(BASE+"/")):
+    if (u.scheme, u.netloc) != (mount.scheme, mount.netloc) or not (path == BASE or path.startswith(BASE+"/")):
         denied.add((u.netloc, request.resource_type))
         return route.abort("blockedbyclient")
     f = (DIST / path[len(BASE):].lstrip("/")).resolve()
