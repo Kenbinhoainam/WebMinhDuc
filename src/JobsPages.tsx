@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState, type FormEvent} from 'react';
+import {useCallback, useEffect, useRef, useState, type FormEvent, type Ref} from 'react';
 import {Link, useLocation, useNavigate, useNavigationType, useParams, useSearchParams} from 'react-router-dom';
 import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
 import {company} from './company';
@@ -80,8 +80,8 @@ function SaveButton({job, labelled, afterRemove}: {job: Job; labelled?: boolean;
     <Bookmark size={20} fill={saved ? 'currentColor' : 'none'} aria-hidden="true"/>{labelled && <span>Lưu việc làm</span>}
   </button>;
 }
-function JobCard({job, origin, remember, afterRemove}: {job:Job; origin?:ListOrigin; remember?:()=>void; afterRemove?:()=>void}) {
-  return <article className="job-card">
+function JobCard({job, origin, remember, afterRemove, savedIndex, cardRef}: {job:Job; origin?:ListOrigin; remember?:()=>void; afterRemove?:()=>void; savedIndex?:number; cardRef?:Ref<HTMLElement>}) {
+  return <article className="job-card" ref={cardRef} data-saved-index={savedIndex}>
     <div className="job-card-heading"><div className="job-card-meta"><span>{job.id}</span><span className={job.status === 'closed' ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span>{job.internal && <span>Tuyển dụng nội bộ</span>}</div>
       <h3><Link to={`/jobs/${job.slug}`} state={origin ? {jobOrigin:origin} : undefined} data-job-link={job.id} onClick={event => {if (plainClick(event)) remember?.();}}><span>{job.title}</span><ArrowUpRight size={17} aria-hidden="true"/></Link></h3>
       <p className="job-locality"><MapPin size={16} aria-hidden="true"/>{job.industrialPark && <>{job.industrialPark} · </>}{job.location}</p>
@@ -141,26 +141,17 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
     composing.current = false;
     setDraft(null);
   },[location.key]);
-  useEffect(() => {
-    if (!savedOnly) return;
-    // Capture focus while the old card still exists, before the saved store
-    // notifies React and Chromium moves focus to BODY on removal.
-    const rememberFocusedCard = () => {
-      const list = browserRef.current;
-      const control = document.activeElement?.closest<HTMLElement>('[data-job-save], [data-job-link]');
-      nextFocus.current = null;
-      if (!list || !control || !list.contains(control)) return;
-      const card = control.closest('.job-card');
-      if (!card) return;
-      const index = Array.from(list.querySelectorAll('.job-card')).indexOf(card);
-      const id = control.dataset.jobSave || control.dataset.jobLink;
-      if (index >= 0 && id) {
-        nextFocus.current = {id, index:start + index, control:control.dataset.jobSave ? 'save' : 'link', fromStorage:true};
-      }
+  // Snapshot the active descendant in ref cleanup, before React removes its
+  // card. A different subscriber may already be handling this storage event.
+  const keepRemovedFocus = useCallback((card: HTMLElement | null) => {
+    if (!card) return;
+    return () => {
+      const active = document.activeElement?.closest<HTMLElement>('[data-job-save], [data-job-link]');
+      if (!active || !card.contains(active) || nextFocus.current?.fromStorage === false) return;
+      const id = active.dataset.jobSave || active.dataset.jobLink;
+      if (id) nextFocus.current = {id, index:Number(card.dataset.savedIndex), control:active.dataset.jobSave ? 'save' : 'link', fromStorage:true};
     };
-    window.addEventListener('storage',rememberFocusedCard,true);
-    return () => window.removeEventListener('storage',rememberFocusedCard,true);
-  },[savedOnly,start]);
+  },[]);
   useEffect(() => {
     const pending = nextFocus.current;
     nextFocus.current = null;
@@ -171,7 +162,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
     const index = Math.min(Math.max(0,pending.index-start),(controls?.length ?? 0)-1);
     const target = controls?.[index] || list?.querySelector<HTMLElement>('.jobs-empty a, .jobs-empty button') || resultsRef.current;
     target?.focus();
-  },[savedIds,start]);
+  },[savedIds,start,location.key]);
   useEffect(() => {
     if (!clientReady || navigationType !== 'POP' || lastOpened?.entryKey !== location.key || restoredEntry.current === location.key) return;
     const id = lastOpened.jobId;
@@ -281,7 +272,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
       {!internal && !savedOnly && <h2>Cơ hội việc làm dành cho bạn</h2>}
       <p tabIndex={-1} ref={resultsRef} role="status" aria-live="polite"><strong>{filtered.length}</strong> {savedOnly ? 'việc làm đã lưu' : 'việc làm phù hợp'}{query && <> {String(translate('cho',locale))} “{query}”</>}</p>
     </div>
-    {filtered.length ? <div className="jobs-grid">{filtered.slice(start,start+PAGE_SIZE).map((job,index) => <JobCard key={job.id} job={job} origin={origin} remember={() => {lastOpened = {entryKey:location.key, jobId:job.id};}} afterRemove={savedOnly ? () => {nextFocus.current = {id:job.id, index:start+index, control:'save', fromStorage:false};} : undefined}/> )}</div>
+    {filtered.length ? <div className="jobs-grid">{filtered.slice(start,start+PAGE_SIZE).map((job,index) => <JobCard key={job.id} job={job} origin={origin} cardRef={savedOnly ? keepRemovedFocus : undefined} savedIndex={savedOnly ? start+index : undefined} remember={() => {lastOpened = {entryKey:location.key, jobId:job.id};}} afterRemove={savedOnly ? () => {nextFocus.current = {id:job.id, index:start+index, control:'save', fromStorage:false};} : undefined}/> )}</div>
       : <EmptyJobs saved={isEmptySaved} teamClosed={internal && !TEAM.some(job => job.status === 'active') && !query && activeFields.length === 0} onReset={reset} onClosed={() => updateFilter('status','closed')}/>}
     {totalPages > 1 && <nav className="jobs-pagination" aria-label="Phân trang việc làm"><button type="button" disabled={page === 1} aria-label="Trang trước" onClick={() => goToPage(page-1)}><ChevronLeft size={18}/></button>{Array.from({length:totalPages},(_,i)=>i+1).map(number => <button type="button" key={number} aria-label={`${translate('Trang',locale)} ${number}`} aria-current={number === page ? 'page' : undefined} onClick={() => goToPage(number)}>{number}</button>)}<button type="button" aria-label="Trang sau" disabled={page === totalPages} onClick={() => goToPage(page+1)}><ChevronRight size={18}/></button></nav>}
     {!isEmptySaved && <p className="jobs-data-note">Vị trí và thu nhập minh họa, chưa phải thông báo tuyển dụng.</p>}
