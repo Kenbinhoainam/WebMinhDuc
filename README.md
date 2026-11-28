@@ -6,6 +6,8 @@ GitHub quản lý yêu cầu, mã nguồn, QA và bàn giao của dự án Minh 
 
 ## Bắt đầu
 
+**[Codex → Antigravity Handoff](docs/handover/CODEX-TO-ANTIGRAVITY.md)** — trạng thái, SHA, kiểm thử và việc tiếp theo, độc lập với lịch sử chat.
+
 - [Docs Hub](docs/README.md) · [Onboarding trong 5 bước](docs/00-start-here/README.md) · [Cách đóng góp](CONTRIBUTING.md)
 - [GitHub audit](GITHUB-AUDIT.md) · [Pages deployment audit](DEPLOYMENT-AUDIT.md) · [Version inventory](VERSION-INVENTORY.md) · [Rủi ro/phụ thuộc](RISKS-AND-DEPENDENCIES.md)
 - [Master Requirements MDV2 v0.1 DRAFT](docs/requirements/master-requirements.md) · [Requirements Register](docs/requirements/requirements-register.md) · [Decision Log](docs/decisions/decision-log.md)

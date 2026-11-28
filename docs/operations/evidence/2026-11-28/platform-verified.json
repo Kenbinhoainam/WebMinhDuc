@@ -1,5 +1,5 @@
 {
-  "observed_at_utc": "2026-11-28T04:34:52.599358+00:00",
+  "observed_at_utc": "2026-11-28T04:43:41.010829+00:00",
   "repository": "Kenbinhoainam/WebMinhDuc",
   "endpoints": {
     "pages": {
@@ -281,9 +281,9 @@
   },
   "projects": {
     "status": "TOKEN_VISIBLE_ONLY",
-    "matching_master_count": 0,
+    "matching_control_project_count": 0,
     "has_next_page": false,
-    "public_master_urls": [],
+    "public_control_project_urls": [],
     "limitation": "An empty token-visible list does not establish absence. Never create before owner-authorized enumeration."
   }
 }

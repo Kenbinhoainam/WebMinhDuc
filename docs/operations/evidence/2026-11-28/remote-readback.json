@@ -1,0 +1,579 @@
+{
+  "repository": "Kenbinhoainam/WebMinhDuc",
+  "branch": "chore/8-github-control-center",
+  "read_commit": "7163e01f3410cdb7896295a2126bb57d998ea365",
+  "date": "2026-11-28",
+  "method": "Authenticated GitHub fetch_file at immutable commit; exact full UTF-8 content comparison to intended payload, plus remote Git tree diff against 19ac2b3",
+  "result": "IMPLEMENTED_AND_VERIFIED",
+  "files": [
+    {
+      "path": ".github/workflows/governance-ci.yml",
+      "blob_sha": "c39efe12db05c6e2b522a79fe4c9c5f6c086ab28",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4987
+    },
+    {
+      "path": "scripts/governance/audit-live.py",
+      "blob_sha": "eb6ab137d63c48761726d026922b367ec45ed884",
+      "readable": true,
+      "exact_match": true,
+      "characters": 7451
+    },
+    {
+      "path": "scripts/governance/audit-platform.py",
+      "blob_sha": "7ba154c056609d9d63f0567627b2ee59a9e7e168",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5379
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "blob_sha": "888a2124bb28faabcd5e8fd4fc058e1a9266c448",
+      "readable": true,
+      "exact_match": true,
+      "characters": 223
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "blob_sha": "781962fb3fb34d66e6bc2c906f2d23fb9a85e667",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1402
+    },
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "9b1794f6a7c90399f2a2aedc799d8ceffae9de71",
+      "readable": true,
+      "exact_match": true,
+      "characters": 10732
+    },
+    {
+      "path": "CLAUDE.md",
+      "blob_sha": "90d7dd504348309424a5f1daca9b33c798880f54",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2167
+    },
+    {
+      "path": "GEMINI.md",
+      "blob_sha": "4f62d91b5b5b04178ba34056b1529bf87b9f15ef",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4141
+    },
+    {
+      "path": "docs/README.md",
+      "blob_sha": "040dec4d80bb5920783b87c9b22c46320b74f698",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2215
+    },
+    {
+      "path": "docs/acceptance/acceptance-baseline.md",
+      "blob_sha": "646af963b34a29fbf311162a0bf52a6441618e73",
+      "readable": true,
+      "exact_match": true,
+      "characters": 8021
+    },
+    {
+      "path": "docs/ai/multi-agent-protocol.md",
+      "blob_sha": "c887cdf040f73cf4e20fbd51992d534d3e01ff97",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3452
+    },
+    {
+      "path": "docs/architecture/architecture-status.md",
+      "blob_sha": "37e747090ba55d0381e80c8afd718a7f66a2274c",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1957
+    },
+    {
+      "path": "docs/decisions/decision-log.md",
+      "blob_sha": "fe471e43324d9ef1419424d5d9a3983737fee6ec",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4810
+    },
+    {
+      "path": "docs/governance/github-operations-policy.md",
+      "blob_sha": "16a1790d7b99ecb15e3d5ecfc425a96b3eb265d2",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5966
+    },
+    {
+      "path": "docs/governance/migration-inventory.md",
+      "blob_sha": "1f18f6fa1064c064cfdf347f19d1bafed031ac94",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3865
+    },
+    {
+      "path": "docs/governance/project-charter.md",
+      "blob_sha": "6e612389ade78cf544e8d961d1b4958041dd3eac",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3047
+    },
+    {
+      "path": "docs/governance/source-of-truth.md",
+      "blob_sha": "9dd15eec5787ba0fe24477dc425337343f1458df",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4019
+    },
+    {
+      "path": "docs/handover/handover-checklist.md",
+      "blob_sha": "905bbe9034155c4f09cbc06a7cca172f6ed62594",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2062
+    },
+    {
+      "path": "docs/requirements/master-requirements.md",
+      "blob_sha": "7a2f34be7173fb3e50bb3d870ca3f318c0fb6f21",
+      "readable": true,
+      "exact_match": true,
+      "characters": 8022
+    },
+    {
+      "path": "docs/requirements/requirements-register.md",
+      "blob_sha": "4798e2119db3d03af2ca91d9489d7f7584632d14",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5650
+    },
+    {
+      "path": "docs/specifications/functional/MDV2-FUNC-01.md",
+      "blob_sha": "6ea4de4ba134c10ef10965f780d3134f15436eed",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3120
+    },
+    {
+      "path": "docs/specifications/technical/MDV2-TECH-01.md",
+      "blob_sha": "2c753a27d1b443660f1b11ef9d447e2ff6243e80",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2238
+    },
+    {
+      "path": "docs/specifications/ui-ux/MDV2-UX-01.md",
+      "blob_sha": "a2c9f3dcd1c5b8231db8c5cf1be0a95aaf156e93",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3563
+    },
+    {
+      "path": "docs/sprints/sprint-status.md",
+      "blob_sha": "66f15319fadc9de08955ac2d1a3cd556532fb639",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1166
+    },
+    {
+      "path": "docs/traceability/traceability-index.md",
+      "blob_sha": "5b3d0a8f443a634b0c930641b3591de450c23e89",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2724
+    },
+    {
+      "path": "docs/versions/code-location-register.md",
+      "blob_sha": "b5e7bb7c039dace5b404bb2333a507c7a7709f92",
+      "readable": true,
+      "exact_match": true,
+      "characters": 615
+    },
+    {
+      "path": "OPENCODE.md",
+      "blob_sha": "7444a64c7e7f6041e04d12d0e0b16a9bf4f9d7b8",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1500
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "e0c0b458f1607114de11f9e86014fb10a52cfd93",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2696
+    },
+    {
+      "path": "docs/00-start-here/README.md",
+      "blob_sha": "c6b2f62866ec650af8a5b080bbb1fc1caad0579a",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1089
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "blob_sha": "c0544ea6ec5a520b35ec2fdbdde614e932a394c7",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2209
+    },
+    {
+      "path": "CHANGELOG.md",
+      "blob_sha": "6c65f9af5c90cf8f59e118e52014c430a3d05e23",
+      "readable": true,
+      "exact_match": true,
+      "characters": 713
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/requirement.yml",
+      "blob_sha": "b870dc825c7141bdf1e265870d2a4755fc872cd9",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3460
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature.yml",
+      "blob_sha": "87b753994fd3c49b6f4ce1fe026287dcdc9bb829",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3438
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "blob_sha": "0e2ea694797b0e8a027f4fe5293bfd80735e16d5",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3434
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/technical-task.yml",
+      "blob_sha": "569efbe85170f0610659c81877808e3d7b4b478f",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3435
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/documentation.yml",
+      "blob_sha": "ab9225a496ec4f7114c246c8c13ab1c379a6cdfe",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3438
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/sdd-design-decision.yml",
+      "blob_sha": "a47e01b5ec0b4f61c865acfefa884dcb8e14c6e6",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3467
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/qa-uat.yml",
+      "blob_sha": "c2991b71bdfdd15e08001aa06dc2783992e5a740",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3425
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/change-request.yml",
+      "blob_sha": "4ec8a67d50406804276929680296752164ccf29e",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3483
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "blob_sha": "0e48cfcf13d1ea1e7a69f79622978520cb397713",
+      "readable": true,
+      "exact_match": true,
+      "characters": 315
+    },
+    {
+      "path": ".github/labels.json",
+      "blob_sha": "7d7f900b897c86047f489555842ae1ef103a3acf",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1082
+    },
+    {
+      "path": "scripts/governance/configure-labels.py",
+      "blob_sha": "9404643aacb3f347f2b75c33a87f9bdc0eb95714",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1291
+    },
+    {
+      "path": ".github/workflows/governance-labels.yml",
+      "blob_sha": "4c0a77e87c4ad10349e93198b2033ef308cdeea9",
+      "readable": true,
+      "exact_match": true,
+      "characters": 831
+    },
+    {
+      "path": "docs/architecture/github-control-plane.md",
+      "blob_sha": "82bd22c25fe93408a64214c564649184e7262477",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1823
+    },
+    {
+      "path": "docs/governance/project-control-center.md",
+      "blob_sha": "96fee2ec24e4150513995ea80a4bc4dd0b3347fe",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5554
+    },
+    {
+      "path": "docs/governance/protection-plan.md",
+      "blob_sha": "20d960e0ca5ed19ad42d993d7d8744c54e5c654c",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2682
+    },
+    {
+      "path": "docs/governance/privacy-boundaries.md",
+      "blob_sha": "a2ba86e8f5f0eea76c149bca199f2ace3858f50c",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1344
+    },
+    {
+      "path": "docs/governance/path-migration-map.md",
+      "blob_sha": "ee8019d567125d80bcd1493ed5e908afe7a56e87",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2529
+    },
+    {
+      "path": "docs/archive/README.md",
+      "blob_sha": "268052da15d1eb4889336c6102d3a9de6440a1fa",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1229
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/inventory.json",
+      "blob_sha": "94c6cc0d9a935e81963f31d8e6104462f34f41fa",
+      "readable": true,
+      "exact_match": true,
+      "characters": 356119
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/pages-http-initial.json",
+      "blob_sha": "127bd2ad1d29308e52b4c25dedd4bd0ed1ee16f2",
+      "readable": true,
+      "exact_match": true,
+      "characters": 15240
+    },
+    {
+      "path": "GITHUB-AUDIT.md",
+      "blob_sha": "def4e88784934d2d68bc103a3320014a8e16320b",
+      "readable": true,
+      "exact_match": true,
+      "characters": 8573
+    },
+    {
+      "path": "DEPLOYMENT-AUDIT.md",
+      "blob_sha": "128b3548fe868137d93a41008fdd8c52dc3d2b27",
+      "readable": true,
+      "exact_match": true,
+      "characters": 6104
+    },
+    {
+      "path": "VERSION-INVENTORY.md",
+      "blob_sha": "52b3854645a529f0768584b4b6125b6e02bcfe33",
+      "readable": true,
+      "exact_match": true,
+      "characters": 8236
+    },
+    {
+      "path": "RISKS-AND-DEPENDENCIES.md",
+      "blob_sha": "2d4743148048a08b693738ac9949f378bb3a3cf6",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4372
+    },
+    {
+      "path": "docs/operations/pages-migration-plan.md",
+      "blob_sha": "5c4404df4617041d78d87d97bc8aaccc9beecc0c",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3897
+    },
+    {
+      "path": "docs/releases/README.md",
+      "blob_sha": "5e5f20acc21649c0b6f8d1143e161e2fd997a912",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2144
+    },
+    {
+      "path": "docs/releases/manifest.schema.json",
+      "blob_sha": "320036119698b814d53fa9fc2fc8bd6319cdac2a",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3836
+    },
+    {
+      "path": "docs/releases/manifest.template.json",
+      "blob_sha": "06b13207be57f744d0138698ac95efacf532781d",
+      "readable": true,
+      "exact_match": true,
+      "characters": 474
+    },
+    {
+      "path": "docs/operations/ci-and-qa.md",
+      "blob_sha": "8e56d23fc7e7691699c231196e630cc243a817d2",
+      "readable": true,
+      "exact_match": true,
+      "characters": 4180
+    },
+    {
+      "path": "docs/operations/HANDOFF.md",
+      "blob_sha": "5f5549f5cc2f60d8244599db897a9327639bc0d8",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5299
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/platform-summary.json",
+      "blob_sha": "2d7981cd38f0095a533376b2bf1d6d0f7477c21f",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1042
+    },
+    {
+      "path": "scripts/governance/check-docs.py",
+      "blob_sha": "8b7f0d34dc472af7ac63f04e53c982c3f9cd6807",
+      "readable": true,
+      "exact_match": true,
+      "characters": 3028
+    },
+    {
+      "path": "scripts/governance/browser-smoke.py",
+      "blob_sha": "323a48f20bb8dbd1ada10d298ac606dc82834bae",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5282
+    },
+    {
+      "path": "scripts/governance/scope-and-changes.py",
+      "blob_sha": "2353d4c7a920dc8a61ab34aaba3b35b1d4352b40",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2401
+    },
+    {
+      "path": "docs/governance/managed-files.json",
+      "blob_sha": "718a0274951a69d0030b86b477d72edb3cff24a7",
+      "readable": true,
+      "exact_match": true,
+      "characters": 2780
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/pages-http-verified.json",
+      "blob_sha": "995e5f9640fd0fb6ffcd9fe726180270c2ba570f",
+      "readable": true,
+      "exact_match": true,
+      "characters": 32105
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/platform-verified.json",
+      "blob_sha": "b5f98eeec2c1e9bb0f872badbf821cdc3727336b",
+      "readable": true,
+      "exact_match": true,
+      "characters": 8041
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/browser-smoke-initial.json",
+      "blob_sha": "a418c3b1fae9e27a468f7dee1725731147110d05",
+      "readable": true,
+      "exact_match": true,
+      "characters": 5408
+    },
+    {
+      "path": "docs/operations/evidence/2026-11-28/validation.json",
+      "blob_sha": "fb00d5cd2f507926d7be023c53adcceae50ec833",
+      "readable": true,
+      "exact_match": true,
+      "characters": 1544
+    }
+  ],
+  "tree_preservation": {
+    "base": "19ac2b365f2264399fde4312639127b8de80736f",
+    "head": "7163e01f3410cdb7896295a2126bb57d998ea365",
+    "changes": [
+      "AGENTS.md",
+      "README.md",
+      ".github/CODEOWNERS",
+      ".github/ISSUE_TEMPLATE/bug.yml",
+      ".github/ISSUE_TEMPLATE/change-request.yml",
+      ".github/ISSUE_TEMPLATE/config.yml",
+      ".github/ISSUE_TEMPLATE/documentation.yml",
+      ".github/ISSUE_TEMPLATE/feature.yml",
+      ".github/ISSUE_TEMPLATE/qa-uat.yml",
+      ".github/ISSUE_TEMPLATE/requirement.yml",
+      ".github/ISSUE_TEMPLATE/sdd-design-decision.yml",
+      ".github/ISSUE_TEMPLATE/technical-task.yml",
+      ".github/labels.json",
+      ".github/pull_request_template.md",
+      ".github/workflows/governance-ci.yml",
+      ".github/workflows/governance-labels.yml",
+      "CHANGELOG.md",
+      "CLAUDE.md",
+      "CONTRIBUTING.md",
+      "DEPLOYMENT-AUDIT.md",
+      "GEMINI.md",
+      "GITHUB-AUDIT.md",
+      "OPENCODE.md",
+      "RISKS-AND-DEPENDENCIES.md",
+      "VERSION-INVENTORY.md",
+      "docs/00-start-here/README.md",
+      "docs/README.md",
+      "docs/acceptance/acceptance-baseline.md",
+      "docs/ai/multi-agent-protocol.md",
+      "docs/architecture/architecture-status.md",
+      "docs/architecture/github-control-plane.md",
+      "docs/archive/README.md",
+      "docs/decisions/decision-log.md",
+      "docs/governance/github-operations-policy.md",
+      "docs/governance/managed-files.json",
+      "docs/governance/migration-inventory.md",
+      "docs/governance/path-migration-map.md",
+      "docs/governance/privacy-boundaries.md",
+      "docs/governance/project-charter.md",
+      "docs/governance/project-control-center.md",
+      "docs/governance/protection-plan.md",
+      "docs/governance/source-of-truth.md",
+      "docs/handover/handover-checklist.md",
+      "docs/operations/HANDOFF.md",
+      "docs/operations/ci-and-qa.md",
+      "docs/operations/evidence/2026-11-28/browser-smoke-initial.json",
+      "docs/operations/evidence/2026-11-28/inventory.json",
+      "docs/operations/evidence/2026-11-28/pages-http-initial.json",
+      "docs/operations/evidence/2026-11-28/pages-http-verified.json",
+      "docs/operations/evidence/2026-11-28/platform-summary.json",
+      "docs/operations/evidence/2026-11-28/platform-verified.json",
+      "docs/operations/evidence/2026-11-28/validation.json",
+      "docs/operations/pages-migration-plan.md",
+      "docs/releases/README.md",
+      "docs/releases/manifest.schema.json",
+      "docs/releases/manifest.template.json",
+      "docs/requirements/master-requirements.md",
+      "docs/requirements/requirements-register.md",
+      "docs/specifications/functional/MDV2-FUNC-01.md",
+      "docs/specifications/technical/MDV2-TECH-01.md",
+      "docs/specifications/ui-ux/MDV2-UX-01.md",
+      "docs/sprints/sprint-status.md",
+      "docs/traceability/traceability-index.md",
+      "docs/versions/code-location-register.md",
+      "scripts/governance/audit-live.py",
+      "scripts/governance/audit-platform.py",
+      "scripts/governance/browser-smoke.py",
+      "scripts/governance/check-docs.py",
+      "scripts/governance/configure-labels.py",
+      "scripts/governance/scope-and-changes.py"
+    ],
+    "unexpected": []
+  },
+  "scope": "All 70 files at implementation checkpoint. Later handoff/evidence-only commit is verified separately against its actual SHA and documented in PR #9 / Issue #8 to avoid a self-referential commit hash.",
+  "latest_delivery_record": "https://github.com/Kenbinhoainam/WebMinhDuc/pull/9"
+}

@@ -1,6 +1,6 @@
 # MinhDucWeb V2 — Docs Hub
 
-Document baseline: MDV2 v0.1 DRAFT, chưa phải yêu cầu production được duyệt. [Bắt đầu trong 5 bước](00-start-here/README.md). [Hướng dẫn bàn giao đợt này](operations/HANDOFF.md).
+Document baseline: MDV2 v0.1 DRAFT, chưa phải yêu cầu production được duyệt. [Bắt đầu trong 5 bước](00-start-here/README.md). [Hướng dẫn bàn giao đợt này](operations/HANDOFF.md). **[Codex → Antigravity Handoff](handover/CODEX-TO-ANTIGRAVITY.md)** là điểm bắt đầu cho AI mới.
 
 | Cần tìm | Tài liệu gốc |
 |---|---|

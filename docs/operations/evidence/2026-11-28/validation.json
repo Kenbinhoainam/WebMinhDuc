@@ -63,7 +63,7 @@
       "Artifact-only change detection omitted",
       "Reload response and failed JS/CSS requests omitted from smoke assertions"
     ],
-    "resolution": "Fixed in following commit; rerun evidence to follow"
+    "resolution": "Resolved at 7163e01f3410cdb7896295a2126bb57d998ea365; independent read-only reviewer confirmed code and both run logs. No remaining material finding in the requested harness-fix scope; not PO approval."
   },
   "not_tested": [
     "physical devices",
@@ -71,5 +71,64 @@
     "production backend/security",
     "Sites v10 HTTP byte comparison",
     "production rollback"
-  ]
+  ],
+  "followup_validation": {
+    "head_sha": "7163e01f3410cdb7896295a2126bb57d998ea365",
+    "push": {
+      "run": 46108858565,
+      "conclusion": "success",
+      "passed_jobs": [
+        "Governance contracts",
+        "Pages HTTP provenance",
+        "Read platform metadata",
+        "Preserved artifact browser smoke"
+      ],
+      "skipped_jobs": [
+        "Source build and contracts",
+        "Production dependency audit"
+      ]
+    },
+    "pull_request": {
+      "run": 46108863352,
+      "head_sha": "7163e01f3410cdb7896295a2126bb57d998ea365",
+      "checked_synthetic_merge_sha": "8b39daeac033f977b5e40a14d289bee696f652c2",
+      "conclusion": "success",
+      "passed_jobs": [
+        "Governance contracts",
+        "Preserved artifact browser smoke"
+      ],
+      "skipped_jobs": [
+        "Pages HTTP provenance",
+        "Read platform metadata",
+        "Source build and contracts",
+        "Production dependency audit"
+      ]
+    },
+    "governance": {
+      "managed_files": 70,
+      "issue_forms": 8,
+      "errors": []
+    },
+    "browser": {
+      "cases_per_run": 15,
+      "interactive_before_and_after_reload": true,
+      "all_goto_and_reload_http_status": 200,
+      "page_errors": 0,
+      "failed_js_css": 0,
+      "failed_requests": 0,
+      "axe_diagnostics": 0,
+      "overflow_observed": 0,
+      "scope": "Chromium local jobs routes, five locales, three widths, preserved artifact 19ac2b3"
+    },
+    "skipped_reason": "No application source/dependency change since passing full checkpoint 901e8e9; PR events omit operational metadata/live audit by design.",
+    "failed_harness_history": {
+      "head_sha": "53d616b4ddf6500cc5fd77385d4318450591a722",
+      "runs": [
+        46108581135,
+        46108584680
+      ],
+      "cause": "Immediate reload aborted in-flight locale imports before hydration",
+      "fix": "Wait network idle and verify real locale selector interaction before and after reload, preserving request-failure assertions"
+    }
+  }
 }

@@ -7,3 +7,5 @@
 5. Mở/cập nhật Draft PR và Issue: SHA, test/log, preview mapping, blocker, người xử lý tiếp. Chỉ PO quyết định merge/release; không tự đánh Done.
 
 Đọc source ở `src/`, tests ở `tests/`; không sửa generated root HTML thay cho source. Sprint 2 tiếp tục [PR #3](https://github.com/Kenbinhoainam/WebMinhDuc/pull/3) và [Issue #7](https://github.com/Kenbinhoainam/WebMinhDuc/issues/7).
+
+Nếu tiếp quản từ Codex, bắt đầu bằng [Codex → Antigravity Handoff](../handover/CODEX-TO-ANTIGRAVITY.md) để biết exact baseline, quyền hạn và backlog còn mở.
