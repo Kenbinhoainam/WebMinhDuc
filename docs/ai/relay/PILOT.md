@@ -4,11 +4,34 @@ Theo dõi tại [Issue #10](https://github.com/Kenbinhoainam/WebMinhDuc/issues/1
 
 ## Đề bài chạy với provider thật
 
-1. **Codex → Antigravity.** Mở checkpoint hiện hành từ Issue. Trong Antigravity, mở một worktree riêng từ full SHA. Đọc nguồn/Issue/PR, chạy validator với GitHub remote. Ghi receipt gồm runtime/version, SHA, files đã đọc, owner/alias và quyền xác nhận với coordinator. Kiểm diff trước khi chỉnh.
+1. **Codex → Antigravity.** Đọc Issue, PR và nguồn được checkpoint trỏ đến. Dùng checkout riêng gắn với nhánh như hướng dẫn bên dưới, rồi mở thư mục gốc trong Antigravity. Sau khi validator đạt, ghi receipt gồm runtime/version, SHA, file đã đọc, owner/alias và quyền xác nhận với coordinator. Kiểm diff trước khi chỉnh.
 2. **Antigravity → Claude Code hoặc Gemini CLI.** Agent Antigravity chỉ sở hữu `docs/ai/relay/pilot/antigravity.md` cho một receipt đã lọc. Commit, push và verify SHA. Cập nhật PR/Issue với checkpoint và nhả quyền ghi. Không sửa tệp của sender. Nếu HEAD đã dịch chuyển, đánh giá trước khi edit.
-3. **Agent thứ ba.** Từ worktree riêng, mở Issue/receipt/checkpoint mới nhất. Xác minh cả hai SHA trước còn trong lịch sử, diff đúng phạm vi, và thử checkpoint cũ phải bị từ chối vì stale. Chạy kiểm tra hợp lệ. Nếu được giao chỉnh record, chỉ dùng `docs/ai/relay/pilot/third-agent.md`; nếu chỉ đọc, ghi receipt trên PR. Giữ Issue mở tới khi PO/reviewer kiểm đủ AC.
+3. **Agent thứ ba.** Dùng checkout riêng gắn với nhánh và đọc lại Issue/receipt/checkpoint mới nhất. Xác minh cả hai SHA trước còn trong lịch sử, diff đúng phạm vi, và thử checkpoint cũ phải bị từ chối vì stale. Chạy kiểm tra hợp lệ. Nếu được giao chỉnh record, chỉ dùng `docs/ai/relay/pilot/third-agent.md`; nếu chỉ đọc, ghi receipt trên PR. Giữ Issue mở tới khi PO/reviewer kiểm đủ AC.
 
 PO điều phối quyền ghi và checkpoint giữa các chặng. Cả ba lưu evidence lên GitHub. Nếu runtime hoặc quyền thiếu, ghi BLOCKED_PROVIDER/BLOCKED_PERMISSION. Kết quả kỹ thuật chạy bằng Codex/worktree cần phân biệt với provider thật.
+
+## Mở checkout cho agent tiếp theo
+
+Mở **checkpoint hiện hành** từ Issue #10. Lưu phần JSON của comment vào `/tmp/mdv2-relay-checkpoint.json`, bỏ hai dòng dấu code fence. Mở link `ownership.receipt` trong JSON để lấy full SHA bắt đầu chặng trước. Dùng giá trị từ receipt riêng cho `STAGE_FROM_RECEIPT`.
+
+Ví dụ Bash khi checkpoint vẫn dùng nhánh `chore/10-agent-relay`. Chạy từ thư mục cha trống hoặc chọn tên thư mục mới.
+
+```sh
+git clone --single-branch --branch chore/10-agent-relay https://github.com/Kenbinhoainam/WebMinhDuc.git WebMinhDuc-relay
+cd WebMinhDuc-relay
+git ls-remote --exit-code origin refs/heads/chore/10-agent-relay
+git status --short --branch
+```
+
+So SHA remote với `head_sha` và xác nhận checkout sạch. Nếu checkpoint trỏ nhánh kế thừa, dùng tên nhánh đó sau khi đối chiếu Issue và PR. Checkout trực tiếp bằng SHA có thể vào detached HEAD. Validator chỉ chấp nhận nhánh đã gắn khi chạy `--remote`.
+
+```sh
+# Thay giá trị bằng full SHA đọc từ ownership receipt.
+STAGE_FROM_RECEIPT='SHA_DA_DOC_TU_RECEIPT'
+python3 scripts/governance/check-relay.py /tmp/mdv2-relay-checkpoint.json --remote --expect-stage "$STAGE_FROM_RECEIPT"
+```
+
+Nếu thấy `STALE_CHECKPOINT`, kiểm lại Issue và lịch sử trước khi edit. Nếu checkpoint vẫn `BLOCKED`, ghi cách blocker đã được xử lý và xin xác nhận quyền ghi từ coordinator trước khi sửa file được phân công.
 
 ## Kết quả ngày 28/11/2026
 
