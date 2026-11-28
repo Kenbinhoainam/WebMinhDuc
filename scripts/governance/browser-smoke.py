@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import time
 import urllib.request
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 
 root = Path.cwd()
 out = Path("/tmp/mdv2-browser")
@@ -41,13 +41,25 @@ try:
                         if response.status >= 400 and response.request.resource_type in ("script", "stylesheet") else None)
                 page.on("requestfailed", lambda request: failed_requests.append({"url": request.url, "failure": request.failure})
                         if request.resource_type in ("script", "stylesheet") else None)
+                def wait_until_interactive():
+                    # load can finish before the app's awaited locale import and hydration.
+                    page.wait_for_load_state("networkidle", timeout=20000)
+                    trigger = page.locator(".language-trigger")
+                    expect(trigger).to_have_attribute("data-locale", locale.rstrip("/") or "vi")
+                    trigger.click()
+                    expect(trigger).to_have_attribute("aria-expanded", "true")
+                    page.keyboard.press("Escape")
+                    expect(trigger).to_have_attribute("aria-expanded", "false")
                 response = page.goto(base + locale + "jobs/", wait_until="load", timeout=45000)
+                wait_until_interactive()
                 reload_response = page.reload(wait_until="load")
+                wait_until_interactive()
                 page.locator("main").first.wait_for()
                 page.add_script_tag(path="/tmp/mdv2-audit-tools/node_modules/axe-core/axe.min.js")
                 violations = page.evaluate("async () => (await axe.run(document, {runOnly: {type: 'tag', values: ['wcag2a','wcag2aa']}})).violations.map(v => ({id:v.id,impact:v.impact,nodes:v.nodes.length,help:v.help}))")
                 metrics = page.evaluate("({width:innerWidth,documentWidth:document.documentElement.scrollWidth,mainCount:document.querySelectorAll('main').length,noindex:document.querySelector('meta[name=robots]')?.content})")
                 case = {"locale": locale or "vi", "width": width, "status": response.status if response else None,
+                        "interactive_before_and_after_reload": True,
                         "reload_status": reload_response.status if reload_response else None,
                         "direct_and_reload": bool(response and reload_response and response.status == 200 and reload_response.status == 200), "metrics": metrics, "page_errors": errors,
                         "failed_js_css": failed_assets, "failed_requests": failed_requests, "axe_violations": violations}
