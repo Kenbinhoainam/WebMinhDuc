@@ -1,0 +1,96 @@
+name: Governance CI
+on:
+  push:
+    branches: [chore/8-github-control-center]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: governance-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source:
+    name: Source build and contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.15.0
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - name: Source contract suites (not browser certification)
+        run: |
+          npm test
+          npm run test:catalog
+          npm run test:seo
+          npm run test:sprint
+          npm run test:review
+          npm run test:hydration
+          npm run test:sitemap
+          npm run test:header
+          npm run test:motion
+          npm run test:hero
+      - name: i18n findings (diagnostic)
+        if: always()
+        run: npm run audit:i18n
+      - name: Confirm tracked files were not rewritten
+        run: git diff --exit-code
+  dependencies:
+    name: Production dependency audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.15.0
+      - run: npm audit --omit=dev --audit-level=high
+  live-audit:
+    name: Pages HTTP provenance
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - run: python3 scripts/governance/audit-live.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: pages-http-evidence
+          path: /tmp/mdv2-pages-http.json
+          retention-days: 14
+  metadata:
+    name: Read platform metadata
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      actions: read
+      pages: read
+      issues: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Read-only settings inventory
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/governance/audit-platform.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: platform-metadata-evidence
+          path: /tmp/mdv2-platform.json
+          retention-days: 14
