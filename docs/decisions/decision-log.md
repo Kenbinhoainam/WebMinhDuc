@@ -41,3 +41,8 @@ For each open item add in a new reviewed commit/PR: proposed options, evidence/s
 
 - GOV-20261128-04: PO authorized GitHub audit, safe docs/config, test, commit/push and Draft PR; merge/default-branch changes/deletion/production publishing remain gated. Tracked by Issue #8.
 - GOV-20261128-05: PO changed the desired primary Project name to **MinhDucWeb — Master Control**. Reuse/rename an existing master when authorized enumeration proves its identity; do not create duplicates. Account Project mutation remains blocked by available capabilities.
+
+## Proposed owner-selected production stack — 28/11/2026 (NOT APPROVED BASELINE)
+
+- **KT-20261128-01 (Candidate):** Project Owner selected KT01=A Next.js+TypeScript, **KT02=A Spring Boot (explicitly supersedes earlier KT02=B NestJS)**, KT03=A custom CMS, KT04=A PostgreSQL, KT05=A defer search/cache until demonstrated need, KT06=A self-managed VPS/Cloud. [ADR-0001](ADR-0001-production-tech-stack-candidate.md) and [Impact Assessment](../architecture/KT01-KT06-impact-assessment.md); tracked in [Issue #16](https://github.com/Kenbinhoainam/WebMinhDuc/issues/16).
+- This records a **preferred stack selection** but does **not** approve the final production architecture, commercial scope, migration of React/Vite prototype, new production code or a deployment. Sprint 1 O10, MDV2-DEC-002/005/010 and implementation-level design choices remain pending for separately reviewed PO approval.
