@@ -10,8 +10,37 @@ concurrency:
   group: governance-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  governance:
+    name: Governance contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      source: ${{ steps.scope.outputs.source }}
+      browser: ${{ steps.scope.outputs.browser }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Preserve application and choose checks
+        id: scope
+        env:
+          WORK_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: python3 scripts/governance/scope-and-changes.py
+      - run: python3 scripts/governance/check-docs.py
+      - name: Check Python syntax without executing setup scripts
+        run: |
+          python3 - <<'PY'
+          import ast
+          from pathlib import Path
+          for path in Path("scripts/governance").glob("*.py"):
+              ast.parse(path.read_text(), filename=str(path))
+          print("Governance Python syntax OK")
+          PY
   source:
     name: Source build and contracts
+    needs: governance
+    if: needs.governance.outputs.source == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -43,6 +72,8 @@ jobs:
         run: git diff --exit-code
   dependencies:
     name: Production dependency audit
+    needs: governance
+    if: needs.governance.outputs.source == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -93,4 +124,26 @@ jobs:
         with:
           name: platform-metadata-evidence
           path: /tmp/mdv2-platform.json
+          retention-days: 14
+  browser:
+    name: Preserved artifact browser smoke
+    needs: governance
+    if: needs.governance.outputs.browser == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install isolated audit tools
+        run: |
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
+          npm install --prefix /tmp/mdv2-audit-tools --no-save --no-package-lock axe-core@4.10.3
+      - run: python3 scripts/governance/browser-smoke.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: preserved-artifact-browser-smoke
+          path: /tmp/mdv2-browser
           retention-days: 14

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT",
+  "version": null,
+  "source_commit": null,
+  "pr": null,
+  "built_at": null,
+  "environment": null,
+  "url": null,
+  "artifact": {
+    "sha256": null,
+    "name": null,
+    "toolchain": null
+  },
+  "deployment_id": null,
+  "qa": {
+    "summary": null,
+    "evidence": [],
+    "not_tested": []
+  },
+  "approval": null,
+  "rollback": {
+    "previous_source_commit": null,
+    "artifact_sha256": null,
+    "procedure": null
+  }
+}

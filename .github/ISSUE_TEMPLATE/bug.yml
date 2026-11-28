@@ -1,0 +1,122 @@
+{
+  "name": "Bug",
+  "description": "Lỗi tái hiện được: expected/actual, bản build, bước tái hiện.",
+  "title": "[Bug] ",
+  "labels": [
+    "bug"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Chỉ nhập dữ liệu được phép công khai. Không dán secrets, hồ sơ ứng viên hoặc nguồn khách hàng restricted. MDV2 DRAFT không phải production approval."
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "goal",
+      "attributes": {
+        "label": "Mục tiêu",
+        "description": "Lỗi tái hiện được: expected/actual, bản build, bước tái hiện."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "authority",
+      "attributes": {
+        "label": "Nguồn yêu cầu và Requirement / SDD ID",
+        "description": "Nguồn/version, Requirement ID, SDD/ADR/AC IDs và bằng chứng phê duyệt đúng phạm vi."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "scope",
+      "attributes": {
+        "label": "Phạm vi được phép và loại trừ",
+        "description": "Các file/thành phần được sửa; việc không thuộc scope; thay đổi cần PO duyệt."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "inputs",
+      "attributes": {
+        "label": "Tài liệu đầu vào và source baseline",
+        "description": "Link tài liệu được phép truy cập; repository, branch, full base SHA; không dùng HEAD không xác minh."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "acceptance",
+      "attributes": {
+        "label": "Acceptance Criteria",
+        "description": "Kết quả quan sát được; case IDs, expected/actual, locale/device/negative cases theo phạm vi."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "tests",
+      "attributes": {
+        "label": "Test và bằng chứng",
+        "description": "Commands, môi trường, build SHA; Pass/Fail/Blocked/Not Run; ảnh/video/trace đã lọc private data."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "dependencies",
+      "attributes": {
+        "label": "Phụ thuộc, blocker, owner / assigned agent",
+        "description": "Issue/PR phụ thuộc; blocker/risk; người phụ trách và quyền sở hữu file."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "checkboxes",
+      "id": "done",
+      "attributes": {
+        "label": "Definition of Done",
+        "options": [
+          {
+            "label": "Mọi thay đổi có chủ đích đã commit/push đúng GitHub và xác minh remote SHA."
+          },
+          {
+            "label": "PR liên kết Requirement/SDD và có test thực tế, regression cùng privacy review."
+          },
+          {
+            "label": "Reviewer kiểm chứng AC; PO/UAT phê duyệt khi áp dụng; blocker còn mở được nêu rõ."
+          },
+          {
+            "label": "Không tự merge, deploy production hoặc đánh Done chỉ theo lời agent."
+          }
+        ]
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "handoff",
+      "attributes": {
+        "label": "Bàn giao",
+        "description": "Branch, remote SHA, PR, deploy mapping nếu có, phần chưa kiểm và người xử lý tiếp."
+      }
+    }
+  ]
+}

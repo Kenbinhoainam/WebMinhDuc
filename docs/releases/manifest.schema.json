@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MDV2 release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "version",
+    "source_commit",
+    "pr",
+    "built_at",
+    "environment",
+    "url",
+    "artifact",
+    "deployment_id",
+    "qa",
+    "approval",
+    "rollback"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "APPROVED",
+        "DEPLOYED",
+        "ROLLED_BACK"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "pr": {
+      "type": "string",
+      "format": "uri"
+    },
+    "built_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "environment": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sha256",
+        "name",
+        "toolchain"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "toolchain": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "deployment_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "summary",
+        "evidence",
+        "not_tested"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "not_tested": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "approver": {
+          "type": "string",
+          "minLength": 1
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence": {
+          "type": "string",
+          "format": "uri"
+        },
+        "approved_source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      },
+      "required": [
+        "approver",
+        "at",
+        "evidence",
+        "approved_source_commit"
+      ]
+    },
+    "rollback": {
+      "type": "object",
+      "required": [
+        "previous_source_commit",
+        "artifact_sha256",
+        "procedure"
+      ],
+      "properties": {
+        "previous_source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "procedure": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "APPROVED",
+              "DEPLOYED",
+              "ROLLED_BACK"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "approval": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "DEPLOYED",
+              "ROLLED_BACK"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "deployment_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}
