@@ -12,6 +12,7 @@
 - Base branch + full SHA:
 - Work branch + pushed head SHA:
 - Preserved predecessors / related PRs:
+- Relay checkpoint link / status / next agent (when handing over):
 
 ## Verification
 - Actual commands, toolchain, exit status, CI run links:

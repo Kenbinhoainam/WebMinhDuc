@@ -29,11 +29,15 @@ for rel in managed:
             if not resolved.is_relative_to(ROOT) or not resolved.exists():
                 errors.append(rel + ": broken local link " + target)
 rule = "EVERY INTENTIONAL CODE OR DOCUMENT CHANGE MUST BE COMMITTED AND PUSHED TO AN AUTHORIZED GITHUB REPOSITORY."
-for provider in ["AGENTS.md", "GEMINI.md", "CLAUDE.md", "OPENCODE.md"]:
+shared = (ROOT / "AGENTS.md").read_text()
+for required in [rule, "BLOCKED_GITHUB_PUSH", "BLOCKED_PRIVACY"]:
+    if required not in shared:
+        errors.append("AGENTS.md: missing " + required)
+for provider in ["GEMINI.md", "CLAUDE.md", "OPENCODE.md"]:
     content = (ROOT / provider).read_text()
-    for required in [rule, "BLOCKED_GITHUB_PUSH", "BLOCKED_PRIVACY"]:
-        if required not in content:
-            errors.append(provider + ": missing " + required)
+    for target in ("AGENTS.md", "docs/ai/multi-agent-protocol.md"):
+        if f"]({target})" not in content:
+            errors.append(provider + ": missing shared entrypoint " + target)
 forms = sorted((ROOT / ".github/ISSUE_TEMPLATE").glob("*.yml"))
 issue_forms = [p for p in forms if p.name != "config.yml"]
 required_ids = {"goal", "authority", "scope", "inputs", "acceptance", "tests", "dependencies", "done", "handoff"}
@@ -52,6 +56,6 @@ if "v0.1.0-DRAFT" not in master or "NOT APPROVED PRODUCTION BASELINE" not in mas
     errors.append("Master requirements draft boundary lost")
 print(json.dumps({"managed_files": len(managed), "issue_forms": len(issue_forms),
                   "checks": ["local link targets (not anchors/external URLs)", "JSON/form structure",
-                             "provider policy parity", "draft requirement boundary"],
+                             "provider entrypoints and shared policy", "draft requirement boundary"],
                   "errors": errors}, ensure_ascii=False, indent=2))
 raise SystemExit(1 if errors else 0)

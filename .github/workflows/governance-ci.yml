@@ -28,6 +28,8 @@ jobs:
           WORK_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: python3 scripts/governance/scope-and-changes.py
       - run: python3 scripts/governance/check-docs.py
+      - name: Verify Relay checkpoint contract
+        run: python3 -B -m unittest discover -s scripts/governance -p test_relay.py
       - name: Check Python syntax without executing setup scripts
         run: |
           python3 - <<'PY'
