@@ -17,7 +17,7 @@
 ## Đề xuất luồng review
 
 1. **Sản phẩm** — giữ #12 là PR source reconciliation. Nhánh UI mới stack từ `848458ea60900ceebaa8f131550cbf8d2417f1bc` vào nhánh #12 để review đúng delta. Pin SDD/AC và dẫn evidence lịch sử #3. Nếu PO chọn tích hợp #12 sau đó, cập nhật target UI rồi rà lại ancestry, changes, test và Pages. Tránh tích hợp trùng các source đã mang sang từ #3.
-2. **Quản trị** — review #9 cùng các phần #4 đã kế thừa. Khi có quyết định tích hợp, xử lý #9 trước hoặc phối hợp stack #11, rồi kiểm lại patch #11 sau mọi squash/rebase/retarget. Gắn required checks sau khi đã chạy ổn định trên đúng target. CODEOWNERS chỉ có hiệu lực review khi rule tương ứng được duyệt và bật.
+2. **Quản trị** — review #9 cùng các phần #4 đã kế thừa. Khi có quyết định tích hợp, xử lý #9 trước hoặc phối hợp stack #11, rồi kiểm lại patch #11 sau mọi squash/rebase/retarget. Gắn required checks sau khi đã chạy ổn định trên đúng target. CODEOWNERS trên nhánh đích có thể tự yêu cầu owner review khi PR sẵn sàng. Muốn bắt buộc owner phê duyệt cần bật branch protection hoặc ruleset phù hợp.
 3. **Release** — tạo ứng viên build từ exact SHA đã review, kiểm checksum và preview đúng audience. Tách phê duyệt merge với chỉ định release. Luồng Pages branch-root có thể republish khi merge cả PR docs, nên chọn thời điểm/cách publish trước khi chấp thuận merge vào prototype.
 
 ## Các quyết định Project Owner phải ghi trước merge/release
