@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "READY_FOR_HANDOFF",
+  "issue": "<GitHub Issue URL>",
+  "pr": "<GitHub PR URL>",
+  "repository": "Kenbinhoainam/WebMinhDuc",
+  "branch": "<pushed branch>",
+  "base_sha": "<full task base SHA>",
+  "stage_start_sha": "<full SHA when writer acquired ownership>",
+  "head_sha": "<full verified remote HEAD SHA>",
+  "requirements": ["<requirement ID and version>"],
+  "sdd": ["<SDD ID and version, or justified N/A>"],
+  "sources": [
+    {"url": "<GitHub blob permalink with full SHA>", "status": "READ", "note": "<proof of read or blocker>"}
+  ],
+  "agent": "<sender agent ID>",
+  "receiver": "<receiver agent ID>",
+  "ownership": {
+    "integrator": "<coordinator>",
+    "receipt": "<Issue/PR comment recording stage_start_sha and assignment>",
+    "worktree": "<writer worktree alias>",
+    "allowed_paths": ["<owned path or directory prefix ending in />"]
+  },
+  "scope": "<authorized work and AC>",
+  "exclusions": ["<limits and PO gates>"],
+  "dependencies": [],
+  "changed_files": [],
+  "completed": [
+    {"item": "<completed action>", "evidence": "<GitHub immutable evidence URL>"}
+  ],
+  "in_progress": [],
+  "remaining": [],
+  "blockers": [],
+  "tests": [
+    {
+      "command": "<actual or planned build/test command>",
+      "environment": "<toolchain and scope>",
+      "sha": "<exact tested SHA, or null if not run>",
+      "result": "NOT_RUN",
+      "exit_code": null,
+      "evidence": null,
+      "note": "<actual observation or reason not run>"
+    }
+  ],
+  "preview": null,
+  "open_regressions": [],
+  "po_decisions": [],
+  "next_action": "<specific first action for the receiver>"
+}

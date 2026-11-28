@@ -115,7 +115,7 @@
       "id": "handoff",
       "attributes": {
         "label": "Bàn giao",
-        "description": "Branch, remote SHA, PR, deploy mapping nếu có, phần chưa kiểm và người xử lý tiếp."
+        "description": "Mode A/B/C, branch, remote SHA, PR, link Relay checkpoint/receipt, Handoff Status, next owner/action và phần chưa kiểm."
       }
     }
   ]

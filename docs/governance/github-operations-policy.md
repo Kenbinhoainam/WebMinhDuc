@@ -12,7 +12,7 @@ A successful GitHub push is necessary, but not sufficient, for approval or deplo
 
 ## Before modifying files
 
-1. Confirm repository owner/name, visibility (public/private), allowed files, access permissions, source version and current branch/HEAD. Read AGENTS.md, GEMINI.md, this policy and all relevant approved specs and decisions.
+1. Confirm repository owner/name, visibility (public/private), allowed files, access permissions, source version and current branch/HEAD. Read AGENTS.md, this policy, the [Agent Relay protocol](../ai/multi-agent-protocol.md) and all relevant approved specs and decisions.
 2. If working on an older branch, fetch current remote changes and assess impact; preserve valid changes. Do not force push, silently reset, rewrite shared history or override another agent's worktree.
 3. Choose a distinct named branch from the correct verified base; use independent worktrees for parallel agents. Assign explicit file ownership to avoid overlapping edits.
 4. Link an Issue/task, source requirement IDs and exact approved SDD version. If a required decision is pending, mark that item Blocked and work on independent approved tasks. Never treat a suggestion as a production requirement.
@@ -23,7 +23,7 @@ A successful GitHub push is necessary, but not sufficient, for approval or deplo
 2. Commit ALL intentionally changed code/doc/test/config files plus their updated manifests, decisions and tests. A single logical change may be committed as a batch; committing every keystroke is not required.
 3. Push the branch to the authorized GitHub remote before claiming completion.
 4. Read back remote branch/commit SHA and compare expected changed files; create or update a PR to the correct integration base. Document test results and limits in the PR.
-5. Write completion report with repository, remote branch, SHA, PR URL, file list, spec/AC IDs, test evidence, blockers and explicit source-to-preview SHA. Continue iterations as additional commits on an auditable branch.
+5. Publish a [Relay checkpoint](../ai/relay/TASK-CONTRACT.md) with the verified remote tip and evidence, and link it from the Issue/PR. Continue iterations as additional commits on an auditable branch.
 6. No merging into prototype or gh-pages, public release, changing custom domain/audience, deploying production or replacing confidential artifacts without separate project authorization. Draft PR review is not a release gate.
 
 ## AI/agent failure behavior

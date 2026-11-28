@@ -67,3 +67,19 @@ No automation above is claimed enabled. Cross-item review-to-Issue updates requi
 - [#8 governance audit/implementation](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8) → In Review while Draft PR and admin gates remain.
 
 These are proposed Project statuses, not mutations already performed. Add existing PRs #1–#4 and this task's Draft PR instead of recreating them. If an epic needs decomposition, use parent/sub-issues with non-overlapping file ownership; keep Sprint 2's existing results intact.
+
+## Agent Relay mapping
+
+Ghi nhận từ [MDV2-AI-01](../ai/multi-agent-protocol.md). Tại đợt Relay, GraphQL và `gh project list` chỉ thấy 0 Projects với token hiện tại. Owner cần xác minh trong GitHub UI. **BLOCKED_PERMISSION** cho việc xác minh account đầy đủ hoặc chỉnh Project trong phiên này.
+
+| Cần hiển thị | Dùng record hiện có hoặc trường mới khi cần |
+|---|---|
+| Assigned Agent | Reuse trường text **Assigned Agent** nếu có. Giữ Assignees cho người chịu trách nhiệm. |
+| Current Task | Dùng Title của Issue/sub-issue hiện tại. |
+| Last Handoff SHA | Text full SHA từ checkpoint mà Issue trỏ đến. |
+| Handoff Status | Single select nếu thiếu, READY_FOR_HANDOFF / BLOCKED. Khác delivery Status. |
+| Linked PR | Dùng liên kết development tích hợp hoặc PR URL trong Issue/Project item. |
+| Blocked by | Dùng Issue dependencies hoặc trường Blocker hiện có. |
+| Next Action | Text ngắn kèm checkpoint link khi cần xem bước tiếp trực tiếp trên board. |
+
+Owner mở Project hiện hữu theo ID, kiểm fields và options trước khi thêm. Dùng Issue #10 để thử projection. Chỉ ghi SHA và trạng thái khớp checkpoint hiện hành, kiểm quyền đọc với reviewer rồi giữ GitHub Issue/PR làm nguồn chỉnh sửa. Không bật auto-Done theo tạo PR, merge PR hoặc tạo checkpoint.
