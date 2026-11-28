@@ -36,9 +36,9 @@ export const articles: ArticleSummary[] = [
     "date": "2026-11-27",
     "excerpt": "Biến một con số thu nhập hấp dẫn thành những câu hỏi có thể kiểm chứng trước khi chọn việc.",
     "image": {
-      "src": "/WebMinhDuc/assets/minhduc-working-60s.webp",
-      "alt": "Nhân viên Minh Đức xem tài liệu cùng nhau tại bàn làm việc",
-      "caption": "Tài liệu là điểm bắt đầu để các bên cùng kiểm tra thông tin."
+      "src": "/WebMinhDuc/assets/minhduc-r2/community-meeting.webp",
+      "alt": "Buổi trao đổi thông tin công việc giữa đội ngũ Minh Đức Vina và người lao động",
+      "caption": "Trao đổi trực tiếp để làm rõ thu nhập, phụ cấp và lịch ca trước khi nhận việc."
     }
   },
   {
@@ -48,7 +48,7 @@ export const articles: ArticleSummary[] = [
     "date": "2026-11-27",
     "excerpt": "Một chiếc bánh sinh nhật, những hộp quà cuối năm và một buổi cầm chổi ngoài sân. Bộ ảnh tư liệu ghi lại ba dịp đồng nghiệp Minh Đức Vina ở bên nhau.",
     "image": {
-      "src": "/WebMinhDuc/assets/minhduc-v16/team-yearend.webp",
+      "src": "/WebMinhDuc/assets/minhduc-r2/yearend-celebration.webp",
       "alt": "Tập thể Minh Đức Vina chụp ảnh trước phông sân khấu tiệc tất niên.",
       "caption": "Khoảnh khắc chụp ảnh chung trong buổi tất niên của Minh Đức Vina."
     }
@@ -72,9 +72,9 @@ export const articles: ArticleSummary[] = [
     "date": "2026-11-25",
     "excerpt": "Xác nhận đúng cổng vào, lịch hẹn và người liên hệ để tập trung vào việc làm quen công việc mới.",
     "image": {
-      "src": "/WebMinhDuc/assets/minhduc-v18/field-team.webp",
-      "alt": "Các nhân viên Minh Đức trao đổi tại một điểm làm việc ngoài trời",
-      "caption": "Ghi nhận hoạt động của đội ngũ Minh Đức tại hiện trường."
+      "src": "/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp",
+      "alt": "Hoạt động hướng dẫn và tiếp nhận người lao động tại hội trường tuyển dụng",
+      "caption": "Hướng dẫn quy trình tiếp nhận và lịch hẹn trước ngày nhận việc."
     }
   },
   {
@@ -96,9 +96,9 @@ export const articles: ArticleSummary[] = [
     "date": "2026-11-23",
     "excerpt": "Gói nhu cầu vào một bản ngắn, có người xác nhận và cách cập nhật, thay vì nhiều tin nhắn rời rạc.",
     "image": {
-      "src": "/WebMinhDuc/assets/minhduc-meeting-10s.webp",
-      "alt": "Đội ngũ Minh Đức cùng trao đổi quanh bàn họp",
-      "caption": "Hình ảnh trao đổi công việc của đội ngũ Minh Đức."
+      "src": "/WebMinhDuc/assets/minhduc-r2/team-flag-salute.webp",
+      "alt": "Tập thể Công ty TNHH Nhân lực Minh Đức Vina tại trụ sở",
+      "caption": "Đội ngũ Công ty TNHH Nhân lực Minh Đức Vina sẵn sàng phối hợp cùng doanh nghiệp."
     }
   },
   {

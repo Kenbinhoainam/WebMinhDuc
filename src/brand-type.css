@@ -35,6 +35,21 @@
 }
 
 :root {
-  --font-body: 'Roboto', system-ui, sans-serif;
-  --font-display: 'Inter', 'Roboto', system-ui, sans-serif;
+  --font-body: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+html[lang="zh-Hans"] {
+  --font-body: 'Roboto', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-display: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+html[lang="ko"] {
+  --font-body: 'Roboto', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+  --font-display: 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+}
+
+html[lang="ja"] {
+  --font-body: 'Roboto', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', system-ui, sans-serif;
+  --font-display: 'Inter', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', system-ui, sans-serif;
 }

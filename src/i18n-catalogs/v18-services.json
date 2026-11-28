@@ -502,5 +502,125 @@
     "zh": "哪个环节需要重复录入数据？",
     "ko": "어느 단계에서 데이터를 다시 입력하나요?",
     "ja": "どの段階でデータを再入力していますか。"
+  },
+  "Phân biệt Giới thiệu & cung ứng nhân lực và Cho thuê lao động": {
+    "en": "Comparing Workforce Supply vs. Labor Leasing",
+    "zh": "人力资源供应与劳务派遣的区别",
+    "ko": "인력 소개·공급과 근로자 파견 비교",
+    "ja": "人材紹介・供給と労働者派遣の違い"
+  },
+  "Bảng tóm tắt nhanh giúp bộ phận nhân sự chọn đúng mô hình theo nhịp sản xuất và mức độ linh hoạt mong muốn.": {
+    "en": "A quick reference helping HR teams choose the right model based on production schedules and flexibility needs.",
+    "zh": "简明对比表，帮助企业人事团队根据生产节奏与灵活用工需求选择合适方案。",
+    "ko": "생산 일정과 인력 유연성 요구에 맞춰 적합한 모델을 빠르게 선택할 수 있는 요약표입니다.",
+    "ja": "生産スケジュールや柔軟性のニーズに応じて最適なモデルを選ぶための比較表です。"
+  },
+  "So sánh trọng tâm giữa hai mô hình nhân lực phổ biến tại nhà máy": {
+    "en": "Key comparison of the two main factory staffing models",
+    "zh": "工厂常用两种用工模式的核心对比",
+    "ko": "공장에서 주로 활용되는 두 가지 인력 모델 핵심 비교",
+    "ja": "工場でよく利用される2つの人材モデルの主な比較"
+  },
+  "So sánh hai mô hình nhân lực chính": {
+    "en": "Comparison of two core staffing models",
+    "zh": "两种主要用工模式对比",
+    "ko": "두 가지 주요 인력 모델 비교",
+    "ja": "2つの主要人材モデルの比較"
+  },
+  "Tiêu chí": {
+    "en": "Criteria",
+    "zh": "对比维度",
+    "ko": "비교 항목",
+    "ja": "比較項目"
+  },
+  "Tình huống phù hợp": {
+    "en": "Best-fit scenarios",
+    "zh": "适用场景",
+    "ko": "적합한 상황",
+    "ja": "適したケース"
+  },
+  "Bổ sung nhân sự ổn định, mở rộng dây chuyền hoặc tuyển số lượng lớn theo đợt mà doanh nghiệp trực tiếp quản lý.": {
+    "en": "Stable headcount growth, line expansion, or batch volume hiring directly managed by your company.",
+    "zh": "适用于稳定扩编、产线扩张或按批次批量招聘，并由用工企业直接管理的场景。",
+    "ko": "안정적인 인력 보강, 생산 라인 증설 또는 기업이 직접 관리하는 대규모 기수별 채용에 적합합니다.",
+    "ja": "安定的な増員、ライン拡大、または企業が直接管理するバッチ採用に適しています。"
+  },
+  "Đáp ứng nhu cầu nhân lực linh hoạt theo mùa vụ, đơn hàng tăng đột biến hoặc dự án có thời hạn xác định.": {
+    "en": "Flexible staffing for seasonal peaks, sudden order surges, or fixed-term production projects.",
+    "zh": "适用于季节性波动、订单激增或固定期限项目的弹性用工需求。",
+    "ko": "계절성 수요, 갑작스러운 주문 증가 또는 기간 한정 프로젝트를 위한 유연한 인력 운용에 적합합니다.",
+    "ja": "繁忙期・急な受注増・期間限定プロジェクトなど柔軟な人員調整が必要な場合に適しています。"
+  },
+  "Trọng tâm triển khai": {
+    "en": "Delivery focus",
+    "zh": "实施重点",
+    "ko": "운영 중점",
+    "ja": "実施のポイント"
+  },
+  "Tìm nguồn, sàng lọc hồ sơ, sắp xếp phỏng vấn và phối hợp bàn giao nhân sự vào làm việc đúng kế hoạch.": {
+    "en": "Sourcing, screening, interview scheduling, and coordinated onboarding according to your hiring plan.",
+    "zh": "聚焦寻源、简历筛选、面试安排及按计划协调人员报到入职。",
+    "ko": "인력 소싱, 서류 검토, 면접 일정 조율 및 계획에 맞춘 입사 인계를 중점적으로 진행합니다.",
+    "ja": "募集、書類選考、面接調整、計画に沿った入社引き継ぎを重点的に行います。"
+  },
+  "Tổ chức nguồn lực theo ca/kíp, theo dõi tiếp nhận tại nơi làm việc và phối hợp bổ sung khi biến động nhân sự.": {
+    "en": "Organizing shift-based teams, tracking onsite intake, and coordinating replacement when staffing fluctuates.",
+    "zh": "按班次组织人员、跟进现场报到情况，并在人员波动时协调补员。",
+    "ko": "교대조별 인력 편성, 현장 투입 확인 및 인원 변동 시 보충 조율을 지원합니다.",
+    "ja": "シフト単位での人員編成、現場受け入れの確認、人員変動時の補充調整を行います。"
+  },
+  "Quản lý & phối hợp": {
+    "en": "Management & coordination",
+    "zh": "管理与协作",
+    "ko": "관리 및 협업",
+    "ja": "管理・連携体制"
+  },
+  "Doanh nghiệp tiếp nhận trực tiếp ký hợp đồng, quản lý chuyên môn, chấm công và chế độ lao động.": {
+    "en": "The hiring business directly signs contracts and manages work performance, attendance, and benefits.",
+    "zh": "用工企业直接签署劳动合同，负责业务管理、考勤及薪酬福利。",
+    "ko": "채용 기업이 직접 근로계약을 체결하고 업무 관리, 근태 및 복리후생을 운영합니다.",
+    "ja": "受け入れ企業が直接雇用契約を結び、業務管理・勤怠・待遇を管理します。"
+  },
+  "Doanh nghiệp điều hành công việc trực tiếp; phạm vi điều phối, hồ sơ và trách nhiệm hai bên được thống nhất rõ trước khi triển khai.": {
+    "en": "Your business directs daily factory tasks; coordination scope, records, and responsibilities are agreed clearly upfront.",
+    "zh": "企业直接安排现场作业；双方在实施前明确协调范围、档案及权责边界。",
+    "ko": "기업이 현장 업무를 직접 지휘하며, 조율 범위·서류·양측 책임은 착수 전 명확히 합의합니다.",
+    "ja": "現場業務の指揮は企業が行い、調整範囲・書類・双方の責任は開始前に明確に合意します。"
+  },
+  "Điều kiện cần thống nhất": {
+    "en": "Key items to confirm",
+    "zh": "需提前确认事项",
+    "ko": "사전 확인 사항",
+    "ja": "事前に確認する事項"
+  },
+  "Làm rõ yêu cầu vị trí, lịch ca, địa điểm làm việc và thu nhập dự kiến để tư vấn minh bạch cho ứng viên.": {
+    "en": "Confirm role criteria, shifts, work location, and expected pay for transparent candidate briefings.",
+    "zh": "明确岗位要求、班次、工作地点与参考薪资，以便向求职者透明说明。",
+    "ko": "지원자에게 투명하게 안내할 수 있도록 직무 요건, 교대 일정, 근무지 및 예상 급여를 명확히 합니다.",
+    "ja": "求職者へ透明に案内するため、職種要件・シフト・勤務地・想定給与を明確にします。"
+  },
+  "Rà soát danh mục ngành nghề, thời hạn thuê lại và điều kiện pháp lý áp dụng cho từng nhà máy trước khi ký kết.": {
+    "en": "Verify eligible job categories, leasing duration, and applicable legal compliance per factory before signing.",
+    "zh": "签约前核实适用岗位目录、派遣期限及各工厂应遵守的法律合规条件。",
+    "ko": "계약 전 공장별 허용 직종, 파견 기간 및 적용 법적 요건을 사전에 확인합니다.",
+    "ja": "契約前に工場ごとの対象職種、派遣期間、適用される法的要件を確認します。"
+  },
+  "Nhận tư vấn chọn mô hình phù hợp": {
+    "en": "Get advice on choosing the right model",
+    "zh": "咨询选择合适的用工模式",
+    "ko": "적합한 모델 상담받기",
+    "ja": "最適なモデルの相談を受ける"
+  },
+  "Chi tiết Cung ứng nhân lực": {
+    "en": "Labor Supply details",
+    "zh": "了解人力供应详情",
+    "ko": "인력 공급 자세히 보기",
+    "ja": "人材紹介・供給の詳細"
+  },
+  "Chi tiết Cho thuê lao động": {
+    "en": "Labor Leasing details",
+    "zh": "了解劳务派遣详情",
+    "ko": "근로자 파견 자세히 보기",
+    "ja": "労働者派遣の詳細"
   }
 }

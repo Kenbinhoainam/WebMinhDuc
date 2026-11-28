@@ -232,7 +232,8 @@ export function AnimatedNumberGroup({children, className, duration = 320, 'aria-
       armed = true;
       running = false;
       elapsed = 0;
-      setProgress(preference.matches ? 1 : 0);
+      // Preserve final values while offscreen so fast scroll, anchor jumps, or full-page views never stick at 0+.
+      setProgress(1);
     };
     const enter = () => {
       if (!armed || disposed) return;
@@ -257,7 +258,7 @@ export function AnimatedNumberGroup({children, className, duration = 320, 'aria-
       elapsed = 0;
       // Changing the preference must not reset a block the reader can still see.
       armed = outside(element.getBoundingClientRect());
-      setProgress(preference.matches || !armed ? 1 : 0);
+      setProgress(1);
     };
     try {
       // Separate inner/outer boundaries absorb tiny edge crossings. Neither
@@ -282,10 +283,8 @@ export function AnimatedNumberGroup({children, className, duration = 320, 'aria-
     }
     document.addEventListener('visibilitychange', visibility);
     preference.addEventListener('change', preferenceChange);
-    // Arm offscreen content before its first observer delivery; initially
-    // visible content starts together instead of showing four independent runs.
+    // Keep offscreen metrics at final readable values; initially visible blocks animate immediately.
     if (inside(element.getBoundingClientRect())) enter();
-    else if (!preference.matches) setProgress(0);
     return () => {
       disposed = true;
       stop();

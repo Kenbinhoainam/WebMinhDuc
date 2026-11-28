@@ -107,12 +107,12 @@ if(!mode){
    assert.equal(observedTarget,surface,'the mobile CTA row alone does not count as a visible film');
    await observe(true);await fire('playing');video.currentTime=21.25;
    await act(async()=>window.dispatchEvent(new Event('wheel')));
-   await scrollToY(-5);await scrollToY(0);
-   assert.equal(paused,false,'wheel intent, overscroll bounce and zero movement leave playback alone');
+   await scrollToY(-5);await scrollToY(0);await scrollToY(20);
+   assert.equal(paused,false,'wheel intent, overscroll bounce and small micro-scroll (<80px) leave playback alone');
    if(mode==='scroll')await act(async()=>stage.querySelector('.hero-entry-bar a').focus());
    if(mode==='scroll-away')await observe(false);
-   await scrollToY(mode==='scroll'?1:900);
-   assert.equal(paused,true,'the first downward movement pauses the film');
+   await scrollToY(mode==='scroll'?80:900);
+   assert.equal(paused,true,'intentional downward scroll (>=80px) pauses the film');
    assert.equal(stage.dataset.stage,mode==='scroll'?'paused':'playing','a jump below the film defers changing offscreen layout');
    if(mode==='scroll')assert.equal(document.activeElement,brand.querySelector('.hero-actions a'),'the matching CTA retains focus when playback pauses on scroll');
    await observe(false);hidden=true;await act(async()=>document.dispatchEvent(new Event('visibilitychange')));
@@ -125,10 +125,10 @@ if(!mode){
    await click(sound);assert.equal(plays,1);
    await click(play);await fire('playing');
    assert.equal(plays,2);assert.equal(video.currentTime,21.25);assert.equal(stage.dataset.stage,'playing');
-   await scrollToY(2);assert.equal(stage.dataset.stage,'paused','explicit resume re-arms the next downward scroll');
+   await scrollToY(90);assert.equal(stage.dataset.stage,'paused','explicit resume re-arms the next downward scroll >=80px');
   }else if(mode==='scroll-before-start'){
-   await scrollToY(1);await observe(true);await scrollToY(0);
-   assert.equal(plays,0,'scrolling before the first intersection callback also suppresses autoplay');
+   await scrollToY(80);await observe(true);await scrollToY(0);
+   assert.equal(plays,0,'scrolling >=80px before the first intersection callback also suppresses autoplay');
    assert.equal(video.getAttribute('src'),null);assert.equal(stage.dataset.stage,'paused');
    await click(surface);await fire('playing');assert.equal(plays,1);assert.equal(stage.dataset.stage,'playing');
   }else if(['noio','noio-offscreen','observe-failure'].includes(mode)){

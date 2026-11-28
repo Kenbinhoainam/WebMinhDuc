@@ -13,6 +13,29 @@ import {ServiceCards, ServiceDirectory, serviceSlideDuration} from '../../Servic
 import {InfoContact, FAQ} from './components';
 import './services-reference.css';
 
+const modelComparison = [
+  {
+    criterion: 'Tình huống phù hợp',
+    supply: 'Bổ sung nhân sự ổn định, mở rộng dây chuyền hoặc tuyển số lượng lớn theo đợt mà doanh nghiệp trực tiếp quản lý.',
+    leasing: 'Đáp ứng nhu cầu nhân lực linh hoạt theo mùa vụ, đơn hàng tăng đột biến hoặc dự án có thời hạn xác định.',
+  },
+  {
+    criterion: 'Trọng tâm triển khai',
+    supply: 'Tìm nguồn, sàng lọc hồ sơ, sắp xếp phỏng vấn và phối hợp bàn giao nhân sự vào làm việc đúng kế hoạch.',
+    leasing: 'Tổ chức nguồn lực theo ca/kíp, theo dõi tiếp nhận tại nơi làm việc và phối hợp bổ sung khi biến động nhân sự.',
+  },
+  {
+    criterion: 'Quản lý & phối hợp',
+    supply: 'Doanh nghiệp tiếp nhận trực tiếp ký hợp đồng, quản lý chuyên môn, chấm công và chế độ lao động.',
+    leasing: 'Doanh nghiệp điều hành công việc trực tiếp; phạm vi điều phối, hồ sơ và trách nhiệm hai bên được thống nhất rõ trước khi triển khai.',
+  },
+  {
+    criterion: 'Điều kiện cần thống nhất',
+    supply: 'Làm rõ yêu cầu vị trí, lịch ca, địa điểm làm việc và thu nhập dự kiến để tư vấn minh bạch cho ứng viên.',
+    leasing: 'Rà soát danh mục ngành nghề, thời hạn thuê lại và điều kiện pháp lý áp dụng cho từng nhà máy trước khi ký kết.',
+  },
+] as const;
+
 export function ServicesPage() {
   const openContact = useContact();
   return <>
@@ -27,6 +50,36 @@ export function ServicesPage() {
         </div>
       </RevealFrame>
       <ServiceDirectory/>
+    </section>
+    <section className="section container service-comparison" aria-labelledby="service-comparison-heading">
+      <div className="service-comparison-head">
+        <h2 id="service-comparison-heading">Phân biệt Giới thiệu &amp; cung ứng nhân lực và Cho thuê lao động</h2>
+        <p>Bảng tóm tắt nhanh giúp bộ phận nhân sự chọn đúng mô hình theo nhịp sản xuất và mức độ linh hoạt mong muốn.</p>
+      </div>
+      <div className="service-table-scroll" tabIndex={0} role="region" aria-label="So sánh hai mô hình nhân lực chính">
+        <table className="service-comparison-table">
+          <caption>So sánh trọng tâm giữa hai mô hình nhân lực phổ biến tại nhà máy</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tiêu chí</th>
+              <th scope="col">Giới thiệu &amp; cung ứng nhân lực</th>
+              <th scope="col">Cho thuê lao động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {modelComparison.map(row => <tr key={row.criterion}>
+              <th scope="row">{row.criterion}</th>
+              <td>{row.supply}</td>
+              <td>{row.leasing}</td>
+            </tr>)}
+          </tbody>
+        </table>
+      </div>
+      <div className="service-comparison-actions">
+        <button className="btn" type="button" onClick={() => openContact(services[0].title)}>Nhận tư vấn chọn mô hình phù hợp</button>
+        <Link className="service-inline-link" to="/services/labor-supply">Chi tiết Cung ứng nhân lực</Link>
+        <Link className="service-inline-link" to="/services/labor-leasing">Chi tiết Cho thuê lao động</Link>
+      </div>
     </section>
     <section className="md-ref-service-metrics"><div className="container">
       <p>Số liệu mô phỏng cho giao diện</p>
@@ -43,6 +96,8 @@ export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
  useHomeCarousel(track, () => advanceHomeRail(track.current,track.current ? serviceSlideDuration(track.current) : 180), undefined, {paused});
  const stories=[{quote:'Điều chúng tôi cần là một đối tác hiểu nhịp vận hành và có thể cùng trao đổi rõ ràng ngay từ đầu.',name:'Chị Lan Anh',role:'Quản lý nhân sự · Doanh nghiệp sản xuất giả định'},{quote:'Tôi muốn biết rõ công việc và địa điểm trước khi quyết định. Một cuộc trao đổi tận tình giúp tôi tự tin hơn.',name:'Anh Minh',role:'Người lao động giả định'},{quote:'Khi nhu cầu thay đổi, việc có người đồng hành và cùng tìm phương án khiến hành trình tuyển dụng nhẹ nhàng hơn.',name:'Chị Thu Hà',role:'Phụ trách tuyển dụng · Doanh nghiệp giả định'}];
  const partners = <><SectionHeading title="Đối tác doanh nghiệp"/><PartnersStrip/></>;
+ const playLabel = t({vi:'Phát chuyển động',en:'Play rotation',zh:'播放轮播',ko:'자동 이동 재생',ja:'自動スライドを再生'});
+ const pauseLabel = t({vi:'Tạm dừng chuyển động',en:'Pause rotation',zh:'暂停轮播',ko:'자동 이동 일시 정지',ja:'自動スライドを一時停止'});
  return <section className="section info-service-customers"><div className="container">
    {!logosAfter && partners}
    <div className="service-stories-heading"><SectionHeading title={t({vi:'Chia sẻ minh họa',en:'Illustrative stories',zh:'示例分享',ko:'예시 이야기',ja:'参考事例'})}/><p>Tình huống minh họa · Nhân vật giả định</p></div>
@@ -50,7 +105,7 @@ export function ServiceCustomers({logosAfter=false}:{logosAfter?:boolean}={}){
      {stories.map(story => <blockquote key={story.quote}><p>{story.quote}</p><footer><span><strong>{story.name}</strong><small>{story.role}</small></span></footer></blockquote>)}
    </div>
    <div className="service-stories-controls"><button className="btn btn-secondary" type="button" aria-controls={railId}
-     onClick={()=>setPaused(value=>!value)}>{paused ? 'Phát chuyển động' : 'Tạm dừng chuyển động'}</button></div>
+     onClick={()=>setPaused(value=>!value)}>{paused ? playLabel : pauseLabel}</button></div>
    {logosAfter && partners}
  </div></section>;
 }

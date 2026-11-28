@@ -100,5 +100,71 @@
     "zh": "已结束招聘的职位仍可查看详情。",
     "ko": "채용이 마감된 공고도 상세 정보를 확인할 수 있습니다.",
     "ja": "募集が終了した求人も詳細を確認できます。"
+  },
+  "Đồng hành & hỗ trợ người lao động": {
+    "en": "Worker Support & Guidance",
+    "zh": "劳动者陪伴与支持",
+    "ko": "근로자 동행 및 지원",
+    "ja": "働き手への伴走・サポート"
+  },
+  "Từ lúc tìm hiểu công việc đến khi ổn định tại nhà máy, Minh Đức Vina duy trì đội ngũ tư vấn trực tiếp tại Bắc Ninh và Quảng Ninh.": {
+    "en": "From exploring openings to settling into factory work, Minh Đức Vina maintains on-site support teams in Bắc Ninh and Quảng Ninh.",
+    "zh": "从了解岗位到稳定入职工厂，明德维纳在北宁与广宁持续配备一线顾问团队。",
+    "ko": "채용 상담부터 공장 정착까지 Minh Đức Vina는 박닌과 꽝닌 현장에서 직접 지원 팀을 운영합니다.",
+    "ja": "仕事探しから工場での定着まで、Minh Đức Vina はバクニンとクアンニンで直接相談チームを配置しています。"
+  },
+  "Tư vấn rõ điều kiện trước khi nhận việc": {
+    "en": "Clear job briefings before you accept",
+    "zh": "入职前清晰说明岗位条件",
+    "ko": "입사 전 명확한 조건 상담",
+    "ja": "就業前の丁寧な条件説明"
+  },
+  "Đội ngũ tư vấn trao đổi rõ về khu công nghiệp, ca làm việc, mức thu nhập tham khảo, phụ cấp và hồ sơ cần chuẩn bị trước khi bạn quyết định.": {
+    "en": "Consultants clearly review the industrial park, shift schedule, reference pay, allowances, and required documents before you decide.",
+    "zh": "顾问团队会在您做决定前清晰说明工业区、班次、参考薪资、津贴及所需资料。",
+    "ko": "결정하기 전에 산업단지, 교대 일정, 참고 급여, 수당 및 준비 서류를 명확히 설명해 드립니다.",
+    "ja": "決定前に工業団地、シフト、参考給与、手当、必要書類を分かりやすく説明します。"
+  },
+  "Hướng dẫn hồ sơ & đón tiếp theo đợt": {
+    "en": "Document guidance & batch welcome",
+    "zh": "资料指导与分批接待",
+    "ko": "서류 안내 및 기수별 맞이 지원",
+    "ja": "書類案内と採用回ごとの受け入れ"
+  },
+  "Có đầu mối hỗ trợ tập trung, hướng dẫn thủ tục phỏng vấn và tiếp nhận cho người lao động địa phương cũng như người lao động từ tỉnh xa đến làm việc.": {
+    "en": "Centralized coordinators guide interviews and onboarding for both local workers and workers relocating from other provinces.",
+    "zh": "设立集中联络窗口，为本地及外省求职者指导面试与入职手续。",
+    "ko": "전담 창구를 통해 지역 근로자는 물론 타 지역에서 오는 근로자의 면접 및 입사 절차를 안내합니다.",
+    "ja": "専任窓口が地元の方だけでなく他省からの求職者の面接・入社手続きを案内します。"
+  },
+  "Đồng hành & gắn kết lâu dài": {
+    "en": "Ongoing care & community",
+    "zh": "持续陪伴与长期凝聚",
+    "ko": "지속적인 동행과 교류",
+    "ja": "継続的なフォローと交流"
+  },
+  "Duy trì kênh liên hệ qua Hotline và Zalo để giải đáp câu hỏi trong quá trình nhận việc, đồng thời tổ chức hoạt động thăm hỏi, giao lưu tập thể.": {
+    "en": "Active Hotline and Zalo channels answer onboarding questions alongside worker check-ins and team gatherings.",
+    "zh": "保持热线和 Zalo 咨询渠道畅通，及时解答入职疑问，并开展关怀与集体交流活动。",
+    "ko": "핫라인과 Zalo 창구로 입사 과정의 문의를 해결하고 정기적인 안부 확인 및 교류 활동을 진행합니다.",
+    "ja": "ホットラインとZaloで就業中の疑問に対応し、交流イベントやフォロー活動も行っています。"
+  },
+  "Nhắn Zalo tư vấn": {
+    "en": "Message Zalo support",
+    "zh": "Zalo 在线咨询",
+    "ko": "Zalo 상담하기",
+    "ja": "Zaloで相談する"
+  },
+  "Hoạt động gặp gỡ và tư vấn trực tiếp cùng người lao động": {
+    "en": "In-person worker briefing and consultation session",
+    "zh": "与劳动者面对面交流与咨询活动",
+    "ko": "근로자 대상 현장 설명회 및 직접 상담 활동",
+    "ja": "働き手との対面説明会・相談会の様子"
+  },
+  "Đội ngũ Minh Đức Vina trao đổi và hỗ trợ người lao động": {
+    "en": "Minh Đức Vina staff meeting with and supporting workers",
+    "zh": "明德维纳团队与劳动者交流并提供支持",
+    "ko": "근로자와 소통하고 지원하는 Minh Đức Vina 팀",
+    "ja": "働き手と対話しサポートする Minh Đức Vina のスタッフ"
   }
 }

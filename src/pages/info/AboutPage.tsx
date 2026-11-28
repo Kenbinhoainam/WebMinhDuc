@@ -1,9 +1,10 @@
 import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
 import {Link, useLocation, useNavigationType} from 'react-router-dom';
-import {ArrowRight, ChevronRight, Compass, Handshake, Telescope} from 'lucide-react';
+import {ArrowRight, ChevronRight, Compass, Handshake, MapPin, Telescope} from 'lucide-react';
 import {PageMasthead} from '../../PageMasthead';
 import {ServiceCards} from '../../ServiceShowcase';
 import {Modal} from '../../shared';
+import {responsiveImage} from '../../media';
 import {useTranslation} from '../../i18n';
 import {RevealFrame} from '../../motion';
 import {advanceHomeRail, useHomeCarousel} from '../../useHomeCarousel';
@@ -22,6 +23,37 @@ const chapters = [
   ['partners', 'Đối tác tiêu biểu'],
   ['activities', 'Hoạt động tập thể'],
   ['achievements', 'Thành tựu và dấu ấn'],
+] as const;
+
+const leadership = [
+  {
+    name: 'Ông Hà Ngọc Trung',
+    role: 'Chủ tịch HĐTV kiêm Giám đốc điều hành',
+    branch: 'Trụ sở chính · Bắc Ninh',
+    image: '/WebMinhDuc/assets/minhduc-r2/leader-ha-ngoc-trung.webp',
+    alt: 'Chân dung ông Hà Ngọc Trung — Chủ tịch HĐTV kiêm Giám đốc điều hành Minh Đức Vina',
+  },
+  {
+    name: 'Bà Dương Thị Luyên',
+    role: 'Giám đốc Chi nhánh Bắc Ninh (Bắc Giang cũ)',
+    branch: 'Chi nhánh Bắc Ninh',
+    image: '/WebMinhDuc/assets/minhduc-r2/leader-duong-thi-luyen.webp',
+    alt: 'Chân dung bà Dương Thị Luyên — Giám đốc Chi nhánh Bắc Ninh (Bắc Giang cũ)',
+  },
+  {
+    name: 'Bà Đỗ Thị Thu',
+    role: 'Giám đốc Chi nhánh Hải Phòng (Hải Dương cũ)',
+    branch: 'Chi nhánh Hải Phòng',
+    image: '/WebMinhDuc/assets/minhduc-r2/leader-do-thi-thu.webp',
+    alt: 'Chân dung bà Đỗ Thị Thu — Giám đốc Chi nhánh Hải Phòng (Hải Dương cũ)',
+  },
+  {
+    name: 'Ông Hoàng Văn Trưởng',
+    role: 'Giám đốc Chi nhánh Quảng Ninh',
+    branch: 'Chi nhánh Quảng Ninh',
+    image: '/WebMinhDuc/assets/minhduc-r2/leader-hoang-van-truong.webp',
+    alt: 'Chân dung ông Hoàng Văn Trưởng — Giám đốc Chi nhánh Quảng Ninh',
+  },
 ] as const;
 
 const phases = [
@@ -50,11 +82,11 @@ const milestones = [
 ];
 
 const activities = [
-  {image:'team-yearend', title:'Gặp gỡ cuối năm', alt:'Tập thể Minh Đức trong buổi gặp gỡ cuối năm'},
-  {image:'yearend-gifts', title:'Trao quà trong buổi tất niên', alt:'Mọi người cùng chụp ảnh với những phần quà trong buổi gặp gỡ'},
-  {image:'culture-birthday', title:'Mừng sinh nhật cùng đồng nghiệp', alt:'Tập thể cùng nhau mừng sinh nhật'},
-  {image:'community', title:'Kết nối cộng đồng', alt:'Nhóm người cùng dụng cụ vệ sinh ngoài trời'},
-];
+  {src:'/WebMinhDuc/assets/minhduc-r2/yearend-celebration.webp', title:'Gặp gỡ cuối năm', alt:'Tập thể Công ty TNHH Nhân lực Minh Đức Vina trong buổi gặp gỡ cuối năm'},
+  {src:'/WebMinhDuc/assets/minhduc-v16/yearend-gifts.webp', title:'Trao quà trong buổi tất niên', alt:'Mọi người cùng chụp ảnh với những phần quà trong buổi gặp gỡ'},
+  {src:'/WebMinhDuc/assets/minhduc-v16/culture-birthday.webp', title:'Mừng sinh nhật cùng đồng nghiệp', alt:'Tập thể cùng nhau mừng sinh nhật'},
+  {src:'/WebMinhDuc/assets/minhduc-r2/community-meeting.webp', title:'Gặp gỡ và đồng hành cùng người lao động', alt:'Hoạt động trao đổi và gắn kết cùng người lao động Minh Đức Vina'},
+] as const;
 
 function ChapterNav(){
   const [open,setOpen] = useState(false);
@@ -71,6 +103,7 @@ function ChapterNav(){
 }
 
 function HistorySection(){
+  const t = useTranslation();
   const [phase,setPhase] = useState(0);
   const [detail,setDetail] = useState(false);
   const [paused,setPaused] = useState(false);
@@ -136,6 +169,8 @@ function HistorySection(){
     change(next,true);
     document.getElementById('history-tab-'+next)?.focus();
   };
+  const playLabel = t({vi:'Phát chuyển động',en:'Play rotation',zh:'播放轮播',ko:'자동 이동 재생',ja:'自動スライドを再生'});
+  const pauseLabel = t({vi:'Tạm dừng chuyển động',en:'Pause rotation',zh:'暂停轮播',ko:'자동 이동 일시 정지',ja:'自動スライドを一時停止'});
   return <section id="history" className="section info-history" ref={area}>
     <div className="container">
       <h2>Quá trình hình thành và phát triển</h2>
@@ -146,7 +181,7 @@ function HistorySection(){
             {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={event=>change(index,event.detail===0)}>{item.label}</button>)}
           </div>
           <button className="about-rail-pause" type="button" aria-controls="history-track"
-            onClick={()=>setPaused(value=>!value)}>{paused?'Phát chuyển động':'Tạm dừng chuyển động'}</button>
+            onClick={()=>setPaused(value=>!value)}>{paused?playLabel:pauseLabel}</button>
         </div>
         <RevealFrame effect="up"><div id="history-track" className="info-history-rail" ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Các giai đoạn">
           {phases.map((item,index)=>{
@@ -168,6 +203,27 @@ function HistorySection(){
   </section>;
 }
 
+function AboutLeadership(){
+  return <section id="leadership" className="section container about-leadership" aria-labelledby="about-leadership-heading">
+    <h2 id="about-leadership-heading">Ban lãnh đạo &amp; Giám đốc chi nhánh</h2>
+    <p className="about-intro-line">Đội ngũ điều hành và phụ trách các chi nhánh trực tiếp đồng hành cùng nhà máy tại Bắc Ninh, Hải Phòng và Quảng Ninh.</p>
+    <div className="about-leadership-grid">
+      {leadership.map((leader, index) => <RevealFrame key={leader.name} effect="up" delayMs={index*70}>
+        <article className="leader-card">
+          <div className="leader-card-photo">
+            <img src={leader.image} width="480" height="600" alt={leader.alt} loading="lazy" decoding="async"/>
+          </div>
+          <div className="leader-card-body">
+            <h3>{leader.name}</h3>
+            <p className="leader-card-role">{leader.role}</p>
+            <p className="leader-card-branch"><MapPin size={15} aria-hidden="true"/><span>{leader.branch}</span></p>
+          </div>
+        </article>
+      </RevealFrame>)}
+    </div>
+  </section>;
+}
+
 function AboutTeam(){
   const [selected,setSelected] = useState<(typeof roles)[number]|null>(null);
   return <section className="section container info-team">
@@ -185,14 +241,15 @@ function AboutActivities(){
   return <section id="activities" className="section md-v16-activities"><div className="container">
     <h2>Những kết nối tạo nên Minh Đức</h2>
     <div className="md-v16-activities-grid">{activities.map((item,index)=>
-      <RevealFrame key={item.image} effect="media" delayMs={index*80}>
-        <figure className="md-v16-activity"><img src={'/WebMinhDuc/assets/minhduc-v16/'+item.image+'.webp'} sizes={index===0 || index===3?'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 55vw, 664px':'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 38vw, 470px'} alt={item.alt} loading="lazy" decoding="async"/>
+      <RevealFrame key={item.src} effect="media" delayMs={index*80}>
+        <figure className="md-v16-activity"><img src={item.src} {...responsiveImage(item.src, index===0 || index===3?'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 55vw, 664px':'(max-width:767px) calc(100vw - 40px), (max-width:1280px) 38vw, 470px')} alt={item.alt} loading="lazy" decoding="async"/>
           <figcaption>{item.title}</figcaption></figure>
       </RevealFrame>)}</div>
   </div></section>;
 }
 
 function AboutMilestones(){
+  const t = useTranslation();
   const area=useRef<HTMLElement>(null);
   const track=useRef<HTMLDivElement>(null);
   const [overflow,setOverflow]=useState(false);
@@ -208,11 +265,13 @@ function AboutMilestones(){
     return ()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
   },[]);
   useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{intervalMs:6000,disabled:!overflow,paused});
+  const playLabel = t({vi:'Phát chuyển động',en:'Play rotation',zh:'播放轮播',ko:'자동 이동 재생',ja:'自動スライドを再生'});
+  const pauseLabel = t({vi:'Tạm dừng chuyển động',en:'Pause rotation',zh:'暂停轮播',ko:'자동 이동 일시 정지',ja:'自動スライドを一時停止'});
   return <section id="achievements" ref={area} className="section container info-documentation"><h2>Thành tựu và dấu ấn</h2>
     <p className="about-intro-line">Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.</p>
     <div className="about-milestone-interaction">
       {overflow && <button className="about-rail-pause" type="button" aria-controls="about-milestones"
-        onClick={()=>setPaused(value=>!value)}>{paused?'Phát chuyển động':'Tạm dừng chuyển động'}</button>}
+        onClick={()=>setPaused(value=>!value)}>{paused?playLabel:pauseLabel}</button>}
       <RevealFrame effect="up"><div id="about-milestones" className="info-document-grid" ref={track} data-auto-rail role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
         {milestones.map(item=><article className="info-document-card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
       </div></RevealFrame>
@@ -243,7 +302,7 @@ export function AboutPage(){
     ['FDI',t({vi:'Định hướng kết nối',en:'Connection focus',zh:'连接方向',ko:'연결 지향',ja:'つながりへの取り組み'})],
   ];
   return <div className="about-page">
-    <PageMasthead variant="photo" title="Về Minh Đức" image="/WebMinhDuc/assets/minhduc-v18/about-team.webp" imageAlt="Đội ngũ Minh Đức cầm cờ trước biển hiệu công ty"/>
+    <PageMasthead variant="photo" title="Về Minh Đức" image="/WebMinhDuc/assets/minhduc-r2/team-flag-salute.webp" imageAlt="Tập thể Công ty TNHH Nhân lực Minh Đức Vina dưới biển hiệu trụ sở"/>
     <ChapterNav/>
     <section id="profile" className="section container about-profile" aria-labelledby="about-profile-title">
       <div className="about-profile-intro">
@@ -275,7 +334,7 @@ export function AboutPage(){
       <p className="about-intro-line">Các đối tác được giới thiệu trong hồ sơ thông tin Minh Đức.</p>
       <div className="info-partner-list">{partners.map((name,index)=><RevealFrame key={name} effect="up" delayMs={index*80} contentClassName="info-partner"><PartnerLogo name={name}/></RevealFrame>)}</div>
       <Link className="about-text-action" to="/partners">Xem danh sách đối tác</Link></section>
-    <AboutTeam/><AboutActivities/><AboutMilestones/>
+    <AboutLeadership/><AboutTeam/><AboutActivities/><AboutMilestones/>
     <section className="section container about-solutions"><h2>Giải pháp nhân lực</h2><ServiceCards/></section>
     <InfoContact id="business-contact" formRequestKey={formRequestKey}/>
   </div>;

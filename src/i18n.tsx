@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useId, useRef, useState} from 'react';
 import {useLocation} from 'react-router-dom';
+import {Check, ChevronDown} from 'lucide-react';
 import {LocalFlag} from './LocalFlag';
 import {locales, languageTags, languageSwitchUrl, type Locale} from './i18n-runtime/paths';
 import './locale-selector.css';
@@ -41,12 +42,12 @@ export function LanguageSelector(){
  }, [open]);
  return <div className="language-selector" ref={rootRef} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false); }}>
   <button ref={triggerRef} type="button" className="language-trigger" data-locale={locale} aria-label={`${languageLabel[locale]} · ${localeNames[locale]}`} aria-expanded={open} aria-controls={panelId} onClick={() => { if (!open) document.dispatchEvent(new window.CustomEvent('header-overlay-open', {detail:{owner:'language'}})); setOpen(value => !value); }}>
-   <LocalFlag locale={locale}/><span aria-hidden="true">{localeCodes[locale]}</span><svg className="language-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+   <LocalFlag locale={locale}/><span aria-hidden="true">{localeCodes[locale]}</span><ChevronDown className="language-chevron" size={16} aria-hidden="true"/>
   </button>
   <div id={panelId} className="language-panel" hidden={!open}>
    <p className="language-panel-title">{languageLabel[locale]}</p>
    <ul>{locales.map(code => <li key={code}><a href={'/WebMinhDuc' + languageSwitchUrl(location.pathname,location.search,location.hash,code)} lang={languageTags[code]} aria-current={code===locale ? 'true' : undefined}>
-    <LocalFlag locale={code}/><span>{localeNames[code]}</span>{code===locale && <svg className="language-check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+    <LocalFlag locale={code}/><span>{localeNames[code]}</span>{code===locale && <Check className="language-check" size={16} aria-hidden="true"/>}
    </a></li>)}</ul>
   </div>
  </div>;

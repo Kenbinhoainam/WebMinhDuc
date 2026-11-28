@@ -142,7 +142,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
   if (receipt) return <div className="form-success" role="status">
     <CheckCircle2 size={36} aria-hidden="true"/><h3 ref={receiptHeading} tabIndex={-1}>Đã hoàn tất gửi thử</h3>
     <p>Mã mô phỏng: <strong>{receipt}</strong></p>
-    <p className="form-context"><strong>{mode === 'F01' ? 'Gửi nhu cầu nhân lực' : 'Liên hệ chung'}</strong>{receiptService && <><br/>{receiptService}</>}</p>
+    <p className="form-context"><strong>{mode === 'F01' ? 'Gửi nhu cầu nhân lực' : 'Liên hệ chung'}</strong>{receiptService && <><br/><span>{receiptService}</span></>}</p>
     <p>Biên nhận mẫu được giữ đến khi tải lại trang; thông tin không gửi ra ngoài.</p>
     <Link className="btn" to={'/admin-demo?type=' + mode + '&id=' + receipt} onClick={onNavigate}>Xem hồ sơ mẫu {mode}</Link>
     <button type="button" className="text-link" onClick={() => {restarting.current = true; submitted.current = false; attempted.current = false; setErrors({}); setReceiptService(''); setReceipt('');}}>Tạo yêu cầu thử mới</button>
@@ -208,6 +208,7 @@ export function ContactPage() {
       <section id="contact-offices" tabIndex={-1} className="contact-reference-info" aria-labelledby="contact-offices-heading">
         <p className="contact-company-kicker">CÔNG TY TNHH NHÂN LỰC</p>
         <h2 id="contact-offices-heading" className="contact-company-name">MINH ĐỨC <span>VINA</span></h2>
+        <p className="contact-company-tax">Mã số thuế (MST): <strong>{company.taxId}</strong></p>
         <div className="contact-office-list">{company.offices.map((item, index) => <article className="contact-office" key={item.name}>
           <MapPin size={20} aria-hidden="true"/>
           <div><h3>{item.name}</h3><p>{item.address}</p>

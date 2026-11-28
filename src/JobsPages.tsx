@@ -1,13 +1,14 @@
 import {useCallback, useEffect, useRef, useState, type FormEvent, type Ref} from 'react';
 import {Link, useLocation, useNavigate, useNavigationType, useParams, useSearchParams} from 'react-router-dom';
-import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, MapPin, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
+import {ArrowUpRight, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, MapPin, MessageCircle, Phone, Search, SlidersHorizontal, X} from 'lucide-react';
 import {company} from './company';
 import {subnavigation} from './navigation';
 import CareersSections from './CareersSections';
 import {PageMasthead} from './PageMasthead';
+import {responsiveImage} from './media';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
-import {useLocale, type Locale} from './i18n';
+import {useLocale, useTranslation, type Locale} from './i18n';
 import {translate} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {useSavedJobs} from './saved-jobs';
@@ -22,6 +23,7 @@ export {useSavedJobs} from './saved-jobs';
 const PAGE_SIZE = 6;
 const EVENT_IMAGE = '/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp';
 const EVENT_ALT = 'Ảnh tập thể trên sân khấu giữa hai bảng thông tin tuyển dụng.';
+const WORKER_SUPPORT_IMAGE = '/WebMinhDuc/assets/minhduc-r2/community-meeting.webp';
 const WORKERS = jobs.filter(job => !job.internal);
 const TEAM = jobs.filter(job => job.internal);
 type FilterKey = 'location' | 'type' | 'industrialPark' | 'skillLevel' | 'employmentType' | 'shift' | 'schedule' | 'status';
@@ -31,7 +33,12 @@ const FIELD_LABELS: Record<FilterKey,string> = {
 };
 const FACTORY_FIELDS: FilterKey[] = ['type','industrialPark','skillLevel','employmentType','shift','schedule','status'];
 const TEAM_FIELDS: FilterKey[] = ['type','status'];
-const statusLabel = (status: string) => status === 'closed' ? 'Đã đóng' : 'Đang tuyển';
+function useJobStatusLabel() {
+  const t = useTranslation();
+  return (status: string) => status === 'closed'
+    ? t({vi:'Đã đóng',en:'Closed',zh:'已关闭',ko:'모집 마감',ja:'募集終了'})
+    : t({vi:'Đang tuyển',en:'Open',zh:'招聘中',ko:'채용 중',ja:'募集中'});
+}
 function choices(field: FilterKey, audience: Job[]): string[] {
   if (field === 'status') return ['active','closed'];
   return [...new Set(audience.map(job => job[field]).filter((value): value is string => !!value))];
@@ -81,13 +88,14 @@ function SaveButton({job, labelled, afterRemove}: {job: Job; labelled?: boolean;
   </button>;
 }
 function JobCard({job, origin, remember, afterRemove, savedIndex, cardRef}: {job:Job; origin?:ListOrigin; remember?:()=>void; afterRemove?:()=>void; savedIndex?:number; cardRef?:Ref<HTMLElement>}) {
+  const jobStatusLabel = useJobStatusLabel();
   return <article className="job-card" ref={cardRef} data-saved-index={savedIndex}>
-    <div className="job-card-heading"><div className="job-card-meta"><span>{job.id}</span><span className={job.status === 'closed' ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span>{job.internal && <span>Tuyển dụng nội bộ</span>}</div>
+    <div className="job-card-heading"><div className="job-card-meta"><span>{job.id}</span><span className={job.status === 'closed' ? 'job-status closed' : 'job-status'}>{jobStatusLabel(job.status || 'active')}</span>{job.internal && <span>Tuyển dụng nội bộ</span>}</div>
       <h3><Link to={`/jobs/${job.slug}`} state={origin ? {jobOrigin:origin} : undefined} data-job-link={job.id} onClick={event => {if (plainClick(event)) remember?.();}}><span>{job.title}</span><ArrowUpRight size={17} aria-hidden="true"/></Link></h3>
-      <p className="job-locality"><MapPin size={16} aria-hidden="true"/>{job.industrialPark && <>{job.industrialPark} · </>}{job.location}</p>
+      <p className="job-locality"><MapPin size={16} aria-hidden="true"/>{job.industrialPark && <><span>{job.industrialPark}</span> · </>}<span>{job.location}</span></p>
     </div>
     <div className="job-row-pay"><span>Thu nhập tham khảo</span><strong>{job.salary}</strong></div>
-    <div className="job-row-terms"><span>{job.type}</span>{!job.internal && (job.shift || job.schedule) && <span>{job.shift}{job.shift && job.schedule && ' · '}{job.schedule}</span>}</div>
+    <div className="job-row-terms"><span>{job.type}</span>{!job.internal && (job.shift || job.schedule) && <span><span>{job.shift}</span>{job.shift && job.schedule && ' · '}<span>{job.schedule}</span></span>}</div>
     <SaveButton job={job} afterRemove={afterRemove}/>
   </article>;
 }
@@ -111,6 +119,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   const location = useLocation();
   const navigationType = useNavigationType();
   const locale = useLocale();
+  const jobStatusLabel = useJobStatusLabel();
   const {savedIds,count,isTemporary,ready:clientReady} = useSavedJobs();
   const [advanced,setAdvanced] = useState(false);
   const publicFilters = !internal && !savedOnly;
@@ -214,7 +223,7 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
       <label htmlFor={`jobs-${key}`}>{FIELD_LABELS[key]}</label>
       <select id={`jobs-${key}`} value={value} onChange={event => updateFilter(key,event.currentTarget.value)}>
         {(key !== 'status' || savedOnly) && <option value="">{key === 'status' ? 'Mọi trạng thái' : key === 'location' ? 'Tất cả địa điểm' : 'Tất cả'}</option>}
-        {available.map(option => <option key={option} value={option}>{key === 'status' ? statusLabel(option) : option}</option>)}
+        {available.map(option => <option key={option} value={option}>{key === 'status' ? jobStatusLabel(option) : option}</option>)}
       </select>
     </div>;
   }
@@ -254,9 +263,8 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
       {(query || activeFields.length > 0) && <div className="jobs-filter-selection">
         {[...(query ? ['q'] as const : []), ...activeFields].map(key => {
           const raw = params.get(key) || '';
-          const value = key === 'status' ? statusLabel(raw) : raw;
           const label = String(translate(key === 'q' ? 'Từ khóa' : FIELD_LABELS[key],locale));
-          const display = key === 'q' ? value : String(translate(value,locale));
+          const display = key === 'q' ? raw : key === 'status' ? jobStatusLabel(raw) : String(translate(raw,locale));
           return <button type="button" key={key} className="jobs-filter-chip" aria-label={`${translate('Gỡ bộ lọc',locale)} ${label}: ${display}`} onClick={event => {
             const chips = [...event.currentTarget.parentElement!.querySelectorAll<HTMLButtonElement>('.jobs-filter-chip')];
             const index = chips.indexOf(event.currentTarget);
@@ -279,6 +287,21 @@ function JobBrowser({internal = false, savedOnly = false}: {internal?:boolean; s
   </div>;
 }
 
+const workerSupportItems = [
+  {
+    title: 'Tư vấn rõ điều kiện trước khi nhận việc',
+    text: 'Đội ngũ tư vấn trao đổi rõ về khu công nghiệp, ca làm việc, mức thu nhập tham khảo, phụ cấp và hồ sơ cần chuẩn bị trước khi bạn quyết định.',
+  },
+  {
+    title: 'Hướng dẫn hồ sơ & đón tiếp theo đợt',
+    text: 'Có đầu mối hỗ trợ tập trung, hướng dẫn thủ tục phỏng vấn và tiếp nhận cho người lao động địa phương cũng như người lao động từ tỉnh xa đến làm việc.',
+  },
+  {
+    title: 'Đồng hành & gắn kết lâu dài',
+    text: 'Duy trì kênh liên hệ qua Hotline và Zalo để giải đáp câu hỏi trong quá trình nhận việc, đồng thời tổ chức hoạt động thăm hỏi, giao lưu tập thể.',
+  },
+] as const;
+
 export function JobsPage() {
   const [photoFailed, setPhotoFailed] = useState(false);
   return <div className="jobs-directory">
@@ -287,6 +310,28 @@ export function JobsPage() {
       {subnavigation['/jobs'].map(([to,label]) => <Link key={to} to={to}>{label}<ArrowUpRight size={16} aria-hidden="true"/></Link>)}
     </nav>
     <section className="jobs-section"><div className="container"><div id="job-listings" tabIndex={-1}><JobBrowser/></div><p className="jobs-education-link">Muốn nâng cao kỹ năng? <Link to="/education">Khám phá đào tạo</Link></p></div></section>
+    <section className="jobs-worker-support" aria-labelledby="worker-support-heading">
+      <div className="container jobs-worker-support-layout">
+        <div className="jobs-worker-support-copy">
+          <h2 id="worker-support-heading">Đồng hành &amp; hỗ trợ người lao động</h2>
+          <p className="jobs-worker-support-lead">Từ lúc tìm hiểu công việc đến khi ổn định tại nhà máy, Minh Đức Vina duy trì đội ngũ tư vấn trực tiếp tại Bắc Ninh và Quảng Ninh.</p>
+          <div className="jobs-worker-support-list">
+            {workerSupportItems.map(item => <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>)}
+          </div>
+          <div className="jobs-worker-support-actions">
+            <a className="btn" href={`tel:${company.tel}`}><Phone size={17} aria-hidden="true"/>Hotline {company.phone}</a>
+            <a className="jobs-quiet-button" href={company.zalo} target="_blank" rel="noreferrer"><MessageCircle size={17} aria-hidden="true"/>Nhắn Zalo tư vấn</a>
+          </div>
+        </div>
+        <figure className="jobs-worker-support-media">
+          <img src={WORKER_SUPPORT_IMAGE} {...responsiveImage(WORKER_SUPPORT_IMAGE, '(max-width: 767px) calc(100vw - 40px), 44vw')} alt="Đội ngũ Minh Đức Vina trao đổi và hỗ trợ người lao động" loading="lazy" decoding="async"/>
+          <figcaption>Hoạt động gặp gỡ và tư vấn trực tiếp cùng người lao động</figcaption>
+        </figure>
+      </div>
+    </section>
     {!photoFailed && <figure className="jobs-event-photo">
       <img src={EVENT_IMAGE} alt={EVENT_ALT} sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1072px) calc(40.5vw - 26px), 408px" loading="lazy" onError={() => setPhotoFailed(true)}/>
       <figcaption>Gặp gỡ tại hội trường</figcaption>
@@ -351,6 +396,14 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
     const error = identityFieldError(name, value) || undefined;
     setErrors(previous => previous[name] === error ? previous : {...previous, [name]:error});
   }
+  function restart() {
+    submitted.current = false;
+    attempted.current = false;
+    setErrors({});
+    setFiles([]);
+    setReceipt('');
+    requestAnimationFrame(() => formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus());
+  }
   return <Modal title={receipt ? 'Hoàn tất trải nghiệm ứng tuyển' : 'Ứng tuyển vị trí'} onClose={onClose}>
     {receipt ? <div className="application-success">
       <CheckCircle2 size={48} aria-hidden="true"/>
@@ -358,7 +411,10 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
       <p>Mã mô phỏng: <strong>{receipt}</strong> · {formType} · {job.id} · {job.title}</p>
       <p>Dữ liệu mẫu chỉ giữ trong bộ nhớ phiên trang; không gửi ra ngoài. Không dùng thông tin thật.</p>
       <Link to={`/admin-demo?type=${formType}&id=${receipt}`} onClick={onClose}>Xem hồ sơ mẫu</Link>
-      <button className="application-close-link" type="button" onClick={onClose}>Đóng cửa sổ</button>
+      <div className="application-success-actions">
+        <button className="jobs-quiet-button" type="button" onClick={restart}>Tạo đơn thử mới</button>
+        <button className="application-close-link" type="button" onClick={onClose}>Đóng cửa sổ</button>
+      </div>
     </div> : <form className="application-form" ref={formRef} onInput={recheckField} onSubmit={submit} noValidate>
       <div className="application-job"><strong>{job.id}</strong><strong>{job.title}</strong></div>
       <p className="application-note">Chỉ dùng dữ liệu giả. Thông tin được giữ tạm trong bộ nhớ trang để xem ở ADMIN, không gửi ra ngoài.</p>
@@ -400,6 +456,7 @@ function ApplicationDialog({job,onClose}: {job:Job; onClose:()=>void}) {
 export function JobDetailPage() {
   const {slug} = useParams();
   const job = jobs.find(item => item.slug === slug);
+  const jobStatusLabel = useJobStatusLabel();
   const [applying,setApplying] = useState(false);
   const inlineApply = useRef<HTMLButtonElement>(null);
   const mobileApply = useRef<HTMLButtonElement>(null);
@@ -463,7 +520,7 @@ export function JobDetailPage() {
   return <section ref={detail} className="jobs-detail-section"><div className="container">
     <Link className="jobs-back" to={backUrl} onClick={event => {if (origin && plainClick(event)) {event.preventDefault(); navigate(-origin.steps);}}}><ChevronLeft size={18} aria-hidden="true"/>{backLabel}</Link>
     <div className="job-detail-layout">
-      <header className="job-detail-intro"><div className="job-card-meta"><span>MÃ VỊ TRÍ {job.id}</span><span className={closed ? 'job-status closed' : 'job-status'}>{statusLabel(job.status || 'active')}</span></div><h1>{job.title}</h1></header>
+      <header className="job-detail-intro"><div className="job-card-meta"><span>MÃ VỊ TRÍ {job.id}</span><span className={closed ? 'job-status closed' : 'job-status'}>{jobStatusLabel(job.status || 'active')}</span></div><h1>{job.title}</h1></header>
       <aside className="job-summary">
         <div className="job-summary-primary">
           <h2>Thông tin vị trí</h2>

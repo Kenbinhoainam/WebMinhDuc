@@ -89,11 +89,16 @@ export function SupportTools({onConsultation}: {onConsultation: () => void}) {
   };
   return <div className="floating-tools support-tools" ref={wrapper}>
     {open && <div className="support-panel" id="support-panel" aria-label={label.open}>
-      <a href={`tel:${company.tel}`}><Phone size={19}/><span>{label.phone}</span></a>
-      <a href={company.zalo} target="_blank" rel="noreferrer"><b aria-hidden="true">Z</b><span>{label.zalo}</span></a>
-      <a href={company.facebook} target="_blank" rel="noreferrer"><b aria-hidden="true">f</b><span>{label.facebook}</span></a>
-      <button type="button" onClick={() => {setOpen(false); launcher.current?.focus(); onConsultation();}}><MessageCircle size={19}/><span>{label.consultation}</span></button>
-
+      <a href={`tel:${company.tel}`}><Phone size={19} aria-hidden="true"/><span>{label.phone}</span></a>
+      <a href={company.zalo} target="_blank" rel="noreferrer">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="4"/><path d="M8.5 9.5h7l-7 5h7"/></svg>
+        <span>{label.zalo}</span>
+      </a>
+      <a href={company.facebook} target="_blank" rel="noreferrer">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H8v3h2.3V21h3.2Z"/></svg>
+        <span>{label.facebook}</span>
+      </a>
+      <button type="button" onClick={() => {setOpen(false); launcher.current?.focus(); onConsultation();}}><MessageCircle size={19} aria-hidden="true"/><span>{label.consultation}</span></button>
     </div>}
     <ScrollToTop label={label.top} routeKey={location.key}/>
     <button ref={launcher} type="button" className="support-launcher" aria-label={open?label.close:label.open} aria-expanded={open} aria-controls="support-panel" onClick={() => {if (!open) document.dispatchEvent(new window.CustomEvent('header-overlay-open',{detail:{owner:'support'}})); setOpen(!open);}}>{open?<X size={21}/>:<MessageCircle size={21}/>}</button>

@@ -25,9 +25,9 @@ try {
   assert.equal(doc.querySelector('.desktop-nav-group:nth-child(2) .desktop-subnav a').getAttribute('href'),`${base}/about-us#profile`,`${locale}: profile menu opens the profile chapter`);
   assert.equal(doc.querySelectorAll('.desktop-nav-group').length,7);assert.equal(doc.querySelectorAll('.desktop-subnav a').length,14);
   assert.deepEqual([...doc.querySelectorAll('.about-chapters a')].map(a=>a.hash),['#profile','#history','#partners','#activities','#achievements']);
-  assert.ok(doc.querySelector(`.md-masthead-figure img[src^="${sitePath('/assets/minhduc-v18/about-team')}"]`),'masthead uses the genuine team photo');
+  assert.ok(doc.querySelector(`.md-masthead-figure img[src^="${sitePath('/assets/minhduc-r2/team-flag-salute')}"]`),'masthead uses the genuine uncropped team photo');
   assert.ok(doc.querySelector(`.about-profile-actions a[href="${base}/about-us#business-contact"]`),'staffing CTA reaches the form on this page');
-  assert.equal(doc.querySelectorAll(`#activities img[src^="${sitePath('/assets/minhduc-v16/')}"]`).length,4);
+  assert.equal(doc.querySelectorAll(`#activities img[src^="${sitePath('/assets/minhduc-')}"]`).length,4);
   assert.ok([...doc.querySelectorAll('#history [role=tab]')].every(tab=>tab.textContent.trim() && !/^\d+$/.test(tab.textContent.trim())),'phases have readable names');
   assert.equal(doc.querySelectorAll('#partners .info-partner').length,5,'only confirmed partner names');
   assert.equal(doc.querySelectorAll('.md-team-overview img').length,1,'one genuine group image accompanies the role list');

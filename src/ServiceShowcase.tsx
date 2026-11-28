@@ -1,7 +1,8 @@
 import {useEffect, useId, useRef, useState, type CSSProperties, type PointerEvent} from 'react';
 import {Link} from 'react-router-dom';
-import {ArrowUpRight, ChevronLeft, ChevronRight, GraduationCap, Network, Pause, Play} from 'lucide-react';
+import {ArrowUpRight, Award, BriefcaseBusiness, ChevronLeft, ChevronRight, GraduationCap, Network, Pause, Play, Users} from 'lucide-react';
 import {services, type Service} from './pages/info/data';
+import {useTranslation} from './i18n';
 import {adjacentRailOffset, advanceHomeRail, slideRailTo, useHomeCarousel} from './useHomeCarousel';
 import './service-showcase.css';
 
@@ -10,6 +11,14 @@ export function serviceSlideDuration(rail: HTMLElement) {
   const token = window.getComputedStyle(rail).getPropertyValue('--motion-t2').trim();
   const value = Number.parseFloat(token);
   return Number.isFinite(value) ? value * (token.endsWith('ms') ? 1 : 1000) : 180;
+}
+
+function ServiceIcon({icon}: {icon: Service['card']['icon']}) {
+  if (icon === 'sourcing') return <Users aria-hidden="true"/>;
+  if (icon === 'leasing') return <BriefcaseBusiness aria-hidden="true"/>;
+  if (icon === 'skills') return <Award aria-hidden="true"/>;
+  if (icon === 'admissions') return <GraduationCap aria-hidden="true"/>;
+  return <Network aria-hidden="true"/>;
 }
 
 function ServiceCard({service}: {service: Service}) {
@@ -25,8 +34,7 @@ function ServiceCard({service}: {service: Service}) {
           onLoad={event=>{event.currentTarget.hidden=false;}} onError={event=>{event.currentTarget.hidden=true;}}/>
       </span>
       <span className={'service-card-icon service-card-icon--' + icon} aria-hidden="true">
-        {icon==='admissions' && <GraduationCap/>}
-        {icon==='consulting' && <Network/>}
+        <ServiceIcon icon={icon}/>
       </span>
       <div className="service-card-copy">
         <h3 className="service-card-title" id={id + '-title'}>{service.title}</h3>
@@ -47,6 +55,7 @@ export function ServiceDirectory() {
 type Grab = {pointer: number; startX: number; startY: number; startScroll: number; dragging: boolean};
 
 export function ServiceCards({exclude}: {exclude?: string}) {
+  const t = useTranslation();
   const id = useId();
   const rail = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLDivElement>(null);
@@ -156,7 +165,10 @@ export function ServiceCards({exclude}: {exclude?: string}) {
       {services.filter(service=>service.slug!==exclude).map(service=><ServiceCard key={service.slug} service={service}/>)}
     </div>
     <div className="service-gallery-toolbar"><button className="service-gallery-rotation" type="button" aria-controls={id}
-      aria-label={paused?'Phát chuyển động':'Tạm dừng chuyển động'} onClick={()=>{interruptSlide();setPaused(value=>!value);}}>
+      aria-label={paused
+        ? t({vi:'Phát chuyển động',en:'Play rotation',zh:'播放轮播',ko:'자동 이동 재생',ja:'自動スライドを再生'})
+        : t({vi:'Tạm dừng chuyển động',en:'Pause rotation',zh:'暂停轮播',ko:'자동 이동 일시 정지',ja:'自動スライドを一時停止'})}
+      onClick={()=>{interruptSlide();setPaused(value=>!value);}}>
       {paused?<Play size={17} aria-hidden="true"/>:<Pause size={17} aria-hidden="true"/>}
     </button>
     <div className="service-gallery-controls">

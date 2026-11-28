@@ -45,6 +45,8 @@ export const subnavigation: Record<string, string[][]> = {
 };
 // Parent styling follows its child destinations without claiming the parent is the current page.
 export function sectionHasChild(url: string, pathname: string) {
+  const isEducation = pathname === '/education' || pathname.startsWith('/education/');
+  if (isEducation) return url === '/services';
   return (subnavigation[url] || []).some(([to]) => {
     const path = to.split(/[?#]/, 1)[0];
     return (

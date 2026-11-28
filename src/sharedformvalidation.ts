@@ -15,6 +15,7 @@ export const validOptionalEmail=(value:string)=>!value.trim()||/^[^\s@]+@[^\s@]+
 /** Field-level rules shared by the public demo forms. */
 export function identityFieldError(name: string, value: string): string {
   if (name === 'name' && !value.trim()) return 'Vui lòng nhập họ tên.';
+  if (name === 'phone' && !value.trim()) return 'Vui lòng nhập số điện thoại.';
   if (name === 'phone' && !validDemoPhone(value)) return 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
   if (name === 'email' && !validOptionalEmail(value)) return 'Email chưa đúng định dạng.';
   return '';

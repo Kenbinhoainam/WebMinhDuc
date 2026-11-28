@@ -60,7 +60,7 @@ try {
   const reduce = async state => act(async()=>{preference.matches=state;for(const listener of [...listeners])listener()});
   try {
     await act(async()=>root.render(React.createElement(React.StrictMode,null,metrics('normal'))));
-    assert.deepEqual(numbers(),[0,0,0,0]);
+    assert.deepEqual(text(),finalText,'offscreen content keeps final readable numbers rather than sticking at 0+');
     assert.equal(frames.size,0,'offscreen content does no animation work');
     assert.equal(listeners.size,1,'StrictMode leaves only one live preference listener');
     assert.ok(observers.slice(0,-2).every(observer=>observer.targets.size===0));
@@ -75,11 +75,11 @@ try {
     await tick(320);assert.deepEqual(text(),finalText);assert.equal(frames.size,0);
     await cross(400);await cross(791);assert.deepEqual(text(),finalText,'remaining in the viewport cannot replay completed counts');
 
-    await cross(-159);assert.deepEqual(numbers(),[0,0,0,0],'whole-group exit above re-arms');
+    await cross(-159);assert.deepEqual(text(),finalText,'whole-group exit above re-arms without sticking at 0+');
     await cross(-141);assert.deepEqual(numbers(),[0,0,0,0],'entry from above restarts together');
     await tick(2000);await tick(2120);
     const staleFrame = [...frames.values()][0];
-    await cross(809);assert.deepEqual(numbers(),[0,0,0,0]);assert.equal(frames.size,0,'full exit below cancels an unfinished run');
+    await cross(809);assert.deepEqual(text(),finalText);assert.equal(frames.size,0,'full exit below cancels an unfinished run and restores final values');
     await cross(790);await act(async()=>staleFrame(9000));assert.deepEqual(numbers(),[0,0,0,0],'a canceled callback cannot advance the new pass');
     await tick(3000);await tick(3200);
     const beforeHidden = numbers();await visibility(true);assert.equal(frames.size,0);
