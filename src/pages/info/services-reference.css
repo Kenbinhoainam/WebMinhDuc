@@ -135,3 +135,13 @@
   .md-ref-service-metrics article { overflow-wrap:anywhere; }
   .service-table-scroll th,.service-table-scroll td { padding:11px 7px; overflow-wrap:anywhere; }
 }
+.service-stories-controls{display:flex;justify-content:flex-end;margin-top:16px}
+@media(prefers-reduced-motion:reduce){.service-stories-controls{display:none}}
+.service-faq .info-faq-item>.service-faq-answer{display:grid;grid-template-rows:0fr;padding:0;visibility:hidden;transition:grid-template-rows var(--motion-t2,180ms) var(--motion-ease,ease-out),visibility 0s var(--motion-t2,180ms)}
+.service-faq .service-faq-answer>div{min-height:0;overflow:hidden;opacity:0;transition:opacity var(--motion-t1,120ms) var(--motion-ease,ease-out)}
+.service-faq .service-faq-answer p{padding:0 24px 20px}
+.service-faq .info-faq-item.is-open>.service-faq-answer{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.service-faq .info-faq-item.is-open>.service-faq-answer>div{opacity:1}
+.service-faq .info-faq-item h3 button svg{transition:transform var(--motion-t2,180ms) var(--motion-ease,ease-out)}
+@media(max-width:767px){.service-faq .service-faq-answer p{padding:0 18px 18px}}
+@media(prefers-reduced-motion:reduce){.service-faq .info-faq-item>.service-faq-answer,.service-faq .service-faq-answer>div,.service-faq .info-faq-item h3 button svg{transition:none}}

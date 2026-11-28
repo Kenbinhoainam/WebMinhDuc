@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useRef, useState, type CSSProperties, type ReactNode} from 'react';
 import {useLocation} from 'react-router-dom';
+import {useLocale, languageTags} from './i18n';
 import './motion.css';
 
 /** Observe the stable outer box. left/right name the starting side; zoom-right matches AOS zoom-in-right (from left). */
@@ -13,7 +14,7 @@ export function RevealFrame({children, effect = 'up', delay, delayMs, className,
 }) {
   // Compress legacy AOS delays into a short, capped stagger.
   const explicitDelay = delayMs !== undefined && Number.isFinite(delayMs) && delayMs >= 0
-    ? Math.min(300, Math.round(delayMs * .3))
+    ? Math.min(120, Math.round(delayMs / 200) * 40)
     : undefined;
   const style = explicitDelay === undefined ? undefined : {'--reveal-delay': `${explicitDelay}ms`} as CSSProperties;
   return <div className={className} style={style} data-reveal={effect} data-reveal-delay={delay} data-reveal-delay-ms={explicitDelay} data-reveal-frame="">
@@ -24,7 +25,11 @@ export function RevealFrame({children, effect = 'up', delay, delayMs, className,
 /** Progressively enhance marked content; failures and unenhanced HTML remain visible. */
 export function startReveals(): () => void {
   if (typeof window === 'undefined' || typeof document === 'undefined' || typeof IntersectionObserver === 'undefined' || !window.matchMedia) return () => {};
-  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let preference: MediaQueryList;
+  try {
+    preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!preference?.addEventListener || !preference.removeEventListener) return () => {};
+  } catch { return () => {}; }
   let entrance: IntersectionObserver | undefined;
   let exit: IntersectionObserver | undefined;
   let mutations: MutationObserver | undefined;
@@ -170,10 +175,10 @@ export function MotionController() {
 }
 
 const numberProgress = createContext(1);
-const numberFormatter = new Intl.NumberFormat('vi-VN');
+const numberFormatters = Object.fromEntries(Object.entries(languageTags).map(([locale, tag]) => [locale, new Intl.NumberFormat(tag)]));
 
 /** One stable block, one clock: a new pass begins only after the whole block leaves. */
-export function AnimatedNumberGroup({children, className, duration = 1100, 'aria-label': label}: {
+export function AnimatedNumberGroup({children, className, duration = 320, 'aria-label': label}: {
   children: ReactNode;
   className?: string;
   duration?: number;
@@ -191,7 +196,8 @@ export function AnimatedNumberGroup({children, className, duration = 1100, 'aria
       preference = window.matchMedia('(prefers-reduced-motion: reduce)');
       if (!preference || typeof preference.addEventListener !== 'function' || typeof preference.removeEventListener !== 'function') return;
     } catch { return; }
-    const total = Number.isFinite(duration) ? Math.max(1, duration) : 1100;
+    const total = Number.isFinite(duration) ? Math.max(0, duration) : 320;
+    if (total === 0) return;
     const edge = 8;
     let frame = 0, generation = 0, elapsed = 0;
     let last: number | null = null;
@@ -295,8 +301,9 @@ export function AnimatedNumberGroup({children, className, duration = 1100, 'aria
 /** The final value stays available to assistive technology throughout the run. */
 export function AnimatedNumber({value, suffix = ''}: {value: number; suffix?: string}) {
   const progress = useContext(numberProgress);
+  const locale = useLocale();
   // Truncation keeps all four final integers reserved for the shared last frame.
   const display = progress >= 1 ? value : Math.trunc(value * progress);
-  const format = (number: number) => numberFormatter.format(number) + suffix;
+  const format = (number: number) => numberFormatters[locale].format(number) + suffix;
   return <span data-count-to={value}><span className="motion-sr-only">{format(value)}</span><span aria-hidden="true">{format(display)}</span></span>;
 }

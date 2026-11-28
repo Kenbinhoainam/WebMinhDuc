@@ -30,7 +30,7 @@ try {
  await submit();assert.equal(document.querySelector('[name=phone]').getAttribute('aria-invalid'),'true');assert.equal(document.querySelector('.education-success'),null);
  await change('[name=phone]','0912345678');
  const input=document.querySelector('[name=document]');assert.equal(input.required,false);
- Object.defineProperty(input,'files',{configurable:true,value:[new window.File([new Uint8Array(5_000_001)],'large.pdf',{type:'application/pdf'})]});await submit();assert.equal(input.getAttribute('aria-invalid'),'true');assert.ok(document.querySelector('#education-document-error[role=alert]'));assert.equal(document.querySelector('[name=name]').value,'Nguyen An');
- Object.defineProperty(input,'files',{configurable:true,value:[]});await submit();assert.match(document.querySelector('.education-success').textContent,/F06/);
+ Object.defineProperty(input,'files',{configurable:true,value:[new window.File([new Uint8Array(5_000_001)],'large.pdf',{type:'application/pdf'})]});await act(()=>input.dispatchEvent(new Event('change',{bubbles:true})));await submit();assert.equal(input.getAttribute('aria-invalid'),'true');assert.ok(document.querySelector('#education-document-error[role=alert]'));assert.equal(document.querySelector('[name=name]').value,'Nguyen An');
+ await act(()=>input.form.querySelector('.attachment-files button').click());await submit();assert.match(document.querySelector('.education-success').textContent,/F06/);
  await act(async()=>root.unmount());dom.window.close();console.log('PASS Education rejects invalid phone/oversize file; optional file demo completes');
 } finally {await rm(bundle,{force:true});}

@@ -73,6 +73,7 @@ function ChapterNav(){
 function HistorySection(){
   const [phase,setPhase] = useState(0);
   const [detail,setDetail] = useState(false);
+  const [paused,setPaused] = useState(false);
   const area = useRef<HTMLElement>(null);
   const rail = useRef<HTMLDivElement>(null);
   const scrollingTo = useRef<number | null>(null);
@@ -88,7 +89,7 @@ function HistorySection(){
     scrollingTo.current = behavior === 'smooth' ? left : null;
     track.scrollTo({left, behavior});
   };
-  useHomeCarousel(area, () => change(phase + 1, phase === phases.length - 1), '.about-history-interaction', {intervalMs:6000, disabled:detail});
+  useHomeCarousel(area, () => change(phase + 1, phase === phases.length - 1), '.about-history-interaction', {intervalMs:6000, disabled:detail, paused});
   useEffect(() => {
     const track = rail.current;
     if (!track) return;
@@ -144,15 +145,17 @@ function HistorySection(){
           <div className="info-history-track" role="tablist" aria-label="Các giai đoạn">
             {phases.map((item,index)=><button key={item.label} type="button" role="tab" id={'history-tab-'+index} aria-selected={phase===index} aria-controls="history-panel" tabIndex={phase===index?0:-1} onKeyDown={event=>keyboard(event,index)} onClick={event=>change(index,event.detail===0)}>{item.label}</button>)}
           </div>
+          <button className="about-rail-pause" type="button" aria-controls="history-track"
+            onClick={()=>setPaused(value=>!value)}>{paused?'Phát chuyển động':'Tạm dừng chuyển động'}</button>
         </div>
-        <RevealFrame effect="up"><div className="info-history-rail" ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Các giai đoạn">
+        <RevealFrame effect="up"><div id="history-track" className="info-history-rail" ref={rail} data-auto-rail tabIndex={0} role="region" aria-label="Các giai đoạn">
           {phases.map((item,index)=>{
             const active=index===phase;
             return <article key={item.label} className={'info-history-slide '+(active?'is-active':'is-side')}
               role={active?'tabpanel':undefined} aria-hidden={active?undefined:true} id={active?'history-panel':undefined} aria-labelledby={active?'history-tab-'+phase:undefined}>
               <div className="md-history-image"><img src={item.image} alt={item.alt} sizes="(max-width:767px) 100vw, (max-width:1440px) 64vw, 800px" loading="lazy" decoding="async"/></div>
               <div className="about-history-copy"><h3>{item.title}</h3><p>{item.text}</p>
-                {active&&<button type="button" className="about-text-action" onClick={()=>setDetail(true)}>Xem chi tiết</button>}</div>
+                {active&&<button type="button" className="about-text-action" aria-haspopup="dialog" onClick={()=>setDetail(true)}>Xem chi tiết</button>}</div>
             </article>;
           })}
         </div></RevealFrame>
@@ -193,6 +196,7 @@ function AboutMilestones(){
   const area=useRef<HTMLElement>(null);
   const track=useRef<HTMLDivElement>(null);
   const [overflow,setOverflow]=useState(false);
+  const [paused,setPaused]=useState(false);
   useEffect(()=>{
     const rail=track.current;
     if(!rail)return;
@@ -203,11 +207,13 @@ function AboutMilestones(){
     window.addEventListener('resize',measure);
     return ()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
   },[]);
-  useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{intervalMs:6000,disabled:!overflow});
+  useHomeCarousel(area,()=>advanceHomeRail(track.current),'.about-milestone-interaction',{intervalMs:6000,disabled:!overflow,paused});
   return <section id="achievements" ref={area} className="section container info-documentation"><h2>Thành tựu và dấu ấn</h2>
     <p className="about-intro-line">Những ưu tiên định hình cách chúng tôi đồng hành cùng doanh nghiệp và người lao động.</p>
     <div className="about-milestone-interaction">
-      <RevealFrame effect="up"><div className="info-document-grid" ref={track} data-auto-rail role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
+      {overflow && <button className="about-rail-pause" type="button" aria-controls="about-milestones"
+        onClick={()=>setPaused(value=>!value)}>{paused?'Phát chuyển động':'Tạm dừng chuyển động'}</button>}
+      <RevealFrame effect="up"><div id="about-milestones" className="info-document-grid" ref={track} data-auto-rail role="region" tabIndex={overflow?0:undefined} aria-label="Cách chúng tôi đồng hành">
         {milestones.map(item=><article className="info-document-card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
       </div></RevealFrame>
 

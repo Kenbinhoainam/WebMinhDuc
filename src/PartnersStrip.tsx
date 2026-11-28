@@ -1,7 +1,8 @@
-import {useEffect, useRef, useState, type KeyboardEvent} from 'react';
+import {useEffect, useId, useRef, useState, type KeyboardEvent} from 'react';
 import PartnerLogo from './PartnerLogo';
 import {partners} from './partners';
 import {useTranslation} from './i18n';
+import './partners-strip-controls.css';
 
 const pixelsPerSecond = 22;
 
@@ -9,6 +10,11 @@ const pixelsPerSecond = 22;
 export default function PartnersStrip() {
   const t = useTranslation();
   const viewport = useRef<HTMLDivElement>(null);
+  const id = useId();
+  const toggle = useRef<HTMLButtonElement>(null);
+  const userPaused = useRef(false);
+  const wake = useRef(() => {});
+  const [paused, setPaused] = useState(false);
   const [staticList, setStaticList] = useState(true);
   useEffect(() => {
     if (!viewport.current || typeof IntersectionObserver === 'undefined' || !window.matchMedia) return;
@@ -46,7 +52,7 @@ export default function PartnersStrip() {
       previousTime = 0;
       position = written = rail.scrollLeft;
       if (alive && ready && visible && !held && !hovered && !focused &&
-          !motion.matches && !document.hidden && !root?.hasAttribute('inert')) {
+          !userPaused.current && !motion.matches && !document.hidden && !root?.hasAttribute('inert')) {
         measure();
         frame = requestAnimationFrame(tick);
       }
@@ -65,7 +71,12 @@ export default function PartnersStrip() {
       observer?.disconnect();
       return;
     }
-    const preferences = () => {setStaticList(motion.matches); update();};
+    wake.current = update;
+    const preferences = () => {
+      if (motion.matches && document.activeElement === toggle.current) rail.focus({preventScroll:true});
+      setStaticList(motion.matches);
+      update();
+    };
     const enter = (event: PointerEvent) => {if (event.pointerType !== 'touch') {hovered = true; update();}};
     const leave = () => {hovered = false; update();};
     let drag: {id: number; x: number; start: number} | undefined;
@@ -115,6 +126,7 @@ export default function PartnersStrip() {
     preferences();
     return () => {
       alive = false;
+      wake.current = () => {};
       cancelAnimationFrame(frame);
       observer.disconnect();
       modal?.disconnect();
@@ -149,7 +161,12 @@ export default function PartnersStrip() {
   }
   const name = t({vi:'Đối tác tiêu biểu',en:'Featured partners',zh:'精选合作伙伴',ko:'주요 파트너',ja:'主なパートナー'});
   return <div className="partners-strip" data-static={staticList}>
-    <div ref={viewport} className="partners-viewport" data-auto-rail tabIndex={staticList ? undefined : 0} role="region" aria-label={name} onKeyDown={navigate}>
+    {!staticList && <button ref={toggle} className="partners-motion-toggle" type="button" aria-controls={id} onClick={() => {
+      userPaused.current = !userPaused.current;
+      setPaused(userPaused.current);
+      wake.current();
+    }}>{paused ? 'Phát chuyển động đối tác' : 'Tạm dừng chuyển động đối tác'}</button>}
+    <div id={id} ref={viewport} className="partners-viewport" data-auto-rail tabIndex={staticList ? -1 : 0} role="region" aria-label={name} onKeyDown={navigate}>
       <div className="partners-track">
         <ul className="partners-set">{partners.map(name => <li key={name}><PartnerLogo name={name}/></li>)}</ul>
         {!staticList && <ul className="partners-set" aria-hidden="true">{partners.map(name => <li key={name}><PartnerLogo name={name}/></li>)}</ul>}

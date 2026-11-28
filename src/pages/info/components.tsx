@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useId, useState} from 'react';
 import {ChevronDown} from 'lucide-react';
 import {SectionHeading} from '../../shared';
 import {ContactForm} from '../../Contact';
@@ -10,7 +10,8 @@ export function InfoContact({service, id='business-contact', formRequestKey}: {s
   </div></section>;
 }
 export function FAQ({ questions }: { questions: [string, string][] }) {
+  const id = useId();
   const [active, setActive] = useState<number | null>(0);
-  return <div className="info-faq">{questions.map(([question, answer], i) => <div className={`info-faq-item ${active === i ? 'is-open' : ''}`} key={question}><h3><button type="button" aria-expanded={active === i} aria-controls={`faq-answer-${i}`} onClick={() => setActive(active === i ? null : i)}>{question}<ChevronDown size={20} /></button></h3><div id={`faq-answer-${i}`} hidden={active !== i}><p>{answer}</p></div></div>)}</div>;
+  return <div className="info-faq">{questions.map(([question, answer], i) => <div className={`info-faq-item ${active === i ? 'is-open' : ''}`} key={question}><h3><button type="button" aria-expanded={active === i} aria-controls={`${id}-answer-${i}`} onClick={() => setActive(value => value === i ? null : i)}>{question}<ChevronDown size={20} aria-hidden="true"/></button></h3><div className="service-faq-answer" id={`${id}-answer-${i}`} aria-hidden={active !== i} inert={active !== i}><div><p>{answer}</p></div></div></div>)}</div>;
 }
 

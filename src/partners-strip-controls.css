@@ -1,0 +1,14 @@
+.partners-motion-toggle {
+  display:block;
+  margin-inline-start:auto;
+  min-height:44px;
+  padding:6px 12px;
+  background:var(--md-surface);
+  color:var(--md-blue);
+  border:1px solid var(--md-rule);
+  border-radius:4px;
+  font:inherit;
+  font-weight:650;
+}
+.partners-motion-toggle:hover { background:var(--md-surface-blue); }
+.partners-motion-toggle:focus-visible { outline:3px solid var(--md-focus); outline-offset:2px; }

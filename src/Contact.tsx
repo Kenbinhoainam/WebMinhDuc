@@ -2,8 +2,9 @@ import {useEffect, useId, useRef, useState, type FormEvent} from 'react';
 import {Link, useLocation, useSearchParams} from 'react-router-dom';
 import {CalendarDays, CheckCircle2, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
 import {company} from './company';
+import {translate} from './i18n-runtime/catalog';
 import {createDemoSubmission} from './demo-submissions';
-import {validDemoPhone, validOptionalEmail} from './sharedformvalidation';
+import {identityFieldError} from './sharedformvalidation';
 import {useLocale, useTranslation} from './i18n';
 import {PageMasthead} from './PageMasthead';
 import './form-experience-v16.css';
@@ -56,11 +57,14 @@ export function ContactForm({initialMode = 'F01', mode: selectedMode, lockMode, 
 
 function ContactFields({mode, draft, initialService, source, onComplete, onNavigate, beforeSubmit}:
   FormProps & {mode: Mode; draft: Fields}) {
+  const t = useTranslation();
   const id = useId(), location = useLocation();
   const form = useRef<HTMLFormElement>(null), receiptHeading = useRef<HTMLHeadingElement>(null);
-  const submitted = useRef(false), restarting = useRef(false);
+  const attempted = useRef(false), submitted = useRef(false), restarting = useRef(false);
   const [errors, setErrors] = useState<Fields>({});
   const [receipt, setReceipt] = useState('');
+  const [receiptService, setReceiptService] = useState('');
+  const optionalLabel = t({vi:'Tùy chọn',en:'Optional',zh:'选填',ko:'선택 사항',ja:'任意'});
   const service = initialService?.startsWith('Tuyển sinh cao đẳng') ? services[3] : services.find(item => item === initialService) ?? services[0];
 
   useEffect(() => {
@@ -71,9 +75,28 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
     }
   }, [receipt]);
 
+  function fieldError(name: string, value: string) {
+    const trimmed = value.trim();
+    if (name === 'phone' && !trimmed) return 'Vui lòng nhập số điện thoại.';
+    if (mode === 'F01') {
+      if (name === 'location' && !trimmed) return 'Vui lòng nhập địa điểm.';
+      if (name === 'notes' && !trimmed) return 'Vui lòng nhập ghi chú.';
+      if (name === 'quantity' && trimmed && (!Number.isInteger(Number(trimmed)) || Number(trimmed) < 1)) {
+        return 'Vui lòng nhập số lượng từ 1 trở lên.';
+      }
+    }
+    return identityFieldError(name, value);
+  }
+
   function remember(event: FormEvent<HTMLFormElement>) {
     const field = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-    if (field.name) draft[field.name] = field.value;
+    const {name, value} = field;
+    if (!name) return;
+    draft[name] = value;
+    if (attempted.current) {
+      const error = fieldError(name, value);
+      setErrors(previous => (previous[name] ?? '') === error ? previous : {...previous, [name]: error});
+    }
   }
 
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -82,15 +105,10 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
     const data = new FormData(event.currentTarget);
     const value = (name: string) => String(data.get(name) ?? '');
     const invalid: Fields = {};
-    if (!value('name').trim()) invalid.name = 'Vui lòng nhập họ tên.';
-    if (!value('phone').trim()) invalid.phone = 'Vui lòng nhập số điện thoại.';
-    else if (!validDemoPhone(value('phone'))) invalid.phone = 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.';
-    if (!validOptionalEmail(value('email'))) invalid.email = 'Email chưa đúng định dạng.';
-    if (mode === 'F01') {
-      if (!value('location').trim()) invalid.location = 'Vui lòng nhập địa điểm.';
-      if (!value('notes').trim()) invalid.notes = 'Vui lòng nhập ghi chú.';
-      const quantity = value('quantity').trim();
-      if (quantity && (!Number.isInteger(Number(quantity)) || Number(quantity) < 1)) invalid.quantity = 'Vui lòng nhập số lượng từ 1 trở lên.';
+    attempted.current = true;
+    for (const key of data.keys()) {
+      const error = fieldError(key, value(key));
+      if (error) invalid[key] = error;
     }
     setErrors(invalid);
     if (Object.keys(invalid).length) {
@@ -104,6 +122,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
       fields: Object.fromEntries((mode === 'F01' ? businessFields : ['email', 'message']).map(name => [name, value(name)])),
     });
     for (const key of Object.keys(draft)) delete draft[key];
+    setReceiptService(mode === 'F01' ? value('service') : '');
     setReceipt(record.id);
     onComplete?.(record.id);
   }
@@ -111,7 +130,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
   function field(name: string, label: string, type = 'text', required = false, autoComplete?: string) {
     const errorId = errors[name] ? id + '-' + name + '-error' : undefined;
     return <label className={type === 'textarea' ? 'full-field' : undefined}>
-      {label} {required && <span aria-hidden="true">*</span>}
+      {label} {required ? <span aria-hidden="true">*</span> : <span className="form-optional">({optionalLabel})</span>}
       {type === 'textarea' ? <textarea name={name} rows={4} defaultValue={draft[name]} required={required}
         aria-invalid={!!errors[name]} aria-describedby={errorId}/> :
         <input name={name} type={type} defaultValue={draft[name]} required={required} autoComplete={autoComplete}
@@ -123,13 +142,15 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
   if (receipt) return <div className="form-success" role="status">
     <CheckCircle2 size={36} aria-hidden="true"/><h3 ref={receiptHeading} tabIndex={-1}>Đã hoàn tất gửi thử</h3>
     <p>Mã mô phỏng: <strong>{receipt}</strong></p>
+    <p className="form-context"><strong>{mode === 'F01' ? 'Gửi nhu cầu nhân lực' : 'Liên hệ chung'}</strong>{receiptService && <><br/>{receiptService}</>}</p>
     <p>Biên nhận mẫu được giữ đến khi tải lại trang; thông tin không gửi ra ngoài.</p>
     <Link className="btn" to={'/admin-demo?type=' + mode + '&id=' + receipt} onClick={onNavigate}>Xem hồ sơ mẫu {mode}</Link>
-    <button type="button" className="text-link" onClick={() => {restarting.current = true; submitted.current = false; setReceipt('');}}>Tạo yêu cầu thử mới</button>
+    <button type="button" className="text-link" onClick={() => {restarting.current = true; submitted.current = false; attempted.current = false; setErrors({}); setReceiptService(''); setReceipt('');}}>Tạo yêu cầu thử mới</button>
   </div>;
 
-  return <form ref={form} className="contact-form" noValidate onSubmit={submit} onInput={remember} onChange={remember}>
+  return <form ref={form} className="contact-form" aria-describedby={id + '-requirements'} noValidate onSubmit={submit} onInput={remember} onChange={remember}>
     <p className="form-disclaimer">Chỉ nhập dữ liệu mẫu. Biểu mẫu tạo biên nhận trong phiên này và không gửi thông tin ra ngoài.</p>
+    <p className="form-requirements" id={id + '-requirements'}>Các trường có dấu * là bắt buộc.</p>
     <fieldset className="contact-fieldset"><legend>Thông tin liên hệ</legend>
       <div className="form-grid">
         {field('name', 'Người liên hệ', 'text', true, 'name')}
@@ -144,7 +165,7 @@ function ContactFields({mode, draft, initialService, source, onComplete, onNavig
         {field('location', 'Địa điểm làm việc', 'text', true)}
         {field('jobrole', 'Vị trí cần tuyển')}
         {field('quantity', 'Số lượng', 'number')}
-        <label>Ca làm việc<select name="shift" defaultValue={draft.shift ?? ''}><option value="">Chọn ca</option>
+        <label>Ca làm việc <span className="form-optional">({optionalLabel})</span><select name="shift" defaultValue={draft.shift ?? ''}><option value="">Chọn ca</option>
           {['Ngày','Đêm','Xoay ca','Khác'].map(shift => <option key={shift} value={shift}>{shift}</option>)}</select></label>
         {field('needdate', 'Ngày cần người', 'date')}
         <label>Dịch vụ quan tâm<select name="service" defaultValue={draft.service ?? service}>
@@ -168,7 +189,11 @@ export function ContactPage() {
   const [officeIndex, setOfficeIndex] = useState(0);
   const formTitle = useRef<HTMLHeadingElement>(null);
   const office = company.offices[officeIndex];
-  const mapTitle = t({vi:'Bản đồ ' + office.name, en:'Map of ' + office.name, zh:office.name + '地图', ko:office.name + ' 지도', ja:office.name + 'の地図'});
+  const officeName = translate(office.name, locale);
+  const mapTitle = t({
+    vi: `Bản đồ ${officeName}`, en: `Map of ${officeName}`, zh: `${officeName}地图`,
+    ko: `${officeName} 지도`, ja: `${officeName}の地図`,
+  });
   const mapUrl = `https://maps.google.com/maps?cid=${officeMapIds[officeIndex]}&output=embed&hl=${locale === 'zh' ? 'zh-CN' : locale}`;
 
   function choose(value: Mode) {

@@ -29,8 +29,8 @@ function parseSaved(raw: string): string[] {
   try { const result: unknown = JSON.parse(raw); return Array.isArray(result) ? [...new Set(result.filter((id): id is string => typeof id === 'string' && jobs.some(job => job.id === id)))] : []; } catch { return []; }
 }
 export function useSavedJobs() {
-  const raw = useSyncExternalStore(subscribeSaved, getSavedSnapshot, () => '[]');
-  const savedIds = useMemo(() => parseSaved(raw), [raw]);
+  const raw = useSyncExternalStore<string | null>(subscribeSaved, getSavedSnapshot, () => null);
+  const savedIds = useMemo(() => parseSaved(raw ?? '[]'), [raw]);
   const toggleSaved = (id: string) => {
     if (!jobs.some(job => job.id === id)) return;
     const current = parseSaved(getSavedSnapshot());
@@ -42,6 +42,6 @@ export function useSavedJobs() {
     } catch { useMemorySaved = true; }
     window.dispatchEvent(new Event(SAVED_EVENT));
   };
-  return { savedIds, isTemporary:useMemorySaved, toggleSaved, isSaved: (id: string) => savedIds.includes(id), count: savedIds.length };
+  return { savedIds, ready:raw !== null, isTemporary:useMemorySaved, toggleSaved, isSaved: (id: string) => savedIds.includes(id), count: savedIds.length };
 }
 

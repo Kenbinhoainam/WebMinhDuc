@@ -141,3 +141,13 @@
 
 #career-contact { display:flex; flex-wrap:wrap; align-items:center; gap:4px 20px; }
 #career-contact > a { display:inline-flex; align-items:center; min-height:44px; color:#20478f; font-weight:700; }
+
+.career-rail-heading {display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-bottom:20px}
+.careers-page .career-block .career-rail-heading h2 {margin-bottom:0}
+.career-rail-controls {display:flex;gap:6px}
+.career-rail-controls button {
+  display:grid;place-items:center;min-width:44px;min-height:44px;padding:8px;
+  border:1px solid var(--md-control-border);border-radius:50%;background:var(--md-surface);color:var(--md-blue);cursor:pointer
+}
+.career-rail-controls button:focus-visible {outline:3px solid var(--md-focus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce) {.career-rail-controls .career-carousel-pause {display:none}}

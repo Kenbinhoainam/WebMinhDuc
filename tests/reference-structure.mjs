@@ -189,7 +189,7 @@ try {
         assert.ok(doc.querySelector('.info-featured-news article'), 'feature presentation remains separate');
         const featureSlides=doc.querySelectorAll('.editorial-feature-slide');
         assert.ok(featureSlides.length>1,'feature is a real rail of unique articles');
-        assert.equal(doc.querySelector('.info-featured-news button'),null,'automatic stories have no control bar');
+        assert.equal(doc.querySelector('.info-featured-news .ed-feature-pause').getAttribute('aria-controls'),'featured-news-track');
         assert.equal(new Set([...featureSlides].map(node=>node.querySelector('a.ed-feature').getAttribute('href'))).size,featureSlides.length);
         assert.ok(doc.querySelector('.editorial-feature-track[tabindex="0"][role="region"]'));
         assert.equal(doc.querySelectorAll('.editorial-feature-slide img[loading="eager"]').length,1,'offscreen feature images do not all fetch eagerly');
@@ -211,7 +211,7 @@ try {
         assert.equal(doc.querySelectorAll('.career-process-grid .career-step').length,4);
         assert.equal(doc.querySelectorAll('.career-questions .career-track article').length,3);
         assert.equal(doc.querySelectorAll('.career-track[data-auto-rail][tabindex="0"][aria-labelledby]').length,4);
-        assert.equal(doc.querySelectorAll('.career-rail-controls,.career-carousel-pause').length,0);
+        assert.equal(doc.querySelectorAll('.career-rail-controls > .career-carousel-pause').length,4,'each Careers rail exposes a pause control');
         const photos=[...doc.querySelectorAll('.career-gallery .career-track figure > button[aria-label] > img')];
         assert.equal(new Set(photos.map(photo=>photo.getAttribute('src'))).size,11,'eleven distinct real photographs open at larger size');
         assert.ok(photos.every(photo=>/\/minhduc-v1[68]\//.test(photo.getAttribute('src'))));
@@ -292,21 +292,10 @@ try {
   try {
     await React.act(()=>root.render(React.createElement(LocaleProvider,{value:'vi'},React.createElement(MemoryRouter,{initialEntries:['/news']},React.createElement(components.NewsPage)))));
     const track = document.querySelector('.editorial-feature-track');
-    Object.defineProperties(track,{offsetLeft:{value:0},scrollWidth:{value:800},clientWidth:{value:400}});
-    [...track.children].forEach((child,i)=>Object.defineProperty(child,'offsetLeft',{value:i*400}));
-    track.scrollTo=({left})=>{track.scrollLeft=left;track.dispatchEvent(new Event('scroll'));};
-    const listing = [...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent);
-    await React.act(()=>track.focus());
-    const press = key => React.act(()=>{
-      track.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key,bubbles:true}));
-      track.dispatchEvent(new Event('scroll'));
-    });
-    await press('ArrowRight');
-    assert.equal(track.scrollLeft,400,'keyboard moves to the next story even in reduced motion');
-    assert.ok(!track.children[1].hasAttribute('inert'));
-    assert.deepEqual([...document.querySelectorAll('.info-news-grid h2')].map(node=>node.textContent), listing, 'feature navigation does not replace the regular listing');
-    await press('ArrowLeft');
-    assert.equal(track.scrollLeft,0,'keyboard can return to the first story');
+    assert.equal(track.getAttribute('tabindex'),'-1','static reduced-motion layout does not add a tab stop');
+    assert.ok([...track.children].every(child => !child.hasAttribute('inert')),'all featured articles are reachable without movement');
+    assert.equal(document.querySelector('.ed-feature-pause').hidden,true);
+    assert.ok(document.querySelectorAll('.info-news-grid h2').length > 0);
   } finally { await React.act(()=>root.unmount()); dom.window.close(); }
   console.log('PASS independent reference structures: page families × five locales, five service variants, news pagination, spanning values, scheduling and career composition; no HR2B endpoints');
 } finally {
