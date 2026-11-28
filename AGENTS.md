@@ -1,3 +1,18 @@
+# MDV2 GitHub First — mandatory project rule (28/11/2026)
+
+**APPLIES TO ALL AI ASSISTANTS, ENGINEERS AND ENVIRONMENTS:** Every AI change to **project code OR project documents**, including tests/configs/scripts/specs/reports/agent instructions, MUST be committed and **PUSHED to the authorized GitHub repository branch** before the agent reports the work as complete. Confirm remote SHA and create/update a reviewable PR. No local-only, chat-only or hosted Sites-only modification qualifies as completed project work.
+
+- Canonical GitHub repository: Kenbinhoainam/WebMinhDuc (PUBLIC); private customer, candidate, commercial and secrets belong in an authorized PRIVATE GitHub repository, never in public branches. If private repo unavailable mark BLOCKED_PRIVACY, not Done.
+- Read docs/README.md, docs/governance/github-operations-policy.md, docs/governance/source-of-truth.md, docs/requirements/master-requirements.md, docs/decisions/decision-log.md, and the applicable APPROVED SDD before modifying anything.
+- Confirm branch, checkout and latest remote commits. New work uses a distinct branch/worktree and explicit file owner. Preserve other agents' changes; no force push/merge/deploy without authorization. Avoid scope creep and historical code overrides.
+- Each handoff must include Issue/Requirement/Spec IDs, file list, remote branch and SHA, PR, tests/QA evidence, preview-to-source mapping and open Blocked/Not Run items. If GitHub push fails mark BLOCKED_GITHUB_PUSH and do not claim Done.
+- HR-WEB-01 vendor drafts are not the official Master Requirements. The new MDV2-REQ-01 is currently a candidate; only the scoped PO-approved GitHub baseline gains authority. Customer-confirmed Sprint 1 needs still matter; do not treat prototype code as signed production scope.
+- Sprint 1 Discovery is CLOSED; Sprint 2 selected prototype work is on Draft PR #3, not merged. Read the version map before claiming what is “latest.” Existing historical design instructions below remain relevant only where they do not conflict with a later approved SDD/PO decision.
+
+**Full operating policy:** docs/governance/github-operations-policy.md. **Gemini entrypoint:** GEMINI.md. **Multi-agent protocol:** docs/ai/multi-agent-protocol.md.
+
+---
+
 # Minh Đức Vina — cách làm việc trong dự án
 
 Các quy ước dưới đây ghi nhận yêu cầu của người dùng cho những nhiệm vụ tiếp theo. Chỉ dẫn mới của người dùng được ưu tiên khi có thay đổi.

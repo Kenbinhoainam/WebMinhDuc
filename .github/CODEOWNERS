@@ -1,0 +1,7 @@
+# Proposed review ownership. This file alone does NOT enable branch protections.
+* @Kenbinhoainam
+/docs/ @Kenbinhoainam
+/AGENTS.md @Kenbinhoainam
+/GEMINI.md @Kenbinhoainam
+/CLAUDE.md @Kenbinhoainam
+/.github/ @Kenbinhoainam

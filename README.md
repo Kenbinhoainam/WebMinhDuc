@@ -1,3 +1,17 @@
+# Website Minh Đức V2 — GitHub project entrypoint
+
+**Project source of truth:** GitHub. **All AI changes to code and documents MUST be committed and pushed to GitHub** before reporting completion; work on a branch and open PR for review. See [MDV2-GOV-01](docs/governance/github-operations-policy.md) and [AGENTS.md](AGENTS.md). If GitHub push is blocked, report BLOCKED_GITHUB_PUSH; do not claim Done. Private customer/candidate/commercial materials must never be uploaded to this public repository.
+
+- [MDV2 documentation hub](docs/README.md) — candidate master requirements, decisions, acceptance, SDD and handover.
+- [Version/code location register](docs/versions/code-location-register.md) — where Sprint 1 and Sprint 2 source commits/branches reside.
+- [Gemini instructions](GEMINI.md) · [Claude instructions](CLAUDE.md) · [AI orchestration protocol](docs/ai/multi-agent-protocol.md).
+- Latest verified default branch at governance setup: `prototype` = Sprint 1 v30, SHA `08e2da4`; **Sprint 2 implementation code is in a separate Draft PR #3**, not merged into prototype.
+- **Master Requirements:** MDV2-REQ-01 candidate, NOT HR-WEB-01 v1.2. Source-confirmed business requirements and commercial/production scope must not be conflated.
+
+**Historical README below is preserved** as version-by-version implementation notes; older titles such as “bản v16 hiện tại” describe their original publication context, not the latest GitHub HEAD. Refresh this summary when integrating an approved PR.
+
+---
+
 ## Bản GitHub Pages
 
 Chạy `npm ci` rồi `npm run pages:prepare` tại thư mục gốc của nhánh prototype để dựng lại trang tại `/WebMinhDuc/` và cập nhật tệp tĩnh phục vụ từ nhánh. `npm run build` chỉ tạo `dist/`. Vite đọc mẫu `src/index-template.html`; `index.html` ở gốc là trang chủ đã kết xuất. Danh sách tệp tĩnh nằm trong `.pages-output.json`.
