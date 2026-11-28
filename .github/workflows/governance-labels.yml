@@ -1,0 +1,25 @@
+name: Governance label setup
+on:
+  push:
+    branches: [chore/8-github-control-center]
+    paths:
+      - '.github/labels.json'
+      - '.github/workflows/governance-labels.yml'
+      - 'scripts/governance/configure-labels.py'
+permissions: {}
+jobs:
+  labels:
+    if: github.repository == 'Kenbinhoainam/WebMinhDuc' && github.ref == 'refs/heads/chore/8-github-control-center' && github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Add missing labels and verify (preserve existing labels)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/governance/configure-labels.py

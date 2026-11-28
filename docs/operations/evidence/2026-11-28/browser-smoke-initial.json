@@ -1,0 +1,239 @@
+{
+  "artifact_baseline": "19ac2b365f2264399fde4312639127b8de80736f",
+  "audit_commit": "901e8e994de26785c1739996fb462c6f5174140e",
+  "scope": "Preserved branch-root artifact served locally; not production browser or new S1 build",
+  "cases": [
+    {
+      "locale": "vi",
+      "width": 390,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "vi",
+      "width": 768,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "vi",
+      "width": 1440,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "en/",
+      "width": 390,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "en/",
+      "width": 768,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "en/",
+      "width": 1440,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "zh/",
+      "width": 390,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "zh/",
+      "width": 768,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "zh/",
+      "width": 1440,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ko/",
+      "width": 390,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ko/",
+      "width": 768,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ko/",
+      "width": 1440,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ja/",
+      "width": 390,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 390,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ja/",
+      "width": 768,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    },
+    {
+      "locale": "ja/",
+      "width": 1440,
+      "status": 200,
+      "direct_and_reload": true,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "mainCount": 1,
+        "noindex": "noindex,nofollow"
+      },
+      "page_errors": [],
+      "failed_js_css": [],
+      "axe_violations": []
+    }
+  ],
+  "failures": [],
+  "limits": [
+    "No physical devices",
+    "No form submission",
+    "No full manual WCAG/UAT",
+    "axe findings are diagnostics, not automatic acceptance"
+  ]
+}

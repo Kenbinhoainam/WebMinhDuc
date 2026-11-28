@@ -1,0 +1,289 @@
+{
+  "observed_at_utc": "2026-11-28T04:43:41.010829+00:00",
+  "repository": "Kenbinhoainam/WebMinhDuc",
+  "endpoints": {
+    "pages": {
+      "status": "READ",
+      "pages": [
+        {
+          "status": "built",
+          "cname": null,
+          "html_url": "https://kenbinhoainam.github.io/WebMinhDuc/",
+          "build_type": "legacy",
+          "source": {
+            "branch": "prototype",
+            "path": "/"
+          },
+          "https_enforced": true,
+          "public": true
+        }
+      ]
+    },
+    "pages/builds/latest": {
+      "status": "READ",
+      "pages": [
+        {
+          "status": "built",
+          "commit": "19ac2b365f2264399fde4312639127b8de80736f",
+          "duration": 31676,
+          "created_at": "2026-11-28T03:38:35Z",
+          "updated_at": "2026-11-28T03:39:06Z"
+        }
+      ]
+    },
+    "environments": {
+      "status": "READ",
+      "pages": [
+        {
+          "total_count": 1,
+          "environments": [
+            {
+              "name": "github-pages",
+              "protection_rule_types": [
+                "branch_policy"
+              ],
+              "deployment_branch_policy": {
+                "protected_branches": false,
+                "custom_branch_policies": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "deployments?per_page=100": {
+      "status": "READ",
+      "pages": [
+        [
+          {
+            "id": 8123972756,
+            "sha": "19ac2b365f2264399fde4312639127b8de80736f",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-28T03:38:54Z",
+            "updated_at": "2026-11-28T03:39:16Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8102988712,
+            "sha": "08e2da46106b51537b871aea3880fc94b25da935",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-27T05:58:33Z",
+            "updated_at": "2026-11-28T03:39:19Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8102862865,
+            "sha": "596130cd11d2915edb5e57c346e5d54b6ca1c17d",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-27T05:48:17Z",
+            "updated_at": "2026-11-27T05:58:56Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8082284456,
+            "sha": "36e2b60765c55e5eafb5ae5653f75bc2f954865c",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-26T10:12:27Z",
+            "updated_at": "2026-11-27T05:48:36Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8082207931,
+            "sha": "3aceb6aceaf14d4667d631d9c57391d2e1ceeb96",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-26T10:08:58Z",
+            "updated_at": "2026-11-26T10:12:51Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8082185873,
+            "sha": "cbce772deaa9f73988d76ce7c1c0a89bc7b5c77b",
+            "ref": "gh-pages",
+            "environment": "github-pages",
+            "created_at": "2026-11-26T10:07:57Z",
+            "updated_at": "2026-11-26T10:09:13Z",
+            "production_environment": false,
+            "transient_environment": false
+          },
+          {
+            "id": 8082104836,
+            "sha": "3aceb6aceaf14d4667d631d9c57391d2e1ceeb96",
+            "ref": "prototype",
+            "environment": "github-pages",
+            "created_at": "2026-11-26T10:04:13Z",
+            "updated_at": "2026-11-26T10:08:21Z",
+            "production_environment": false,
+            "transient_environment": false
+          }
+        ]
+      ]
+    },
+    "milestones?state=all&per_page=100": {
+      "status": "READ",
+      "pages": [
+        []
+      ]
+    },
+    "labels?per_page=100": {
+      "status": "READ",
+      "pages": [
+        [
+          {
+            "name": "accessibility",
+            "color": "f143ab"
+          },
+          {
+            "name": "bug",
+            "color": "d73a4a"
+          },
+          {
+            "name": "change-request",
+            "color": "F9D0C4"
+          },
+          {
+            "name": "design",
+            "color": "D4C5F9"
+          },
+          {
+            "name": "documentation",
+            "color": "0075ca"
+          },
+          {
+            "name": "duplicate",
+            "color": "cfd3d7"
+          },
+          {
+            "name": "enhancement",
+            "color": "a2eeef"
+          },
+          {
+            "name": "good first issue",
+            "color": "7057ff"
+          },
+          {
+            "name": "help wanted",
+            "color": "008672"
+          },
+          {
+            "name": "invalid",
+            "color": "e4e669"
+          },
+          {
+            "name": "qa",
+            "color": "FBCA04"
+          },
+          {
+            "name": "question",
+            "color": "d876e3"
+          },
+          {
+            "name": "requirement",
+            "color": "0E8A16"
+          },
+          {
+            "name": "task",
+            "color": "BFD4F2"
+          },
+          {
+            "name": "wontfix",
+            "color": "ffffff"
+          }
+        ]
+      ]
+    },
+    "actions/workflows?per_page=100": {
+      "status": "READ",
+      "pages": [
+        {
+          "total_count": 6,
+          "workflows": [
+            {
+              "id": 433402074,
+              "name": "Governance CI",
+              "path": ".github/workflows/governance-ci.yml",
+              "state": "active"
+            },
+            {
+              "id": 433410737,
+              "name": "Governance label setup",
+              "path": ".github/workflows/governance-labels.yml",
+              "state": "active"
+            },
+            {
+              "id": 432789377,
+              "name": "Unchanged hero regression checks",
+              "path": ".github/workflows/hero-regression.yml",
+              "state": "active"
+            },
+            {
+              "id": 432751905,
+              "name": "Sprint 2 packaged browser QA",
+              "path": ".github/workflows/s2-artifact-qa.yml",
+              "state": "active"
+            },
+            {
+              "id": 432788180,
+              "name": "W2 isolated packaged browser scope",
+              "path": ".github/workflows/w2-browser.yml",
+              "state": "active"
+            },
+            {
+              "id": 431444986,
+              "name": "pages-build-deployment",
+              "path": "dynamic/pages/pages-build-deployment",
+              "state": "active"
+            }
+          ]
+        }
+      ]
+    },
+    "actions/runners?per_page=100": {
+      "status": "BLOCKED_PERMISSION",
+      "http_status": 403,
+      "exit_code": 1
+    },
+    "actions/secrets?per_page=100": {
+      "status": "BLOCKED_PERMISSION",
+      "http_status": 403,
+      "exit_code": 1
+    },
+    "actions/permissions": {
+      "status": "BLOCKED_PERMISSION",
+      "http_status": 403,
+      "exit_code": 1
+    },
+    "rulesets": {
+      "status": "READ",
+      "pages": [
+        []
+      ]
+    },
+    "branches/prototype/protection": {
+      "status": "BLOCKED_PERMISSION",
+      "http_status": 403,
+      "exit_code": 1
+    },
+    "branches/gh-pages/protection": {
+      "status": "BLOCKED_PERMISSION",
+      "http_status": 403,
+      "exit_code": 1
+    }
+  },
+  "projects": {
+    "status": "TOKEN_VISIBLE_ONLY",
+    "matching_control_project_count": 0,
+    "has_next_page": false,
+    "public_control_project_urls": [],
+    "limitation": "An empty token-visible list does not establish absence. Never create before owner-authorized enumeration."
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "observed_at_utc": "2026-11-28T04:16:47.460622+00:00",
+  "audit_commit": "e14adcbfc5887e85be753ef5f18ee8323120e386",
+  "root": {
+    "url": "https://kenbinhoainam.github.io/WebMinhDuc/",
+    "redirects": [],
+    "status": 200,
+    "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/",
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "max-age=600",
+      "Age": "0",
+      "ETag": "\"6b0a4cd9-e1fa\"",
+      "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+    },
+    "bytes": 57850,
+    "sha256": "420d290219fd875d08778dccb907be210c15bd2d1574b7847cf4ea9f185d42e7"
+  },
+  "metadata": {
+    "canonical": [
+      "https://kenbinhoainam.github.io/WebMinhDuc/"
+    ],
+    "robots": [
+      "noindex,nofollow"
+    ],
+    "lang": "vi",
+    "hreflang": [
+      {
+        "lang": "vi",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/"
+      },
+      {
+        "lang": "en",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/en"
+      },
+      {
+        "lang": "zh-Hans",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/zh"
+      },
+      {
+        "lang": "ko",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/ko"
+      },
+      {
+        "lang": "ja",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/ja"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://kenbinhoainam.github.io/WebMinhDuc/"
+      }
+    ]
+  },
+  "ref_comparison": {
+    "prototype_at_audit": {
+      "commit": "19ac2b365f2264399fde4312639127b8de80736f",
+      "html_sha256": "420d290219fd875d08778dccb907be210c15bd2d1574b7847cf4ea9f185d42e7",
+      "exact_live_html_match": true,
+      "entry_assets": [
+        "/WebMinhDuc/assets/index-gI3X1Sm7.js",
+        "/WebMinhDuc/assets/index-CqyiB8zo.css",
+        "/WebMinhDuc/assets/minhduc-poster-1s.webp",
+        "/WebMinhDuc/assets/minh-duc-logo-transparent.webp"
+      ],
+      "canonical": [
+        "https://kenbinhoainam.github.io/WebMinhDuc/"
+      ],
+      "robots": [
+        "noindex,nofollow"
+      ]
+    },
+    "gh_pages_at_audit": {
+      "commit": "cbce772deaa9f73988d76ce7c1c0a89bc7b5c77b",
+      "html_sha256": "bc947da6e7fcb73d1b21a523c3bdd29200bd04e5b992c150045a81d238a0bdb9",
+      "exact_live_html_match": false,
+      "entry_assets": [
+        "/WebMinhDuc/assets/index-BNe4pavk.js",
+        "/WebMinhDuc/assets/index-BdLnFRJK.css",
+        "/WebMinhDuc/assets/minhduc-poster-1s.webp",
+        "/WebMinhDuc/assets/minh-duc-logo-transparent.webp"
+      ],
+      "canonical": [
+        "https://minhduc-prototype-sprint1.kenbinhoainam.chatgpt.site/"
+      ],
+      "robots": [
+        "noindex,nofollow"
+      ]
+    }
+  },
+  "limits": [
+    "No form submission",
+    "HTTP does not prove browser rendering",
+    "Sites v10 is a separate access-controlled host, not fetched here"
+  ],
+  "responses": [
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-e1fa\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 57850,
+      "sha256": "420d290219fd875d08778dccb907be210c15bd2d1574b7847cf4ea9f185d42e7"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/?mdv2-audit=2026-11-28T04-16-47.460622+00-00",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/?mdv2-audit=2026-11-28T04-16-47.460622+00-00",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-e1fa\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 57850,
+      "sha256": "420d290219fd875d08778dccb907be210c15bd2d1574b7847cf4ea9f185d42e7"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/robots.txt",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/robots.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-18\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 24,
+      "sha256": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/sitemap.xml",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-5729\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 22313,
+      "sha256": "4b64c2dfcd66dd3bff81add0d690808cffded5abfcca83f93fe37c02432aa4b8"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/duyet.html",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/duyet.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-14fd\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 5373,
+      "sha256": "c8d226a6cda53e6e669850057753c2334ef1287db6e3dbac61c9db0c988e8403"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/about-us",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/about-us/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/about-us/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-d009\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 53257,
+      "sha256": "84d036f5022eabaffcd2558396f0c8803c618c27ddeef2c9970bd6f9433f850d"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/about-us/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/about-us/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-d009\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 53257,
+      "sha256": "84d036f5022eabaffcd2558396f0c8803c618c27ddeef2c9970bd6f9433f850d"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/jobs/cong-nhan-lap-rap-bac-ninh/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-7ef7\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 32503,
+      "sha256": "b07876e215658d1ddc228e2ddbe041b29aab72119c8241cb6fa7feff065d3462"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/en/jobs/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-8ea8\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 36520,
+      "sha256": "89624c49bdbad429b9c248897cf285760d9f7af4b3e15112b1f8bca0300dbb29"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/zh/jobs/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-8e4a\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 36426,
+      "sha256": "eb4c0dacbb273060eb59c431f97461a1aaffabf9a9972166bfb193588de041c7"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/ko/jobs/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-9007\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 36871,
+      "sha256": "5cd3bf453bbaa6329537d94727493b6a48b442ad6186af479f6f20b9645fe913"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/ja/jobs/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-9052\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 36946,
+      "sha256": "5c638efa35e047672efbfa27914a38edd02a4073c9375e72a4fc01c042cff65c"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/en/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/en/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-dc3f\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 56383,
+      "sha256": "3aa80c9e9a191d166dd37cfedc736b659c478adfc22914c7e2ad5d1aa25da793"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/zh/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/zh/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-da41\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 55873,
+      "sha256": "34ca688a40b31001b83b715c68a28cc1a15e23ec662cd9a9cad00e807e95ce25"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/ko/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/ko/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-de7f\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 56959,
+      "sha256": "ed043cc04f895d92c61d5565e59a05d95deb9c19f4ffd38bb9467017ebbb77a2"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/ja/",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/ja/",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-df4c\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 57164,
+      "sha256": "5fcb1f66bb8b81244d05f1eb1a3225d8c100b4da19a7865f362b48032b1acf34"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/__mdv2_missing_route__",
+      "redirects": [],
+      "status": 404,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/__mdv2_missing_route__",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": null,
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-14d\"",
+        "Last-Modified": null
+      },
+      "bytes": 333,
+      "sha256": "272407b6bfed0896c4268bf93d228497e99ac700563834f3384ca262630a3295"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/index-gI3X1Sm7.js",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/index-gI3X1Sm7.js",
+      "headers": {
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-66cf2\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 421106,
+      "sha256": "f01fdb78e53307deb23ae772311f1f5c6b8460e3335353cbb9cc0673cbc93cbd"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/index-CqyiB8zo.css",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/index-CqyiB8zo.css",
+      "headers": {
+        "Content-Type": "text/css; charset=utf-8",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-23fbb\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 147387,
+      "sha256": "71b715bba8dd734737abf5988ca3e5074f0cbfe04c6c0f22fb8f0f7343444bb5"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/minhduc-poster-1s.webp",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/minhduc-poster-1s.webp",
+      "headers": {
+        "Content-Type": "image/webp",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-8744\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 34628,
+      "sha256": "fb380051939666012e1628f69a24aa7afe555aae45dd7f418aca23317c9181d0"
+    },
+    {
+      "url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/minh-duc-logo-transparent.webp",
+      "redirects": [],
+      "status": 200,
+      "final_url": "https://kenbinhoainam.github.io/WebMinhDuc/assets/minh-duc-logo-transparent.webp",
+      "headers": {
+        "Content-Type": "image/webp",
+        "Cache-Control": "max-age=600",
+        "Age": "0",
+        "ETag": "\"6b0a4cd9-9dd4\"",
+        "Last-Modified": "Sat, 28 Nov 2026 03:39:05 GMT"
+      },
+      "bytes": 40404,
+      "sha256": "0863184f07bca1159f26a780749c2f2dd9ad454dfcac1a9c7d1b5677e8b68e3b"
+    }
+  ],
+  "sitemap": {
+    "count": 245,
+    "outside_base": []
+  },
+  "blocked": false,
+  "status": "HTTP_OBSERVED"
+}

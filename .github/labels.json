@@ -1,0 +1,42 @@
+[
+  {
+    "name": "requirement",
+    "color": "0E8A16",
+    "description": "Yêu cầu có nguồn, trạng thái phê duyệt và tiêu chí nghiệm thu."
+  },
+  {
+    "name": "enhancement",
+    "color": "A2EEEF",
+    "description": "Chức năng trong SDD đã duyệt; ghi rõ phạm vi được phép."
+  },
+  {
+    "name": "bug",
+    "color": "D73A4A",
+    "description": "Lỗi tái hiện được: expected/actual, bản build, bước tái hiện."
+  },
+  {
+    "name": "task",
+    "color": "BFD4F2",
+    "description": "Công việc kỹ thuật có đầu ra và kiểm chứng cụ thể."
+  },
+  {
+    "name": "documentation",
+    "color": "0075CA",
+    "description": "Tài liệu, index hoặc hướng dẫn được phép public."
+  },
+  {
+    "name": "design",
+    "color": "D4C5F9",
+    "description": "Đặc tả hoặc ADR cần lựa chọn, tác động và người phê duyệt."
+  },
+  {
+    "name": "qa",
+    "color": "FBCA04",
+    "description": "Ca kiểm thử, môi trường, SHA, kết quả và bằng chứng."
+  },
+  {
+    "name": "change-request",
+    "color": "F9D0C4",
+    "description": "Thay đổi baseline/phạm vi; cần đánh giá chi phí, rủi ro và phê duyệt."
+  }
+]

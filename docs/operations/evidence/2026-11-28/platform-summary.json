@@ -1,0 +1,39 @@
+{
+  "observed_date": "2026-11-28",
+  "source_run": "https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46106771278",
+  "observation_method": "Independent reviewer read platform metadata job 140861176060; sanitized final replay will be recorded separately",
+  "pages": {
+    "build_type": "legacy",
+    "source": {
+      "branch": "prototype",
+      "path": "/"
+    },
+    "cname": null,
+    "https_enforced": true
+  },
+  "latest_deployment": {
+    "id": 8123972756,
+    "ref": "prototype",
+    "sha": "19ac2b365f2264399fde4312639127b8de80736f",
+    "environment": "github-pages"
+  },
+  "environment": {
+    "name": "github-pages",
+    "custom_branch_policy": true,
+    "reviewer_rules_observed": 0
+  },
+  "milestones": [],
+  "rulesets": [],
+  "blocked_permission": [
+    "actions/runners",
+    "actions/secrets",
+    "actions/permissions",
+    "branches/prototype/protection",
+    "branches/gh-pages/protection"
+  ],
+  "projects": {
+    "token_visible_nodes": 0,
+    "authoritative_owner_enumeration": false,
+    "created": false
+  }
+}
