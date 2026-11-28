@@ -36,3 +36,8 @@
 For each open item add in a new reviewed commit/PR: proposed options, evidence/source, impact to cost/scope/schedule, accepted option, approver/date, effective spec revision, dependent AC/Issue/PR, changed artifacts. Never overwrite previous historical decision text to hide an approved change; append superseding decision with cross-link.
 
 **Sprint 1 legacy O01–O10:** See docs/sprint-1/open-questions-and-decisions.md on branch docs/sprint1-closure-20261127. The new MDV2-DEC references groups from those items; it does not assert they have been closed.
+
+## Governance execution updates — 28/11/2026
+
+- GOV-20261128-04: PO authorized GitHub audit, safe docs/config, test, commit/push and Draft PR; merge/default-branch changes/deletion/production publishing remain gated. Tracked by Issue #8.
+- GOV-20261128-05: PO changed the desired primary Project name to **MinhDucWeb — Master Control**. Reuse/rename an existing master when authorized enumeration proves its identity; do not create duplicates. Account Project mutation remains blocked by available capabilities.

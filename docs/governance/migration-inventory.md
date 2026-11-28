@@ -10,7 +10,7 @@
 | Sprint 1 v30 source | prototype branch | YES | Tag after reviewed release decision |
 | Sprint 2 frozen selections/SDD | sprint-2/approved-ui-upgrade-sel-20261127-v1 branch | YES | Preserve approved version |
 | Sprint 2 implementation code/QA | feat/s2-ui-upgrade-sel-20261127-v1 branch, Draft PR #3 | YES | Address 617 incomplete/116 blocked according to latest handoff, review PR; no premature merge |
-| MDV2 governance/REQ/acceptance overview | docs/mdv2-github-control-20261128 work branch | DRAFT, to push | PO review via PR, then merge approved baseline |
+| MDV2 governance/REQ/acceptance overview | docs/mdv2-github-control-20261128 work branch | Pushed in original PR #4; successor PR #9 | PO review via PR, then merge approved baseline |
 | Customer clarification Google Sheet (22 questions, 30 fields, 6 intake records) | Restricted external source | ONLY SANITIZED SUMMARY IN PUBLIC | Decide private GitHub repository, authorized export and access controls; maintain exact source version/provenance |
 | Contractor requirement drafts HR-WEB-01 v0.5/v1.2 | External draft documents | NO full public copy | Historical reference only; do not designate as Master Requirements |
 | Customer detailed acceptance v1.2 | Restricted external draft | ONLY 50-CODE INDEX in public | If required, import full content into approved private repository; per-code test-case approval |

@@ -9,7 +9,7 @@ GitHub quản lý yêu cầu, mã nguồn, QA và bàn giao của dự án Minh 
 - [Docs Hub](docs/README.md) · [Onboarding trong 5 bước](docs/00-start-here/README.md) · [Cách đóng góp](CONTRIBUTING.md)
 - [GitHub audit](GITHUB-AUDIT.md) · [Pages deployment audit](DEPLOYMENT-AUDIT.md) · [Version inventory](VERSION-INVENTORY.md) · [Rủi ro/phụ thuộc](RISKS-AND-DEPENDENCIES.md)
 - [Master Requirements MDV2 v0.1 DRAFT](docs/requirements/master-requirements.md) · [Requirements Register](docs/requirements/requirements-register.md) · [Decision Log](docs/decisions/decision-log.md)
-- [Project master: thiết kế và trạng thái thiết lập](docs/governance/project-control-center.md) · [Issue #8](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8)
+- [Project MinhDucWeb — Master Control: thiết kế và trạng thái thiết lập](docs/governance/project-control-center.md) · [Issue #8](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8)
 
 ## Đâu là mã nguồn và bản deploy?
 

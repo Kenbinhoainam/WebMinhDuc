@@ -1,0 +1,75 @@
+{
+  "implementation_sha": "901e8e994de26785c1739996fb462c6f5174140e",
+  "ci_run": 46108194398,
+  "ci_result": "6/6 jobs success",
+  "source_build": "PASS",
+  "source_contract_suites": "PASS",
+  "governance": {
+    "managed_files": 66,
+    "issue_forms": 8,
+    "errors": []
+  },
+  "production_dependency_audit": {
+    "vulnerabilities": 0
+  },
+  "http": {
+    "status": "VERIFIED_HTTP",
+    "bundles": 25,
+    "all_checks_pass": true
+  },
+  "browser": {
+    "cases": 15,
+    "route_family": "jobs",
+    "locales": [
+      "vi",
+      "en",
+      "zh",
+      "ko",
+      "ja"
+    ],
+    "widths": [
+      390,
+      768,
+      1440
+    ],
+    "scope": "local preserved artifact",
+    "failures": 0,
+    "axe_diagnostics": 0,
+    "overflow_observed": 0
+  },
+  "labels": {
+    "run": 46108194418,
+    "created": [
+      "requirement",
+      "task",
+      "design",
+      "qa",
+      "change-request"
+    ],
+    "verified": [
+      "requirement",
+      "enhancement",
+      "bug",
+      "task",
+      "documentation",
+      "design",
+      "qa",
+      "change-request"
+    ],
+    "existing_modified": false
+  },
+  "independent_review": {
+    "findings": [
+      "Artifact-only change detection omitted",
+      "Reload response and failed JS/CSS requests omitted from smoke assertions"
+    ],
+    "resolution": "Fixed in following commit; rerun evidence to follow"
+  },
+  "not_tested": [
+    "physical devices",
+    "manual accessibility/UAT",
+    "production backend/security",
+    "Sites v10 HTTP byte comparison",
+    "production rollback"
+  ]
+}

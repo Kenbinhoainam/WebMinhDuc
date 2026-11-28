@@ -1,18 +1,21 @@
-# Project master — control-center specification
+# Project MinhDucWeb — Master Control — control-center specification
 
 **PROPOSED / BLOCKED_PERMISSION for account-level setup.** GitHub connector has no Projects administration operation. Runner GITHUB_TOKEN returned no visible Project nodes; this is not proof that the account has no Project. No duplicate Project was created. The canonical Project URL remains unverified.
 
+
+PO update 28/11/2026: the canonical name is **MinhDucWeb — Master Control**. If an existing `master` Project is found, rename that same Project after verifying ownership; preserve its ID/items/views. Do not create a replacement solely for the title change.
+
 ## Discover before creating
 
-Owner/admin uses Projects on [Kenbinhoainam](https://github.com/Kenbinhoainam?tab=projects), includes closed Projects, and searches exact title `master`. With an owner-authorized CLI:
+Owner/admin uses Projects on [Kenbinhoainam](https://github.com/Kenbinhoainam?tab=projects), includes closed Projects, and searches exact title `MinhDucWeb — Master Control` and historical name `master`. With an owner-authorized CLI:
 
 ```sh
 gh project list --owner Kenbinhoainam --limit 100 --format json
-# Inspect pagination/total count; read the existing project if master exists.
+# Inspect pagination/total count; read the existing project if either title exists.
 gh project view <verified-number> --owner Kenbinhoainam --format json
 ```
 
-Only if complete authorized enumeration confirms absence, create **one** Project `master`. Use a private Project until PO approves its audience; public repo Issues can still be added. Link WebMinhDuc, record exact URL, visibility and field/view IDs in this file. A permission error or empty integration view is not absence. Do not copy private Project item content into this repository.
+Only if complete authorized enumeration confirms absence, create **one** Project `MinhDucWeb — Master Control`. Use a private Project until PO approves its audience; public repo Issues can still be added. Link WebMinhDuc, record exact URL, visibility and field/view IDs in this file. A permission error or empty integration view is not absence. Do not copy private Project item content into this repository.
 
 ## Six views maximum
 

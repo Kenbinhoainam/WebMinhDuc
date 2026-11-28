@@ -1,6 +1,6 @@
 # GitHub professionalization handoff — 28/11/2026
 
-Requirement **MDV2-GOV-001**, tracking [Issue #8](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8). Work branch `chore/8-github-control-center`, base `19ac2b365f2264399fde4312639127b8de80736f`. Pushed bootstrap `e14adcbfc5887e85be753ef5f18ee8323120e386`; final remote SHA/PR and validation will be appended after final verification. This document is not a Done or production-acceptance declaration.
+Requirement **MDV2-GOV-001**, tracking [Issue #8](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8). Work branch `chore/8-github-control-center`, base `19ac2b365f2264399fde4312639127b8de80736f`. Pushed bootstrap `e14adcbfc5887e85be753ef5f18ee8323120e386`; [Draft PR #9](https://github.com/Kenbinhoainam/WebMinhDuc/pull/9) is the reviewable delivery. Full implementation checkpoint `901e8e994de26785c1739996fb462c6f5174140e` is pushed and verified; the PR head is the authoritative latest remote delivery SHA. This document is not a Done or production-acceptance declaration.
 
 ## Before / after
 
@@ -21,7 +21,7 @@ Preserved: application source, package/lockfile, original tests/scripts, public/
 | Status | Items |
 |---|---|
 | IMPLEMENTED_AND_VERIFIED | Read-only GitHub inventory; Pages configuration and live initial HTTP fingerprint; bootstrap remote commit and 4/4 CI jobs; finalized branch outputs only when verified below |
-| PROPOSED | Six master views/fields/automation, protection/tag/release/CD design; future source/artifact reconciliation |
+| PROPOSED | Six MinhDucWeb — Master Control views/fields/automation, protection/tag/release/CD design; future source/artifact reconciliation |
 | BLOCKED_PERMISSION | Owner-authoritative Projects setup, runner/secrets/admin/protection metadata with current token; no required check/ruleset enabled |
 | BLOCKED_PRIVACY | Restricted originals awaiting PO-approved private repository/audience |
 | REQUIRES_PO_APPROVAL | Merge/integration sequence, production deploy or Pages migration, private repo, approved requirements/architecture, reviewer/release owners |
@@ -29,6 +29,18 @@ Preserved: application source, package/lockfile, original tests/scripts, public/
 
 ## Operations
 
-[Onboard in five steps](../00-start-here/README.md). Use existing Issues #5–#7 for baseline/admin/Sprint 2 work; #8 tracks this proposal. Project master discovery/setup must use a token or UI with actual account Project access. Do not create a duplicate from an empty GITHUB_TOKEN view. Do not close Issues based solely on this handoff.
+[Onboard in five steps](../00-start-here/README.md). Use existing Issues #5–#7 for baseline/admin/Sprint 2 work; #8 tracks this proposal. Project MinhDucWeb — Master Control discovery/setup must use a token or UI with actual account Project access. Do not create a duplicate from an empty GITHUB_TOKEN view. Do not close Issues based solely on this handoff.
 
 [PO decisions](../../RISKS-AND-DEPENDENCIES.md), [protection rollout](../governance/protection-plan.md), [Pages migration/rollback](pages-migration-plan.md). Current branch-root Pages may redeploy even on a documentation merge; review that impact before merging.
+
+## Verified implementation checkpoint
+
+[Run 46108194398](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194398) at `901e8e994de26785c1739996fb462c6f5174140e`: **6/6 jobs success**. [Structured results](evidence/2026-11-28/validation.json), [HTTP checks](evidence/2026-11-28/pages-http-verified.json), [sanitized platform metadata](evidence/2026-11-28/platform-verified.json), [browser smoke](evidence/2026-11-28/browser-smoke-initial.json).
+
+[Label setup 46108194418](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194418) created requirement/task/design/qa/change-request; verified these plus existing enhancement/bug/documentation, preserving existing labels. Templates/CODEOWNERS/policy are pushed in this Draft PR; default-branch Issue UI and enforced ownership await approved merge/protection.
+
+Independent review confirmed no existing app source/tests/public/static file changed. It requested additional artifact-only path detection and browser reload/network-failure assertions; those are implemented in the follow-up commit and require the final CI evidence below. No existing application behavior was changed to make tests pass.
+
+PO renamed the desired Project to **MinhDucWeb — Master Control**. Existing master must be reused/renamed when actual account permissions allow; no Project was created or renamed by this task yet.
+
+Cloud repair: duplicate main checkouts replaced with one explicit WebMinhDuc/prototype checkout in task instance revision 5. Backend then reports running/connected, but chat executor still returns capability connection error; shell use remains NOT_TESTED. Reusable saved environment configuration may still need the owner's Promote action; this task-instance fix does not prove reusable config updated.

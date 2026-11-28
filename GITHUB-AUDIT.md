@@ -39,7 +39,7 @@ PR #4's 25 changed files, full file content and conversation (empty comments) we
 
 Pre-task Issues: [#5](https://github.com/Kenbinhoainam/WebMinhDuc/issues/5) governance review, [#6](https://github.com/Kenbinhoainam/WebMinhDuc/issues/6) protection/private migration, [#7](https://github.com/Kenbinhoainam/WebMinhDuc/issues/7) Sprint 2 gaps; all open, no assigned milestone/labels in the snapshot. [#8](https://github.com/Kenbinhoainam/WebMinhDuc/issues/8) now tracks this audit and implementation. Milestone enumeration via runner returned empty. No artificial milestones were created.
 
-Project `master`: **BLOCKED_PERMISSION** for authoritative owner-level enumeration/setup. Connector has no Project administration operation; GITHUB_TOKEN sees an empty Projects list, which cannot prove absence of a private account Project. No duplicate Project/view was created. [Exact setup specification](docs/governance/project-control-center.md).
+Project `MinhDucWeb — Master Control`: **BLOCKED_PERMISSION** for authoritative owner-level enumeration/setup. Connector has no Project administration operation; GITHUB_TOKEN sees an empty Projects list, which cannot prove absence of a private account Project. No duplicate Project/view was created. [Exact setup specification](docs/governance/project-control-center.md).
 
 ## Workflows, runners, secrets and environments
 
@@ -63,4 +63,8 @@ React/TypeScript/Vite; Node 24.15.0 selected against lockfile engines. Build is 
 
 ## Coverage and remaining gates
 
-**IMPLEMENTED_AND_VERIFIED:** remote reads/inventory, safe branch/API commits, initial hosted CI, live HTTP and branch-source evidence. **PROPOSED:** master views/automation, protection, future release/CD. **BLOCKED_PERMISSION:** admin/Projects scope as above. **BLOCKED_PRIVACY:** restricted source migration until private repo approval. **REQUIRES_PO_APPROVAL:** merge, production deploy/Pages migration, private repo name/access, approved requirement baseline. **NOT_TESTED:** real hardware, full manual accessibility/UAT and production backend/security.
+**IMPLEMENTED_AND_VERIFIED:** remote reads/inventory, safe branch/API commits, initial hosted CI, live HTTP and branch-source evidence. **PROPOSED:** MinhDucWeb — Master Control views/automation, protection, future release/CD. **BLOCKED_PERMISSION:** admin/Projects scope as above. **BLOCKED_PRIVACY:** restricted source migration until private repo approval. **REQUIRES_PO_APPROVAL:** merge, production deploy/Pages migration, private repo name/access, approved requirement baseline. **NOT_TESTED:** real hardware, full manual accessibility/UAT and production backend/security.
+
+## Implemented changes verified after survey
+
+[Draft PR #9](https://github.com/Kenbinhoainam/WebMinhDuc/pull/9) and [6/6 hosted CI](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194398) at `901e8e9`. [Eight labels verified](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194418), five added, existing definitions unchanged. All eight forms and provider policies are committed on the work branch; default-branch UI adoption awaits approved merge. Final naming is **MinhDucWeb — Master Control** per PO update; actual Project mutation remains blocked.

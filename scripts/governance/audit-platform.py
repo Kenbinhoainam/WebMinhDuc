@@ -68,10 +68,10 @@ else:
         report["projects"] = {"status": "READ_FAILED"}
     else:
         projects = data["data"]["user"]["projectsV2"]
-        matches = [p for p in projects["nodes"] if p["title"] == "master"]
-        report["projects"] = {"status": "TOKEN_VISIBLE_ONLY", "matching_master_count": len(matches),
+        matches = [p for p in projects["nodes"] if p["title"] in ("master", "MinhDucWeb — Master Control")]
+        report["projects"] = {"status": "TOKEN_VISIBLE_ONLY", "matching_control_project_count": len(matches),
                               "has_next_page": projects["pageInfo"]["hasNextPage"],
-                              "public_master_urls": [p["url"] for p in matches if p["public"]],
+                              "public_control_project_urls": [p["url"] for p in matches if p["public"]],
                               "limitation": "An empty token-visible list does not establish absence. Never create before owner-authorized enumeration."}
 Path("/tmp/mdv2-platform.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print(json.dumps(report, ensure_ascii=False, indent=2))

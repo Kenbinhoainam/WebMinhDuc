@@ -15,7 +15,7 @@
 | R09 / P2 | Required reviews/checks deadlock solo owner | No independent reviewer appointed; checks must exist and be stable first | Admin + PO; PROPOSED |
 | R10 / P2 | noindex misread as access control | Live public Pages; robots permits crawling, HTML noindex controls indexing only | PO + SEO; keep demo boundary, never store private data |
 | R11 / P2 | Raw CI metadata leaks future payload/private Projects | Initial run fields empty; independent review prompted output allowlist | DevOps; script hardened, final CI verification recorded in handoff |
-| R12 / P2 | Cloud setup cannot execute | Saved config had two main checkouts; task instance corrected both to prototype, startup still unverified | Cloud owner/platform; NOT_TESTED runtime until shell succeeds |
+| R12 / P2 | Cloud setup cannot execute | Task instance now has one explicit prototype checkout (revision 5), backend running/connected; chat executor still cannot attach | Cloud platform/client; shell NOT_TESTED until executor attaches |
 | R13 / P2 | Historical media rights and external source links assumed approved | Existing flagship/source provenance needs formal rights review | PO/customer; REQUIRES_PO_APPROVAL |
 | R14 / P2 | CI success overstates browser/security coverage | Source/JSDOM checks differ from actual browser/hardware/UAT; production backend absent | QA; NOT_TESTED portions explicit |
 | R15 / P3 | Artifact expiry erodes traceability | Actions artifacts have finite retention; public-safe summary/checksums committed, restricted raw evidence needs private storage | DevOps; release policy PROPOSED |

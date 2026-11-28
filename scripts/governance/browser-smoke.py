@@ -35,21 +35,24 @@ try:
                 context = browser.new_context(viewport={"width": width, "height": 900},
                                               reduced_motion="reduce" if width == 390 else "no-preference")
                 page = context.new_page()
-                errors, failed_assets = [], []
+                errors, failed_assets, failed_requests = [], [], []
                 page.on("pageerror", lambda exc: errors.append(str(exc)))
                 page.on("response", lambda response: failed_assets.append({"url": response.url, "status": response.status})
                         if response.status >= 400 and response.request.resource_type in ("script", "stylesheet") else None)
+                page.on("requestfailed", lambda request: failed_requests.append({"url": request.url, "failure": request.failure})
+                        if request.resource_type in ("script", "stylesheet") else None)
                 response = page.goto(base + locale + "jobs/", wait_until="load", timeout=45000)
-                page.reload(wait_until="load")
+                reload_response = page.reload(wait_until="load")
                 page.locator("main").first.wait_for()
                 page.add_script_tag(path="/tmp/mdv2-audit-tools/node_modules/axe-core/axe.min.js")
                 violations = page.evaluate("async () => (await axe.run(document, {runOnly: {type: 'tag', values: ['wcag2a','wcag2aa']}})).violations.map(v => ({id:v.id,impact:v.impact,nodes:v.nodes.length,help:v.help}))")
                 metrics = page.evaluate("({width:innerWidth,documentWidth:document.documentElement.scrollWidth,mainCount:document.querySelectorAll('main').length,noindex:document.querySelector('meta[name=robots]')?.content})")
                 case = {"locale": locale or "vi", "width": width, "status": response.status if response else None,
-                        "direct_and_reload": True, "metrics": metrics, "page_errors": errors,
-                        "failed_js_css": failed_assets, "axe_violations": violations}
+                        "reload_status": reload_response.status if reload_response else None,
+                        "direct_and_reload": bool(response and reload_response and response.status == 200 and reload_response.status == 200), "metrics": metrics, "page_errors": errors,
+                        "failed_js_css": failed_assets, "failed_requests": failed_requests, "axe_violations": violations}
                 report["cases"].append(case)
-                if case["status"] != 200 or errors or failed_assets or metrics["mainCount"] != 1 or "noindex" not in (metrics["noindex"] or ""):
+                if not case["direct_and_reload"] or errors or failed_assets or failed_requests or metrics["mainCount"] != 1 or "noindex" not in (metrics["noindex"] or ""):
                     report["failures"].append({"locale": case["locale"], "width": width, "reason": "HTTP/JS/CSS/main/noindex assertion"})
                 if locale == "" and width in (390, 1440):
                     page.screenshot(path=str(out / ("jobs-" + str(width) + ".png")))

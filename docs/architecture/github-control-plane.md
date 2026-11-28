@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart LR
-    P[Project master] --> I[Issue / sub-issue]
+    P[Project MinhDucWeb — Master Control] --> I[Issue / sub-issue]
     I --> R[Requirement and approved SDD]
     R --> B[Work branch and verified base SHA]
     B --> PR[Draft PR]

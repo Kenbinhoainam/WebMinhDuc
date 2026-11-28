@@ -10,7 +10,7 @@ Document baseline: MDV2 v0.1 DRAFT, chưa phải yêu cầu production được 
 | Kiến trúc/quyết định | [Architecture status](architecture/architecture-status.md), [GitHub architecture](architecture/github-control-plane.md), [Decision Log](decisions/decision-log.md) |
 | Nghiệm thu/truy vết | [Acceptance](acceptance/acceptance-baseline.md), [Traceability](traceability/traceability-index.md), [Sprint status](sprints/sprint-status.md) |
 | Vận hành | [CI/QA](operations/ci-and-qa.md), [Pages migration/rollback](operations/pages-migration-plan.md), [Release strategy](releases/README.md) |
-| Giao việc/quyền | [Project master](governance/project-control-center.md), [AI protocol](ai/multi-agent-protocol.md), [branch protection](governance/protection-plan.md), [privacy](governance/privacy-boundaries.md) |
+| Giao việc/quyền | [Project MinhDucWeb — Master Control](governance/project-control-center.md), [AI protocol](ai/multi-agent-protocol.md), [branch protection](governance/protection-plan.md), [privacy](governance/privacy-boundaries.md) |
 | Di chuyển/lịch sử | [Path mapping](governance/path-migration-map.md), [source migration](governance/migration-inventory.md), [archive index](archive/README.md) |
 
 Tất cả thay đổi có chủ đích phải commit/push đúng repository và xác minh remote SHA. [Quy định áp dụng mọi AI](governance/github-operations-policy.md). Tài liệu restricted chưa được chuyển sang public; **BLOCKED_PRIVACY** cho đến khi có private repository được phê duyệt. HR-WEB-01 là nguồn lịch sử, không phải Master Requirements.

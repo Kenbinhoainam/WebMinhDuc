@@ -38,7 +38,7 @@ Sites v10 metadata and deployment status were read through authorized connector:
 Initial audit [46106771278](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46106771278) and [JSON evidence](docs/operations/evidence/2026-11-28/pages-http-initial.json):
 
 - Root 200, `text/html`, correct Pages canonical, `noindex,nofollow`, VI lang and VI/EN/ZH-Hans/KO/JA alternates.
-- Initial entry JS/CSS/poster/logo returned 200. Follow-up audit compares all published JS/CSS bundles to exact Git bytes and fails on wrong MIME/hash/status; results are in [handoff](docs/operations/HANDOFF.md).
+- Initial entry JS/CSS/poster/logo returned 200. Follow-up [46108194398](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194398) verified **25 published JS/CSS bundles** against exact Git bytes and MIME; every HTTP check passed. [Evidence](docs/operations/evidence/2026-11-28/pages-http-verified.json).
 - Direct about-us and job-detail routes, locale roots and locale job lists returned 200; missing route returned 404. These are HTTP deep-link checks; browser refresh/rendering is separately reported.
 - Sitemap parsed: **245 URLs**, all under Pages base. It remains possible to publish a sitemap for a noindex demo; current demo indexing control is HTML noindex. `robots.txt` allows crawling (`Disallow:` empty), so it does not prevent crawlers from reading noindex.
 - Cache-busting request matched root HTML. Response cache policy `max-age=600`, initial Age 0, Last-Modified 28/11/2026 10:39:05 UTC+7. One runner observation does not prove global CDN invalidation or every visitor's cache.

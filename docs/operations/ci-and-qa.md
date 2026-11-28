@@ -45,3 +45,5 @@ python3 scripts/governance/audit-live.py
 ```
 
 Record SHA, run/command, exit status, actual scope and NOT_TESTED cases in PR. A failed audit is evidence to investigate; never auto-deploy to “fix” it.
+
+Full proposal checkpoint `901e8e9`: [6/6 jobs success](https://github.com/Kenbinhoainam/WebMinhDuc/actions/runs/46108194398), 25 published bundles byte/MIME verified; Chromium local jobs-route smoke 15 locale/width cases, no observed page errors/HTTP JS/CSS failures/axe findings/overflow. Review identified reload/network-failure harness gaps, corrected in the next commit; see final handoff evidence. Source checks are unchanged from this successful run.
