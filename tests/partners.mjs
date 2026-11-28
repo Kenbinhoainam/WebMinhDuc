@@ -81,6 +81,14 @@ try {
  await act(()=>document.getElementById('root').removeAttribute('inert'));assert.equal(frames.size,1);
  Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));assert.equal(frames.size,0);
  Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));assert.equal(frames.size,1);
+ const toggle = document.querySelector('.partners-motion-toggle');
+ assert.equal(toggle.getAttribute('aria-controls'),rail.id);
+ await act(()=>toggle.click());assert.equal(frames.size,0,'manual pause interrupts movement immediately');
+ await act(()=>observer.emit(false));await act(()=>observer.emit(true));
+ assert.equal(frames.size,0,'manual pause survives leaving and returning to the viewport');
+ await act(()=>{document.dispatchEvent(new Event('visibilitychange'));});
+ assert.equal(frames.size,0,'manual pause survives tab visibility changes');
+ await act(()=>toggle.click());assert.equal(frames.size,1,'explicit play restarts the loop');
  await act(()=>observer.emit(false));assert.equal(frames.size,0);
  await act(()=>{motion.matches=true;prefChange();});assert.equal(rail.tabIndex,-1);assert.equal(rail.querySelectorAll('ul').length,1);
  await act(()=>observer.emit(true));assert.equal(frames.size,0);
@@ -94,7 +102,7 @@ try {
   assert.equal(doc.window.document.querySelectorAll('.partners-set li').length,5);
   doc.window.close();
  }
- console.log('PASS partners: semantic names, native browsing, continuous loop, hover/focus/hold/visibility/reduced-motion and static SSR.');
+ console.log('PASS partners: semantic names, native browsing, continuous loop, pause/play, hover/focus/hold/visibility/reduced-motion and static SSR.');
 } finally {
  await act(()=>root.unmount());
  dom.window.close();

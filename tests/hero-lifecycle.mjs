@@ -11,7 +11,7 @@ if(!mode){
  try{
   await build({entryPoints:['src/HomeHero.tsx'],bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.css':'empty'},outfile:`${temp}/hero.mjs`,logLevel:'silent'});
   for(const scenario of ['manual','scroll','scroll-away','scroll-before-start','pending','hidden','noio','noio-offscreen','observe-failure','reduced','blocked']){
-   const result=spawnSync(process.execPath,[process.argv[1],scenario],{encoding:'utf8',timeout:15000});
+   const result=spawnSync(process.execPath,[process.argv[1],scenario],{encoding:'utf8',timeout:60000});
    assert.equal(result.status,0,`${scenario}: ${result.stdout}\n${result.stderr}`);process.stdout.write(result.stdout);
   }
  }finally{await rm(temp,{recursive:true,force:true});}

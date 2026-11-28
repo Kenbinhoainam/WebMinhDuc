@@ -53,7 +53,7 @@ try{
  const links = [...serviceRail.querySelectorAll('a')];
  const leading = () => serviceRail.children[Math.round(serviceRail.scrollLeft/390)].querySelector('a');
  const gallery=serviceRail.closest('.service-gallery');
- assert.equal(gallery.style.getPropertyValue('--service-slide-time'),'375ms');
+ assert.equal(gallery.style.getPropertyValue('--service-slide-time'),'var(--motion-t2,180ms)');
  const tickService = () => callbacks.get([...timers].find(([,delay])=>delay===4500)[0])();
  const frames = new Map();
  let time=1000, nextFrame=0;
@@ -73,10 +73,10 @@ try{
      await act(trigger);
      assert.equal(serviceRail.scrollLeft,start,'the step begins from the current reading position');
      assert.equal(frames.size,1);
-     advanceTime(187.5);
+     advanceTime(90);
      assert.equal(serviceRail.scrollLeft,start+(end-start)*.875,'auto, buttons and wrap share cubic ease-out');
-     advanceTime(187.5);
-     assert.equal(serviceRail.scrollLeft,end,'the slide finishes at 375 ms');
+     advanceTime(90);
+     assert.equal(serviceRail.scrollLeft,end,'the slide finishes at the T2 fallback of 180 ms');
      assert.equal(frames.size,0);
      assert.equal(serviceRail.style.scrollSnapType,'');
    };
@@ -105,7 +105,7 @@ try{
    advanceTime(70);
    await act(()=>controls[0].click());
    assert.equal(frames.size,1,'a rapid direction change supersedes the previous frame');
-   advanceTime(375);
+   advanceTime(180);
    assert.equal(serviceRail.scrollLeft,0);
  } finally {
    if(clock) Object.defineProperty(performance,'now',clock);

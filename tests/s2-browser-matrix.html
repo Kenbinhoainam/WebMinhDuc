@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm thử khung nhìn · Sprint 2</title>
+<style>
+body{font:16px/1.5 system-ui;color:#122947;background:white;margin:1rem}button,a{padding:.75rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}.stage{overflow:auto;max-width:100%;height:240px;border:1px solid #ccd8eb}iframe{border:0}button:focus-visible{outline:3px solid #1765be}
+</style>
+<h1>Kiểm thử khung nhìn</h1>
+<p>Đo kích thước CSS thực trong iframe của trình duyệt. Mỗi lượt ghi ngôn ngữ, trang, chiều rộng, độ tràn ngang và trạng thái điều hướng.</p>
+<button id="run">Chạy ma trận</button> <a id="download" hidden download="sprint2-browser-trace.json">Tải trace JSON</a>
+<p role="status" id="progress"></p><div class="stage"><iframe title="Trang đang kiểm thử"></iframe></div><pre id="summary"></pre>
+<script type="module">
+const widths=[320,359,360,390,430,450,520,521,639,640,767,768,799,800,820,999,1000,1023,1024,1279,1280,1281,1440,1920];
+const inventory = await fetch('./__sprint2-routes.json').then(response=>response.json());
+const paths = inventory.map(page=>page.path);
+const locales=['vi','en','zh','ko','ja'];
+const frame=document.querySelector('iframe'),progress=document.querySelector('#progress'),summary=document.querySelector('#summary');
+const start=document.querySelector('#run'),download=document.querySelector('#download');
+const nextFrame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
+async function navigate(url){
+  await new Promise((resolve,reject)=>{
+    const timer=setTimeout(()=>{frame.onload=null;reject(new Error('Hết thời gian chờ tải trang'));},18000);
+    frame.onload=()=>{clearTimeout(timer);resolve();};frame.src=url;
+  });
+  if(frame.contentDocument?.fonts)await frame.contentDocument.fonts.ready;
+  await nextFrame();
+}
+start.onclick=async()=>{
+  start.disabled=true;download.hidden=true;const results=[],errors=[];
+  for(const locale of locales)for(const path of paths){
+    const url=(locale==='vi'?'':'/'+locale)+(locale!=='vi'&&path==='/'?'':path);
+    progress.textContent=locale.toUpperCase()+' '+path+' · '+results.length+' phép đo';
+    try{
+      await navigate(url);
+      const doc=frame.contentDocument,win=frame.contentWindow,root=doc.documentElement;
+      for(const width of widths){
+        const height=width<=450?844:width<=820?1024:900;
+        frame.width=width;frame.height=height;await nextFrame();
+        const heading=doc.querySelector('h1'),nav=doc.querySelector('.desktop-nav'),drawer=doc.querySelector('.menu-button');
+        const visible=el=>Boolean(el?.getBoundingClientRect().width);
+        const row={url,locale,width,height,viewport:win.innerWidth,content:root.scrollWidth,available:root.clientWidth,lang:root.lang,
+          heading:heading?.textContent.trim(),desktop:visible(nav),drawer:visible(drawer)};
+        const failed=[];
+        if(win.innerWidth!==width)failed.push('viewport');
+        if(root.scrollWidth>root.clientWidth+1)failed.push('overflow');
+        if(!row.heading||!row.lang.startsWith(locale))failed.push('route/locale');
+        if(row.desktop===row.drawer)failed.push('navigation');
+        if(failed.length){
+          row.failed=failed;
+          if(failed.includes('overflow'))row.elements=[...doc.querySelectorAll('main *,header *')].filter(el=>{
+            const rect=el.getBoundingClientRect();return rect.width>0 && rect.left<root.clientWidth && rect.right>root.clientWidth+1;
+          }).slice(0,8).map(el=>el.tagName.toLowerCase()+'.'+String(el.className).slice(0,85));
+        }
+        results.push(row);
+      }
+    }catch(e){errors.push({url,error:String(e)});}
+  }
+  const failures=results.filter(r=>r.failed);
+  const report={time:new Date().toISOString(),origin:location.origin,browser:navigator.userAgent,zoom:window.devicePixelRatio,reduced:matchMedia('(prefers-reduced-motion:reduce)').matches,results,errors};
+  if(download.href.startsWith('blob:'))URL.revokeObjectURL(download.href);
+  download.href=URL.createObjectURL(new Blob([JSON.stringify(report)],{type:'application/json'}));
+  download.hidden=false;progress.textContent='Đã đo '+results.length+' trường hợp · '+failures.length+' lỗi bố cục/điều hướng · '+errors.length+' lỗi tải';
+  summary.textContent=JSON.stringify({failures:failures.slice(0,12),errors},null,2);start.disabled=false;
+};
+</script></html>

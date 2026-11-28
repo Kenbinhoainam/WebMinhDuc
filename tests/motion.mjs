@@ -32,19 +32,19 @@ try {
   }
   globalThis.IntersectionObserver = Observer;
   const css = await readFile('src/motion.css', 'utf8');
-  assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*300ms;\s*transition-delay:\s*0ms/);
-  assert.match(css, /data-reveal-delay="3"[^}]*transition-delay:\s*240ms/, 'reference stagger is entry-only');
+  assert.match(css, /\.motion-pending\s*\{[^}]*transition-duration:\s*var\(--motion-t2\);\s*transition-delay:\s*0ms/);
+  assert.match(css, /data-reveal-delay="3"[^}]*transition-delay:\s*120ms/, 'reference stagger is entry-only');
   assert.match(css, /\[data-reveal\]\[data-reveal-frame\]\.motion-pending\s*\{[^}]*opacity:\s*1;\s*transform:\s*none;\s*transition:\s*none/s, 'pending frame stays geometrically stable');
-  assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,32px\)\) scale\(\.96\)/, 'controlled zoom belongs to inner content');
-  assert.match(css, /@media\(max-width:767px\)\{\[data-reveal\]\{--motion-travel:16px\}\}/, 'mobile reveals use the smaller shared travel');
-  assert.match(css, /data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,32px\)\) scale\(1\.04\)/, 'media reveals inside the clipped stable frame');
+  assert.match(css, /data-reveal="zoom"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,8px\)\) scale\(\.96\)/, 'controlled zoom belongs to inner content');
+  assert.ok(!css.includes('--motion-travel:32px'),'large movements are absent on both mobile and desktop');
+  assert.match(css, /data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,8px\)\) scale\(1\.04\)/, 'media reveals inside the clipped stable frame');
   assert.match(css, /motion-released > \.motion-content\s*\{\s*transition:\s*none/, 'failure restores without a transition');
   const {startReveals, RevealFrame} = await import(pathToFileURL(`${process.cwd()}/${dir}/bundle.mjs`));
   const React = await import('react'); const {renderToStaticMarkup} = await import('react-dom/server');
   const explicit = renderToStaticMarkup(React.createElement(RevealFrame, {delay: 1, delayMs: 400}, 'content'));
-  assert.match(explicit, /data-reveal-delay-ms="120"/); assert.match(explicit, /--reveal-delay:120ms/);
+  assert.match(explicit, /data-reveal-delay-ms="80"/); assert.match(explicit, /--reveal-delay:80ms/);
   const capped = renderToStaticMarkup(React.createElement(RevealFrame, {delayMs: 5000}, 'content'));
-  assert.match(capped, /--reveal-delay:300ms/, 'explicit delays are bounded');
+  assert.match(capped, /--reveal-delay:120ms/, 'explicit delays are bounded');
   const invalid = renderToStaticMarkup(React.createElement(RevealFrame, {delayMs: Infinity}, 'content'));
   assert.doesNotMatch(invalid, /data-reveal-delay-ms|--reveal-delay/,'invalid explicit delay is ignored');
   const zero = renderToStaticMarkup(React.createElement(RevealFrame, {delayMs: 0}, 'content'));

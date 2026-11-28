@@ -64,10 +64,12 @@ try {
   await act(()=>root.render(React.createElement(MemoryRouter,{initialEntries:['/jobs']},React.createElement(Harness))));await tick();
   window.dispatchEvent(new Event('scroll'));
   await act(()=>navigate('/jobs?skillLevel=first#job-listings'));await tick();assert.equal(y,640,'new same-path menu destination scrolls to anchor');
+  assert.equal(document.activeElement,document.getElementById('job-listings'),'PUSH fragment moves focus to the target, including plain sections');
+  assert.equal(document.activeElement.tabIndex,-1,'visited section does not become an extra Tab stop');
   y=900;window.dispatchEvent(new Event('scroll'));
   await act(()=>navigate(-1));await tick();assert.equal(y,120,'Back to same pathname without hash restores its saved position');
   await act(()=>navigate(1));await tick();assert.equal(y,900,'Forward restores the user position within a hashed entry');
-  await act(()=>navigate('/jobs?skillLevel=second#job-listings'));await tick();assert.equal(y,640,'new filter destination still scrolls to its anchor');
+  await act(()=>navigate('/jobs?skillLevel=second#job-listings'));await tick();assert.equal(y,900,'query-only filter changes do not steal the existing reading position');
  } finally {await act(()=>root.unmount());dom.window.close()}
  // Guard the concrete cascade regressions found during review, without treating
  // JSDOM as a rendering engine. A dark .75 glass surface over white has 7:1

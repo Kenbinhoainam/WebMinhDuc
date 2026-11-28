@@ -37,10 +37,22 @@ function useListingQuery() {
   return {params, update, url:location.pathname + location.search + location.hash};
 }
 
-function FeaturedNews({archive, locale}: {archive: string; locale: Locale}) {
+function FeaturedNews({archive, locale, paused, togglePause}: {archive: string; locale: Locale; paused: boolean; togglePause: () => void}) {
   const track = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  useHomeCarousel(track, () => advanceHomeRail(track.current));
+  const [reduce, setReduce] = useState(false);
+  const pauseControl = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => {
+      if (preference.matches && document.activeElement === pauseControl.current) track.current?.focus({preventScroll:true});
+      setReduce(preference.matches);
+    };
+    update();
+    preference.addEventListener('change', update);
+    return () => preference.removeEventListener('change', update);
+  }, []);
+  useHomeCarousel(track, () => advanceHomeRail(track.current), undefined, {paused, disabled:reduce});
   function syncIndex() {
     const el = track.current;
     if (!el) return;
@@ -49,10 +61,14 @@ function FeaturedNews({archive, locale}: {archive: string; locale: Locale}) {
     setIndex(offsets.indexOf(Math.min(...offsets)));
   }
   return <section className="info-news-section ed-feature-band"><div className="ed-frame info-featured-news">
-    <h2 className="ed-feature-heading" id="featured-news-heading">Bài chọn lọc</h2>
-    <div ref={track} className="editorial-feature-track" data-auto-rail role="region" aria-labelledby="featured-news-heading"
-      tabIndex={0} onScroll={syncIndex}>
-      {featuredArticles.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={i !== index}>
+    <div className="ed-feature-header">
+      <h2 className="ed-feature-heading" id="featured-news-heading">Bài chọn lọc</h2>
+      <button ref={pauseControl} className="ed-control ed-feature-pause" type="button" aria-controls="featured-news-track"
+        hidden={reduce} onClick={togglePause}>{paused ? 'Tiếp tục chuyển bài' : 'Tạm dừng chuyển bài'}</button>
+    </div>
+    <div id="featured-news-track" ref={track} className="editorial-feature-track" data-auto-rail role="region" aria-labelledby="featured-news-heading"
+      tabIndex={reduce ? -1 : 0} onScroll={syncIndex}>
+      {featuredArticles.map((article, i) => <div key={article.slug} className="editorial-feature-slide" inert={!reduce && i !== index}>
         <RoutedEditorialCard article={article} href={articleHref(article.slug)} locale={locale} variant="featured" archive={archive}
           eagerImage={i === 0} checklist={article.image ? undefined : getArticle(article.slug)?.sections.map(section => section.heading)}/>
       </div>)}
@@ -60,12 +76,13 @@ function FeaturedNews({archive, locale}: {archive: string; locale: Locale}) {
   </div></section>;
 }
 
-export function NewsPage() {
+export function NewsPage({entries = articles}: {entries?: readonly ArticleSummary[]} = {}) {
+  const [featuredPaused,setFeaturedPaused] = useState(false);
   const locale = useLocale();
   const {params, update, url} = useListingQuery();
   const resultsHeading = useRef<HTMLHeadingElement>(null);
   const selected = categories.find(([key]) => key === params.get('category')) ?? categories[0];
-  const filtered = articles.filter(article => selected[0] === 'all' || article.category === selected[1]);
+  const filtered = entries.filter(article => selected[0] === 'all' || article.category === selected[1]);
   const totalPages = Math.max(1, Math.ceil(filtered.length / 3));
   const requested = Number(params.get('page'));
   const page = Number.isInteger(requested) && requested > 0 ? Math.min(requested, totalPages) : 1;
@@ -79,7 +96,7 @@ export function NewsPage() {
       <Link className="btn" to={url.split('#')[0] + '#news-listings'}>Danh mục bài viết</Link>
       <Link className="ed-directory-link" to="/events">Hoạt động của Minh Đức Vina</Link>
     </PageMasthead>
-    {page === 1 && featuredArticles.length > 0 && <FeaturedNews archive={url} locale={locale}/>}
+    {page === 1 && featuredArticles.length > 0 && <FeaturedNews archive={url} locale={locale} paused={featuredPaused} togglePause={()=>setFeaturedPaused(value=>!value)}/>}
     <section className="info-news-listing ed-section" aria-labelledby="news-listings"><div className="ed-frame">
       <h2 ref={resultsHeading} id="news-listings" tabIndex={-1}>Danh mục bài viết</h2>
       <div className="info-tabs ed-filters" role="group" aria-label="Chuyên mục tin tức">{categories.map(([key, label]) =>
@@ -194,7 +211,7 @@ function ArticleReader({article}: {article: Article}) {
           <div className="ed-body">
             {article.sections.map((section, i) => <ReaderSection key={section.heading} section={section} index={i}/>)}
             <div className="ed-actions"><Link className="btn" to={employer ? '/#business-contact' : '/jobs'}>{employer ? 'Gửi nhu cầu nhân lực' : 'Xem việc làm'}</Link>
-              <Link to={archive}>Trở về tất cả bài viết</Link></div>
+              <Link to={archive.includes('#') ? archive : archive + '#news-listings'}>Trở về tất cả bài viết</Link></div>
           </div>
         </div>
         {(sameCategory.length > 0 || recommended.length > 0) && <aside className="info-related-news editorial-related-aside ed-related">
@@ -241,33 +258,35 @@ function eventStatus(event: EventData) {
 function SampleDate() {
   return <p className="ed-note">Mốc đối chiếu lịch mẫu <time dateTime={sampleDate}>{formatEditorialDate(sampleDate, useLocale())}</time>. Thời gian và địa điểm chờ Minh Đức xác nhận.</p>;
 }
-function EventLine({event}: {event: EventData}) {
+function EventLine({event, archiveQuery = ''}: {event: EventData; archiveQuery?: string}) {
   const locale = useLocale();
+  const destination = '/events/' + event.slug + archiveQuery;
   return <article className="ed-event-line">
     <time className="ed-calendar" dateTime={event.date}>
       <b aria-hidden="true">{event.date.slice(-2)}</b>
       <span>{formatEditorialDate(event.date, locale)}</span>
     </time>
-    <div><p className="ed-meta">{event.tag}</p><h3><Link to={'/events/' + event.slug}>{event.title}</Link></h3>
+    <div><p className="ed-meta">{event.tag}</p><h3><Link to={destination}>{event.title}</Link></h3>
       <p className="ed-event-details"><span>{event.time} UTC+7</span><span>{event.location}</span></p></div>
-    <div className="ed-event-action"><span className="ed-status">{eventStatus(event) === 'upcoming' ? 'Sắp diễn ra' : 'Đã diễn ra'}</span><Link className="ed-schedule-link" to={'/events/' + event.slug + '#schedule'}>Xem lịch trình</Link></div>
+    <div className="ed-event-action"><span className="ed-status">{eventStatus(event) === 'upcoming' ? 'Sắp diễn ra' : 'Đã diễn ra'}</span><Link className="ed-schedule-link" to={destination + '#schedule'}>Xem lịch trình</Link></div>
   </article>;
 }
-export function EventsPage() {
+export function EventsPage({entries = events}: {entries?: readonly EventData[]} = {}) {
   const {params, update} = useListingQuery();
   const selected = statuses.find(([key]) => key === params.get('status')) ?? statuses[0];
-  const filtered = events.filter(event => selected[0] === 'all' || selected[0] === eventStatus(event));
+  const filtered = entries.filter(event => selected[0] === 'all' || selected[0] === eventStatus(event));
+  const archiveQuery = selected[0] === 'all' ? '' : '?status=' + selected[0];
   return <div className="ed-pages ed-events"><PageMasthead title="Hoạt động của Minh Đức Vina"
     description="Gặp gỡ người lao động, trao đổi cùng doanh nghiệp và kết nối với cộng đồng."
     image="/WebMinhDuc/assets/minhduc-v16/recruitment-event.webp" imageAlt="Mọi người đứng trên sân khấu trong một hoạt động tuyển dụng">
     <Link className="btn" to="/about-us#activities">Xem ảnh hoạt động Minh Đức</Link>
     <Link className="ed-directory-link" to="/news">Tin tức & cẩm nang</Link>
   </PageMasthead>
-    <section className="ed-section"><div className="ed-frame"><h2>Lịch chương trình minh họa</h2><SampleDate/>
+    <section className="ed-section"><div className="ed-frame"><h2 id="event-listings" tabIndex={-1}>Lịch chương trình minh họa</h2><SampleDate/>
       <div className="info-tabs ed-filters" role="group" aria-label="Lọc sự kiện">{statuses.map(([key, label]) =>
         <button type="button" key={key} aria-pressed={selected[0] === key} onClick={() => update({status:key === 'all' ? null : key})}>{label}</button>)}</div>
       <p className="ed-result" aria-live="polite">{filtered.length} sự kiện</p>
-      <div className="ed-event-list">{filtered.map(event => <EventLine key={event.slug} event={event}/>)}</div>
+      <div className="ed-event-list">{filtered.map(event => <EventLine key={event.slug} event={event} archiveQuery={archiveQuery}/>)}</div>
       {filtered.length === 0 && <p>Chưa có chương trình trong nhóm này. <button type="button" className="ed-control" onClick={() => update({status:null})}>Xem tất cả</button></p>}
     </div></section>
   </div>;
@@ -275,6 +294,8 @@ export function EventsPage() {
 export function EventPage() {
   const {slug} = useParams();
   const locale = useLocale();
+  const status = new URLSearchParams(useLocation().search).get('status');
+  const archiveQuery = status === 'past' || status === 'upcoming' ? '?status=' + status : '';
   const event = events.find(item => item.slug === slug);
   if (!event) return <NotFoundEditorial event/>;
   return <div className="ed-pages ed-event"><PageMasthead title={event.title} eyebrow="Lịch sự kiện minh họa" description={event.summary}>
@@ -300,8 +321,8 @@ export function EventPage() {
           <RevealFrame effect="media" delay={1}><figure><img src="/WebMinhDuc/assets/minhduc-v16/team-yearend.webp" alt="Tập thể Minh Đức chụp ảnh trong buổi gặp mặt cuối năm" {...responsiveImage('/WebMinhDuc/assets/minhduc-v16/team-yearend.webp', '(max-width: 700px) 92vw, (max-width: 1279px) 46vw, 588px')} loading="lazy"/><figcaption>Buổi gặp mặt cuối năm</figcaption></figure></RevealFrame>
         </div>
       </section>
-      <section aria-labelledby="other-events" className="ed-section"><h2 id="other-events" tabIndex={-1}>Sự kiện khác</h2><div className="ed-event-list">{events.filter(item => item.slug !== slug).map(item => <EventLine key={item.slug} event={item}/>)}</div>
-        <Link className="ed-all-events" to="/events">Xem tất cả sự kiện</Link>
+      <section aria-labelledby="other-events" className="ed-section"><h2 id="other-events" tabIndex={-1}>Sự kiện khác</h2><div className="ed-event-list">{events.filter(item => item.slug !== slug).map(item => <EventLine key={item.slug} event={item} archiveQuery={archiveQuery}/>)}</div>
+        <Link className="ed-all-events" to={'/events' + archiveQuery + '#event-listings'}>Xem tất cả sự kiện</Link>
       </section>
     </div>
   </div>;

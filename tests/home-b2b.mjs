@@ -26,7 +26,7 @@ try {
   assert.equal(doc.querySelectorAll('video').length,1);
   assert.ok(doc.querySelector('.home-film-poster'));
   const figures=[...doc.querySelectorAll('.home-figure .motion-sr-only')].map(node=>node.textContent);
-  assert.deepEqual(figures,['1.200+','80+','15+','95%']);
+  assert.deepEqual(figures,[new Intl.NumberFormat(locale).format(1200)+'+','80+','15+','95%']);
   assert.doesNotMatch(doc.body.textContent,/Nhân vật giả định|Số liệu mô phỏng/);
 
  }

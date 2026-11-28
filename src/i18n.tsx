@@ -6,6 +6,7 @@ import './locale-selector.css';
 
 export {locales, languageTags, languageSwitchUrl, localeFromPath, localeBase, stripLocale, localizedPath, type Locale} from './i18n-runtime/paths';
 export const localeNames: Record<Locale, string> = {vi: 'Tiếng Việt', en: 'English', zh: '简体中文', ko: '한국어', ja: '日本語'};
+const languageLabel: Record<Locale, string> = {vi:'Ngôn ngữ', en:'Language', zh:'语言', ko:'언어', ja:'言語'};
 const localeCodes: Record<Locale, string> = {vi: 'VI', en: 'EN', zh: 'ZH', ko: 'KO', ja: 'JA'};
 const LocaleContext = createContext<Locale>('vi');
 export const LocaleProvider = LocaleContext.Provider;
@@ -39,11 +40,11 @@ export function LanguageSelector(){
   return () => { document.removeEventListener('header-overlay-open', otherOverlay); document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', escape); };
  }, [open]);
  return <div className="language-selector" ref={rootRef} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false); }}>
-  <button ref={triggerRef} type="button" className="language-trigger" data-locale={locale} aria-label={`Language / Ngôn ngữ: ${localeNames[locale]}`} aria-expanded={open} aria-controls={panelId} onClick={() => { if (!open) document.dispatchEvent(new window.CustomEvent('header-overlay-open', {detail:{owner:'language'}})); setOpen(value => !value); }}>
+  <button ref={triggerRef} type="button" className="language-trigger" data-locale={locale} aria-label={`${languageLabel[locale]} · ${localeNames[locale]}`} aria-expanded={open} aria-controls={panelId} onClick={() => { if (!open) document.dispatchEvent(new window.CustomEvent('header-overlay-open', {detail:{owner:'language'}})); setOpen(value => !value); }}>
    <LocalFlag locale={locale}/><span aria-hidden="true">{localeCodes[locale]}</span><svg className="language-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </button>
   <div id={panelId} className="language-panel" hidden={!open}>
-   <p className="language-panel-title">Language / Ngôn ngữ</p>
+   <p className="language-panel-title">{languageLabel[locale]}</p>
    <ul>{locales.map(code => <li key={code}><a href={'/WebMinhDuc' + languageSwitchUrl(location.pathname,location.search,location.hash,code)} lang={languageTags[code]} aria-current={code===locale ? 'true' : undefined}>
     <LocalFlag locale={code}/><span>{localeNames[code]}</span>{code===locale && <svg className="language-check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
    </a></li>)}</ul>

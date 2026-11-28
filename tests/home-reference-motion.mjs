@@ -34,9 +34,9 @@ try {
   dom.window.close();
  }
  const motion=await readFile('src/motion.css','utf8');
- assert.match(motion,/data-reveal="zoom-right"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateX\(calc\(-1 \* var\(--motion-travel,32px\)\)\) scale\(\.96\)/,'controlled zoom starts from the left');
- assert.match(motion,/data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,32px\)\) scale\(1\.04\)/,'media begins with a small cropped zoom');
- assert.match(motion,/data-reveal-frame\]\.motion-pending > \.motion-content[^}]*transition-duration:\s*300ms;\s*transition-delay:\s*0ms/,'reverse exit is short and has no stagger');
+ assert.match(motion,/data-reveal="zoom-right"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateX\(calc\(-1 \* var\(--motion-travel,8px\)\)\) scale\(\.96\)/,'controlled zoom starts from the left');
+ assert.match(motion,/data-reveal="media"\]\.motion-pending > \.motion-content\s*\{\s*transform:\s*translateY\(var\(--motion-travel,8px\)\) scale\(1\.04\)/,'media begins with a small cropped zoom');
+ assert.match(motion,/data-reveal-frame\]\.motion-pending > \.motion-content[^}]*transition-duration:\s*var\(--motion-t2\);\s*transition-delay:\s*0ms/,'reverse exit is short and has no stagger');
  assert.match(motion,/@media \(prefers-reduced-motion: no-preference\)/,'reveals require motion permission');
  console.log('PASS home motion: five locales, stable frames, bounded stagger and controlled media geometry');
 } finally {await rm(temp,{recursive:true,force:true})}

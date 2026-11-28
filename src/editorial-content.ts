@@ -337,7 +337,7 @@ export const articleSections: Record<string, ArticleSection[]> = {
   ],
   "nhu-cau-tuyen-dung": [
     {
-      "heading": "Bắt đầu từ chỗ thiếu trong vận hành",
+      "heading": "Bắt đầu từ kế hoạch vận hành",
       "paragraphs": [
         "Một kế hoạch bổ sung lao động nên bắt đầu bằng câu hỏi: công đoạn nào cần người, vào thời điểm nào và để thực hiện nhiệm vụ gì? Tổng số tuyển chưa phản ánh đủ nhu cầu nếu người đến không đúng ca hoặc chưa thể vào công đoạn cần hỗ trợ. Vì vậy, nhân sự và vận hành cần cùng xác nhận đầu bài trước khi mở rộng tìm nguồn.",
         "Tách nhu cầu thay thế người nghỉ khỏi nhu cầu tăng theo kế hoạch sản xuất. Với phần còn phụ thuộc đơn hàng, ghi rõ giả định và ngày rà soát. Một khoảng dự kiến được giải thích rõ tốt hơn một con số chắc chắn trên giấy nhưng chưa có người xác nhận."
@@ -353,10 +353,16 @@ export const articleSections: Record<string, ArticleSection[]> = {
       "paragraphs": [
         "Ngày cần người làm việc và ngày có thể tiếp nhận hồ sơ không nhất thiết là một. Hãy đi ngược từ mốc vận hành để dành thời gian cho trao đổi, xác nhận lịch, thủ tục và hướng dẫn ban đầu. Đồng thời kiểm tra khả năng tiếp nhận của bảo vệ, nhân sự, người hướng dẫn và bộ phận phân ca.",
         "Nếu đội hướng dẫn chỉ có thể hỗ trợ một nhóm trong một buổi, việc mời tất cả ứng viên đến cùng lúc có thể tạo thời gian chờ. Chia đợt theo khả năng phục vụ đã xác nhận và thông báo rõ cho từng người. Không dùng số lượng đến đông làm thước đo duy nhất cho một buổi tiếp nhận."
+      ],
+      "bullets": [
+        "Địa điểm và phương án đi lại nếu có.",
+        "Ca làm, yêu cầu cơ bản và điều kiện làm việc.",
+        "Thu nhập, cách tính và các khoản cần làm rõ.",
+        "Đầu mối xác nhận lịch phỏng vấn, nhận việc."
       ]
     },
     {
-      "heading": "Dùng một bản yêu cầu chung cho mọi đầu mối",
+      "heading": "Thống nhất thông tin trước khi tìm nguồn",
       "paragraphs": [
         "Mỗi bên tham gia cần nhận cùng một phiên bản về vị trí, ca làm, địa điểm và cơ cấu thu nhập được phép tư vấn. Các điều kiện chưa xác nhận phải được đánh dấu để không trở thành lời hứa trong tin nhắn cho ứng viên. Một bảng ngắn có tên người chịu trách nhiệm thường dễ cập nhật hơn nhiều bản mô tả gửi rời rạc."
       ],
@@ -385,7 +391,7 @@ export const articleSections: Record<string, ArticleSection[]> = {
       ]
     },
     {
-      "heading": "Rà ngắn mỗi ngày, xử lý đúng điểm nghẽn",
+      "heading": "Theo dõi và cập nhật theo giai đoạn",
       "paragraphs": [
         "Một lần cập nhật ngắn nên trả lời: số liệu nào thay đổi, nguyên nhân đã biết là gì và ai cần hành động tiếp theo. Nếu ứng viên không tìm được cổng vào, sửa chỉ dẫn; nếu ca làm chưa rõ, xác nhận với vận hành; nếu đội tiếp nhận quá tải, điều chỉnh lịch. Tăng tìm nguồn trước khi hiểu nguyên nhân có thể chỉ đưa thêm người vào một bước đang tắc."
       ],

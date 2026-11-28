@@ -1,5 +1,5 @@
 import {useEffect, useId, useRef, useState, type CSSProperties, type ReactNode} from 'react';
-import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin} from 'lucide-react';
+import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin, Pause, Play} from 'lucide-react';
 import {Link, useLocation} from 'react-router-dom';
 import {useLocale} from './i18n';
 import {lookup} from './i18n-runtime/catalog';
@@ -8,7 +8,7 @@ import {PageMasthead} from './PageMasthead';
 import {responsiveImage} from './media';
 import {Modal} from './shared';
 import {RevealFrame} from './motion';
-import {advanceHomeRail, useHomeCarousel} from './useHomeCarousel';
+import {adjacentRailOffset, advanceHomeRail, useHomeCarousel} from './useHomeCarousel';
 import media from './careers-media.json';
 import './Careers.css';
 
@@ -71,6 +71,8 @@ function CareerRail({title, id, kind, modalOpen, children}: {
   const section = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const labelId = useId();
+  const trackId = useId();
+  const [paused,setPaused] = useState(false);
   const [overflow, setOverflow] = useState(true);
   useEffect(() => {
     const element = track.current;
@@ -87,11 +89,26 @@ function CareerRail({title, id, kind, modalOpen, children}: {
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  useHomeCarousel(section, () => advanceHomeRail(track.current), '[data-auto-rail]', {disabled: modalOpen || !overflow});
-  return <section id={id} ref={section} className={`career-block career-rail-section career-${kind}`} aria-labelledby={labelId}>
+  useHomeCarousel(section, () => advanceHomeRail(track.current), '.career-rail-section', {disabled: modalOpen || !overflow, paused});
+  function step(backwards: boolean) {
+    const rail = track.current;
+    if (!rail) return;
+    const max = rail.scrollWidth - rail.clientWidth;
+    const wrap = backwards ? rail.scrollLeft <= 2 : rail.scrollLeft >= max - 2;
+    rail.scrollLeft = wrap ? (backwards ? max : 0) : adjacentRailOffset(rail,backwards);
+  }
+  return <section id={id} tabIndex={id ? -1 : undefined} ref={section} className={`career-block career-rail-section career-${kind}`} aria-labelledby={labelId}>
     <div className="container">
-      <h2 id={labelId}>{title}</h2>
-      <div ref={track} className="career-track" data-auto-rail="" role="region" aria-labelledby={labelId} tabIndex={overflow ? 0 : undefined}>
+      <div className="career-rail-heading">
+        <h2 id={labelId}>{title}</h2>
+        {overflow && <div className="career-rail-controls">
+          <button type="button" aria-label="Mục trước" aria-controls={trackId} onClick={()=>step(true)}><ArrowLeft aria-hidden="true"/></button>
+          <button className="career-carousel-pause" type="button" aria-label={paused ? 'Phát chuyển động' : 'Tạm dừng chuyển động'}
+            aria-controls={trackId} onClick={()=>setPaused(!paused)}>{paused ? <Play aria-hidden="true"/> : <Pause aria-hidden="true"/>}</button>
+          <button type="button" aria-label="Mục tiếp theo" aria-controls={trackId} onClick={()=>step(false)}><ArrowRight aria-hidden="true"/></button>
+        </div>}
+      </div>
+      <div id={trackId} ref={track} className="career-track" data-auto-rail="" role="region" aria-labelledby={labelId} tabIndex={overflow ? 0 : undefined}>
         {children}
       </div>
     </div>
@@ -167,7 +184,7 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
       <ol className="career-process-grid">{steps.map(([title, text], index) => <li key={title}><RevealFrame delay={index as 0|1|2|3}><article className="career-step">
         <span className="career-step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p>
       </article></RevealFrame></li>)}</ol>
-      <div id="career-contact"><CareerLink to="#open-positions">Xem vị trí nội bộ</CareerLink><Link className="career-text-link" to="/contact#consultation">Trao đổi với Minh Đức</Link></div>
+      <div id="career-contact" tabIndex={-1}><CareerLink to="#open-positions">Xem vị trí nội bộ</CareerLink><Link className="career-text-link" to="/contact#consultation">Trao đổi với Minh Đức</Link></div>
     </div></section>
 
     <CareerRail kind="questions" title="Câu hỏi về ứng tuyển nội bộ" modalOpen={modalOpen}>
