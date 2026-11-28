@@ -12,7 +12,7 @@
   border-radius: 999px;
   background: #fff;
   color: var(--md-blue);
-  font: 700 15px/1.35 var(--font-display,Arial,sans-serif);
+  font: 700 15px/1.35 var(--font-display);
   cursor: pointer;
 }
 .form-mode button[aria-pressed="true"] { background: var(--md-blue); color: #fff; border-color: var(--md-blue); }
@@ -28,7 +28,7 @@
   margin: 0 0 16px;
   padding: 0;
   color: #20344e;
-  font: 700 20px/1.3 var(--font-display,Arial,sans-serif);
+  font: 700 20px/1.3 var(--font-display);
 }
 .contact-fieldset + .contact-fieldset legend { padding-top: 22px; }
 .contact-fieldset .form-grid { clear: both; }

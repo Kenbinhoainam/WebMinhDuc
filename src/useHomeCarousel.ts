@@ -160,7 +160,7 @@ export function adjacentRailOffset(rail: HTMLElement, backwards: boolean) {
 
 // Reverse at either end so a long strip never sweeps back through every card.
 const reverseRail = new WeakSet<HTMLElement>();
-export function advanceHomeRail(rail: HTMLElement | null, durationMs = 500) {
+export function advanceHomeRail(rail: HTMLElement | null, durationMs = 320) {
   if (!rail || rail.scrollWidth <= rail.clientWidth + 1) return;
   const start = rail.scrollLeft;
   const max = rail.scrollWidth - rail.clientWidth;

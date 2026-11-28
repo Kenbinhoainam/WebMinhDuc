@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {ArrowRight, ArrowUpRight} from 'lucide-react';
+import {ArrowRight, ArrowUpRight, HeartHandshake, ShieldCheck, Users} from 'lucide-react';
 import {company} from './company';
 import {AnimatedNumber, AnimatedNumberGroup, RevealFrame} from './motion';
 import PartnersStrip from './PartnersStrip';
@@ -17,6 +17,12 @@ const metrics = [
   {number:15, suffix:'+', label:'Khu vực kết nối'},
   {number:95, suffix:'%', label:'Mức độ hài lòng'},
 ];
+
+const workerPillars = [
+  {icon:ShieldCheck, title:'Minh bạch trước khi nhận việc', text:'Trao đổi rõ địa điểm KCN, lịch ca, mức lương tham khảo và hồ sơ cần chuẩn bị.'},
+  {icon:Users, title:'Hướng dẫn & đón tiếp theo đợt', text:'Có nhân sự hướng dẫn phỏng vấn, nhận việc và hỗ trợ người lao động ngoại tỉnh hòa nhập.'},
+  {icon:HeartHandshake, title:'Đồng hành trong quá trình làm việc', text:'Duy trì đầu mối hỗ trợ giải đáp thắc mắc và tổ chức hoạt động gắn kết cộng đồng.'},
+] as const;
 
 function About() {
   return <section id="about" className="section-home-about" aria-labelledby="home-about-title">
@@ -47,6 +53,25 @@ function Solutions() {
       <RevealFrame effect="zoom"><h2 className="home-heading" id="home-services-title">Giải pháp nhân lực toàn diện</h2></RevealFrame>
       <ServiceCards/>
       <Link to="/services" className="home-index-link">Xem tất cả dịch vụ <ArrowRight aria-hidden="true" size={18}/></Link>
+      <div className="home-worker-strip" aria-labelledby="home-worker-heading">
+        <div className="home-worker-head">
+          <div>
+            <p className="home-worker-kicker">Dành cho người tìm việc</p>
+            <h3 id="home-worker-heading">Đồng hành &amp; hỗ trợ người lao động tại nhà máy miền Bắc</h3>
+          </div>
+          <div className="home-worker-actions">
+            <Link className="btn" to="/jobs?skillLevel=Ph%E1%BB%95%20th%C3%B4ng#job-listings">Việc làm phổ thông</Link>
+            <Link className="btn btn-secondary" to="/jobs?skillLevel=Tay%20ngh%E1%BB%81#job-listings">Việc làm có tay nghề</Link>
+          </div>
+        </div>
+        <div className="home-worker-pillars">
+          {workerPillars.map(({icon:Icon, title, text}) => <article key={title} className="home-worker-card">
+            <Icon size={22} aria-hidden="true"/>
+            <h4>{title}</h4>
+            <p>{text}</p>
+          </article>)}
+        </div>
+      </div>
     </div>
   </section>;
 }

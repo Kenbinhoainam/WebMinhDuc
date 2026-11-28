@@ -8,7 +8,7 @@
 .md-partners-grid .info-service-customers .section-heading h2,
 .partners-contact h2 {
   color:var(--md-blue);
-  font:700 clamp(30px,3.35vw,48px)/1.18 var(--font-display,Montserrat,sans-serif);
+  font:700 clamp(30px,3.35vw,48px)/1.18 var(--font-display);
   letter-spacing:-.035em;
   text-wrap:balance;
 }

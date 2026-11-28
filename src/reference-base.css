@@ -1,16 +1,16 @@
 /* Layout tokens transcribed from HR2B's captured canhcamtheme/main.min.css.
    Keep the reference's viewport-relative desktop rem scale and local fonts. */
-:root{font-size:17px;line-height:1.5;--red:var(--md-red);--red-dark:var(--md-red-hover);--ink:var(--md-ink);--paper:var(--md-surface-soft);--flagship-ink:var(--md-ink);--flagship-red:var(--md-red);--flagship-line:var(--md-rule)}
-body{font-family:var(--font-body);font-size:16px;color:var(--md-ink);line-height:1.5}
+:root{font-size:16px;line-height:1.5;--red:var(--md-red);--red-dark:var(--md-red-hover);--ink:var(--md-ink);--paper:var(--md-surface-soft);--flagship-ink:var(--md-ink);--flagship-red:var(--md-red);--flagship-line:var(--md-rule)}
+body{font-family:var(--font-body);font-size:16px;color:var(--md-ink);line-height:1.55}
 h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:0;line-height:1.25}
 .container{width:100%;max-width:none;margin-inline:auto;padding-inline:15px}
 .wide{width:100%;max-width:none;margin-inline:auto;padding-inline:15px}
-.section,.section-py{padding-block:60px}
-.section-py-min{padding-block:40px}
+.section,.section-py{padding-block:52px}
+.section-py-min{padding-block:36px}
 .section h2,.section-heading h2{color:var(--md-ink);letter-spacing:0;line-height:1.25;font-size:32px}
-.section-heading{margin-bottom:40px;text-align:center}
-.section-heading p{max-width:780px;margin:16px auto 0;font-size:16px}
-.btn{gap:12px;min-height:44px;padding:9px 24px;border-radius:9999px;font-size:16px;line-height:1.4;font-weight:600}
+.section-heading{margin-bottom:32px;text-align:center}
+.section-heading p{max-width:780px;margin:14px auto 0;font-size:16px}
+.btn{gap:12px;min-height:44px;padding:9px 24px;border-radius:var(--md-radius-pill,999px);font-size:16px;line-height:1.4;font-weight:600}
 .btn:hover{transform:none}
 .btn-secondary{border-color:var(--md-red);color:var(--md-red)}
 .btn-secondary:hover{background:var(--md-red-hover);border-color:var(--md-red-hover);color:white}
@@ -28,8 +28,8 @@ h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:0;line-height:1.25}
 .page-banner-main .breadcrumb a{opacity:.65}
 .page-banner-main .breadcrumb a:hover{opacity:1}
 .page-banner-main .breadcrumb>span:last-child{opacity:1;overflow-wrap:anywhere}
-@media(min-width:768px){body{font-size:clamp(14px,.83333rem,.83333rem)}.page-hero.page-banner-main{min-height:31.25vw}.page-hero.page-banner-main>.content{padding-block:120px 40px}}
-@media(min-width:1024px){.container{max-width:1024px}.section,.section-py{padding-block:3.125rem}.section-py-min{padding-block:3.125rem}.section h2,.section-heading h2{font-size:2.08333rem}.btn{font-size:clamp(14px,.9375rem,.9375rem);min-height:clamp(44px,2.5rem,2.5rem)}.page-hero.page-banner-main h1{font-size:58px}.page-hero.page-banner-main:before{background:rgba(0,0,0,.2)}.page-banner-main .breadcrumb{font-size:clamp(14px,.83333rem,.83333rem)}}
-@media(min-width:1200px){:root{font-size:1vw}.container{max-width:75rem;padding-inline:1.04167rem}.wide{max-width:95.83333rem;padding-inline:1.04167rem}.section,.section-py{padding-block:4.16667rem}.section h2,.section-heading h2{font-size:2.5rem}.section-heading{margin-bottom:2.08333rem}.section-heading p{font-size:.9375rem}.page-hero.page-banner-main h1{font-size:3.75rem}.page-hero.page-banner-main>.content{padding-bottom:2.08333rem}}
+@media(min-width:768px){body{font-size:16px}.page-hero.page-banner-main{min-height:31.25vw}.page-hero.page-banner-main>.content{padding-block:120px 40px}}
+@media(min-width:1024px){.container{max-width:1024px}.section,.section-py{padding-block:52px}.section-py-min{padding-block:44px}.section h2,.section-heading h2{font-size:34px}.btn{font-size:15px;min-height:44px}.page-hero.page-banner-main h1{font-size:52px}.page-hero.page-banner-main:before{background:rgba(0,0,0,.2)}.page-banner-main .breadcrumb{font-size:14px}}
+@media(min-width:1200px){.container{max-width:1200px;padding-inline:20px}.wide{max-width:1440px;padding-inline:24px}.section,.section-py{padding-block:60px}.section h2,.section-heading h2{font-size:38px}.section-heading{margin-bottom:36px}.section-heading p{font-size:16px}.page-hero.page-banner-main h1{font-size:56px}.page-hero.page-banner-main>.content{padding-bottom:36px}}
 @media(max-width:767px){.page-hero.page-banner-main{min-height:82.0513vw}.page-hero.page-banner-main .content>p{font-size:15px}.page-banner-main .breadcrumb{font-size:13px}.section-heading p{font-size:15px}.btn{max-width:100%;white-space:normal}}
 @media print{.page-hero.page-banner-main{min-height:0;color:black;background:white}.page-banner-main>.img{display:none}.page-hero.page-banner-main>.content{padding:20px 0}.page-hero.page-banner-main h1{color:black}.page-hero.page-banner-main:before{display:none}}

@@ -14,7 +14,7 @@
   padding: 0;
   list-style-position: inside;
   list-style-type: decimal-leading-zero;
-  font: 600 clamp(15px,1.4vw,20px)/1.5 var(--font-display,Arial,sans-serif);
+  font: 600 clamp(15px,1.4vw,20px)/1.5 var(--font-display);
 }
 .consultation-progress li {
   color: #526579;
@@ -37,7 +37,7 @@
 }
 .consultation-card h2 {
   margin: 0 0 24px;
-  font: 700 clamp(26px,2.7vw,40px)/1.16 var(--font-display,Arial,sans-serif);
+  font: 700 clamp(26px,2.7vw,40px)/1.16 var(--font-display);
   letter-spacing: -.025em;
   overflow-wrap: anywhere;
   color: #163962;

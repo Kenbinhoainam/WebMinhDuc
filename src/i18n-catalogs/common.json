@@ -850,5 +850,41 @@
     "zh": "法律信息",
     "ko": "법적 정보",
     "ja": "法的情報"
+  },
+  "Mã số thuế (MST):": {
+    "en": "Tax ID (MST):",
+    "zh": "税号 (MST)：",
+    "ko": "사업자등록번호(MST):",
+    "ja": "納税者番号 (MST):"
+  },
+  "Công ty TNHH Nhân lực Minh Đức Vina · MST:": {
+    "en": "Minh Đức Vina Human Resources Co., Ltd. · Tax ID:",
+    "zh": "明德维纳人力资源有限公司 · 税号：",
+    "ko": "Minh Đức Vina 인력 유한책임회사 · 사업자번호:",
+    "ja": "Minh Đức Vina 人材有限会社 · 納税者番号:"
+  },
+  "Khu dân cư dịch vụ TDP Phúc Long, Phường Nếnh, TP Bắc Ninh": {
+    "en": "Phúc Long Residential & Service Area, Nếnh Ward, Bắc Ninh City",
+    "zh": "北宁市宁坊福隆居民服务区",
+    "ko": "박닌시 넨동 푹롱 주거·서비스 구역",
+    "ja": "バクニン市ネン区フックロン居住・サービス区域"
+  },
+  "Khu đô thị Rùa Vàng, Lạng Giang, Bắc Ninh": {
+    "en": "Rùa Vàng Urban Area, Lạng Giang, Bắc Ninh",
+    "zh": "北宁省谅江金龟城区",
+    "ko": "박닌성 랑장 루아방 신도시",
+    "ja": "バクニン省ランザン ルアヴァン都市区"
+  },
+  "KCN Đông Mai, Quảng Ninh": {
+    "en": "Đông Mai Industrial Park, Quảng Ninh",
+    "zh": "广宁省东梅工业区",
+    "ko": "꽝닌성 동마이 산업단지",
+    "ja": "クアンニン省ドンマイ工業団地"
+  },
+  "Tạo đơn thử mới": {
+    "en": "Create new test application",
+    "zh": "新建模拟申请",
+    "ko": "새 테스트 지원 작성",
+    "ja": "新しいテスト応募を作成"
   }
 }

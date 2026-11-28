@@ -18,6 +18,7 @@ export default function HomeHero() {
     return Boolean(box && box.bottom > 0 && box.top < window.innerHeight && box.right > 0 && box.left < window.innerWidth);
   }, []);
   const finished = useRef(false), failed = useRef(false), attempt = useRef(0), fallbackTried = useRef(false);
+  const pendingSeek = useRef<number | null>(null);
   const [stage, updateStage] = useState<Stage>('poster');
   const [playing, setPlaying] = useState(false), [frameReady, setFrameReady] = useState(false), [muted, setMuted] = useState(true);
   const [decorativeImages, setDecorativeImages] = useState(false);
@@ -103,14 +104,14 @@ export default function HomeHero() {
       update();
     };
     document.addEventListener('visibilitychange', update);
-    // Observe actual vertical movement for wheels, touch, keys and scrollbar drags alike.
-    // Clamping discards negative positions from elastic overscroll at the top of the page.
+    // Observe intentional downward scrolling (>= 80px) so 1px micro-scrolls do not interrupt playback.
     let lastScrollY = Math.max(0, window.scrollY);
+    const SCROLL_PAUSE_THRESHOLD = 80;
     const onScroll = () => {
       const y = Math.max(0, window.scrollY);
       const movingDown = y > lastScrollY;
       lastScrollY = y;
-      if (movingDown && !document.hidden && (el.hasAttribute('src') || (observerAvailable.current && allowed()))) {
+      if (movingDown && y >= SCROLL_PAUSE_THRESHOLD && !document.hidden && (el.hasAttribute('src') || (observerAvailable.current && allowed()))) {
         pauseForChoices('scroll');
       }
       if (!observerAvailable.current) update();
@@ -144,6 +145,29 @@ export default function HomeHero() {
       startPlayback.current();
     }
   };
+  const seekChapter = (seconds: number) => {
+    const el = video.current;
+    if (!el) return;
+    if (!el.getAttribute('src')) {
+      el.src = el.canPlayType('video/mp4') === '' && el.canPlayType('video/webm') !== '' ? heroAssets.webm : heroAssets.video;
+    }
+    finished.current = false;
+    deferredCard.current = null;
+    manual.current = true; pausedByUser.current = false; failed.current = false;
+    if (el.readyState >= 1) {
+      pendingSeek.current = null;
+      try { el.currentTime = seconds; } catch { pendingSeek.current = seconds; }
+    } else {
+      pendingSeek.current = seconds;
+    }
+    startPlayback.current();
+  };
+  const chapters = [
+    {time: 0, stamp: '00:00', label: t({vi:'Giới thiệu',en:'Overview',zh:'企业概览',ko:'회사 소개',ja:'会社概要'})},
+    {time: 21, stamp: '00:21', label: t({vi:'Lãnh đạo',en:'Leadership',zh:'管理团队',ko:'경영진',ja:'経営陣'})},
+    {time: 57, stamp: '00:57', label: t({vi:'Hệ sinh thái',en:'Ecosystem',zh:'服务生态',ko:'서비스 생태계',ja:'事業領域'})},
+    {time: 69, stamp: '01:09', label: t({vi:'Đối tác FDI',en:'FDI Partners',zh:'外资伙伴',ko:'FDI 파트너',ja:'FDIパートナー'})},
+  ];
   const onError = () => {
     if (finished.current || !mounted.current) return;
     attempt.current++; setPlaying(false); setFrameReady(false);
@@ -173,6 +197,12 @@ export default function HomeHero() {
       <div className="hero-media" aria-hidden="true">
         <img className="hero-poster" src={heroAssets.poster} width="1024" height="576" alt="" fetchPriority="high" decoding="async"/>
         <video ref={video} className={frameReady ? 'is-ready' : undefined} muted={muted} playsInline preload="none"
+          onLoadedMetadata={() => {
+            if (pendingSeek.current !== null && video.current) {
+              try { video.current.currentTime = pendingSeek.current; } catch { /* ignore seek clamp */ }
+              pendingSeek.current = null;
+            }
+          }}
           onPlaying={() => {if (!finished.current && !pausedByUser.current && !video.current?.paused) {failed.current = false; setStage('playing'); setPlaying(true); setFrameReady(true);}}}
           onPause={() => {if (video.current?.paused) setPlaying(false);}}
           onEnded={() => {
@@ -192,18 +222,25 @@ export default function HomeHero() {
       <div className={`hero-brand-finish${showBrand ? ' is-visible' : ''}`}>
        <div className="hero-end-card">
         <img className="hero-finish-logo" src="/WebMinhDuc/assets/minh-duc-logo-transparent.webp" width="384" height="274" alt="Minh Đức Vina" loading="lazy"/>
-        <p className="hero-finish-slogan">{t({vi:'Nhân lực là tài sản',en:'People are our greatest asset',zh:'人才是宝贵的资产',ko:'인재는 소중한 자산입니다',ja:'人材はかけがえのない財産'})}</p>
-        <p className="hero-finish-message">{t({vi:'Đồng hành cùng nhà máy và doanh nghiệp FDI miền Bắc.',en:'Supporting factories and FDI businesses in Northern Vietnam.',zh:'携手越南北部工厂与外资企业。',ko:'베트남 북부의 공장 및 외국인 투자 기업과 함께합니다.',ja:'ベトナム北部の工場・外資系企業とともに。'})}</p>
+        <p className="hero-finish-slogan">{t({vi:'Kết nối việc làm - kiến tạo tương lai',en:'Connecting Careers, Building Futures',zh:'连接就业，共创未来',ko:'일자리를 잇고 미래를 열다',ja:'仕事をつなぎ、未来を築く'})}</p>
+        <p className="hero-finish-message">{t({vi:'Nhân lực là tài sản · Đồng hành cùng nhà máy và doanh nghiệp FDI miền Bắc.',en:'People are our greatest asset · Supporting factories and FDI businesses in Northern Vietnam.',zh:'人才是宝贵的资产 · 携手越南北部工厂与外资企业。',ko:'인재는 소중한 자산 · 베트남 북부 공장 및 외국인 투자 기업과 함께합니다.',ja:'人材はかけがえのない財産 · ベトナム北部の工場・外資系企業とともに。'})}</p>
         <div className="hero-actions">
           <ButtonLink to="/#business-contact">{contactLabel}</ButtonLink>
           <ButtonLink to="/jobs" secondary>{jobLabel}</ButtonLink>
         </div>
        </div>
       </div>
-      <noscript><style>{'.home-hero[data-show-brand="false"] .hero-stage{grid-area:1/1/-1/-1;grid-template-rows:auto;aspect-ratio:auto!important;min-height:var(--hero-room)}.home-hero .hero-brand-finish{display:grid;position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1}@media not (prefers-reduced-data:reduce){.home-hero .hero-brand-finish::before{background-image:url(/WebMinhDuc/assets/minhduc-v16/flagship-atrium-960.webp)}}.home-hero .hero-introduction{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.home-hero .hero-media,.home-hero .hero-introduction::before,.hero-player-tools,.hero-entry-bar{display:none!important}'}</style></noscript>
+      <noscript><style>{'.home-hero[data-show-brand="false"] .hero-stage{grid-area:1/1/-1/-1;grid-template-rows:auto;aspect-ratio:auto!important;min-height:var(--hero-room)}.home-hero .hero-brand-finish{display:grid;position:relative;opacity:1;visibility:visible;pointer-events:auto;background:#f2f7fc}.home-hero .hero-brand-finish::before{opacity:1}@media not (prefers-reduced-data:reduce){.home-hero .hero-brand-finish::before{background-image:url(/WebMinhDuc/assets/minhduc-v16/flagship-atrium-960.webp)}}.home-hero .hero-introduction{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.home-hero .hero-media,.home-hero .hero-introduction::before,.hero-player-tools,.hero-entry-bar,.hero-chapters{display:none!important}'}</style></noscript>
     </div>
     <div className="hero-introduction">
-      <h1>{t({vi:'Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc',en:'Workforce solutions for factories and FDI businesses in Northern Vietnam',zh:'越南北部工厂与外资企业的人力资源解决方案',ko:'베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션',ja:'ベトナム北部の工場・外資系企業向け人材ソリューション'})}</h1>
+      <div className="hero-intro-copy">
+        <h1>{t({vi:'Giải pháp nhân lực cho nhà máy và doanh nghiệp FDI miền Bắc',en:'Workforce solutions for factories and FDI businesses in Northern Vietnam',zh:'越南北部工厂与外资企业的人力资源解决方案',ko:'베트남 북부 공장 및 외국인 투자 기업을 위한 인력 솔루션',ja:'ベトナム北部の工場・外資系企業向け人材ソリューション'})}</h1>
+        {!showBrand && <div className="hero-chapters" role="group" aria-label={t({vi:'Nội dung phim giới thiệu',en:'Film chapters',zh:'影片章节',ko:'영상 목차',ja:'動画チャプター'})}>
+          {chapters.map(chapter => <button key={chapter.stamp} type="button" className="hero-chapter-pill" onClick={() => seekChapter(chapter.time)}>
+            <span>{chapter.stamp}</span> {chapter.label}
+          </button>)}
+        </div>}
+      </div>
       {!showBrand && <div className="hero-entry-bar">
         <ButtonLink to="/#business-contact">{contactLabel}</ButtonLink>
         <ButtonLink to="/jobs" secondary>{jobLabel}</ButtonLink>

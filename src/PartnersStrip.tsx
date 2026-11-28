@@ -160,12 +160,14 @@ export default function PartnersStrip() {
     rail.scrollTo({left:((keys[event.key] + partners.length) % partners.length) * step, behavior:'instant'});
   }
   const name = t({vi:'Đối tác tiêu biểu',en:'Featured partners',zh:'精选合作伙伴',ko:'주요 파트너',ja:'主なパートナー'});
+  const pauseText = t({vi:'Tạm dừng chuyển động đối tác',en:'Pause partner logos',zh:'暂停合作伙伴滚动',ko:'파트너 이동 일시 정지',ja:'パートナー表示を一時停止'});
+  const playText = t({vi:'Phát chuyển động đối tác',en:'Play partner logos',zh:'播放合作伙伴滚动',ko:'파트너 이동 재생',ja:'パートナー表示を再生'});
   return <div className="partners-strip" data-static={staticList}>
     {!staticList && <button ref={toggle} className="partners-motion-toggle" type="button" aria-controls={id} onClick={() => {
       userPaused.current = !userPaused.current;
       setPaused(userPaused.current);
       wake.current();
-    }}>{paused ? 'Phát chuyển động đối tác' : 'Tạm dừng chuyển động đối tác'}</button>}
+    }}>{paused ? playText : pauseText}</button>}
     <div id={id} ref={viewport} className="partners-viewport" data-auto-rail tabIndex={staticList ? -1 : 0} role="region" aria-label={name} onKeyDown={navigate}>
       <div className="partners-track">
         <ul className="partners-set">{partners.map(name => <li key={name}><PartnerLogo name={name}/></li>)}</ul>

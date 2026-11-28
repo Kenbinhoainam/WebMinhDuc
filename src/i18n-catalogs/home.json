@@ -898,5 +898,65 @@
     "zh": "关于 Minh Đức Vina",
     "ko": "Minh Đức Vina 소개",
     "ja": "Minh Đức Vinaについて"
+  },
+  "Dành cho người tìm việc": {
+    "en": "For job seekers",
+    "zh": "面向求职者",
+    "ko": "구직자 안내",
+    "ja": "求職者の方へ"
+  },
+  "Đồng hành & hỗ trợ người lao động tại nhà máy miền Bắc": {
+    "en": "Supporting workers across factories in Northern Vietnam",
+    "zh": "陪伴与支持越南北部工厂的劳动者",
+    "ko": "베트남 북부 공장 근로자를 위한 동행과 지원",
+    "ja": "ベトナム北部の工場で働く方々への伴走・支援"
+  },
+  "Việc làm phổ thông": {
+    "en": "General factory jobs",
+    "zh": "普工岗位",
+    "ko": "생산·일반직 채용",
+    "ja": "一般製造の求人"
+  },
+  "Việc làm có tay nghề": {
+    "en": "Skilled technical jobs",
+    "zh": "技术岗位",
+    "ko": "숙련·기술직 채용",
+    "ja": "技能・技術職の求人"
+  },
+  "Minh bạch trước khi nhận việc": {
+    "en": "Clear terms before onboarding",
+    "zh": "入职前信息透明",
+    "ko": "입사 전 투명한 조건 안내",
+    "ja": "就業前の明確な条件案内"
+  },
+  "Trao đổi rõ địa điểm KCN, lịch ca, mức lương tham khảo và hồ sơ cần chuẩn bị.": {
+    "en": "Review industrial park location, shifts, reference pay, and required documents upfront.",
+    "zh": "提前明确工业区地点、班次安排、参考薪资及所需入职资料。",
+    "ko": "산업단지 위치, 교대 근무, 참고 급여 및 준비 서류를 사전에 명확히 안내합니다.",
+    "ja": "工業団地の勤務地、シフト、参考給与、必要書類を事前に分かりやすくご案内します。"
+  },
+  "Hướng dẫn & đón tiếp theo đợt": {
+    "en": "Guided group onboarding",
+    "zh": "分批引导与接待入职",
+    "ko": "기수별 안내 및 입사 지원",
+    "ja": "採用回ごとの案内・受け入れ支援"
+  },
+  "Có nhân sự hướng dẫn phỏng vấn, nhận việc và hỗ trợ người lao động ngoại tỉnh hòa nhập.": {
+    "en": "Coordinators guide interviews, onboarding, and integration for out-of-province workers.",
+    "zh": "专人指导面试、报到流程，并协助外省劳动者顺利适应工作环境。",
+    "ko": "담당자가 면접과 입사 절차를 안내하고 타 지역 근로자의 적응을 지원합니다.",
+    "ja": "担当者が面接や入社手続きを案内し、他省からの就業者の定着もサポートします。"
+  },
+  "Đồng hành trong quá trình làm việc": {
+    "en": "Ongoing worker support",
+    "zh": "工作期间持续陪伴",
+    "ko": "근무 중 지속적인 동행",
+    "ja": "就業後の継続サポート"
+  },
+  "Duy trì đầu mối hỗ trợ giải đáp thắc mắc và tổ chức hoạt động gắn kết cộng đồng.": {
+    "en": "Dedicated support contacts for questions plus community and team-building activities.",
+    "zh": "保持专属答疑联系窗口，并组织员工交流与社区关怀活动。",
+    "ko": "문의 대응 전담 창구를 유지하고 근로자 교류 및 커뮤니티 활동을 운영합니다.",
+    "ja": "相談窓口を継続して設け、スタッフ間の交流や地域活動も行っています。"
   }
 }

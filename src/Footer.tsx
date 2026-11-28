@@ -1,10 +1,16 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {Mail, Phone, MapPin} from 'lucide-react';
+import {Mail, Phone, MapPin, MessageCircle} from 'lucide-react';
 import {company} from './company';
 import {navigation} from './navigation';
 import {Modal} from './shared';
 import './footer-reference.css';
+
+function FacebookIcon() {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H8v3h2.3V21h3.2Z"/>
+  </svg>;
+}
 
 export default function Footer() {
   const [subscribe, setSubscribe] = useState(false);
@@ -19,10 +25,11 @@ export default function Footer() {
         <div className="footer-brand-copy">
           <h2>CÔNG TY TNHH NHÂN LỰC MINH ĐỨC VINA</h2>
           <p>Cung ứng nhân lực · Tư vấn và giới thiệu việc làm</p>
+          <p className="footer-tax-id">Mã số thuế (MST): <strong>{company.taxId}</strong></p>
         </div>
         <div className="footer-social">
-          <a href={company.facebook} target="_blank" rel="noreferrer" aria-label="Facebook Minh Đức">Facebook</a>
-          <a href={company.zalo} target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo">Zalo</a>
+          <a href={company.facebook} target="_blank" rel="noreferrer" aria-label="Facebook Minh Đức"><FacebookIcon/><span>Facebook</span></a>
+          <a href={company.zalo} target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo"><MessageCircle size={16} aria-hidden="true"/><span>Zalo</span></a>
         </div>
       </div>
       <div className="footer-bottom">
@@ -44,13 +51,13 @@ export default function Footer() {
           <h3>Liên hệ</h3>
           <a className="footer-phone" href={`tel:${company.tel}`}><Phone size={18}/>{company.phone}</a>
           <a href={`mailto:${company.email}`}><Mail size={18}/>{company.email}</a>
-          <button className="btn footer-subscribe" type="button" aria-haspopup="dialog"
+          <button className="btn btn-outline-blue footer-subscribe" type="button" aria-haspopup="dialog"
             onClick={() => {setRegistered(false); setSubscribe(true);}}>Đăng ký nhận bản tin</button>
         </div>
       </div>
     </div>
     <div className="footer-legal"><div className="footer-shell footer-legal-inner">
-      <div>© {new Date().getFullYear()} Minh Đức Vina. <small>Prototype · Nội dung minh họa</small></div>
+      <div>© {new Date().getFullYear()} Công ty TNHH Nhân lực Minh Đức Vina · MST: {company.taxId}. <small>Prototype · Nội dung minh họa</small></div>
       <nav aria-label="Thông tin pháp lý"><Link to="/privacy-policy">Chính sách bảo mật</Link><Link to="/terms-of-use">Điều khoản sử dụng</Link></nav>
     </div></div>
     {subscribe && <Modal title="Đón nhận cơ hội mới" onClose={() => setSubscribe(false)}>

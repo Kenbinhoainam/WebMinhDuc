@@ -1,7 +1,7 @@
 import {useEffect, useId, useRef, useState, type CSSProperties, type ReactNode} from 'react';
 import {ArrowLeft, ArrowRight, ArrowUpRight, MapPin, Pause, Play} from 'lucide-react';
 import {Link, useLocation} from 'react-router-dom';
-import {useLocale} from './i18n';
+import {useLocale, useTranslation} from './i18n';
 import {lookup} from './i18n-runtime/catalog';
 import {jobs, type Job} from './jobs-data';
 import {PageMasthead} from './PageMasthead';
@@ -68,6 +68,7 @@ const questions = [
 function CareerRail({title, id, kind, modalOpen, children}: {
   title: string; id?: string; kind: 'work' | 'benefits' | 'questions' | 'gallery'; modalOpen: boolean; children: ReactNode;
 }) {
+  const t = useTranslation();
   const section = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const labelId = useId();
@@ -97,13 +98,15 @@ function CareerRail({title, id, kind, modalOpen, children}: {
     const wrap = backwards ? rail.scrollLeft <= 2 : rail.scrollLeft >= max - 2;
     rail.scrollLeft = wrap ? (backwards ? max : 0) : adjacentRailOffset(rail,backwards);
   }
+  const playLabel = t({vi:'Phát chuyển động',en:'Play rotation',zh:'播放轮播',ko:'자동 이동 재생',ja:'自動スライドを再生'});
+  const pauseLabel = t({vi:'Tạm dừng chuyển động',en:'Pause rotation',zh:'暂停轮播',ko:'자동 이동 일시 정지',ja:'自動スライドを一時停止'});
   return <section id={id} tabIndex={id ? -1 : undefined} ref={section} className={`career-block career-rail-section career-${kind}`} aria-labelledby={labelId}>
     <div className="container">
       <div className="career-rail-heading">
         <h2 id={labelId}>{title}</h2>
         {overflow && <div className="career-rail-controls">
           <button type="button" aria-label="Mục trước" aria-controls={trackId} onClick={()=>step(true)}><ArrowLeft aria-hidden="true"/></button>
-          <button className="career-carousel-pause" type="button" aria-label={paused ? 'Phát chuyển động' : 'Tạm dừng chuyển động'}
+          <button className="career-carousel-pause" type="button" aria-label={paused ? playLabel : pauseLabel}
             aria-controls={trackId} onClick={()=>setPaused(!paused)}>{paused ? <Play aria-hidden="true"/> : <Pause aria-hidden="true"/>}</button>
           <button type="button" aria-label="Mục tiếp theo" aria-controls={trackId} onClick={()=>step(false)}><ArrowRight aria-hidden="true"/></button>
         </div>}
@@ -194,7 +197,7 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
     {media.gallery.length > 0 && <CareerRail kind="gallery" title="Hoạt động của Minh Đức" modalOpen={modalOpen}>
       {gallery.map((photo, index) => <figure key={photo.src} className="career-gallery-item" style={photo.frame}>
         <button type="button" aria-label={translate('Xem ảnh lớn') + ' · ' + translate(photo.caption)} onClick={event => {event.currentTarget.focus({preventScroll: true}); setGalleryIndex(index);}}>
-          <img src={photo.src} sizes="auto, (max-width: 640px) calc(100vw - 68px), 520px" alt={photo.alt} loading="lazy" decoding="async"/>
+          <img src={photo.src} {...responsiveImage(photo.src, '(max-width: 640px) calc(100vw - 68px), 520px')} alt={photo.alt} loading="eager" decoding="async"/>
         </button>
         <figcaption>{photo.caption}</figcaption>
       </figure>)}
@@ -202,7 +205,7 @@ export default function CareersSections({openings}: {openings: ReactNode}) {
 
     {galleryPhoto && galleryIndex !== null && <Modal title="Hoạt động của Minh Đức" onClose={() => setGalleryIndex(null)}>
       <figure className="career-lightbox">
-        <img src={galleryPhoto.src} sizes="(max-width: 767px) 94vw, 900px" alt={galleryPhoto.alt} className="career-gallery-large"/>
+        <img src={galleryPhoto.src} {...responsiveImage(galleryPhoto.src, '(max-width: 767px) 94vw, 900px')} alt={galleryPhoto.alt} className="career-gallery-large" loading="eager" decoding="sync"/>
         <figcaption aria-live="polite" aria-atomic="true"><span>{galleryIndex + 1} / {media.gallery.length}</span> {galleryPhoto.caption}</figcaption>
       </figure>
       <div className="career-gallery-controls">

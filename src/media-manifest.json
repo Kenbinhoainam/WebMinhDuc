@@ -802,5 +802,99 @@
         "src": "/WebMinhDuc/assets/minhduc-working-60s.webp"
       }
     ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/team-flag-salute.webp": {
+    "width": 1600,
+    "height": 747,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/team-flag-salute-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/WebMinhDuc/assets/minhduc-r2/team-flag-salute-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/WebMinhDuc/assets/minhduc-r2/team-flag-salute.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/community-meeting.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/community-meeting-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/WebMinhDuc/assets/minhduc-r2/community-meeting-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/WebMinhDuc/assets/minhduc-r2/community-meeting.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/yearend-celebration.webp": {
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/yearend-celebration-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/WebMinhDuc/assets/minhduc-r2/yearend-celebration-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/WebMinhDuc/assets/minhduc-r2/yearend-celebration.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/leader-ha-ngoc-trung.webp": {
+    "width": 480,
+    "height": 600,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/leader-ha-ngoc-trung.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/leader-duong-thi-luyen.webp": {
+    "width": 480,
+    "height": 600,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/leader-duong-thi-luyen.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/leader-do-thi-thu.webp": {
+    "width": 480,
+    "height": 600,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/leader-do-thi-thu.webp"
+      }
+    ]
+  },
+  "/WebMinhDuc/assets/minhduc-r2/leader-hoang-van-truong.webp": {
+    "width": 480,
+    "height": 600,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/WebMinhDuc/assets/minhduc-r2/leader-hoang-van-truong.webp"
+      }
+    ]
   }
 }
