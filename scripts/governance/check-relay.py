@@ -132,6 +132,7 @@ def validate(record, remote=False, expect_stage=None):
     ref = "refs/heads/" + record["branch"]
     git("check-ref-format", ref)
     base, stage, head = (record[key] for key in ("base_sha", "stage_start_sha", "head_sha"))
+    require(not remote or matches(SHA, expect_stage), "--remote requires --expect-stage from the independent ownership receipt")
     require(expect_stage is None or stage == expect_stage, "stage_start_sha differs from independent ownership receipt")
     for sha in (base, stage, head):
         require(matches(SHA, sha), "commit identity must be a full lowercase SHA")
@@ -142,9 +143,16 @@ def validate(record, remote=False, expect_stage=None):
     require(set(paths) == set(actual), "changed_files does not match stage_start_sha..head_sha Git diff")
     if remote:
         url = f"https://github.com/{repo}.git"
+        origin = git("remote", "get-url", "origin").decode().strip()
+        origins = {url, url.removesuffix(".git"), f"git@github.com:{repo}.git",
+                   f"git@github.com:{repo}", f"ssh://git@github.com/{repo}.git",
+                   f"ssh://git@github.com/{repo}"}
+        require(origin in origins, "origin does not match checkpoint repository")
         observed = git("ls-remote", "--exit-code", url, ref).decode().strip().split("\t")
         require(observed == [head, ref], "STALE_CHECKPOINT: remote HEAD differs; fetch and reassess before editing")
         require(git("rev-parse", "HEAD").decode().strip() == head, "checkout HEAD differs from verified remote SHA")
+        require(git("branch", "--show-current").decode().strip() == record["branch"],
+                "checkout branch differs from checkpoint branch; attach the intended branch before editing")
         require(not git("status", "--porcelain", "--untracked-files=all"), "worktree has uncommitted changes")
 
 

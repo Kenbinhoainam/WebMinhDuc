@@ -31,6 +31,7 @@
   "docs/ai/relay/PILOT.md",
   "docs/ai/relay/TASK-CONTRACT.md",
   "docs/ai/relay/checkpoint.template.json",
+  "docs/ai/relay/pilot/receiver.md",
   "docs/ai/relay/provider-onboarding.md",
   "docs/architecture/architecture-status.md",
   "docs/architecture/github-control-plane.md",

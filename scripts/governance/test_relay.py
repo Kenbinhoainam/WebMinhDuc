@@ -22,7 +22,8 @@ class CheckpointTests(unittest.TestCase):
         cwd = Path.cwd()
         os.chdir(self.root.name)
         self.addCleanup(os.chdir, cwd)
-        self.git("init", "-q")
+        self.git("init", "-q", "-b", "chore/10-relay")
+        self.git("remote", "add", "origin", REPO + ".git")
         self.git("config", "user.name", "Relay Test")
         self.git("config", "user.email", "relay@example.invalid")
         self.git("commit", "-qm", "base", "--allow-empty")
@@ -65,7 +66,7 @@ class CheckpointTests(unittest.TestCase):
 
     def test_advanced_remote_rejects_stale_sender(self):
         with self.remote_stub("a" * 40), self.assertRaisesRegex(ValueError, "STALE_CHECKPOINT"):
-            validate(self.record, remote=True)
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
 
     def test_unreachable_remote_fails(self):
         original = validate.__globals__["git"]
@@ -76,17 +77,31 @@ class CheckpointTests(unittest.TestCase):
             return original(*args)
 
         with patch.dict(validate.__globals__, git=git), self.assertRaises(subprocess.CalledProcessError):
-            validate(self.record, remote=True)
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
 
     def test_same_sha_but_dirty_checkout_fails(self):
         Path("untracked.md").write_text("uncommitted")
         with self.remote_stub(), self.assertRaisesRegex(ValueError, "uncommitted changes"):
-            validate(self.record, remote=True)
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
 
     def test_wrong_checkout_fails(self):
-        self.git("checkout", "--detach", self.record["base_sha"])
+        self.git("checkout", "--quiet", "--detach", self.record["base_sha"])
         with self.remote_stub(), self.assertRaisesRegex(ValueError, "checkout HEAD"):
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
+
+    def test_remote_requires_independent_stage(self):
+        with self.assertRaisesRegex(ValueError, "requires --expect-stage"):
             validate(self.record, remote=True)
+
+    def test_wrong_branch_at_same_sha_fails(self):
+        self.git("switch", "--quiet", "-c", "adjacent")
+        with self.remote_stub(), self.assertRaisesRegex(ValueError, "checkout branch"):
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
+
+    def test_wrong_origin_fails(self):
+        self.git("remote", "set-url", "origin", "https://github.com/other/repo.git")
+        with self.remote_stub(), self.assertRaisesRegex(ValueError, "origin does not match"):
+            validate(self.record, remote=True, expect_stage=self.record["base_sha"])
 
     def test_empty_diff_cannot_replace_receipted_stage(self):
         self.record["stage_start_sha"] = self.record["head_sha"]
